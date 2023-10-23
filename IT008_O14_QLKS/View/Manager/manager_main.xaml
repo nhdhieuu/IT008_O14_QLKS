@@ -192,7 +192,7 @@
 
                                     </Grid.ColumnDefinitions>
                                     <Image Source="/View/Manager/icons8-notification-50.png" Margin="10,4,13,6"/>
-                                    <TextBlock  x:Name="text6" Text="memo" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                    <TextBlock  x:Name="text6" Text="notice" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="42" Margin="46,0,0,0">
 

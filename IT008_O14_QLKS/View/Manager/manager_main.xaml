@@ -1,0 +1,226 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.Manager_main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
+       xmlns:viewmodels="clr-namespace:IT008_O14_QLKS.View.Manager"
+        mc:Ignorable="d"
+        Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/View/Manager/icons8-ginkgo-64.png" 
+        >
+
+    <Grid>
+        <Border Background="White" CornerRadius="5" MouseDown="Border_MouseDown_1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="40
+                                          "/>
+                        <ColumnDefinition Width="40
+                                          "/>
+
+                    </Grid.ColumnDefinitions >
+                    <Border x:Name="minibtn_border"  Grid.Column="1" 
+                            Background="Transparent"
+                            CornerRadius="0,5,0,0" MouseDown="minibtn_border_MouseDown" MouseEnter="minibtn_border_MouseEnter" MouseLeave="minibtn_border_MouseLeave" 
+                            >
+                        <TextBlock x:Name="minibtn_text" FontSize="40"
+                                  VerticalAlignment="Top" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="-"
+                                   Foreground="Black" Margin="0,-11,0,0"/>
+
+                    </Border>
+
+
+                    <Border x:Name="delbtn_border"  Grid.Column="2" 
+                            Background="Transparent"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2"
+                            >
+                        <TextBlock x:Name="delbtn_text" FontSize="25 
+                                "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909"/>
+
+                    </Border>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="180">
+
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
+
+                            <RowDefinition/>
+
+
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="131*"/>
+                                <ColumnDefinition Width="49*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="GINKGO" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" FontFamily="Sylfaen" Height="36" Width="106" Margin="21,0,0,0"/>
+                            <Image Grid.Column="1" Source="/View/Manager/ginkgo.png" Margin="0,56,13,56"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Border  x:Name="border1"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFF1F0E7" MouseDown="border1_MouseDown" MouseEnter="border1_MouseEnter" MouseLeave="border1_MouseLeave">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/icons8-home-32.png" Margin="10,4,13,6"/>
+                                    <TextBlock x:Name="text1" Text="home" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="#FFC6980A" Height="22" Width="38" Margin="52,0,0,0">
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Border  x:Name="border2"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border2_MouseEnter" MouseLeave="border2_MouseLeave" MouseDown="border2_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/icons8-room-50.png" Margin="10,4,13,6"/>
+                                    <TextBlock  x:Name="text2" Text="room" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="38" Margin="54,0,0,0">
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Border  x:Name="border3"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border3_MouseEnter" MouseLeave="border3_MouseLeave" MouseDown="border3_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/a.png" Margin="10,4,13,6"/>
+                                    <TextBlock  x:Name="text3" Text="reciept" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="48" Margin="42,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <TextBlock.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform AngleY="0.191"/>
+                                                <RotateTransform/>
+                                                <TranslateTransform Y="0.08"/>
+                                            </TransformGroup>
+                                        </TextBlock.RenderTransform>
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Border  x:Name="border4" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border4_MouseEnter" MouseLeave="border4_MouseLeave" MouseDown="border4_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/icons8-service-50 (1).png" Margin="10,4,13,6" OpacityMask="White"/>
+                                    <TextBlock  x:Name="text4" Text="service" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="46" Margin="43,0,0,0">
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <Border  x:Name="border5" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border5_MouseEnter" MouseLeave="border5_MouseLeave" MouseDown="border5_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/icons8-human-50.png" Margin="10,4,13,6"/>
+                                    <TextBlock  x:Name="text5" Text="staff" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="38" Margin="56,0,0,0">
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <Border x:Name="border6"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" MouseEnter="border6_MouseEnter" MouseLeave="border6_MouseLeave" MouseDown="border6_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/View/Manager/icons8-notification-50.png" Margin="10,4,13,6"/>
+                                    <TextBlock  x:Name="text6" Text="memo" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="42" Margin="46,0,0,0">
+
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+
+
+
+
+
+
+                    </Grid>
+                    <Grid Grid.Column="1" Background="Transparent">
+                        <ContentControl Height="590
+                                        " Content="{Binding}" Margin="0,0,12,15"/>
+
+                    </Grid>
+
+
+
+
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

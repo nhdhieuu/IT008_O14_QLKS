@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6178F74B-EA99-4AB7-BD23-B8589A96179F}</ProjectGuid>
+    <ProjectGuid>{0F3CB1AD-40D3-4F8F-BFB3-1FA5A5C067BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>IT008_O14_QLKS</RootNamespace>
     <AssemblyName>IT008_O14_QLKS</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +56,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="View\Manager\home.xaml.cs">
+      <DependentUpon>home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Manager_main.xaml.cs">
+      <DependentUpon>Manager_main.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +70,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Manager\home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +108,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Clients\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ginkgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\ginkgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-home-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-home-32 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-room-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-invoice-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-invoice-50 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-service-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-service-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-human-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-notification-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64 %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

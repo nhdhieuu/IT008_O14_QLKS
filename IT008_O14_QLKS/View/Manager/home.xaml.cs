@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IT008_O14_QLKS
+namespace IT008_O14_QLKS.View.Manager
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for home.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class home : UserControl
     {
-        public MainWindow()
+        public home()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("test");
         }
     }
 }

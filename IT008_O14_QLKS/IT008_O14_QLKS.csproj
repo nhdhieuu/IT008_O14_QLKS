@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Loginn.xaml.cs">
+      <DependentUpon>Loginn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -65,18 +68,14 @@
     <Compile Include="View\Manager\room.xaml.cs">
       <DependentUpon>room.xaml</DependentUpon>
     </Compile>
-    <Page Include="Login.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Loginn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +162,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Manager\icons8-ginkgo-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="e5917cac42dfe301188942ca66d5319d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ginkgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="eye.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

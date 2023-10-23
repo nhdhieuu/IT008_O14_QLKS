@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/manager/icons8-ginkgo-64%20(2).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("eye.png")]
 
 

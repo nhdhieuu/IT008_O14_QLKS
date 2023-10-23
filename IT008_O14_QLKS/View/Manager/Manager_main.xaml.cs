@@ -244,7 +244,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-          MainWindow form =new MainWindow();
+          Loginn form =new Loginn();
             form.Show();
             this.Close();
         }

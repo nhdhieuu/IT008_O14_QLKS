@@ -12,11 +12,11 @@ D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.c
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
-D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.g.cs
-D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\manager_main.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\manager_main.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml

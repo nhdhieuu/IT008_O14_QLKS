@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
        xmlns:viewmodels="clr-namespace:IT008_O14_QLKS.View.Manager"
         mc:Ignorable="d"
-        Title="Manager_main" Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"  Topmost="True"
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/View/Manager/icons8-ginkgo-64.png" 
         >
 
     <Grid>
@@ -33,16 +33,16 @@
                             CornerRadius="0,5,0,0" MouseDown="minibtn_border_MouseDown" MouseEnter="minibtn_border_MouseEnter" MouseLeave="minibtn_border_MouseLeave" 
                             >
                         <TextBlock x:Name="minibtn_text" FontSize="40"
-                                  VerticalAlignment="Center" 
+                                  VerticalAlignment="Top" 
                                    HorizontalAlignment="Center" FontFamily="Sylfaen" Text="-"
-                                   Foreground="Black"/>
+                                   Foreground="Black" Margin="0,-11,0,0"/>
 
                     </Border>
 
 
                     <Border x:Name="delbtn_border"  Grid.Column="2" 
                             Background="Transparent"
-                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2"
                             >
                         <TextBlock x:Name="delbtn_text" FontSize="25 
                                 "  VerticalAlignment="Center" 

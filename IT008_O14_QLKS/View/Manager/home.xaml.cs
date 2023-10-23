@@ -24,5 +24,10 @@ namespace IT008_O14_QLKS.View.Manager
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("test");
+        }
     }
 }

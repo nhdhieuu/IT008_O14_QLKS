@@ -148,5 +148,14 @@
   <ItemGroup>
     <Resource Include="View\Manager\icons8-notification-50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-ginkgo-64 %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

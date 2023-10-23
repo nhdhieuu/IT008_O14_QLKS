@@ -18,3 +18,5 @@ D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\man
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\manager_main.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml

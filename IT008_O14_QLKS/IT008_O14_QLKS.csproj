@@ -62,6 +62,9 @@
     <Compile Include="View\Manager\Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\room.xaml.cs">
+      <DependentUpon>room.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\room.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -23,6 +23,8 @@ namespace IT008_O14_QLKS.View.Manager
         public Manager_main()
         {
             InitializeComponent();
+            main = 1;
+            DataContext = new home();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -238,6 +240,23 @@ namespace IT008_O14_QLKS.View.Manager
             border3_MouseLeave(sender, e);
             border4_MouseLeave(sender, e);
             border5_MouseLeave(sender, e);
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+          MainWindow form =new MainWindow();
+            form.Show();
+            this.Close();
+        }
+
+        private void txt_logout_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txt_logout.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+        private void txt_logout_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txt_logout.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
         }
     }
     

@@ -1,0 +1,219 @@
+﻿<Window x:Class="IT008_O14_QLKS.signUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS"
+        mc:Ignorable="d"
+         Height="745px" Width="644px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
+
+    <Grid>
+
+        <Border Background="#F1F0E7" CornerRadius="10" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="40
+                                          "/>
+                        <ColumnDefinition Width="40
+                                          "/>
+
+                    </Grid.ColumnDefinitions >
+
+
+                    <Border x:Name="delbtn_border"  Grid.Column="2" 
+                           
+                            CornerRadius="0,10,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2" Cursor="Hand"
+                            >
+                        <TextBlock x:Name="delbtn_text" FontSize="25 
+                                "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                    </Border>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border CornerRadius="1000" Background="white" Margin="400,28,78,507">
+                        <Ellipse Stroke="#FFC6980A" StrokeThickness="5"  >
+                            <Ellipse.Fill>
+                                <ImageBrush x:Name="avt" ImageSource="/user.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                    <Border Background="Transparent" Margin="33,366,28,108" BorderBrush="#FF0500FF" BorderThickness="2" CornerRadius="7">
+                        
+                    </Border>
+                    <Border Background="#FFF1F0E7" Height="50" Margin="56,341,377,314" BorderBrush="#FF897C57" BorderThickness="0" CornerRadius="7"/>
+                    <TextBlock Text="SIGN UP" VerticalAlignment="Top" FontSize="50" FontFamily=".VnTime" Margin="40,0,0,0" Foreground="#740909" Height="51" FontWeight="Bold" />
+
+                    <TextBlock Text="SIGN UP" VerticalAlignment="Top" FontSize="50" FontFamily=".VnTime" Margin="38,0,2,0" Foreground="#FFC6980A" Height="51" FontWeight="Bold" />
+                    <TextBlock  Text="name" FontSize="24" FontFamily="Sylfaen" Margin="40,0,394,618" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <Border x:Name="bdname" Background="White" Margin="38,92,339,566" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <TextBox x:Name="name" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+                    </Border>
+                    <Border x:Name="bduser" Background="white" Margin="37,188,340,470" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <TextBox x:Name="user"  Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+                    </Border>
+                    <TextBlock Text="username" FontSize="24" FontFamily="Sylfaen" Margin="40,0,357,522" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <TextBlock Text="password" FontSize="24" FontFamily="Sylfaen" Margin="40,0,357,425" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <Border x:Name="bdpass" Background="white" Margin="37,285,340,374" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <Grid>
+
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="223*"/>
+                                <ColumnDefinition Width="41*"/>
+                            </Grid.ColumnDefinitions>
+                            <PasswordBox x:Name="pass"  Margin="0,0,38,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="42" VerticalAlignment="Center" Foreground="#FF403F3F" PasswordChanged="pass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Cursor="IBeam" />
+                            <TextBox x:Name="unpass" Visibility="Hidden" Foreground="#FF403F3F"  Margin="0,0,38,0"  Grid.ColumnSpan="2" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" TextChanged="unpass_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}"/>
+
+                            <Image x:Name="view"  Grid.Column="1" Source="/view.png" Margin="6" Cursor="Hand" MouseDown="Image_MouseDown_1" >
+
+                            </Image>
+                            <Image x:Name="unview" Grid.Column="1" Source="/eye.png" Margin="6" Cursor="Hand" Visibility="Hidden" MouseDown="unview_MouseDown" >
+
+                            </Image>
+
+
+                        </Grid>
+
+                    </Border>
+                    <Border x:Name="bdphone" Background="white" Margin="56,425,339,234" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <TextBox x:Name="phone" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="phone_TextChanged"/>
+                    </Border>
+                    <Border x:Name="brdpass" Background="white" Margin="350,285,28,374" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="274*"/>
+                                <ColumnDefinition Width="39*"/>
+
+
+
+                            </Grid.ColumnDefinitions>
+                            <PasswordBox x:Name="rpass" Margin="0,0,5,0" VerticalContentAlignment="Center" Height="42" VerticalAlignment="Center" PasswordChanged="rpass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="Sylfaen" Cursor="IBeam" />
+                            <TextBox FontWeight="Normal" Foreground="#FF403F3F" x:Name="runpass" Margin="0,0,5,0" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" Visibility="Hidden" TextChanged="runpass_TextChanged_1" BorderBrush="{x:Null}" Background="{x:Null}"/>
+
+                            <Image x:Name="rview" Source="/view.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="Image_MouseDown_2" Grid.ColumnSpan="2" />
+                            <Image x:Name="runview" Source="/eye.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="unview_MouseDown_2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+
+                        </Grid>
+                    </Border>
+                    <TextBlock Text="phone number" FontSize="24" FontFamily="Sylfaen" Margin="59,0,338,285" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <Border x:Name="bdDate" BorderThickness="1.5" BorderBrush="Black" VerticalAlignment="Top" CornerRadius="7" Background="white" Height="45" Margin="56,523,341,0">
+                        <DatePicker  Background="{x:Null}" x:Name="dpk" BorderBrush="{x:Null}" VerticalAlignment="Center" IsTodayHighlighted="False"  Margin="4,0,4,0" FontFamily="Sylfaen" FontSize="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Bottom" Text="sadf" Foreground="#FF7C7A7A" Cursor="Hand">
+                            <DatePicker.Resources>
+                                <Style TargetType="{x:Type DatePickerTextBox}">
+                                    <Setter Property="IsReadOnly" Value="True"/>
+                                </Style>
+                            </DatePicker.Resources>
+
+                        </DatePicker>
+                    </Border>
+                    <TextBlock Text="birthday" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,192" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <Border x:Name="bdcccd" Background="white" Margin="360,425,43,234" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                        <TextBox x:Name="cccd" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+
+                    </Border>
+                    
+                    <TextBlock Text="cccd" FontSize="24" FontFamily="Sylfaen" Margin="360,0,38,285" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <TextBlock Text="personal infromation" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,327" VerticalAlignment="Bottom" Foreground="#FF0500FF" />
+                    <Border  x:Name="lgborder" Background="#FFC6980A" Margin="200,627,200,30"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
+                        <TextBlock Text="Sign up" FontWeight="Bold" FontSize="30" FontFamily="Bahnschrift" HorizontalAlignment="Center" Foreground="White" Margin="0,6,0,-6">
+
+                        </TextBlock>
+                    </Border>
+                    <TextBlock x:Name="rptxt" Text="repeat password" FontSize="24" FontFamily="Sylfaen" Margin="354,0,43,425" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                    <TextBlock Text="gender:" FontSize="24" FontFamily="Sylfaen" Margin="354,0,216,185" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
+                </Grid>
+                <!--Gender-->
+                <Border BorderThickness="2"  Cursor="Hand" BorderBrush="Blue" x:Name="Male" Grid.Column="0" Background="Transparent" CornerRadius="7" Margin="0,491,56,174" MouseDown="Border_MouseDownu" MouseEnter="Male_MouseEnter" MouseLeave="Male_MouseLeave" HorizontalAlignment="Right" Width="135" Grid.Row="1">
+                    <Grid Margin="0,0,5,0" Cursor="Hand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="34*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="91*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="ic_male" Source="/Views/icons8-circle-64.png" Margin="5,0,5,0" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="1.295"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-0.042"/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+
+                        <TextBlock x:Name="txtMale" Foreground="blue" FontWeight="Bold" Grid.Column="2" Text="MALE" FontSize="22" FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center" Height="24" Width="81" >
+
+                        </TextBlock>
+                    </Grid>
+
+
+
+
+                </Border>
+                <Border Cursor="Hand" MouseDown="Border_MouseDownv" BorderThickness="2" BorderBrush="DeepPink" x:Name="fm" CornerRadius="7" Margin="453,536,56,129" MouseEnter="fm_MouseEnter" MouseLeave="fm_MouseLeave" Grid.Row="1" RenderTransformOrigin="0.5,0.5" >
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.102"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Grid Margin="0,0,2,0"  >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32*"/>
+
+                            <ColumnDefinition Width="59*"/>
+                            <ColumnDefinition Width="39*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="FMIMG" Source="/Views/icons8-circle-64.png" Margin="5,0,2,0" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="1.295"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-0.042"/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+
+                        </Image>
+
+
+
+                        <TextBlock  x:Name="TXTfM" Foreground="DeepPink" FontWeight="Bold" Grid.Column="1" Text="FEMALE" FontSize="22" FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Left" Height="24" Width="91" Grid.ColumnSpan="2" Margin="3,0,0,0" >
+
+                        </TextBlock>
+                    </Grid>
+
+                </Border >
+                <!--Gender-->
+
+            </Grid>
+
+
+
+
+        </Border>
+        <Border Margin="572,241,47,479" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5" MouseDown="Border_MouseDown_1" Cursor="Hand">
+            <Border.Background>
+                <ImageBrush ImageSource="/icons8-upload-64.png"/>
+            </Border.Background>
+        </Border>
+    </Grid>
+</Window>

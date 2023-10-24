@@ -59,11 +59,17 @@
     <Compile Include="Loginn.xaml.cs">
       <DependentUpon>Loginn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="signUp.xaml.cs">
+      <DependentUpon>signUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\receipt.xaml.cs">
+      <DependentUpon>receipt.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\room.xaml.cs">
       <DependentUpon>room.xaml</DependentUpon>
@@ -79,11 +85,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="signUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\receipt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\Clients\" />
+    <Folder Include="View\Manager\ReceipPage\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ginkgo.png" />
@@ -193,6 +208,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Manager\fall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-ginkgo-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-upload-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\home_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\home_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-calender-32 1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

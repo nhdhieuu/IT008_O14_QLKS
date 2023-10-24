@@ -40,6 +40,29 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
 =======
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe.config
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.pdb
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.AssemblyReference.cache
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\App.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.cache
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.lref
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.g.resources
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.Properties.Resources.resources
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cache
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.baml
 >>>>>>> 196f03a100ccf9ebe2c17810ced4613f09043b47
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
@@ -68,6 +91,40 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe.config
+D:\code\DACK\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe
+D:\code\DACK\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.AssemblyReference.cache
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.SuggestedBindingRedirects.cache
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\staff.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\App.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.cache
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.lref
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\Loginn.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.g.resources
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.Properties.Resources.resources
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cache
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\signUp.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\signUp.baml
 >>>>>>> 020c25dd15dd14e030f5ef75cde79bc1cbc1dfea
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.g.cs
+>>>>>>> c809f15a0bbbcbfc3a2ac29aba4737fbd2417cd7
+>>>>>>> 35a5abe58e0825e0fecc367635934c2555b27ea2
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml

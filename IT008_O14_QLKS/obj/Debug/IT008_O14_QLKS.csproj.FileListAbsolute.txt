@@ -12,8 +12,6 @@ D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.c
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
-D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.g.cs
-D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Login.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\manager_main.g.cs
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\manager_main.baml
 D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
@@ -45,3 +43,31 @@ D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\roo
 >>>>>>> 196f03a100ccf9ebe2c17810ced4613f09043b47
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+D:\Ca nhan\52\LTTQ\DACK\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe.config
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.exe
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\bin\Debug\IT008_O14_QLKS.pdb
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.AssemblyReference.cache
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\App.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.cache
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.lref
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.g.resources
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.Properties.Resources.resources
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cache
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+>>>>>>> 020c25dd15dd14e030f5ef75cde79bc1cbc1dfea
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.g.cs

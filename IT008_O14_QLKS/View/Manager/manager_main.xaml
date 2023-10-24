@@ -130,7 +130,7 @@
 
                                     </Grid.ColumnDefinitions>
                                     <Image Source="/View/Manager/a.png" Margin="10,4,13,6"/>
-                                    <TextBlock  x:Name="text3" Text="reciept" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                    <TextBlock  x:Name="text3" Text="receipt" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="48" Margin="42,0,0,0" RenderTransformOrigin="0.5,0.5">
                                         <TextBlock.RenderTransform>
@@ -211,8 +211,16 @@
 
                     </Grid>
                     <Grid Grid.Column="1" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="265*"/>
+                            <ColumnDefinition Width="132*"/>
+                        </Grid.ColumnDefinitions>
                         <ContentControl Height="590
+<<<<<<< HEAD
                                         " Content="{Binding}" Margin="0,0,12,15" Width="782"/>
+=======
+                                        " Content="{Binding}" Margin="0,0,12,15" Grid.ColumnSpan="2"/>
+>>>>>>> 020c25dd15dd14e030f5ef75cde79bc1cbc1dfea
 
                     </Grid>
 

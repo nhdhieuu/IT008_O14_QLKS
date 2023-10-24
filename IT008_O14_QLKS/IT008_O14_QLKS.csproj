@@ -72,6 +72,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\Manager\staff.xaml.cs">
+      <DependentUpon>staff.xaml</DependentUpon>
+    </Compile>
     <Page Include="Loginn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\room.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\staff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +184,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\fall.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

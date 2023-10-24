@@ -216,7 +216,8 @@
                             <ColumnDefinition Width="132*"/>
                         </Grid.ColumnDefinitions>
                         <ContentControl Height="590
-                                        " Content="{Binding}" Margin="0,0,12,15" Grid.ColumnSpan="2"/>
+
+                                        " Content="{Binding}" Margin="0,0,12,15" Width="782"/>
 
                     </Grid>
 

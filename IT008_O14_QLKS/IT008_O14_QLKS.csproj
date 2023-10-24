@@ -59,6 +59,9 @@
     <Compile Include="Loginn.xaml.cs">
       <DependentUpon>Loginn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="signUp.xaml.cs">
+      <DependentUpon>signUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
       <DependentUpon>staff.xaml</DependentUpon>
     </Compile>
     <Page Include="Loginn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="signUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +200,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Manager\fall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-ginkgo-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-upload-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

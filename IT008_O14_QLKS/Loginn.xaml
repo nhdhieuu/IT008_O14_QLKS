@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/View/Manager/icons8-ginkgo-64.png" MouseDown="Window_MouseDown">
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
     <Grid>
         <Border Background="White" CornerRadius="5" MouseDown="Border_MouseDown_1">
             <Grid>
@@ -43,7 +43,7 @@
                                 <TextBlock x:Name="minibtn_text" FontSize="40"
                                   VerticalAlignment="Top" 
                                    HorizontalAlignment="Center" FontFamily="Sylfaen" Text="-"
-                                   Foreground="Black" Margin="0,-11,0,0"/>
+                                   Foreground="Black" Margin="0,-11,0,0" Cursor="Hand"/>
 
                             </Border>
 
@@ -55,7 +55,7 @@
                                 <TextBlock x:Name="delbtn_text" FontSize="25 
                                 "  VerticalAlignment="Center" 
                                    HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
-                                   Foreground="#740909"/>
+                                   Foreground="#740909" Cursor="Hand"/>
 
                             </Border>
                         </Grid>
@@ -73,13 +73,13 @@
                             <TextBlock Text="username" FontSize="24" FontFamily="Sylfaen" Margin="45,5,0,0" VerticalAlignment="Bottom" Foreground="#FF897C54">
 
                             </TextBlock>
-                            <Border Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                                <TextBox Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center"/>
+                            <Border x:Name="usrbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                                <TextBox Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
                             </Border>
                             <TextBlock Text="password"  FontSize="24" FontFamily="Sylfaen" Margin="45,20,0,0" Foreground="#FF897C54">
 
                             </TextBlock>
-                            <Border Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                            <Border x:Name="pssbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="164*">
@@ -89,11 +89,11 @@
 
                                         </ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" PasswordChanged="PasswordBox_PasswordChanged">
+                                    <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" PasswordChanged="PasswordBox_PasswordChanged" MouseDown="pass_MouseDown" Cursor="IBeam">
 
                                     </PasswordBox >
                                     <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>
-                                    <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/view.png" MouseDown="Image_MouseDown">
+                                    <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
                                         
                                     </Image>
                                     <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
@@ -102,11 +102,11 @@
                                 </Grid>
 
                             </Border>
-                            <TextBlock x:Name="fgpw"  Text="forgot password"  FontSize="24" FontFamily="Sylfaen" Margin="280,2,0,0" Foreground="#FF897C54" Width="162" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave">
+                            <TextBlock x:Name="fgpw"  Text="forgot password"  FontSize="24" FontFamily="Sylfaen" Margin="280,2,0,0" Foreground="#FF897C54" Width="162" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Cursor="Hand">
 
                             </TextBlock>
 
-                            <Border  x:Name="lgborder" Height="65" Background="#FFC6980A" Margin="46,20,40,3"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" >
+                            <Border  x:Name="lgborder" Height="65" Background="#FFC6980A" Margin="46,20,40,3"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
                                 <TextBlock Text="LOG IN" FontWeight="Bold" FontSize="50" FontFamily="Bahnschrift" HorizontalAlignment="Center" Foreground="White" Margin="0,6,0,-6">
 
                                 </TextBlock>
@@ -115,7 +115,7 @@
                                 <TextBlock Text="Don't have an account ?"  FontSize="24" FontFamily="Sylfaen" Margin="100,2,0,0" Foreground="Black" Width="249">
 
                                 </TextBlock>
-                                <TextBlock x:Name="su" Text="Sign up"  FontSize="24" FontFamily="Sylfaen" Margin="0,2,0,0" Foreground="#FF897C54" Width="80" MouseEnter="TextBlock_MouseEnter_1" MouseLeave="TextBlock_MouseLeave_1">
+                                <TextBlock x:Name="su" Text="Sign up"  FontSize="24" FontFamily="Sylfaen" Margin="0,2,0,0" Foreground="#FF897C54" Width="80" MouseEnter="TextBlock_MouseEnter_1" MouseLeave="TextBlock_MouseLeave_1" MouseDown="su_MouseDown" Cursor="Hand">
 
                                 </TextBlock>
 

@@ -166,6 +166,30 @@ namespace IT008_O14_QLKS
         {
             pass.Password = unpass.Text;
         }
+
+        private void su_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            signUp su= new signUp();
+            su.ShowDialog();
+        }
+
+        private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            usrbox.Background = new SolidColorBrush(Colors.White);
+        }
+
+     
+
+        private void pass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            usrbox.Background = new SolidColorBrush(Colors.White);
+        }
+
+        private void TextBox_MouseMove(object sender, MouseEventArgs e)
+        {
+        
+        }
+
     }
     }
 

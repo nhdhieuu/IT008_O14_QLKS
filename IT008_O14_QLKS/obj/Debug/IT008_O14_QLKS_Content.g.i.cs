@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/manager/fall.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons8-upload-64.png")]
 
 

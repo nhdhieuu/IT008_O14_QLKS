@@ -221,6 +221,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void border5_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            DataContext = new staff();
             text5.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border5.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 5;
@@ -245,7 +246,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-          MainWindow form =new MainWindow();
+          Loginn form =new Loginn();
             form.Show();
             this.Close();
         }

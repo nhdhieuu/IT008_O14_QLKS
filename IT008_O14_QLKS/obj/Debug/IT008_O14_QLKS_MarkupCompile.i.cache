@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\
+=======
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\
+>>>>>>> 35a5abe58e0825e0fecc367635934c2555b27ea2
 IT008_O14_QLKS
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\App.xaml
 51987629694
 
 10-1300123474
 14-1656046352
 Login.xaml;View\Manager\home.xaml;View\Manager\Manager_main.xaml;View\Manager\receipt.xaml;View\Manager\room.xaml;
+=======
+D:\code\DACK\IT008_O14_QLKS\App.xaml
+6-42304632
+
+11-180075780
+14-1656046352
+Loginn.xaml;signUp.xaml;View\Manager\home.xaml;View\Manager\Manager_main.xaml;View\Manager\room.xaml;View\Manager\staff.xaml;
+>>>>>>> 35a5abe58e0825e0fecc367635934c2555b27ea2
 
 False
 

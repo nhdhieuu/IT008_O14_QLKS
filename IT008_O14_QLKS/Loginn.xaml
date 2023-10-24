@@ -1,0 +1,147 @@
+﻿<Window x:Class="IT008_O14_QLKS.Loginn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS"
+        mc:Ignorable="d"
+        Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
+    <Grid>
+        <Border Background="White" CornerRadius="5" MouseDown="Border_MouseDown_1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition >
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="519">
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="40
+                                          "/>
+                                <ColumnDefinition Width="40
+                                          "/>
+
+                            </Grid.ColumnDefinitions >
+                            <Border x:Name="minibtn_border"  Grid.Column="1" 
+                            Background="Transparent"
+                            CornerRadius="0,5,0,0" MouseDown="minibtn_border_MouseDown" MouseEnter="minibtn_border_MouseEnter" MouseLeave="minibtn_border_MouseLeave" Cursor="Hand" 
+                            >
+                                <TextBlock x:Name="minibtn_text" FontSize="40"
+                                  VerticalAlignment="Top" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="-"
+                                   Foreground="Black" Margin="0,-11,0,0" Cursor="Hand"/>
+
+                            </Border>
+
+
+                            <Border x:Name="delbtn_border"  Grid.Column="2" 
+                            Background="Transparent"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2" Cursor="Hand"
+                            >
+                                <TextBlock x:Name="delbtn_text" FontSize="25 
+                                "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                            </Border>
+                        </Grid>
+                        <StackPanel Grid.Row="1">
+                            <TextBlock  Margin="0,20,0,0" FontStyle="Normal"  FontFamily=".VnTime" Text="GINKGO" FontSize="115" Width="444" Height="108" Foreground="#FFC6980A"/>
+                            <StackPanel  Orientation="Horizontal">
+                                <TextBlock Margin="40,0,0,0" FontStyle="Normal"  FontFamily="Sylfaen" Text="hotel" FontSize="90" Width="194" Height="105" Foreground="Black"/>
+                                <Border Width="85" Height="85" Margin="157,15,20,0" RenderTransformOrigin="0.473,0.492">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/ginkgo.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </StackPanel>
+                            <TextBlock Text="username" FontSize="24" FontFamily="Sylfaen" Margin="45,5,0,0" VerticalAlignment="Bottom" Foreground="#FF897C54">
+
+                            </TextBlock>
+                            <Border x:Name="usrbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                                <TextBox Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
+                            </Border>
+                            <TextBlock Text="password"  FontSize="24" FontFamily="Sylfaen" Margin="45,20,0,0" Foreground="#FF897C54">
+
+                            </TextBlock>
+                            <Border x:Name="pssbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="164*">
+
+                                        </ColumnDefinition>
+                                        <ColumnDefinition Width="31*">
+
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" PasswordChanged="PasswordBox_PasswordChanged" MouseDown="pass_MouseDown" Cursor="IBeam">
+
+                                    </PasswordBox >
+                                    <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>
+                                    <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
+                                        
+                                    </Image>
+                                    <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
+
+                                    </Image>
+                                </Grid>
+
+                            </Border>
+                            <TextBlock x:Name="fgpw"  Text="forgot password"  FontSize="24" FontFamily="Sylfaen" Margin="280,2,0,0" Foreground="#FF897C54" Width="162" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Cursor="Hand">
+
+                            </TextBlock>
+
+                            <Border  x:Name="lgborder" Height="65" Background="#FFC6980A" Margin="46,20,40,3"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
+                                <TextBlock Text="LOG IN" FontWeight="Bold" FontSize="50" FontFamily="Bahnschrift" HorizontalAlignment="Center" Foreground="White" Margin="0,6,0,-6">
+
+                                </TextBlock>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                <TextBlock Text="Don't have an account ?"  FontSize="24" FontFamily="Sylfaen" Margin="100,2,0,0" Foreground="Black" Width="249">
+
+                                </TextBlock>
+                                <TextBlock x:Name="su" Text="Sign up"  FontSize="24" FontFamily="Sylfaen" Margin="0,2,0,0" Foreground="#FF897C54" Width="80" MouseEnter="TextBlock_MouseEnter_1" MouseLeave="TextBlock_MouseLeave_1" MouseDown="su_MouseDown" Cursor="Hand">
+
+                                </TextBlock>
+
+                            </StackPanel>
+
+
+
+
+
+                        </StackPanel>
+
+
+
+                    </Grid>
+
+                </Grid>
+                <Border Height="645" Width="492" CornerRadius="5,0,0,5" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="/login.jpg" Stretch="UniformToFill"/>
+                    </Border.Background>
+                </Border>
+
+
+            </Grid>
+
+
+        </Border>
+    </Grid>
+</Window>

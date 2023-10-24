@@ -56,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Loginn.xaml.cs">
+      <DependentUpon>Loginn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="signUp.xaml.cs">
+      <DependentUpon>signUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -68,18 +74,21 @@
     <Compile Include="View\Manager\room.xaml.cs">
       <DependentUpon>room.xaml</DependentUpon>
     </Compile>
-    <Page Include="Login.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="View\Manager\staff.xaml.cs">
+      <DependentUpon>staff.xaml</DependentUpon>
     </Compile>
+    <Page Include="Loginn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="signUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\room.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\staff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,7 +186,37 @@
     <Resource Include="View\Manager\icons8-ginkgo-64 %282%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Manager\reload1.png" />
+    <Resource Include="e5917cac42dfe301188942ca66d5319d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ginkgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\fall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-ginkgo-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-upload-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

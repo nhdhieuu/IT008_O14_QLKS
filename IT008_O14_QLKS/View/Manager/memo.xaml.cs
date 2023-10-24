@@ -12,29 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using IT008_O14_QLKS.View.Manager;
 
-namespace IT008_O14_QLKS
+namespace IT008_O14_QLKS.View.Manager
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for memo.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class memo : UserControl
     {
-        public MainWindow()
+        public memo()
         {
             InitializeComponent();
-        }
-
-      
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //tao form manager_main
-
-            Manager_main main = new Manager_main();
-            main.Show();
-            this.Close();
-           
         }
     }
 }

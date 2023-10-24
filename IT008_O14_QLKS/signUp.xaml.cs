@@ -125,7 +125,12 @@ namespace IT008_O14_QLKS
             if (name.Text==""||user.Text==""||unpass.Text==""||runpass.Text==""||phone.Text==""||cccd.Text==""|| selectedDate==null || gender==false)
             {
                 MessageBox.Show("Please complete all information");
-            }  
+            } 
+            else
+            {
+                MessageBox.Show("Sucessfully");
+                this.Close();
+            }    
             
 
         }

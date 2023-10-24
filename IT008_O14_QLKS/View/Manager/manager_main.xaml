@@ -30,7 +30,7 @@
                     </Grid.ColumnDefinitions >
                     <Border x:Name="minibtn_border"  Grid.Column="1" 
                             Background="Transparent"
-                            CornerRadius="0,5,0,0" MouseDown="minibtn_border_MouseDown" MouseEnter="minibtn_border_MouseEnter" MouseLeave="minibtn_border_MouseLeave" 
+                            CornerRadius="0,5,0,0" MouseDown="minibtn_border_MouseDown" MouseEnter="minibtn_border_MouseEnter" MouseLeave="minibtn_border_MouseLeave" Cursor="Hand" 
                             >
                         <TextBlock x:Name="minibtn_text" FontSize="40"
                                   VerticalAlignment="Top" 
@@ -42,7 +42,7 @@
 
                     <Border x:Name="delbtn_border"  Grid.Column="2" 
                             Background="Transparent"
-                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2" Cursor="Hand"
                             >
                         <TextBlock x:Name="delbtn_text" FontSize="25 
                                 "  VerticalAlignment="Center" 
@@ -86,7 +86,7 @@
                             <Image Grid.Column="1" Source="/View/Manager/ginkgo.png" Margin="0,56,13,56"/>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Border  x:Name="border1"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFF1F0E7" MouseDown="border1_MouseDown" MouseEnter="border1_MouseEnter" MouseLeave="border1_MouseLeave">
+                            <Border  x:Name="border1"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFF1F0E7" MouseDown="border1_MouseDown" MouseEnter="border1_MouseEnter" MouseLeave="border1_MouseLeave" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -104,7 +104,7 @@
 
                         </Grid>
                         <Grid Grid.Row="2">
-                            <Border  x:Name="border2"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border2_MouseEnter" MouseLeave="border2_MouseLeave" MouseDown="border2_MouseDown">
+                            <Border  x:Name="border2"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border2_MouseEnter" MouseLeave="border2_MouseLeave" MouseDown="border2_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -122,7 +122,7 @@
 
                         </Grid>
                         <Grid Grid.Row="3">
-                            <Border  x:Name="border3"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border3_MouseEnter" MouseLeave="border3_MouseLeave" MouseDown="border3_MouseDown">
+                            <Border  x:Name="border3"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border3_MouseEnter" MouseLeave="border3_MouseLeave" MouseDown="border3_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -148,7 +148,7 @@
 
                         </Grid>
                         <Grid Grid.Row="4">
-                            <Border  x:Name="border4" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border4_MouseEnter" MouseLeave="border4_MouseLeave" MouseDown="border4_MouseDown">
+                            <Border  x:Name="border4" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border4_MouseEnter" MouseLeave="border4_MouseLeave" MouseDown="border4_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -166,7 +166,7 @@
 
                         </Grid>
                         <Grid Grid.Row="5">
-                            <Border  x:Name="border5" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border5_MouseEnter" MouseLeave="border5_MouseLeave" MouseDown="border5_MouseDown">
+                            <Border  x:Name="border5" CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border5_MouseEnter" MouseLeave="border5_MouseLeave" MouseDown="border5_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -184,7 +184,7 @@
 
                         </Grid>
                         <Grid Grid.Row="6">
-                            <Border x:Name="border6"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" MouseEnter="border6_MouseEnter" MouseLeave="border6_MouseLeave" MouseDown="border6_MouseDown">
+                            <Border x:Name="border6"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" MouseEnter="border6_MouseEnter" MouseLeave="border6_MouseLeave" MouseDown="border6_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="48"/>
@@ -192,7 +192,7 @@
 
                                     </Grid.ColumnDefinitions>
                                     <Image Source="/View/Manager/icons8-notification-50.png" Margin="10,4,13,6"/>
-                                    <TextBlock  x:Name="text6" Text="memo" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                    <TextBlock  x:Name="text6" Text="notice" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="42" Margin="46,0,0,0">
 
@@ -202,7 +202,7 @@
 
                         </Grid>
 
-                        <TextBlock x:Name="txt_logout" Grid.Row="7" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sylfaen" FontSize="19" Foreground="#FFC6980A" Margin="0,98,0,0" MouseDown="TextBlock_MouseDown" MouseEnter="txt_logout_MouseEnter" MouseLeave="txt_logout_MouseLeave"><Run Text="Log out" TextDecorations="Underline"/></TextBlock>
+                        <TextBlock x:Name="txt_logout" Grid.Row="7" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sylfaen" FontSize="19" Foreground="#FFC6980A" Margin="0,98,0,0" MouseDown="TextBlock_MouseDown" MouseEnter="txt_logout_MouseEnter" MouseLeave="txt_logout_MouseLeave" Cursor="Hand"><Run Text="Log out" TextDecorations="Underline"/></TextBlock>
 
 
 
@@ -212,7 +212,7 @@
                     </Grid>
                     <Grid Grid.Column="1" Background="Transparent">
                         <ContentControl Height="590
-                                        " Content="{Binding}" Margin="0,0,12,15"/>
+                                        " Content="{Binding}" Margin="0,0,12,15" Width="782"/>
 
                     </Grid>
 

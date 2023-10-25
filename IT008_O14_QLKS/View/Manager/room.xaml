@@ -10,7 +10,7 @@
         <Grid>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="139" Margin="498,23,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
                 <Border.Background>
-                    <ImageBrush ImageSource="/View/Manager/room2.jpg" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="/Resources/room2.jpg" Stretch="UniformToFill"/>
                 </Border.Background>
                 <Grid>
                     <Border Margin="193,41,0,48" Background="#FFC6980A" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="51" >
@@ -22,7 +22,7 @@
             </Border>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="380" Margin="498,188,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
                 <Border.Background>
-                    <ImageBrush ImageSource="/View/Manager/room1.jpg"/>
+                    <ImageBrush ImageSource="/Resources/room1.jpg"/>
                 </Border.Background>
                 <Grid>
                     <Border Margin="16,39,13,224" CornerRadius="5,5,5,5" Background="White">
@@ -39,7 +39,7 @@
                         </GroupBox>
                     </Border>
                     <Border x:Name="Clean" HorizontalAlignment="Left" Width="47" Height="41" VerticalAlignment="Top" Margin="17,326,0,0" CornerRadius="5,5,5,5" Background="#FF66BB6A" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" >
-                        <Image Source="/View/Manager/broom.png" Margin="2,4,5,4"/>
+                        <Image Source="/Resources/broom.png" Margin="2,4,5,4"/>
                     </Border>
                     <Label Content="Filter" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="28" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="173,-6,0,0" FontWeight="Bold" />
 
@@ -70,7 +70,7 @@
                 <Grid>
                     <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
                         <Border.Background>
-                            <ImageBrush ImageSource="/View/Manager/room_p1.png"/>
+                            <ImageBrush ImageSource="/Resources/room_p1.png"/>
                         </Border.Background>
                         <Grid>
                             <Label Content="P101" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
@@ -89,7 +89,7 @@
                 <Grid>
                     <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
                         <Border.Background>
-                            <ImageBrush ImageSource="/View/Manager/room_p2.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/room_p2.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                         <Grid>
                             <Label Content="P102" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>
@@ -113,7 +113,7 @@
                 <Grid>
                     <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
                         <Border.Background>
-                            <ImageBrush ImageSource="/View/Manager/room_p3.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/room_p3.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                         <Grid>
                             <Label Content="P103" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
@@ -133,7 +133,7 @@
                 <Grid>
                     <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
                         <Border.Background>
-                            <ImageBrush ImageSource="/View/Manager/room_p4.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/room_p4.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                         <Grid>
                             <Label Content="P104" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>

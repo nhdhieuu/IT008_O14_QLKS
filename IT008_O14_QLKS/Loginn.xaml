@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/Resources/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
     <Grid>
         <Border Background="White" CornerRadius="5" MouseDown="Border_MouseDown_1">
             <Grid>
@@ -65,7 +65,7 @@
                                 <TextBlock Margin="40,0,0,0" FontStyle="Normal"  FontFamily="Sylfaen" Text="hotel" FontSize="90" Width="194" Height="105" Foreground="Black"/>
                                 <Border Width="85" Height="85" Margin="157,15,20,0" RenderTransformOrigin="0.473,0.492">
                                     <Border.Background>
-                                        <ImageBrush ImageSource="/ginkgo.png"/>
+                                        <ImageBrush ImageSource="/Resources/ginkgo.png"/>
                                     </Border.Background>
                                 </Border>
 
@@ -93,10 +93,10 @@
 
                                     </PasswordBox >
                                     <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>
-                                    <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
+                                    <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/Resources/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
                                         
                                     </Image>
-                                    <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
+                                    <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
 
                                     </Image>
                                 </Grid>
@@ -134,7 +134,7 @@
                 </Grid>
                 <Border Height="645" Width="492" CornerRadius="5,0,0,5" >
                     <Border.Background>
-                        <ImageBrush ImageSource="/login.jpg" Stretch="UniformToFill"/>
+                        <ImageBrush ImageSource="/Resources/login.jpg" Stretch="UniformToFill"/>
                     </Border.Background>
                 </Border>
 

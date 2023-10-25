@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,355,0" CornerRadius="5,5,5,5" Grid.RowSpan="2">
             <Border.Background>
-                <ImageBrush ImageSource="/View/Manager/home_2.png"/>
+                <ImageBrush ImageSource="/Resources/home_2.png"/>
             </Border.Background>
         </Border>
         <Border x:Name="View_more" BorderBrush="Black" BorderThickness="1" Margin="454,455,186,14" CornerRadius="5,5,5,5" Grid.Row="1" Background="#FFC6980A" MouseDown="View_more_MouseDown" MouseEnter="View_more_MouseEnter" MouseLeave="View_more_MouseLeave" Cursor="Hand">
@@ -51,7 +51,7 @@
                     <Grid>
                         <Ellipse HorizontalAlignment="Left" Height="99" Stroke="#FFC6980A" VerticalAlignment="Top" Width="99" Margin="183,103,0,0">
                             <Ellipse.Fill>
-                                <ImageBrush x:Name="avt" ImageSource="/user.png" />
+                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" />
                             </Ellipse.Fill>
                         </Ellipse>
 
@@ -116,7 +116,7 @@
         </Border>
         <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="683,13,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="56" MouseDown="avt_load_MouseDown" Cursor="Hand">
             <Ellipse.Fill>
-                <ImageBrush x:Name="avtt" ImageSource="/icons8-upload-64.png" />
+                <ImageBrush x:Name="avtt" ImageSource="/Resources/icons8-upload-64.png" />
             </Ellipse.Fill>
         </Ellipse>
         <Label Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="483,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />

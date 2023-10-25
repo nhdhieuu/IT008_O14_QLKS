@@ -7,7 +7,7 @@
         mc:Ignorable="d"
          Height="745px" Width="644px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
+        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/Resources/icons8-ginkgo-64 (1).png" MouseDown="Window_MouseDown">
 
     <Grid>
 
@@ -45,7 +45,7 @@
                     <Border CornerRadius="1000" Background="white" Margin="400,28,78,507">
                         <Ellipse Stroke="#FFC6980A" StrokeThickness="5"  >
                             <Ellipse.Fill>
-                                <ImageBrush x:Name="avt" ImageSource="/user.png" />
+                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" />
                             </Ellipse.Fill>
                         </Ellipse>
                     </Border>
@@ -76,10 +76,10 @@
                             <PasswordBox x:Name="pass"  Margin="0,0,38,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="42" VerticalAlignment="Center" Foreground="#FF403F3F" PasswordChanged="pass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Cursor="IBeam" />
                             <TextBox x:Name="unpass" Visibility="Hidden" Foreground="#FF403F3F"  Margin="0,0,38,0"  Grid.ColumnSpan="2" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" TextChanged="unpass_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}"/>
 
-                            <Image x:Name="view"  Grid.Column="1" Source="/view.png" Margin="6" Cursor="Hand" MouseDown="Image_MouseDown_1" >
+                            <Image x:Name="view"  Grid.Column="1" Source="/Resources/view.png" Margin="6" Cursor="Hand" MouseDown="Image_MouseDown_1" >
 
                             </Image>
-                            <Image x:Name="unview" Grid.Column="1" Source="/eye.png" Margin="6" Cursor="Hand" Visibility="Hidden" MouseDown="unview_MouseDown" >
+                            <Image x:Name="unview" Grid.Column="1" Source="/Resources/eye.png" Margin="6" Cursor="Hand" Visibility="Hidden" MouseDown="unview_MouseDown" >
 
                             </Image>
 
@@ -102,8 +102,8 @@
                             <PasswordBox x:Name="rpass" Margin="0,0,5,0" VerticalContentAlignment="Center" Height="42" VerticalAlignment="Center" PasswordChanged="rpass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="Sylfaen" Cursor="IBeam" />
                             <TextBox FontWeight="Normal" Foreground="#FF403F3F" x:Name="runpass" Margin="0,0,5,0" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" Visibility="Hidden" TextChanged="runpass_TextChanged_1" BorderBrush="{x:Null}" Background="{x:Null}"/>
 
-                            <Image x:Name="rview" Source="/view.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="Image_MouseDown_2" Grid.ColumnSpan="2" />
-                            <Image x:Name="runview" Source="/eye.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="unview_MouseDown_2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+                            <Image x:Name="rview" Source="/Resources/view.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="Image_MouseDown_2" Grid.ColumnSpan="2" />
+                            <Image x:Name="runview" Source="/Resources/eye.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="unview_MouseDown_2" Grid.ColumnSpan="2" Visibility="Hidden"/>
 
                         </Grid>
                     </Border>
@@ -212,7 +212,7 @@
         </Border>
         <Border Margin="572,241,47,479" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5" MouseDown="Border_MouseDown_1" Cursor="Hand">
             <Border.Background>
-                <ImageBrush ImageSource="/icons8-upload-64.png"/>
+                <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
             </Border.Background>
         </Border>
     </Grid>

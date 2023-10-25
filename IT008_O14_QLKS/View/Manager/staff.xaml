@@ -50,7 +50,7 @@
                 </Grid.RowDefinitions>
                 <Border CornerRadius="5" Margin="16,10,16,10">
                     <Grid>
-                        <Image Source="/View/Manager/fall.jpg" Stretch="UniformToFill"/>
+                        <Image Source="/Resources/fall.jpg" Stretch="UniformToFill"/>
                         <Label Name="datelb" Content="Date" FontSize="16" Margin="0,76,0,0" />
                     </Grid>
                 </Border>

@@ -83,7 +83,7 @@
 
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="GINKGO" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" FontFamily="Sylfaen" Height="36" Width="106" Margin="21,0,0,0"/>
-                            <Image Grid.Column="1" Source="/View/Manager/ginkgo.png" Margin="0,56,13,56"/>
+                            <Image Grid.Column="1" Source="/Resources/ginkgo.png" Margin="0,56,13,56"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <Border  x:Name="border1"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#FFF1F0E7" MouseDown="border1_MouseDown" MouseEnter="border1_MouseEnter" MouseLeave="border1_MouseLeave" Cursor="Hand" Margin="0,0,0,7">
@@ -93,7 +93,7 @@
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/icons8-home-32.png" Margin="10,4,13,6"/>
+                                    <Image Source="/Resources/icons8-home-32.png" Margin="10,4,10,3"/>
                                     <TextBlock x:Name="text1" Text="home" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="#FFC6980A" Height="22" Width="38" Margin="52,0,0,0">
@@ -107,11 +107,11 @@
                             <Border  x:Name="border2"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="border2_MouseEnter" MouseLeave="border2_MouseLeave" MouseDown="border2_MouseDown" Cursor="Hand">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/icons8-room-50.png" Margin="10,4,13,6"/>
+                                    <Image Source="/Resources/icons8-room-50.png" Margin="10,4,15,9"/>
                                     <TextBlock  x:Name="text2" Text="room" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="38" Margin="54,0,0,0">
@@ -129,7 +129,7 @@
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/a.png" Margin="10,4,13,6"/>
+                                    <Image Source="/Resources/a.png" Margin="10,4,13,6"/>
                                     <TextBlock  x:Name="text3" Text="receipt" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="48" Margin="42,0,0,0" RenderTransformOrigin="0.5,0.5">
@@ -155,7 +155,7 @@
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/icons8-service-50 (1).png" Margin="10,4,13,6" OpacityMask="White"/>
+                                    <Image Source="/Resources/icons8-service-50 (1).png" Margin="10,4,13,6" OpacityMask="White"/>
                                     <TextBlock  x:Name="text4" Text="service" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="46" Margin="43,0,0,0">
@@ -173,7 +173,7 @@
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/icons8-human-50.png" Margin="10,4,13,6"/>
+                                    <Image Source="/Resources/icons8-human-50.png" Margin="10,4,10,6"/>
                                     <TextBlock  x:Name="text5" Text="staff" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="38" Margin="56,0,0,0">
@@ -191,7 +191,7 @@
                                         <ColumnDefinition/>
 
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="/View/Manager/icons8-notification-50.png" Margin="10,4,13,6"/>
+                                    <Image Source="/Resources/icons8-notification-50.png" Margin="12,4,12,8"/>
                                     <TextBlock  x:Name="text6" Text="notice" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
 " Foreground="Black" Height="22" Width="42" Margin="46,0,0,0">

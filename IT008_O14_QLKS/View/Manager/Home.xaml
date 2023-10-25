@@ -16,13 +16,13 @@
                 <ImageBrush ImageSource="/View/Manager/home_2.png"/>
             </Border.Background>
         </Border>
-        <Border x:Name="View_more" BorderBrush="Black" BorderThickness="1" Margin="454,447,186,22" CornerRadius="5,5,5,5" Grid.Row="1" Background="#FFC6980A" MouseDown="View_more_MouseDown" MouseEnter="View_more_MouseEnter" MouseLeave="View_more_MouseLeave" Cursor="Hand">
+        <Border x:Name="View_more" BorderBrush="Black" BorderThickness="1" Margin="454,455,186,14" CornerRadius="5,5,5,5" Grid.Row="1" Background="#FFC6980A" MouseDown="View_more_MouseDown" MouseEnter="View_more_MouseEnter" MouseLeave="View_more_MouseLeave" Cursor="Hand">
             <Label Content="View more" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-1,0,0" FontWeight="Bold" />
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="451,76,20,83" CornerRadius="5,5,5,5" Grid.RowSpan="2" Background="#FFB6A982">
-            <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="451,76,20,69" CornerRadius="5,5,5,5" Grid.RowSpan="2" Background="#FFB6A982">
+            <Grid Margin="0,0,0,3">
                 <Label Content="Profile" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="30" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-3,0,0" FontWeight="Bold" />
-                <Border Margin="10,294,10,10" Background="#FFE9E5D9" BorderBrush="Black" CornerRadius="5,5,5,5" >
+                <Border Margin="10,294,10,8" Background="#FFE9E5D9" BorderBrush="Black" CornerRadius="5,5,5,5" >
                     <Grid>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
@@ -40,7 +40,7 @@
                                 <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="1,0,0,0" Width="199"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="Change_pass" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="24" Margin="158,96,0,0" VerticalAlignment="Top" Width="109" CornerRadius="5,5,5,5" Background="#FFC6980A" MouseDown="Change_pass_MouseDown" MouseEnter="Change_pass_MouseEnter" MouseLeave="Change_pass_MouseLeave" Cursor="Hand">
+                        <Border x:Name="Change_pass" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="24" Margin="158,101,0,0" VerticalAlignment="Top" Width="109" CornerRadius="5,5,5,5" Background="#FFC6980A" MouseDown="Change_pass_MouseDown" MouseEnter="Change_pass_MouseEnter" MouseLeave="Change_pass_MouseLeave" Cursor="Hand">
 
                             <Label Content="Change Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " Margin="6,-3,0,0" Width="117" Foreground="#FFEFEFEF"/>
 
@@ -114,7 +114,7 @@
                 </Border>
             </Grid>
         </Border>
-        <Ellipse HorizontalAlignment="Left" Height="56" Margin="683,13,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56">
+        <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="683,13,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="56" MouseDown="avt_load_MouseDown" Cursor="Hand">
             <Ellipse.Fill>
                 <ImageBrush x:Name="avtt" ImageSource="/icons8-upload-64.png" />
             </Ellipse.Fill>

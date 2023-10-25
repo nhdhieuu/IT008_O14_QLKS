@@ -263,5 +263,15 @@
   <ItemGroup>
     <Resource Include="Resources\view.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\datepicker.png" />
+    <Content Include="Resources\filter.png" />
+    <Content Include="Resources\money.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\sort_by.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

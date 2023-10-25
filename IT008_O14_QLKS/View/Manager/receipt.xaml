@@ -8,8 +8,8 @@
              d:DesignHeight="599" d:DesignWidth="761">
     
     <Grid>
-        <Border Background="White" CornerRadius="10">
-            <Grid >
+        <Border Background="#F1F0E7" CornerRadius="10">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="487"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -29,21 +29,130 @@
 
                         <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Sylfaen" Foreground="#C6980A" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0"/>
-                        <Border Grid.Column="2" Background="Aqua" CornerRadius="12" Margin="0,17,0,4">
+                        <Border Grid.Column="2" Background="#D9D9D9" CornerRadius="12" Margin="0,17,0,4">
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="79"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="26"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
+                                <Border CornerRadius="12,0,0,12" Background="Azure">
+                                    <Label Content="Search" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" HorizontalAlignment="Center"></Label>
+                                </Border>
+                                <TextBox  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
+                                <Image Grid.Column="2" Source="/Resources/search.png" Margin="0,7,6,6"></Image>
                                 
-                                <TextBox  Grid.Column="1" Background="Transparent" ></TextBox>
 
                             </Grid>
                         </Border>
                         
                     </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel Margin="14,10,0,0" >
+                            <Border CornerRadius="10" Height="74">
+                                <Border.Background>
+                                    <!-- #FFF -->
+                                    <ImageBrush ImageSource="/Resources/card.png"></ImageBrush>
+                                </Border.Background>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="130"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.5*"></RowDefinition>
+                                            <RowDefinition  Height="0.5*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <Label Content="#22102312D" FontFamily="Bahnschrift" FontSize="30" Foreground="#FFF" Margin="7,0,0,0"></Label>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <StackPanel Orientation="Horizontal" Margin="7,0,0,0">
+                                                <Label Content="20:00" FontFamily="Bahnschrift" FontSize="25" Foreground="#0AC6C6"></Label>
+                                                <Label Content="October 22, 2023" FontFamily="Bahnschrift" FontSize="25" Foreground="#FAB005"></Label>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="46"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                                <Label Content="2.000.000" FontFamily="Bahnschrift" FontSize="20" Foreground="#12CE69"  ></Label>
+                                                <Image Source="/Resources/money.png" VerticalAlignment="Center" Margin="0,5,0,0"></Image>
+                                            </StackPanel>
+                                            
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Button Width="40" Height="40" Margin="50,0,0,0">
+                                                <Image Source="/Resources/view.png"></Image>
+                                            </Button>
+                                        </Grid>
+                                        
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            
+                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
+                                <Border.Background>
+                                    #FFF
+                                </Border.Background>
+                                <Grid>
+                                    <Label Content="asda"></Label>
+                                </Grid>
+                            </Border>
+                            
+                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
+                                <Border.Background>
+                                    #FFF
+                                </Border.Background>
+                                <Grid>
+                                    <Label Content="asda"></Label>
+                                </Grid>
+                            </Border>
+                            
+                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
+                                <Border.Background >
+                                    #FFF
+                                </Border.Background>
+                                <Grid>
+                                    <Label Content="asda"></Label>
+                                </Grid>
+                            </Border>
+                            
+                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
+                                <Border.Background>
+                                    #FFF
+                                </Border.Background>
+                                <Grid>
+                                    <Label Content="asda"></Label>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
-                
+                <Grid Grid.Column="1">
+                    <StackPanel Margin="20,17,8,12">
+                        <Border CornerRadius="7">
+                            <Image Source="/Resources/datepicker.png"></Image>
+                        </Border>
+                        
+                        <Border CornerRadius="7" Margin="0,11,0,0">
+                            <Image Source="/Resources/filter.png"></Image>
+                        </Border>
+                        
+                        <Border CornerRadius="7" Margin="0,11,0,0">
+                            <Image Source="/Resources/sort_by.png"></Image>
+                        </Border>
+                        
+                        <Border CornerRadius="7" Margin="0,11,0,0">
+                            <Border.Background>#272652</Border.Background>
+                        </Border>
+                    </StackPanel>
+                </Grid>
                 
             </Grid>
         </Border>

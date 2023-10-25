@@ -218,5 +218,56 @@
   <ItemGroup>
     <Resource Include="icons8-upload-64.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\home_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\home_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\icons8-calender-32 1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\broom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_p2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_p1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_p3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\room_p4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Manager\wrench.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

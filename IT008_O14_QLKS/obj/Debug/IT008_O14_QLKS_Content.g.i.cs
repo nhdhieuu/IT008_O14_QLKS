@@ -8,10 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/manager/reload1.png")]
-=======
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons8-upload-64.png")]
->>>>>>> 35a5abe58e0825e0fecc367635934c2555b27ea2
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/manager/wrench.png")]
 
 

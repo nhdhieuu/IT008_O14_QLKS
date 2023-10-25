@@ -7,21 +7,121 @@
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
     <Grid Height="590" Width="782" Background="White" Margin="9,0,9,0" VerticalAlignment="Top"  >
-        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,355,0"/>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="461,531,179,17" CornerRadius="4,4,4,4"/>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="451,76,20,83" CornerRadius="4,4,4,4"/>
-        <Border x:Name="Diagram2" BorderBrush="Black" BorderThickness="1" Margin="10,266,365,10" Background="#FF0AC6C6" CornerRadius="4,4,4,4">
-            <Label Content="Diagram#2" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="511*"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,355,0" CornerRadius="5,5,5,5" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="/View/Manager/home_2.png"/>
+            </Border.Background>
         </Border>
-        <Border x:Name="Diagram1" BorderBrush="Black" BorderThickness="1" Margin="10,97,365,337" Background="#FFC6980A" CornerRadius="4,4,4,4">
-            <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+        <Border x:Name="View_more" BorderBrush="Black" BorderThickness="1" Margin="454,455,186,14" CornerRadius="5,5,5,5" Grid.Row="1" Background="#FFC6980A" MouseDown="View_more_MouseDown" MouseEnter="View_more_MouseEnter" MouseLeave="View_more_MouseLeave" Cursor="Hand">
+            <Label Content="View more" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-1,0,0" FontWeight="Bold" />
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="73" Margin="10,13,0,0" VerticalAlignment="Top" Width="407" CornerRadius="4,4,4,4">
-            <Grid Margin="0,-3,1,3">
-                <Label Content="Activity" HorizontalAlignment="Left" Height="47" Margin="14,-5,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
-                <Label Content="October 21th, 2023" HorizontalAlignment="Left" Height="47" Margin="14,25,0,0" VerticalAlignment="Top" Width="241"  FontSize="26" FontFamily="Sylfaen " Foreground="#FFCDA529" Background="#00000000" />
+        <Border BorderBrush="Black" BorderThickness="1" Margin="451,76,20,69" CornerRadius="5,5,5,5" Grid.RowSpan="2" Background="#FFB6A982">
+            <Grid Margin="0,0,0,3">
+                <Label Content="Profile" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="30" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-3,0,0" FontWeight="Bold" />
+                <Border Margin="10,294,10,8" Background="#FFE9E5D9" BorderBrush="Black" CornerRadius="5,5,5,5" >
+                    <Grid>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Position" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" Margin="-49,0,0,0" FontSize="16" Grid.RowSpan="2"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="1,0,0,0" Width="199" Grid.RowSpan="2"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,59,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-49,-3,0,0"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="1,0,0,0" Width="199"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Change_pass" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="24" Margin="158,101,0,0" VerticalAlignment="Top" Width="109" CornerRadius="5,5,5,5" Background="#FFC6980A" MouseDown="Change_pass_MouseDown" MouseEnter="Change_pass_MouseEnter" MouseLeave="Change_pass_MouseLeave" Cursor="Hand">
+
+                            <Label Content="Change Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " Margin="6,-3,0,0" Width="117" Foreground="#FFEFEFEF"/>
+
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Margin="10,45,10,148" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="5,5,5,5" >
+                    <Grid>
+                        <Ellipse HorizontalAlignment="Left" Height="99" Stroke="#FFC6980A" VerticalAlignment="Top" Width="99" Margin="183,103,0,0">
+                            <Ellipse.Fill>
+                                <ImageBrush x:Name="avt" ImageSource="/user.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-49,0,0,0"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="1,0,0,0" Width="199"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,59,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Label Content="User name" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-49,0,168,0"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="39,0,0,0" Width="162"/>
+
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,0,0,0" VerticalAlignment="Center" Width="140" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25*"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="12,0,0,0" Width="75"/>
+
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,145,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Label Content="Age" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-50,-2,0,0" Height="36"/>
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-15,-1,0,0" Height="36" Width="99"/>
+
+                            </Grid>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="19,186,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                            <Grid Margin="52,0,0,0">
+                                <Label Content="Phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-49,-2,0,0"/>
+                                <Label Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="82"/>
+
+                            </Grid>
+                        </Border>
+                        <Label Content="Avatar" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="18" FontFamily="Sylfaen " Foreground="#FFC6980A" Background="#00000000" Margin="205,202,0,0" FontWeight="Bold" />
+
+                    </Grid>
+                </Border>
             </Grid>
         </Border>
+        <Border x:Name="Diagram2" BorderBrush="Black" BorderThickness="1" Margin="12,187,367,12" Background="#FF0AC6C6" CornerRadius="5,5,5,5" Grid.Row="1">
+            <Label Content="Diagram#2" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+        </Border>
+        <Border x:Name="Diagram1" BorderBrush="Black" BorderThickness="1" Margin="10,18,367,337" Background="#FFC6980A" CornerRadius="5,5,5,5" Grid.Row="1">
+            <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="73" Margin="12,13,0,0" VerticalAlignment="Top" Width="403" CornerRadius="5,5,5,5" Background="#FFF3F3F3" Grid.RowSpan="2">
+            <Grid Margin="0,-3,1,3">
+                <Label Content="Activity" HorizontalAlignment="Left" Height="47" Margin="14,-5,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                <Label Content="October 21th, 2023" HorizontalAlignment="Left" Height="47" Margin="14,25,0,0" VerticalAlignment="Top" Width="241"  FontSize="18" FontFamily="Sylfaen " Foreground="#FFCDA529" Background="#00000000" />
+                <Border Margin="342,17,17,13" Background="#FFC6980A" CornerRadius="5,5,5,5" >
+                    <Image Source="/View/Manager/icons8-calender-32 1.jpg" Margin="4,3,4,4"/>
+                </Border>
+            </Grid>
+        </Border>
+        <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="683,13,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="56" MouseDown="avt_load_MouseDown" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush x:Name="avtt" ImageSource="/icons8-upload-64.png" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <Label Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="483,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+        <Label Content="Manager" HorizontalAlignment="Left" Height="46" Margin="483,40,0,0" VerticalAlignment="Top" Width="150" FontFamily="Sylfaen " Foreground="#FFBE9410" Background="#00000000" FontSize="18" Grid.RowSpan="2" RenderTransformOrigin="0.389,0.447" />
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="483,41,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="186"/>
 
     </Grid>
 </UserControl>

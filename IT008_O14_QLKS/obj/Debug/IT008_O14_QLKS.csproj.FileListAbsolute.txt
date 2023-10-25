@@ -124,3 +124,10 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.g.cs
 >>>>>>> 35a5abe58e0825e0fecc367635934c2555b27ea2
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.g.cs
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml
+>>>>>>> 236da4e14e4065864981277da81bedb96e607224

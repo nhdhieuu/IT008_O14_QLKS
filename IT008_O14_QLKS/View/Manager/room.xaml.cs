@@ -24,5 +24,35 @@ namespace IT008_O14_QLKS.View.Manager
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Clean.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0E9755"));
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Clean.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF66BB6A"));
+        }
+
+        private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void Border_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            add.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0E9755"));
+        }
+
+        private void Border_MouseLeave_1(object sender, MouseEventArgs e)
+        {
+            add.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF66BB6A"));
+        }
     }
 }

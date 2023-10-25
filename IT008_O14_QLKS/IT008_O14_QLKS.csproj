@@ -68,6 +68,9 @@
     <Compile Include="View\Manager\Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\receipt.xaml.cs">
+      <DependentUpon>receipt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\room.xaml.cs">
       <DependentUpon>room.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\receipt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\Clients\" />
+    <Folder Include="View\Manager\ReceipPage\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ginkgo.png" />

@@ -101,7 +101,7 @@
                                     #FFF
                                 </Border.Background>
                                 <Grid>
-                                    <Label Content="asda"></Label>
+                                    <Label Content="label"></Label>
                                 </Grid>
                             </Border>
                             
@@ -110,7 +110,7 @@
                                     #FFF
                                 </Border.Background>
                                 <Grid>
-                                    <Label Content="asda"></Label>
+                                    <Label Content="label"></Label>
                                 </Grid>
                             </Border>
                             
@@ -119,7 +119,7 @@
                                     #FFF
                                 </Border.Background>
                                 <Grid>
-                                    <Label Content="asda"></Label>
+                                    <Label Content="label"></Label>
                                 </Grid>
                             </Border>
                             
@@ -128,7 +128,7 @@
                                     #FFF
                                 </Border.Background>
                                 <Grid>
-                                    <Label Content="asda"></Label>
+                                    <Label Content="label"></Label>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -136,7 +136,7 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Margin="20,17,8,12">
-                        <Border CornerRadius="7">
+                        <Border CornerRadius="7" >
                             <Image Source="/Resources/datepicker.png"></Image>
                         </Border>
                         
@@ -148,7 +148,7 @@
                             <Image Source="/Resources/sort_by.png"></Image>
                         </Border>
                         
-                        <Border CornerRadius="7" Margin="0,11,0,0">
+                        <Border CornerRadius="7" Margin="0,0,0,0">
                             <Border.Background>#272652</Border.Background>
                         </Border>
                     </StackPanel>

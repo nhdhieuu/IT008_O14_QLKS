@@ -14,7 +14,7 @@
                 </Border.Background>
                 <Grid>
                     <Border Margin="193,41,0,48" Background="#FFC6980A" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="51" >
-                        <Image Source="/View/Manager/icons8-calender-32 1.jpg" Margin="-1,-2,1,4"/>
+                        <Image Source="/Resources/icons8-calender-32 1.jpg" Margin="-1,-2,1,4"/>
                     </Border>
                     <Label Content="October  25, 2023" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="12,92,0,0" FontWeight="Bold" />
 
@@ -51,7 +51,7 @@
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="138,23,0,0" VerticalAlignment="Top" Width="329" CornerRadius="5,5,5,5">
                 <Grid>
                     <Label Content="search" HorizontalAlignment="Left" Height="39" Margin="2,-4,0,0" VerticalAlignment="Top" Width="76" FontFamily="Sylfaen " FontSize="24" Foreground="#FF1A1A1A"/>
-                    <Image Margin="294,5,2,7" Source="/View/Manager/search.png" Cursor="Hand" />
+                    <Image Margin="294,5,2,7" Source="/Resources/search.png" Cursor="Hand" />
                     <Rectangle HorizontalAlignment="Left" Height="50" Margin="75,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
@@ -75,8 +75,8 @@
                         <Grid>
                             <Label Content="P101" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
                             <Label Content="Normal" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/View/Manager/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/View/Manager/broom.png"/>
+                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
+                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
 
                         </Grid>
 
@@ -94,8 +94,8 @@
                         <Grid>
                             <Label Content="P102" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>
                             <Label Content="V.I.P" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="#FFFAB005"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/View/Manager/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/View/Manager/broom.png"/>
+                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
+                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
                             <Label Content="2" HorizontalAlignment="Left" Margin="156,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
 
                         </Grid>
@@ -107,7 +107,7 @@
                 </Grid>
             </Border>
             <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="817,279,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="23" Margin="8,30,0,0" VerticalAlignment="Top" Width="25" Source="/View/Manager/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
+            <Image HorizontalAlignment="Left" Height="23" Margin="8,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
             <Label Content="1" HorizontalAlignment="Left" Margin="181,91,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="128" Margin="24,0,0,0" VerticalAlignment="Center" Width="208" CornerRadius="5,5,5,5" Background="#FF533F3F" Cursor="Hand">
                 <Grid>
@@ -118,8 +118,8 @@
                         <Grid>
                             <Label Content="P103" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
                             <Label Content="Normal" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/View/Manager/user.png"/>
-                            <Image HorizontalAlignment="Center" Height="33" Margin="0,12,0,0" VerticalAlignment="Top" Width="25" Source="/View/Manager/wrench.png"/>
+                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
+                            <Image HorizontalAlignment="Center" Height="33" Margin="0,12,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/wrench.png"/>
                             <Label Content="1" HorizontalAlignment="Left" Margin="156,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
 
                         </Grid>
@@ -138,8 +138,8 @@
                         <Grid>
                             <Label Content="P104" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>
                             <Label Content="V.I.P" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/View/Manager/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/View/Manager/broom.png"/>
+                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
+                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
                             <Label Content="1" HorizontalAlignment="Left" Margin="157,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
 
                         </Grid>

@@ -16,7 +16,7 @@
         <!-- Phần trên -->
         <Grid>
             <Border Margin="30,20,712,0">
-                <Image Source="/View/Manager/reset.png"/>
+                <Image Source="/Resources/reset.png"/>
             </Border>
             <Label Content="staff" FontSize="45" Foreground="#C6980A" 
                    Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
@@ -28,7 +28,7 @@
                     <TextBox Background="#D9D9D9" Margin="15,0,30,0"
                              BorderThickness="0"
                              VerticalContentAlignment="Center" FontSize="14"/>
-                    <Image Source="/View/Manager/search_icon.png" Margin="240,0,0,0"/>
+                    <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
                 </Grid>
             </Border>
             <Border CornerRadius="8,0,0,8" Background="White" Margin="195,20,517,0" >

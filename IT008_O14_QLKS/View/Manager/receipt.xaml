@@ -135,10 +135,14 @@
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <StackPanel Margin="20,17,8,12" >
-                        <Border >
-                            <Image Source="/Resources/sort_by.png"></Image>
+                    <StackPanel Margin="20,17,8,12">
+                        <Border CornerRadius="7" >
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Resources/datepicker.png" Stretch="UniformToFill"/>
+                            </Border.Background>
+                            <Image Source="/Resources/datepicker.png"></Image>
                         </Border>
+                        
                     </StackPanel>
                     
                 </Grid>

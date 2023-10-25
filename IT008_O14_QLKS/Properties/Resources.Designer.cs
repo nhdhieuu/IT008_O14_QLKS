@@ -63,6 +63,16 @@ namespace IT008_O14_QLKS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _348db43f5e512c9648efca0d8cc3b516 {
+            get {
+                object obj = ResourceManager.GetObject("_348db43f5e512c9648efca0d8cc3b516", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ginkgo {
             get {
                 object obj = ResourceManager.GetObject("ginkgo", resourceCulture);

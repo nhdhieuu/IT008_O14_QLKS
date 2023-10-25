@@ -267,6 +267,9 @@
     <Resource Include="Resources\card.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\348db43f5e512c9648efca0d8cc3b516.jpg" />
+    <Resource Include="Resources\abc.jpeg" />
+    <Resource Include="Resources\aec382537ab83f04ed2eb1777c7165ed.png" />
     <Content Include="Resources\datepicker.png" />
     <Content Include="Resources\money.png" />
     <Content Include="Resources\printer.png" />

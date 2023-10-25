@@ -136,11 +136,36 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Margin="20,17,8,12">
-                        <Border CornerRadius="7" >
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Resources/datepicker.png" Stretch="UniformToFill"/>
-                            </Border.Background>
-                            <Image Source="/Resources/datepicker.png"></Image>
+                        <Border Width="253" Height="108">
+                            
+                            <Grid>
+                                <!-- <Grid.ColumnDefinitions> -->
+                                <!--     <ColumnDefinition Width="166"></ColumnDefinition> -->
+                                <!--     <ColumnDefinition></ColumnDefinition> -->
+                                <!-- </Grid.ColumnDefinitions> -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2" Source="/Resources/datepicker.png" ></Image>
+                                <Label Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
+                                <!-- <Button Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="Gray" ></Button> -->
+                                <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
+                                    <Image Source="/Resources/calendar.png"></Image>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        
+                        <Border Margin="0,11,0,0">
+                            <Image Source="/Resources/filter.png"></Image>
+                        </Border>
+                        
+                        <Border Margin="0,11,0,0">
+                            <Image Source="/Resources/sort_by.png"></Image>
+                        </Border>
+                        
+                        <Border Margin="0,11,0,0">
+                            <Image Source="/Resources/print.png"></Image>
                         </Border>
                         
                     </StackPanel>

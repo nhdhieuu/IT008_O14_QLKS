@@ -270,10 +270,13 @@
     <Resource Include="Resources\348db43f5e512c9648efca0d8cc3b516.jpg" />
     <Resource Include="Resources\abc.jpeg" />
     <Resource Include="Resources\aec382537ab83f04ed2eb1777c7165ed.png" />
-    <Content Include="Resources\datepicker.png" />
-    <Content Include="Resources\money.png" />
+    <Resource Include="Resources\money.png" />
+    <Resource Include="Resources\datepicker.png" />
+    <Resource Include="Resources\filter.png" />
+    <Resource Include="Resources\print.png" />
+    <Content Include="Resources\calendar.png" />
     <Content Include="Resources\printer.png" />
-    <Content Include="Resources\sort_by.png" />
+    <Resource Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

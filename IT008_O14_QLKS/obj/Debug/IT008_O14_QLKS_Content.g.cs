@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/datepicker.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/money.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/printer.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/sort_by.png")]
 
 

@@ -8,45 +8,48 @@
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
     <Border  Background="#FFEFEEE5" CornerRadius="5,5,5,5">
         <Grid>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="139" Margin="498,23,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="125" Margin="498,23,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
                 <Border.Background>
                     <ImageBrush ImageSource="/Resources/room2.jpg" Stretch="UniformToFill"/>
                 </Border.Background>
                 <Grid>
-                    <Border Margin="193,41,0,48" Background="#FFC6980A" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="51" >
-                        <Image Source="/Resources/icons8-calender-32 1.jpg" Margin="-1,-2,1,4"/>
+                    <Border Margin="196,30,0,45" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="51" >
+                        <Border.Background>
+                            <SolidColorBrush Color="White" Opacity="0.7"/>
+                        </Border.Background>
+                        <Image Source="/Resources/calendar.png" Margin="9,10,8,10"/>
                     </Border>
-                    <Label Content="October  25, 2023" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="12,92,0,0" FontWeight="Bold" />
+                    <Label Content="October  25, 2023" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="12,82,0,0" FontWeight="Bold" />
 
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="380" Margin="498,188,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="399" Margin="498,169,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
                 <Border.Background>
                     <ImageBrush ImageSource="/Resources/room1.jpg"/>
                 </Border.Background>
                 <Grid>
-                    <Border Margin="16,39,13,224" CornerRadius="5,5,5,5" Background="White">
+                    <Border Margin="16,39,13,259" CornerRadius="5,5,5,5" Background="White">
                         <GroupBox Header="Status" HorizontalAlignment="Center" Width="210" Background="White" FontSize="24" FontFamily="Sylfaen " FontWeight="Bold" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="1" Margin="0,-5,0,10">
                             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="194" Height="72" Margin="3,0,0,0" Background="White" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
 
                         </GroupBox>
                     </Border>
-                    <Border Margin="16,173,13,68" Background="White" >
-                        <GroupBox Header="Type" Height="129" VerticalAlignment="Top" HorizontalAlignment="Center" Width="207" Background="White" FontSize="24" FontFamily="Sylfaen " FontWeight="Bold" Margin="0,-5,0,0" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="1">
+                    <Border Margin="16,159,13,68" Background="White" CornerRadius="5,5,5,5" >
+                        <GroupBox Header="Type" Height="161" VerticalAlignment="Top" HorizontalAlignment="Center" Width="207" Background="White" FontSize="24" FontFamily="Sylfaen " FontWeight="Bold" Margin="0,-5,0,0" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="1">
                             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="196" Height="90" Margin="1,0,0,0" Background="White" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
 
 
                         </GroupBox>
                     </Border>
-                    <Border x:Name="Clean" HorizontalAlignment="Left" Width="47" Height="41" VerticalAlignment="Top" Margin="17,326,0,0" CornerRadius="5,5,5,5" Background="#FF66BB6A" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" >
+                    <Border x:Name="Clean" HorizontalAlignment="Left" Width="53" Height="47" VerticalAlignment="Top" Margin="17,340,0,0" CornerRadius="5,5,5,5" Background="#FF66BB6A" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" >
                         <Image Source="/Resources/broom.png" Margin="2,4,5,4"/>
                     </Border>
                     <Label Content="Filter" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="28" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="173,-6,0,0" FontWeight="Bold" />
 
                 </Grid>
             </Border>
-            <Border x:Name="add" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="205,540,0,0" VerticalAlignment="Top" Width="69" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
-                <Label Content="+" Margin="19,-8,12,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
+            <Border x:Name="add" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="37" Margin="205,530,0,0" VerticalAlignment="Top" Width="79" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
+                <Label Content="+" Margin="26,-7,5,-1" FontSize="24" FontWeight="Bold" Foreground="White"/>
             </Border>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="138,23,0,0" VerticalAlignment="Top" Width="329" CornerRadius="5,5,5,5">
                 <Grid>
@@ -62,7 +65,7 @@
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="212" Height="34" Margin="80,0,0,0" Background="#FFEFEEE5" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
+                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="212" Height="34" Margin="80,0,0,0" Background="#FFEFEEE5" FontFamily="Times New Roman" FontSize="23" BorderBrush="#FFEFEEE5"/>
                 </Grid>
             </Border>
             <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="36,5,0,0" VerticalAlignment="Top" Width="121" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>

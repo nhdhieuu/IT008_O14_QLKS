@@ -40,14 +40,14 @@
                                 <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="1,0,0,0" Width="199"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="Change_pass" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="24" Margin="158,101,0,0" VerticalAlignment="Top" Width="109" CornerRadius="5,5,5,5" Background="#FFC6980A" MouseDown="Change_pass_MouseDown" MouseEnter="Change_pass_MouseEnter" MouseLeave="Change_pass_MouseLeave" Cursor="Hand">
+                        <Border x:Name="Change_pass" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="153,99,0,0" VerticalAlignment="Top" Width="124" CornerRadius="5,5,5,5" Background="#FFC6980A" MouseDown="Change_pass_MouseDown" MouseEnter="Change_pass_MouseEnter" MouseLeave="Change_pass_MouseLeave" Cursor="Hand">
 
-                            <Label Content="Change Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " Margin="6,-3,0,0" Width="117" Foreground="#FFEFEFEF"/>
+                            <Label Content="Change Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " Margin="-3,-3,0,0" Width="130" Foreground="#FFEFEFEF" FontSize="16"/>
 
                         </Border>
                     </Grid>
                 </Border>
-                <Border Margin="10,45,10,148" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="5,5,5,5" >
+                <Border Margin="10,44,10,159" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="5,5,5,5" >
                     <Grid>
                         <Ellipse HorizontalAlignment="Left" Height="99" Stroke="#FFC6980A" VerticalAlignment="Top" Width="99" Margin="183,103,0,0">
                             <Ellipse.Fill>
@@ -110,7 +110,7 @@
                 <Label Content="Activity" HorizontalAlignment="Left" Height="47" Margin="14,-5,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
                 <Label Content="October 21th, 2023" HorizontalAlignment="Left" Height="47" Margin="14,25,0,0" VerticalAlignment="Top" Width="241"  FontSize="18" FontFamily="Sylfaen " Foreground="#FFCDA529" Background="#00000000" />
                 <Border Margin="342,17,17,13" Background="#FFC6980A" CornerRadius="5,5,5,5" >
-                    <Image Source="/View/Manager/icons8-calender-32 1.jpg" Margin="4,3,4,4"/>
+                    <Image Source="/Resources/calendar.png" Margin="6,5,7,8"/>
                 </Border>
             </Grid>
         </Border>

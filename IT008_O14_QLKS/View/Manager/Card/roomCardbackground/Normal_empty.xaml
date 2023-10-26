@@ -10,7 +10,7 @@
     <Grid >
         <Border CornerRadius="10,10,5,5">
             <Border.Background>
-                <ImageBrush ImageSource="/Resources/xamnenthuong.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Resources/nenthuong.png" Stretch="UniformToFill"/>
             </Border.Background>
 
 

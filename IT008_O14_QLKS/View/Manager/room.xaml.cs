@@ -31,7 +31,7 @@ namespace IT008_O14_QLKS.View.Manager
             listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
             listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
             listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
-            listCard[5] = new roomcard("P106", "Normal", "Unavailable", "day", 2, 2);
+            listCard[5] = new roomcard("P106", "Normal", "Nguyễn Thị B", "day", 2, 2);
           
 
             //

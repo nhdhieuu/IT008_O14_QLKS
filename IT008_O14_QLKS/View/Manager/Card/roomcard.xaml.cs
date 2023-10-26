@@ -91,19 +91,19 @@ namespace IT008_O14_QLKS.View.Manager.Card
             {
                 mainbd.Background = new SolidColorBrush(Colors.LightBlue);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground=new SolidColorBrush(Colors.LightBlue);
+               
             }
             else if (this.status == "Empty")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
-                idroomtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Unavailable")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF5D5C5C"));
                 statustxt.Foreground = new SolidColorBrush(Colors.Red);
-                idroomtxt.Foreground = new SolidColorBrush(Colors.Red);
+               
             }    
                 else {
 
@@ -126,31 +126,36 @@ namespace IT008_O14_QLKS.View.Manager.Card
                     }
             //chon nen
 
-            if (this.typeroom == "VIP" && (this.status == "Unavailable" || this.status == "Booked"))
+            if (this.typeroom == "VIP")
             {
-                VIP vip = new VIP();
-                background.Content = vip;
-            }
-            //}
-            if (this.typeroom == "VIP" && this.status != "Unavailable"&&this.status != "Booked")
-            {
-                Vip_empty vip = new Vip_empty();
-                background.Content = vip;
+                if (this.status == "Empty"||this.status == "Booked")
+                {
+                    Vip_empty vip = new Vip_empty();
+                    background.Content = vip;
+                }
+                else
+                {
+                    VIP vip = new VIP();
+                    background.Content = vip;
+                }    
             }
 
 
-            if (this.typeroom == "Normal" && (this.status == "Unavailable" || this.status == "Booked"))
+
+            if (this.typeroom == "Normal")
             {
-                
-                Normal_empty vip = new Normal_empty();
-                background.Content = vip;
+                if (this.status == "Empty" || this.status == "Booked")
+                {
+                    Normal_empty vip = new Normal_empty();
+                    background.Content = vip;
+                }
+                else
+                {
+                    Normal vip = new Normal();
+                    background.Content = vip;
+                }
             }
-            //}
-            if (this.typeroom == "Normal" && this.status != "Unavailable" && this.status != "Booked")
-            {
-                Normal vip = new Normal();
-                background.Content = vip;
-            }
+
 
 
         }

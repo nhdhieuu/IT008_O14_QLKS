@@ -101,10 +101,10 @@
                                     #FFF
                                 </Border.Background>
                                 <Grid>
-                                    <Label Content="label"></Label>
+                                    <Label Content="test label"></Label>
                                 </Grid>
                             </Border>
-                            
+                             
                             <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
                                 <Border.Background>
                                     #FFF

@@ -107,7 +107,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             }    
                 else {
 
-                timetype.Visibility = Visibility.Visible;
+               
                         if (this.typetime == "day")
                         {
                             if (this.time > 1)

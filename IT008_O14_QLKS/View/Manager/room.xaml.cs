@@ -27,11 +27,11 @@ namespace IT008_O14_QLKS.View.Manager
             roomcard[] listCard = new roomcard[6];
             // -- Load các giá trị cho 6 ô từ data base
             listCard[0]= new roomcard("P101", "VIP", "Booked", "day", 2, 2);
-            listCard[1] = new roomcard("P101", "VIP", "Unavailable", "day", 2, 2);
-            listCard[2] = new roomcard("P101", "Normal", "Trần Văn A", "hour", 2, 2);
-            listCard[3] = new roomcard("P101", "VIP", "Empty", "day", 2, 2);
-            listCard[4] = new roomcard("P101", "Normal", "Empty", "day", 2, 2);
-            listCard[5] = new roomcard("P101", "Normal", "Unavailable", "day", 2, 2);
+            listCard[1] = new roomcard("P102", "VIP", "Unavailable", "day", 2, 2);
+            listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
+            listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
+            listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
+            listCard[5] = new roomcard("P106", "Normal", "Unavailable", "day", 2, 2);
           
 
             //

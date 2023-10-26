@@ -14,7 +14,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using IT008_O14_QLKS.View.Manager.FormPage.room;
+using IT008_O14_QLKS.View.Manager.Card.roomCardbackground;
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
@@ -25,7 +26,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public string IDroom { get; set; }
         public string typeroom { get; set; }
         public string status { get; set; }  
-         
+        
        
       public int time { get; set; }
         public string typetime { get; set; }
@@ -81,23 +82,83 @@ namespace IT008_O14_QLKS.View.Manager.Card
             idroomtxt.Text = this.IDroom;
             loai.Text = this.typeroom;
             statustxt.Text = this.status;
-           if(this.typetime=="day")
-            {
-                if (this.time > 1)
-                    numbertxt.Text = time.ToString() + " days";
-                else
-                    numbertxt.Text = time.ToString() + " day";
-            }
-            if (this.typetime == "hour")
-            {
-                if (this.time > 1)
-                    numbertxt.Text = time.ToString() + " hours";
-                else
-                    numbertxt.Text = time.ToString() + " hour";
-            }
             number_guesttxt.Text = this.numer_guest.ToString();
+            if (this.typeroom=="Normal")
+            {
+                loai.Foreground = new SolidColorBrush(Colors.White);
+            }
+            if (this.status == "Booked")
+            {
+                mainbd.Background = new SolidColorBrush(Colors.LightBlue);
+                statustxt.Foreground = new SolidColorBrush(Colors.White);
+                idroomtxt.Foreground=new SolidColorBrush(Colors.LightBlue);
+            }
+            else if (this.status == "Empty")
+            {
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+                idroomtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+                statustxt.Foreground = new SolidColorBrush(Colors.White);
+            }
+            else if (this.status == "Unavailable")
+            {
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF5D5C5C"));
+                statustxt.Foreground = new SolidColorBrush(Colors.Red);
+                idroomtxt.Foreground = new SolidColorBrush(Colors.Red);
+            }    
+                else {
+
+                timetype.Visibility = Visibility.Visible;
+                        if (this.typetime == "day")
+                        {
+                            if (this.time > 1)
+                                numbertxt.Text = time.ToString() + " days";
+                            else
+                                numbertxt.Text = time.ToString() + " day";
+                        }
+                        if (this.typetime == "hour")
+                        {
+                            if (this.time > 1)
+                                numbertxt.Text = time.ToString() + " hours";
+                            else
+                                numbertxt.Text = time.ToString() + " hour";
+                        }
+                      
+                    }
+            //chon nen
+
+            if (this.typeroom == "VIP" && (this.status == "Unavailable" || this.status == "Booked"))
+            {
+                VIP vip = new VIP();
+                background.Content = vip;
+            }
+            //}
+            if (this.typeroom == "VIP" && this.status != "Unavailable"&&this.status != "Booked")
+            {
+                Vip_empty vip = new Vip_empty();
+                background.Content = vip;
+            }
 
 
+            if (this.typeroom == "Normal" && (this.status == "Unavailable" || this.status == "Booked"))
+            {
+                
+                Normal_empty vip = new Normal_empty();
+                background.Content = vip;
+            }
+            //}
+            if (this.typeroom == "Normal" && this.status != "Unavailable" && this.status != "Booked")
+            {
+                Normal vip = new Normal();
+                background.Content = vip;
+            }
+
+
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Viewroom_form vr = new Viewroom_form(IDroom);
+            vr.ShowDialog();
         }
     }
     }

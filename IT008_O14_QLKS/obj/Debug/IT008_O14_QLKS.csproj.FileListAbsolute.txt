@@ -83,3 +83,13 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cac
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.baml

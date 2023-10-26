@@ -45,7 +45,7 @@
                     <Border CornerRadius="1000" Background="white" Margin="400,28,78,507">
                         <Ellipse Stroke="#FFC6980A" StrokeThickness="5"  >
                             <Ellipse.Fill>
-                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" />
+                                <ImageBrush x:Name="avt" ImageSource="/Resources/ginkgo.png" />
                             </Ellipse.Fill>
                         </Ellipse>
                     </Border>

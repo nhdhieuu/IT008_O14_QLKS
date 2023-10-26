@@ -111,7 +111,7 @@
                     <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
                 </Border>
                 <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
-                    <TextBlock Text="..." HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
+                    <TextBlock Text="..." HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20" Margin="0,0,10,0"></TextBlock>
 
                 </Border>
                 <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">

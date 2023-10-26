@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/calendar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/printer.png")]
 
 

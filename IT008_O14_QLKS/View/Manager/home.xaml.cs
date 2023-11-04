@@ -25,10 +25,6 @@ namespace IT008_O14_QLKS.View.Manager
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("test");
-        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -42,18 +38,20 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void View_more_MouseEnter(object sender, MouseEventArgs e)
         {
-            View_more.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6C0A"));
+
         }
 
         private void View_more_MouseLeave(object sender, MouseEventArgs e)
         {
-            View_more.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+
 
         }
 
         private void Change_pass_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Change_pass.Visibility = Visibility.Hidden;
+            Save.Visibility = Visibility.Visible;
+            Stop.Visibility = Visibility.Visible;
         }
 
         private void Change_pass_MouseEnter(object sender, MouseEventArgs e)
@@ -72,5 +70,48 @@ namespace IT008_O14_QLKS.View.Manager
 
         }
 
+        private void Change_pass2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Change_pass2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF063792"));
+        }
+
+        private void Change_pass2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Change_pass2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0A4CC6"));
+        }
+
+        private void Save_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Save.Visibility = Visibility.Hidden;
+            Change_pass.Visibility = Visibility.Visible;
+            Stop.Visibility = Visibility.Hidden;
+        }
+
+        private void Save_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Save.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF08631D"));
+        }
+
+        private void Save_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Save.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF17D141"));
+        }
+
+        private void Change_pass_Copy_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Stop.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFAC0D0D"));
+        }
+
+        private void Change_pass_Copy_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Stop.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFC90303"));
+        }
+
+        private void Stop_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Save.Visibility = Visibility.Hidden;
+            Change_pass.Visibility = Visibility.Visible;
+            Stop.Visibility = Visibility.Hidden;
+        }
     }
 }

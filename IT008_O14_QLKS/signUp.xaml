@@ -125,7 +125,7 @@
                     </Border>
                     
                     <TextBlock Text="cccd" FontSize="24" FontFamily="Sylfaen" Margin="360,0,38,285" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
-                    <TextBlock Text="personal infromation" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,327" VerticalAlignment="Bottom" Foreground="#FF0500FF" />
+                    <TextBlock Text="personal information" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,327" VerticalAlignment="Bottom" Foreground="#FF0500FF" />
                     <Border  x:Name="lgborder" Background="#FFC6980A" Margin="200,627,200,30"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
                         <TextBlock Text="Sign up" FontWeight="Bold" FontSize="30" FontFamily="Bahnschrift" HorizontalAlignment="Center" Foreground="White" Margin="0,6,0,-6">
 

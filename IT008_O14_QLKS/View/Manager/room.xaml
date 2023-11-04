@@ -8,47 +8,100 @@
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
     <Border  Background="#FFEFEEE5" CornerRadius="5,5,5,5">
         <Grid Margin="7,0,-7,0">
-            <Border HorizontalAlignment="Left" Height="109" Margin="494,23,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2" BorderBrush="White">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/room2.jpg" Stretch="UniformToFill"/>
-                </Border.Background>
-                <Grid>
-                    <Border x:Name="calender" Margin="196,26,0,33" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="46" MouseEnter="Border_MouseEnter_2" MouseLeave="calender_MouseLeave" Opacity="0.8" >
-                        <Border.Background>
-                            <SolidColorBrush Color="#FF605C5C" Opacity="0.7"/>
-                        </Border.Background>
-                        <Image Source="/Resources/icons8-calender-32.png" Margin="6,5,7,5"/>
-                    </Border>
-                    <Label Content="October  25, 2023" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="22" FontFamily="Bahnschrift" Foreground="White" Background="#00000000" Margin="10,66,0,0" FontWeight="Bold" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="701*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
 
-                </Grid>
-            </Border>
-            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="431" Margin="494,137,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5">
+            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="512" Margin="496,22,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" Grid.ColumnSpan="2">
                 <Border.Background>
                     <ImageBrush ImageSource="/Resources/room1.jpg"/>
                 </Border.Background>
                 <Grid>
-                    <Border Margin="16,39,13,243" CornerRadius="8,8,8,8" Background="White">
-                        <GroupBox Header="Status" HorizontalAlignment="Center" Width="210" Background="White" FontSize="24" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="2,2,2,2" Margin="0,0,0,10"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="243*"/>
+                        <ColumnDefinition Width="19*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="type" Margin="17,46,11,295" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Grid.ColumnSpan="2"></Border>
+                    <Border x:Name="stauts" Margin="16,226,14,115" Background="#7F4E4B4B" CornerRadius="8,8,8,8" Grid.ColumnSpan="2" />
+                    <Border x:Name="standard" Margin="25,87,114,376" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" >
+                        <TextBlock x:Name="standardt" Text="Normal" Foreground="#FF797979" FontFamily="Bahnschrift" FontSize="20" Margin="18,13,18,6" FontWeight="Bold" >
+
+                        </TextBlock>
                     </Border>
-                    <Border Margin="17,193,13,86" Background="White" CornerRadius="8,8,8,8" >
-                        <GroupBox Header="Type" Height="133" VerticalAlignment="Top" HorizontalAlignment="Center" Width="210" Background="White" FontSize="24" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="2,2,2,1.6" Margin="0,2,0,0"/>
+                    <Border x:Name="Dlx" Margin="25,145,114,320" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False" MouseDown="Dlx_MouseDown" >
+                        <TextBlock  x:Name="Dlxt" Text="Deluxe" Foreground="#FF797979" Margin="21,10,22,12" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold">
+
+                        </TextBlock>
                     </Border>
-                    <Border x:Name="Clean" HorizontalAlignment="Left" Width="66" Height="67" VerticalAlignment="Top" Margin="16,352,0,0" CornerRadius="8,8,8,8" Background="Gray" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" >
-                        <Image Source="/Resources/broom.png" Margin="3,0,4,0" Height="52" VerticalAlignment="Center">
-                            <Image.OpacityMask>
-                                <ImageBrush ImageSource="/Resources/broom.png"/>
-                            </Image.OpacityMask>
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
+                    <Border Margin="112,407,0,17" Background="#7F4E4B4B" CornerRadius="8,8,8,8" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="136" />
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="17,-3,0,0" />
+                    <Label Content="STAGE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="99"  FontSize="24" FontFamily="Bahnschrift" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="117,405,0,0" />
+                    <Label Content="01" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="66"  FontSize="55" FontFamily="Bahnschrift" Foreground="#FFF7BB04" Background="{x:Null}" FontWeight="Bold" Margin="114,431,0,0" />
+
+                    <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FFB78E10" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />
+                    <Border Margin="200,469,27,24" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" >
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <Border Margin="225,469,2,24" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" >
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <Border x:Name="bd_type" Margin="217,52,5,435" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" MouseDown="Border_MouseDown_2" BorderThickness="2,2,2,2" BorderBrush="White" >
+                        <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden">
+
                         </Image>
                     </Border>
-                    <Label Content="Filter" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="74"  FontSize="28" FontFamily="Bahnschrift" Foreground="White" Background="#00000000" Margin="173,0,0,0" FontWeight="Bold" />
+                    <Border x:Name="VIP" Margin="138,145,2,320" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False" MouseDown="VIP_MouseDown" >
+                        <TextBlock x:Name="VIPt" Text="VIP" FontFamily="Bahnschrift" FontSize="20" Foreground="#FF797979" Margin="34,11,28,0" Height="20" VerticalAlignment="Top" FontWeight="Bold">
+
+                        </TextBlock>
+                    </Border>
+                    <Border  x:Name="sup" Margin="138,87,2,376" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_4" IsEnabled="False" >
+                        <TextBlock x:Name="supt" Text="Superior" Margin="13,13,-13,-12" Foreground="#FF797979" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold">
+
+                        </TextBlock>
+                    </Border>
+                    <Label x:Name="status_txt" Content="STATUS" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FF014E91" Background="{x:Null}" FontWeight="Bold" Margin="20,227,0,0" />
+                    <Border x:Name="bd_status" Margin="217,234,5,255" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" MouseDown="bd_type_Copy1_MouseDown" >
+                        <Image x:Name="ck_status" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border x:Name="bd_status_Copy" Margin="220,413,2,76" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" MouseDown="bd_type_Copy1_MouseDown" >
+                        <Image x:Name="ck_status1" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border x:Name="standard_Copy" Margin="25,271,114,192" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" >
+                        <TextBlock x:Name="standardt1" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" Margin="20,13,16,6" FontWeight="Bold" Text="Rented" />
+                    </Border>
+                    <Border x:Name="standard_Copy1" Margin="137,271,2,192" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" >
+                        <TextBlock x:Name="standardt2" Text="Booked" Foreground="#FF2900FF" FontFamily="Bahnschrift" FontSize="20" Margin="18,13,10,6" FontWeight="Bold" RenderTransformOrigin="0.436,0.484" />
+                    </Border>
+                    <Border x:Name="standard_Copy2" Margin="25,326,114,138" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" >
+                        <TextBlock x:Name="standardt3" Text="Empty" Foreground="#FF118232" FontFamily="Bahnschrift" FontSize="20" Margin="22,13,14,6" FontWeight="Bold" RenderTransformOrigin="0.616,0.468" />
+                    </Border>
+                    <Border x:Name="standard_Copy3" Margin="138,326,1,137" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" >
+                        <TextBlock x:Name="standardt4" Text="Unavailable" Foreground="#FFD61010" FontFamily="Bahnschrift" FontSize="18" Margin="5,14,-6,5" FontWeight="Bold" />
+                    </Border>
 
                 </Grid>
             </Border>
             <Border x:Name="add" BorderBrush="White" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Margin="207,539,0,0" VerticalAlignment="Top" Width="93" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
                 <Label Content="+" Margin="25,-16,6,-10" FontSize="39" FontWeight="Bold" Foreground="White"/>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="138,23,0,0" VerticalAlignment="Top" Width="342" CornerRadius="5,5,5,5" Background="White">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="145,23,0,0" VerticalAlignment="Top" Width="338" CornerRadius="5,5,5,5" Background="White">
                 <Grid Background="White" Margin="4,0,7,0">
                     <Label Content="search" HorizontalAlignment="Left" Height="40" Margin="10,0,0,0" VerticalAlignment="Center" Width="76" FontFamily="Sylfaen " FontSize="22" Foreground="#FF1A1A1A" />
                     <Rectangle   HorizontalAlignment="Left" Height="50" Margin="91,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" Fill="White">
@@ -64,10 +117,10 @@
                     <Image Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" />
                 </Grid>
             </Border>
-            <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="36,5,0,0" VerticalAlignment="Top" Width="101" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="817,279,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="22" Margin="13,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
-            <StackPanel Margin="13,113,547,45">
+            <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="44,3,0,0" VerticalAlignment="Top" Width="101" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="116,279,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="22" Margin="10,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
+            <StackPanel Margin="13,113,466,45">
                 <ContentControl x:Name="cc11" Height="140">
 
                 </ContentControl>
@@ -79,7 +132,7 @@
                 </ContentControl>
 
             </StackPanel>
-            <StackPanel Margin="254,113,306,45">
+            <StackPanel Margin="254,113,225,45">
                 <ContentControl x:Name="cc21" Height="140" >
 
                 </ContentControl>
@@ -90,9 +143,9 @@
 
                 </ContentControl>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="40" Margin="124,68,306,482">
-                <Border Background="#FF827E7E" Width="35" Height="35" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
-                    <Image Source="/Resources/icons8-next-page-24.png" Margin="8,3,5,3" RenderTransformOrigin="-0.508,0.45">
+            <StackPanel Orientation="Horizontal" Height="40" Margin="241,72,232,478">
+                <Border Background="#FF827E7E" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                    <Image Source="/Resources/icons8-next-page-24.png" Margin="-1,3,14,3" RenderTransformOrigin="-0.508,0.45">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="-1"/>
@@ -104,20 +157,20 @@
                     </Image>
                 </Border>
 
-                <Border Background="WhITE" Width="35" Height="35" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2" BorderBrush="Black" BorderThickness="1,1,1,1">
+                <Border Background="WhITE" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2" BorderBrush="Black" BorderThickness="1,1,1,1">
                     <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
                 </Border>
-                <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
                     <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
                 </Border>
-                <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
                     <TextBlock Text="..." HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20" Margin="0,0,10,0"></TextBlock>
 
                 </Border>
-                <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
                     <TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
                 </Border>
-                <Border Background="#FF827E7E" Width="35" Height="35"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                <Border Background="#FF827E7E" Width="30" Height="30" Margin="8,0,0,0" CornerRadius="2">
                     <Image Source="/Resources/icons8-next-page-24.png" Margin="-35,2,48,4" RenderTransformOrigin="-0.508,0.45">
                         <Image.RenderTransform>
                             <TransformGroup>

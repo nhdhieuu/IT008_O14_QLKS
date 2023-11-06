@@ -71,6 +71,7 @@
                             <RowDefinition Height="53"/>
                             <RowDefinition Height="53"/>
                             <RowDefinition Height="53"/>
+                            <RowDefinition Height="53"/>
 
                             <RowDefinition/>
 
@@ -144,6 +145,34 @@
 
                                     </TextBlock>
                                 </Grid>
+                                
+                            </Border>
+
+                        </Grid>
+                        <Grid Grid.Row="7">
+                            <Border  x:Name="border7"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" MouseDown="border7_MouseDown" MouseEnter="border7_MouseEnter" MouseLeave="border7_MouseLeave">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="48"/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="/Resources/icons8-client-50.png" Margin="10,4,13,6"/>
+                                    <TextBlock  x:Name="text7" Text="client" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
+                                               " FontFamily="Sylfaen
+" Foreground="Black" Height="22" Width="48" Margin="42,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <TextBlock.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform AngleY="0.191"/>
+                                                <RotateTransform/>
+                                                <TranslateTransform Y="0.08"/>
+                                            </TransformGroup>
+                                        </TextBlock.RenderTransform>
+
+                                    </TextBlock>
+                                </Grid>
+
                             </Border>
 
                         </Grid>

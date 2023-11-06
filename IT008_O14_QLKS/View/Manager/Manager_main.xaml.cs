@@ -191,6 +191,7 @@ namespace IT008_O14_QLKS.View.Manager
             border4_MouseLeave(sender, e);
             border5_MouseLeave(sender, e);
             border6_MouseLeave(sender, e);
+            border7_MouseLeave(sender, e);
         }
 
         private void border3_MouseDown(object sender, MouseButtonEventArgs e)
@@ -204,6 +205,7 @@ namespace IT008_O14_QLKS.View.Manager
             border4_MouseLeave(sender, e);
             border5_MouseLeave(sender, e);
             border6_MouseLeave(sender, e);
+            border7_MouseLeave(sender, e);
         }
 
         private void border4_MouseDown(object sender, MouseButtonEventArgs e)
@@ -217,6 +219,7 @@ namespace IT008_O14_QLKS.View.Manager
             border3_MouseLeave(sender, e);
             border5_MouseLeave(sender, e);
             border6_MouseLeave(sender, e);
+            border7_MouseLeave(sender, e);
         }
 
         private void border5_MouseDown(object sender, MouseButtonEventArgs e)
@@ -230,6 +233,7 @@ namespace IT008_O14_QLKS.View.Manager
             border3_MouseLeave(sender, e);
             border4_MouseLeave(sender, e);
             border6_MouseLeave(sender, e);
+            border7_MouseLeave(sender, e);
         }
 
         private void border6_MouseDown(object sender, MouseButtonEventArgs e)
@@ -242,6 +246,7 @@ namespace IT008_O14_QLKS.View.Manager
             border3_MouseLeave(sender, e);
             border4_MouseLeave(sender, e);
             border5_MouseLeave(sender, e);
+            border7_MouseLeave(sender, e);
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -260,6 +265,37 @@ namespace IT008_O14_QLKS.View.Manager
         {
             txt_logout.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
         }
+
+        private void border7_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DataContext = new Client();
+            text7.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+            border7.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
+            main = 7;
+            border1_MouseLeave(sender, e);
+            border2_MouseLeave(sender, e);
+            border3_MouseLeave(sender, e);
+            border4_MouseLeave(sender, e);
+            border5_MouseLeave(sender, e);
+            border6_MouseLeave(sender, e);
+        }
+
+        private void border7_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+            text7.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+            border7.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
+        }
+
+        private void border7_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (main != 7)
+            {
+                text7.Foreground = new SolidColorBrush(Colors.Black);
+                border7.Background = new SolidColorBrush(Colors.Transparent);
+            }
+        }
+
     }
     
 }

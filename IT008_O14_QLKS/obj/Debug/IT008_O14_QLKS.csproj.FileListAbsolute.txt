@@ -93,3 +93,15 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Norma
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.g.cs
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.baml
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.baml

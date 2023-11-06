@@ -40,7 +40,7 @@
                     <Label Content="STAGE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="99"  FontSize="24" FontFamily="Bahnschrift" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="117,405,0,0" />
                     <Label Content="01" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="66"  FontSize="55" FontFamily="Bahnschrift" Foreground="#FFF7BB04" Background="{x:Null}" FontWeight="Bold" Margin="114,431,0,0" />
 
-                    <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FFB78E10" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />
+                    <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FFC89F21" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />
                     <Border Margin="200,469,27,24" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" >
                         <Border.RenderTransform>
                             <TransformGroup>

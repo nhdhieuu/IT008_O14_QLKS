@@ -62,6 +62,12 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
+      <DependentUpon>ClientCardxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
+      <DependentUpon>ReceiptCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\roomcard.xaml.cs">
       <DependentUpon>roomcard.xaml</DependentUpon>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml.cs">
       <DependentUpon>Vip_empty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\ServiceCard.xaml.cs">
+      <DependentUpon>ServiceCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\StaffCard.xaml.cs">
+      <DependentUpon>StaffCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -107,6 +119,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ReceiptCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\roomcard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +144,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ServiceCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\StaffCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

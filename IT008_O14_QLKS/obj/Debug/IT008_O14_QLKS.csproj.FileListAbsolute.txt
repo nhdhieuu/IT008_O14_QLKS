@@ -44,3 +44,5 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ServiceCard.g.cs
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCardxaml.baml
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ReceiptCard.baml
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ServiceCard.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.baml

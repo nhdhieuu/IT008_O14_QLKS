@@ -18,11 +18,36 @@ namespace IT008_O14_QLKS.View.Manager.Card
     /// <summary>
     /// Interaction logic for StaffCard.xaml
     /// </summary>
+
+    /// 
+
     public partial class StaffCard : UserControl
     {
+        /// Các thành phần của thẻ nhân viên
+        string TenNV { get; set; }
+        string Vitri { get; set; }  
+        string MaNV { get;set; }
+
         public StaffCard()
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2A0A0A0"));
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2808080"));
+        }
+
+      
     }
 }

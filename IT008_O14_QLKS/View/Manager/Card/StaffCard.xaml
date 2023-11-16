@@ -9,11 +9,18 @@
     <Grid>
         <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E">
             <Grid>
-                
-                <TextBlock Text="Trần Văn A" FontSize="40" Margin="9,9,171,40" FontFamily="Bahnschrift" FontWeight="Bold"/>
-                <TextBlock Text="Lễ tân" FontSize="30" Margin="10,63,245,-4" FontFamily="Bahnschrift" FontWeight="Bold"/>
-                <TextBlock Text="#NV01" FontSize="40" Margin="334,10,-76,37" FontFamily="Bahnschrift" Foreground="#FFA67919"/>
+
+                <TextBlock Text="Trần Văn A" FontSize="40" Margin="14,6,166,43" FontFamily="Bahnschrift" FontWeight="Bold"/>
+                <TextBlock FontSize="30" Margin="14,49,241,11" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF677DD8"><Run Text="receptionist"/><LineBreak/><Run Text="​"/><LineBreak/><Run Text="7 / 5.000"/><LineBreak/><Run Text="Kết quả dịch"/><LineBreak/><Run Text="Kết quả bản dịch"/><LineBreak/><Run Text="receptionist"/></TextBlock>
+                <TextBlock Text="#NV01" FontSize="40" Margin="340,6,-6,41" FontFamily="Bahnschrift" Foreground="#FFA67919"/>
+                <Border x:Name="bd_view" Margin="412,51,13,8" Background="#B2808080" CornerRadius="5" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+                    <Image Source="/Resources/eye.png" Margin="5,4,5,4">
+
+                    </Image>
+
+                </Border>
             </Grid>
+
 
         </Border>
 

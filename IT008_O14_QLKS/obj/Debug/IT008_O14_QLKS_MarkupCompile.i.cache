@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\code\DACK\IT008_O14_QLKS\obj\Debug\
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\
 IT008_O14_QLKS
 none
 false
 DEBUG;TRACE
-D:\code\DACK\IT008_O14_QLKS\App.xaml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\App.xaml
 17-382639832
 
 22647794092
 14-1656046352
 Loginn.xaml;signUp.xaml;View\Manager\Card\ClientCardxaml.xaml;View\Manager\Card\ReceiptCard.xaml;View\Manager\Card\roomcard.xaml;View\Manager\Card\roomCardbackground\Normal.xaml;View\Manager\Card\roomCardbackground\Normal_empty.xaml;View\Manager\Card\roomCardbackground\VIP.xaml;View\Manager\Card\roomCardbackground\Vip_empty.xaml;View\Manager\Card\ServiceCard.xaml;View\Manager\Card\StaffCard.xaml;View\Manager\FormPage\room\Viewroom_form.xaml;View\Manager\home.xaml;View\Manager\Manager_main.xaml;View\Manager\receipt.xaml;View\Manager\room.xaml;View\Manager\staff.xaml;
 
-False
+True
 

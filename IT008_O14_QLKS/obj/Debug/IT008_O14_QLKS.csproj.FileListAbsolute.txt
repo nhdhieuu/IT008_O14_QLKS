@@ -53,3 +53,5 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cac
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Client.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Client.baml

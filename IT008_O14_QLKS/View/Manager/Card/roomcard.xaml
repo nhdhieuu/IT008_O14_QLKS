@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.Card.roomcard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card"
+             mc:Ignorable="d" 
+             d:DesignHeight="145" d:DesignWidth="220" >
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="108"/>
+            <RowDefinition/>
+
+
+        </Grid.RowDefinitions>
+        <Border x:Name="mainbd" Background="Black" Margin="10,7,5,5" CornerRadius="10">
+
+
+        </Border>
+        <Border x:Name="viewbd" VerticalAlignment="Top" Grid.Row="1" Margin="159,0,15,0" Background="#FF0500FF"   CornerRadius="5" Height="30" MouseDown="Border_MouseDown" MouseEnter="viewbd_MouseEnter" MouseLeave="viewbd_MouseLeave" Cursor="Hand"  >
+            <Image Source="/Resources/icons8-eye-24.png" KeyDown="Image_KeyDown" MouseDown="Image_MouseDown"/>
+        </Border>
+        <Border x:Name="statusbd" Grid.Row="1" Background="#FFC6980A" Margin="20,0,154,5" CornerRadius="5" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand">
+            <Image Source="/Resources/icons8-setting-24 (1).png" Margin="2,2,3,3">
+
+            </Image>
+        </Border>
+        <Border x:Name="Statusbd" Margin="10,7,5,29" CornerRadius="10,10,5,5">
+            <Grid>
+                <ContentControl x:Name="background">
+
+                </ContentControl>
+                <Grid>
+                    <TextBlock  x:Name="idroomtxt" Foreground="White" FontSize="46" FontFamily="Bahnschrift" Margin="10,0,56,31" />
+                
+
+
+                    <TextBlock  Foreground="#FAB005" x:Name="loai" FontSize="20" FontFamily="Bahnschrift" Margin="13,44,119,8"/>
+                    <TextBlock x:Name="number_guesttxt" Foreground="White"  FontSize="17" FontFamily="Bahnschrift" Margin="175,5,19,47"/>
+                    <TextBlock x:Name="statustxt" Foreground="#FAB005" Text=" " FontSize="15" FontFamily="Bahnschrift" Margin="13,0,97,-22" VerticalAlignment="Bottom"/>
+                    <Image Source="/Resources/icons8-human-30.png" Margin="185,8,6,50"/>
+                    <TextBlock x:Name="numbertxt" Foreground="#FAB005" FontSize="15" FontFamily="Bahnschrift" Margin="0,75,15,-23" HorizontalAlignment="Right"/>
+                    <Border x:Name="timetype" CornerRadius="2" Margin="186,79,7,-20" Visibility="Hidden" >
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Resources/icons8-calender-32 (1).png"/>
+                        </Border.Background>
+
+                    </Border>
+
+                </Grid>
+            </Grid>
+
+        </Border>
+
+
+
+
+    </Grid>
+</UserControl>

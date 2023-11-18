@@ -90,6 +90,9 @@
     <Compile Include="View\Manager\Card\StaffCard.xaml.cs">
       <DependentUpon>StaffCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\ClientControl.xaml.cs">
+      <DependentUpon>ClientControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
 
@@ -157,6 +160,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\ClientControl.xaml" />
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
 
       <SubType>Designer</SubType>

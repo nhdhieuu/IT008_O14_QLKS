@@ -62,8 +62,37 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Client.xaml.cs">
-      <DependentUpon>Client.xaml</DependentUpon>
+
+    <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
+      <DependentUpon>ClientCardxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
+      <DependentUpon>ReceiptCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomcard.xaml.cs">
+      <DependentUpon>roomcard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomCardbackground\Normal.xaml.cs">
+      <DependentUpon>Normal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomCardbackground\Normal_empty.xaml.cs">
+      <DependentUpon>Normal_empty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomCardbackground\VIP.xaml.cs">
+      <DependentUpon>VIP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml.cs">
+      <DependentUpon>Vip_empty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\ServiceCard.xaml.cs">
+      <DependentUpon>ServiceCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\StaffCard.xaml.cs">
+      <DependentUpon>StaffCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
+      <DependentUpon>Viewroom_form.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
@@ -92,7 +121,44 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Client.xaml">
+    <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ReceiptCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomcard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomCardbackground\Normal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomCardbackground\Normal_empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomCardbackground\VIP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ServiceCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\StaffCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +200,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -272,20 +340,49 @@
   </ItemGroup>
   <ItemGroup>
 
-    <Resource Include="Resources\card.png" />
+    <Resource Include="Resources\calendar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\348db43f5e512c9648efca0d8cc3b516.jpg" />
-    <Resource Include="Resources\abc.jpeg" />
-    <Resource Include="Resources\aec382537ab83f04ed2eb1777c7165ed.png" />
-    <Resource Include="Resources\money.png" />
-    <Resource Include="Resources\datepicker.png" />
-    <Resource Include="Resources\filter.png" />
-    <Resource Include="Resources\print.png" />
-    <Content Include="Resources\calendar.png" />
-    <Content Include="Resources\printer.png" />
-    <Resource Include="Resources\sort_by.png" />
-<!--    <Resource Include="Resources\icons8-client-50.png" />-->
+    <Resource Include="Resources\icons8-eye-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nenvip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-human-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-tick-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-calender-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-setting-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-calender-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-next-page-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nenthuong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xamvip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xamnenthuong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-update-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-save-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

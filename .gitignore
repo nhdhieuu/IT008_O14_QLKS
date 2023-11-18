@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,windows,dotnetcore
+=======
+﻿﻿# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,windows,dotnetcore
+>>>>>>> card
 # Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudio,windows,dotnetcore
 
 ### Csharp ###
@@ -611,7 +615,11 @@ $RECYCLE.BIN/
 # Additional files built by Visual Studio
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,windows,dotnetcore
 =======
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,windows,dotnetcore
 >>>>>>> cc404fd668f53ca933b448f788508b0744b76bb8
+=======
+# End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,windows,dotnetcore
+>>>>>>> card

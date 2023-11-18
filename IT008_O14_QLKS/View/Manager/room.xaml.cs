@@ -1,6 +1,9 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.Card;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,22 +26,33 @@ namespace IT008_O14_QLKS.View.Manager
         public room()
         {
             InitializeComponent();
-        }
+            roomcard[] listCard = new roomcard[6];
+            // -- Load các giá trị cho 6 ô từ data base
+            listCard[0]= new roomcard("P103", "Normal", "Booked", "day", 2, 2);
+            listCard[1] = new roomcard("P102", "VIP", "Unavailable", "day", 2, 2);
+            listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
+            listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
+            listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
+            listCard[5] = new roomcard("P106", "Normal", "Nguyễn Thị B", "day", 2, 2);
+          
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
+            //
+
+             
+          
+            cc11.Content = listCard[0].Content;
+            cc21.Content = listCard[1].Content;
+            cc12.Content = listCard[2].Content;
+            cc22.Content = listCard[3].Content;
+            cc13.Content = listCard[4].Content;
+            cc23.Content = listCard[5].Content;
+           
+
 
         }
-
-        private void Border_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Clean.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0E9755"));
-        }
-
-        private void Border_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Clean.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF66BB6A"));
-        }
+    
+        int cleaned = 1;
+       
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
@@ -54,5 +68,335 @@ namespace IT008_O14_QLKS.View.Manager
         {
             add.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF66BB6A"));
         }
+
+        private void Border_MouseEnter_2(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void calender_MouseLeave(object sender, MouseEventArgs e)
+        {
+            
+
+        }
+        int type_s = 0;
+        private void Border_MouseDown_2(object sender, MouseButtonEventArgs e)
+        {
+            if(type_s == 0)
+            {
+                type.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
+                type_s = 1;
+                type.IsEnabled = true;
+                sup.IsEnabled = true;
+                standard.IsEnabled = true;
+                VIP.IsEnabled = true;
+                Dlx.IsEnabled = true;
+                ck_type.Visibility = Visibility.Visible;
+                bd_type.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22DC63"));
+                type_txt.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFC513"));
+                Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+             supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+                VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+                standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+
+            }
+            else
+            {
+                
+                type_s = 0;
+              
+                type.IsEnabled = false;
+                sup.IsEnabled = false;
+                standard.IsEnabled = false;
+                VIP.IsEnabled = false;
+                Dlx.IsEnabled = false;
+                standard.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                sup.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                VIP.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                Dlx.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                ck_type.Visibility = Visibility.Hidden;
+                bd_type.BorderBrush = new SolidColorBrush(Colors.White);
+                type_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AFFFC000"));
+                Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+                supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+                VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+                standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+                type.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+
+
+            }
+        }
+        int std = 0;
+        private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
+        {
+            if (std == 0)
+            {
+                standard.Background = new SolidColorBrush(Colors.WhiteSmoke);
+                std = 1;
+               
+                standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD6A611"));
+
+
+
+            }
+            else
+            {
+                standard.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+                std = 0;
+            }
+        }
+        int sup1 = 0;
+        private void Border_MouseDown_4(object sender, MouseButtonEventArgs e)
+        {
+
+            if (sup1 == 0)
+            {
+                sup.Background = new SolidColorBrush(Colors.WhiteSmoke);
+                sup1 = 1;
+
+                supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD6A611"));
+
+            }
+            else
+            {
+               sup.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+
+               sup1 = 0;
+                supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+            }
+        }
+        int dlx1 = 0;
+        private void Dlx_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (dlx1 == 0)
+            {
+                Dlx.Background = new SolidColorBrush(Colors.WhiteSmoke);
+                dlx1 = 1;
+                Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD6A611"));
+
+
+            }
+            else
+            {
+                Dlx.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+
+                dlx1 = 0;
+                Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+            }
+        
+        }
+        int vip = 0;
+
+        private void VIP_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (vip == 0)
+            {
+                VIP.Background = new SolidColorBrush(Colors.WhiteSmoke);
+              vip = 1;
+                VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD6A611"));
+
+
+            }
+            else
+            {
+               VIP.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+vip = 0;
+
+                VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
+            }
+        }
+
+        int status_s = 0;
+        private void bd_type_Copy1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(status_s==0)
+            {
+                ck_status.Visibility = Visibility.Visible;
+                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF048AFF"));
+                bd_status.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22DC63"));
+                stauts.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
+                status_s = 1;
+                rent_bd.IsEnabled = true;
+                booked_bd.IsEnabled = true;
+                empty_bd.IsEnabled = true; 
+                unavai_bd.IsEnabled = true;
+                rent_t.Foreground = new SolidColorBrush(Colors.Black);
+                booked_t.Foreground = new SolidColorBrush(Colors.Blue);
+                empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+                unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
+            }
+            else
+            {
+
+                stauts.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+                status_s = 0;
+                ck_status.Visibility = Visibility.Hidden;
+                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2014E91"));
+                bd_status.BorderBrush = new SolidColorBrush(Colors.White);
+                rent_bd.IsEnabled = false;
+                booked_bd.IsEnabled = false;
+                rent_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                rent_t.Foreground = new SolidColorBrush(Colors.Black);
+                rent = 0;
+                booked_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                booked_t.Foreground = new SolidColorBrush(Colors.Blue);
+                booked = 0;
+                unavai_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
+                unavai = 0;
+
+                empty_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+                empty = 0;
+                empty_bd.IsEnabled =false;
+                unavai_bd.IsEnabled = false;
+                rent_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F000000"));
+                booked_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C0000FF"));
+                empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00652E"));
+                unavai_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F8B0000"));
+            }
+        }
+        int rent = 0;
+        private void rent_bd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(rent==0)
+            {
+                
+                rent_bd.Background = new SolidColorBrush(Colors.Black);
+                rent_t.Foreground = new SolidColorBrush(Colors.White);
+                rent = 1;
+            }
+            else {
+                rent_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF")); 
+                rent_t.Foreground = new SolidColorBrush(Colors.Black);
+                rent = 0;
+            }
+        }
+        int stage_s = 0;
+        int stage_num = 1;
+        private void bd_stage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(stage_s==0)
+            {
+                stage_s = 1;
+                ck_stage.Visibility=Visibility.Visible;
+                stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
+                stg_t.Foreground = new SolidColorBrush(Colors.White);
+                up.Background = new SolidColorBrush(Colors.LightGray);
+                down.Background = new SolidColorBrush(Colors.LightGray);
+                bd_stage.BorderBrush = new SolidColorBrush(Colors.Green);
+                num_s.Foreground=new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7BB04"));
+                up.IsEnabled = true;
+                down.IsEnabled = true;
+            }
+            else
+            {
+                stage_s = 0;
+                ck_stage.Visibility = Visibility.Hidden;
+             stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+                stg_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                up.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                down.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                bd_stage.BorderBrush = new SolidColorBrush(Colors.White);
+                num_s.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FF7BB04"));
+                up.IsEnabled = false;
+                down.IsEnabled = false;
+            }
+        }
+        int booked =0;
+        private void booked_bd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (booked == 0)
+            {
+
+                booked_bd.Background = new SolidColorBrush(Colors.Blue);
+               booked_t.Foreground = new SolidColorBrush(Colors.White);
+                booked= 1;
+            }
+            else
+            {
+                booked_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+                booked_t.Foreground = new SolidColorBrush(Colors.Blue);
+                booked = 0;
+            }
+        }
+        int empty = 0;
+        private void empty_bd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (empty == 0)
+            {
+
+                empty_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+                empty_t.Foreground = new SolidColorBrush(Colors.White);
+               empty= 1;
+            }
+            else
+            {
+               empty_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+               empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+                empty = 0;
+            }
+        }
+        int unavai=0;
+        private void unavai_bd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (unavai== 0)
+            {
+
+               unavai_bd.Background = new SolidColorBrush(Colors.DarkRed);
+               unavai_t.Foreground = new SolidColorBrush(Colors.White);
+               unavai = 1;
+            }
+            else
+            {
+               unavai_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+               unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
+                unavai = 0;
+            }
+
+        }
+
+        private void up_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            stage_num += 1;
+            if(stage_num <=9)
+            {
+                num_s.Content = "0" + stage_num.ToString();
+
+            }
+            else
+            {
+
+                num_s.Content =  stage_num.ToString();
+
+            }
+        }
+
+        private void down_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (stage_num > 0) 
+            {
+                
+                stage_num -= 1;
+                if (stage_num<= 9)
+                {
+                    if (stage_num == 0)
+                        num_s.Content = "G";
+                    else
+
+                        num_s.Content = "0" + stage_num.ToString();
+
+                }
+                else
+                {
+
+                    num_s.Content = stage_num.ToString();
+
+                }
+            }
+       
+        }
     }
+    
 }

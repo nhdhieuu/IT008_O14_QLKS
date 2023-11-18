@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\App.xaml
-81353682969
-22121466560
-121406439977
+17-382639832
+
+21-1565084586
 14-1656046352
-Loginn.xaml;signUp.xaml;View\Manager\Client.xaml;View\Manager\home.xaml;View\Manager\Manager_main.xaml;View\Manager\receipt.xaml;View\Manager\room.xaml;View\Manager\staff.xaml;
+Loginn.xaml;signUp.xaml;View\Manager\Card\ClientCardxaml.xaml;View\Manager\Card\ReceiptCard.xaml;View\Manager\Card\roomcard.xaml;View\Manager\Card\roomCardbackground\Normal.xaml;View\Manager\Card\roomCardbackground\Normal_empty.xaml;View\Manager\Card\roomCardbackground\VIP.xaml;View\Manager\Card\roomCardbackground\Vip_empty.xaml;View\Manager\Card\ServiceCard.xaml;View\Manager\Card\StaffCard.xaml;View\Manager\FormPage\room\Viewroom_form.xaml;View\Manager\home.xaml;View\Manager\Manager_main.xaml;View\Manager\receipt.xaml;View\Manager\room.xaml;View\Manager\staff.xaml;
 
 True
 

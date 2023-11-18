@@ -7,52 +7,97 @@
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
     <Border  Background="#FFEFEEE5" CornerRadius="5,5,5,5">
-        <Grid>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="139" Margin="498,23,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/room2.jpg" Stretch="UniformToFill"/>
-                </Border.Background>
-                <Grid>
-                    <Border Margin="193,41,0,48" Background="#FFC6980A" CornerRadius="5,5,5,5" HorizontalAlignment="Left" Width="51" >
-                        <Image Source="/Resources/icons8-calender-32 1.jpg" Margin="-1,-2,1,4"/>
-                    </Border>
-                    <Label Content="October  25, 2023" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="22" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="12,92,0,0" FontWeight="Bold" />
+        <Grid Margin="7,0,-7,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="701*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
 
-                </Grid>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="380" Margin="498,188,0,0" VerticalAlignment="Top" Width="262" CornerRadius="5,5,5,5">
+            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="512" Margin="496,22,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" Grid.ColumnSpan="2">
                 <Border.Background>
                     <ImageBrush ImageSource="/Resources/room1.jpg"/>
                 </Border.Background>
                 <Grid>
-                    <Border Margin="16,39,13,224" CornerRadius="5,5,5,5" Background="White">
-                        <GroupBox Header="Status" HorizontalAlignment="Center" Width="210" Background="White" FontSize="24" FontFamily="Sylfaen " FontWeight="Bold" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="1" Margin="0,-5,0,10">
-                            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="194" Height="72" Margin="3,0,0,0" Background="White" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="243*"/>
+                        <ColumnDefinition Width="19*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="type" Margin="17,46,11,295" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Grid.ColumnSpan="2"></Border>
+                    <Border x:Name="stauts" Margin="16,226,14,115" Background="#7F4E4B4B" CornerRadius="8,8,8,8" Grid.ColumnSpan="2" />
+                    <Border x:Name="standard" Margin="25,87,114,376" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_3" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="standardt" Text="Normal" Foreground="#7F797979" FontFamily="Bahnschrift" FontSize="20" Margin="18,13,18,6" FontWeight="Bold" >
 
-                        </GroupBox>
+                        </TextBlock>
                     </Border>
-                    <Border Margin="16,173,13,68" Background="White" >
-                        <GroupBox Header="Type" Height="129" VerticalAlignment="Top" HorizontalAlignment="Center" Width="207" Background="White" FontSize="24" FontFamily="Sylfaen " FontWeight="Bold" Margin="0,-5,0,0" Foreground="#FFC6980A" BorderBrush="#FFC6980A" BorderThickness="1">
-                            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="196" Height="90" Margin="1,0,0,0" Background="White" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
+                    <Border x:Name="Dlx" Margin="25,145,114,320" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False" MouseDown="Dlx_MouseDown" Cursor="Hand" >
+                        <TextBlock  x:Name="Dlxt" Text="Deluxe" Foreground="#7F797979" Margin="21,10,22,12" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold">
 
+                        </TextBlock>
+                    </Border>
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
+                    <Border x:Name="stage" Margin="13,409,0,15" Background="#7F4E4B4B" CornerRadius="8,8,8,8" HorizontalAlignment="Left" Width="136" />
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="17,-3,0,0" />
+                    <Label x:Name="stg_t" Content="STAGE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="99"  FontSize="24" FontFamily="Bahnschrift" Foreground="#7EFFFFFF" Background="{x:Null}" FontWeight="Bold" Margin="20,412,0,0" />
+                    <Label x:Name="num_s" Content="01" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="81"  FontSize="55" FontFamily="Bahnschrift" Foreground="#7FF7BB04" Background="{x:Null}" FontWeight="Bold" Margin="17,431,0,0" />
 
-                        </GroupBox>
+                    <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#AFFFC000" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />
+                    <Border x:Name="up" Margin="103,469,124,24" Background="#7FFFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="-5.927,-0.327" IsEnabled="False" Cursor="Hand" MouseDown="up_MouseDown" >
+                        <TextBlock Text="^" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF605D5D" Height="19" FontSize="17"/>
                     </Border>
-                    <Border x:Name="Clean" HorizontalAlignment="Left" Width="47" Height="41" VerticalAlignment="Top" Margin="17,326,0,0" CornerRadius="5,5,5,5" Background="#FF66BB6A" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" >
-                        <Image Source="/Resources/broom.png" Margin="2,4,5,4"/>
+                    <Border x:Name="down" Margin="126,469,101,24" Background="#7EFFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" IsEnabled="False" MouseDown="down_MouseDown" >
+                        <TextBlock Text="^" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Height="19" FontSize="17" Margin="0,-4,0,0" RenderTransformOrigin="0.5,0.5" Foreground="#FF605D5D" Cursor="Hand">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180.242"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
                     </Border>
-                    <Label Content="Filter" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="28" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="173,-6,0,0" FontWeight="Bold" />
+                    <Border x:Name="bd_type" Margin="217,52,5,435" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" MouseDown="Border_MouseDown_2" BorderThickness="2,2,2,2" BorderBrush="White" Cursor="Hand" >
+                        <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden">
+
+                        </Image>
+                    </Border>
+                    <Border x:Name="VIP" Margin="138,145,2,320" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False" MouseDown="VIP_MouseDown" Cursor="Hand" >
+                        <TextBlock x:Name="VIPt" Text="VIP" FontFamily="Bahnschrift" FontSize="20" Foreground="#7F797979" Margin="34,11,28,13" FontWeight="Bold"/>
+                    </Border>
+                    <Border  x:Name="sup" Margin="138,87,2,376" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown_4" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="supt" Text="Superior" Margin="13,13,-13,-12" Foreground="#7F797979" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Cursor="ScrollE">
+
+                        </TextBlock>
+                    </Border>
+                    <Label x:Name="status_txt" Content="STATUS" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#B2014E91" Background="{x:Null}" FontWeight="Bold" Margin="20,227,0,0" />
+                    <Border x:Name="bd_status" Margin="217,234,5,255" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" MouseDown="bd_type_Copy1_MouseDown" Cursor="Hand" >
+                        <Image x:Name="ck_status" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border x:Name="bd_stage" Margin="124,419,101,72" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" MouseDown="bd_stage_MouseDown" >
+                        <Image x:Name="ck_stage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border x:Name="rent_bd" Margin="25,271,114,192" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="rent_bd_MouseDown" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="rent_t" Foreground="#7F000000" FontFamily="Bahnschrift" FontSize="20" Margin="20,13,16,6" FontWeight="Bold" Text="Rented" />
+                    </Border>
+                    <Border x:Name="booked_bd" Margin="137,271,2,192" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="booked_bd_MouseDown" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="booked_t" Text="Booked" Foreground="#7C0000FF" FontFamily="Bahnschrift" FontSize="20" Margin="18,13,10,6" FontWeight="Bold" RenderTransformOrigin="0.436,0.484" />
+                    </Border>
+                    <Border x:Name="empty_bd" Margin="25,326,114,138" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="empty_bd_MouseDown" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="empty_t" Text="Empty" Foreground="#7F00652E" FontFamily="Bahnschrift" FontSize="20" Margin="22,13,14,6" FontWeight="Bold" RenderTransformOrigin="0.616,0.468" />
+                    </Border>
+                    <Border x:Name="unavai_bd" Margin="138,326,1,137" Background="#B2FFFFFF" CornerRadius="5,5,5,5" MouseDown="unavai_bd_MouseDown" IsEnabled="False" Cursor="Hand" >
+                        <TextBlock x:Name="unavai_t" Text="Unavailable" Foreground="#7F8B0000" FontFamily="Bahnschrift" FontSize="18" Margin="5,14,-6,5" FontWeight="Bold" />
+                    </Border>
 
                 </Grid>
             </Border>
-            <Border x:Name="add" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="33" Margin="205,540,0,0" VerticalAlignment="Top" Width="69" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
-                <Label Content="+" Margin="19,-8,12,0" FontSize="24" FontWeight="Bold" Foreground="White"/>
+            <Border x:Name="add" BorderBrush="White" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="42" Margin="207,539,0,0" VerticalAlignment="Top" Width="93" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
+                <Label Content="+" Margin="25,-16,6,-10" FontSize="39" FontWeight="Bold" Foreground="White"/>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="138,23,0,0" VerticalAlignment="Top" Width="329" CornerRadius="5,5,5,5">
-                <Grid>
-                    <Label Content="search" HorizontalAlignment="Left" Height="39" Margin="2,-4,0,0" VerticalAlignment="Top" Width="76" FontFamily="Sylfaen " FontSize="24" Foreground="#FF1A1A1A"/>
-                    <Image Margin="294,5,2,7" Source="/Resources/search.png" Cursor="Hand" />
-                    <Rectangle HorizontalAlignment="Left" Height="50" Margin="75,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="36" Margin="145,23,0,0" VerticalAlignment="Top" Width="338" CornerRadius="5,5,5,5" Background="White">
+                <Grid Background="White" Margin="4,0,7,0">
+                    <Label Content="search" HorizontalAlignment="Left" Height="40" Margin="10,0,0,0" VerticalAlignment="Center" Width="76" FontFamily="Sylfaen " FontSize="22" Foreground="#FF1A1A1A" />
+                    <Rectangle   HorizontalAlignment="Left" Height="50" Margin="91,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" Fill="White">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="-1"/>
@@ -62,94 +107,78 @@
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="212" Height="34" Margin="80,0,0,0" Background="#FFEFEEE5" FontFamily="Sylfaen " FontSize="23" BorderBrush="#FFEFEEE5"/>
+                    <Image Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" />
                 </Grid>
             </Border>
-            <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="36,5,0,0" VerticalAlignment="Top" Width="121" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="128" Margin="24,85,0,0" VerticalAlignment="Top" Width="208" CornerRadius="5,5,5,5" Background="#FF12CE69" Cursor="Hand">
-                <Grid>
-                    <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/room_p1.png"/>
-                        </Border.Background>
-                        <Grid>
-                            <Label Content="P101" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
-                            <Label Content="Normal" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
+            <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="44,3,0,0" VerticalAlignment="Top" Width="101" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="116,279,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="22" Margin="10,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
+            <StackPanel Margin="13,113,466,45">
+                <ContentControl x:Name="cc11" Height="140">
 
-                        </Grid>
+                </ContentControl>
+                <ContentControl x:Name="cc12" Height="140">
 
-                    </Border>
-                    <Label Content="Empty" HorizontalAlignment="Center" Height="39" Margin="0,95,0,0" VerticalAlignment="Top" Width="76" FontFamily="Sylfaen " FontSize="19" Foreground="White" FontWeight="Bold"/>
+                </ContentControl>
+                <ContentControl x:Name="cc13" Height="140">
 
-                </Grid>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="128" Margin="259,85,0,0" VerticalAlignment="Top" Width="208" CornerRadius="5,5,5,5" Background="Black" Cursor="Hand">
-                <Grid>
-                    <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/room_p2.jpg" Stretch="UniformToFill"/>
-                        </Border.Background>
-                        <Grid>
-                            <Label Content="P102" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>
-                            <Label Content="V.I.P" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="#FFFAB005"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
-                            <Label Content="2" HorizontalAlignment="Left" Margin="156,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
+                </ContentControl>
 
-                        </Grid>
+            </StackPanel>
+            <StackPanel Margin="254,113,225,45">
+                <ContentControl x:Name="cc21" Height="140" >
 
-                    </Border>
-                    <Label Content="Nguyễn Duy Hưng" HorizontalAlignment="Left" Height="39" Margin="3,101,0,0" VerticalAlignment="Top" Width="146" FontFamily="Sylfaen " FontSize="14" Foreground="#FFCB8F04" FontWeight="Bold"/>
-                    <Label Content="2 days" HorizontalAlignment="Left" Margin="155,100,0,0" Width="58" FontFamily="Sylfaen " FontSize="14" Foreground="#FFCB8F04" FontWeight="Bold" Height="39" VerticalAlignment="Top"/>
+                </ContentControl>
+                <ContentControl x:Name="cc22" Height="140">
 
-                </Grid>
-            </Border>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="817,279,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="23" Margin="8,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
-            <Label Content="1" HorizontalAlignment="Left" Margin="181,91,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="128" Margin="24,0,0,0" VerticalAlignment="Center" Width="208" CornerRadius="5,5,5,5" Background="#FF533F3F" Cursor="Hand">
-                <Grid>
-                    <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/room_p3.jpg" Stretch="UniformToFill"/>
-                        </Border.Background>
-                        <Grid>
-                            <Label Content="P103" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="White"/>
-                            <Label Content="Normal" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
-                            <Image HorizontalAlignment="Center" Height="33" Margin="0,12,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/wrench.png"/>
-                            <Label Content="1" HorizontalAlignment="Left" Margin="156,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
+                </ContentControl>
+                <ContentControl x:Name="cc23" Height="140">
 
-                        </Grid>
+                </ContentControl>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="40" Margin="241,72,232,478">
+                <Border Background="#FF827E7E" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                    <Image Source="/Resources/icons8-next-page-24.png" Margin="-1,3,14,3" RenderTransformOrigin="-0.508,0.45">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="42.336"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Border>
 
-                    </Border>
-                    <Label Content="Repair" HorizontalAlignment="Center" Margin="0,95,0,-8" Width="76" FontFamily="Sylfaen " FontSize="19" Foreground="White" FontWeight="Bold"/>
+                <Border Background="WhITE" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2" BorderBrush="Black" BorderThickness="1,1,1,1">
+                    <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
+                </Border>
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                    <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
+                </Border>
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                    <TextBlock Text="..." HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20" Margin="0,0,10,0"></TextBlock>
 
-                </Grid>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="128" Margin="259,0,0,0" VerticalAlignment="Center" Width="208" CornerRadius="5,5,5,5" Background="#FF533F3F" Cursor="Hand">
-                <Grid>
-                    <Border Margin="0,0,0,22" CornerRadius="5,5,5,5" >
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/room_p4.jpg" Stretch="UniformToFill"/>
-                        </Border.Background>
-                        <Grid>
-                            <Label Content="P104" HorizontalAlignment="Left" Margin="7,-5,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="36" Foreground="#FFEDD383"/>
-                            <Label Content="V.I.P" HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" FontFamily="Sylfaen " FontWeight="Bold" FontSize="20" Foreground="White"/>
-                            <Image Height="28" Margin="173,6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Source="/Resources/user.png"/>
-                            <Image HorizontalAlignment="Left" Height="38" Margin="90,7,0,0" VerticalAlignment="Top" Width="30" Source="/Resources/broom.png"/>
-                            <Label Content="1" HorizontalAlignment="Left" Margin="157,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="20"/>
+                </Border>
+                <Border Background="#FF827E7E" Width="30" Height="30"  HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2">
+                    <TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
+                </Border>
+                <Border Background="#FF827E7E" Width="30" Height="30" Margin="8,0,0,0" CornerRadius="2">
+                    <Image Source="/Resources/icons8-next-page-24.png" Margin="-35,2,48,4" RenderTransformOrigin="-0.508,0.45">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="42.336"/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Border>
 
-                        </Grid>
 
-                    </Border>
-                    <Label Content="Not cleaned" HorizontalAlignment="Center" Height="39" Margin="0,95,0,0" VerticalAlignment="Top" Width="112" FontFamily="Sylfaen " FontSize="19" Foreground="White" FontWeight="Bold"/>
 
-                </Grid>
-            </Border>
-
+            </StackPanel>
         </Grid>
 
     </Border>

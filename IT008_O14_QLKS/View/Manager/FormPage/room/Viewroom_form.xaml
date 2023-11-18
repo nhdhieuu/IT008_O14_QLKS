@@ -1,12 +1,323 @@
-﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.room.Viewroom_form"
+﻿<Window x:Name="ViewRoomWD" x:Class="IT008_O14_QLKS.View.Manager.FormPage.room.Viewroom_form"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room"
         mc:Ignorable="d"
-        Title="Viewroom_form" Height="450" Width="800" Topmost="True" WindowStartupLocation="CenterScreen">
+        Title="Viewroom_form" Height="729" Width="787" Topmost="True" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" MouseDown="ViewRoomWD_MouseDown">
+
+
     <Grid>
-        
+        <Border x:Name="ViewRoomBD" Background="#F1F0E7" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="284*">
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="445*">
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50">
+
+                        </RowDefinition>
+                        <RowDefinition Height="385*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="60*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="234*">
+
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="CloseBD" Margin="427,0,0,6" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" CornerRadius="0,5,0,0">
+                        <TextBlock x:Name="CLoseTXT" Text="X" FontFamily="Sylfaen" FontSize="25" HorizontalAlignment="Left" Width="52" Margin="18,8,0,-8">
+
+                        </TextBlock>
+                    </Border>
+                    <Border Background="White" CornerRadius="5" Margin="-8,48,27,2" Grid.RowSpan="2">
+                        <Grid>
+                            <Label Margin="16,-2,312,333" Content="service" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold"/>
+                            <Label Margin="106,38,294,315" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="209,39,191,314" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="343,39,57,307" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="106,186,294,167" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="209,186,191,167" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="343,186,57,160" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin"/>
+                            <Label Margin="372,19,14,335" Content="available" FontFamily="Sylfaen" FontSize="17" Foreground="#1D19E3" FontWeight="Thin"/>
+
+
+                            <Rectangle Margin="18,194,22,190" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="18,46,22,338" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="168,48,291,311" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+
+                            <Rectangle Margin="300,48,159,311" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="168,196,291,163" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="300,196,159,163" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <ScrollViewer Margin="21,78,21,201">
+                                <StackPanel>
+                                    <ContentControl x:Name="CC1" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC2" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC3" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC4" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC5" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC6" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC7" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC8" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC9" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CC10" Height="42" Width="375">
+
+                                    </ContentControl>
+                                </StackPanel>
+
+                            </ScrollViewer>
+
+                            <ScrollViewer Margin="21,224,21,55">
+                                <StackPanel>
+                                    <ContentControl x:Name="CCa1" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa2" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa3" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa4" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa5" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa6" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa7" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa8" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa9" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCa10" Height="42" Width="375">
+
+                                    </ContentControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                            <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="16,343,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave">
+                                <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="3" Background="White" CornerRadius="5" Margin="-8,0,27,25">
+                        <Grid>
+                            <Label Margin="16,-10,297,159" Content="problem" FontFamily="Sylfaen" FontSize="32" Foreground="#C60A0A" FontWeight="Bold"/>
+
+                            <Rectangle Margin="10,38,30,170" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="169,40,290,141" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+                            <Rectangle Margin="300,40,159,141" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+
+                            </Rectangle>
+
+                            <Label Margin="106,32,292,139" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#BF0B0B" FontWeight="Thin"/>
+                            <Label Margin="209,32,191,140" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#BF0B0B" FontWeight="Thin"/>
+                            <Label Margin="343,32,56,138" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#BF0B0B" FontWeight="Thin"/>
+
+                            <ScrollViewer Margin="16,70,21,51" RenderTransformOrigin="0.5,0.5">
+
+                                <StackPanel>
+                                    <ContentControl x:Name="CCb1" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb2" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb3" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb4" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb5" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb6" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb7" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb8" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb9" Height="42" Width="375">
+
+                                    </ContentControl>
+                                    <ContentControl x:Name="CCb10" Height="42" Width="375">
+
+                                    </ContentControl>
+                                </StackPanel>
+                            </ScrollViewer>
+                            <Border x:Name="add_buttt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="16,168,0,9" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="add_buttt_MouseDown" MouseEnter="add_buttt_MouseEnter" MouseLeave="add_buttt_MouseLeave" >
+                                <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
+                            </Border>
+                        </Grid>
+
+                    </Border>
+                    <Grid Grid.Row="2">
+                        <Label Margin="-4,-2,353,2" Content="cleaning" FontFamily="Sylfaen" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold"/>
+                        <Label Margin="237,0,109,0" Content="maintain" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold"/>
+                        <ComboBox Margin="126,12,268,16" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold">
+                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                        </ComboBox>
+                        <Rectangle Margin="226,5,251,6" Fill="#C6980A">
+                        </Rectangle>
+                        <ComboBox Margin="372,12,22,16" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold">
+                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                        </ComboBox>
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="46*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="127*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="65*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="87*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="204*">
+
+                        </RowDefinition>
+                        <RowDefinition Height="201*">
+
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="facility" Grid.Row="5" Background="#FFF1F0E7" Margin="24,2,24,24" FontFamily="Sylfaen" FontSize="21" BorderBrush="#FF1D19E3" Foreground="#FF1D19E3" BorderThickness="2,2,2,2">
+                        <Grid>
+                            <Label Margin="1,74,149,28" Content="pool" Height="38"/>
+                            <Label Margin="1,46,149,56" Content="bathtub" Height="38"/>
+                            <Label Margin="1,102,192,0" Content="style" Height="38"/>
+                            <Label Margin="1,21,137,81" Content="double bed" Height="38"/>
+                            <Label Margin="1,-4,149,106" Content="single bed" Height="38"/>
+                            <TextBox Margin="110,7,119,117" RenderTransformOrigin="-3.819,-3.929" FontSize="20"/>
+                            <TextBox Margin="110,33,119,91" RenderTransformOrigin="-3.819,-3.929" FontSize="20"/>
+                            <CheckBox Margin="113,60,116,56"/>
+                            <CheckBox Margin="112,87,108,28"/>
+                            <ComboBox Margin="55,109,119,8" FontSize="18"/>
+                            <ComboBox Margin="146,7,10,110" FontSize="18"/>
+                            <Label Margin="146,30,10,66" Content="internet"/>
+                            <ComboBox Margin="153,63,17,52" FontSize="15">
+                                <ComboBoxItem Content="High" FontFamily="Sylfaen" FontSize="15"/>
+                                <ComboBoxItem Content="Mid" FontFamily="Sylfaen" FontSize="15"/>
+                                <ComboBoxItem Content="Low" FontFamily="Sylfaen" FontSize="15"/>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <Border Grid.Row="4" Background="#D9D9D9" Margin="24,10,24,0" CornerRadius="5,5,5,5">
+                        <Grid>
+                            <Border Margin="25,32,25,24" CornerRadius="5,5,5,5">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/Resources/AnhPhongKS.jpg" Stretch="UniformToFill"/>
+                                </Border.Background>
+
+                            </Border>
+                            <Image Margin="27,3,200,168" Source="/Resources/burger-menu.png">
+
+                            </Image>
+                            <Label Margin="121,-5,0,163" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration">
+
+                            </Label>
+                            <Label Margin="237,84,2,77" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" />
+                            <Label Margin="0,84,239,77" Content="&lt;" Foreground="White" FontSize="15" FontWeight="Bold" />
+                            <Ellipse Margin="84,181,167,5" Cursor="Hand" Fill="#FF8D8585"/>
+                            <Ellipse Margin="102,181,149,5" Cursor="Hand" Fill="#FF8D8585"/>
+                            <Ellipse Margin="139,181,112,5" Cursor="Hand" Fill="#FF8D8585"/>
+                            <Ellipse Margin="120,181,131,5" Cursor="Hand" Fill="White"/>
+                            <Ellipse Margin="158,181,93,5" Cursor="Hand" Fill="#FF8D8585"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="3" Background="#000" Margin="24,10,24,203" Grid.RowSpan="2" CornerRadius="5,5,5,5">
+                        <Grid >
+                            <Label Margin="14,1,126,-1" Content="Trần Văn A" FontFamily="Sylfaen" FontSize="20" Foreground="#FFF1F0E7" FontWeight="Bold" />
+                            <Label Margin="143,33,-3,-33" Content="20/11/2023" FontFamily="Sylfaen" FontSize="20" Foreground="#FFC6980A" FontWeight="Bold" />
+                            <Label Margin="14,33,126,-33" Content="18/11/2023" FontFamily="Sylfaen" FontSize="20" Foreground="#FFC6980A" FontWeight="Bold" />
+                            <Label Margin="143,2,-3,-2" Content="2|4 days" FontFamily="Sylfaen" FontSize="20" Foreground="#FFC6980A" FontWeight="Bold" />
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="2" Background="#000" Margin="24,10,24,87" Grid.RowSpan="2" CornerRadius="5,5,5,5">
+                        <Grid>
+                            <Image Margin="201,0,0,2" Source="/Resources/settings.png" Cursor="Hand" />
+                            <Label Margin="11,-2,129,2" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#FFC6980A" FontWeight="Bold" />
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="1" Margin="24,2,24,65" Grid.RowSpan="2" CornerRadius="5,5,5,5">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Resources/room_p2.jpg" Stretch="UniformToFill"/>
+                        </Border.Background>
+                        <Grid>
+                            <Label Margin="7,7,56,-3" FontFamily="Bahnschrift" FontSize="90" Foreground="White" Content="P101" FontWeight="Bold" />
+                            <Label Margin="186,19,-15,52" FontFamily="Bahnschrift" FontSize="39" Foreground="#C6980A" Content="VIP" FontWeight="Bold" />
+                            <Label Margin="188,57,46,22" Content="1" FontSize="28" Foreground="White" />
+                            <Image Margin="212,68,19,27" Source="/Resources/icons8-human-30.png" />
+                        </Grid>
+                    </Border>
+                    <Label Grid.Row="0" Content="room information" FontFamily="Sylfaen" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="19,-6,-19,6"/>
+
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

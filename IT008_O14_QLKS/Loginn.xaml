@@ -53,9 +53,9 @@
                             CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2" Cursor="Hand"
                             >
                                 <TextBlock x:Name="delbtn_text" FontSize="25 
-                                "  VerticalAlignment="Center" 
+                                "  VerticalAlignment="Bottom" 
                                    HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
-                                   Foreground="#740909" Cursor="Hand"/>
+                                   Foreground="#740909" Cursor="Hand" Margin="0,0,0,3"/>
 
                             </Border>
                         </Grid>
@@ -94,7 +94,7 @@
                                     </PasswordBox >
                                     <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>
                                     <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/Resources/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
-                                        
+
                                     </Image>
                                     <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
 

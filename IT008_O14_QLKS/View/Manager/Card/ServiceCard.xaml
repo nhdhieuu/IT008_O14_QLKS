@@ -7,12 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="465">
     <Grid>
-        <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="16*"/>
+        </Grid.RowDefinitions>
+        <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E" Grid.RowSpan="2">
             <TextBlock Text="Trần Văn A" FontSize="40">
-                
+
             </TextBlock>
-            
+
         </Border>
-            
+
     </Grid>
 </UserControl>

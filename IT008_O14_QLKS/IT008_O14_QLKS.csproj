@@ -384,5 +384,12 @@
   <ItemGroup>
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\card.png" />
+    <Content Include="Resources\datepicker.png" />
+    <Content Include="Resources\filter.png" />
+    <Content Include="Resources\print.png" />
+    <Content Include="Resources\sort_by.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

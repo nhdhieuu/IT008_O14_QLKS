@@ -62,6 +62,9 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Client.xaml.cs">
+      <DependentUpon>Client.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="signUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,6 +271,7 @@
     <Resource Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
+
     <Resource Include="Resources\card.png" />
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +285,7 @@
     <Content Include="Resources\calendar.png" />
     <Content Include="Resources\printer.png" />
     <Resource Include="Resources\sort_by.png" />
+<!--    <Resource Include="Resources\icons8-client-50.png" />-->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

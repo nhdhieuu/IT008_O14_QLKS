@@ -386,8 +386,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\card.png" />
+    <Content Include="Resources\card1.png" />
     <Content Include="Resources\datepicker.png" />
+    <Content Include="Resources\datepicker1.png" />
     <Content Include="Resources\filter.png" />
+    <Content Include="Resources\filter1.png" />
     <Content Include="Resources\print.png" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>

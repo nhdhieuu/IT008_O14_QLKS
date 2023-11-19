@@ -238,6 +238,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void border6_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            DataContext = new notice();
             text6.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border6.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 6;

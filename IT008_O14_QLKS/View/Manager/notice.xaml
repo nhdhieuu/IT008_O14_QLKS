@@ -44,7 +44,7 @@
                     </Border>
                     <Border Background="#C6980A" CornerRadius="5" Margin="100,445,100,10" >
                         <Button Name="send_but" Content="send" Foreground="White" Background="#C6980A" Margin="1.2"
-                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" Click="send_but_Click" 
+                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" 
                                 />
                     </Border>
                 </Grid>
@@ -52,10 +52,10 @@
 
             <!-- Bên Trái -->
 
-            <Grid Grid.Column="0" Margin="10,10,10,320">
+            <Grid Grid.Column="0" Margin="10,10,10,280">
 
                 <Border CornerRadius="5" Background="White">
-                    <Grid Margin="0,0,0,-25">
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="1*"/>
@@ -71,7 +71,7 @@
                             <Button BorderThickness="0" Margin="1.5" Content="update" Foreground="White"
          FontSize="18" Background="#12CE69"/>
                         </Border>
-                        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="5" Background="#D9D9D9" Grid.Row="1" Margin="20,10,20,10">
+                        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="5" Background="#D9D9D9" Grid.Row="1" Margin="20,10,20,20">
                             <TextBlock Margin="2" Background=" #D9D9D9"
                                        Text="   
 Khách sạn Ginkgo rất tiếc thông báo tới quý khách hàng về việc xuất hiện tiếng ồn vào sáng Chủ Nhật ngày 22/10/2023. Nhằm đền bù cho quý khách hàng, vui lòng đến quầy lễ tân để đăng ký nhận phiếu giảm giá 30% cho lần ghé thăm khách sạn tiếp theo.

@@ -252,12 +252,19 @@
                             <Label Margin="1,102,192,0" Content="style" Height="38"/>
                             <Label Margin="1,21,137,81" Content="double bed" Height="38"/>
                             <Label Margin="1,-4,149,106" Content="single bed" Height="38"/>
-                            <TextBox Margin="110,7,119,117" RenderTransformOrigin="-3.819,-3.929" FontSize="20"/>
-                            <TextBox Margin="110,33,119,91" RenderTransformOrigin="-3.819,-3.929" FontSize="20"/>
-                            <CheckBox Margin="113,60,116,56"/>
-                            <CheckBox Margin="112,87,108,28"/>
-                            <ComboBox Margin="55,109,119,8" FontSize="18"/>
-                            <ComboBox Margin="146,7,10,110" FontSize="18"/>
+                            <TextBox Margin="110,7,119,117" RenderTransformOrigin="-3.819,-3.929" FontSize="12"/>
+                            <TextBox Margin="110,33,119,91" RenderTransformOrigin="-3.819,-3.929" FontSize="12"/>
+                            <CheckBox Margin="113,60,116,56" Cursor="Hand"/>
+                            <CheckBox Margin="112,87,108,28" Cursor="Hand"/>
+                            <ComboBox Margin="55,109,108,8" FontSize="15">
+                                <ComboBoxItem Content="modern"/>
+                                <ComboBoxItem Content="old"/>
+                            </ComboBox>
+                            <ComboBox Margin="141,7,7,106" FontSize="15">
+                                <ComboBoxItem Content="Fridge"/>
+                                <ComboBoxItem Content="Washing Machine"/>
+                                <ComboBoxItem Content="Television"/>
+                            </ComboBox>
                             <Label Margin="146,30,10,66" Content="internet"/>
                             <ComboBox Margin="153,63,17,52" FontSize="15">
                                 <ComboBoxItem Content="High" FontFamily="Sylfaen" FontSize="15"/>
@@ -274,14 +281,14 @@
                                 </Border.Background>
 
                             </Border>
-                            <Image Margin="27,3,200,168" Source="/Resources/burger-menu.png">
+                            <Image Margin="27,3,200,168" Source="/Resources/burger-menu.png" Cursor="Hand">
 
                             </Image>
                             <Label Margin="121,-5,0,163" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration">
 
                             </Label>
-                            <Label Margin="237,84,2,77" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" />
-                            <Label Margin="0,84,239,77" Content="&lt;" Foreground="White" FontSize="15" FontWeight="Bold" />
+                            <Label Margin="237,84,2,77" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
+                            <Label Margin="2,84,237,77" Content="&lt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
                             <Ellipse Margin="84,181,167,5" Cursor="Hand" Fill="#FF8D8585"/>
                             <Ellipse Margin="102,181,149,5" Cursor="Hand" Fill="#FF8D8585"/>
                             <Ellipse Margin="139,181,112,5" Cursor="Hand" Fill="#FF8D8585"/>
@@ -304,15 +311,9 @@
                         </Grid>
                     </Border>
                     <Border Grid.Row="1" Margin="24,2,24,65" Grid.RowSpan="2" CornerRadius="5,5,5,5">
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/room_p2.jpg" Stretch="UniformToFill"/>
-                        </Border.Background>
-                        <Grid>
-                            <Label Margin="7,7,56,-3" FontFamily="Bahnschrift" FontSize="90" Foreground="White" Content="P101" FontWeight="Bold" />
-                            <Label Margin="186,19,-15,52" FontFamily="Bahnschrift" FontSize="39" Foreground="#C6980A" Content="VIP" FontWeight="Bold" />
-                            <Label Margin="188,57,46,22" Content="1" FontSize="28" Foreground="White" />
-                            <Image Margin="212,68,19,27" Source="/Resources/icons8-human-30.png" />
-                        </Grid>
+                        <ContentControl>
+
+                        </ContentControl>
                     </Border>
                     <Label Grid.Row="0" Content="room information" FontFamily="Sylfaen" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="19,-6,-19,6"/>
 

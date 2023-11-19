@@ -5,18 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="465">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="9*"/>
-            <RowDefinition Height="16*"/>
-        </Grid.RowDefinitions>
-        <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E" Grid.RowSpan="2">
-            <TextBlock Text="Trần Văn A" FontSize="40">
-
-            </TextBlock>
-
+             d:DesignHeight="42" d:DesignWidth="375">
+    <Grid Height="42" Width="375" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="136*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#FFC6980A" CornerRadius="5,5,5,5" BorderThickness="1.2" BorderBrush="#9F8E8E" Grid.ColumnSpan="3" Margin="0,3,0,2">
         </Border>
+        <TextBlock x:Name="nametbx" Text="Trần Văn A" FontSize="18"  FontFamily="Sylfaen" Foreground="White" Grid.Column="0" TextAlignment="Center" Margin="0,0,1,0" VerticalAlignment="Center">
 
+        </TextBlock>
+        <TextBlock x:Name="datetbx" Text="Trần Văn A" FontSize="18"  FontFamily="Sylfaen" Foreground="White" Grid.Column="1" TextAlignment="Center"  VerticalAlignment="Center">
+
+        </TextBlock>
+        <TextBlock x:Name="pricetbx" Text="Trần Văn A" FontSize="18"  FontFamily="Sylfaen" Foreground="White" Grid.Column="2" TextAlignment="Center"  VerticalAlignment="Center">
+
+        </TextBlock>
+        <Rectangle Margin="134,6,130,5" Fill="White" Grid.ColumnSpan="2" />
+        <Rectangle Margin="130,6,107,5" Fill="White" Grid.Column="1" Grid.ColumnSpan="2" />
     </Grid>
 </UserControl>

@@ -51,7 +51,6 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.Sug
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCardxaml.g.cs
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProblemCard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ReceiptCard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.g.cs
@@ -93,9 +92,11 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\receipt.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProblemCard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.g.resources
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.Properties.Resources.resources
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cache
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProblemCard.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProbBlemCard.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProbBlemCard.baml

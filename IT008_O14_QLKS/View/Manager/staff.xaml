@@ -87,10 +87,32 @@
                     </Grid>
                 </Border>
             </Grid>
-                
+
             <!-- Phần bên trái-->
             <Grid>
+                <Border CornerRadius="5" Background="#D9D9D9" Margin="25,31,30,395"
+                        BorderThickness="2" BorderBrush="#9F8E8E">
 
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="4*"/>
+
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+                        <Label  Padding="0" Content="#NV01" Foreground="Goldenrod" Margin="360,0,0,0" 
+                VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift"/>
+                        <Label  Padding="0" Content="Trần Văn A" Foreground="Black" Margin="10,0,170,0" 
+    VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold"/>
+
+                        <Label Grid.Row="1" Padding="0" Content="Lễ tân" Foreground="Blue" Margin="10,0,245,0" 
+VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
+                        <Button Grid.Row="1" Margin="399,12,25,10" Opacity="100"
+                    Background="Transparent" BorderThickness="0">
+                            <Image Source="/Resources/eye.png" Width="44"
+                       Stretch="Uniform"/>
+                        </Button>
+                    </Grid>
+                </Border>
 
                 <Border CornerRadius="5" Background="#12CE69" Margin="218,486,218,10">
                     <Button x:Name="add_but" Content="+" Foreground="White" BorderThickness="0"

@@ -41,7 +41,7 @@ namespace IT008_O14_QLKS.View.Manager {
     public partial class receipt : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 153 "..\..\..\..\View\Manager\receipt.xaml"
+        #line 157 "..\..\..\..\View\Manager\receipt.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Border Datepicker;
         

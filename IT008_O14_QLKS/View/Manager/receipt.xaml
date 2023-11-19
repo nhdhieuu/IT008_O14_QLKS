@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
              d:DesignHeight="599" d:DesignWidth="761">
-    
+
     <Grid>
-        <Border Background="#F1F0E7" CornerRadius="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#F1F0E7" CornerRadius="10" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="487"></ColumnDefinition>
@@ -41,11 +45,11 @@
                                 </Border>
                                 <TextBox  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
                                 <Image Grid.Column="2" Source="/Resources/search.png" Margin="0,7,6,6"></Image>
-                                
+
 
                             </Grid>
                         </Border>
-                        
+
                     </Grid>
                     <Grid Grid.Row="1">
                         <StackPanel Margin="14,10,0,0" >
@@ -84,18 +88,18 @@
                                                 <Label Content="2.000.000" FontFamily="Bahnschrift" FontSize="20" Foreground="#12CE69"  ></Label>
                                                 <!-- <Image Source="/Resources/money.png" VerticalAlignment="Center" Margin="0,5,0,0"></Image> -->
                                             </StackPanel>
-                                            
+
                                         </Grid>
                                         <Grid Grid.Row="1">
                                             <Button Width="40" Height="40" Margin="50,0,0,0">
                                                 <Image Source="/Resources/view.png"></Image>
                                             </Button>
                                         </Grid>
-                                        
+
                                     </Grid>
                                 </Grid>
                             </Border>
-                            
+
                             <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
                                 <Border.Background>
                                     #FFF
@@ -104,7 +108,7 @@
                                     <Label Content="test label"></Label>
                                 </Grid>
                             </Border>
-                             
+
                             <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
                                 <Border.Background>
                                     #FFF
@@ -113,7 +117,7 @@
                                     <Label Content="label"></Label>
                                 </Grid>
                             </Border>
-                            
+
                             <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
                                 <Border.Background >
                                     #FFF
@@ -122,7 +126,7 @@
                                     <Label Content="label"></Label>
                                 </Grid>
                             </Border>
-                            
+
                             <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
                                 <Border.Background>
                                     #FFF
@@ -137,7 +141,7 @@
                 <Grid Grid.Column="1">
                     <StackPanel Margin="20,17,8,12">
                         <Border Width="253" Height="108">
-                            
+
                             <Grid>
                                 <!-- <Grid.ColumnDefinitions> -->
                                 <!--     <ColumnDefinition Width="166"></ColumnDefinition> -->
@@ -155,7 +159,7 @@
                                 </Border>
                             </Grid>
                         </Border>
-                        
+
                         <Border Margin="0,11,0,0">
                             <!-- <Image Source="/Resources/filter1.png"></Image> -->
                         </Border>
@@ -167,13 +171,13 @@
                         <!-- <Border Margin="0,11,0,0"> -->
                         <!--     <Image Source="/Resources/print.png"></Image> -->
                         <!-- </Border> -->
-                        
+
                     </StackPanel>
-                    
+
                 </Grid>
-                
+
             </Grid>
         </Border>
     </Grid>
-    
+
 </UserControl>

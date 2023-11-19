@@ -62,7 +62,6 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -95,13 +94,15 @@
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\notice.xaml.cs">
+      <DependentUpon>notice.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\receipt.xaml.cs">
       <DependentUpon>receipt.xaml</DependentUpon>
@@ -162,7 +163,6 @@
     </Page>
     <Page Include="View\Manager\ClientControl.xaml" />
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\notice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -343,7 +347,6 @@
     <Resource Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="Resources\calendar.png" />
   </ItemGroup>
   <ItemGroup>

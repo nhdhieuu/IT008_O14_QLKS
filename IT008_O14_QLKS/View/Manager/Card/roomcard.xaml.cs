@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room;
 using IT008_O14_QLKS.View.Manager.Card.roomCardbackground;
+using IT008_O14_QLKS.View.Manager.FormPage.room;
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
@@ -166,6 +167,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
         {
             Viewroom_form vr = new Viewroom_form(IDroom);
             vr.ShowDialog();
+        }
+
+        private void statusbd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            sttroompage a = new sttroompage(this.status);
+            a.ShowDialog();
         }
     }
     }

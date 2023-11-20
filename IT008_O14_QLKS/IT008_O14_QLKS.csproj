@@ -62,7 +62,6 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -93,9 +92,32 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
+      <DependentUpon>sttroompage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml.cs">
+      <DependentUpon>adjust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\empty_adj.xaml.cs">
+      <DependentUpon>empty_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\original.xaml.cs">
+      <DependentUpon>original.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\rented_adj.xaml.cs">
+      <DependentUpon>rented_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\unavailable_adj.xaml.cs">
+      <DependentUpon>unavailable_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\booked.xaml.cs">
+      <DependentUpon>booked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
+      <DependentUpon>unavailble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
@@ -161,8 +183,39 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\ClientControl.xaml" />
+    <Page Include="View\Manager\FormPage\room\sttroompage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\empty_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\original.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\rented_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\unavailable_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\booked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -343,7 +396,6 @@
     <Resource Include="Resources\view.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="Resources\calendar.png" />
   </ItemGroup>
   <ItemGroup>

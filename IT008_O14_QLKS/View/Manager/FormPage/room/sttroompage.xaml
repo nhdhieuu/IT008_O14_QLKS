@@ -1,0 +1,58 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room"
+        mc:Ignorable="d"    WindowStyle="None" AllowsTransparency="True"
+        Title="sttroompage" Height="692" Width="585"  Background="Transparent"  Topmost="True"  Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid x:Name="sttgrid" Background="Transparent" Margin="0,227,0,0" MouseDown="sttgrid_MouseDown">
+            <ContentControl x:Name="stt2" Margin="0,4,0,0">
+
+            </ContentControl>
+
+        </Grid>
+        <Border x:Name="main_bd" Background="#FFE9E8E2" CornerRadius="10,10,0,0" MouseDown="Border_MouseDown_1" Margin="4,0,0,459" BorderBrush="Black" BorderThickness="2,2,2,0">
+            <Grid>
+
+
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="180 "/>
+
+                </Grid.RowDefinitions>
+
+                <Border x:Name="delbtn_border" 
+                            Background="Transparent"
+                            CornerRadius="0,9.5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="534,0,0,10" Cursor="Hand"
+                            >
+                    <TextBlock x:Name="delbtn_text" FontSize="25                                  "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="211*"/>
+                        <ColumnDefinition Width="322*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="status adjustment" FontFamily="Times New Roman" FontSize="40" Margin="24,-26,261,160" Foreground="#FFC9A01E" Grid.ColumnSpan="3" />
+                    <ContentControl Height="111" Width="290" Margin="20,39,275,30" Grid.ColumnSpan="3"/>
+                    <Border Height="111" Margin="81,39,20,30" CornerRadius="10" BorderThickness="2" BorderBrush="#7D7B7B" Grid.Column="2"/>
+                    <TextBlock FontFamily="Times New Roman" FontSize="30" Margin="110,54,39,94" Foreground="#FFC9A01E" Grid.Column="2" ><Run Language="vi-vn" Text="current status"/></TextBlock>
+                    <Border x:Name="cstt_bd" CornerRadius="5" Background="Black" Margin="98,99,36,41" Grid.Column="2"/>
+                    <Border CornerRadius="0" Background="#C6980A" Margin="14,176,14,1" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="cstt_txt" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Margin="98,107,0,0" Foreground="#FFC9A01E" Grid.Column="2" Width="186" TextAlignment="Center" ><Run Text="rent"/><Run Language="vi-vn" Text="ed"/></TextBlock>
+                </Grid>
+            </Grid>
+
+
+
+        </Border>
+
+
+
+    </Grid>
+</Window>

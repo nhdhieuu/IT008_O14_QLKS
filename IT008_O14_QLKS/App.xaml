@@ -4,6 +4,38 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS"
              StartupUri="Loginn.xaml">
     <Application.Resources>
-         
+        <Style x:Key="save_bd" TargetType="Border">
+            <Setter Property="Height" Value="38"> </Setter>
+            <Setter Property="Width" Value="130"></Setter>
+            <Setter Property="CornerRadius" Value="7"></Setter>
+            <Setter Property="Background" Value="#12CE69"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkGreen">
+                        
+                    </Setter>
+                    <Setter Property="Cursor" Value="Hand">
+
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="x_bd" TargetType="Border">
+            <Setter Property="Height" Value="38"></Setter>
+            <Setter Property="Width" Value="38"></Setter>
+            <Setter Property="CornerRadius" Value="7"></Setter>
+            <Setter Property="Background" Value="Red"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkRed">
+
+                    </Setter>
+                    <Setter Property="Cursor" Value="Hand">
+
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+       
     </Application.Resources>
 </Application>

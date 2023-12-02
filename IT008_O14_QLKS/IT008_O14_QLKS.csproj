@@ -399,6 +399,8 @@
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
     <Content Include="Resources\print.png" />
+    <Content Include="Resources\ReceiptCardBackground.png" />
+    <Content Include="Resources\RecieptCardMoney.png" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

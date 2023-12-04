@@ -44,7 +44,7 @@
                         <TextBlock Text="  to     4:00:53 21/11/2023  " FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Margin="6,126,15,8" Foreground="White" Grid.Column="1" />
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource save_bd}" Margin="184,187,271,234">
+                <Border Style="{DynamicResource save_bd}" Margin="184,190,271,231">
                     <TextBlock Text="accept" Foreground="White" FontSize="25
                                
                                " FontFamily="Bahnschrift" Margin="28,3,22,-3"> 
@@ -52,12 +52,13 @@
                     </TextBlock>
 
                 </Border>
-                <Border Height="38" Background="#FFBF0B0B" CornerRadius="8" Margin="342,187,166,234">
+                <Border x:Name="del_bd" Height="38" Background="red" CornerRadius="8" Margin="344,190,162,231" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
                     <TextBlock Text="del" Foreground="White" FontSize="25
                                
                                " FontFamily="Bahnschrift" Margin="23,5,19,-5">
 
                     </TextBlock>
+                   
                 </Border>
             </Grid>
         </Grid>

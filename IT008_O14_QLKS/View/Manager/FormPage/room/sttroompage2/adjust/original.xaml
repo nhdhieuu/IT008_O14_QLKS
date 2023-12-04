@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+                    d:DesignHeight="406" d:DesignWidth="585">
     <Grid>
-            
+        <Grid Background="Transparent" Margin="0,-4,0,4">
+            <Border x:Name="main_bd" Background="#FFE9E8E2" CornerRadius="0,0,10,10"  Margin="4,0,0,386" BorderBrush="Black" BorderThickness="2,0,2,2">
+                <Grid/>
+
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

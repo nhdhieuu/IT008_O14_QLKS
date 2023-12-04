@@ -145,7 +145,7 @@
 
                                     </TextBlock>
                                 </Grid>
-                                
+
                             </Border>
 
                         </Grid>
@@ -230,8 +230,10 @@
                             </Border>
 
                         </Grid>
+                        <TextBlock>
 
-                        <TextBlock x:Name="txt_logout" Grid.Row="7" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sylfaen" FontSize="19" Foreground="#FFC6980A" Margin="0,98,0,0" MouseDown="TextBlock_MouseDown" MouseEnter="txt_logout_MouseEnter" MouseLeave="txt_logout_MouseLeave" Cursor="Hand"><Run Text="Log out" TextDecorations="Underline"/></TextBlock>
+                        </TextBlock>
+                        <TextBlock  x:Name="txt_logout" Text="Log out"  Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sylfaen" FontSize="19" Foreground="#FFC6980A" MouseDown="TextBlock_MouseDown" MouseEnter="txt_logout_MouseEnter" MouseLeave="txt_logout_MouseLeave" Cursor="Hand" TextDecorations="Underline" Width="63" Margin="0,68,0,0"/>
 
 
 

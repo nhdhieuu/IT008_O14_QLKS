@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,32 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
         public rented_adj()
         {
             InitializeComponent();
+        }
+        string old;
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            foreach (char i in phone.Text)
+            {
+                if ((int)i - 48 >= 0 && (int)i - 48 <= 9)
+                {
+
+                }
+                else
+                {
+                    phone.Text = old;
+                }
+            }
+            old = phone.Text;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "day")
+            {
+                cbb.Foreground = new SolidColorBrush(Colors.DarkGreen);
+               
+            }
+
         }
     }
 }

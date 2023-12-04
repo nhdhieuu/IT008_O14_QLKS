@@ -50,7 +50,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "empty";
                 cstt_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-               adjust a = new adjust();
+               adjust a = new adjust(this.cstt);
                 stt2.Content = a.Content;
                // adj_bd.Height = 0;
             }
@@ -65,7 +65,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             }
             else
             {
-                adjust a = new adjust();
+                adjust a = new adjust(this.cstt);
                 stt2.Content = a.Content;
 
             }

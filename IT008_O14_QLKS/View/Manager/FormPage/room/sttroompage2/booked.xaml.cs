@@ -28,5 +28,15 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2
         private void main_bd_MouseDown(object sender, MouseButtonEventArgs e)
         {
         }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            del_bd.Background = new SolidColorBrush(Colors.DarkRed);
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            del_bd.Background = new SolidColorBrush(Colors.Red);
+        }
     }
 }

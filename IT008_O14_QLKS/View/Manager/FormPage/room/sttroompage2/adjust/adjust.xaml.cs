@@ -20,10 +20,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
     /// </summary>
     public partial class adjust : UserControl
     {
-        public adjust()
+        string ostt { get; set; }
+        public adjust( string ostt)
         {
+          
+            this.ostt = ostt;
             InitializeComponent();
-
+            original a = new original();
+            adj_cc.Content = a.Content;
+            if (ostt =="Empty")
+            {
+                empty.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                rented.Visibility = Visibility.Collapsed ;
+            }
+           
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -40,6 +53,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
             {
                 cbb.Foreground = new SolidColorBrush(Colors.DarkRed);
                 unavailable_adj a = new unavailable_adj();
+                adj_cc.Content = a.Content;
+            }
+            if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "rented")
+            {
+                cbb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFC9A01E"));
+               rented_adj a = new rented_adj();
                 adj_cc.Content = a.Content;
             }
 

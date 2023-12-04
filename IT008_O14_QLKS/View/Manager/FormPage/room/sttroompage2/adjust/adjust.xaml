@@ -12,14 +12,14 @@
                 <Grid>
 
                     <TextBlock Text="adjust to" FontFamily="Times New Roman" FontSize="35" Margin="26,9,378,1" Foreground="#FFC9A01E" />
-                    <ComboBox FontSize="20"  FontFamily="Bahnschrift" x:Name="cbb" Margin="355,12,31,0" Height="38" Width="191" VerticalContentAlignment="Center" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
-                        <ComboBoxItem Content="unavailable" FontSize="20" Foreground="Red" FontFamily="Bahnschrift"   >
+                    <ComboBox x:Name="cbb" Style="{DynamicResource RoundComboBox}" SelectionChanged="ComboBox_SelectionChanged" Margin="360,11,37,16" FontFamily="Bahnschrift" FontSize="20" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                        <ComboBoxItem x:Name="unavai" Content="unavailable" FontSize="20" Foreground="Red" FontFamily="Bahnschrift"   >
                            
                         </ComboBoxItem>
-                        <ComboBoxItem  Content="empty" FontSize="20" Foreground="#FF00652E" FontFamily="Bahnschrift"   >
+                        <ComboBoxItem x:Name="empty" Content="empty" FontSize="20" Foreground="#FF00652E" FontFamily="Bahnschrift"   >
                           
                         </ComboBoxItem>
-                        <ComboBoxItem Content="rented" FontSize="20" Foreground="#FFC9A01E" FontFamily="Bahnschrift">
+                        <ComboBoxItem x:Name="rented" Content="rented" FontSize="20" Foreground="#FFC9A01E" FontFamily="Bahnschrift">
                             
                         </ComboBoxItem>
                     </ComboBox>

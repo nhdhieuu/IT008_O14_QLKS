@@ -47,7 +47,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
         {
             if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "day")
             {
-                cbb.Foreground = new SolidColorBrush(Colors.DarkGreen);
+              
                
             }
 

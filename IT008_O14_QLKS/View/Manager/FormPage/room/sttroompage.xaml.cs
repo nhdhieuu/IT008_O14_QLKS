@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2;
 using IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust;
+using IT008_O14_QLKS.View.Manager.Card;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -29,9 +30,10 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
 
             InitializeComponent();
            
-            this.cstt=cstt;
+                        this.cstt=cstt;
              Load();
-         
+            roomcard2 a = new roomcard2();
+            room.Content = a.Content;
             
         }
         private void Load()

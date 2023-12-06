@@ -71,6 +71,9 @@
     <Compile Include="View\Manager\Card\roomcard.xaml.cs">
       <DependentUpon>roomcard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\roomcard2.xaml.cs">
+      <DependentUpon>roomcard2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\roomCardbackground\Normal.xaml.cs">
       <DependentUpon>Normal.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\roomcard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomcard2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -34,17 +34,15 @@
                 </Border>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="52*"/>
-                        <ColumnDefinition Width="211*"/>
-                        <ColumnDefinition Width="322*"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="status adjustment" FontFamily="Times New Roman" FontSize="40" Margin="24,-26,261,160" Foreground="#FFC9A01E" Grid.ColumnSpan="3" />
-                    <ContentControl Height="111" Width="290" Margin="20,39,275,30" Grid.ColumnSpan="3"/>
-                    <Border Height="111" Margin="81,39,20,30" CornerRadius="10" BorderThickness="2" BorderBrush="#7D7B7B" Grid.Column="2"/>
-                    <TextBlock FontFamily="Times New Roman" FontSize="30" Margin="110,54,39,94" Foreground="#FFC9A01E" Grid.Column="2" ><Run Language="vi-vn" Text="current status"/></TextBlock>
-                    <Border x:Name="cstt_bd" CornerRadius="5" Background="Black" Margin="98,99,36,41" Grid.Column="2"/>
-                    <Border CornerRadius="0" Background="#C6980A" Margin="14,176,14,1" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5"/>
-                    <TextBlock x:Name="cstt_txt" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Margin="98,107,0,0" Foreground="#FFC9A01E" Grid.Column="2" Width="186" TextAlignment="Center" ><Run Text="rent"/><Run Language="vi-vn" Text="ed"/></TextBlock>
+                    <TextBlock Text="status adjustment" FontFamily="Times New Roman" FontSize="40" Margin="24,-26,261,160" Foreground="#FFC9A01E" />
+                    <ContentControl x:Name="room" Height="111" Width="290" Margin="20,39,267,30"/>
+                    <Border Height="111" Margin="340,39,20,30" CornerRadius="10" BorderThickness="2" BorderBrush="#7D7B7B"/>
+                    <TextBlock FontFamily="Times New Roman" FontSize="30" Margin="369,54,39,94" Foreground="#FFC9A01E" ><Run Language="vi-vn" Text="current status"/></TextBlock>
+                    <Border x:Name="cstt_bd" CornerRadius="5" Background="Black" Margin="357,99,36,41"/>
+                    <Border CornerRadius="0" Background="#C6980A" Margin="14,176,14,1" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="cstt_txt" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Margin="357,107,0,0" Foreground="#FFC9A01E" Width="186" TextAlignment="Center" ><Run Text="rent"/><Run Language="vi-vn" Text="ed"/></TextBlock>
                 </Grid>
             </Grid>
 

@@ -114,3 +114,5 @@ D:\code\Dack\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\sttroompage2\ad
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\App.baml
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\sttroompage2\adjust\original.g.cs
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\sttroompage2\adjust\original.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard2.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard2.baml

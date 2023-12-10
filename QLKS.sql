@@ -107,3 +107,83 @@ ADD CONSTRAINT FK_CTHD_NHANVIEN FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
     
 ALTER TABLE CTHD 
 ADD CONSTRAINT FK_CTHD_THUEPHONG FOREIGN KEY (MAPHONG) REFERENCES THUEPHONG(MATHUEPHONG)  
+
+
+INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR)
+VALUES
+('KH001','Nguyen Duy Hung','hung0101','hung123456','084204011380','0345664024','2004-09-07','Nam',null),
+('KH002','Le Huy Hoang','hoang0202','hoang123456','084204011235','0978601661','2004-08-07','Nam',null),
+('KH003','Nguyen Huynh Duy Hieu','hieu0303','hieu123456','084204011377','0345635874','2004-12-11','Nam',null),
+('KH004','Tran Hong Quyen','quyen0404','quyen123456','084204023587','0343556224','2004-05-02','Nam',null),
+('KH005','Mai Hoang Hung','hung0505','hung123456','084204016654','0223658977','2004-09-10','Nam',null),
+('KH006','Cao Van Hoang','hoang0606','hoang123456','084204554778','0387762536','2004-04-07','Nam',null),
+('KH007','Nguyen Thuy Loan','loan0707','loan123456','084204033574','0387798742','1989-12-13','Nu',null),
+('KH008','Phan Thi My Tam','tam0808','tam123456','084222544876','0268477963','1981-01-16','Nu',null),
+('KH009','Nguyen Thanh Tung','tung0909','tung123456','084201256487','0456887966','1994-07-05','Nam',null),
+('KH010','Ho Ngoc Ha','ha1010','ha123456','084204011378','0345664036','1984-11-25','Nu',null),
+('KH011','Hoang Thuy Linh','linh1111','linh123456','084204011376','0345664025','1988-08-11','Nu',null);
+
+INSERT INTO NHANVIEN (MANV,TENNV,CCCD,SDT,NGAYSINH,GIOITINH,BOPHAN)
+VALUES 
+('NV001', 'Bui Trong Hoang Huy','084204011377','0566879644','2004-02-12','Nam','Le Tan'),
+('NV002', 'Do Nguyen Hoang Huy','084202254377','0145879624','2004-07-12','Nam','Le Tan'),
+('NV003', 'Pham Khai Hung','084204011375','0345668792','2002-05-05','Nam','Le Tan'),
+('NV004', 'Phan Tran Tien Hung','084204022456','0566335674','2004-04-15','Nam','Phuc Vu'),
+('NV005', 'Bui Thai Hoang','084204022457','0266871247','2001-03-07','Nam','Phuc Vu'),
+('NV006', 'Ngo Duy Hung','084202235687','0562229644','2004-07-17','Nam','Phuc Vu'),
+('NV007', 'Doan Quang Huy','084225871378','0566226544','2004-01-11','Nam','Phuc Vu'),
+('NV008', 'To Hoang Huy','084204022499','0225579646','2003-02-12','Nam','Ve Sinh'),
+('NV009', 'Nguyen Thi Lan','084203331377','0776879622','1990-02-11','Nu','Ve Sinh'),
+('NV010', 'Le Thi Hoa','084226879377','0563339644','1995-04-12','Nu','Ve Sinh'),
+('NV011', 'Pham Hoang Duy','084204012268','0566872255','2004-08-23','Nam','CSKH'),
+('NV012', 'Nguyen Thi Hoa','084204011371','0266879642','2000-09-11','Nu','CSKH');
+
+ALTER TABLE PHONG 
+ALTER COLUMN LOAIPHONG varchar(10)
+ALTER TABLE PHONG 
+ADD BONTAM CHAR(6)
+ALTER TABLE PHONG 
+ADD STYLE VARCHAR(20)
+ALTER TABLE PHONG 
+ADD INTERNET VARCHAR(20)
+ALTER TABLE PHONG 
+ADD HOBOI VARCHAR(6)
+ALTER TABLE PHONG
+ADD GIATHEOGIO INT
+ALTER TABLE PHONG
+ADD GIATHEONGAY INT
+
+INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,HOBOI,INTERNET,STYLE,GIATHEONGAY,GIATHEOGIO)
+VALUES
+('MP101','P101','Standard','1','Trong','Khong','Khong','Thap','Style','150000','750000'),
+('MP102','P102','Standard','1','Trong','Khong','Khong','Thap','Style','150000','750000'),
+('MP103','P103','Superior','2','Da Dat','Co','Khong','Trung Binh','Style','200000','900000'),
+('MP104','P104','Deluxe','1','Trong','Co','Khong','Cao','Style','300000','1350000'),
+('MP105','P105','Deluxe','2','Da Dat','Co','Khong','Cao','Style','300000','1350000'),
+('MP106','P106','Suite','2','Da Dat','Co','Co','Cao','Style','500000','2500000'),
+('MP201','P201','Standard','1','Da Dat','Khong','Khong','Thap','Style','150000','750000'),
+('MP202','P202','Standard','1','Trong','Khong','Khong','Thap','Style','150000','750000'),
+('MP203','P203','Superior','2','Khoa','Co','Khong','Trung Binh','Style','200000','900000'),
+('MP204','P204','Deluxe','1','Da Dat','Co','Khong','Cao','Style','300000','1350000'),
+('MP205','P205','Deluxe','2','Trong','Co','Khong','Cao','Style','300000','1350000'),
+('MP206','P206','Suite','2','Trong','Co','Co','Cao','Style','500000','2500000'),
+('MP301','P301','Standard','1','Da Dat','Khong','Khong','Thap','Style','150000','750000'),
+('MP302','P302','Standard','1','Trong','Khong','Khong','Thap','Style','150000','750000'),
+('MP303','P303','Superior','1','Da Dat','Co','Khong','Trung Binh','Style','200000','900000'),
+('MP304','P304','Deluxe','1','Trong','Co','Khong','Cao','Style','300000','1350000'),
+('MP305','P305','Deluxe','2','Khoa','Co','Khong','Cao','Style','300000','1350000'),
+('MP306','P306','Suite','1','Da Dat','Co','Co','Cao','Style','500000','2500000');
+
+ALTER TABLE THUEPHONG
+ADD KQUATHUE VARCHAR(11)
+
+INSERT INTO THUEPHONG (MATHUEPHONG,MAKH,MAPHONG,NGAYBD,NGAYKT,KQUATHUE)
+VALUES
+('TP01', 'KH001','MP103','2023-12-01','2023-12-05','Thanh Cong'),
+('TP02', 'KH002','MP105','2023-12-03','2023-12-05','Thanh Cong'),
+('TP03', 'KH003','MP106','2023-12-01','2023-12-04','Thanh Cong'),
+('TP04', 'KH004','MP201','2023-12-02','2023-12-02','Thanh Cong'),
+('TP05', 'KH005','MP204','2023-12-06','2023-12-08','Thanh Cong'),
+('TP06', 'KH006','MP301','2023-12-05','2023-12-06','Thanh Cong'),
+('TP07', 'KH009','MP303','2023-12-01','2023-12-02','Thanh Cong'),
+('TP08', 'KH011','MP306','2023-12-04','2023-12-05','Thanh Cong');

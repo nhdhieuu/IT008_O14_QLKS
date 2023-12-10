@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using IT008_O14_QLKS.View.Manager;
+using IT008_O14_QLKS.View.Manager.Card;
 
 namespace IT008_O14_QLKS.View.Clients
 {
@@ -125,7 +126,7 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void border2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DataContext = new ClientsHome();
+            DataContext = new ClientsRoom();
             text1.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 2;
@@ -135,7 +136,7 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void border3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DataContext = new ClientsHome();
+            DataContext = new receipt();
             text3.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border3.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 3;

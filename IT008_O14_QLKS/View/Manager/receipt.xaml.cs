@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Manager.Card;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -23,6 +24,19 @@ namespace IT008_O14_QLKS.View.Manager
         public receipt()
         {
             InitializeComponent();
+            ReceiptCard[] listCard = new ReceiptCard[3];
+
+            listCard[0] = new ReceiptCard("1", "12/12/2012", "12:12", "100000");
+            listCard[1] = new ReceiptCard("2", "12/12/2012", "12:12", "100000");
+            listCard[2] = new ReceiptCard("3", "12/12/2012", "12:12", "100000");
+
+
+             
+          
+            cc11.Content = listCard[0].Content;
+            cc12.Content = listCard[1].Content;
+            cc13.Content = listCard[2].Content;
+            
         }
     }
 }

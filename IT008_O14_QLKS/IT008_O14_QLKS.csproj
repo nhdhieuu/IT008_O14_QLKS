@@ -68,6 +68,9 @@
     <Compile Include="View\Clients\ClientsMain.xaml.cs">
       <DependentUpon>ClientsMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients\ClientsRoom.xaml.cs">
+      <DependentUpon>ClientsRoom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,7 @@
     </Page>
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
+    <Page Include="View\Clients\ClientsRoom.xaml" />
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,9 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Manager\ReceipPage\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ginkgo.png" />
@@ -406,8 +407,12 @@
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
     <Content Include="Resources\print.png" />
-    <Content Include="Resources\ReceiptCardBackground.png" />
-    <Content Include="Resources\RecieptCardMoney.png" />
+    <Resource Include="Resources\ReceiptCardBackground.png" />
+    <Resource Include="Resources\RecieptCardMoney.png" />
+    <Resource Include="Resources\ReceiptDatePicker.png" />
+    <Resource Include="Resources\ReceiptFilter.png" />
+    <Resource Include="Resources\ReceiptPrint.png" />
+    <Resource Include="Resources\ReceiptSortBy.png" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

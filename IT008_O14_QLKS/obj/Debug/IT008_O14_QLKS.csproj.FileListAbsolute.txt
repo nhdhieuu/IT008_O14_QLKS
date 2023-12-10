@@ -102,3 +102,7 @@ D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.g.c
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\notice.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\notice.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsMain.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsMain.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsHome.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsHome.baml

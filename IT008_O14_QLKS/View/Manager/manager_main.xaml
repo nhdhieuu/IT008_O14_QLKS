@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
-       xmlns:viewmodels="clr-namespace:IT008_O14_QLKS.View.Manager"
+        xmlns:viewmodels="clr-namespace:IT008_O14_QLKS.View.Manager"
         mc:Ignorable="d"
         Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"

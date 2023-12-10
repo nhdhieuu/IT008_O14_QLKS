@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Clients;
 
 namespace IT008_O14_QLKS
 {
@@ -95,9 +96,18 @@ namespace IT008_O14_QLKS
 
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
-            Manager_main main = new Manager_main();
-            main.Show();
-            this.Close();
+            if (UserTextBox.Text == "123")
+            {
+                ClientsMain clientControl = new ClientsMain();
+                clientControl.Show();
+                this.Close();
+            }
+            else
+            {
+                Manager_main main = new Manager_main();
+                main.Show();
+                this.Close();
+            }
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

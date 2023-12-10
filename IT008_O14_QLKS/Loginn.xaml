@@ -74,7 +74,7 @@
 
                             </TextBlock>
                             <Border x:Name="usrbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                                <TextBox Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
+                                <TextBox Name="UserTextBox" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
                             </Border>
                             <TextBlock Text="password"  FontSize="24" FontFamily="Sylfaen" Margin="45,20,0,0" Foreground="#FF897C54">
 

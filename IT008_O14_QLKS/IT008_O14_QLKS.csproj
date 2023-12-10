@@ -62,6 +62,9 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients\ClientsMain.xaml.cs">
+      <DependentUpon>ClientsMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,7 +224,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\Clients\" />
     <Folder Include="View\Manager\ReceipPage\" />
   </ItemGroup>
   <ItemGroup>

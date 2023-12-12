@@ -74,6 +74,9 @@
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
+      <DependentUpon>ProbBlemCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ProbBlemCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -400,6 +407,7 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\AnhPhongKS.jpg" />
     <Content Include="Resources\card.png" />
     <Content Include="Resources\card1.png" />
     <Content Include="Resources\datepicker.png" />

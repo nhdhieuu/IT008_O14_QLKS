@@ -16,26 +16,26 @@ using System.Windows.Shapes;
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
-    /// Interaction logic for ServiceCard.xaml
+    /// Interaction logic for ProbBlemCard.xaml
     /// </summary>
-    public partial class ServiceCard : UserControl
+    public partial class ProbBlemCard : UserControl
     {
         public string name;
         public string date;
         public string price;
-        public ServiceCard(string name, string date, string price)
+        public ProbBlemCard(string name, string date, string price)
         {
             this.name = name;
-            this.date= date;
+            this.date = date;
             this.price = price;
             InitializeComponent();
             Inputt();
         }
         public void Inputt()
         {
-            this.nametbx.Text =this. name;
+            this.nametbx.Text = this.name;
             this.datetbx.Text = this.date;
             this.pricetbx.Text = this.price;
-        }    
+        }
     }
 }

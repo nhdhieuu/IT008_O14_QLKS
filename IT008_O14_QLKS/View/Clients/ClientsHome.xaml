@@ -75,7 +75,7 @@
 
         <!-- góc phải trên -->
         <Grid Margin="455,0,0,475">
-            <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,26,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" MouseDown="avt_load_MouseDown" Cursor="Hand" StrokeThickness="2">
+            <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,26,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
                 <Ellipse.Fill>
                     <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" />
                 </Ellipse.Fill>

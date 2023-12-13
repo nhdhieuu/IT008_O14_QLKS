@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.service"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
+             mc:Ignorable="d" 
+                         d:DesignHeight="590" d:DesignWidth="782" 
+             FontFamily="Sylfaen">
+
+    <Border CornerRadius="10" Background="#F1F0E7">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <!-- Phần trên -->
+            <Grid>
+                <!-- service -->
+                <Label Content="service" FontSize="45" Foreground="#C6980A" 
+                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
+                   Margin="30,0,617,0" Height="53"/>
+               
+                <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="250,20,262,0" >
+                    <Grid>
+                        <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+                             BorderThickness="0"
+                             VerticalContentAlignment="Center" FontSize="14"/>
+                        <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
+                    </Grid>
+                </Border>
+                <Border CornerRadius="8,0,0,8" Background="White" Margin="195,20,517,0" >
+                    <Label Content="search" Foreground="Black" FontSize="18"
+                       HorizontalContentAlignment="Center"/>
+                </Border>
+                
+                <!-- filter -->
+                <Label Content="filter" FontSize="30" Margin="555,8,112,0"/>
+            </Grid>
+            <!--Phần dưới (lớn)-->
+            <Grid Grid.Row="1">
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

@@ -7,6 +7,51 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+                    <Ellipse HorizontalAlignment="Left" Height="99" Stroke="#FFC6980A" VerticalAlignment="Top" Width="99" Margin="183,103,0,0">
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                        <Grid Margin="52,0,0,0">
+                            <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
+                            <TextBlock Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="1,0,0,0" Width="199" TextAlignment="Right" Foreground="#FFC6980A"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,59,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                        <Grid Margin="52,0,0,0">
+                            <Label Content="username" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
+                            <TextBlock Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
+
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="16,0,0,0" VerticalAlignment="Center" Width="140" CornerRadius="5,5,5,5">
+                        <Grid Margin="51,0,1,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
+                            <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="12,0,0,0" Width="75"/>
+
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="15,145,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                        <Grid Margin="52,0,0,0">
+                            <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
+                            <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-15,0,0,0" Height="28" Width="99"/>
+
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="16,186,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                        <Grid Margin="52,0,0,0">
+                            <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
+                            <Label Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="82"/>
+
+                        </Grid>
+                    </Border>
+                    <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="202,202,0,0" FontWeight="Bold" />
         
     </Grid>
 </UserControl>

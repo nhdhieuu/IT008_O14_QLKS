@@ -193,7 +193,7 @@ INSERT INTO DICHVU (MADV,TENDV,DONGIA,SOLUONG)
 VALUES
 ('DV01','Coca-cola','30000','500'),
 ('DV02','Pepsi','30000','500'),
-('DV03','Fante','30000','500'),
+('DV03','Fanta','30000','500'),
 ('DV04','7Up','30000','500'),
 ('DV05','Nuoc suoi','20000','800'),
 ('DV06','Bia Huda','30000','500'),
@@ -204,7 +204,7 @@ VALUES
 ('DV11','Ruou vang hong Rosé','2500000','80'),
 ('DV12','Banh mi bate','30000','200'),
 ('DV13','Buger','500000','200'),
-('DV14','Spagehetti','200000','150'),
+('DV14','Spaghetti','200000','150'),
 ('DV15','Tom hum','1500000','80'),
 ('DV16','Sushi','300000','80'),
 ('DV17','Salad hoa qua','150000','200'),

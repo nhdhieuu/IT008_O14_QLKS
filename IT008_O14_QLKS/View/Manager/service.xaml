@@ -22,13 +22,13 @@
                    Margin="20,0,617,0" Height="53"/>
 
                 <!--search-->
-                <Grid Margin="190,0,307,0">
-                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,20,0,0" >
+                <Grid Margin="190,0,312,0">
+                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="65,20,0,0" >
                         <Grid>
                             <TextBox Background="#D9D9D9" Margin="15,0,30,0"
                              BorderThickness="0" 
                              VerticalContentAlignment="Center" FontSize="14"/>
-                            <Image Source="/Resources/search_icon.png" Margin="200,0,0,0"/>
+                            <Image Source="/Resources/search_icon.png" Margin="185,0,0,0"/>
                         </Grid>
                     </Border>
                     <Border CornerRadius="8,0,0,8" Background="White" Margin="0,20,210,0" >
@@ -80,6 +80,42 @@
                             <ContentControl x:Name="CC10" Height="42" Width="375">
 
                             </ContentControl>
+                            <ContentControl x:Name="CC11" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC12" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC13" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC14" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC15" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC16" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC17" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC18" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC19" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC20" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC21" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC22" Height="42" Width="375">
+
+                            </ContentControl>
                         </StackPanel>
 
                     </ScrollViewer>
@@ -95,7 +131,7 @@
                             <TextBox Background="#D9D9D9" Margin="15,0,30,0"
               BorderThickness="0" 
               VerticalContentAlignment="Center" FontSize="14"/>
-                            <Image Source="/Resources/search_icon.png" Margin="200,0,0,0"/>
+                            <Image Source="/Resources/search_icon.png" Margin="189,0,0,0"/>
                         </Grid>
                     </Border>
                     <Border CornerRadius="8,0,0,8" Background="White" Margin="0,0,210,0" >

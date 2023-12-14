@@ -427,7 +427,9 @@
     <Resource Include="Resources\ReceiptDatePicker.png" />
     <Resource Include="Resources\ReceiptFilter.png" />
     <Resource Include="Resources\ReceiptPrint.png" />
-    <Resource Include="Resources\ReceiptSortBy.png" />
+    <Resource Include="Resources\ReceiptSortBy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

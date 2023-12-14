@@ -19,28 +19,164 @@
                 <!-- service -->
                 <Label Content="service" FontSize="45" Foreground="#C6980A" 
                    Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
-                   Margin="30,0,617,0" Height="53"/>
-               
-                <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="250,20,262,0" >
-                    <Grid>
-                        <TextBox Background="#D9D9D9" Margin="15,0,30,0"
-                             BorderThickness="0"
+                   Margin="20,0,617,0" Height="53"/>
+
+                <!--search-->
+                <Grid Margin="190,0,307,0">
+                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,20,0,0" >
+                        <Grid>
+                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+                             BorderThickness="0" 
                              VerticalContentAlignment="Center" FontSize="14"/>
-                        <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
-                    </Grid>
-                </Border>
-                <Border CornerRadius="8,0,0,8" Background="White" Margin="195,20,517,0" >
-                    <Label Content="search" Foreground="Black" FontSize="18"
+                            <Image Source="/Resources/search_icon.png" Margin="200,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border CornerRadius="8,0,0,8" Background="White" Margin="0,20,210,0" >
+                        <Label Content="search" Foreground="Black" FontSize="18"
                        HorizontalContentAlignment="Center"/>
-                </Border>
-                
+                    </Border>
+                </Grid>
                 <!-- filter -->
                 <Label Content="filter" FontSize="30" Margin="555,8,112,0"/>
             </Grid>
-            <!--Phần dưới (lớn)-->
+            <!--Phần dưới -->
             <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
+                <!-- service list-->
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#C6980A" Margin="20,10,0,320">
+                    <ScrollViewer Margin="10,10,10,10">
+                        <StackPanel>
+                            <ContentControl x:Name="CC1" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC2" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC3" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC4" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC5" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC6" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC7" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC8" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC9" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC10" Height="42" Width="375">
+
+                            </ContentControl>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Border>
+                <!-- Problem-->
+                <Label Content="problem" FontSize="45" Foreground="#BF0B0B" 
+    Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
+    Margin="20,205,284,0" Height="63"/>
+                <!--search-->
+                <Grid Margin="190,232,0,268" >
+                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,0,0,0" >
+                        <Grid>
+                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+              BorderThickness="0" 
+              VerticalContentAlignment="Center" FontSize="14"/>
+                            <Image Source="/Resources/search_icon.png" Margin="200,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border CornerRadius="8,0,0,8" Background="White" Margin="0,0,210,0" >
+                        <Label Content="search" Foreground="Black" FontSize="18"
+        HorizontalContentAlignment="Center"/>
+                    </Border>
+                </Grid>
+
+                <!-- problem list-->
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#BF0B0B" Margin="20,281,0,25">
+                    <ScrollViewer Margin="10,10,10,10">
+                        <StackPanel>
+                            <ContentControl x:Name="PC1" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC2" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC3" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC4" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC5" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC6" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC7" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC8" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC9" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC10" Height="42" Width="375">
+
+                            </ContentControl>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Border>
+
+                   <!-- (un)available-->
+
+                <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1">
+                    <Grid Background="Transparent">
+                        <Image Source="/Resources/ReceiptSortBy.png"/>
+                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,50,30,73">
+                            <Label Content="available" Foreground="#C6980A" FontSize="30" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                            <Label Content="unavailable" Foreground="#BF0B0B" FontSize="30" 
+           HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                    
+                    <!-- free/fee -->
+                <Border CornerRadius="10" Margin="10,216,22,155" Grid.Column="1">
+                    <Grid Background="Transparent">
+                        <Image Source="/Resources/ReceiptFilter.png"/>
+                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
+                            <Label Content="free" Foreground="White" FontSize="30" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                            <Label Content="fee" Foreground="#BF0B0B" FontSize="30" 
+HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                    </Grid>
+                </Border>
             </Grid>
+
 
         </Grid>
     </Border>

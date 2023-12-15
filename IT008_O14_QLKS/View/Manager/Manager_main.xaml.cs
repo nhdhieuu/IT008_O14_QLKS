@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IT008_O14_QLKS;
+using IT008_O14_QLKS.View.Manager.Card;
+
 namespace IT008_O14_QLKS.View.Manager
 {
     /// <summary>

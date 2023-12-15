@@ -74,6 +74,9 @@
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\NoticeCard.xaml.cs">
+      <DependentUpon>NoticeCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
       <DependentUpon>ProbBlemCard.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\NoticeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

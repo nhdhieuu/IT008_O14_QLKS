@@ -1,13 +1,12 @@
-﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.staff"
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.service"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
-             d:DesignHeight="590" d:DesignWidth="782" Background="#F1F0E7"
-             FontFamily="Sylfaen" Loaded="UserControl_Loaded">
-
+                         d:DesignHeight="590" d:DesignWidth="782" 
+             FontFamily="Sylfaen">
     <!-- w s -->
     <UserControl.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
@@ -188,160 +187,212 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
-        <!-- Phần trên -->
+    <Border CornerRadius="10" Background="#F1F0E7">
         <Grid>
-            <Border Margin="30,20,712,0">
-                <Image Source="/Resources/reset.png"/>
-            </Border>
-            <Label Content="staff" FontSize="45" Foreground="#C6980A" 
-                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
-                   Margin="85,0,592,0" Height="53"/>
-            <Label Content="schedule" FontSize="35" Foreground="Black" Margin="640,0,0,0" 
-                   Padding="0" VerticalContentAlignment="Bottom"/>
-            <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="250,20,262,0" >
-                <Grid>
-                    <TextBox Background="#D9D9D9" Margin="15,0,30,0"
-                             BorderThickness="0" Padding="2"
-                             VerticalContentAlignment="Center" FontSize="14"/>
-                    <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
-                </Grid>
-            </Border>
-            <Border CornerRadius="8,0,0,8" Background="White" Margin="195,20,517,0" >
-                <Label Content="search" Foreground="Black" FontSize="18"
-                       HorizontalContentAlignment="Center"/>
-            </Border>
-        </Grid>
-        <!--Phần dưới (lớn)-->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="265*"/>
-                <ColumnDefinition Width="126*"/>
-            </Grid.ColumnDefinitions>
-            <!-- Phần bên phải-->
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="63*"/>
-                    <RowDefinition Height="205*"/>
-                </Grid.RowDefinitions>
-                <Border CornerRadius="5" Margin="16,10,16,10">
-                    <Grid>
-                        <Image Source="/Resources/fall.jpg" Stretch="UniformToFill"/>
-                        <Label Name="datelb" Content="Date" FontSize="16" Margin="0,76,0,0" />
-                    </Grid>
-                </Border>
-                <Border Grid.Row="1" CornerRadius="5" Background="Wheat" Margin="16,10,16,35"
-                        BorderThickness="2" BorderBrush="Azure">
-                    <Grid>
-                        <Border CornerRadius="5" Background="Blue" Margin="20,55,20,198"
-                                BorderThickness="2" BorderBrush="White">
-                            <Grid Margin="0,0,111,60">
-                                <Label Content="postion" FontSize="20" Padding="0" Margin="10,2,-10,-2"/>
-                                <Border CornerRadius="5" Background="White" BorderThickness="2"
-                                        BorderBrush="Black" Margin="10,44,-99,-41">
-                                    <ComboBox Text="*All"  BorderThickness="0" Margin="1,1,1,1"/>
-                                </Border>
-                            </Grid>
-                        </Border>
-                        <Border  CornerRadius="5" Background="#D9D9D9" BorderThickness="2"
-                                 BorderBrush="Blue" Margin="20,173,20,18">
-                            <Grid>
-                                <Label Content="time" FontSize="20" Padding="0" Foreground="#740909" Margin="10,-2,112,123"
-                                       VerticalContentAlignment="Center"/>
-                                <Label Content="from" FontSize="20" Padding="0" Foreground="Blue" Margin="110,-2,10,123"
-                                       VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                <Label Content="to" FontSize="20" Padding="0" Foreground="Blue" Margin="110,60,10,60"
-                                       VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                <Border CornerRadius="5" BorderThickness="2" BorderBrush="Blue" Background="White" Margin="10,33,10,98">
-                                    <TextBox BorderThickness="0" Margin="1"/>
-                                </Border>
-                                <Border CornerRadius="5" BorderThickness="2" BorderBrush="Blue" Background="White" Margin="10,98,10,30">
-                                    <TextBox BorderThickness="0" Margin="1"/>
-                                </Border>
-                            </Grid>
-                        </Border>
-                    </Grid>
-                </Border>
-            </Grid>
-
-            <!-- Phần bên trái-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <!-- Phần trên -->
             <Grid>
-               <!-- <Border CornerRadius="5" Background="#D9D9D9" Margin="25,31,30,395"
-                        BorderThickness="2" BorderBrush="#9F8E8E">
+                <!-- service -->
+                <Label Content="service" FontSize="45" Foreground="#C6980A" 
+                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
+                   Margin="20,0,617,0" Height="53"/>
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="4*"/>
+                <!--search-->
+                <Grid Margin="190,0,312,0">
+                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="65,20,0,0" >
+                        <Grid>
+                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+                             BorderThickness="0" 
+                             VerticalContentAlignment="Center" FontSize="14"/>
+                            <Image Source="/Resources/search_icon.png" Margin="185,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border CornerRadius="8,0,0,8" Background="White" Margin="0,20,210,0" >
+                        <Label Content="search" Foreground="Black" FontSize="18"
+                       HorizontalContentAlignment="Center"/>
+                    </Border>
+                </Grid>
+                <!-- filter -->
+                <Label Content="filter" FontSize="30" Margin="555,8,112,0"/>
+            </Grid>
+            <!--Phần dưới -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
-                            <RowDefinition Height="6*"/>
-                        </Grid.RowDefinitions>
-                        <Label  Padding="0" Content="#NV01" Foreground="Goldenrod" Margin="360,0,0,0" 
-                VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift"/>
-                        <Label  Padding="0" Content="Trần Văn A" Foreground="Black" Margin="10,0,170,0" 
-    VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold"/>
+                <!-- service list-->
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#C6980A" Margin="20,10,0,320">
+                    <ScrollViewer Margin="10,10,10,10">
+                        <StackPanel>
+                            <ContentControl x:Name="CC1" Height="42" Width="375">
 
-                        <Label Grid.Row="1" Padding="0" Content="Lễ tân" Foreground="Blue" Margin="10,0,245,0" 
-VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
-                        <Button Grid.Row="1" Margin="399,12,25,10" Opacity="100"
-                    Background="Transparent" BorderThickness="0">
-                            <Image Source="/Resources/eye.png" Width="44"
-                       Stretch="Uniform"/>
-                        </Button>
+                            </ContentControl>
+                            <ContentControl x:Name="CC2" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC3" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC4" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC5" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC6" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC7" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC8" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC9" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC10" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC11" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC12" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC13" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC14" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC15" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC16" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC17" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC18" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC19" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC20" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC21" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="CC22" Height="42" Width="375">
+
+                            </ContentControl>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Border>
+                <!-- Problem-->
+                <Label Content="problem" FontSize="45" Foreground="#BF0B0B" 
+    Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
+    Margin="20,205,284,0" Height="63"/>
+                <!--search-->
+                <Grid Margin="190,232,0,268" >
+                    <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,0,0,0" >
+                        <Grid>
+                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+              BorderThickness="0" 
+              VerticalContentAlignment="Center" FontSize="14"/>
+                            <Image Source="/Resources/search_icon.png" Margin="189,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border CornerRadius="8,0,0,8" Background="White" Margin="0,0,210,0" >
+                        <Label Content="search" Foreground="Black" FontSize="18"
+        HorizontalContentAlignment="Center"/>
+                    </Border>
+                </Grid>
+
+                <!-- problem list-->
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#BF0B0B" Margin="20,281,0,25">
+                    <ScrollViewer Margin="10,10,10,10">
+                        <StackPanel>
+                            <ContentControl x:Name="PC1" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC2" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC3" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC4" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC5" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC6" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC7" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC8" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC9" Height="42" Width="375">
+
+                            </ContentControl>
+                            <ContentControl x:Name="PC10" Height="42" Width="375">
+
+                            </ContentControl>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Border>
+
+                   <!-- (un)available-->
+
+                <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1">
+                    <Grid Background="Transparent">
+                        <Image Source="/Resources/ReceiptSortBy.png"/>
+                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,50,30,73">
+                            <Label Content="available" Foreground="#C6980A" FontSize="30" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                            <Label Content="unavailable" Foreground="#BF0B0B" FontSize="30" 
+           HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
                     </Grid>
-                </Border> -->
-
-                <ScrollViewer Margin="10,10,10,10">
-                    <StackPanel>
-                        <ContentControl x:Name="ST01" Height="110" Width="465">
-                            
-                        </ContentControl>
-                        <ContentControl x:Name="ST02" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST03" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST04" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST05" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST06" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST07" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST08" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST09" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST10" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST11" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST12" Height="100" Width="465">
-
-                        </ContentControl>
-                    </StackPanel>
-                </ScrollViewer>
-                
-                <Border CornerRadius="5" Background="#12CE69" Margin="218,486,218,10">
-                    <Button x:Name="add_but" Content="+" Foreground="White" BorderThickness="0"
-                            Background="#12CE69" FontSize="40" FontWeight="ExtraBold"
-                            Padding="0,-10,0,10" Margin="1.5"/>
+                </Border>
+                    
+                    <!-- free/fee -->
+                <Border CornerRadius="10" Margin="10,216,22,155" Grid.Column="1">
+                    <Grid Background="Transparent">
+                        <Image Source="/Resources/ReceiptFilter.png"/>
+                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
+                            <Label Content="free" Foreground="White" FontSize="30" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                            <Label Content="fee" Foreground="#BF0B0B" FontSize="30" 
+HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
+                        </Border>
+                    </Grid>
                 </Border>
             </Grid>
-        </Grid>
 
-    </Grid>
+
+        </Grid>
+    </Border>
 </UserControl>

@@ -74,6 +74,9 @@
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\NoticeCard.xaml.cs">
+      <DependentUpon>NoticeCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
       <DependentUpon>ProbBlemCard.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\Manager\service.xaml.cs">
+      <DependentUpon>service.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\staff.xaml.cs">
       <DependentUpon>staff.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,10 @@
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\NoticeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\room.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -420,7 +434,9 @@
     <Resource Include="Resources\ReceiptDatePicker.png" />
     <Resource Include="Resources\ReceiptFilter.png" />
     <Resource Include="Resources\ReceiptPrint.png" />
-    <Resource Include="Resources\ReceiptSortBy.png" />
+    <Resource Include="Resources\ReceiptSortBy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

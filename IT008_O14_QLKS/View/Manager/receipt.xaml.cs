@@ -33,7 +33,7 @@ namespace IT008_O14_QLKS.View.Manager
 
              
           
-            cc11.Content = listCard[0].Content;
+            Cc11.Content = listCard[0].Content;
             cc12.Content = listCard[1].Content;
             cc13.Content = listCard[2].Content;
             

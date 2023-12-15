@@ -53,7 +53,7 @@
                     </Grid>
                     <Grid Grid.Row="1">
                         <StackPanel Margin="14,10,0,0" >
-                            <ContentControl x:Name="cc11" >
+                            <ContentControl x:Name="Cc11" >
 
                             </ContentControl>
                             <ContentControl x:Name="cc12" Margin="0,20,0,0">

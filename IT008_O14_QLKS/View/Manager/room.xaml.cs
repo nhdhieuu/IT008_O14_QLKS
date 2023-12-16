@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Manager.FormPage.room;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -56,7 +57,8 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            
+            AddRoomForm ar=new AddRoomForm();
+            ar.Show();
         }
 
         private void Border_MouseEnter_1(object sender, MouseEventArgs e)

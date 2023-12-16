@@ -92,20 +92,19 @@ namespace IT008_O14_QLKS.View.Manager.Card
             {
                 mainbd.Background = new SolidColorBrush(Colors.Blue) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground= new SolidColorBrush(Colors.LightBlue);
+                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Empty")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
-               idroomtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF04FF77"));
+               idroomtxt.Foreground = new SolidColorBrush(Colors.White);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Unavailable")
             {
                 mainbd.Background = new SolidColorBrush(Colors.DarkRed);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground= new SolidColorBrush(Colors.OrangeRed);
-
+                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
 
             }    
                 else {

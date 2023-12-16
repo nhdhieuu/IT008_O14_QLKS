@@ -5,8 +5,164 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        
-    </Grid>
+             d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
+    <UserControl.Resources>
+        <Style x:Key="bd" TargetType="Border">
+            <Setter Property="Background" Value="Transparent">
+                
+            </Setter>
+            <Setter Property="Height" Value="36
+                    
+                    
+                    ">
+                
+            </Setter>
+            <Setter Property="Width" Value="95">
+
+            </Setter>
+            <Setter Property="CornerRadius"  Value="5">
+                
+            </Setter>
+            <Setter Property="BorderThickness" Value="1.5">
+                
+            </Setter>
+            <Setter Property="BorderBrush" Value="Black">
+
+            </Setter>
+            <Setter Property="Cursor" Value="Hand">
+                
+            </Setter>
+        </Style>
+        <Style x:Key="txtofbd" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift">
+                
+            </Setter>
+            <Setter Property="FontSize" Value="25">
+                
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Border  Background="#FFEFEEE5" CornerRadius="5,5,5,5">
+        <Grid Margin="7,0,-7,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="779*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="White" HorizontalAlignment="Left" Height="244" Margin="496,22,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/ede59f46552ecfa8545a5d983bc15d48.jpg"/>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="type" Margin="17,46,11,36" CornerRadius="8,8,8,8" Background="#7F4E4B4B">
+                        <ComboBox x:Name="cbb_clls"  Style="{DynamicResource RoundComboBox}"   FontFamily="Bahnschrift" FontSize="20" Margin="15,71,15,0" Height="42" VerticalAlignment="Top" IsEnabled="False" SelectionChanged="cbb_clls_SelectionChanged">
+                            <ComboBoxItem Content="Silver" Foreground="Gray"  FontFamily="Bahnschrift" FontSize="20" >
+
+                            </ComboBoxItem>
+
+                            <ComboBoxItem Content="Gold" Foreground="#FFEEB74C" FontFamily="Bahnschrift" FontSize="20" />
+                            <ComboBoxItem Content="Platinum" Foreground="#FF287EB8"  FontFamily="Bahnschrift" FontSize="20" />
+                            <ComboBoxItem Content="Diamond" Foreground="#FF370DA8"  FontFamily="Bahnschrift" FontSize="20" />
+                        </ComboBox>
+
+                    </Border>
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
+                    <Label x:Name="filter" Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="16,1,0,0" />
+
+                    <Label x:Name="type_txt" Content="HIGHER CLASS" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="178"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="29,59,0,0" />
+                    <Border x:Name="bd_type" Margin="213,67,28,152" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" MouseDown="Border_MouseDown_2" BorderThickness="2,2,2,2" BorderBrush="White" Cursor="Hand" >
+                        <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden">
+
+                        </Image>
+                    </Border>
+
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" HorizontalAlignment="Left" Height="36" Margin="241,23,0,0" VerticalAlignment="Top" Width="242" CornerRadius="0,5,5,0" Background="#FFD9D9D9">
+                <Grid >
+
+                    <TextBox Background="{x:Null}" BorderBrush="{x:Null}" Margin="12,0,38,0" RenderTransformOrigin="0.5,0.5" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="20">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.068"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="0.11"/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+
+                    </TextBox>
+                    <Image Margin="212,9,8,8" Source="/Resources/search.png" Cursor="Hand" RenderTransformOrigin="-1.03,0.597" />
+                </Grid>
+            </Border>
+            <Label Content="client" HorizontalAlignment="Left" Height="80" Margin="44,10,0,0" VerticalAlignment="Top" Width="101" FontFamily="Times New Roman" FontSize="40" Foreground="#FFC6980A"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="38,279,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Height="22" Margin="10,31,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand" MouseDown="Image_MouseDown"/>
+            <Border BorderBrush="Black" HorizontalAlignment="Left" Height="36" Margin="150,23,0,0" VerticalAlignment="Top" Width="99" CornerRadius="0,5,5,0" Background="White" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <TextBlock Text="search" Margin="2,0,0,0" RenderTransformOrigin="0.5,0.5" FontSize="19" FontFamily="Times New Roman" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+
+                </TextBlock>
+            </Border>
+            <Grid Margin="0,79,288,33">
+                <ScrollViewer Margin="3,0,0,0">
+                    <StackPanel x:Name="stk" Width="481"/>
+                </ScrollViewer>
+
+            </Grid>
+            <Border BorderBrush="White" HorizontalAlignment="Left" Height="278" Margin="496,279,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/0164959b12094c445ddc2c87bc0d1b62.jpg" Stretch="UniformToFill"/>
+                </Border.Background>
+                <Grid Margin="0,0,0,34">
+                    <Border x:Name="type1" Margin="18,24,10,0" CornerRadius="8,8,8,8" Background="#7F4E4B4B">
+                        <ComboBox x:Name="cbb_clls1"  Style="{DynamicResource RoundComboBox}"   FontFamily="Bahnschrift" FontSize="20" Margin="15,76,15,0" Height="42" VerticalAlignment="Top" IsEnabled="False" SelectionChanged="cbb_clls1_SelectionChanged">
+                            <ComboBoxItem Content="A-Z" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
+                            <ComboBoxItem Content="ID" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
+                            <ComboBoxItem Content="Class" Foreground="Black"  FontFamily="Bahnschrift" FontSize="20" />
+
+
+
+                        </ComboBox>
+
+                    </Border>
+                    <Label x:Name="ord_txt"  Content="SORT BY" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="140"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FF242F26" Background="{x:Null}" FontWeight="Bold" Margin="31,46,0,0" />
+                    <Border x:Name="bd_type1" Margin="214,52,27,168" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.561,-0.117" MouseDown="bd_type1_MouseDown" BorderThickness="2,2,2,2" BorderBrush="White" Cursor="Hand" >
+                        <Image x:Name="ck_type1" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+
+                    <Border x:Name="desc" Margin="141,164,26,40" Style="{DynamicResource bd}" BorderBrush="#FF111176" MouseDown="desc_MouseDown" IsEnabled="False">
+                        <TextBlock x:Name="desc_txt" Foreground="#FF111176" Text="desc" Style="{DynamicResource txtofbd}" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        </TextBlock>
+                    </Border>
+                    <Border x:Name="asc" Margin="36,164,131,40" Style="{DynamicResource bd}" BorderBrush="#FF811B1B" MouseDown="asc_MouseDown" IsEnabled="False">
+                        <TextBlock x:Name="asc_txt" Foreground="#FF811B1B" Text="asc" Style="{DynamicResource txtofbd}" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Border>
+
 </UserControl>

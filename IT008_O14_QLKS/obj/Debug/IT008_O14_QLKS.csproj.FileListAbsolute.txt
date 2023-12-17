@@ -7,6 +7,7 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsHome.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsMain.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsRoom.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\card_dichvu.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCardxaml.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\NoticeCard.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProbBlemCard.g.cs
@@ -20,6 +21,8 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffAdd.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffInfor.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.g.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\notice.g.cs
@@ -49,6 +52,8 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\room\Viewroom_form.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffAdd.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffInfor.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\home.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Manager_main.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\notice.baml
@@ -56,13 +61,10 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\rece
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\room.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\service.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\staff.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\card_dichvu.baml
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.g.resources
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.Properties.Resources.resources
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cache
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
-C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffInfor.g.cs
-C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffInfor.baml
-C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffAdd.g.cs
-C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\staff\staffAdd.baml

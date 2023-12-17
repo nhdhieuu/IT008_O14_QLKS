@@ -71,6 +71,9 @@
     <Compile Include="View\Clients\ClientsRoom.xaml.cs">
       <DependentUpon>ClientsRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
+      <DependentUpon>card_dichvu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
+    <Page Include="View\Manager\Card\card_dichvu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

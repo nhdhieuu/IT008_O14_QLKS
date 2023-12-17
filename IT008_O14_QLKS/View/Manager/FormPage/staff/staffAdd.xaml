@@ -7,7 +7,7 @@
                     mc:Ignorable="d" WindowStyle="None" Topmost="True" Background="Transparent"
         WindowStartupLocation="CenterScreen" AllowsTransparency="True"
      Height="500" Width="330" ResizeMode="NoResize"  >
-    <Border CornerRadius="10" Background="#D9D9D9" MouseDown="Border_MouseDown">
+    <Border  BorderThickness="2"  Background="#D9D9D9" MouseDown="Border_MouseDown">
         <Grid Background="Transparent">
             <Border x:Name="close_b" CornerRadius="5" Margin="300,0,0,470"  MouseLeave="close_lb_MouseLeave" MouseDown="close_lb_MouseDown"  MouseEnter="close_lb_MouseEnter">
                 <Label Name="close_lb" Cursor="Hand" Content="X"  Foreground="#740909"

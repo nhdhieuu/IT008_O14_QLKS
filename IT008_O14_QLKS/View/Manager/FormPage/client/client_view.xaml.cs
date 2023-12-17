@@ -26,6 +26,9 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         public client_view()
         {
             InitializeComponent();
+            client_information  mainview=new client_information();
+            content.Content=mainview;
+            
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

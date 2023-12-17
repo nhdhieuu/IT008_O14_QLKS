@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.Card.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         public client_information()
         {
             InitializeComponent();
+            client_class_card cls_card =new client_class_card();
+            cls_Card.Content = cls_card;
         }
     }
 }

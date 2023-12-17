@@ -68,6 +68,9 @@
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\Client\client_class_card.xaml.cs">
+      <DependentUpon>client_class_card.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\Client\client_class_card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

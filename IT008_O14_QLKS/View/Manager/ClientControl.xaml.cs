@@ -14,7 +14,7 @@ namespace IT008_O14_QLKS.View.Manager
     {
         int pointcls = 0;
         string class_txt;
-        string strCon = @"Server=tcp:it008qlks.database.windows.net,1433;Initial Catalog=IT008QLKS;Persist Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string strCon = @"Data Source=REDRUM\REDRUM;Initial Catalog=QLKS;Integrated Security=True";
         SqlConnection sqlCon = null;
         public ClientControl()
         {

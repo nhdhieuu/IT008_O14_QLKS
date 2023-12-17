@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.Card.Client.client_class_card"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card.Client"
+             mc:Ignorable="d" 
+             d:DesignHeight="116" d:DesignWidth="380">
+    <Grid>
+        <Border Background="White" CornerRadius="10" BorderThickness="2" BorderBrush="#7D7B7B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition Width="201*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txt" FontSize="48"  Text="Silver" FontFamily="Times New Roman" Margin="23,6,124,50" Grid.ColumnSpan="2">
+
+                </TextBlock>
+                <TextBlock FontSize="32"  Text="class" FontFamily="Bahnschrift" Margin="62,56,39,0">
+
+                </TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

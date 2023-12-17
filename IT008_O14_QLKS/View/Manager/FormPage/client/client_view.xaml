@@ -64,7 +64,7 @@
 
                 </Border>
                 <TextBlock Text="client information" FontFamily="Times New Roman" FontSize="45" Margin="25,7,267,3" Foreground="#FF3B3B3B"/>
-                <Border   CornerRadius="8,8,8,8" Grid.Row="1" Margin="20,0,21,18" Background="#FFF1F0E7">
+                <Border   CornerRadius="12,12,12,12" Grid.Row="1" Margin="20,0,21,18" Background="#FFF1F0E7">
 
                 </Border>
                 <Border  Background="#DBD9CD" Grid.Row="1" x:Name="bd1" Style="{DynamicResource BD}" Margin="40,22,0,0" HorizontalAlignment="Left" MouseDown="Border_MouseDown_2" VerticalAlignment="Top">
@@ -78,7 +78,7 @@
                 </Border>
                 <Border Background="#FFC39A1F" Margin="214,22,567,568" Grid.Row="1"/>
 
-                <ContentControl Grid.Row="1" Margin="40,87,40,40">
+                <ContentControl x:Name="content" Grid.Row="1" Margin="34,85,34,42">
 
                 </ContentControl>
                 <Border Background="#FFC39A1F" Margin="398,22,383,568" Grid.Row="1"/>

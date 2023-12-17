@@ -5,8 +5,161 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
              mc:Ignorable="d" 
-             d:DesignHeight="504" d:DesignWidth="703">
-    <Grid Background="#F1F0E7" >
+             d:DesignHeight="504" d:DesignWidth="710">
+    <UserControl.Resources>
+        <Style x:Key="bd" TargetType="Border">
+            <Setter Property="Height" Value="35">
+
+            </Setter>
+            <Setter Property="Width" Value="276">
+
+            </Setter>
+            <Setter Property="Background" Value="#E9E5D9">
+
+            </Setter>
+            <Setter Property="BorderBrush" Value="#7D7B7B">
+
+            </Setter>
+            <Setter Property="BorderBrush" Value="DarkGray">
+
+            </Setter>
+            <Setter Property="BorderThickness" Value="1">
+
+            </Setter>
+            <Setter Property="CornerRadius" Value="5">
+
+            </Setter>
+            <Setter Property="Margin" Value="0,20,0,0">
+
+            </Setter>
+
+
+
+
+
+        </Style >
+        <Style x:Key="thuoctinh" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift">
+
+            </Setter>
+            <Setter Property="FontSize" Value="20">
+
+            </Setter>
+            <Setter Property="Foreground" Value="#1D19E3">
+
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Left">
+
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center">
+
+            </Setter>
+            <Setter Property="Margin" Value="7,0,0,0">
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="thongtin" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift">
+
+            </Setter>
+            <Setter Property="FontSize" Value="20">
+
+            </Setter>
+            <Setter Property="Foreground" Value="#C6980A">
+
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Right">
+
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center">
+
+            </Setter>
          
+            <Setter Property="TextAlignment" Value="Right">
+                
+            </Setter>
+            <Setter Property="Margin" Value="0,0,7,0 ">
+                
+            </Setter>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#F1F0E7" >
+        <Border Margin="0,0,395,0" Background="#7C7255" CornerRadius="10" BorderThickness="2,2,2,2" BorderBrush="#FFA78624" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Background="White" Margin="18,87,19,411">
+                    
+                </Border>
+                <TextBlock Text="Profile" FontSize="35" FontFamily="Times New Roman" Margin="18,11,-23,446" Foreground="White"/>
+                <StackPanel Margin="0,90,0,-6">
+                    <Border Style="{DynamicResource bd}">
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Name"  />
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                       
+
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+                      
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Username"/>
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                       
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Password" />
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                        
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+                      
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Gender"/>
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+                
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Birthday" />
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+                       
+                        <Grid>
+                            <TextBlock  Text="CCCD" Style="{DynamicResource thuoctinh}" />
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+                       
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Phone" Margin="7,4,0,3"/>
+                            <TextBlock  Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                        
+                    </Border>
+                </StackPanel>
+                <TextBlock  Style="{DynamicResource thuoctinh}" Text="ID"   Margin="18,58,0,0" Foreground="White" VerticalAlignment="Top" FontSize="27" Height="25"/>
+                <TextBlock Style="{DynamicResource thongtin}" Text="KH01"  Margin="0,58,19,0" Foreground="White" VerticalAlignment="Top" FontSize="27" RenderTransformOrigin="0.615,0.123" Height="27" FontWeight="Bold"/>
+
+
+            </Grid>
+        </Border>
+       
+        <ContentControl  x:Name="cls_Card" Width="380" Height="116" Margin="330,0,0,388">
+
+        </ContentControl>
+
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
 ﻿using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.View.Manager.FormPage.staff;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,28 @@ namespace IT008_O14_QLKS.View.Manager
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             datelb.Content = DateTime.Now.ToString("MMM, dd, yyyy");
+        }
+
+        private void add_staff_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void add_border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            staffAdd SA = new staffAdd();
+            SA.ShowDialog();
+
+        }
+
+        private void add_border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            add_border.Background=  new SolidColorBrush((Color)ColorConverter.ConvertFromString("#25be56"));
+        }
+
+        private void add_border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            add_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
         }
     }
 }

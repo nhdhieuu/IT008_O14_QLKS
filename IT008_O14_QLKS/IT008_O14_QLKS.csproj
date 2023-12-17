@@ -110,6 +110,12 @@
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\staff\staffAdd.xaml.cs">
+      <DependentUpon>staffAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\staff\staffInfor.xaml.cs">
+      <DependentUpon>staffInfor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
@@ -192,6 +198,14 @@
     </Page>
     <Page Include="View\Manager\ClientControl.xaml" />
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\staff\staffAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\staff\staffInfor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

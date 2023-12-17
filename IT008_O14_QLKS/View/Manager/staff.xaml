@@ -294,7 +294,7 @@ VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
                     </Grid>
                 </Border> -->
 
-                <ScrollViewer Margin="10,10,10,10">
+                <ScrollViewer Margin="10,10,10,75">
                     <StackPanel>
                         <ContentControl x:Name="ST01" Height="110" Width="465">
                             
@@ -335,10 +335,12 @@ VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
                     </StackPanel>
                 </ScrollViewer>
                 
-                <Border CornerRadius="5" Background="#12CE69" Margin="218,486,218,10">
-                    <Button x:Name="add_but" Content="+" Foreground="White" BorderThickness="0"
-                            Background="#12CE69" FontSize="40" FontWeight="ExtraBold"
-                            Padding="0,-10,0,10" Margin="1.5"/>
+                <Border x:Name="add_border" CornerRadius="5" Background="#12CE69" Margin="218,486,218,10" Cursor="Hand" MouseDown="add_border_MouseDown"
+                        MouseEnter="add_border_MouseEnter" MouseLeave="add_border_MouseLeave">
+                    <Label x:Name="add_staff" Content="+" Foreground="White" BorderThickness="0"
+                            FontSize="25" FontWeight="Bold" Padding="0" Margin="0"
+                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" MouseDown="add_staff_MouseDown"
+                            />
                 </Border>
             </Grid>
         </Grid>

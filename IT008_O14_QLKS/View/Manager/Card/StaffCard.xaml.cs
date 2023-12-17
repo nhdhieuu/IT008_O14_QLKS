@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.staff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,9 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            staffInfor SI = new staffInfor();
+            SI.ShowDialog();
+            
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

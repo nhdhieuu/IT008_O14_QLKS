@@ -84,5 +84,21 @@ namespace IT008_O14_QLKS.View.Manager
         {
             add_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
         }
+
+       
+
+        private void asc_b_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+                asc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+                desc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
+          
+        }
+
+        private void desc_b_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+                desc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+                asc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
+           
+        }
     }
 }

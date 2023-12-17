@@ -187,6 +187,98 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ComboBoxTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border CornerRadius="5,0,0,5"
+                     BorderThickness="1,1,0,1"
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="Black">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBoxButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border 
+                 Background="White" 
+                 x:Name="border" 
+                 CornerRadius="0,5,5,0" 
+                 BorderThickness="0,1,1,1"
+                 BorderBrush="Black">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style  x:Key="RoundComboBox" TargetType="{x:Type ComboBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition MaxWidth="18"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Name="PART_EditableTextBox"
+                      Style="{StaticResource ComboBoxTextBoxStyle}"
+                      Padding="5,0,0,0"
+                      Height="{TemplateBinding Height}"/>
+                            <ToggleButton Grid.Column="1" Margin="0"
+                     Height="{TemplateBinding Height}"
+                     Style="{StaticResource ComboBoxButtonStyle}"
+                     Focusable="False"
+                     IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                     ClickMode="Press">
+                                <Path Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Data="M 0 0 L 4 4 L 8 0 Z"
+                           Fill="DodgerBlue" />
+                            </ToggleButton>
+                            <ContentPresenter Name="ContentSite"
+                     Content="{TemplateBinding SelectionBoxItem}"
+                     ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                     ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5,0,0,0"/>
+                            <Popup Name="Popup"
+                     Placement="Bottom"
+                     IsOpen="{TemplateBinding IsDropDownOpen}"
+                     AllowsTransparency="True" 
+                     Focusable="False"
+                     PopupAnimation="Slide">
+                                <Grid Name="DropDown"
+                         SnapsToDevicePixels="True"                
+                         MinWidth="{TemplateBinding ActualWidth}"
+                         MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+                             x:Name="DropDownBorder"
+                             BorderThickness="1"
+                             CornerRadius="5"
+                             Background="Azure"
+                             BorderBrush="Black"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -237,40 +329,55 @@
                 <Border Grid.Row="1" CornerRadius="5" Background="Wheat" Margin="16,10,16,35"
                         BorderThickness="2" BorderBrush="Azure">
                     <Grid>
-                        <Border CornerRadius="5" Background="Blue" Margin="20,55,20,198"
+                        <Border CornerRadius="5" Background="#262A56" Margin="20,55,20,198" 
                                 BorderThickness="2" BorderBrush="White">
-                            <Grid Margin="0,0,111,60">
-                                <Label Content="postion" FontSize="20" Padding="0" Margin="10,2,-10,-2"/>
-                                <Border CornerRadius="5" Background="White" BorderThickness="2"
-                                        BorderBrush="Black" Margin="10,44,-99,-41">
-                                    <ComboBox Text="*All"  BorderThickness="0" Margin="1,1,1,1"/>
-                                </Border>
+                            <Grid Margin="0,0,-2,-2">
+                                <Label Content="postion" Foreground="White" FontSize="20" Padding="0" Margin="10,10,77,60"/>
+
+                                <ComboBox Style="{DynamicResource RoundComboBox}"  FontSize="15" Margin="10,53,10,18">
+                                    <ComboBoxItem Content="Le Tan"/>
+                                    <ComboBoxItem Content="Phuc Vu"/>
+                                    <ComboBoxItem Content="Ve Sinh"/>
+                                    <ComboBoxItem Content="CSKH"/>
+
+                                </ComboBox>
+
                             </Grid>
+
                         </Border>
+
+
                         <Border  CornerRadius="5" Background="#D9D9D9" BorderThickness="2"
                                  BorderBrush="Blue" Margin="20,173,20,18">
                             <Grid>
-                                <Label Content="time" FontSize="20" Padding="0" Foreground="#740909" Margin="10,-2,112,123"
-                                       VerticalContentAlignment="Center"/>
-                                <Label Content="from" FontSize="20" Padding="0" Foreground="Blue" Margin="110,-2,10,123"
-                                       VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                <Label Content="to" FontSize="20" Padding="0" Foreground="Blue" Margin="110,60,10,60"
-                                       VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                <Border CornerRadius="5" BorderThickness="2" BorderBrush="Blue" Background="White" Margin="10,33,10,98">
-                                    <TextBox BorderThickness="0" Margin="1"/>
+                                <Label Content="sort by: " FontSize="32" FontWeight="Light" Margin="10,0,52,111"/>
+                                <CheckBox  x:Name="sort_checkbox" Cursor="Hand" Margin="147,20,10,131"/>
+                                <ComboBox Style="{DynamicResource RoundComboBox}" Margin="10,60,10,70" FontSize="15">
+                                    <ComboBoxItem Content="ID"/>
+                                    <ComboBoxItem Content="Name"/>
+                                    <ComboBoxItem Content="Postion"/>
+                                    <ComboBoxItem Content="Birthday"/>
+
+                                </ComboBox>
+                                <Border x:Name="asc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="20,120,95,18" Cursor="Hand" MouseDown="asc_b_MouseDown">
+                                    <Label Content="asc" Foreground="#E50F0F" FontSize="25" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                           Margin="0,-5,0,5"/>
                                 </Border>
-                                <Border CornerRadius="5" BorderThickness="2" BorderBrush="Blue" Background="White" Margin="10,98,10,30">
-                                    <TextBox BorderThickness="0" Margin="1"/>
+                                <Border x:Name="desc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="98,120,18,18" Cursor="Hand" MouseDown="desc_b_MouseDown">
+                                    <Label Content="desc" Foreground="#2E22B2" FontSize="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                                           Margin="0,-4,0,4"/>
                                 </Border>
                             </Grid>
                         </Border>
+
+
                     </Grid>
                 </Border>
             </Grid>
 
             <!-- Phần bên trái-->
             <Grid>
-               <!-- <Border CornerRadius="5" Background="#D9D9D9" Margin="25,31,30,395"
+                <!-- <Border CornerRadius="5" Background="#D9D9D9" Margin="25,31,30,395"
                         BorderThickness="2" BorderBrush="#9F8E8E">
 
                     <Grid>
@@ -297,7 +404,7 @@ VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
                 <ScrollViewer Margin="10,10,10,75">
                     <StackPanel>
                         <ContentControl x:Name="ST01" Height="110" Width="465">
-                            
+
                         </ContentControl>
                         <ContentControl x:Name="ST02" Height="110" Width="465">
 
@@ -334,7 +441,7 @@ VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
                         </ContentControl>
                     </StackPanel>
                 </ScrollViewer>
-                
+
                 <Border x:Name="add_border" CornerRadius="5" Background="#12CE69" Margin="218,486,218,10" Cursor="Hand" MouseDown="add_border_MouseDown"
                         MouseEnter="add_border_MouseEnter" MouseLeave="add_border_MouseLeave">
                     <Label x:Name="add_staff" Content="+" Foreground="White" BorderThickness="0"

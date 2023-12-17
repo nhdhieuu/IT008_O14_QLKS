@@ -485,13 +485,17 @@
     <Resource Include="Resources\f255a783669f56bd002a65f11ae03a0b.jpg" />
     <Resource Include="Resources\ede59f46552ecfa8545a5d983bc15d48.jpg" />
     <Resource Include="Resources\ee77cea094378a30fe302d8a95e7b848.jpg" />
+    <Resource Include="Resources\Diamond.jpg" />
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
     <Resource Include="Resources\icons8-client-50.png" />
     <Resource Include="Resources\icons8-eye-24 %281%29.png" />
     <Resource Include="Resources\icons8-eye-96.png" />
     <Resource Include="Resources\icons8-eye-90 %281%29.png" />
+    <Resource Include="Resources\Gold.jpg" />
+    <Resource Include="Resources\Platinum.jpg" />
     <Content Include="Resources\print.png" />
+    <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

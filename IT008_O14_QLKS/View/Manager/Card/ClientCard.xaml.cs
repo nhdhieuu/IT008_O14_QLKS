@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.IO;
 using System.Windows.Shapes;
 
 namespace IT008_O14_QLKS.View.Manager.Card
@@ -60,11 +61,24 @@ namespace IT008_O14_QLKS.View.Manager.Card
         }
         private void background()
         {
-            
-                string imagePath = cls+".jpg";
+            string truepath = "";
+            string currentFolderPath = AppDomain.CurrentDomain.BaseDirectory.ToString();
+          
+            string[] parts = currentFolderPath.Split('\\');
+            for (int i = 0; i < parts.Length ; i++)
+            {
+                if(parts[i]!="Debug"&& parts[i]!="bin")
+                truepath += parts[i] + "/";
+            }
 
-                // Tạo một đối tượng BitmapImage
-                BitmapImage bitmap = new BitmapImage();
+       
+          
+       
+      
+            string imagePath = System.IO.Path.Combine(truepath,"Resources", cls + ".jpg");
+
+            // Tạo một đối tượng BitmapImage
+            BitmapImage bitmap = new BitmapImage();
 
                 // Thiết lập đường dẫn nguồn cho BitmapImage
                 bitmap.BeginInit();

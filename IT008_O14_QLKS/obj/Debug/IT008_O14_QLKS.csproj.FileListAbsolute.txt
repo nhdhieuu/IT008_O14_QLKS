@@ -68,3 +68,7 @@ C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.cs
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\service\serviceAdd.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\service\serviceInfor.g.cs
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\service\serviceAdd.baml
+C:\Users\hoang\Desktop\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\service\serviceInfor.baml

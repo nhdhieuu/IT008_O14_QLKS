@@ -226,8 +226,8 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- service list-->
-                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#C6980A" Margin="20,10,0,320">
-                    <ScrollViewer Margin="10,10,10,10">
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#C6980A" Margin="20,10,0,345">
+                    <ScrollViewer Margin="10,10,10,8">
                         <StackPanel>
                             <ContentControl x:Name="CC1" Height="42" Width="375">
 
@@ -299,12 +299,18 @@
 
                     </ScrollViewer>
                 </Border>
+                <!-- add service button-->
+                <Border x:Name="but_add_service" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,200,194,310" MouseDown="but_add_service_MouseDown">
+                    <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
+                </Border>
+
                 <!-- Problem-->
                 <Label Content="problem" FontSize="45" Foreground="#BF0B0B" 
     Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
-    Margin="20,205,284,0" Height="63"/>
+    Margin="20,216,284,0" Height="63"/>
                 <!--search-->
-                <Grid Margin="190,232,0,268" >
+                <Grid Margin="190,238,0,262" >
                     <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,0,0,0" >
                         <Grid>
                             <TextBox Background="#D9D9D9" Margin="15,0,30,0"
@@ -320,7 +326,7 @@
                 </Grid>
 
                 <!-- problem list-->
-                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#BF0B0B" Margin="20,281,0,25">
+                <Border CornerRadius="10" BorderThickness="2" BorderBrush="#BF0B0B" Margin="20,286,0,55">
                     <ScrollViewer Margin="10,10,10,10">
                         <StackPanel>
                             <ContentControl x:Name="PC1" Height="42" Width="375">
@@ -357,8 +363,12 @@
 
                     </ScrollViewer>
                 </Border>
-
-                   <!-- (un)available-->
+                <!-- add problem button-->
+                <Border x:Name="but_add_problem" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,495,194,10" >
+                    <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
+                </Border>
+                <!-- (un)available-->
 
                 <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1">
                     <Grid Background="Transparent">

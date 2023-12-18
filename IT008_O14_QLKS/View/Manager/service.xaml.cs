@@ -1,4 +1,5 @@
 ﻿using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.View.Manager.FormPage.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,6 +97,12 @@ namespace IT008_O14_QLKS.View.Manager
             PC8.Content = PC[7].Content;
             PC9.Content = PC[8].Content;
             PC10.Content = PC[9].Content;
+        }
+
+        private void but_add_service_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            serviceAdd sa = new serviceAdd();
+            sa.ShowDialog();
         }
     }
 }

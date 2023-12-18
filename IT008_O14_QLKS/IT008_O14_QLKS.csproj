@@ -108,6 +108,9 @@
     <Compile Include="View\Manager\FormPage\client\client_view.xaml.cs">
       <DependentUpon>client_view.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\client\receipt_client.xaml.cs">
+      <DependentUpon>receipt_client.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\client\room_client.xaml.cs">
       <DependentUpon>room_client.xaml</DependentUpon>
     </Compile>
@@ -219,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\client\client_view.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\client\receipt_client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

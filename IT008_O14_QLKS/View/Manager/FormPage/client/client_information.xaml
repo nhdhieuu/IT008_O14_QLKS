@@ -178,7 +178,7 @@
                 <TextBlock x:Name="nor"  FontSize="30" Style="{DynamicResource thongtin}" Foreground="#FFC6980A" Margin="256,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="34" TextAlignment="Left" Text="5" Width="56"/>
                 <TextBlock  x:Name="tor" FontSize="30" Style="{DynamicResource thongtin}" Foreground="#FFC6980A" Margin="274,167,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="34" TextAlignment="Left" Text="10" Width="63"/>
                 <Border BorderThickness="2" BorderBrush="#FFC6980A" Margin="266,165,32,168"/>
-                <Border Style="{DynamicResource view_bd}" Margin="214,313,32,20">
+                <Border Style="{DynamicResource view_bd}" Margin="214,313,32,20" MouseDown="Border_MouseDown_1">
                     <TextBlock Text="view" FontFamily="Bahnschrift" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </Border>
             </Grid>

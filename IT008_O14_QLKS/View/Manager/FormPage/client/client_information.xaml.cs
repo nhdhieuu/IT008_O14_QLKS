@@ -137,5 +137,20 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
             }
             
         }
+
+        private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
+            DependencyObject parent = VisualTreeHelper.GetParent(this);
+            while (!(parent is Window) && parent != null)
+            {
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            if (parent is client_view window)
+            {
+                window.doi_view2();
+            }
+        }
     }
 }

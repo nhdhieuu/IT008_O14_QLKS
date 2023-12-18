@@ -23,12 +23,22 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     /// </summary>
     public partial class client_view : Window
     {
-        public client_view()
+        string id;
+        public client_view(string id)
         {
+            this.id = id;
             InitializeComponent();
-            client_information  mainview=new client_information();
+            client_information  mainview=new client_information(id);
             content.Content=mainview;
             
+        }
+      public void doi_view()
+        {
+            room_client mainview = new room_client();
+            content.Content = mainview;
+            bd1.Background = new SolidColorBrush(Colors.Transparent);
+            bd2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDBD9CD"));
+            bd3.Background = new SolidColorBrush(Colors.Transparent);
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,18 +53,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         }
         private void delbtn_border_MouseEnter(object sender, MouseEventArgs e)
         {
+       
+
             delbtn_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
             delbtn_text.Foreground = new SolidColorBrush(Colors.White);
         }
 
         private void delbtn_border_MouseLeave(object sender, MouseEventArgs e)
         {
+            
             delbtn_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF96958A"));
             delbtn_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
         }
 
         private void Border_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
+            client_information mainview = new client_information(id);
+            content.Content = mainview;
             bd1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDBD9CD"));
             bd2.Background= new SolidColorBrush(Colors.Transparent);
             bd3.Background = new SolidColorBrush(Colors.Transparent);
@@ -62,6 +77,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
+            room_client mainview = new room_client();
+            content.Content = mainview;
             bd1.Background = new SolidColorBrush(Colors.Transparent);
             bd2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDBD9CD"));
             bd3.Background = new SolidColorBrush(Colors.Transparent);

@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Reflection;
  using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace IT008_O14_QLKS.View.Manager
@@ -14,8 +16,10 @@ namespace IT008_O14_QLKS.View.Manager
     {
         int pointcls = 0;
         string class_txt;
-        string strCon = @"Data Source=REDRUM\REDRUM;Initial Catalog=QLKS;Integrated Security=True";
+        string strCon = Properties.Settings.Default.strcon;
         SqlConnection sqlCon = null;
+
+        private DispatcherTimer t;
         public ClientControl()
         {
             InitializeComponent();
@@ -30,10 +34,22 @@ namespace IT008_O14_QLKS.View.Manager
                 sqlCon.Open();
 
             }
+           
             load();
-      
-          
+
+            t = new DispatcherTimer();
+            
+            t.Interval = TimeSpan.FromSeconds(1);
+            t.Start();
+            t.Tick += HenGio;
+
+
         }
+        private void HenGio(object sender, EventArgs e)
+        {
+            load();
+        }
+
         string tensx;
         private void load()
         {

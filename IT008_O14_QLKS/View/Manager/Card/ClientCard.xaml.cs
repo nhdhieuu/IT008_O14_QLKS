@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace IT008_O14_QLKS.View.Manager.Card
 {
@@ -38,10 +41,10 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.name = name;
             this.usrname = usrname;
             this.id = id;   
-            this.cls = cls; 
+            this.cls = cls;
 
             //
-        
+            tentxt.ToolTip = name;
             //quy dinh background
             background();
             //
@@ -49,7 +52,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             yeuto();
             //
         }
-
+      
         private void bd_view_MouseEnter(object sender, MouseEventArgs e)
         {
             bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F9F9393"));
@@ -125,7 +128,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void bd_view_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            client_view a = new client_view();
+            client_view a = new client_view(id);
             a.ShowDialog();
         }
     }

@@ -76,3 +76,5 @@ D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cac
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\client\room_client.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\client\room_client.baml

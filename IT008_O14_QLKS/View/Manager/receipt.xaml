@@ -51,19 +51,87 @@
                         </Border>
 
                     </Grid>
-                    <Grid Grid.Row="1">
-                        <StackPanel Margin="14,10,0,0" >
+                    
+                    <ScrollViewer Grid.Row="1"  Margin="10,10,10,10">
+                        <StackPanel>
                             <ContentControl x:Name="Cc11" >
 
                             </ContentControl>
-                            <ContentControl x:Name="cc12" Margin="0,20,0,0">
+                            <ContentControl x:Name="cc12" Margin="0,20,0,20">
 
                             </ContentControl>
-                            <ContentControl x:Name="cc13" Margin="0,20,0,0">
+                            <ContentControl x:Name="cc13" Margin="0,20,0,20">
+                                
+                            </ContentControl>
+                            <ContentControl x:Name="cc14" Margin="0,20,0,20">
+                            </ContentControl>
+                            <ContentControl x:Name="cc15" Margin="0,20,0,20">
+                            </ContentControl>
+                            <ContentControl x:Name="cc16" Margin="0,20,0,20">
+
+                                <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC4" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC5" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC6" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC7" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC8" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC9" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC10" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC11" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC12" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC13" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC14" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC15" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC16" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC17" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC18" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC19" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC20" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC21" Height="42" Width="375"> -->
+                            <!-- -->
+                            <!-- </ContentControl> -->
+                            <!-- <ContentControl x:Name="CC22" Height="42" Width="375"> -->
 
                             </ContentControl>
                         </StackPanel>
-                    </Grid>
+
+                    </ScrollViewer>
+                
+                    
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Margin="20,17,8,12">

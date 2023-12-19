@@ -24,18 +24,21 @@ namespace IT008_O14_QLKS.View.Manager
         public receipt()
         {
             InitializeComponent();
-            ReceiptCard[] listCard = new ReceiptCard[3];
+            ReceiptCard[] listCard = new ReceiptCard[4];
 
             listCard[0] = new ReceiptCard("1", "12/12/2012", "12:12", "100000");
             listCard[1] = new ReceiptCard("2", "12/12/2012", "12:12", "100000");
             listCard[2] = new ReceiptCard("3", "12/12/2012", "12:12", "100000");
-
+            listCard[3] = new ReceiptCard("3", "12/12/2012", "12:12", "100000");
 
              
           
             Cc11.Content = listCard[0].Content;
             cc12.Content = listCard[1].Content;
             cc13.Content = listCard[2].Content;
+            cc14.Content = listCard[3].Content;
+            cc15.Content = listCard[0].Content;
+            cc16.Content = listCard[1].Content;
             
         }
     }

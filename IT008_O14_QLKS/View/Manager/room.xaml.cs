@@ -15,6 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Manager.FormPage.room;
+using System.Data.SqlClient;
+using System.Data;
+using System.Windows.Media.Media3D;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -23,40 +27,93 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class room : UserControl
     {
+        int RecordCount;
+        string strCon = "Data Source=DESKTOP-MR3E6H4\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+        SqlConnection sqlCon = null;
         public room()
         {
             InitializeComponent();
-            roomcard[] listCard = new roomcard[6];
-            // -- Load các giá trị cho 6 ô từ data base
-            listCard[0]= new roomcard("P103", "Normal", "Booked", "day", 2, 2);
-            listCard[1] = new roomcard("P102", "VIP", "Unavailable", "day", 2, 2);
-            listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
-            listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
-            listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
-            listCard[5] = new roomcard("P106", "Normal", "Nguyễn Thị B", "day", 2, 2);
-          
+            if (sqlCon == null)
+            {
+                sqlCon = new SqlConnection(strCon);
+            }
+            if (sqlCon.State == ConnectionState.Closed)
+            {
+                sqlCon.Open();
 
-            //
+            }
 
-             
-          
-            cc11.Content = listCard[0].Content;
-            cc21.Content = listCard[1].Content;
-            cc12.Content = listCard[2].Content;
-            cc22.Content = listCard[3].Content;
-            cc13.Content = listCard[4].Content;
-            cc23.Content = listCard[5].Content;
+            Load();
+
+           
            
 
 
         }
-    
+        public void Load()
+        {
+            int PageIndex = int.Parse(Page_index_lbl.Text);
+            SqlCommand sqlcmd = new SqlCommand();
+
+            sqlcmd.CommandType = CommandType.Text;
+
+            sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG) AS tbl WHERE row_num BETWEEN "+ (PageIndex*6-5)+ " AND "+ PageIndex*6;
+
+            sqlcmd.Connection = sqlCon;
+            
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+            roomcard[] listCard = new roomcard[6];
+            int i = 0;
+            while (reader.Read())
+            {
+                listCard[i]= new roomcard(reader.GetString(1), reader.GetString(2), reader.GetString(4), "day", 2, 2);
+                i++;
+            }
+            reader.Close();
+            sqlcmd.CommandText = "select COUNT(*) FROM PHONG";
+            RecordCount = (int)sqlcmd.ExecuteScalar();
+
+            //// -- Load các giá trị cho 6 ô từ data base
+            //listCard[0] = new roomcard("P103", "Normal", "Booking", "day", 2, 2);
+            //listCard[1] = new roomcard("P102", "VIP", "Unavailable", "day", 2, 2);
+            //listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
+            //listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
+            //listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
+            //listCard[5] = new roomcard("P106", "Normal", "Nguyễn Thị B", "day", 2, 2);
+
+            //
+            if (listCard[0] != null)
+                cc11.Content = listCard[0].Content;
+            else
+                cc11.Content = null;
+            if (listCard[1] != null)
+                cc21.Content = listCard[1].Content;
+            else
+                cc21.Content = null;
+            if (listCard[2] != null)
+                cc12.Content = listCard[2].Content; 
+            else
+                cc12.Content = null;
+            if (listCard[3] != null)
+                cc22.Content = listCard[3].Content;  
+            else
+                cc22.Content = null;
+            if (listCard[4] != null)
+                cc13.Content = listCard[4].Content;
+            else
+                cc13.Content = null;
+            if (listCard[5] != null)
+                cc23.Content = listCard[5].Content;
+            else
+                cc23.Content = null;
+        }
         int cleaned = 1;
        
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            
+            AddRoomForm ar=new AddRoomForm();
+            ar.ShowDialog();
         }
 
         private void Border_MouseEnter_1(object sender, MouseEventArgs e)
@@ -396,6 +453,32 @@ vip = 0;
                 }
             }
        
+        }
+
+        private void Next_butt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            int index = int.Parse(this.Page_index_lbl.Text);
+
+            if (index < RecordCount/6+1)
+            {
+                index++;
+                this.Page_index_lbl.Text = index.ToString();
+                Load();
+            }
+           
+
+        }
+
+        private void Back_butt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            int index = int.Parse(this.Page_index_lbl.Text);
+            if (index > 1)
+            {
+                index--;
+                this.Page_index_lbl.Text = index.ToString();
+                Load();
+            }
+           
         }
     }
     

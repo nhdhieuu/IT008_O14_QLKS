@@ -57,7 +57,7 @@ namespace IT008_O14_QLKS.View.Manager
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG) AS tbl WHERE row_num BETWEEN "+ (PageIndex*6-5)+ " AND "+ PageIndex*6;
+            sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter() + " ) AS tbl WHERE row_num BETWEEN "+ (PageIndex*6-5)+ " AND "+ PageIndex*6;
 
             sqlcmd.Connection = sqlCon;
             
@@ -70,16 +70,8 @@ namespace IT008_O14_QLKS.View.Manager
                 i++;
             }
             reader.Close();
-            sqlcmd.CommandText = "select COUNT(*) FROM PHONG";
+            sqlcmd.CommandText = "select COUNT(*) FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter();
             RecordCount = (int)sqlcmd.ExecuteScalar();
-
-            //// -- Load các giá trị cho 6 ô từ data base
-            //listCard[0] = new roomcard("P103", "Normal", "Booking", "day", 2, 2);
-            //listCard[1] = new roomcard("P102", "VIP", "Unavailable", "day", 2, 2);
-            //listCard[2] = new roomcard("P103", "Normal", "Trần Văn A", "hour", 2, 2);
-            //listCard[3] = new roomcard("P104", "VIP", "Empty", "day", 2, 2);
-            //listCard[4] = new roomcard("P105", "Normal", "Empty", "day", 2, 2);
-            //listCard[5] = new roomcard("P106", "Normal", "Nguyễn Thị B", "day", 2, 2);
 
             //
             if (listCard[0] != null)
@@ -107,9 +99,92 @@ namespace IT008_O14_QLKS.View.Manager
             else
                 cc23.Content = null;
         }
+        public string TypeFilter()
+        {
+            string FilterType = "";
+            if (sup1 == 1)
+                FilterType = "WHERE LOAIPHONG='Superior'";
+            if (std == 1)
+                FilterType = "WHERE LOAIPHONG='Standard'";
+            if (dlx1 == 1)
+                FilterType = "WHERE LOAIPHONG='Deluxe'";
+            if (sui == 1)
+                FilterType = "WHERE LOAIPHONG='Suite'";
+            if (sup1 == 1 && std == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Superior')";
+            if (sup1 == 1 && dlx1 == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Deluxe','Superior')";
+            if (sup1 == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Suite','Superior')";
+            if (std == 1 && dlx1 == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Deluxe')";
+            if (std == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Suite')";
+            if (dlx1 == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Suite','Deluxe')";
+            if (sup1 == 1 && std == 1 && dlx1 == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Superior','Deluxe')";
+            if (sup1 == 1 && std == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Superior','Suite')";
+            if (sup1 == 1 && dlx1 == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Deluxe','Superior','Suite')";
+            if (sui == 1 && std == 1 && dlx1 == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Suite','Deluxe')";
+            if (sup1 == 1 && std == 1 && dlx1 == 1 && sui == 1)
+                FilterType = "WHERE LOAIPHONG IN ('Standard','Superior','Deluxe','Suite')";
+            return FilterType;
+        }
+        public string StatusFilter()
+        {
+            string FilterStatus = "";
+            string AND = "AND";
+            if (sup1 == 0 && std == 0 && dlx1 == 0 && sui == 0)
+                AND = "WHERE";
+            if (rent == 1)
+                FilterStatus = $" {AND} TRANGTHAI='Rented'";
+            if (booked == 1)
+                FilterStatus = $" {AND} TRANGTHAI='Booking'";
+            if (empty == 1)
+                FilterStatus = $" {AND} TRANGTHAI='Empty'";
+            if (unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI='Unavailabl'";
+            if (rent == 1 && booked == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented')";
+            if (rent == 1 && empty == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Empty','Rented')";
+            if (rent == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Unavailabl','Rented')";
+            if (booked == 1 && empty == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Empty')";
+            if (booked == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Unavailabl')";
+            if (empty == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Unavailabl','Empty')";
+            if (rent == 1 && booked == 1 && empty == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Empty')";
+            if (rent == 1 && booked == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Unavailabl')";
+            if (rent == 1 && empty == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Empty','Rented','Unavailabl')";
+            if (sui == 1 && booked == 1 && empty == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Unavailabl','Empty')";
+            if (rent == 1 && booked == 1 && empty == 1 && unavai == 1)
+                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Empty','Unavailabl')";
+            return FilterStatus;
+        }
+        public string FloorFilter()
+        {
+            string FilterFloor="";
+            string AND = "AND";
+            if (sup1 == 0 && std == 0 && dlx1 == 0 && sui == 0 && rent == 0 && booked == 0 && empty == 0 && unavai == 0)
+                AND = "WHERE";
+            if (stage_s == 1)
+                FilterFloor = $" {AND} TENPHONG LIKE '_" + stage_num + "__'";
+
+            return FilterFloor;
+        }
         int cleaned = 1;
        
-
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
             AddRoomForm ar=new AddRoomForm();
@@ -202,6 +277,7 @@ namespace IT008_O14_QLKS.View.Manager
                 standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
                 std = 0;
             }
+            Load();
         }
         int sup1 = 0;
         private void Border_MouseDown_4(object sender, MouseButtonEventArgs e)
@@ -222,6 +298,7 @@ namespace IT008_O14_QLKS.View.Manager
                sup1 = 0;
                 supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
+            Load();
         }
         int dlx1 = 0;
         private void Dlx_MouseDown(object sender, MouseButtonEventArgs e)
@@ -241,16 +318,17 @@ namespace IT008_O14_QLKS.View.Manager
                 dlx1 = 0;
                 Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
-        
+            Load();
+
         }
-        int vip = 0;
+        int sui = 0;
 
         private void VIP_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (vip == 0)
+            if (sui == 0)
             {
                 VIP.Background = new SolidColorBrush(Colors.WhiteSmoke);
-              vip = 1;
+              sui = 1;
                 VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD6A611"));
 
 
@@ -258,10 +336,11 @@ namespace IT008_O14_QLKS.View.Manager
             else
             {
                VIP.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
-vip = 0;
+                sui = 0;
 
                 VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
+            Load();
         }
 
         int status_s = 0;
@@ -329,38 +408,10 @@ vip = 0;
                 rent_t.Foreground = new SolidColorBrush(Colors.Black);
                 rent = 0;
             }
+            Load();
         }
-        int stage_s = 0;
-        int stage_num = 1;
-        private void bd_stage_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(stage_s==0)
-            {
-                stage_s = 1;
-                ck_stage.Visibility=Visibility.Visible;
-                stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
-                stg_t.Foreground = new SolidColorBrush(Colors.White);
-                up.Background = new SolidColorBrush(Colors.LightGray);
-                down.Background = new SolidColorBrush(Colors.LightGray);
-                bd_stage.BorderBrush = new SolidColorBrush(Colors.Green);
-                num_s.Foreground=new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7BB04"));
-                up.IsEnabled = true;
-                down.IsEnabled = true;
-            }
-            else
-            {
-                stage_s = 0;
-                ck_stage.Visibility = Visibility.Hidden;
-             stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
-                stg_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
-                up.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
-                down.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
-                bd_stage.BorderBrush = new SolidColorBrush(Colors.White);
-                num_s.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FF7BB04"));
-                up.IsEnabled = false;
-                down.IsEnabled = false;
-            }
-        }
+
+        
         int booked =0;
         private void booked_bd_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -377,6 +428,7 @@ vip = 0;
                 booked_t.Foreground = new SolidColorBrush(Colors.Blue);
                 booked = 0;
             }
+            Load();
         }
         int empty = 0;
         private void empty_bd_MouseDown(object sender, MouseButtonEventArgs e)
@@ -394,6 +446,7 @@ vip = 0;
                empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
                 empty = 0;
             }
+            Load();
         }
         int unavai=0;
         private void unavai_bd_MouseDown(object sender, MouseButtonEventArgs e)
@@ -411,7 +464,41 @@ vip = 0;
                unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
                 unavai = 0;
             }
+            Load();
 
+        }
+        int stage_s = 0;
+        int stage_num = 1;
+        private void bd_stage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (stage_s == 0)
+            {
+                stage_s = 1;
+                ck_stage.Visibility = Visibility.Visible;
+                stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
+                stg_t.Foreground = new SolidColorBrush(Colors.White);
+                up.Background = new SolidColorBrush(Colors.LightGray);
+                down.Background = new SolidColorBrush(Colors.LightGray);
+                bd_stage.BorderBrush = new SolidColorBrush(Colors.Green);
+                num_s.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7BB04"));
+                up.IsEnabled = true;
+                down.IsEnabled = true;
+               
+            }
+            else
+            {
+                stage_s = 0;
+                ck_stage.Visibility = Visibility.Hidden;
+                stage.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+                stg_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                up.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                down.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFFFFFF"));
+                bd_stage.BorderBrush = new SolidColorBrush(Colors.White);
+                num_s.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FF7BB04"));
+                up.IsEnabled = false;
+                down.IsEnabled = false;
+            }
+            Load();
         }
 
         private void up_MouseDown(object sender, MouseButtonEventArgs e)
@@ -420,14 +507,12 @@ vip = 0;
             if(stage_num <=9)
             {
                 num_s.Content = "0" + stage_num.ToString();
-
             }
             else
             {
-
                 num_s.Content =  stage_num.ToString();
-
             }
+            Load();
         }
 
         private void down_MouseDown(object sender, MouseButtonEventArgs e)
@@ -441,18 +526,15 @@ vip = 0;
                     if (stage_num == 0)
                         num_s.Content = "G";
                     else
-
                         num_s.Content = "0" + stage_num.ToString();
-
                 }
                 else
                 {
-
                     num_s.Content = stage_num.ToString();
-
                 }
             }
-       
+            Load();
+
         }
 
         private void Next_butt_MouseDown(object sender, MouseButtonEventArgs e)

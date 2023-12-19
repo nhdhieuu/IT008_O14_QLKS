@@ -19,6 +19,7 @@ using IT008_O14_QLKS.View.Manager.FormPage.room;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Media.Media3D;
+using IT008_O14_QLKS.Connection_db;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -27,11 +28,15 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class room : UserControl
     {
+
+        DB_connection connect = new DB_connection();
         int RecordCount;
-        string strCon = "Data Source=DESKTOP-MR3E6H4\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+        string strCon;
         SqlConnection sqlCon = null;
         public room()
         {
+            string strCon=connect.strCon;
+            
             InitializeComponent();
             if (sqlCon == null)
             {

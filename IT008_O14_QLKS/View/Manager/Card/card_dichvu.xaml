@@ -23,7 +23,7 @@
         </TextBlock>
         <TextBlock x:Name="pricetbx" Text="4000000" FontSize="18"  FontFamily="Sylfaen" Foreground="White" Grid.Column="2" TextAlignment="Right"  VerticalAlignment="Center" Height="24" Margin="0,0,10,0"/>
         <Rectangle Margin="66,6,0,5" Fill="White" HorizontalAlignment="Left" Width="2" Grid.ColumnSpan="2" />
-        <Border x:Name="detail_but" Grid.Column="3" Margin="0,0,0,0">
+        <Border x:Name="detail_but" Grid.Column="3" Margin="0,0,0,0" MouseDown="detail_but_MouseDown" >
             <Label Grid.Column="2" Content="..." Foreground="White" FontSize="30" Padding="0" RenderTransformOrigin="0.5,0.5" Margin="3,5,-23,3"
            HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Grid.ColumnSpan="2">
                 <Label.RenderTransform>

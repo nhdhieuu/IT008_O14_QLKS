@@ -8,7 +8,7 @@
              d:DesignHeight="73" d:DesignWidth="220">
 
     <Grid >
-        <Border CornerRadius="10,10,5,5">
+        <Border CornerRadius="10,10,10,10">
             <Border.Background>
                 <ImageBrush ImageSource="/Resources/nenvip.jpg" Stretch="UniformToFill"/>
             </Border.Background>

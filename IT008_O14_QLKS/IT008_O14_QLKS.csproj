@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connection_db\DB_connection.cs" />
     <Compile Include="Loginn.xaml.cs">
       <DependentUpon>Loginn.xaml</DependentUpon>
     </Compile>
@@ -74,6 +75,10 @@
     <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
       <DependentUpon>card_dichvu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Conectiondatabase.cs" />
+    <Compile Include="View\Manager\Card\ClientCard.xaml.cs">
+      <DependentUpon>ClientCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
@@ -83,11 +88,17 @@
     <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
       <DependentUpon>ProbBlemCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\Client\client_class_card.xaml.cs">
+      <DependentUpon>client_class_card.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\roomcard.xaml.cs">
       <DependentUpon>roomcard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\roomcard2.xaml.cs">
+      <DependentUpon>roomcard2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\roomCardbackground\Normal.xaml.cs">
       <DependentUpon>Normal.xaml</DependentUpon>
@@ -110,8 +121,50 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
+      <DependentUpon>client_information.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\client\client_view.xaml.cs">
+      <DependentUpon>client_view.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\client\receipt_client.xaml.cs">
+      <DependentUpon>receipt_client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\client\room_client.xaml.cs">
+      <DependentUpon>room_client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
+      <DependentUpon>sttroompage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml.cs">
+      <DependentUpon>adjust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\empty_adj.xaml.cs">
+      <DependentUpon>empty_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\original.xaml.cs">
+      <DependentUpon>original.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\rented_adj.xaml.cs">
+      <DependentUpon>rented_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\adjust\unavailable_adj.xaml.cs">
+      <DependentUpon>unavailable_adj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\booked.xaml.cs">
+      <DependentUpon>booked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
+      <DependentUpon>unavailble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\service\serviceAdd.xaml.cs">
+      <DependentUpon>serviceAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\service\serviceInfor.xaml.cs">
+      <DependentUpon>serviceInfor.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\staff\staffAdd.xaml.cs">
       <DependentUpon>staffAdd.xaml</DependentUpon>
@@ -159,6 +212,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Card\ClientCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\ClientCardxaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,11 +228,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Card\Client\client_class_card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\ReceiptCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\roomcard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\roomcard2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,7 +269,63 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\ClientControl.xaml" />
+    <Page Include="View\Manager\FormPage\client\client_information.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\client\client_view.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\client\receipt_client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\client\room_client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\empty_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\original.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\rented_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\unavailable_adj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\booked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\service\serviceAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\service\serviceInfor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -443,12 +564,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\AnhPhongKS.jpg" />
+    <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />
+    <Resource Include="Resources\0164959b12094c445ddc2c87bc0d1b62.jpg" />
     <Content Include="Resources\card.png" />
     <Content Include="Resources\card1.png" />
     <Content Include="Resources\datepicker.png" />
     <Content Include="Resources\datepicker1.png" />
+    <Resource Include="Resources\f255a783669f56bd002a65f11ae03a0b.jpg" />
+    <Resource Include="Resources\ede59f46552ecfa8545a5d983bc15d48.jpg" />
+    <Resource Include="Resources\ee77cea094378a30fe302d8a95e7b848.jpg" />
+    <Resource Include="Resources\Diamond.jpg" />
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
+    <Resource Include="Resources\icons8-client-50.png" />
+    <Resource Include="Resources\icons8-eye-24 %281%29.png" />
+    <Resource Include="Resources\icons8-eye-96.png" />
+    <Resource Include="Resources\icons8-eye-90 %281%29.png" />
+    <Resource Include="Resources\Gold.jpg" />
+    <Resource Include="Resources\Platinum.jpg" />
     <Content Include="Resources\print.png" />
     <Resource Include="Resources\ReceiptCardBackground.png" />
     <Resource Include="Resources\RecieptCardMoney.png" />
@@ -458,7 +591,9 @@
     <Resource Include="Resources\ReceiptSortBy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.Card.roomcard2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card"
+             mc:Ignorable="d" 
+             d:DesignHeight="111" d:DesignWidth="290">
+    <Border CornerRadius="10">
+        <Grid>
+
+
+            <ContentControl x:Name="background" >
+
+            </ContentControl>
+
+
+            <TextBlock Text="P101" FontFamily="Bahnschrift" FontSize="100" Margin="10,1,60,19" FontWeight="Bold" Foreground="White">
+
+            </TextBlock>
+            <TextBlock Text="VIP" FontFamily="Bahnschrift" FontSize="40" Margin="213,13,10,55" FontWeight="Bold" Foreground="#FFC6980A">
+
+            </TextBlock>
+            <TextBlock Text="1" FontFamily="Bahnschrift" FontSize="25" Margin="226,68,50,19" FontWeight="Bold" Foreground="White">
+
+            </TextBlock>
+            <Image Source="/Resources/icons8-human-30.png" Margin="238,59,29,6">
+
+            </Image>
+        </Grid>
+    </Border>
+   
+</UserControl>

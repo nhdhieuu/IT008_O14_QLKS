@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.staff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,14 +29,22 @@ namespace IT008_O14_QLKS.View.Manager.Card
         string Vitri { get; set; }  
         string MaNV { get;set; }
 
-        public StaffCard()
+        public StaffCard(String name,String vitri,string manv)
         {
+            this.TenNV = name;
+            this.Vitri = vitri;
+            this.MaNV = manv;
             InitializeComponent();
+            manv_tbl.Text = manv;
+            name_tbl.Text = name;
+            postion_tbl.Text = vitri;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            staffInfor SI = new staffInfor();
+            SI.ShowDialog();
+            
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

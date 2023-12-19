@@ -20,9 +20,22 @@ namespace IT008_O14_QLKS.View.Manager.Card
     /// </summary>
     public partial class ServiceCard : UserControl
     {
-        public ServiceCard()
+        public string name;
+        public string date;
+        public string price;
+        public ServiceCard(string name, string date, string price)
         {
+            this.name = name;
+            this.date= date;
+            this.price = price;
             InitializeComponent();
+            Inputt();
         }
+        public void Inputt()
+        {
+            this.nametbx.Text =this. name;
+            this.datetbx.Text = this.date;
+            this.pricetbx.Text = this.price;
+        }    
     }
 }

@@ -53,9 +53,9 @@
                             CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="0,0,0,2" Cursor="Hand"
                             >
                                 <TextBlock x:Name="delbtn_text" FontSize="25 
-                                "  VerticalAlignment="Center" 
+                                "  VerticalAlignment="Bottom" 
                                    HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
-                                   Foreground="#740909" Cursor="Hand"/>
+                                   Foreground="#740909" Cursor="Hand" Margin="0,0,0,3"/>
 
                             </Border>
                         </Grid>
@@ -74,7 +74,7 @@
 
                             </TextBlock>
                             <Border x:Name="usrbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                                <TextBox Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
+                                <TextBox Name="UserTextBox" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
                             </Border>
                             <TextBlock Text="password"  FontSize="24" FontFamily="Sylfaen" Margin="45,20,0,0" Foreground="#FF897C54">
 
@@ -94,7 +94,7 @@
                                     </PasswordBox >
                                     <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>
                                     <Image x:Name="eyeopen" Height="40" Grid.Column="2" Source="/Resources/view.png" MouseDown="Image_MouseDown" Cursor="Hand">
-                                        
+
                                     </Image>
                                     <Image x:Name="eyedown" Height="40" Grid.Column="2" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown">
 

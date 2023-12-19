@@ -6,9 +6,13 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
              d:DesignHeight="599" d:DesignWidth="761">
-    
+
     <Grid>
-        <Border Background="#F1F0E7" CornerRadius="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#F1F0E7" CornerRadius="10" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="487"></ColumnDefinition>
@@ -41,139 +45,61 @@
                                 </Border>
                                 <TextBox  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
                                 <Image Grid.Column="2" Source="/Resources/search.png" Margin="0,7,6,6"></Image>
-                                
+
 
                             </Grid>
                         </Border>
-                        
+
                     </Grid>
                     <Grid Grid.Row="1">
                         <StackPanel Margin="14,10,0,0" >
-                            <Border CornerRadius="10" Height="74">
-                                <!-- <Border.Background> -->
-                                <!--     ~1~ #FFF @1@ -->
-                                <!--     ~1~ <ImageBrush ImageSource="/Resources/card1.png"></ImageBrush> @1@ -->
-                                <!-- </Border.Background> -->
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition Width="130"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="0.5*"></RowDefinition>
-                                            <RowDefinition  Height="0.5*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid>
-                                            <Label Content="#22102312D" FontFamily="Bahnschrift" FontSize="30" Foreground="#FFF" Margin="7,0,0,0"></Label>
-                                        </Grid>
-                                        <Grid Grid.Row="1">
-                                            <StackPanel Orientation="Horizontal" Margin="7,0,0,0">
-                                                <Label Content="20:00" FontFamily="Bahnschrift" FontSize="25" Foreground="#0AC6C6"></Label>
-                                                <Label Content="October 22, 2023" FontFamily="Bahnschrift" FontSize="25" Foreground="#FAB005"></Label>
-                                            </StackPanel>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition Height="46"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid>
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                                <Label Content="2.000.000" FontFamily="Bahnschrift" FontSize="20" Foreground="#12CE69"  ></Label>
-                                                <!-- <Image Source="/Resources/money.png" VerticalAlignment="Center" Margin="0,5,0,0"></Image> -->
-                                            </StackPanel>
-                                            
-                                        </Grid>
-                                        <Grid Grid.Row="1">
-                                            <Button Width="40" Height="40" Margin="50,0,0,0">
-                                                <Image Source="/Resources/view.png"></Image>
-                                            </Button>
-                                        </Grid>
-                                        
-                                    </Grid>
-                                </Grid>
-                            </Border>
-                            
-                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
-                                <Border.Background>
-                                    #FFF
-                                </Border.Background>
-                                <Grid>
-                                    <Label Content="test label"></Label>
-                                </Grid>
-                            </Border>
-                             
-                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
-                                <Border.Background>
-                                    #FFF
-                                </Border.Background>
-                                <Grid>
-                                    <Label Content="label"></Label>
-                                </Grid>
-                            </Border>
-                            
-                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
-                                <Border.Background >
-                                    #FFF
-                                </Border.Background>
-                                <Grid>
-                                    <Label Content="label"></Label>
-                                </Grid>
-                            </Border>
-                            
-                            <Border CornerRadius="10" Height="74" Margin="0,20,0,0">
-                                <Border.Background>
-                                    #FFF
-                                </Border.Background>
-                                <Grid>
-                                    <Label Content="label"></Label>
-                                </Grid>
-                            </Border>
+                            <ContentControl x:Name="Cc11" >
+
+                            </ContentControl>
+                            <ContentControl x:Name="cc12" Margin="0,20,0,0">
+
+                            </ContentControl>
+                            <ContentControl x:Name="cc13" Margin="0,20,0,0">
+
+                            </ContentControl>
                         </StackPanel>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Margin="20,17,8,12">
                         <Border Width="253" Height="108">
-                            
                             <Grid>
-                                <!-- <Grid.ColumnDefinitions> -->
-                                <!--     <ColumnDefinition Width="166"></ColumnDefinition> -->
-                                <!--     <ColumnDefinition></ColumnDefinition> -->
-                                <!-- </Grid.ColumnDefinitions> -->
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <!-- <Image Grid.RowSpan="2" Source="/Resources/datepicker1.png" ></Image> -->
+                                <Image Grid.RowSpan="2" Source="/Resources/ReceiptDatePicker.png"></Image>
                                 <Label Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
-                                <!-- <Button Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="Gray" ></Button> -->
                                 <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
                                     <Image Source="/Resources/calendar.png"></Image>
+                                    
                                 </Border>
                             </Grid>
                         </Border>
+
+                        <Border Margin="0,11,0,0">
+                            <Image Source="/Resources/ReceiptFilter.png"></Image>
+                        </Border>
                         
                         <Border Margin="0,11,0,0">
-                            <!-- <Image Source="/Resources/filter1.png"></Image> -->
+                            <Image Source="/Resources/ReceiptSortBy.png"></Image>
                         </Border>
-                        <!-- -->
-                        <!-- <Border Margin="0,11,0,0"> -->
-                        <!--     <Image Source="/Resources/sort_by.png"></Image> -->
-                        <!-- </Border> -->
-                        <!-- -->
-                        <!-- <Border Margin="0,11,0,0"> -->
-                        <!--     <Image Source="/Resources/print.png"></Image> -->
-                        <!-- </Border> -->
                         
+                        <Border Margin="0,11,0,0">
+                            <Image Source="/Resources/ReceiptPrint.png"></Image>
+                        </Border>
+
                     </StackPanel>
-                    
+
                 </Grid>
-                
+
             </Grid>
         </Border>
     </Grid>
-    
+
 </UserControl>

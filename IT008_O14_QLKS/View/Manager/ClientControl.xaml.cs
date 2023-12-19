@@ -96,7 +96,6 @@ namespace IT008_O14_QLKS.View.Manager
                 cbb_clls.Foreground = new SolidColorBrush((Colors.Gray));
                 pointcls = 1;
                 load();
-
             }
             else
             {

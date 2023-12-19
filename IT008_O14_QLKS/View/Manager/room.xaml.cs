@@ -49,11 +49,6 @@ namespace IT008_O14_QLKS.View.Manager
             }
 
             Load();
-
-           
-           
-
-
         }
         public void Load()
         {
@@ -462,16 +457,20 @@ vip = 0;
 
         private void Next_butt_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            int PageCount;
             int index = int.Parse(this.Page_index_lbl.Text);
-
-            if (index < RecordCount/6+1)
+            int temp = RecordCount % 6;
+            if (temp == 0)
+                PageCount = RecordCount / 6;
+            else
+                PageCount = RecordCount / 6+1;
+            if (index < PageCount)
             {
                 index++;
                 this.Page_index_lbl.Text = index.ToString();
                 Load();
             }
            
-
         }
 
         private void Back_butt_MouseDown(object sender, MouseButtonEventArgs e)

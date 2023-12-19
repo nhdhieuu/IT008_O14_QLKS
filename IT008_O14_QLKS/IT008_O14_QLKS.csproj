@@ -56,13 +56,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connection_db\DB_connection.cs" />
     <Compile Include="Loginn.xaml.cs">
       <DependentUpon>Loginn.xaml</DependentUpon>
     </Compile>
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -75,29 +75,22 @@
     <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
       <DependentUpon>card_dichvu.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Conectiondatabase.cs" />
     <Compile Include="View\Manager\Card\ClientCard.xaml.cs">
       <DependentUpon>ClientCard.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\Card\ClientCardxaml.xaml.cs">
       <DependentUpon>ClientCardxaml.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\Card\NoticeCard.xaml.cs">
       <DependentUpon>NoticeCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
       <DependentUpon>ProbBlemCard.xaml</DependentUpon>
-  </Compile>
-
-
+    </Compile>
     <Compile Include="View\Manager\Card\Client\client_class_card.xaml.cs">
       <DependentUpon>client_class_card.xaml</DependentUpon>
-
     </Compile>
-
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
     </Compile>
@@ -166,7 +159,6 @@
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\FormPage\service\serviceAdd.xaml.cs">
       <DependentUpon>serviceAdd.xaml</DependentUpon>
@@ -179,7 +171,6 @@
     </Compile>
     <Compile Include="View\Manager\FormPage\staff\staffInfor.xaml.cs">
       <DependentUpon>staffInfor.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
@@ -214,17 +205,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
     <Page Include="View\Manager\Card\card_dichvu.xaml">
-  <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\Card\ClientCard.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,22 +220,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\Card\NoticeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\ProbBlemCard.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\Card\Client\client_class_card.xaml">
- <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\Card\ReceiptCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -334,7 +318,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\Viewroom_form.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -351,7 +334,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\staff\staffInfor.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -601,7 +583,6 @@
     <Resource Include="Resources\Gold.jpg" />
     <Resource Include="Resources\Platinum.jpg" />
     <Content Include="Resources\print.png" />
-
     <Resource Include="Resources\ReceiptCardBackground.png" />
     <Resource Include="Resources\RecieptCardMoney.png" />
     <Resource Include="Resources\ReceiptDatePicker.png" />
@@ -613,5 +594,6 @@
     <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

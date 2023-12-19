@@ -12,19 +12,24 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace IT008_O14_QLKS.View.Manager
 {
+
     public partial class ClientControl : UserControl
     {
+        SqlCommand sqlcmd = new SqlCommand();
+
+      
         int pointcls = 0;
         string class_txt;
         string strCon = Properties.Settings.Default.strcon;
         SqlConnection sqlCon = null;
+        string search;
 
         private DispatcherTimer t;
         public ClientControl()
         {
             InitializeComponent();
 
-
+            sqlcmd.CommandType = CommandType.Text;
             if (sqlCon == null)
             {
                 sqlCon = new SqlConnection(strCon);
@@ -55,15 +60,13 @@ namespace IT008_O14_QLKS.View.Manager
         {
            
             stk.Children.Clear();
-            SqlCommand sqlcmd = new SqlCommand();
-       
-            sqlcmd.CommandType = CommandType.Text;
+           
 
-            sqlcmd.CommandText = "select * from KHACHHANG"; 
-               
-            if(type_s2==1)
+            sqlcmd.CommandText = "select * from KHACHHANG";
+            sqlcmd.CommandText+= search;
+            if (type_s2==1)
             {
-                sqlcmd.CommandText = "select * from KHACHHANG ORDER BY " + tensx + " " + sxtheo;
+                sqlcmd.CommandText += " ORDER BY " + tensx + " " + sxtheo;
             }    
                 
             sqlcmd.Connection = sqlCon;
@@ -292,6 +295,7 @@ namespace IT008_O14_QLKS.View.Manager
                 {
 
                     tensx = " SUBSTRING(TENKH, LEN(TENKH) - CHARINDEX(' ', REVERSE(TENKH)) + 2, LEN(TENKH)) ";
+             
 
                 }
                 if ((cbb_clls1.SelectedItem as ComboBoxItem).Content.ToString() == "ID")
@@ -316,6 +320,44 @@ namespace IT008_O14_QLKS.View.Manager
                 load();
             }
         
+        }
+
+        private void Image_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (search_txt.Text == "")
+            {
+                search = "";
+            }
+            else
+            {
+                t.Stop();
+                stk.Children.Clear();
+
+                sqlcmd.CommandText = $"select * from KHACHHANG where MAKH LIKE '{search_txt.Text}%' or  TENKH  LIKE '{search_txt.Text}%'";
+                search = $" where MAKH  LIKE '{search_txt.Text}%' or  TENKH  LIKE '{search_txt.Text}%' ";
+                sqlcmd.Connection = sqlCon;
+                SqlDataReader reader = sqlcmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    themdoituong(reader.GetString(1), reader.GetString(2), reader.GetString(0), reader.GetString(9));
+
+                }
+                reader.Close();
+            }
+
+              
+        }
+
+        private void search_txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(search_txt.Text == "")
+            {
+                t.Start();
+            }
+            else
+            {
+               
+            }
         }
     }
 }

@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.FormPage.client.client_information"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
+             mc:Ignorable="d" 
+             d:DesignHeight="504" d:DesignWidth="710">
+    <UserControl.Resources>
+        <Style x:Key="bd" TargetType="Border">
+            <Setter Property="Height" Value="35">
+
+            </Setter>
+            <Setter Property="Width" Value="276">
+
+            </Setter>
+            <Setter Property="Background" Value="#E9E5D9">
+
+            </Setter>
+            <Setter Property="BorderBrush" Value="#7D7B7B">
+
+            </Setter>
+            <Setter Property="BorderBrush" Value="DarkGray">
+
+            </Setter>
+            <Setter Property="BorderThickness" Value="1">
+
+            </Setter>
+            <Setter Property="CornerRadius" Value="5">
+
+            </Setter>
+            <Setter Property="Margin" Value="0,15,0,0">
+
+            </Setter>
+
+
+
+
+
+        </Style >
+        <Style x:Key="thuoctinh" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift">
+
+            </Setter>
+            <Setter Property="FontSize" Value="17">
+
+            </Setter>
+            <Setter Property="Foreground" Value="#1D19E3">
+
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Left">
+
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center">
+
+            </Setter>
+            <Setter Property="Margin" Value="7,0,0,0">
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="thongtin" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift">
+
+            </Setter>
+            <Setter Property="FontSize" Value="17">
+
+            </Setter>
+            <Setter Property="Foreground" Value="#C6980A">
+
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Right">
+
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center">
+
+            </Setter>
+
+            <Setter Property="TextAlignment" Value="Right">
+
+            </Setter>
+            <Setter Property="Margin" Value="0,0,7,0 ">
+
+            </Setter>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#F1F0E7" >
+
+        <Border Margin="0,0,395,0" Background="#7C7255" CornerRadius="10" BorderThickness="2,2,2,2" BorderBrush="#FFA78624" >
+            <Grid>
+
+                <Border Background="White" Margin="18,115,19,383">
+
+                </Border>
+                <Ellipse Fill="Black" Margin="239,13,22,437" Height="50" Width="50" Stroke="#FFA49407" StrokeThickness="2"/>
+                <Image>
+
+                </Image>
+                <TextBlock Text="Profile" FontSize="35" FontFamily="Times New Roman" Margin="17,18,199,439" Foreground="White"/>
+                <StackPanel Margin="0,126,0,-6">
+                    <Border Style="{DynamicResource bd}">
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Name"  />
+                      
+                                <TextBlock x:Name="ten" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right" Width="193"/>
+             
+
+                        </Grid>
+
+
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Username"/>
+                            <TextBlock x:Name="usrname" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Password" />
+                            <TextBlock x:Name="pass" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Gender"/>
+                            <TextBlock x:Name="gender" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Birthday" />
+                            <TextBlock x:Name="birthday" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Text="CCCD" Style="{DynamicResource thuoctinh}" />
+                            <TextBlock  x:Name="cccd" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Phone" Margin="7,4,0,3"/>
+                            <TextBlock x:Name="phone" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+
+                    </Border>
+                </StackPanel>
+                <TextBlock  Style="{DynamicResource thuoctinh}" Text="ID"   Margin="18,80,0,0" Foreground="White" VerticalAlignment="Top" FontSize="27" Height="25" RenderTransformOrigin="0.729,-0.16"/>
+                <TextBlock x:Name="id" Style="{DynamicResource thongtin}" Text="KH01"  Margin="0,80,19,0" Foreground="White" VerticalAlignment="Top" FontSize="27" RenderTransformOrigin="0.615,0.123" Height="27" FontWeight="Bold"/>
+
+
+            </Grid>
+        </Border>
+
+        <ContentControl  x:Name="cls_Card" Width="380" Height="116" Margin="330,0,0,388">
+
+        </ContentControl>
+        <Border Margin="334,133,0,0" Background="#CCCCCC" CornerRadius="10">
+            <Grid>
+                <TextBlock  FontSize="30" Style="{DynamicResource thongtin}" Foreground="Black" Margin="26,31,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="131" TextAlignment="Left"><Run Text="Client is renting     "/><LineBreak/><Run Text="rooms"/></TextBlock>
+                <Border Style="{DynamicResource view_bd}" Margin="26,115,220,218" MouseDown="Border_MouseDown">
+                    <TextBlock Text="view" FontFamily="Bahnschrift" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                </Border>
+                <Border BorderThickness="2" BorderBrush="#FFC6980A" Margin="250,31,49,302"/>
+                <TextBlock  FontSize="30" Style="{DynamicResource thongtin}" Foreground="Black" HorizontalAlignment="Left" Margin="27,167,0,0" TextAlignment="Left" VerticalAlignment="Top"><Run Text="Client has rented     "/><LineBreak/><Run Text="rooms and spent"/></TextBlock>
+                <TextBlock x:Name="monney" FontSize="45" Style="{DynamicResource thongtin}" Foreground="#FF177A34" HorizontalAlignment="Left" Margin="27,244,0,0" TextAlignment="Left" VerticalAlignment="Top" Text="2.000.000 VND" FontWeight="Bold"/>
+                <TextBlock x:Name="nor"  FontSize="30" Style="{DynamicResource thongtin}" Foreground="#FFC6980A" Margin="256,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="34" TextAlignment="Left" Text="5" Width="56"/>
+                <TextBlock  x:Name="tor" FontSize="30" Style="{DynamicResource thongtin}" Foreground="#FFC6980A" Margin="274,167,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="34" TextAlignment="Left" Text="10" Width="63"/>
+                <Border BorderThickness="2" BorderBrush="#FFC6980A" Margin="266,165,32,168"/>
+                <Border Style="{DynamicResource view_bd}" Margin="214,313,32,20" MouseDown="Border_MouseDown_1">
+                    <TextBlock Text="view" FontFamily="Bahnschrift" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room;
 using IT008_O14_QLKS.View.Manager.Card.roomCardbackground;
+using IT008_O14_QLKS.View.Manager.FormPage.room;
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
@@ -91,20 +92,19 @@ namespace IT008_O14_QLKS.View.Manager.Card
             {
                 mainbd.Background = new SolidColorBrush(Colors.Blue) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground= new SolidColorBrush(Colors.LightBlue);
+                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Empty")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
-               idroomtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF04FF77"));
+               idroomtxt.Foreground = new SolidColorBrush(Colors.White);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Unavailable")
             {
                 mainbd.Background = new SolidColorBrush(Colors.DarkRed);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground= new SolidColorBrush(Colors.OrangeRed);
-
+                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
 
             }    
                 else {
@@ -166,6 +166,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
         {
             Viewroom_form vr = new Viewroom_form(IDroom);
             vr.ShowDialog();
+        }
+
+        private void statusbd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            sttroompage a = new sttroompage(this.status);
+            a.ShowDialog();
         }
     }
     }

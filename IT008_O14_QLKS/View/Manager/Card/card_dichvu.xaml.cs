@@ -33,5 +33,10 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.idtbx.Text = this.ID;
             this.pricetbx.Text = this.price;
         }
+
+        private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

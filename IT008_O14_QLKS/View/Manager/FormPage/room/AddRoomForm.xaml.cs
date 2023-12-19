@@ -71,5 +71,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
             add_buttt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }

@@ -75,7 +75,6 @@
     <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
       <DependentUpon>card_dichvu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Conectiondatabase.cs" />
     <Compile Include="View\Manager\Card\ClientCard.xaml.cs">
       <DependentUpon>ClientCard.xaml</DependentUpon>
     </Compile>

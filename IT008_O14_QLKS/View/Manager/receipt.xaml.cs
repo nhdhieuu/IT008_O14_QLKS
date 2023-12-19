@@ -29,7 +29,7 @@ namespace IT008_O14_QLKS.View.Manager
             listCard[0] = new ReceiptCard("1", "12/12/2012", "12:12", "100000");
             listCard[1] = new ReceiptCard("2", "12/12/2012", "12:12", "100000");
             listCard[2] = new ReceiptCard("3", "12/12/2012", "12:12", "100000");
-            listCard[3] = new ReceiptCard("3", "12/12/2012", "12:12", "100000");
+            listCard[3] = new ReceiptCard("4", "12/12/2012", "12:12", "100000");
 
              
           
@@ -37,8 +37,11 @@ namespace IT008_O14_QLKS.View.Manager
             cc12.Content = listCard[1].Content;
             cc13.Content = listCard[2].Content;
             cc14.Content = listCard[3].Content;
-            cc15.Content = listCard[0].Content;
-            cc16.Content = listCard[1].Content;
+            cc15.Content = listCard[3].Content;
+            cc16.Content = listCard[3].Content;
+            cc17.Content = listCard[3].Content;
+            cc18.Content = listCard[3].Content;
+            cc19.Content = listCard[3].Content;
             
         }
     }

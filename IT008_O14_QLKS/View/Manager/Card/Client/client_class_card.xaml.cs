@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlTypes;
+using IT008_O14_QLKS.Connection_db;
 using IT008_O14_QLKS.View.Manager.FormPage.client;
 
 namespace IT008_O14_QLKS.View.Manager.Card.Client
@@ -25,7 +26,7 @@ namespace IT008_O14_QLKS.View.Manager.Card.Client
     public partial class client_class_card : UserControl
     {
         public string ID;
-        Conectiondatabase connect = new Conectiondatabase();
+        DB_connection connect = new DB_connection();
         public client_class_card(string ID)
         {
             InitializeComponent();

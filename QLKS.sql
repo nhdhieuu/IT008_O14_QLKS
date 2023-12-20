@@ -133,6 +133,42 @@ ADD CONSTRAINT FK_HOADON_NHANVIEN FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
 ALTER TABLE CTHD 
 ADD CONSTRAINT FK_CTHD_THUEPHONG FOREIGN KEY (MAPHONG) REFERENCES THUEPHONG(MATHUEPHONG)  
 
+Create table QLGIA
+(
+LPHONG varchar(3),
+THEO varchar(4),
+TUAN varchar(6),
+GIA money
+)
+
+INSERT INTO QLGIA (LPHONG,THEO,TUAN,GIA)
+VALUES
+('STD','hour','in',150000),
+('SUP','hour','in',250000),
+('DLX','hour','in',350000),
+('SUT','hour','in',450000),
+('STD','day','in',450000),
+('SUP','day','in',650000),
+('DLX','day','in',850000),
+('SUT','day','in',1050000),
+('STD','hour','T7',200000),
+('SUP','hour','T7',300000),
+('DLX','hour','T7',400000),
+('SUT','hour','T7',500000),
+('STD','day','T7',500000),
+('SUP','day','T7',70000),
+('DLX','day','T7',900000),
+('SUT','day','T7',1100000),
+('STD','hour','CN',250000),
+('SUP','hour','CN',350000),
+('DLX','hour','CN',450000),
+('SUT','hour','CN',550000),
+('STD','day','CN',550000),
+('SUP','day','CN',750000),
+('DLX','day','CN',950000),
+('SUT','day','CN',1150000)
+
+
 
 INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS)
 VALUES

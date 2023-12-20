@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Clients.Card.Card_room.Room_card_client"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.Card.Card_room"
+             mc:Ignorable="d" 
+             d:DesignHeight="582" d:DesignWidth="693">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ScrollViewerControlTemplate" TargetType="{x:Type ScrollViewer}">
+            <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
+                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+                <ScrollBar Style="{StaticResource ViewerScrollBar}" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
+                <ScrollBar Style="{StaticResource ViewerScrollBar}" x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+            </Grid>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="228">
+
+            </RowDefinition>
+
+
+            <RowDefinition>
+
+            </RowDefinition>
+
+
+        </Grid.RowDefinitions>
+        <Grid>
+            <Border  Background="#D4D4D4" CornerRadius="10,10,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="85*"/>
+                        <RowDefinition Height="29*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="16,4,0,0" Style="{DynamicResource tx1}" FontSize="35" Text="" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <ContentControl x:Name="card" Height="111" Width="290" Margin="18,55,385,4">
+
+                    </ContentControl>
+                    <TextBlock Text="2" Style="{DynamicResource tx1}" FontSize="50" Margin="344,60,87,0" Height="56" VerticalAlignment="Top" Foreground="#FF1D3586">
+
+                    </TextBlock>
+                    <Border BorderBrush="#FF1D3586"  BorderThickness="3,3.4,3,3" CornerRadius="10" Margin="327,55,158,54" >
+                        <TextBlock Text="hours left" Style="{DynamicResource tx1}" FontSize="30.1" Margin="55,12,-3,0" Height="34" VerticalAlignment="Top" Foreground="#FF1D3586" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
+
+
+                        </TextBlock>
+                    </Border>
+                    <TextBlock Style="{DynamicResource tx1}" FontSize="20" Text=" from 2:00:53 21/11/2023 " FontWeight="Bold" Margin="324,121,-324,0" VerticalAlignment="Top">
+
+                    </TextBlock>
+                    <TextBlock Style="{DynamicResource ResourceKey=tx1}" FontSize="20" Text="  to     4:00:53 21/11/2023 " FontWeight="Bold" Margin="321,147,-321,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+                    <Border Style="{DynamicResource save_bd }"  Height="NaN" Margin="547,55,16,67">
+                        <TextBlock Text="RENEW" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=x_bd}" Height="NaN" Width="NaN" Margin="547,119,16,3">
+                        <TextBlock Text="CANCEL" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White"/>
+                    </Border>
+                    <Border x:Name="bd" Height="47" Background="#565656" Margin="16,11,16,0" CornerRadius="10,10,0,0" Grid.Row="1">
+                        <Grid>
+                            <Border x:Name="myBorder" Width="30"  Height="30" CornerRadius="5" Margin="619,9,12,8" MouseDown="myBorder_MouseDown">
+                                <Border.RenderTransform>
+                                    <RotateTransform CenterX="15" CenterY="15" />
+                                </Border.RenderTransform>
+                                <TextBlock  Text="V" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="20" Foreground="White" Height="26" FontWeight="SemiBold" Margin="0,1,0,0"/>
+                            </Border>
+                            <TextBlock Text="1 SERVICE" Style="{DynamicResource tx1}" FontSize="20" Foreground="White" HorizontalAlignment="Left" Width="332" Margin="59,13,0,0" FontWeight="Bold" VerticalAlignment="Top">
+
+                            </TextBlock>
+                            <TextBlock Style="{DynamicResource ResourceKey=tx1}" FontSize="20" Foreground="#FF16C969" HorizontalAlignment="Left" Width="327" Margin="280,14,0,0" FontWeight="Bold" TextAlignment="Right" Text="2.000.000 VND" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                    <Border Style="{DynamicResource save_bd}" Width="35
+                            
+                            " Height="NaN" Margin="22,17,636,6" Grid.Row="1">
+                        <TextBlock Text="+" Style="{DynamicResource tx1}" FontSize="35" HorizontalAlignment="Center" Height="39" Foreground="White">
+
+                        </TextBlock>
+                    </Border>
+
+                </Grid>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <Border x:Name="xoa" Height="213" Background="#D4D4D4">
+                <Border Background="#313131" CornerRadius="0,0,10,10" Width="661">
+                    <Grid>
+                        <ScrollViewer  Margin="10,46,10,10" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </Border>
+            <Border  Height="142" Background="#D4D4D4" CornerRadius="0,0,10,10" >
+                <Grid>
+                    <TextBlock Style="{DynamicResource tx1}" Text="TOTAL PRICE "  FontSize="30" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="16,10,16,0" VerticalAlignment="Top">
+
+                    </TextBlock>
+                    <Border BorderBrush="#FFC6980A" CornerRadius="6" BorderThickness="3,3,3,3" Margin="16,51,16,20">
+
+                    </Border>
+                    <TextBlock Style="{DynamicResource tx1}" Text="200.000*2 (room) +23.000.000 (service) = 23.200.000 (VND)"  FontSize="24.8" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="22,73,10,0" VerticalAlignment="Top"/>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Red">
-            
+             d:DesignHeight="504" d:DesignWidth="710">
+    <Grid Background="#F1F0E7">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="stk">
+                
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

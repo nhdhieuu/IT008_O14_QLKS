@@ -63,6 +63,9 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients\Card\Card_room\Room_card_client.xaml.cs">
+      <DependentUpon>Room_card_client.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -121,7 +124,6 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>
@@ -156,12 +158,10 @@
       <DependentUpon>booked.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
-      <DependentUpon>unavailble.xaml</DependentUpon> 
-</Compile>
-
+      <DependentUpon>unavailble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
       <DependentUpon>AddRoomForm.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -208,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="signUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\Card\Card_room\Room_card_client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -320,7 +324,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
-<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">

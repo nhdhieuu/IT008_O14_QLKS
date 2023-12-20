@@ -37,6 +37,15 @@ CREATE TABLE PHONG
 	SOGIUONG SMALLINT, --4,6,8...
 	TRANGTHAI VARCHAR(10),
 )
+alter table PHONG
+add NGUOI INT
+alter table PHONG
+add cleaning varchar(10)
+alter table PHONG
+add maintain varchar(10)
+
+
+
 
 CREATE TABLE THUEPHONG
 (

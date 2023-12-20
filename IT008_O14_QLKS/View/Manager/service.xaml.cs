@@ -104,5 +104,11 @@ namespace IT008_O14_QLKS.View.Manager
             serviceAdd sa = new serviceAdd();
             sa.ShowDialog();
         }
+
+        private void but_add_problem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            problemAdd pa = new problemAdd();
+            pa.ShowDialog();
+        }
     }
 }

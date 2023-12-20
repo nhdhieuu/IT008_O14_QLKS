@@ -43,7 +43,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
         }
         private void close_lb_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
+            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
             close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
 
@@ -60,7 +60,17 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
 
         private void add_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(staffID.Text) || string.IsNullOrEmpty(staffName.Text) || string.IsNullOrEmpty(staffPhone.Text)||string.IsNullOrEmpty(staffCCCD.Text)
+                ||string.IsNullOrEmpty(staffPostion.Text)||string.IsNullOrEmpty(staffGender.Text)||string.IsNullOrEmpty(staffBirthday.Text)) 
+            {
+                MessageBox.Show("Please complete all information", "Notice");
+            }
+            else
+            {
+                // add to database
+                MessageBox.Show("New staff has been added", "Notice");
+                this.Close();
+            }
         }
     }
 }

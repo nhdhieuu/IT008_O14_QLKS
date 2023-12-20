@@ -300,7 +300,7 @@
                     </ScrollViewer>
                 </Border>
                 <!-- add service button-->
-                <Border x:Name="but_add_service" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,200,194,310" MouseDown="but_add_service_MouseDown">
+                <Border x:Name="but_add_service" Cursor="Hand" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,200,194,310" MouseDown="but_add_service_MouseDown">
                     <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
                            VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
                 </Border>
@@ -364,7 +364,7 @@
                     </ScrollViewer>
                 </Border>
                 <!-- add problem button-->
-                <Border x:Name="but_add_problem" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,495,194,10" >
+                <Border x:Name="but_add_problem" Height="25" Width="80" Cursor="Hand" CornerRadius="5" Background="#12CE69" Margin="195,495,194,10" MouseDown="but_add_problem_MouseDown" >
                     <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
                 </Border>

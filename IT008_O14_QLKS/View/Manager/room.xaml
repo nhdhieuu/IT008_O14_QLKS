@@ -106,7 +106,10 @@
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <Image Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" />
+                    <Image x:Name="Search" Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" MouseDown="Search_MouseDown" />
+                    <TextBox x:Name="Search_tbx" Margin="92,0,31,0" FontFamily="Sylfaen " FontSize="22">
+                        
+                    </TextBox>
                 </Grid>
             </Border>
             <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="44,3,0,0" VerticalAlignment="Top" Width="101" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>

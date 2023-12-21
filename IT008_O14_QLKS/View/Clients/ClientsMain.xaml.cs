@@ -8,11 +8,17 @@ namespace IT008_O14_QLKS.View.Clients
 {
     public partial class ClientsMain : Window
     {
+        string username;
         public ClientsMain()
         {
             InitializeComponent();
+        }
+        public ClientsMain(string username)
+        {
+            this.username = username;
+            InitializeComponent();
             main = 1;
-            DataContext = new ClientsHome();
+            DataContext = new ClientsHome(username);
         }
         int main = 1;
         

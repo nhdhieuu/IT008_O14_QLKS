@@ -1,7 +1,10 @@
-﻿using IT008_O14_QLKS.View.Manager;
+﻿using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.View.Manager;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -16,14 +19,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using System.IO;
 
 namespace IT008_O14_QLKS
 {
     /// <summary>
     /// Interaction logic for signUp.xaml
     /// </summary>
+    
     public partial class signUp : Window
     {
+        DB_connection connect = new DB_connection();
         Image early = new Image();
         public signUp()
         {
@@ -61,7 +67,10 @@ namespace IT008_O14_QLKS
       
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
-            DateTime? selectedDate = dpk.SelectedDate;
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.Connection = connect.sqlCon;
+            DateTime ? selectedDate = dpk.SelectedDate;
             if (name.Text == "")
             {
                 bdname.BorderBrush = System.Windows.Media.Brushes.Red;
@@ -128,6 +137,25 @@ namespace IT008_O14_QLKS
             } 
             else
             {
+                sqlcmd.CommandText = "SELECT COUNT(*) FROM KHACHHANG";
+                int CountKH=(int)sqlcmd.ExecuteScalar();
+                string MAKH="KH0"+(CountKH+1).ToString();
+                //lưu date
+                sqlcmd.Parameters.Add("@date", SqlDbType.DateTime).Value=this.dpk.SelectedDate;
+                //lưu avt
+                BitmapSource bitmap = avt.ImageSource as BitmapSource;
+                byte[] imageData;
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
+                    enc.Frames.Add(BitmapFrame.Create(bitmap));
+                    enc.Save(memory);
+
+                    imageData = memory.ToArray();
+                }
+                sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
+                sqlcmd.CommandText = "INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS,ClassID) VALUES ('"+MAKH+"','"+this.name.Text+"','"+this.user.Text+"','"+this.rpass.Password+"','"+this.cccd.Text+"','"+this.phone.Text+"',@date,'"+GT+"',@image,'Silver',1)";
+                sqlcmd.ExecuteNonQuery();
                 MessageBox.Show("Sucessfully");
                 this.Close();
             }    
@@ -181,7 +209,7 @@ namespace IT008_O14_QLKS
             FMIMG.Visibility = Visibility.Hidden;
            
             gender = true;
-
+            GT = "Nam";
 
         }
 
@@ -205,6 +233,7 @@ namespace IT008_O14_QLKS
 
             }
         }
+        string GT = "";
         private void Border_MouseDownv(object sender, MouseButtonEventArgs e)
         {
             fm.Background = System.Windows.Media.Brushes.DeepPink;
@@ -217,7 +246,7 @@ namespace IT008_O14_QLKS
             ic_male.Visibility = Visibility.Hidden;
             
             gender = true;
-
+            GT = "Nu";
 
         }
 

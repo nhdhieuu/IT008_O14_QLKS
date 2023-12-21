@@ -221,42 +221,31 @@
                                 <Border CornerRadius="12,0,0,12" Background="Azure">
                                     <Label Content="Search" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" HorizontalAlignment="Center"></Label>
                                 </Border>
-                                <TextBox  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
-                                <Image Grid.Column="2" Source="/Resources/search.png" Margin="0,7,6,6"></Image>
+                                <TextBox Name="SearchBox"  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
+                                <Border Grid.Column="2" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
+                                    
+                                    <Image  Source="/Resources/search.png" ></Image>
+                                </Border>
 
 
                             </Grid>
                         </Border>
 
                     </Grid>
-                    
-                    <ScrollViewer Grid.Row="1"  Margin="10,10,10,10">
-                        <StackPanel>
-                            <ContentControl x:Name="Cc11" >
-
-                            </ContentControl>
-                            <ContentControl x:Name="cc12" Margin="0,20,0,20">
-
-                            </ContentControl>
-                            <ContentControl x:Name="cc13" Margin="0,20,0,20">
+                    <Grid Grid.Row="1"  Margin="10,10,10,10">
+                        <ScrollViewer >
+                            <StackPanel Name="ReceiptCardPanel">
                                 
-                            </ContentControl>
-                            <ContentControl x:Name="cc14" Margin="0,20,0,20">
-                            </ContentControl>
-                            <ContentControl x:Name="cc15" Margin="0,20,0,20">
-                            </ContentControl>
-                            <ContentControl x:Name="cc16" Margin="0,20,0,20">
+                            </StackPanel>
+                        </ScrollViewer>
 
-                            </ContentControl>
-                            <ContentControl x:Name="cc17" Margin="0,20,0,20">
-                            </ContentControl>
-                            <ContentControl x:Name="cc18" Margin="0,20,0,20">
-                            </ContentControl>
-                            <ContentControl x:Name="cc19" Margin="0,20,0,20">
-                            </ContentControl>
-                        </StackPanel>
-
-                    </ScrollViewer>
+                    </Grid>
+                    <!-- <ScrollViewer Grid.Row="1"  Margin="10,10,10,10"> -->
+                    <!--     <StackPanel Name="ReceiptCardPanel"> -->
+                    <!--         -->
+                    <!--     </StackPanel> -->
+                    <!-- -->
+                    <!-- </ScrollViewer> -->
                 
                     
                 </Grid>
@@ -285,9 +274,7 @@
                             <Image Source="/Resources/ReceiptSortBy.png"></Image>
                         </Border>
                         
-                        <Border Margin="0,11,0,0">
-                            <Image Source="/Resources/ReceiptPrint.png"></Image>
-                        </Border>
+                        
 
                     </StackPanel>
 

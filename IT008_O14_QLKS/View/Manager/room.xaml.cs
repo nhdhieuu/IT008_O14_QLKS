@@ -31,23 +31,9 @@ namespace IT008_O14_QLKS.View.Manager
 
         DB_connection connect = new DB_connection();
         int RecordCount;
-        string strCon;
-        SqlConnection sqlCon = null;
         public room()
         {
-            string strCon=connect.strCon;
-            
             InitializeComponent();
-            if (sqlCon == null)
-            {
-                sqlCon = new SqlConnection(strCon);
-            }
-            if (sqlCon.State == ConnectionState.Closed)
-            {
-                sqlCon.Open();
-
-            }
-
             Load();
         }
         public void Load()
@@ -59,14 +45,14 @@ namespace IT008_O14_QLKS.View.Manager
 
             sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter() + " ) AS tbl WHERE row_num BETWEEN "+ (PageIndex*6-5)+ " AND "+ PageIndex*6;
 
-            sqlcmd.Connection = sqlCon;
+            sqlcmd.Connection = connect.sqlCon;
             
             SqlDataReader reader = sqlcmd.ExecuteReader();
             roomcard[] listCard = new roomcard[6];
             int i = 0;
             while (reader.Read())
             {
-                listCard[i]= new roomcard(reader.GetString(1), reader.GetString(2), reader.GetString(4), "day", 2, 2);
+                listCard[i]= new roomcard(reader.GetString(1), reader.GetString(2), reader.GetString(4), "day", reader.GetInt32(11), 2);
                 i++;
             }
             reader.Close();

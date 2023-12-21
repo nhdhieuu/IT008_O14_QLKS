@@ -15,19 +15,20 @@
             </ContentControl>
 
 
-            <TextBlock Text="P101" FontFamily="Bahnschrift" FontSize="100" Margin="10,1,60,19" FontWeight="Bold" Foreground="White">
+            <TextBlock x:Name="TenPhongTblx" Text="P101" FontFamily="Bahnschrift" FontSize="90
+                       " Margin="4,6,66,14" FontWeight="Bold" Foreground="White">
 
             </TextBlock>
-            <TextBlock Text="VIP" FontFamily="Bahnschrift" FontSize="40" Margin="213,13,10,55" FontWeight="Bold" Foreground="#FFC6980A">
+            <TextBlock x:Name="TypeTblx" Text="VIP" FontFamily="Bahnschrift" FontSize="40" Margin="209,16,6,52" FontWeight="Bold" Foreground="#FFC6980A">
 
             </TextBlock>
-            <TextBlock Text="1" FontFamily="Bahnschrift" FontSize="25" Margin="226,68,50,19" FontWeight="Bold" Foreground="White">
+            <TextBlock x:Name="SoNguoiTblx" Text="1" FontFamily="Bahnschrift" FontSize="25" Margin="212,63,64,24" FontWeight="Bold" Foreground="White">
 
             </TextBlock>
-            <Image Source="/Resources/icons8-human-30.png" Margin="238,59,29,6">
+            <Image Source="/Resources/icons8-human-30.png" Margin="224,54,43,11">
 
             </Image>
         </Grid>
     </Border>
-   
+
 </UserControl>

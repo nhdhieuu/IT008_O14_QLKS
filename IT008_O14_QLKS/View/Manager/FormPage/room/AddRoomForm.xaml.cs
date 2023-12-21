@@ -78,5 +78,25 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+        string TenPhong="";
+        private void floor_cbb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.number.Content= floor_cbb.SelectedItem.ToString();
+        }
+
+        private void number_cbb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.number.Content = number_cbb.SelectionBoxItem.ToString();
+        }
+
+        private void people_cbb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void type_cbb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

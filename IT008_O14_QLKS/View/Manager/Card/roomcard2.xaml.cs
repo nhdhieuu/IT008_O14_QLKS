@@ -27,5 +27,21 @@ namespace IT008_O14_QLKS.View.Manager.Card
             background.Content = a.Content;
 
         }
+        public roomcard2(string TenPhong, string Type, int SoNguoi)
+        {
+            InitializeComponent();
+            Vip_empty a = new Vip_empty();
+            background.Content = a.Content;
+            this.TenPhongTblx.Text = TenPhong;
+            if(Type=="Standard")
+                this.TypeTblx.Text = "STD";
+            if (Type == "Superior")
+                this.TypeTblx.Text = "SUP";
+            if (Type == "Deluxe")
+                this.TypeTblx.Text = "DLX";
+            if (Type == "Suite")
+                this.TypeTblx.Text = "SUT";
+            this.SoNguoiTblx.Text = SoNguoi.ToString();
+        }   
     }
 }

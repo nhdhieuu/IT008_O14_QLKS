@@ -120,6 +120,7 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>
@@ -154,7 +155,12 @@
       <DependentUpon>booked.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
-      <DependentUpon>unavailble.xaml</DependentUpon>
+      <DependentUpon>unavailble.xaml</DependentUpon> 
+</Compile>
+
+    <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
+      <DependentUpon>AddRoomForm.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -313,6 +319,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
+<SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

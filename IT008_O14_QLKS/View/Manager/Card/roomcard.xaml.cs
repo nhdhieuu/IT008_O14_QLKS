@@ -84,11 +84,11 @@ namespace IT008_O14_QLKS.View.Manager.Card
             loai.Text = this.typeroom;
             statustxt.Text = this.status;
             number_guesttxt.Text = this.numer_guest.ToString();
-            if (this.typeroom=="Normal")
+            if (this.typeroom=="Standard")
             {
                 loai.Foreground = new SolidColorBrush(Colors.White);
             }
-            if (this.status == "Booked")
+            if (this.status == "Booking")
             {
                 mainbd.Background = new SolidColorBrush(Colors.Blue) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
@@ -100,7 +100,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
-            else if (this.status == "Unavailable")
+            else if (this.status == "Unavailabl")
             {
                 mainbd.Background = new SolidColorBrush(Colors.DarkRed);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
@@ -128,9 +128,9 @@ namespace IT008_O14_QLKS.View.Manager.Card
                     }
             //chon nen
 
-            if (this.typeroom == "VIP")
+            if (this.typeroom == "Superior" || this.typeroom == "Deluxe" || this.typeroom == "Suite")
             {
-                if (this.status == "Empty"||this.status == "Booked")
+                if (this.status == "Empty"||this.status == "Booking")
                 {
                     Vip_empty vip = new Vip_empty();
                     background.Content = vip;
@@ -144,9 +144,9 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
 
 
-            if (this.typeroom == "Normal")
+            if (this.typeroom == "Standard")
             {
-                if (this.status == "Empty" || this.status == "Booked")
+                if (this.status == "Empty" || this.status == "Booking")
                 {
                     Normal_empty vip = new Normal_empty();
                     background.Content = vip;

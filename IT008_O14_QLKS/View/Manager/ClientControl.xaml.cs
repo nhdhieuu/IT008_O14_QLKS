@@ -96,7 +96,6 @@ namespace IT008_O14_QLKS.View.Manager
                 cbb_clls.Foreground = new SolidColorBrush((Colors.Gray));
                 pointcls = 1;
                 load();
-
             }
             else
             {
@@ -345,7 +344,6 @@ namespace IT008_O14_QLKS.View.Manager
                 reader.Close();
             }
 
-              
         }
 
         private void search_txt_TextChanged(object sender, TextChangedEventArgs e)

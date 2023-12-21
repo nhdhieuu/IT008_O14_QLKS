@@ -149,6 +149,8 @@ THEO varchar(4),
 TUAN varchar(6),
 GIA money
 )
+alter table CHITIETDV
+add  NGAYDV datetime
 
 INSERT INTO QLGIA (LPHONG,THEO,TUAN,GIA)
 VALUES

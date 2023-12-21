@@ -263,6 +263,7 @@ namespace IT008_O14_QLKS.View.Manager
                 standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
                 std = 0;
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
         int sup1 = 0;
@@ -284,6 +285,7 @@ namespace IT008_O14_QLKS.View.Manager
                sup1 = 0;
                 supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
         int dlx1 = 0;
@@ -304,6 +306,7 @@ namespace IT008_O14_QLKS.View.Manager
                 dlx1 = 0;
                 Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
+            this.Page_index_lbl.Text = "1";
             Load();
 
         }
@@ -326,6 +329,7 @@ namespace IT008_O14_QLKS.View.Manager
 
                 VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
 
@@ -394,6 +398,7 @@ namespace IT008_O14_QLKS.View.Manager
                 rent_t.Foreground = new SolidColorBrush(Colors.Black);
                 rent = 0;
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
 
@@ -414,6 +419,7 @@ namespace IT008_O14_QLKS.View.Manager
                 booked_t.Foreground = new SolidColorBrush(Colors.Blue);
                 booked = 0;
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
         int empty = 0;
@@ -432,6 +438,7 @@ namespace IT008_O14_QLKS.View.Manager
                empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
                 empty = 0;
             }
+            this.Page_index_lbl.Text = "1";
             Load();
         }
         int unavai=0;
@@ -450,6 +457,7 @@ namespace IT008_O14_QLKS.View.Manager
                unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
                 unavai = 0;
             }
+            this.Page_index_lbl.Text = "1";
             Load();
 
         }

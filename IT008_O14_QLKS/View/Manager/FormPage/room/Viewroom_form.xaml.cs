@@ -37,7 +37,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             roomcard2 rc=new roomcard2();
             while (reader.Read())
             {
-                rc = new roomcard2(reader.GetString(1), reader.GetString(2), reader.GetInt32(11));
+                rc = new roomcard2(reader.GetString(1), reader.GetString(2), reader.GetInt32(11),"RoomInfor");
                 int sogiuong = reader.GetInt16(3);
                 this.bed_tbx.Text = sogiuong.ToString();
                

@@ -34,7 +34,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         }
       public void doi_view()
         {
-            room_client mainview = new room_client();
+            room_client mainview = new room_client(id);
             content.Content = mainview;
             bd1.Background = new SolidColorBrush(Colors.Transparent);
             bd2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDBD9CD"));
@@ -85,7 +85,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
-            room_client mainview = new room_client();
+            room_client mainview = new room_client(id);
             content.Content = mainview;
             bd1.Background = new SolidColorBrush(Colors.Transparent);
             bd2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDBD9CD"));

@@ -86,7 +86,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
             }
 
           reader.Close();
-            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT";
+            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT AND KQUATHUE='Thanh Cong'";
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {

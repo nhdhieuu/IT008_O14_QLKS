@@ -9,16 +9,16 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="360*"/>
-            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border Background="#F1F0E7" CornerRadius="10" Grid.ColumnSpan="2">
+        <Border Background="#F1F0E7" CornerRadius="10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="487"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid>
+
                     <Grid.RowDefinitions>
                         <RowDefinition Height="62"></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -51,6 +51,7 @@
                         </Border>
 
                     </Grid>
+                    <Border Style="{DynamicResource save_bd}" Margin="196,455,161,44" Grid.Row="1" MouseDown="Border_MouseDown"/>
                     <Grid Grid.Row="1">
                         <StackPanel Margin="14,10,0,0" >
                             <ContentControl x:Name="Cc11" >
@@ -77,7 +78,7 @@
                                 <Label Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
                                 <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
                                     <Image Source="/Resources/calendar.png"></Image>
-                                    
+
                                 </Border>
                             </Grid>
                         </Border>
@@ -85,11 +86,11 @@
                         <Border Margin="0,11,0,0">
                             <Image Source="/Resources/ReceiptFilter.png"></Image>
                         </Border>
-                        
+
                         <Border Margin="0,11,0,0">
                             <Image Source="/Resources/ReceiptSortBy.png"></Image>
                         </Border>
-                        
+
                         <Border Margin="0,11,0,0">
                             <Image Source="/Resources/ReceiptPrint.png"></Image>
                         </Border>

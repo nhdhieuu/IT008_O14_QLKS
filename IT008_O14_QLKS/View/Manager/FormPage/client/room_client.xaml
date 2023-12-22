@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="504" d:DesignWidth="710">
     <Grid Background="#F1F0E7">
+        <TextBlock x:Name="tb" Text="No room is being rented" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center"  >
+            
+        </TextBlock>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="stk">
                 

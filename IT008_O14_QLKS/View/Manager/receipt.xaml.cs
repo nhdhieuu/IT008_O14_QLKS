@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.View.Manager.FormPage;
+using IT008_O14_QLKS.View.Manager.FormPage.receipt;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -37,6 +39,12 @@ namespace IT008_O14_QLKS.View.Manager
             cc12.Content = listCard[1].Content;
             cc13.Content = listCard[2].Content;
             
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Receipt_Add_Form a=new Receipt_Add_Form();
+            a.ShowDialog();
         }
     }
 }

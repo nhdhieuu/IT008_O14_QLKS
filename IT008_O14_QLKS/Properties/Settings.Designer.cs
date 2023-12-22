@@ -25,9 +25,7 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:it008qlks.database.windows.net,1433;Initial Catalog=IT008QLKS;Persist " +
-            "Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSe" +
-            "ts=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=REDRUM\\REDRUM;Initial Catalog=QLKS4;Integrated Security=True")]
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

@@ -20,12 +20,15 @@ using System.Drawing;
 using ColorConverter = System.Windows.Media.ColorConverter;
 using Color = System.Windows.Media.Color;
 using IT008_O14_QLKS.View.Clients.FormPage;
+using Image = System.Windows.Controls.Image;
+using Microsoft.Win32;
 
 namespace IT008_O14_QLKS.View.Clients
 {
     public partial class ClientsHome : UserControl
     {
         DB_connection connect = new DB_connection();
+        SqlCommand sqlcmd = new SqlCommand();
         public string ten;
         public string tendn;
         public string sdt;
@@ -33,6 +36,7 @@ namespace IT008_O14_QLKS.View.Clients
         public string tuoi;
         public string gtinh;
         BitmapImage avttt;
+         Image early = new Image();
         public ClientsHome()
         {
             InitializeComponent();
@@ -40,7 +44,7 @@ namespace IT008_O14_QLKS.View.Clients
         public ClientsHome(string username)
         {
             InitializeComponent();
-            SqlCommand sqlcmd = new SqlCommand();
+            
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.Connection = connect.sqlCon;
             sqlcmd.CommandText = "SELECT * FROM KHACHHANG WHERE USERNAME='" + username + "'";
@@ -95,19 +99,31 @@ namespace IT008_O14_QLKS.View.Clients
             this.Cancel.Visibility = Visibility.Hidden;
             this.Change.Visibility = Visibility.Visible;
             this.name.IsEnabled = false;
-            this.username.IsEnabled = false;
             this.phone.IsEnabled = false;
             this.cccd.IsEnabled = false;
             this.age.IsEnabled = false;
             this.gender.IsEnabled = false;
             this.UpdateAVT.IsEnabled = false;
-
             ten=this.name.Text ;
-            tendn = this.username.Text;
             sdt = this.phone.Text;
             cmnd = this.cccd.Text;
             gtinh = this.gender.Text;
             tuoi = this.age.Text;
+            //luu avt
+            BitmapSource bitmap = avt.ImageSource as BitmapSource;
+            byte[] imageData;
+            using (MemoryStream memory = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
+                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                enc.Save(memory);
+
+                imageData = memory.ToArray();
+            }
+            sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
+
+            sqlcmd.CommandText = "UPDATE KHACHHANG SET TENKH='"+this.name.Text+"' , SDT='"+this.phone.Text+"' , GIOITINH='"+this.gender.Text+"' ,CCCD='"+this.cccd.Text+"', AVATAR=@image WHERE USERNAME='"+tendn+"'";
+            sqlcmd.ExecuteNonQuery();
         }
 
         private void Save_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -130,7 +146,6 @@ namespace IT008_O14_QLKS.View.Clients
             this.Cancel.Visibility = Visibility.Visible;
             this.Change.Visibility = Visibility.Hidden;
             this.name.IsEnabled = true;
-            this.username.IsEnabled = true;
             this.phone.IsEnabled = true;
             this.cccd.IsEnabled = true;
             this.age.IsEnabled = true;
@@ -157,7 +172,6 @@ namespace IT008_O14_QLKS.View.Clients
             this.Cancel.Visibility = Visibility.Hidden;
             this.Change.Visibility = Visibility.Visible;
             this.name.Text= ten;
-             this.username.Text=tendn ;
             this.phone.Text = sdt;
             this.cccd.Text = cmnd;
             this.gender.Text = gtinh;
@@ -168,7 +182,6 @@ namespace IT008_O14_QLKS.View.Clients
                 this.avtt.ImageSource = avttt;
             }
             this.name.IsEnabled = false;
-            this.username.IsEnabled = false;
             this.phone.IsEnabled = false;
             this.cccd.IsEnabled = false;
             this.age.IsEnabled = false;
@@ -229,6 +242,26 @@ namespace IT008_O14_QLKS.View.Clients
         private void UpdateAVT_MouseDown(object sender, MouseButtonEventArgs e)
         {
             ChangeAvt = 1;
+            avt.ImageSource = early.Source;
+            Microsoft.Win32.OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image to set avatar";
+            ofd.Filter = "Image Files(*.BMP;*.JPG;*.PNG)|*.bmp;*.jpg;*.png|JPG Files|*.jpg|PNG Files|*.png|JPEG Files|*.jpeg";
+            ofd.ShowDialog();
+            avt.ImageSource = early.Source;
+
+            if (ofd.FileName != "")
+            {
+                string tb_uri;
+                tb_uri = ofd.FileName;
+                Uri image_Path = new Uri(tb_uri);
+                avt.ImageSource = new BitmapImage(image_Path);
+                avt.Stretch = System.Windows.Media.Stretch.UniformToFill;
+                early.Source = avt.ImageSource;
+
+            }
+            else
+            {
+            }
         }
 
         private void ChangePassword_MouseEnter(object sender, MouseEventArgs e)

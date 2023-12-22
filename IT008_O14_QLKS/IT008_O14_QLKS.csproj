@@ -63,6 +63,7 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\HashPassword.cs" />
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -608,6 +609,5 @@
     <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,6 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 using System.IO;
+using IT008_O14_QLKS.Util;
 
 namespace IT008_O14_QLKS
 {
@@ -154,7 +155,16 @@ namespace IT008_O14_QLKS
                     imageData = memory.ToArray();
                 }
                 sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
-                sqlcmd.CommandText = "INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS,ClassID) VALUES ('"+MAKH+"','"+this.name.Text+"','"+this.user.Text+"','"+this.rpass.Password+"','"+this.cccd.Text+"','"+this.phone.Text+"',@date,'"+GT+"',@image,'Silver',1)";
+                // var hashbytes = HashPassword.CalculateSHA256(rpass.Password);
+                // string hashpass = "";
+                // foreach (byte item in hashbytes)
+                // {
+                //     hashpass += item;
+                // }
+                string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
+                
+                
+                sqlcmd.CommandText = "INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS,ClassID) VALUES ('"+MAKH+"','"+this.name.Text+"','"+this.user.Text+"','"+hashpass+"','"+this.cccd.Text+"','"+this.phone.Text+"',@date,'"+GT+"',@image,'Silver',1)";
                 sqlcmd.ExecuteNonQuery();
                 MessageBox.Show("Sucessfully");
                 this.Close();

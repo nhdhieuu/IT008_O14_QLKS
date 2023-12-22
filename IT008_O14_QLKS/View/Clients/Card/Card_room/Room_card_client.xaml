@@ -222,7 +222,7 @@
                         <RowDefinition Height="85*"/>
                         <RowDefinition Height="29*"/>
                     </Grid.RowDefinitions>
-                    <Border x:Name="CK" Margin="655,15,16,134" Background="White" CornerRadius="2,2,2,2" MouseDown="CK_MouseDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Hidden">
+                    <Border x:Name="CK" Margin="652,15,16,134" Background="White" CornerRadius="2,2,2,2" MouseDown="CK_MouseDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Hidden">
                         <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
                     </Border>
                     <TextBlock  x:Name="ftxt" Margin="16,10,332,0" Style="{DynamicResource tx1}" FontSize="35" Text="" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -249,7 +249,7 @@
                     </TextBlock>
                     <TextBlock   x:Name="todate" Style="{DynamicResource ResourceKey=tx1}" FontSize="18" Text=" 4:00:53 21/11/2023 " FontWeight="Bold" Margin="327,147,158,0" VerticalAlignment="Top" Grid.RowSpan="2" TextAlignment="Right"/>
                     <Border x:Name="rbutton"  Style="{DynamicResource save_bd }"  Height="NaN" Margin="543,57,16,65" MouseDown="Border_MouseDown">
-                        <TextBlock x:Name="view" Text="RENEW" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White"/>
+                        <TextBlock x:Name="view" Text="RENEW" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="view_MouseDown"/>
                     </Border>
                     <Border  x:Name="CANCEL" Style="{DynamicResource ResourceKey=x_bd}" Height="NaN" Width="NaN" Margin="543,119,17,3" MouseDown="CANCEL_MouseDown">
                         <TextBlock Text="CANCEL" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="TextBlock_MouseDown"/>

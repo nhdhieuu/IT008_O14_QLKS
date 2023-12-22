@@ -40,6 +40,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         private string thuoctinh;
         int sservice = 0;
         public decimal tongtienphong;
+        string khachhang;
     
         Conectiondatabase connect =new Conectiondatabase();
         public Room_card_client(string ID)
@@ -154,6 +155,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             {
                 if (reader.Read()) // Kiểm tra xem có dữ liệu hay không
                 {
+                    khachhang = reader.GetString(1);
                     TimeSpan timeDifference = reader.GetDateTime(4)-myDateTime ;
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
                     if (timeDifference.Days<0)
@@ -444,6 +446,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             if (view.Text=="PAY")
             {
                 Receipt_Add_Form a = new Receipt_Add_Form();
+                a.pay(khachhang);
                 a.ShowDialog();
 
             }
@@ -498,6 +501,11 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     window.trutien(tongtienphong,ID);
                 }
             }
+        }
+
+        private void view_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

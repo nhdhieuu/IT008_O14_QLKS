@@ -130,6 +130,65 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
 
             }    
         }
+        public void pay( string ten)
+        {
+            search_txt.Text = ten;
+            tongthanhtoan = 0;
+            for (int i = 0; i < tparr.Count; i++)
+            {
+                tparr.RemoveAt(i);
+            }
+            tien.Text = "";
+            if (search_txt.Text == "")
+            {
+                tentxt.Visibility = Visibility.Collapsed;
+                x.Visibility = Visibility.Collapsed;
+                stk.Visibility = Visibility.Collapsed;
+
+
+            }
+            else
+            {
+                tentxt.Text = "";
+                stk.Visibility = Visibility.Visible;
+                stk.Children.Clear();
+                MAKH = search_txt.Text;
+
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandText = $"select MAKH,TENKH from KHACHHANG where MAKH='{search_txt.Text}' OR TENKH='{search_txt.Text}' ";
+
+                sqlcmd.Connection = connect.sqlCon;
+                SqlDataReader reader = sqlcmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    ID = reader.GetString(0);
+                    tentxt.Text = reader.GetString(1);
+                    tentxt.Visibility = Visibility.Visible;
+                    x.Visibility = Visibility.Visible;
+
+
+                }
+                reader.Close();
+            }
+            if (tentxt.Visibility == Visibility.Visible && tentxt.Text != "")
+            {
+                save_but.IsEnabled = true;
+                x_but.IsEnabled = true;
+                load();
+            }
+            else
+            {
+                tentxt.Visibility = Visibility.Collapsed;
+                x.Visibility = Visibility.Collapsed;
+                stk.Children.Clear();
+                save_but.IsEnabled = false;
+                x_but.IsEnabled = false;
+
+
+            }
+        }
         public void load()
         {
             tongthanhtoan = 0;

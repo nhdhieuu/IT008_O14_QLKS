@@ -29,6 +29,7 @@ namespace IT008_O14_QLKS
         public Loginn()
         {
             InitializeComponent();
+            this.Loaded += LoginWindow_OnLoaded;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -270,9 +271,13 @@ namespace IT008_O14_QLKS
                         sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
                         if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
                         {
+                            Properties.Settings.Default.UserName = UserTextBox.Text;
+                            Properties.Settings.Default.PassWord = pass.Password;
+                            Properties.Settings.Default.Save();
                             Manager_main main = new Manager_main(this.UserTextBox.Text);
                             main.Show();
                             this.Close();
+                            
                         }
                         else
                         {
@@ -295,7 +300,17 @@ namespace IT008_O14_QLKS
                     }
                 }
             }
+            
         }
+        private void LoginWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            
+                
+            UserTextBox.Text = Properties.Settings.Default.UserName;
+            pass.Password = Properties.Settings.Default.PassWord;
+            
+        }
+        
     }
     }
 

@@ -7,6 +7,7 @@ D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsHome.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsMain.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsRoom.g.cs
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\ChangePass.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\card_dichvu.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCard.g.cs
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCardxaml.g.cs
@@ -58,6 +59,7 @@ D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsHome.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsMain.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\ClientsRoom.baml
+D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\ChangePass.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\card_dichvu.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCard.baml
 D:\UIT\C#\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ClientCardxaml.baml

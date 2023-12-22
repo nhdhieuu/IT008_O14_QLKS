@@ -43,7 +43,7 @@ namespace IT008_O14_QLKS.View.Manager
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter() + " ) AS tbl WHERE row_num BETWEEN "+ (PageIndex*6-5)+ " AND "+ PageIndex*6;
+            sqlcmd.CommandText = "SELECT *FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter() + SearchFilter()+ " ) AS tbl WHERE row_num BETWEEN " + (PageIndex*6-5)+ " AND "+ PageIndex*6;
 
             sqlcmd.Connection = connect.sqlCon;
             
@@ -84,6 +84,24 @@ namespace IT008_O14_QLKS.View.Manager
                 cc23.Content = listCard[5].Content;
             else
                 cc23.Content = null;
+        }
+        public string SearchFilter()
+        {
+            string FilterSearch = "";
+            if (this.Search_tbx.Text != "")
+            {
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.CommandText = "SELECT COUNT (*) FROM PHONG WHERE TENPHONG='" + this.Search_tbx.Text + "'";
+                sqlcmd.Connection = connect.sqlCon;
+                int count = (int)sqlcmd.ExecuteScalar();
+                if (count == 1)
+                {
+                    FilterSearch = "WHERE TENPHONG='" + this.Search_tbx.Text + "'";
+                }
+            }
+            return FilterSearch;
+
         }
         public string TypeFilter()
         {
@@ -240,7 +258,11 @@ namespace IT008_O14_QLKS.View.Manager
                 VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
                 standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
                 type.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
-
+                sui = 0;
+                dlx1 = 0;
+                std = 0;
+                sup1 = 0;
+                Load();
 
             }
         }
@@ -264,6 +286,7 @@ namespace IT008_O14_QLKS.View.Manager
                 std = 0;
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
         int sup1 = 0;
@@ -286,6 +309,7 @@ namespace IT008_O14_QLKS.View.Manager
                 supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
         int dlx1 = 0;
@@ -307,6 +331,7 @@ namespace IT008_O14_QLKS.View.Manager
                 Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
 
         }
@@ -330,6 +355,7 @@ namespace IT008_O14_QLKS.View.Manager
                 VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF797979"));
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
 
@@ -381,6 +407,7 @@ namespace IT008_O14_QLKS.View.Manager
                 booked_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C0000FF"));
                 empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00652E"));
                 unavai_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F8B0000"));
+                Load();
             }
         }
         int rent = 0;
@@ -399,6 +426,7 @@ namespace IT008_O14_QLKS.View.Manager
                 rent = 0;
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
 
@@ -420,6 +448,7 @@ namespace IT008_O14_QLKS.View.Manager
                 booked = 0;
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
         int empty = 0;
@@ -439,6 +468,7 @@ namespace IT008_O14_QLKS.View.Manager
                 empty = 0;
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
         int unavai=0;
@@ -458,6 +488,7 @@ namespace IT008_O14_QLKS.View.Manager
                 unavai = 0;
             }
             this.Page_index_lbl.Text = "1";
+            this.Search_tbx.Text = string.Empty;
             Load();
 
         }
@@ -492,6 +523,7 @@ namespace IT008_O14_QLKS.View.Manager
                 up.IsEnabled = false;
                 down.IsEnabled = false;
             }
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
 
@@ -506,6 +538,7 @@ namespace IT008_O14_QLKS.View.Manager
             {
                 num_s.Content =  stage_num.ToString();
             }
+            this.Search_tbx.Text = string.Empty;
             Load();
         }
 
@@ -527,6 +560,7 @@ namespace IT008_O14_QLKS.View.Manager
                     num_s.Content = stage_num.ToString();
                 }
             }
+            this.Search_tbx.Text = string.Empty;
             Load();
 
         }
@@ -544,6 +578,7 @@ namespace IT008_O14_QLKS.View.Manager
             {
                 index++;
                 this.Page_index_lbl.Text = index.ToString();
+                this.Search_tbx.Text = string.Empty;
                 Load();
             }
            
@@ -556,9 +591,65 @@ namespace IT008_O14_QLKS.View.Manager
             {
                 index--;
                 this.Page_index_lbl.Text = index.ToString();
+                this.Search_tbx.Text = string.Empty;
                 Load();
             }
            
+        }
+
+        private void Search_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            type_s = 0;
+
+            type.IsEnabled = false;
+            sup.IsEnabled = false;
+            standard.IsEnabled = false;
+            VIP.IsEnabled = false;
+            Dlx.IsEnabled = false;
+            standard.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            sup.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            VIP.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            Dlx.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            ck_type.Visibility = Visibility.Hidden;
+            bd_type.BorderBrush = new SolidColorBrush(Colors.White);
+            type_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AFFFC000"));
+            Dlxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+            supt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+            VIPt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+            standardt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F797979"));
+            type.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+            sui = 0;
+            dlx1 = 0;
+            std = 0;
+            sup1 = 0;
+            stauts.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+            status_s = 0;
+            ck_status.Visibility = Visibility.Hidden;
+            status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2014E91"));
+            bd_status.BorderBrush = new SolidColorBrush(Colors.White);
+            rent_bd.IsEnabled = false;
+            booked_bd.IsEnabled = false;
+            rent_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            rent_t.Foreground = new SolidColorBrush(Colors.Black);
+            rent = 0;
+            booked_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            booked_t.Foreground = new SolidColorBrush(Colors.Blue);
+            booked = 0;
+            unavai_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            unavai_t.Foreground = new SolidColorBrush(Colors.DarkRed);
+            unavai = 0;
+
+            empty_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2FFFFFF"));
+            empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+            empty = 0;
+            empty_bd.IsEnabled = false;
+            unavai_bd.IsEnabled = false;
+            rent_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F000000"));
+            booked_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C0000FF"));
+            empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00652E"));
+            unavai_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F8B0000"));
+            Load();
+            this.Search_tbx.Text = string.Empty;
         }
     }
     

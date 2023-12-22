@@ -8,14 +8,11 @@
              d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
     <Grid>
         <!-- silver class-->
-        <Border Width="428" Height="116" Margin="10,10,346,464" Background="Silver" CornerRadius="10"
+        <Border x:Name="Classs" Width="428" Height="116" Margin="10,10,346,464" Background="Silver" CornerRadius="10"
                 BorderThickness="2" BorderBrush="Gray">
             <Grid>
-                <Label Content="Silver" FontSize="50" Foreground="#423F3F" Margin="10,0,273,58"/>
-                <Label Content="class" Foreground="Black" FontSize="30" Margin="63,54,273,20"/>
-                <Border CornerRadius="10" Margin="318,54,10,20" Background="Black">
-                    <Button Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"/>
-                </Border>
+                <Label x:Name="hang" Content="Silver" FontSize="50" Foreground="#423F3F" Margin="0,-2,222,41" HorizontalContentAlignment="Right" FontFamily="Sylfaen "/>
+                <Label Content="class" Foreground="Black" FontSize="30" Margin="105,54,231,20"/>
             </Grid>
         </Border>
 
@@ -24,9 +21,9 @@
         <Border Width="428" Height="129" Margin="10,146,346,315" Background="#EBEBE9" CornerRadius="10"
             BorderThickness="2" BorderBrush="Gray">
             <Grid>
-                <Label Content="you are renting 5 rooms" Foreground="#423F3F" FontSize="30" Margin="18,10,31,68"/>
-                <Border CornerRadius="10" Margin="28,62,300,23" Background="#C6980A">
-                    <Button Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"/>
+                <Label Content="you are renting 5 rooms" Foreground="#423F3F" FontSize="30" Margin="18,8,31,65" FontFamily="Sylfaen " />
+                <Border CornerRadius="7" Margin="28,62,300,23" Background="#C6980A" Cursor="Hand">
+                    <Label x:Name="view_butt" Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"  Margin="19,0,1,0"/>
                 </Border>
             </Grid>
         </Border>
@@ -75,13 +72,15 @@
 
         <!-- góc phải trên -->
         <Grid Margin="455,0,0,475">
-            <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,26,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
+            <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,27,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
                 <Ellipse.Fill>
-                    <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" />
+                    <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" Stretch="Uniform" />
                 </Ellipse.Fill>
             </Ellipse>
-            <Label Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="14,16,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000"  />
+            <Label x:Name="UN2" Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="14,16,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" FontWeight="Bold"  />
             <Rectangle HorizontalAlignment="Left" Height="2" Margin="14,54,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="237"/>
+            <Label x:Name="role" Content="Client" HorizontalAlignment="Left" Height="48" Margin="14,49,0,0" VerticalAlignment="Top" Width="150"  FontSize="20" FontFamily="Sylfaen " Foreground="#FFC6980A" Background="#00000000" FontWeight="Bold"  />
+
         </Grid>
         <!-- profile-->
         <Border Margin="455,95,15,32" CornerRadius="10"  Background="#B6A982" >
@@ -90,68 +89,88 @@
                 <Border Margin="10,44,10,10" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="10" >
                     <Grid>
                         <!-- avatar -->
-                        <Ellipse HorizontalAlignment="Left" Height="100" Stroke="#FFC6980A" VerticalAlignment="Top" Width="100" Margin="184,112,0,0">
+                        <Ellipse HorizontalAlignment="Left" Height="100" Stroke="#FFC6980A" VerticalAlignment="Top" Width="100" Margin="184,168,0,0">
                             <Ellipse.Fill>
-                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" />
+                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" Stretch="Uniform" />
                             </Ellipse.Fill>
                         </Ellipse>
                         <!--name-->
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
                                 <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
-                                <TextBlock Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="1,0,0,0" Width="199" TextAlignment="Right" Foreground="#FFC6980A"/>
+                                <TextBox x:Name="name" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="10,0,0,0" Width="190" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" Height="29" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
                             </Grid>
                         </Border>
                         <!--username-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,62,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,70,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
                                 <Label Content="username" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
-                                <TextBlock Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
+                                <TextBox x:Name="username" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
 
                             </Grid>
                         </Border>
                         <!-- phone-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,108,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,127,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
                                 <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
-                                <Label Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="82"/>
+                                <TextBox x:Name="phone"  Text="0345664024" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="120" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
 
                             </Grid>
                         </Border>
                         <!--gender -->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="18,155,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="18,184,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
                             <Grid Margin="51,0,1,0">
 
                                 <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
-                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="12,0,0,0" Width="75"/>
+                                <TextBox x:Name="gender" Text="Nam" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="10,0,0,0" Width="76" IsEnabled="False" Height="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
                             </Grid>
                         </Border>
                         <!-- birthday-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,202,0,0" VerticalAlignment="Top" Width="140" CornerRadius="5,5,5,5">
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,242,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
                                 <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
-                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-15,0,0,0" Height="28" Width="99"/>
+                                <TextBox x:Name="age" Text="18" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" Width="75" IsEnabled="False" VerticalContentAlignment="Center" Margin="10,0,0,0" HorizontalContentAlignment="Right"/>
 
                             </Grid>
                         </Border>
                         <!-- cccd-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,250,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,300,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
                                 <Label Content="cccd" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
-                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="-15,0,0,0" Height="28" Width="99"/>
+                                <TextBox x:Name="cccd" Text="084204011380" Background="Transparent" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" HorizontalAlignment="Center" Width="120" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
                             </Grid>
                         </Border>
-                        <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="202,207,0,0" FontWeight="Bold" />
-
+                        <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="198,264,0,0" FontWeight="Bold" />
+                        <Border x:Name="UpdateAVT" Margin="258,272,16,118" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5"  Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseDown="UpdateAVT_MouseDown" IsEnabled="False">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
+                            </Border.Background>
+                        </Border>
                         <!-- change password-->
-                        <Border CornerRadius="10" Background="Blue" Margin="160,356,18,20">
-                            <Label Name="change_pass_lb" Content="change password" Foreground="white" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Border x:Name="ChangePassword" CornerRadius="7" Background="#FF4F63EB" Margin="160,356,18,20" MouseEnter="ChangePassword_MouseEnter" MouseLeave="ChangePassword_MouseLeave" MouseDown="ChangePassword_MouseDown">
+                            <Label Name="change_pass_lb" Content="change password" Foreground="white" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
                         </Border>
 
-                        <!-- nút j đó -->
-                        <Border CornerRadius="2" Background="#CBA224" Margin="18,356,234,20">
+
+                        <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave"  >
+                            <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
+                        </Border>
+
+                        <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave" >
+                            <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
+                        </Border>
+                        <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="79,354,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"  >
+                            <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen"/>
                         </Border>
                     </Grid>
                 </Border>

@@ -63,6 +63,7 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\HashPassword.cs" />
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -71,6 +72,9 @@
     </Compile>
     <Compile Include="View\Clients\ClientsRoom.xaml.cs">
       <DependentUpon>ClientsRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\FormPage\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
       <DependentUpon>card_dichvu.xaml</DependentUpon>
@@ -120,7 +124,6 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>
@@ -155,12 +158,10 @@
       <DependentUpon>booked.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
-      <DependentUpon>unavailble.xaml</DependentUpon> 
-</Compile>
-
+      <DependentUpon>unavailble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
       <DependentUpon>AddRoomForm.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -213,6 +214,10 @@
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
+    <Page Include="View\Clients\FormPage\ChangePass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\card_dichvu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -319,7 +324,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
-<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">
@@ -603,6 +608,5 @@
     <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

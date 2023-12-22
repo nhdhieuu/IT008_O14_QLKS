@@ -276,7 +276,7 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void ChangePassword_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ChangePass cp=new ChangePass(tendn);
+            ChangePass cp=new ChangePass(tendn,"Client");
             cp.ShowDialog();
         }
     }

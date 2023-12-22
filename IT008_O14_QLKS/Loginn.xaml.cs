@@ -34,7 +34,7 @@ namespace IT008_O14_QLKS
         {
             //tao form manager_main
 
-            Manager_main main = new Manager_main();
+            Manager_main main = new Manager_main(this.UserTextBox.Text);
             main.Show();
             this.Close();
 
@@ -125,7 +125,7 @@ namespace IT008_O14_QLKS
                     sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
                     if(this.pass.Password==(string)sqlcmd.ExecuteScalar())
                     {
-                        Manager_main main = new Manager_main();
+                        Manager_main main = new Manager_main(this.UserTextBox.Text);
                         main.Show();
                         this.Close();
                     }
@@ -270,7 +270,7 @@ namespace IT008_O14_QLKS
                         sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
                         if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
                         {
-                            Manager_main main = new Manager_main();
+                            Manager_main main = new Manager_main(this.UserTextBox.Text);
                             main.Show();
                             this.Close();
                         }

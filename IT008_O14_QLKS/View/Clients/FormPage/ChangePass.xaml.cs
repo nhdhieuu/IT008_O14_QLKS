@@ -26,13 +26,20 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         SqlCommand sqlcmd = new SqlCommand();
         public string username;
         public string currentpass;
-        public ChangePass(string username)
+        string Role;
+        string table;
+        public ChangePass(string username, string Role)
         {
             InitializeComponent(); 
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.Connection = connect.sqlCon;
             this.username= username;
-            sqlcmd.CommandText = "SELECT PASS FROM KHACHHANG WHERE USERNAME='" + username + "'";
+            
+            if (Role == "Client")
+                table = "KHACHHANG";
+            else
+                table = "QUANLI";
+            sqlcmd.CommandText = "SELECT PASS FROM "+table+" WHERE USERNAME='" + username + "'";
             currentpass = sqlcmd.ExecuteScalar().ToString();
         }
 
@@ -123,7 +130,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         {
             if((string)this.correct.Content == "Correct" && (string)this.correct2.Content == "Correct")
             {
-                sqlcmd.CommandText = "UPDATE KHACHHANG SET PASS='" + this.pass3.Password + "' WHERE USERNAME='" + username + "'";
+                sqlcmd.CommandText = "UPDATE "+table+" SET PASS='" + this.pass3.Password + "' WHERE USERNAME='" + username + "'";
                 sqlcmd.ExecuteNonQuery();
                 this.Close();
             }    

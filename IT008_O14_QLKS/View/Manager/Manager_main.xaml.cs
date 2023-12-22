@@ -21,12 +21,14 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class Manager_main : Window
     {
+        string username;
         int main = 1;
-        public Manager_main()
+        public Manager_main(string username)
         {
             InitializeComponent();
             main = 1;
-            DataContext = new home();
+            DataContext = new home(username);
+            this.username = username;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -79,7 +81,7 @@ namespace IT008_O14_QLKS.View.Manager
         private void border1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             main = 1;
-            DataContext = new home();
+            DataContext = new home(username);
             text2.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             border2_MouseLeave(sender, e);

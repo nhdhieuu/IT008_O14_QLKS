@@ -233,7 +233,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                   
 
-                    ftxt.Text = reader.GetString(2).Substring(1);
+                    ftxt.Text = reader.GetString(2).Substring(1).ToUpper();
                     fromdate.Text =  reader.GetDateTime(3).ToString("dd/MM/yyyy HH:mm:ss");
                     todate.Text = reader.GetDateTime(4).ToString("dd/MM/yyyy HH:mm:ss");
                 }
@@ -440,8 +440,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 giahan a = new giahan(ID); 
                 a.ShowDialog();
                 load();
-            }    
+            }
+            if (view.Text=="PAY")
+            {
+                Receipt_Add_Form a = new Receipt_Add_Form();
+                a.ShowDialog();
 
+            }
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -473,7 +478,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                 if (parent is Receipt_Add_Form window)
                 {
-                    window.tinhtien(tongtienphong);
+                    window.tinhtien(tongtienphong,ID);
                 }
 
 
@@ -490,7 +495,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                 if (parent is Receipt_Add_Form window)
                 {
-                    window.trutien(tongtienphong);
+                    window.trutien(tongtienphong,ID);
                 }
             }
         }

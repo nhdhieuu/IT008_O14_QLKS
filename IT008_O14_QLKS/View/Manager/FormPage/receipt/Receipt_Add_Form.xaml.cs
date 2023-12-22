@@ -27,6 +27,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
         DispatcherTimer t;
         Conectiondatabase connect = new Conectiondatabase();
         string ID;
+        string MAKH;
         DateTime myDateTime = DateTime.Now;
         public Receipt_Add_Form()
         {
@@ -73,6 +74,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            tongthanhtoan = 0;
+            for(int i=0;i<tparr.Count;i++)
+            {
+                tparr.RemoveAt(i);
+            }    
+            tien.Text = "";
             if (search_txt.Text == "")
             {
                 tentxt.Visibility = Visibility.Collapsed;
@@ -86,6 +93,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
                 tentxt.Text = "";
                 stk.Visibility = Visibility.Visible;
                 stk.Children.Clear();
+                MAKH=search_txt.Text;
                 
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.CommandText = $"select MAKH,TENKH from KHACHHANG where MAKH='{search_txt.Text}' OR TENKH='{search_txt.Text}' ";
@@ -124,6 +132,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
         }
         public void load()
         {
+            tongthanhtoan = 0;
+            for (int i = 0; i < tparr.Count; i++)
+            {
+                tparr.RemoveAt(i);
+            }
+            tien.Text = "";
             string a = myDateTime.ToString();
 
             string[] str = a.Split('/');
@@ -196,17 +210,44 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
             stk.Children.Clear();
             save_but.IsEnabled = false;
             x_but.IsEnabled = false;
-            
+            tongthanhtoan = 0;
+            tien.Text = "";
+            for (int i = 0; i < tparr.Count; i++)
+            {
+                tparr.RemoveAt(i);
+            }
+
 
         }
         decimal tongthanhtoan = 0;
-        public void tinhtien(decimal tongtienphong)
+        List<string> tparr =new List<string>();
+        public void tinhtien(decimal tongtienphong,string tp)
         {
+            int truee = 1;
+            for(int i=0;i<tparr.Count;i++)
+            {
+                if (tp == tparr[i])
+                    truee = 0;
+            }  
+            if(truee == 1)
+            {
+                tparr.Add(tp);
+            }    
+           
             tongthanhtoan += tongtienphong;
             sua();
         }
-        public void trutien(decimal tongtienphong)
+        public void trutien(decimal tongtienphong,string tp)
         {
+          
+            int truee = 1;
+            for (int i = 0; i < tparr.Count; i++)
+            {
+                if (tp == tparr[i])
+                    tparr.RemoveAt(i);     
+            }
+          
+
             tongthanhtoan -= tongtienphong;
             sua();
         }
@@ -227,6 +268,102 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+        string hdcaonhat;
+        private void TextBlock_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+        string hdtieptheo;
+        private void save_but_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+      
+            if (tongthanhtoan==0)
+            {
+                MessageBox.Show("Please pick a room");
+            }
+            else
+            {
+                SqlCommand sqlcmd = new SqlCommand();
+
+                sqlcmd.CommandType = CommandType.Text;
+
+                sqlcmd.CommandText = $"SELECT TOP 1 SOHD FROM HOADON ORDER BY SOHD DESC";
+                sqlcmd.Connection = connect.sqlCon;
+                SqlDataReader reader = sqlcmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    hdcaonhat = reader.GetString(0);
+                   hdtieptheo =GenerateNextString(hdcaonhat);
+                  
+
+                }
+                reader.Close();
+                luuhoadon();
+            
+                load();
+              
+            }
+            
+        }
+        private void luuhoadon()
+        {
+
+           
+
+                SqlCommand sqlcmd = new SqlCommand();
+
+                 sqlcmd.CommandType = CommandType.Text;
+
+               sqlcmd.CommandText = $"insert into HOADON(SOHD,NGAYLAP,TONGTIEN,MAKH) values ('{hdtieptheo}','{myDateTime.ToString("MM-dd-yyyy HH:mm:ss")}',{Convert.ToInt32(tongthanhtoan)},'{MAKH.ToUpper()}');";
+               sqlcmd.Connection = connect.sqlCon;
+
+                 sqlcmd.ExecuteNonQuery();
+               taocthd();
+
+
+
+            }
+        private void taocthd()
+        {
+           for(int i=0;i<tparr.Count;i++)
+            {
+                SqlCommand sqlcmd = new SqlCommand();
+
+                sqlcmd.CommandType = CommandType.Text;
+
+                MessageBox.Show(hdtieptheo + tparr[i]);
+
+                sqlcmd.CommandText = $"insert into CTHD(SOHD,MAPHONG) values ('{hdtieptheo}','{tparr[i]}');";
+                sqlcmd.Connection = connect.sqlCon;
+                sqlcmd.Connection = connect.sqlCon;
+
+                sqlcmd.ExecuteNonQuery();
+            }    
+        }
+            static string GenerateNextString(string inputStr)
+        {
+            // Kiểm tra xem chuỗi có đúng định dạng không
+            if (!inputStr.StartsWith("HD"))
+            {
+                throw new ArgumentException("Invalid input format");
+            }
+
+            // Lấy phần số trong chuỗi
+            string numberStr = inputStr.Substring(2);
+
+            // Chuyển số thành một số nguyên
+            int number = int.Parse(numberStr);
+
+            // Tăng giá trị số lên 1
+            int nextNumber = number + 1;
+
+            // Tạo chuỗi tiếp theo
+            string nextStr = "HD" + nextNumber.ToString("D3");
+
+            return nextStr;
         }
     }
     

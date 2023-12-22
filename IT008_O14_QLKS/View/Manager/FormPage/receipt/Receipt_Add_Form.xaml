@@ -99,7 +99,7 @@
                 </TextBlock>
                 <Border Margin="34,82,35,142" Grid.Row="1" CornerRadius="10,10,10,10" BorderBrush="Black" BorderThickness="2,2,2,2"/>
 
-                <Border x:Name="save_but" Style="{DynamicResource save_bd}" Margin="555,599,122,36" Grid.Row="1" IsEnabled="False">
+                <Border x:Name="save_but" Style="{DynamicResource save_bd}" Margin="555,599,122,36" Grid.Row="1" IsEnabled="False" MouseDown="save_but_MouseDown">
                     <TextBlock Style="{DynamicResource tx1}" FontSize="30" Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,2,0" HorizontalAlignment="Right" Width="130">
                         SAVE
                     </TextBlock>

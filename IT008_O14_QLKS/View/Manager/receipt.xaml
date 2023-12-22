@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
              d:DesignHeight="599" d:DesignWidth="761">
- <UserControl.Resources>
+    <UserControl.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
         <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
@@ -207,7 +207,7 @@
                             <ColumnDefinition Width="165"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Source="/Resources/reset.png" Margin="14,23,0,14"/>
+                        <Image Source="/Resources/reset.png" Margin="14,23,0,14" MouseDown="ReloadButton_Click"/>
 
                         <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Sylfaen" Foreground="#C6980A" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0"/>
@@ -223,7 +223,7 @@
                                 </Border>
                                 <TextBox Name="SearchBox"  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
                                 <Border Grid.Column="2" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
-                                    
+
                                     <Image  Source="/Resources/search.png" ></Image>
                                 </Border>
 
@@ -235,48 +235,81 @@
                     <Grid Grid.Row="1"  Margin="10,10,10,10">
                         <ScrollViewer >
                             <StackPanel Name="ReceiptCardPanel">
-                                
+
                             </StackPanel>
                         </ScrollViewer>
 
                     </Grid>
-                    <!-- <ScrollViewer Grid.Row="1"  Margin="10,10,10,10"> -->
-                    <!--     <StackPanel Name="ReceiptCardPanel"> -->
-                    <!--         -->
-                    <!--     </StackPanel> -->
-                    <!-- -->
-                    <!-- </ScrollViewer> -->
-                
-                    
                 </Grid>
-                <Grid Grid.Column="1">
-                    <StackPanel Margin="20,17,8,12">
-                        <Border Width="253" Height="108">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Image Grid.RowSpan="2" Source="/Resources/ReceiptDatePicker.png"></Image>
-                                <Label Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
-                                <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
-                                    <Image Source="/Resources/calendar.png"></Image>
-                                    
-                                </Border>
-                            </Grid>
-                        </Border>
 
-                        <Border Margin="0,11,0,0">
-                            <Image Source="/Resources/ReceiptFilter.png"></Image>
-                        </Border>
-                        
-                        <Border Margin="0,11,0,0">
-                            <Image Source="/Resources/ReceiptSortBy.png"></Image>
-                        </Border>
-                        
-                        
 
-                    </StackPanel>
+                <Grid Grid.Column="1" Margin="10,0,8,0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120*"></RowDefinition>
+                        <RowDefinition Height="191*"></RowDefinition>
+                        <RowDefinition Height="160*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" Source="/Resources/ReceiptDatePicker.png"></Image>
+                            <Label Name="DatePickerLabel" Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
+                            <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
+                                <Image Cursor="Hand" Source="/Resources/calendar.png" MouseDown="Datepicker_OnMouseDown"></Image>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Resources/ReceiptFilter.png" Stretch="UniformToFill"/>
+                        </Border.Background>
+
+
+
+                    </Border>
+                    
+                    <Border Grid.Row="2" Margin="0,11,0,10">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Resources/ReceiptSortBy.png" ></ImageBrush>
+
+                        </Border.Background>
+                        <Grid Margin="10,10,10,10">
+                            <Border MouseDown="SortByCheckBox_Click" Margin="210,0,0,140" Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
+                                <Image Name="CheckBoxImage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
+                            </Border>
+                            <Label Margin="5,-8,100,132" Foreground="White" FontFamily="Bahnschrift" FontSize="25" >Sort By</Label>
+
+                            <Border  x:Name="SortByBorder" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Margin="8,31,8,10">
+                                <ComboBox x:Name="SortByComboBox"  Style="{DynamicResource RoundComboBox}"   FontFamily="Bahnschrift" FontSize="20" IsEnabled="False" Margin="24,13,24,0" Height="37" VerticalAlignment="Top"  SelectionChanged="SortByComboBox_OnSelectionChanged">
+                                    <ComboBoxItem Content="ID" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
+                                    <ComboBoxItem Content="Date" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
+                                    <ComboBoxItem Content="Total" Foreground="Black"  FontFamily="Bahnschrift" FontSize="20" />
+                                </ComboBox>
+
+                            </Border>
+                            <Border Name="AscBorder" CornerRadius="5" Margin="35,95,130,34" Background="#D9D9D9E5" MouseDown="AscBorder_OnMouseDown" BorderBrush="#FF811B1B" BorderThickness="0.5">
+                                <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,-7" >
+                                    <TextBlock Name="AscTextBlock" Text="ASC" HorizontalAlignment="Center" Foreground="#FF811B1B"></TextBlock>
+                                </Label>
+
+                            </Border>
+                            <Border Name="DescBorder" CornerRadius="5" Margin="135,95,30,34" Background="#D9D9D9E5" MouseDown="DescBorder_OnMouseDown" BorderBrush="#FF111176" BorderThickness="0.5">
+                                <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20">
+                                    <TextBlock Name="DescTextBlock" Text="DESC" HorizontalAlignment="Center" Height="21" Foreground="#FF111176"></TextBlock>
+                                </Label>
+                            </Border>
+
+                        </Grid>
+
+                    </Border>
+
+
+
+
 
                 </Grid>
 

@@ -61,7 +61,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 this.type_lbl.Content = reader.GetString(4);
                 if (this.type_lbl.Content.ToString() == "Empty")
                 {
-                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6BCB77"));
                     this.type_background2.Visibility = Visibility.Collapsed;
                     this.DV_KhachDat.Visibility = Visibility.Hidden;
                     this.problem.Visibility = Visibility.Hidden;
@@ -71,8 +71,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 }
                 if (this.type_lbl.Content.ToString() == "Booking")
                 {
-                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1969E3"));
-                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1969E3"));
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
+                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
                     this.da_o_lbl.Content = "2 days";
                     this.DV_KhachDat.Visibility = Visibility.Hidden;
                     this.problem.Visibility = Visibility.Hidden;
@@ -82,11 +82,13 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 {
                     this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
                     this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
+                    this.TenKH_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+                    this.type_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
                 }
                 if (this.type_lbl.Content.ToString() == "Unavailabl")
                 {
-                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C60A0A"));
-                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C60A0A"));
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
+                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
                     this.TenKH_lbl.Content = "cleaning";
                     this.denngay_lbl.Visibility = Visibility.Hidden;
                     this.da_o_lbl.Visibility = Visibility.Hidden;

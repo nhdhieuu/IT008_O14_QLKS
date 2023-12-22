@@ -16,7 +16,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room;
 using IT008_O14_QLKS.View.Manager.Card.roomCardbackground;
-using IT008_O14_QLKS.View.Manager.FormPage.room;
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
@@ -60,12 +59,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void viewbd_MouseEnter(object sender, MouseEventArgs e)
         {
-            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF091E75"));
+            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0077E0"));
         }
 
         private void viewbd_MouseLeave(object sender, MouseEventArgs e)
         {
-            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C2BAB"));
+            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00A9FF"));
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)
@@ -90,19 +89,19 @@ namespace IT008_O14_QLKS.View.Manager.Card
             }
             if (this.status == "Booking")
             {
-                mainbd.Background = new SolidColorBrush(Colors.Blue) ;
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF")) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
                 idroomtxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Empty")
             {
-                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6BCB77"));
                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Unavailabl")
             {
-                mainbd.Background = new SolidColorBrush(Colors.DarkRed);
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
                 idroomtxt.Foreground = new SolidColorBrush(Colors.White);
 
@@ -128,38 +127,26 @@ namespace IT008_O14_QLKS.View.Manager.Card
                     }
             //chon nen
 
-            if (this.typeroom == "Superior" || this.typeroom == "Deluxe" || this.typeroom == "Suite")
+            if (this.typeroom == "Standard" )
             {
-                if (this.status == "Empty"||this.status == "Booking")
-                {
-                    Vip_empty vip = new Vip_empty();
-                    background.Content = vip;
-                }
-                else
-                {
-                    VIP vip = new VIP();
-                    background.Content = vip;
-                }    
+                    StandardBG bg= new StandardBG();
+                    background.Content = bg;
             }
-
-
-
-            if (this.typeroom == "Standard")
+            if (this.typeroom == "Superior")
             {
-                if (this.status == "Empty" || this.status == "Booking")
-                {
-                    Normal_empty vip = new Normal_empty();
-                    background.Content = vip;
-                }
-                else
-                {
-                    Normal vip = new Normal();
-                    background.Content = vip;
-                }
+                SuperiorBG bg = new SuperiorBG();
+                background.Content = bg;
             }
-
-
-
+            if (this.typeroom == "Deluxe")
+            {
+                DeluxeBG bg = new DeluxeBG();
+                background.Content = bg;
+            }
+            if (this.typeroom == "Suite")
+            {
+                SuiteBG bg = new SuiteBG();
+                background.Content = bg;
+            }
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)

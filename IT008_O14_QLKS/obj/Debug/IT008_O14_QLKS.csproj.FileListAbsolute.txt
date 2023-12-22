@@ -17,10 +17,6 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\Client\
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ReceiptCard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard2.g.cs
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.g.cs
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.g.cs
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.g.cs
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ServiceCard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.g.cs
@@ -68,10 +64,6 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\Client\
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ReceiptCard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomcard2.baml
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal.baml
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Normal_empty.baml
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\VIP.baml
-D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\Vip_empty.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ServiceCard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\StaffCard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\ClientControl.baml
@@ -216,3 +208,11 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\ChangePass.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\ChangePass.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\DeluxeBG.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\StandardBG.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\SuperiorBG.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\SuiteBG.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\DeluxeBG.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\StandardBG.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\SuperiorBG.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Manager\Card\roomCardbackground\SuiteBG.baml

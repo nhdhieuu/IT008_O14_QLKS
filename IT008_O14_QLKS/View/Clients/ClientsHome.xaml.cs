@@ -16,11 +16,23 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Shapes;
+using System.Drawing;
+using ColorConverter = System.Windows.Media.ColorConverter;
+using Color = System.Windows.Media.Color;
+using IT008_O14_QLKS.View.Clients.FormPage;
+
 namespace IT008_O14_QLKS.View.Clients
 {
     public partial class ClientsHome : UserControl
     {
         DB_connection connect = new DB_connection();
+        public string ten;
+        public string tendn;
+        public string sdt;
+        public string cmnd;
+        public string tuoi;
+        public string gtinh;
+        BitmapImage avttt;
         public ClientsHome()
         {
             InitializeComponent();
@@ -36,12 +48,16 @@ namespace IT008_O14_QLKS.View.Clients
             while (reader.Read())
             {
                 this.name.Text = reader.GetString(1);
+                ten = this.name.Text;
                 this.username.Text = reader.GetString(2);
+                tendn = this.username.Text;
                 this.UN2.Content = reader.GetString(2);
-                this.phone.Content = reader.GetString(5);
-                this.gender.Content = reader.GetString(7);
-                //this.age.Content=reader.GetString(5);
-                this.cccd.Content = reader.GetString(4);
+                this.phone.Text = reader.GetString(5);
+                sdt = phone.Text;
+                this.gender.Text = reader.GetString(7);
+                gtinh = gender.Text;
+                this.cccd.Text = reader.GetString(4);
+                cmnd = cccd.Text;
                 this.hang.Content = reader.GetString(9);
             }
             reader.Close();
@@ -56,6 +72,7 @@ namespace IT008_O14_QLKS.View.Clients
                 bitmap.BeginInit();
                 bitmap.StreamSource = memStream;
                 bitmap.EndInit();
+                avttt = bitmap;
                 avt.ImageSource = bitmap;
                 avtt.ImageSource = bitmap;
             }
@@ -65,8 +82,9 @@ namespace IT008_O14_QLKS.View.Clients
             sqlcmd.CommandText = "SELECT NGAYSINH FROM KHACHHANG WHERE USERNAME='" + username + "'";
             DateTime saleDate = (DateTime)sqlcmd.ExecuteScalar();
             int saleYear = saleDate.Year;
-            this.age.Content = (2023 - saleYear).ToString();
-
+            this.age.Text = (2023 - saleYear).ToString();
+            tuoi = age.Text;
+            background();
 
 
         }
@@ -76,6 +94,20 @@ namespace IT008_O14_QLKS.View.Clients
             this.Save.Visibility = Visibility.Hidden;
             this.Cancel.Visibility = Visibility.Hidden;
             this.Change.Visibility = Visibility.Visible;
+            this.name.IsEnabled = false;
+            this.username.IsEnabled = false;
+            this.phone.IsEnabled = false;
+            this.cccd.IsEnabled = false;
+            this.age.IsEnabled = false;
+            this.gender.IsEnabled = false;
+            this.UpdateAVT.IsEnabled = false;
+
+            ten=this.name.Text ;
+            tendn = this.username.Text;
+            sdt = this.phone.Text;
+            cmnd = this.cccd.Text;
+            gtinh = this.gender.Text;
+            tuoi = this.age.Text;
         }
 
         private void Save_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -97,6 +129,13 @@ namespace IT008_O14_QLKS.View.Clients
             this.Save.Visibility = Visibility.Visible;
             this.Cancel.Visibility = Visibility.Visible;
             this.Change.Visibility = Visibility.Hidden;
+            this.name.IsEnabled = true;
+            this.username.IsEnabled = true;
+            this.phone.IsEnabled = true;
+            this.cccd.IsEnabled = true;
+            this.age.IsEnabled = true;
+            this.gender.IsEnabled = true;
+            this.UpdateAVT.IsEnabled = true;
         }
 
         private void Change_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -117,6 +156,26 @@ namespace IT008_O14_QLKS.View.Clients
             this.Save.Visibility = Visibility.Hidden;
             this.Cancel.Visibility = Visibility.Hidden;
             this.Change.Visibility = Visibility.Visible;
+            this.name.Text= ten;
+             this.username.Text=tendn ;
+            this.phone.Text = sdt;
+            this.cccd.Text = cmnd;
+            this.gender.Text = gtinh;
+            this.age.Text = tuoi;
+            if (ChangeAvt == 1)
+            {
+                this.avt.ImageSource = avttt;
+                this.avtt.ImageSource = avttt;
+            }
+            this.name.IsEnabled = false;
+            this.username.IsEnabled = false;
+            this.phone.IsEnabled = false;
+            this.cccd.IsEnabled = false;
+            this.age.IsEnabled = false;
+            this.gender.IsEnabled = false;
+            this.UpdateAVT.IsEnabled = false;
+          
+           
         }
 
         private void Cancel_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -131,6 +190,61 @@ namespace IT008_O14_QLKS.View.Clients
 
             Cancel.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDF0B0B"));
 
+        }
+        private void background()
+        {
+            string truepath = "";
+            string currentFolderPath = AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+            string[] parts = currentFolderPath.Split('\\');
+            for (int i = 0; i < parts.Length; i++)
+            {
+                if (parts[i] != "Debug" && parts[i] != "bin")
+                    truepath += parts[i] + "/";
+            }
+
+
+
+
+
+            string imagePath = System.IO.Path.Combine(truepath, "Resources", hang.Content + ".jpg");
+
+            // Tạo một đối tượng BitmapImage
+            BitmapImage bitmap = new BitmapImage();
+
+            // Thiết lập đường dẫn nguồn cho BitmapImage
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+            bitmap.EndInit();
+
+            // Tạo một ImageBrush và thiết lập hình ảnh làm nền
+            ImageBrush imageBrush = new ImageBrush(bitmap);
+
+            // Thiết lập nền của phần tử (vd: Grid, Border, etc.)
+            imageBrush.Stretch = Stretch.Fill;
+            Classs.Background = imageBrush;
+
+        }
+        int ChangeAvt = 0;
+        private void UpdateAVT_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ChangeAvt = 1;
+        }
+
+        private void ChangePassword_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.ChangePassword.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF283AB8"));
+        }
+
+        private void ChangePassword_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.ChangePassword.Background=new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4F63EB"));
+        }
+
+        private void ChangePassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ChangePass cp=new ChangePass(tendn);
+            cp.ShowDialog();
         }
     }
 }

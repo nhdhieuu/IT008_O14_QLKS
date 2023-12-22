@@ -22,7 +22,6 @@ namespace IT008_O14_QLKS.View.Clients
         }
         int main = 1;
         
-
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -73,7 +72,7 @@ namespace IT008_O14_QLKS.View.Clients
         private void border1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             main = 1;
-            DataContext = new ClientsHome();
+            DataContext = new ClientsHome(username);
             text2.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             border2_MouseLeave(sender, e);

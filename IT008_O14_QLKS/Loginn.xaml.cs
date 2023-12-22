@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Clients;
+using IT008_O14_QLKS.Connection_db;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace IT008_O14_QLKS
 {
@@ -21,6 +24,8 @@ namespace IT008_O14_QLKS
     /// </summary>
     public partial class Loginn : Window
     {
+        DB_connection connect = new DB_connection();
+
         public Loginn()
         {
             InitializeComponent();
@@ -93,20 +98,56 @@ namespace IT008_O14_QLKS
         {
 
         }
-
+        //Dang nhap
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
-            if (UserTextBox.Text == "123")
-            {
-                ClientsMain clientControl = new ClientsMain();
-                clientControl.Show();
-                this.Close();
-            }
+            string role="";
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.Connection = connect.sqlCon;
+            sqlcmd.CommandText = "SELECT COUNT(*) FROM QUANLI WHERE USERNAME='"+this.UserTextBox.Text+"'";
+            int CountQL=(int)sqlcmd.ExecuteScalar();
+            if (CountQL == 1)
+                role = "QL";
             else
             {
-                Manager_main main = new Manager_main();
-                main.Show();
-                this.Close();
+                sqlcmd.CommandText = "SELECT COUNT(*) FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                int CountKH = (int)sqlcmd.ExecuteScalar();
+                if (CountKH == 1)
+                    role = "KH";
+            }
+            if(role=="")
+                this.warning.Visibility= Visibility.Visible;
+            else
+            {
+                if(role == "QL")
+                {
+                    sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                    if(this.pass.Password==(string)sqlcmd.ExecuteScalar())
+                    {
+                        Manager_main main = new Manager_main();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.warning.Visibility = Visibility.Visible;
+                    }
+                }
+                if (role == "KH")
+                {
+                    sqlcmd.CommandText = "SELECT PASS FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                    if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                    {
+                        ClientsMain clientControl = new ClientsMain(this.UserTextBox.Text);
+                        clientControl.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.warning.Visibility = Visibility.Visible;
+                    }
+                }
             }
         }
 
@@ -200,6 +241,61 @@ namespace IT008_O14_QLKS
         
         }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter) 
+            {
+
+                string role = "";
+                SqlCommand sqlcmd = new SqlCommand();
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.Connection = connect.sqlCon;
+                sqlcmd.CommandText = "SELECT COUNT(*) FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                int CountQL = (int)sqlcmd.ExecuteScalar();
+                if (CountQL == 1)
+                    role = "QL";
+                else
+                {
+                    sqlcmd.CommandText = "SELECT COUNT(*) FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                    int CountKH = (int)sqlcmd.ExecuteScalar();
+                    if (CountKH == 1)
+                        role = "KH";
+                }
+                if (role == "")
+                    this.warning.Visibility = Visibility.Visible;
+                else
+                {
+                    if (role == "QL")
+                    {
+                        sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                        if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                        {
+                            Manager_main main = new Manager_main();
+                            main.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.warning.Visibility = Visibility.Visible;
+                        }
+                    }
+                    if (role == "KH")
+                    {
+                        sqlcmd.CommandText = "SELECT PASS FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
+                        if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                        {
+                            ClientsMain clientControl = new ClientsMain(this.UserTextBox.Text);
+                            clientControl.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.warning.Visibility = Visibility.Visible;
+                        }
+                    }
+                }
+            }
+        }
     }
     }
 

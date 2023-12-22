@@ -363,7 +363,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
                 luuhoadon();
             
                 load();
-              
+                for (int i = 0; i < tparr.Count; i++)
+                {
+                    tparr.RemoveAt(i);
+                }
+
             }
             
         }
@@ -393,7 +397,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
 
                 sqlcmd.CommandType = CommandType.Text;
 
-                MessageBox.Show(hdtieptheo + tparr[i]);
+            
 
                 sqlcmd.CommandText = $"insert into CTHD(SOHD,MAPHONG) values ('{hdtieptheo}','{tparr[i]}');";
                 sqlcmd.Connection = connect.sqlCon;

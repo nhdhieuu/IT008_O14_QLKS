@@ -11,9 +11,7 @@ namespace IT008_O14_QLKS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
-
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,13 +24,9 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-
-
         [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Secu" +
             "rity Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=F" +
             "alse;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
-
-
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

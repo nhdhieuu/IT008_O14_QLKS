@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Contexts;
 using System.Runtime.Remoting;
+using IT008_O14_QLKS.Connection_db;
 using IT008_O14_QLKS.View.Manager.FormPage.receipt;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
@@ -42,7 +43,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         public decimal tongtienphong;
         string khachhang;
     
-        Conectiondatabase connect =new Conectiondatabase();
+        DB_connection connect =new DB_connection();
         public Room_card_client(string ID)
         {
             this.ID = ID;

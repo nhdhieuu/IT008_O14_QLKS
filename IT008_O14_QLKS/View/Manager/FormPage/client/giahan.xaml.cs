@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.Connection_db;
 using Xceed.Wpf.Toolkit;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.client
@@ -23,7 +24,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     public partial class giahan : Window
     {
         string ID;
-        Conectiondatabase connect = new Conectiondatabase();
+        DB_connection connect = new DB_connection();
         public giahan(string iD)
         {
             InitializeComponent();

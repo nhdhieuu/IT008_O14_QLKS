@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using IT008_O14_QLKS.Connection_db;
 using IT008_O14_QLKS.View.Clients.Card.Card_room;
 using IT008_O14_QLKS.View.Manager.Card;
 
@@ -25,7 +26,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
     public partial class Receipt_Add_Form : Window
     {
         DispatcherTimer t;
-        Conectiondatabase connect = new Conectiondatabase();
+        DB_connection connect = new DB_connection();
         string ID;
         string MAKH;
         DateTime myDateTime = DateTime.Now;

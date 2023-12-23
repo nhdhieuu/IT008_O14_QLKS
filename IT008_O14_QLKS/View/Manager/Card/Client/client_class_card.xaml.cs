@@ -35,7 +35,11 @@ namespace IT008_O14_QLKS.View.Manager.Card.Client
             
 
         }
-
+        public void Xoa()
+        {
+            len.Visibility=Visibility.Collapsed;
+            xuong.Visibility=Visibility.Collapsed;
+        }
         private void load()
         {
             SqlCommand sqlcmd = new SqlCommand();

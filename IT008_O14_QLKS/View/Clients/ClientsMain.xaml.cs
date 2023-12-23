@@ -131,7 +131,8 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void border2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DataContext = new ClientsRoom();
+          
+            DataContext = new ClientsRoom(this.username);
             text1.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 2;

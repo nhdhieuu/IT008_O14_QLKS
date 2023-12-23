@@ -8,13 +8,10 @@
              d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
     <Grid>
         <!-- silver class-->
-        <Border x:Name="Classs" Width="428" Height="116" Margin="10,10,346,464" Background="Silver" CornerRadius="10"
-                BorderThickness="2" BorderBrush="Gray">
-            <Grid>
-                <Label x:Name="hang" Content="Silver" FontSize="50" Foreground="#423F3F" Margin="0,-2,222,41" HorizontalContentAlignment="Right" FontFamily="Sylfaen "/>
-                <Label Content="class" Foreground="Black" FontSize="30" Margin="105,54,231,20"/>
-            </Grid>
-        </Border>
+        <ContentControl x:Name="classs" Margin="10,10,346,464">
+            
+        </ContentControl>
+        
 
         <!---  -->
 

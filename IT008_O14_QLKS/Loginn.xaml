@@ -74,7 +74,7 @@
 
                             </TextBlock>
                             <Border x:Name="usrbox" Height="55" Background="#D9D9D9" Margin="46,0,40,0" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                                <TextBox Name="UserTextBox" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam"/>
+                                <TextBox Name="UserTextBox" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" MouseDown="TextBox_MouseDown" MouseMove="TextBox_MouseMove" Cursor="IBeam" Margin="0,2,0,2" Width="423" BorderBrush="{x:Null}"/>
                             </Border>
                             <TextBlock Text="password"  FontSize="24" FontFamily="Sylfaen" Margin="45,20,0,0" Foreground="#FF897C54">
 
@@ -89,7 +89,7 @@
 
                                         </ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" PasswordChanged="PasswordBox_PasswordChanged" MouseDown="pass_MouseDown" Cursor="IBeam">
+                                    <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" PasswordChanged="PasswordBox_PasswordChanged" MouseDown="pass_MouseDown" Cursor="IBeam" Grid.ColumnSpan="2" Margin="4,2,68,2" BorderBrush="{x:Null}">
 
                                     </PasswordBox >
                                     <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="25" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="TextBox_TextChanged"/>

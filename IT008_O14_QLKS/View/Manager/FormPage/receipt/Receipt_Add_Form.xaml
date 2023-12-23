@@ -1,0 +1,124 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.receipt.Receipt_Add_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.receipt"
+          mc:Ignorable="d" 
+        Topmost="True" 
+         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
+             d:DesignHeight="758" d:DesignWidth="820">
+    <Window.Resources>
+        <Style x:Key="BD" TargetType="Border">
+            <Setter Property="Height" Value="41" >
+
+            </Setter>
+            <Setter Property="Width" Value="163" >
+
+            </Setter>
+            <Setter Property="Background" Value="Transparent">
+
+            </Setter>
+            <Setter Property="CornerRadius" Value="7">
+
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Center">
+
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center">
+
+            </Setter>
+            <Setter Property="Cursor" Value="Hand">
+
+            </Setter>
+
+
+        </Style>
+        <Style x:Key="Txt" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Times New Roman">
+
+            </Setter>
+            <Setter Property="FontSize" Value="40">
+
+            </Setter>
+            <Setter Property="Foreground" Value="#C6980A">
+
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Height="740" Width="785">
+        <Border x:Name="main_bd" Background="#FF96958A" CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_1"  BorderBrush="Black" BorderThickness="2,2,2,0" Margin="-10,0,-14,0">
+            <Grid Margin="0,0,-2,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="65" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border x:Name="delbtn_border" 
+                            Background="Transparent"
+                            CornerRadius="0,9.4,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="758,0,2,19" Cursor="Hand"
+                            >
+                    <TextBlock x:Name="delbtn_text" FontSize="25                                  "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                </Border>
+
+                <TextBlock Text="new receipt" FontFamily="Times New Roman" FontSize="45" Margin="25,7,267,3" Foreground="#FF3B3B3B"/>
+                <Border   CornerRadius="12,12,12,12" Grid.Row="1" Margin="20,0,21,18" Background="#FFF1F0E7"/>
+
+                <ScrollViewer Grid.Row="1" Margin="41,138,41,142">
+                    <StackPanel x:Name="stk" Width="689">
+
+                    </StackPanel>
+                </ScrollViewer>
+
+                <Border  CornerRadius="7,7,7,7" Background="#D7D7D7" Height="39" Margin="34,23,35,611" Grid.Row="1">
+                    <Grid Margin="10,0,0,0">
+                        <TextBox x:Name="search_txt" Background="{x:Null}" Margin="0,2,44,2" BorderThickness="0,0,0,0" FontSize="25" FontFamily="Bahnschrift">
+
+                        </TextBox>
+                        <Image Source="/Resources/search_icon.png" Margin="671,3,0,3" MouseDown="Image_MouseDown" Cursor="Hand" >
+
+                        </Image>
+
+                    </Grid>
+
+                </Border>
+                <StackPanel x:Name="stk1"  Grid.Row="1" Margin="52,74,0,525" Orientation="Horizontal">
+                    <TextBlock x:Name="tentxt" FontFamily="Bahnschrift" FontSize="27" VerticalAlignment="Center"  Text=""  />
+                    <Border Width="10"/>
+                    <TextBlock x:Name="x" Text="X" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25.8" FontFamily="Bahnschrift" FontWeight="Bold" Visibility="Hidden" Cursor="Hand" MouseDown="x_MouseDown"/>
+                </StackPanel>
+                <TextBlock Text="TOTAL PRICE:" Margin="41,547,504,0" Grid.Row="1" Style="{DynamicResource tx1}" FontSize="35" FontWeight="bold" Foreground="#FF3B3B3B" Height="65" VerticalAlignment="Top">
+
+                </TextBlock>
+                <Border Margin="34,82,35,142" Grid.Row="1" CornerRadius="10,10,10,10" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+
+                <Border x:Name="save_but" Style="{DynamicResource save_bd}" Margin="555,599,122,36" Grid.Row="1" IsEnabled="False" MouseDown="save_but_MouseDown">
+                    <TextBlock Style="{DynamicResource tx1}" FontSize="30" Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,2,0" HorizontalAlignment="Right" Width="130">
+                        SAVE
+                    </TextBlock>
+
+                </Border>
+                <Border x:Name="x_but" Style="{DynamicResource x_bd}" Margin="710,599,59,36" Grid.Row="1" IsEnabled="False" MouseDown="x_MouseDown">
+                    <TextBlock Style="{DynamicResource tx1}" FontSize="30" Foreground="White" TextAlignment="Center" VerticalAlignment="Top" Margin="0,2,0,0" IsEnabled="False" MouseDown="x_MouseDown">
+                        X
+                    </TextBlock>
+
+                </Border>
+                <TextBlock Text="DATE:" Margin="41,599,504,0" Grid.Row="1" Style="{DynamicResource tx1}" FontSize="35" FontWeight="bold" Foreground="#FF3B3B3B" Height="65" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tien" Margin="282,549,263,0" Grid.Row="1" Style="{DynamicResource tx1}" FontSize="35" FontWeight="bold" Foreground="#FF12CE69" Height="65" VerticalAlignment="Top"/>
+                <TextBlock x:Name="DATE" Margin="150,598,327,0" Grid.Row="1" Style="{DynamicResource tx1}" FontSize="35" FontWeight="bold" Foreground="#FF3B3B3B" Height="35" VerticalAlignment="Top"/>
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</Window>
+

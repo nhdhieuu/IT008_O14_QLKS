@@ -50,6 +50,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -62,6 +77,15 @@
     </Compile>
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\Card\Card_room\problemcard.xaml.cs">
+      <DependentUpon>problemcard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\Card\Card_room\Room_card_client.xaml.cs">
+      <DependentUpon>Room_card_client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\Card\Card_room\service_card.xaml.cs">
+      <DependentUpon>service_card.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
@@ -121,18 +145,26 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
-
+    <Compile Include="View\Manager\FormPage\client\cancel.xaml.cs">
+      <DependentUpon>cancel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\client\client_view.xaml.cs">
       <DependentUpon>client_view.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\client\giahan.xaml.cs">
+      <DependentUpon>giahan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\client\receipt_client.xaml.cs">
       <DependentUpon>receipt_client.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\client\room_client.xaml.cs">
       <DependentUpon>room_client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml.cs">
+      <DependentUpon>Receipt_Add_Form.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
       <DependentUpon>sttroompage.xaml</DependentUpon>
@@ -156,12 +188,10 @@
       <DependentUpon>booked.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml.cs">
-      <DependentUpon>unavailble.xaml</DependentUpon> 
-</Compile>
-
+      <DependentUpon>unavailble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
       <DependentUpon>AddRoomForm.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -208,6 +238,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="signUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\Card\Card_room\problemcard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\Card\Card_room\Room_card_client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\Card\Card_room\service_card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,6 +317,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\ClientControl.xaml" />
+    <Page Include="View\Manager\FormPage\client\cancel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\FormPage\client\client_information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,11 +329,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\FormPage\client\giahan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\FormPage\client\receipt_client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\client\room_client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -320,7 +374,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\sttroompage2\unavailble.xaml">
-<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">

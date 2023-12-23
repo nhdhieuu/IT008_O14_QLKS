@@ -56,6 +56,43 @@ namespace IT008_O14_QLKS.View.Manager
                 i++;
             }
             reader.Close();
+            for(int o=0;o<i;o++)
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM THUEPHONG WHERE MAPHONG='M" + listCard[o].IDroom + "'";
+                cmd.Connection = connect.sqlCon;
+                SqlDataReader reader2 = cmd.ExecuteReader();
+                string stt= "Empty";
+                if (listCard[o].status == "Unavailabl")
+                    stt = "Unavailable";
+                else
+                {
+                    while (reader2.Read())
+                    {
+                        if (reader2.GetString(5) == "Thanh Cong" && reader2.GetDateTime(3) <= DateTime.Now && reader2.GetDateTime(4) >= DateTime.Now)
+                        {
+                            stt = "Rented";
+                        }
+                        if (reader2.GetString(5) == "Dang Thue" && reader2.GetDateTime(3) <= DateTime.Now && reader2.GetDateTime(4) >= DateTime.Now)
+                        {
+                            stt = "Booking";
+                        }
+                        if (reader2.GetString(5) == "Dang Thue" && reader2.GetDateTime(3) >= DateTime.Now)
+                        {
+                            stt = "Booking";
+                        }
+                    }
+                    
+                }
+                reader2.Close();
+                listCard[o].status= stt;
+                listCard[o].input();
+                cmd.CommandText="UPDATE PHONG SET TRANGTHAIHT='"+ listCard[o].status+"' WHERE TENPHONG='"+ listCard[o].IDroom+"'";
+                cmd.ExecuteNonQuery();
+            }    
+
+
             sqlcmd.CommandText = "select COUNT(*) FROM PHONG "+ TypeFilter()+ StatusFilter()+ FloorFilter();
             RecordCount = (int)sqlcmd.ExecuteScalar();
 
@@ -145,35 +182,35 @@ namespace IT008_O14_QLKS.View.Manager
             if (sup1 == 0 && std == 0 && dlx1 == 0 && sui == 0)
                 AND = "WHERE";
             if (rent == 1)
-                FilterStatus = $" {AND} TRANGTHAI='Rented'";
+                FilterStatus = $" {AND} TRANGTHAIHT='Rented'";
             if (booked == 1)
-                FilterStatus = $" {AND} TRANGTHAI='Booking'";
+                FilterStatus = $" {AND} TRANGTHAIHT='Booking'";
             if (empty == 1)
-                FilterStatus = $" {AND} TRANGTHAI='Empty'";
+                FilterStatus = $" {AND} TRANGTHAIHT='Empty'";
             if (unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI='Unavailabl'";
+                FilterStatus = $" {AND} TRANGTHAIHT='Unavailable'";
             if (rent == 1 && booked == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Rented')";
             if (rent == 1 && empty == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Empty','Rented')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Empty','Rented')";
             if (rent == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Unavailabl','Rented')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Unavailable','Rented')";
             if (booked == 1 && empty == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Empty')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Empty')";
             if (booked == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Unavailabl')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Unavailable')";
             if (empty == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Unavailabl','Empty')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Unavailable','Empty')";
             if (rent == 1 && booked == 1 && empty == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Empty')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Rented','Empty')";
             if (rent == 1 && booked == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Unavailabl')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Rented','Unavailable')";
             if (rent == 1 && empty == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Empty','Rented','Unavailabl')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Empty','Rented','Unavailable')";
             if (sui == 1 && booked == 1 && empty == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Unavailabl','Empty')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Unavailable','Empty')";
             if (rent == 1 && booked == 1 && empty == 1 && unavai == 1)
-                FilterStatus = $" {AND} TRANGTHAI IN ('Booking','Rented','Empty','Unavailabl')";
+                FilterStatus = $" {AND} TRANGTHAIHT IN ('Booking','Rented','Empty','Unavailable')";
             return FilterStatus;
         }
         public string FloorFilter()

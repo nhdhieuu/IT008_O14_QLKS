@@ -25,7 +25,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
     {
         public string IDroom { get; set; }
         public string typeroom { get; set; }
-        public string status { get; set; }  
+        public string status; 
         
        
       public int time { get; set; }

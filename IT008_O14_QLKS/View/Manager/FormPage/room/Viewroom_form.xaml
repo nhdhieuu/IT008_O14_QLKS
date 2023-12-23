@@ -380,16 +380,16 @@
                         <Label Margin="237,-166,109,166" Content="maintain" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold"/>
                         <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="126,-154,268,182" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
 
-                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                         <Rectangle Margin="226,-161,251,172" Fill="#C6980A">
                         </Rectangle>
                         <ComboBox x:Name="maintain_cbx" Style="{DynamicResource RoundComboBox}" Margin="372,-154,25,182" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
-                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                     </Grid>
 

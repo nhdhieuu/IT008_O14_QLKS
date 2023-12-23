@@ -61,8 +61,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 Hoboi = "Co";
             else
                 Hoboi = "Khong";
+            decimal giagio = int.Parse(this.GiaTheoGio.Text);
+            sqlcmd.Parameters.Add("@GiaGio", SqlDbType.Money).Value = giagio;
+            decimal giangay = int.Parse(this.GiaTheoNgay.Text);
+            sqlcmd.Parameters.Add("@GiaNgay", SqlDbType.Money).Value = giangay;
 
-            sqlcmd.CommandText = "INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,STYLE,INTERNET,HOBOI,GIATHEOGIO,GIATHEONGAY,NGUOI,CLEANING, MAINTAIN,EQUIP) VALUES ('M" + this.number.Content + "','" + this.number.Content + "','" + this.type_cbb.Text + "'," + this.SoGiuong.Text + ",'" + "Empty" + "','" +Bontam + "','"+this.Style.Text+"','"+this.Internet.Text+ "','"+Hoboi+"',"+"1000"+","+"1000"+","+this.people.Content+",'"+this.Cleaning.Text+"','"+this.Maintain.Text+"','"+this.Equip.Text+"');";
+            sqlcmd.CommandText = "INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,STYLE,INTERNET,HOBOI,GIATHEOGIO,GIATHEONGAY,NGUOI,CLEANING, MAINTAIN,EQUIP) VALUES ('M" + this.number.Content + "','" + this.number.Content + "','" + this.type_cbb.Text + "'," + this.SoGiuong.Text + ",'" + "Empty" + "','" +Bontam + "','"+this.Style.Text+"','"+this.Internet.Text+ "','"+Hoboi+"',@GiaGio,@GiaNgay,"+this.people.Content+",'"+this.Cleaning.Text+"','"+this.Maintain.Text+"','"+this.Equip.Text+"');";
             if (count == 1)
                 MessageBox.Show("This room already exists!");
             else

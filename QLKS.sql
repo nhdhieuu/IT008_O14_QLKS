@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-create database QLKsss
-use QLKsss
-=======
 
 create database QLKSS
 use QLKSS
->>>>>>> SuaChuaLoiLam2
+
 CREATE TABLE QUANLI
 (
 	MAQL CHAR(5) PRIMARY KEY,
@@ -43,10 +39,7 @@ CREATE TABLE PHONG
 	SOGIUONG SMALLINT, --4,6,8...
 	TRANGTHAI VARCHAR(10),
 )
-<<<<<<< HEAD
 
-
-=======
 alter table PHONG
 add NGUOI INT
 alter table PHONG
@@ -55,7 +48,7 @@ alter table PHONG
 add MAINTAIN varchar(10)
 alter table PHONG
 add EQUIP varchar(10)
->>>>>>> SuaChuaLoiLam2
+
 
 
 
@@ -270,7 +263,7 @@ add MAINTAIN varchar(10)
 alter table PHONG
 add EQUIP varchar(10)
 
-<<<<<<< HEAD
+
 INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,HOBOI,INTERNET,STYLE,GIATHEOGIO,GIATHEONGAY,CLEANING, MAINTAIN, EQUIP,NGUOI)
 VALUES
 ('MP101','P101','Standard','1','Empty','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar',1),
@@ -292,28 +285,7 @@ VALUES
 ('MP305','P305','Deluxe','2','Unavailabl','Co','Khong','Cao','Style','300000','1350000','Monthly','Monthly','Fridge',4),
 ('MP306','P306','Suite','1','Rented','Co','Co','Cao','Style','500000','2500000','Daily','Monthly','Fridge',2)
 
-=======
-INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,HOBOI,INTERNET,STYLE,GIATHEOGIO,GIATHEONGAY,CLEANING, MAINTAIN, EQUIP)
-VALUES
-('MP101','P101','Standard','1','Empty','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP102','P102','Standard','1','Booking','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP103','P103','Superior','2','Rented','Co','Khong','Trung Binh','Style','200000','900000','Daily','Monthly','Minibar'),
-('MP104','P104','Deluxe','1','Empty','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge'),
-('MP105','P105','Deluxe','2','Rented','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge'),
-('MP106','P106','Suite','2','Booking','Co','Co','Cao','Style','500000','2500000','Daily','Monthly','Fridge'),
-('MP201','P201','Standard','1','Rented','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP202','P202','Standard','1','Empty','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP203','P203','Superior','2','Unavailabl','Co','Khong','Trung Binh','Style','200000','900000','Monthly','Monthly','Minibar'),
-('MP204','P204','Deluxe','1','Rented','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge'),
-('MP205','P205','Deluxe','2','Empty','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge'),
-('MP206','P206','Suite','2','Booking','Co','Co','Cao','Style','500000','2500000','Daily','Monthly','Fridge'),
-('MP301','P301','Standard','1','Rented','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP302','P302','Standard','1','Empty','Khong','Khong','Thap','Style','150000','750000','Daily','Monthly','Minibar'),
-('MP303','P303','Superior','1','Rented','Co','Khong','Trung Binh','Style','200000','900000','Daily','Monthly','Minibar'),
-('MP304','P304','Deluxe','1','Empty','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge'),
-('MP305','P305','Deluxe','2','Unavailabl','Co','Khong','Cao','Style','300000','1350000','Monthly','Monthly','Fridge'),
-('MP306','P306','Suite','1','Rented','Co','Co','Cao','Style','500000','2500000','Daily','Monthly','Fridge')
->>>>>>> SuaChuaLoiLam2
+
 
 ALTER TABLE THUEPHONG
 ADD KQUATHUE VARCHAR(11)

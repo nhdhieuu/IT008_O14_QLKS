@@ -24,6 +24,14 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
     public partial class ViewRoom_BEU : Window
     {
         DB_connection connect = new DB_connection();
+        string bed;
+        string bath = "Khong";
+        string pool = "Khong";
+        int style;
+        int equip;
+        int internet;
+        int cleaning;
+        int maintain;
         public ViewRoom_BEU(string IDroom)
         {
             InitializeComponent();
@@ -39,12 +47,19 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 rc = new roomcard2(reader.GetString(1), reader.GetString(2), reader.GetInt32(11), "RoomInfor");
                 int sogiuong = reader.GetInt16(3);
                 this.bed_tbx.Text = sogiuong.ToString();
-
+                bed = bed_tbx.Text;
                 if (reader.GetString(5) == "Co")
+                {
                     this.bathtub_chbx.IsChecked = true;
+                    bath = "Co";
+                }
                 if (reader.GetString(8) == "Co")
+                {
                     this.pool_chbx.IsChecked = true;
+                    pool = "Co";
+                }
                 this.style_cbx.SelectedIndex = 0;
+                this.style = style_cbx.SelectedIndex;
                 if (reader.GetString(7) == "Cao")
                 {
                     this.internet_cbx.SelectedIndex = 0;
@@ -57,6 +72,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 {
                     this.internet_cbx.SelectedIndex = 2;
                 }
+                internet = this.internet_cbx.SelectedIndex;
                 this.type_lbl.Content = reader.GetString(4);
                 if (this.type_lbl.Content.ToString() == "Empty")
                 {
@@ -97,7 +113,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 if (reader.GetString(14) == "Fridge")
                     this.equip_cbx.SelectedIndex = 0;
             }
+            equip = this.equip_cbx.SelectedIndex;
+            cleaning = this.cleaning_cbx.SelectedIndex;
+            maintain = this.maintain_cbx.SelectedIndex;
             reader.Close();
+
 
             sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
@@ -134,6 +154,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = true;
             this.equip_cbx.IsEnabled = true;
             this.internet_cbx.IsEnabled = true;
+            cleaning_cbx.IsEnabled = true;
+            maintain_cbx.IsEnabled = true;
         }
 
         private void Change_MouseEnter(object sender, MouseEventArgs e)
@@ -160,6 +182,22 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = false;
             this.equip_cbx.IsEnabled = false;
             this.internet_cbx.IsEnabled = false;
+            cleaning_cbx.IsEnabled = false;
+            maintain_cbx.IsEnabled = false;
+            bed = this.bed_tbx.Text;
+            if (this.pool_chbx.IsChecked == true)
+                pool = "Co";
+            else
+                pool = "Khong";
+            if (this.bathtub_chbx.IsChecked == true)
+                bath = "Co";
+            else
+                bath = "Khong";
+            style = this.style_cbx.SelectedIndex;
+            equip = this.equip_cbx.SelectedIndex;
+            internet = this.internet_cbx.SelectedIndex;
+            cleaning = this.cleaning_cbx.SelectedIndex;
+            maintain = this.maintain_cbx.SelectedIndex;
         }
 
         private void Save_MouseEnter(object sender, MouseEventArgs e)
@@ -186,6 +224,22 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = false;
             this.equip_cbx.IsEnabled = false;
             this.internet_cbx.IsEnabled = false;
+            cleaning_cbx.IsEnabled = false;
+            maintain_cbx.IsEnabled = false;
+            this.bed_tbx.Text = bed;
+            if (pool == "Co")
+                this.pool_chbx.IsChecked = true;
+            else
+                this.pool_chbx.IsChecked = false;
+            if (bath == "Co")
+                this.bathtub_chbx.IsChecked = true;
+            else
+                this.bathtub_chbx.IsChecked = false;
+            this.style_cbx.SelectedIndex = style;
+            this.equip_cbx.SelectedIndex = equip;
+            this.internet_cbx.SelectedIndex = internet;
+            this.cleaning_cbx.SelectedIndex = cleaning;
+            this.maintain_cbx.SelectedIndex = maintain;
         }
 
         private void Cancel_MouseEnter(object sender, MouseEventArgs e)

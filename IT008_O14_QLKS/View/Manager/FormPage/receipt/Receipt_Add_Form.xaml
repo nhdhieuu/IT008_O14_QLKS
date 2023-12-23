@@ -49,7 +49,7 @@
         </Style>
     </Window.Resources>
     <Grid Height="740" Width="785">
-        <Border x:Name="main_bd" Background="#FF96958A" CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_1"  BorderBrush="Black" BorderThickness="2,2,2,0" Margin="-24,-149,0,149">
+        <Border x:Name="main_bd" Background="#FF96958A" CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_1"  BorderBrush="Black" BorderThickness="2,2,2,0" Margin="-24,10,0,-10">
             <Grid Margin="0,0,-2,0">
 
                 <Grid.ColumnDefinitions>

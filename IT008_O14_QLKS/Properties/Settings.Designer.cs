@@ -24,9 +24,9 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:it008qlks.database.windows.net,1433;Initial Catalog=IT008QLKS;Persist " +
-            "Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSe" +
-            "ts=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Secu" +
+            "rity Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=F" +
+            "alse;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

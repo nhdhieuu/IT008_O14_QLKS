@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients"
             mc:Ignorable="d"
-             d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
+             d:DesignHeight="590" d:DesignWidth="784" Background="Transparent" FontFamily="Bahnschrift">
     <UserControl.Resources>
         <ControlTemplate x:Key="ScrollViewerControlTemplate" TargetType="{x:Type ScrollViewer}">
             <Grid x:Name="Grid" Background="{TemplateBinding Background}">
@@ -201,25 +201,30 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid Background="#F1F0E7">
- 
-        <TextBlock Text="room" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" Margin="67,-4,628,546">
+    <Grid Background="Transparent">
+        <Border CornerRadius="10" Background="#FFF1F0E7" >
+            <Grid>
+                <TextBlock Text="room" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" Margin="80,5,615,537">
 
-        </TextBlock>
-        <Border Style="{DynamicResource save_bd}" Margin="162,9,538,553" Height="28" Width="NaN">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="35" >
+                </TextBlock>
+                <Border Style="{DynamicResource save_bd}" Margin="174,15,526,541" Height="NaN" Width="NaN" MouseDown="Border_MouseDown">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="35" Height="39" >
                 +
-            </TextBlock>
+                    </TextBlock>
 
+                </Border>
+                <Image Source="/Resources/refresh.png" Margin="36,14,721,540" Cursor="Hand" MouseDown="Image_MouseDown">
+
+                </Image>
+                <Border Background="#CBA224" Margin="34,57,32,529"/>
+                <ScrollViewer Margin="20,69,20,10">
+                    <StackPanel x:Name="stk">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
         </Border>
-        <Image Source="/Resources/refresh.png" Margin="30,6,727,548" Cursor="Hand" MouseDown="Image_MouseDown">
 
-        </Image>
-        <Border Background="#CBA224" Margin="25,44,24,542"/>
-        <ScrollViewer Margin="20,69,20,10">
-            <StackPanel x:Name="stk">
 
-            </StackPanel>
-        </ScrollViewer>
     </Grid>
 </UserControl>

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using IT008_O14_QLKS.View.Clients.Card.Card_room;
 using System.Windows;
 using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.View.Clients.FormPage;
 
 namespace IT008_O14_QLKS.View.Clients
 {
@@ -154,6 +155,12 @@ namespace IT008_O14_QLKS.View.Clients
             loadbook();
             load();
    
+        }
+
+        private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            addRoom a = new addRoom();
+            a.ShowDialog();
         }
     }
 

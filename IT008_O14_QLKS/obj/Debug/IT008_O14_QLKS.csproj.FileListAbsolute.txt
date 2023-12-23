@@ -284,3 +284,9 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.ca
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CopyComplete
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\addRoom.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\addRoom.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\addRoom1.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\AddRoom2.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\addRoom1.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Clients\FormPage\AddRoom2.baml

@@ -16,6 +16,7 @@ using IT008_O14_QLKS.View.Clients;
 using IT008_O14_QLKS.Connection_db;
 using System.Data.SqlClient;
 using System.Data;
+using IT008_O14_QLKS.Util;
 
 namespace IT008_O14_QLKS
 {
@@ -29,6 +30,7 @@ namespace IT008_O14_QLKS
         public Loginn()
         {
             InitializeComponent();
+            this.Loaded += LoginWindow_OnLoaded;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -101,6 +103,8 @@ namespace IT008_O14_QLKS
         //Dang nhap
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
+            string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
+            
             string role="";
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
@@ -123,7 +127,7 @@ namespace IT008_O14_QLKS
                 if(role == "QL")
                 {
                     sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
-                    if(this.pass.Password==(string)sqlcmd.ExecuteScalar())
+                    if(hashpass==(string)sqlcmd.ExecuteScalar())
                     {
                         Manager_main main = new Manager_main(this.UserTextBox.Text);
                         main.Show();
@@ -137,7 +141,7 @@ namespace IT008_O14_QLKS
                 if (role == "KH")
                 {
                     sqlcmd.CommandText = "SELECT PASS FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
-                    if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                    if (hashpass == (string)sqlcmd.ExecuteScalar())
                     {
                         ClientsMain clientControl = new ClientsMain(this.UserTextBox.Text);
                         clientControl.Show();
@@ -245,11 +249,15 @@ namespace IT008_O14_QLKS
         {
             if(e.Key == Key.Enter) 
             {
+                string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
 
                 string role = "";
                 SqlCommand sqlcmd = new SqlCommand();
                 sqlcmd.CommandType = CommandType.Text;
                 sqlcmd.Connection = connect.sqlCon;
+                
+                
+                
                 sqlcmd.CommandText = "SELECT COUNT(*) FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
                 int CountQL = (int)sqlcmd.ExecuteScalar();
                 if (CountQL == 1)
@@ -268,11 +276,15 @@ namespace IT008_O14_QLKS
                     if (role == "QL")
                     {
                         sqlcmd.CommandText = "SELECT PASS FROM QUANLI WHERE USERNAME='" + this.UserTextBox.Text + "'";
-                        if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                        if (hashpass == (string)sqlcmd.ExecuteScalar())
                         {
+                            Properties.Settings.Default.UserName = UserTextBox.Text;
+                            Properties.Settings.Default.PassWord = pass.Password;
+                            Properties.Settings.Default.Save();
                             Manager_main main = new Manager_main(this.UserTextBox.Text);
                             main.Show();
                             this.Close();
+                            
                         }
                         else
                         {
@@ -282,7 +294,7 @@ namespace IT008_O14_QLKS
                     if (role == "KH")
                     {
                         sqlcmd.CommandText = "SELECT PASS FROM KHACHHANG WHERE USERNAME='" + this.UserTextBox.Text + "'";
-                        if (this.pass.Password == (string)sqlcmd.ExecuteScalar())
+                        if (hashpass == (string)sqlcmd.ExecuteScalar())
                         {
                             ClientsMain clientControl = new ClientsMain(this.UserTextBox.Text);
                             clientControl.Show();
@@ -295,7 +307,17 @@ namespace IT008_O14_QLKS
                     }
                 }
             }
+            
         }
+        private void LoginWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            
+                
+            UserTextBox.Text = Properties.Settings.Default.UserName;
+            pass.Password = Properties.Settings.Default.PassWord;
+            
+        }
+        
     }
     }
 

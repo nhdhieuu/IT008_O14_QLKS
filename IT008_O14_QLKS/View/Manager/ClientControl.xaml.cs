@@ -24,7 +24,7 @@ namespace IT008_O14_QLKS.View.Manager
         SqlConnection sqlCon = null;
         string search;
 
-        private DispatcherTimer t;
+       
         public ClientControl()
         {
             InitializeComponent();
@@ -42,19 +42,9 @@ namespace IT008_O14_QLKS.View.Manager
            
             load();
 
-            t = new DispatcherTimer();
-            
-            t.Interval = TimeSpan.FromSeconds(1);
-            t.Start();
-            t.Tick += HenGio;
-
 
         }
-        private void HenGio(object sender, EventArgs e)
-        {
-            load();
-        }
-
+       
         string tensx;
         private void load()
         {
@@ -329,7 +319,7 @@ namespace IT008_O14_QLKS.View.Manager
             }
             else
             {
-                t.Stop();
+               
                 stk.Children.Clear();
 
                 sqlcmd.CommandText = $"select * from KHACHHANG where MAKH LIKE '{search_txt.Text}%' or  TENKH  LIKE '{search_txt.Text}%'";
@@ -350,7 +340,7 @@ namespace IT008_O14_QLKS.View.Manager
         {
             if(search_txt.Text == "")
             {
-                t.Start();
+              
             }
             else
             {

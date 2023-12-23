@@ -21,7 +21,8 @@ namespace IT008_O14_QLKS.View.Manager.Card
     public partial class ReceiptCard : UserControl
     {
         private string _receiptId;
-        private string _date;
+        private DateTime _date;
+        private string _datestring;
         private string _time;
         private string _totalMoney;
         
@@ -29,11 +30,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
         {
             InitializeComponent();
         }
-        public ReceiptCard(string receiptId, string date, string time, string totalMoney)
+        public ReceiptCard(string receiptId, object date, string time, string totalMoney)
         {
             InitializeComponent();
             this._receiptId = receiptId;
-            this._date = date;
+            this._date = (DateTime)date;
+            this._datestring = _date.ToString("dd/MM/yyyy");
             this._time = time;
             this._totalMoney = totalMoney;
             Display();
@@ -42,7 +44,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         private void Display()
         {
             this.ReceiptIdBox.Content = "#"+_receiptId;
-            this.DateBox.Content = _date;
+            this.DateBox.Content = _datestring;
             this.TimeBox.Content      = _time;
             this.TotalMoneyBox.Content = _totalMoney;
         }

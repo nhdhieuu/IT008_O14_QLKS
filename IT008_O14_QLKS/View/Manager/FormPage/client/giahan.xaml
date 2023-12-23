@@ -1,0 +1,49 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.client.giahan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" Topmost="True" Height="461" Width="851"
+          WindowStyle="None" AllowsTransparency="True"
+            Background="Transparent" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+      >
+    <Border BorderBrush="Black" BorderThickness="2" Background="#FFEFEEE5" CornerRadius="10" Margin="0,0,204,111" MouseDown="Border_MouseDown_1">
+
+        <Grid Margin="0,0,-2,-2">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Border x:Name="delbtn_border" 
+                            Background="Transparent"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="599,0,0,2" Cursor="Hand" HorizontalAlignment="Left" Width="46"
+                            >
+                <TextBlock x:Name="delbtn_text" FontSize="25 
+                                "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Left" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Margin="15,0,0,0"/>
+
+            </Border>
+
+            <TextBlock x:Name="txt"  Text="renew room time" Margin="28,24,-28,6" FontFamily="Times New Roman" FontSize="60" FontWeight="Bold" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <xctk:DateTimePicker  x:Name="dtpk" Margin="292,109,65,-109" Grid.Row="1" AllowTextInput="False" TimePickerShowButtonSpinner="False" HorizontalContentAlignment="Stretch" TextAlignment="Left" FontSize="20" TimeFormat="Custom" TimeFormatString="MM/dd/yyyy HH:mm:ss" Kind="Local" BorderBrush="#FF0C0C0C" BorderThickness="2,2,0,2"  ></xctk:DateTimePicker>
+            <TextBlock Text="Time" Margin="63,116,444,-116" Grid.Row="1" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold"/>
+            <Border Style="{DynamicResource save_bd}" Margin="260,230,255,-229" Grid.Row="1" MouseDown="Border_MouseDown_2" Height="NaN">
+                <TextBlock Style="{DynamicResource tx1}" FontSize="25" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center">
+                    RENEW
+                </TextBlock>
+
+            </Border>
+            <Border Margin="28,65,23,-157" Grid.Row="1" BorderBrush="Black" BorderThickness="2,1.5,2,2"/>
+        </Grid>
+
+
+    </Border>
+
+</Window>

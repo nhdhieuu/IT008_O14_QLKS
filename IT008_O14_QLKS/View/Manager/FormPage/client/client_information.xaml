@@ -45,7 +45,7 @@
             <Setter Property="FontSize" Value="17">
 
             </Setter>
-            <Setter Property="Foreground" Value="#1D19E3">
+            <Setter Property="Foreground" Value="#FF2576C5">
 
             </Setter>
             <Setter Property="HorizontalAlignment" Value="Left">
@@ -87,7 +87,7 @@
     </UserControl.Resources>
     <Grid Background="#F1F0E7" >
 
-        <Border Margin="0,0,395,0" Background="#7C7255" CornerRadius="10" BorderThickness="2,2,2,2" BorderBrush="#FFA78624" >
+        <Border Margin="0,0,395,0" Background="#7C7255" CornerRadius="10" BorderThickness="2,2,2,2" BorderBrush="#FF6A6A67" >
             <Grid>
 
                 <Border Background="White" Margin="18,115,19,383">

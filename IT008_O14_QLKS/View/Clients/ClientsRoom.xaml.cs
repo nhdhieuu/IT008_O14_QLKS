@@ -10,6 +10,7 @@ namespace IT008_O14_QLKS.View.Clients
 {
     public partial class ClientsRoom : UserControl
     {
+        string hallo;
         private DateTime myDateTime = DateTime.Now;
         string username;
         string ID;

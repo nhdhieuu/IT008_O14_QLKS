@@ -22,6 +22,7 @@ using Color = System.Windows.Media.Color;
 using IT008_O14_QLKS.View.Clients.FormPage;
 using Image = System.Windows.Controls.Image;
 using Microsoft.Win32;
+using IT008_O14_QLKS.View.Manager.Card.Client;
 
 namespace IT008_O14_QLKS.View.Clients
 {
@@ -62,7 +63,10 @@ namespace IT008_O14_QLKS.View.Clients
                 gtinh = gender.Text;
                 this.cccd.Text = reader.GetString(4);
                 cmnd = cccd.Text;
-                this.hang.Content = reader.GetString(9);
+                client_class_card a = new client_class_card(reader.GetString(0));
+                classs.Content = a;
+                a.Xoa();
+
             }
             reader.Close();
             //load ảnh
@@ -206,36 +210,7 @@ namespace IT008_O14_QLKS.View.Clients
         }
         private void background()
         {
-            string truepath = "";
-            string currentFolderPath = AppDomain.CurrentDomain.BaseDirectory.ToString();
-
-            string[] parts = currentFolderPath.Split('\\');
-            for (int i = 0; i < parts.Length; i++)
-            {
-                if (parts[i] != "Debug" && parts[i] != "bin")
-                    truepath += parts[i] + "/";
-            }
-
-
-
-
-
-            string imagePath = System.IO.Path.Combine(truepath, "Resources", hang.Content + ".jpg");
-
-            // Tạo một đối tượng BitmapImage
-            BitmapImage bitmap = new BitmapImage();
-
-            // Thiết lập đường dẫn nguồn cho BitmapImage
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-            bitmap.EndInit();
-
-            // Tạo một ImageBrush và thiết lập hình ảnh làm nền
-            ImageBrush imageBrush = new ImageBrush(bitmap);
-
-            // Thiết lập nền của phần tử (vd: Grid, Border, etc.)
-            imageBrush.Stretch = Stretch.Fill;
-            Classs.Background = imageBrush;
+          
 
         }
         int ChangeAvt = 0;

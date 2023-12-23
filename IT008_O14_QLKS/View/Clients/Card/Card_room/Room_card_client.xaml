@@ -216,7 +216,7 @@
 
         </Grid.RowDefinitions>
         <Grid>
-            <Border x:Name="main" Background="#D4D4D4" CornerRadius="10,10,0,0" Margin="2,0,2,0">
+            <Border x:Name="main" Background="#D4D4D4" CornerRadius="10,10,0,0" Margin="2,0,2,-2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="85*"/>
@@ -225,15 +225,13 @@
                     <Border x:Name="CK" Margin="652,15,16,134" Background="White" CornerRadius="2,2,2,2" MouseDown="CK_MouseDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Hidden">
                         <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
                     </Border>
-                    <TextBlock  x:Name="ftxt" Margin="16,10,332,0" Style="{DynamicResource tx1}" FontSize="35" Text="" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <ContentControl x:Name="card" Height="111" Width="290" Margin="18,55,385,4"   >
-
-                    </ContentControl>
+                    <TextBlock  x:Name="ftxt" Margin="18,10,332,0" Style="{DynamicResource tx1}" FontSize="35" Text="" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <ContentControl x:Name="card" Height="111" Margin="16,55,373,4"   />
                     <TextBlock x:Name="nbtxtleft" Text="2" Style="{DynamicResource tx1}" FontSize="47" Margin="320,60,291,0" Height="56" VerticalAlignment="Top" Foreground="#FF1D3586" TextAlignment="Center">
 
                     </TextBlock>
-                    <Border x:Name="bd_time" BorderBrush="#FF1D3586"  BorderThickness="3,3.4,3,3" CornerRadius="10" Margin="320,55,158,54" >
-                        <TextBlock x:Name="typetxt" Text="hours left" Style="{DynamicResource tx1}" FontSize="30.1" Margin="71,12,3,0" Height="34" Foreground="#FF1D3586" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" VerticalAlignment="Top">
+                    <Border x:Name="bd_time" BorderBrush="#FF1D3586"  BorderThickness="3,3.4,3,3" CornerRadius="10" Margin="323,55,155,54" >
+                        <TextBlock x:Name="typetxt" Text="hours left" Style="{DynamicResource tx1}" FontSize="30.1" Margin="70,12,4,0" Height="34" Foreground="#FF1D3586" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" VerticalAlignment="Top" TextAlignment="Center">
                             <TextBlock.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -244,10 +242,13 @@
                             </TextBlock.RenderTransform>
                         </TextBlock>
                     </Border>
-                    <TextBlock x:Name="fromdate" Style="{DynamicResource tx1}" FontSize="18" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="327,121,158,0" VerticalAlignment="Top" TextAlignment="Right">
+                    <TextBlock x:Name="fromdate" Style="{DynamicResource tx1}" FontSize="18" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="333,121,156,0" VerticalAlignment="Top" TextAlignment="Right">
 
                     </TextBlock>
-                    <TextBlock   x:Name="todate" Style="{DynamicResource ResourceKey=tx1}" FontSize="18" Text=" 4:00:53 21/11/2023 " FontWeight="Bold" Margin="327,147,158,0" VerticalAlignment="Top" Grid.RowSpan="2" TextAlignment="Right"/>
+                    <TextBlock x:Name="x" FontSize="35" Margin="639,6,10,0" TextAlignment="Center" VerticalAlignment="Top" Height="38" FontWeight="Bold" FontFamily="Bahnschrift" Foreground="White" Visibility="Collapsed" MouseDown="x_MouseDown" Cursor="Hand">
+                        X
+                    </TextBlock>
+                    <TextBlock   x:Name="todate" Style="{DynamicResource ResourceKey=tx1}" FontSize="18" Text=" 4:00:53 21/11/2023 " FontWeight="Bold" Margin="332,147,157,0" VerticalAlignment="Top" TextAlignment="Right"/>
                     <Border x:Name="rbutton"  Style="{DynamicResource save_bd }"  Height="NaN" Margin="543,57,16,65" MouseDown="Border_MouseDown">
                         <TextBlock x:Name="view" Text="RENEW" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="view_MouseDown"/>
                     </Border>
@@ -255,7 +256,7 @@
                         <TextBlock Text="CANCEL" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="TextBlock_MouseDown"/>
                     </Border>
                     <Border x:Name="bd" Height="47" Background="#565656" Margin="14,11,16,0" CornerRadius="10,10,0,0" Grid.Row="1">
-                        <Grid>
+                        <Grid x:Name="sv_grid">
                             <Border x:Name="myBorder" Width="30"  Height="30" CornerRadius="5" Margin="619,9,12,8" MouseDown="myBorder_MouseDown" Cursor="Hand">
                                 <Border.RenderTransform>
                                     <RotateTransform CenterX="15" CenterY="15" />
@@ -273,8 +274,9 @@
 
                         </TextBlock>
                     </Border>
-                    <TextBlock x:Name="fromdate_Copy" Style="{DynamicResource tx1}" FontSize="19" Text="from " FontWeight="Bold" Margin="320,121,158,0" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="fromdate_Copy1" Style="{DynamicResource tx1}" FontSize="19" Text="to" FontWeight="Bold" Margin="320,147,158,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="fromdate_Copy" Style="{DynamicResource tx1}" FontSize="19" Text="from " FontWeight="Bold" Margin="326,121,299,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="fromdate_Copy1" Style="{DynamicResource tx1}" FontSize="19" Text="to" FontWeight="Bold" Margin="327,147,298,0" VerticalAlignment="Top"/>
+                    <TextBlock  x:Name="ftxt_Copy" Margin="18,0,123,0" Style="{DynamicResource tx1}" FontSize="25" Text="" FontWeight="Bold" Grid.Row="1"/>
 
                 </Grid>
             </Border>
@@ -298,10 +300,10 @@
                     </Grid>
                 </Border>
             </Border>
-            <Border  Height="142" Background="#D4D4D4" CornerRadius="0,0,10,10" Width="689" >
+            <Border x:Name="Bdcuoi" Height="158" Background="#D4D4D4" CornerRadius="0,0,10,10" Width="689" >
                 <Grid>
-                    <TextBlock Style="{DynamicResource tx1}" Text="TOTAL PRICE "  FontSize="30" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="16,10,16,0" VerticalAlignment="Top"/>
-                    <Border BorderBrush="#FFC6980A" CornerRadius="6" BorderThickness="3,3,3,3" Margin="16,51,16,20"/>
+                    <TextBlock x:Name="totaltxt"  Style="{DynamicResource tx1}" Text="TOTAL PRICE "  FontSize="30" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="16,10,16,0" VerticalAlignment="Top"/>
+                    <Border x:Name="bdtien1" BorderBrush="#FFC6980A" CornerRadius="6" BorderThickness="3,3,3,3" Margin="16,51,16,20"/>
                     <TextBlock x:Name="tong" Style="{DynamicResource tx1}" Text="200.000*2 (room) +23.000.000 (service) = 23.200.000 (VND)"  FontSize="24.8" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="22,73,10,0" VerticalAlignment="Top"/>
                 </Grid>
 

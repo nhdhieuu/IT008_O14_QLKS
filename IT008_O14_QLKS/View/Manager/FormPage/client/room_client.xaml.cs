@@ -30,11 +30,17 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     {
         private DateTime myDateTime = DateTime.Now;
         string ID;
+
         DB_connection connect =new DB_connection();
-        public room_client( string ID)
+       
+
+        string username;
+        
+        public room_client( string username)
+
         {
             InitializeComponent();
-            this.ID= ID;
+           
             load();
 
             

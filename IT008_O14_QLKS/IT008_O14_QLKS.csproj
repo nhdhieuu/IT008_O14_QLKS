@@ -78,7 +78,6 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Clients\Card\Card_room\problemcard.xaml.cs">
       <DependentUpon>problemcard.xaml</DependentUpon>
     </Compile>
@@ -88,9 +87,7 @@
     <Compile Include="View\Clients\Card\Card_room\service_card.xaml.cs">
       <DependentUpon>service_card.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Util\HashPassword.cs" />
-
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -151,11 +148,10 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
-
+    <Compile Include="View\Manager\Connectiondatabase.cs" />
     <Compile Include="View\Manager\FormPage\client\cancel.xaml.cs">
       <DependentUpon>cancel.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>

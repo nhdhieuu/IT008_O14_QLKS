@@ -7,102 +7,8 @@
         mc:Ignorable="d"
          Background="Transparent"
         Title="AddRoomForm" Height="729" Width="787" WindowStyle="None" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
-    <Window.Resources>
-        <Style x:Key="ComboBoxTextBoxStyle" TargetType="{x:Type TextBox}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid>
-                            <Border CornerRadius="5,0,0,5"
-                            BorderThickness="1,1,0,1"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="Black">
-                                <ScrollViewer x:Name="PART_ContentHost"/>
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="ComboBoxButtonStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border 
-                        Background="White" 
-                        x:Name="border" 
-                        CornerRadius="0,5,5,0" 
-                        BorderThickness="0,1,1,1"
-                        BorderBrush="Black">
-                            <ContentPresenter />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style  x:Key="RoundComboBox" TargetType="{x:Type ComboBox}">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBox}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition MaxWidth="18"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox Name="PART_EditableTextBox"
-                             Style="{StaticResource ComboBoxTextBoxStyle}"
-                             Padding="5,0,0,0"
-                             Height="{TemplateBinding Height}"/>
-                            <ToggleButton Grid.Column="1" Margin="0"
-                            Height="{TemplateBinding Height}"
-                            Style="{StaticResource ComboBoxButtonStyle}"
-                            Focusable="False"
-                            IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                            ClickMode="Press">
-                                <Path Grid.Column="1"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  Data="M 0 0 L 4 4 L 8 0 Z"
-                                  Fill="DodgerBlue" />
-                            </ToggleButton>
-                            <ContentPresenter Name="ContentSite"
-                            Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            Margin="5,0,0,0"/>
-                            <Popup Name="Popup"
-                            Placement="Bottom"
-                            IsOpen="{TemplateBinding IsDropDownOpen}"
-                            AllowsTransparency="True" 
-                            Focusable="False"
-                            PopupAnimation="Slide">
-                                <Grid Name="DropDown"
-                                SnapsToDevicePixels="True"                
-                                MinWidth="{TemplateBinding ActualWidth}"
-                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border 
-                                    x:Name="DropDownBorder"
-                                    BorderThickness="1"
-                                    CornerRadius="5"
-                                    Background="Azure"
-                                    BorderBrush="Black"/>
-                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
     <Grid>
-        <Border CornerRadius="5,5,5,5" Background="#F1F0E7">
+        <Border CornerRadius="5,5,5,5" Background="#F1F0E7" BorderBrush="Black" BorderThickness="2,2,2,2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="19*">
@@ -122,7 +28,7 @@
                 <Grid Grid.Row="0">
                     <Label Content="new room" FontFamily="Sylfaen" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="16,0,608,0"/>
                     <Border x:Name="Close_Butt" Margin="736,0,0,10" CornerRadius="5" MouseDown="Close_Butt_MouseDown" MouseEnter="Close_Butt_MouseEnter" MouseLeave="Close_Butt_MouseLeave" Cursor="Hand">
-                        <Label x:Name="CloseTXT" Content="X" FontFamily="Sylfaen" FontSize="25" HorizontalAlignment="Left" Width="31" Margin="12,2,0,10"/>
+                        <Label x:Name="CloseTXT" Content="X" FontFamily="Sylfaen" FontSize="25" HorizontalAlignment="Left" Width="31" Margin="12,2,0,0"/>
                     </Border>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -144,7 +50,7 @@
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Label Content="floor: " FontSize="33" Margin="28,-4,584,0" FontFamily="Sylfaen"/>
-                                <ComboBox FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,430,0" Height="33" VerticalAlignment="Center">
+                                <ComboBox x:Name="floor_cbb" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,430,0" Height="33" VerticalAlignment="Center"  >
                                     <ComboBoxItem Content="1" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem >
@@ -152,27 +58,39 @@
 
                                     </ComboBoxItem>
                                     <ComboBoxItem Content="3" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="4" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
                                 </ComboBox>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <Label Content="number:" FontSize="33" Margin="28,-4,584,0" FontFamily="Sylfaen"/>
-                                <ComboBox FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,431,0" Height="33" VerticalAlignment="Center">
-                                    <ComboBoxItem Content="1" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+                                <ComboBox x:Name="number_cbb" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,431,0" Height="33" VerticalAlignment="Center"  >
+                                    <ComboBoxItem Content="01" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem >
-                                    <ComboBoxItem Content="2" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+                                    <ComboBoxItem Content="02" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
-                                    <ComboBoxItem Content="3" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+                                    <ComboBoxItem Content="03" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="04" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="05" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="06" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
                                 </ComboBox>
                             </Grid>
                             <Grid Grid.Row="2">
                                 <Label Content="people:" FontSize="33" Margin="28,-4,584,0" FontFamily="Sylfaen"/>
-                                <ComboBox FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,432,0" Height="33" VerticalAlignment="Center">
+                                <ComboBox x:Name="people_cbb" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,432,0" Height="33" VerticalAlignment="Center" >
                                     <ComboBoxItem Content="1" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem >
@@ -182,17 +100,18 @@
                                     <ComboBoxItem Content="3" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
+
                                 </ComboBox>
-                                <Label Content="&gt;" FontSize="62" FontWeight="Bold" Foreground="#FF252525" Margin="350,-55,347,0" Height="96" VerticalAlignment="Top"/>
+                                <Label x:Name="Convert" Content="&gt;" FontSize="62" FontWeight="Bold" Foreground="#FF252525" Margin="350,-55,347,0" Height="79" VerticalAlignment="Top" Cursor="Hand" MouseDown="Convert_MouseDown" MouseEnter="Convert_MouseEnter" MouseLeave="Convert_MouseLeave"/>
                                 <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Margin="445,-55,0,-6" Width="248" CornerRadius="5">
                                     <Border.Background>
                                         <ImageBrush ImageSource="/Resources/room_p2.jpg" Stretch="UniformToFill"/>
                                     </Border.Background>
                                     <Grid>
-                                        <Label Content="P101" Margin="9,6,86,14" FontWeight="Bold" Foreground="#FFF" FontSize="78" FontFamily="Bahnschrift"/>
-                                        <Label Content="SUI" Margin="166,20,-8,42" FontWeight="Bold" Foreground="#C6980A" FontSize="34" FontFamily="Bahnschrift"/>
+                                        <Label x:Name="number" Content="P101" Margin="6,11,56,9" FontWeight="Bold" Foreground="#FFF" FontSize="73" FontFamily="Bahnschrift"/>
+                                        <Label x:Name="type" Content="SUI" Margin="172,19,-14,43" FontWeight="Bold" Foreground="#C6980A" FontSize="34" FontFamily="Bahnschrift"/>
                                         <Image Source="/Resources/icons8-human-30.png" Margin="205,64,20,22"/>
-                                        <Label Content="1" Margin="188,58,40,14" FontWeight="Bold" Foreground="#FFF" FontSize="20" FontFamily="Bahnschrift"/>
+                                        <Label x:Name="people" Content="1" Margin="188,58,30,14" FontWeight="Bold" Foreground="#FFF" FontSize="20" FontFamily="Bahnschrift"/>
 
                                     </Grid>
                                 </Border>
@@ -200,7 +119,7 @@
                             </Grid>
                             <Grid Grid.Row="3">
                                 <Label Content="type:" FontSize="33" Margin="28,-4,584,0" FontFamily="Sylfaen"/>
-                                <ComboBox FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,432,0" Height="33" VerticalAlignment="Center">
+                                <ComboBox x:Name="type_cbb" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22" Style="{DynamicResource RoundComboBox}" Margin="191,0,432,0" Height="33" VerticalAlignment="Center">
                                     <ComboBoxItem Content="Standard" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem >
@@ -248,7 +167,7 @@
                                     <Image Margin="27,3,200,168" Source="/Resources/burger-menu.png" Cursor="Hand">
 
                                     </Image>
-                                    <Label Margin="121,-5,0,163" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration">
+                                    <Label Margin="121,-5,0,156" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration">
 
                                     </Label>
                                     <Label Margin="255,84,3,78" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
@@ -264,26 +183,25 @@
                         <Grid Grid.Row="1">
                             <GroupBox Header="facility" Grid.Row="5" Background="#FFF1F0E7" Margin="24,2,24,24" FontFamily="Sylfaen" FontSize="21" BorderBrush="#FF1D19E3" Foreground="#FF1D19E3" BorderThickness="2,2,2,2">
                                 <Grid>
-                                    <Label Margin="1,74,149,28" Content="pool" Height="38"/>
-                                    <Label Margin="1,46,149,56" Content="bathtub" Height="38"/>
-                                    <Label Margin="1,102,192,0" Content="style" Height="38"/>
-                                    <Label Margin="1,21,137,81" Content="double bed" Height="38"/>
-                                    <Label Margin="1,-4,149,106" Content="single bed" Height="38"/>
-                                    <TextBox Margin="110,7,135,117" RenderTransformOrigin="-3.819,-3.929" FontSize="12"/>
-                                    <TextBox Margin="110,33,135,91" RenderTransformOrigin="-3.819,-3.929" FontSize="12"/>
-                                    <CheckBox Margin="114,60,115,56" Cursor="Hand"/>
-                                    <CheckBox Margin="114,87,106,28" Cursor="Hand"/>
-                                    <ComboBox Style="{DynamicResource RoundComboBox}" Margin="55,109,136,8" FontSize="15">
+                                    <Label Margin="1,57,149,43" Content="pool" Height="38"/>
+                                    <Label Margin="1,27,149,73" Content="bathtub" Height="38"/>
+                                    <Label Margin="1,91,192,9" Content="style" Height="38"/>
+                                    <Label Margin="1,-2,149,102" Content="bed" Height="38"/>
+                                    <TextBox x:Name="SoGiuong" Margin="91,9,135,111" RenderTransformOrigin="-3.819,-3.929" FontSize="12"/>
+                                    <CheckBox x:Name="BathTub" Margin="114,41,115,75" Cursor="Hand"/>
+                                    <CheckBox x:Name="Pool" Margin="114,70,106,45" Cursor="Hand"/>
+                                    <ComboBox x:Name="Style" Style="{DynamicResource RoundComboBox}" Margin="55,98,136,19" FontSize="15">
                                         <ComboBoxItem Content="modern"/>
                                         <ComboBoxItem Content="old"/>
+                                        <ComboBoxItem Content="Style"/>
                                     </ComboBox>
-                                    <ComboBox Style="{DynamicResource RoundComboBox}" Margin="154,7,13,106" FontSize="15">
+                                    <ComboBox x:Name="Equip" Style="{DynamicResource RoundComboBox}" Margin="154,7,13,106" FontSize="15">
                                         <ComboBoxItem Content="Fridge"/>
-                                        <ComboBoxItem Content="Washing Machine"/>
-                                        <ComboBoxItem Content="Television"/>
+                                        <ComboBoxItem Content="Minibar"/>
+                                        
                                     </ComboBox>
                                     <Label Margin="175,30,-19,66" Content="internet"/>
-                                    <ComboBox Style="{DynamicResource RoundComboBox}" Margin="154,63,16,52" FontSize="15">
+                                    <ComboBox x:Name="Internet" Style="{DynamicResource RoundComboBox}" Margin="154,63,16,52" FontSize="15">
                                         <ComboBoxItem Content="High" FontFamily="Sylfaen" FontSize="15"/>
                                         <ComboBoxItem Content="Mid" FontFamily="Sylfaen" FontSize="15"/>
                                         <ComboBoxItem Content="Low" FontFamily="Sylfaen" FontSize="15"/>
@@ -301,7 +219,7 @@
                         <Grid Grid.Row="0">
                             <Label Margin="0,0,349,0" Content="cleaning" FontFamily="Sylfaen" FontSize="26" Foreground="#FF12CE69" FontWeight="Bold" Height="45" VerticalAlignment="Center"/>
                             <Label Margin="200,0,102,10" Content="maintenance" FontFamily="Sylfaen" FontSize="26" Foreground="#C6980A" FontWeight="Bold" Height="49" VerticalAlignment="Bottom"/>
-                            <ComboBox Style="{DynamicResource RoundComboBox}" Margin="108,0,273,19" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="31" VerticalAlignment="Bottom">
+                            <ComboBox x:Name="Cleaning" Style="{DynamicResource RoundComboBox}" Margin="108,0,273,19" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="31" VerticalAlignment="Bottom">
 
                                 <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                                 <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
@@ -309,7 +227,7 @@
                             </ComboBox>
                             <Rectangle Margin="226,5,251,6" Fill="#C6980A">
                             </Rectangle>
-                            <ComboBox Style="{DynamicResource RoundComboBox}" Margin="361,0,21,19" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="31" VerticalAlignment="Bottom">
+                            <ComboBox x:Name="Maintain" Style="{DynamicResource RoundComboBox}" Margin="361,0,21,19" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="31" VerticalAlignment="Bottom">
                                 <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                                 <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
                                 <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>

@@ -78,6 +78,7 @@
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="View\Clients\Card\Card_room\problemcard.xaml.cs">
       <DependentUpon>problemcard.xaml</DependentUpon>
     </Compile>
@@ -87,6 +88,9 @@
     <Compile Include="View\Clients\Card\Card_room\service_card.xaml.cs">
       <DependentUpon>service_card.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="Util\HashPassword.cs" />
+
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -95,6 +99,9 @@
     </Compile>
     <Compile Include="View\Clients\ClientsRoom.xaml.cs">
       <DependentUpon>ClientsRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\FormPage\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\card_dichvu.xaml.cs">
       <DependentUpon>card_dichvu.xaml</DependentUpon>
@@ -145,9 +152,11 @@
     <Compile Include="View\Manager\ClientControl.xaml.cs">
       <DependentUpon>ClientControl.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="View\Manager\FormPage\client\cancel.xaml.cs">
       <DependentUpon>cancel.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="View\Manager\FormPage\client\client_information.xaml.cs">
       <DependentUpon>client_information.xaml</DependentUpon>
     </Compile>
@@ -256,6 +265,10 @@
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
+    <Page Include="View\Clients\FormPage\ChangePass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\card_dichvu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -658,6 +671,5 @@
     <Resource Include="Resources\Silver.jpg" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

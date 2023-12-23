@@ -25,8 +25,8 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MR3E6H4\\SQLEXPRESS;Initial Catalog=QLKSS;Integrated Security=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MR3E6H4\\SQLEXPRESS;Initial Catalog=QLKsss;Integrated Security" +
+            "=True")]
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

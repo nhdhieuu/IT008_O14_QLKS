@@ -1,5 +1,5 @@
-create database QLKS
-use QLKS
+create database QLKsss
+use QLKsss
 CREATE TABLE QUANLI
 (
 	MAQL CHAR(5) PRIMARY KEY,
@@ -37,12 +37,7 @@ CREATE TABLE PHONG
 	SOGIUONG SMALLINT, --4,6,8...
 	TRANGTHAI VARCHAR(10),
 )
-alter table PHONG
-add NGUOI INT
-alter table PHONG
-add cleaning varchar(10)
-alter table PHONG
-add maintain varchar(10)
+
 
 
 
@@ -249,6 +244,14 @@ ALTER TABLE PHONG
 ADD GIATHEOGIO money
 ALTER TABLE PHONG
 ADD GIATHEONGAY money
+alter table PHONG
+add NGUOI INT
+alter table PHONG
+add CLEANING varchar(10)
+alter table PHONG
+add MAINTAIN varchar(10)
+alter table PHONG
+add EQUIP varchar(10)
 
 INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,HOBOI,INTERNET,STYLE,GIATHEOGIO,GIATHEONGAY,CLEANING, MAINTAIN, EQUIP,NGUOI)
 VALUES
@@ -270,6 +273,7 @@ VALUES
 ('MP304','P304','Deluxe','1','Empty','Co','Khong','Cao','Style','300000','1350000','Daily','Monthly','Fridge',2),
 ('MP305','P305','Deluxe','2','Unavailabl','Co','Khong','Cao','Style','300000','1350000','Monthly','Monthly','Fridge',4),
 ('MP306','P306','Suite','1','Rented','Co','Co','Cao','Style','500000','2500000','Daily','Monthly','Fridge',2)
+
 
 ALTER TABLE THUEPHONG
 ADD KQUATHUE VARCHAR(11)
@@ -436,3 +440,8 @@ update khachhang
 set pass = '208144613841322415915420142179180134547713411812113121446512722347710918010323797'
 where makh = 'kh012'
 
+UPDATE CHITIETDV 
+SET NGAYDV='12/23/2023' 
+
+UPDATE CHITIETPR
+SET NGAYPR='12/23/2023' 

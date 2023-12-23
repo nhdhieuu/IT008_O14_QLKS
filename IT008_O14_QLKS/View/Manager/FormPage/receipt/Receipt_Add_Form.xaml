@@ -8,7 +8,7 @@
         Topmost="True" 
    
        
-         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent" Height="1208" Width="830">
     <Window.Resources>
         <Style x:Key="BD" TargetType="Border">

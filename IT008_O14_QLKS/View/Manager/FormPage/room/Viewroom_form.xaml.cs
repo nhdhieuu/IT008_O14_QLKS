@@ -25,6 +25,14 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
     public partial class Viewroom_form : Window
     {
         DB_connection connect = new DB_connection();
+        string bed;
+        string bath="Khong";
+        string pool="Khong";
+        int style;
+        int equip;
+        int internet;
+        int cleaning;
+        int maintain;
         public Viewroom_form(string IDroom)
         {
             InitializeComponent();
@@ -40,11 +48,18 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 rc = new roomcard2(reader.GetString(1), reader.GetString(2), reader.GetInt32(11),"RoomInfor");
                 int sogiuong = reader.GetInt16(3);
                 this.bed_tbx.Text = sogiuong.ToString();
-               
+                bed = bed_tbx.Text;
                 if (reader.GetString(5) == "Co")
-                    this.bathtub_chbx.IsChecked=true;
+                {
+                    this.bathtub_chbx.IsChecked = true;
+                    bath = "Co";
+                }
+
                 if (reader.GetString(8) == "Co")
+                {
                     this.pool_chbx.IsChecked = true;
+                    pool = "Co";
+                }
                 this.style_cbx.SelectedIndex=0;
                 if (reader.GetString(7) == "Cao")
                 {
@@ -58,6 +73,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 {
                     this.internet_cbx.SelectedIndex = 2;
                 }
+                internet = this.internet_cbx.SelectedIndex;
                 this.type_lbl.Content = reader.GetString(4);
                 if (this.type_lbl.Content.ToString() == "Empty")
                 {
@@ -113,6 +129,9 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                     this.equip_cbx.SelectedIndex = 1;
                 if (reader.GetString(14) == "Fridge")
                     this.equip_cbx.SelectedIndex = 0;
+                equip = this.equip_cbx.SelectedIndex;
+                cleaning = this.cleaning_cbx.SelectedIndex;
+                maintain = this.maintain_cbx.SelectedIndex;
             }
             reader.Close();
             
@@ -128,12 +147,19 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 object value2 = sqlcmd.ExecuteScalar();
                 DateTime date2 = (DateTime)value2;
                 this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");
+                sqlcmd.CommandText = "SELECT GIATHEOGIO FROM PHONG WHERE MAPHONG='" + MaPhong + "'";
+                Decimal value3 = Math.Truncate((Decimal)sqlcmd.ExecuteScalar());
+                this.GiaTheoGio.Content = value3.ToString() + " VND";
+                sqlcmd.CommandText = "SELECT GIATHEONGAY FROM PHONG WHERE MAPHONG='" + MaPhong + "'";
+                Decimal value4 = Math.Truncate((Decimal)sqlcmd.ExecuteScalar());
+                this.GiaTheoNgay.Content = value4.ToString()+" VND";
+
             }    
             
 
             this.RoomCardCtrl.Content = rc.Content;
             ServiceCard [] SC=new ServiceCard[10];
-            ServiceCard[] SCa = new ServiceCard[10];
+            
             ProbBlemCard[] PC= new ProbBlemCard[10];
             SC[0] = new ServiceCard("Maria Ozawa", "19/11/2023", "2M");
             SC[1] = new ServiceCard("Takizawa ", "18/11/2023", "1M");
@@ -146,17 +172,6 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             SC[8] = new ServiceCard("Leah Dizon", "18/11/2023", "900k");
             SC[9] = new ServiceCard("Noyomi", "19/11/2023", "200k");
 
-
-            SCa[0] = new ServiceCard("Maria Ozawa", "19/11/2023", "2M");
-            SCa[1] = new ServiceCard("Takizawa ", "18/11/2023", "1M");
-            SCa[2] = new ServiceCard("Jun Aizawa", "17/11/2023", "600k");
-            SCa[3] = new ServiceCard("Megu Fujiura", "20/11/2023", "1.5M");
-            SCa[4] = new ServiceCard("Sakurai", "19/11/2023", "550k");
-            SCa[5] = new ServiceCard("Utsunomiya", "20/11/2023", "650k");
-            SCa[6] = new ServiceCard("Momotani", "20/11/2023", "500k");
-            SCa[7] = new ServiceCard("Saori Hara", "19/11/2023", "400k");
-            SCa[8] = new ServiceCard("Leah Dizon", "18/11/2023", "900k");
-            SCa[9] = new ServiceCard("Noyomi", "19/11/2023", "200k");
 
             PC[0] = new ProbBlemCard("Maria Ozawa", "19/11/2023", "2M");
             PC[1] = new ProbBlemCard("Takizawa ", "18/11/2023", "1M");
@@ -180,16 +195,6 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             CC9.Content = SC[8].Content;
             CC10.Content = SC[9].Content;
             
-            CCa1.Content = SCa[0].Content;
-            CCa2.Content = SCa[1].Content;
-            CCa3.Content = SCa[2].Content;
-            CCa4.Content = SCa[3].Content;
-            CCa5.Content = SCa[4].Content;
-            CCa6.Content = SCa[5].Content;
-            CCa7.Content = SCa[6].Content;
-            CCa8.Content = SCa[7].Content;
-            CCa9.Content = SCa[8].Content;
-            CCa10.Content = SCa[9].Content;
 
             CCb1.Content = PC[0].Content;
             CCb2.Content = PC[1].Content;
@@ -272,6 +277,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = true;
             this.equip_cbx.IsEnabled = true;
             this.internet_cbx.IsEnabled = true;
+            cleaning_cbx.IsEnabled = true;
+            maintain_cbx.IsEnabled = true;
         }
 
         private void Change_MouseEnter(object sender, MouseEventArgs e)
@@ -295,6 +302,24 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = false;
             this.equip_cbx.IsEnabled = false;
             this.internet_cbx.IsEnabled = false;
+            cleaning_cbx.IsEnabled = false;
+            maintain_cbx.IsEnabled = false;
+            bed=this.bed_tbx.Text;
+            if(this.pool_chbx.IsChecked==true)
+                pool = "Co";
+            else
+                pool = "Khong";
+            if (this.bathtub_chbx.IsChecked == true)
+                bath = "Co";
+            else
+                bath = "Khong";
+            style =this.style_cbx.SelectedIndex;
+            equip=this.equip_cbx.SelectedIndex;
+            internet=this.internet_cbx.SelectedIndex;
+            cleaning=this.cleaning_cbx.SelectedIndex;
+            maintain=this.maintain_cbx.SelectedIndex;
+
+
         }
 
         private void Save_MouseEnter(object sender, MouseEventArgs e)
@@ -318,6 +343,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.style_cbx.IsEnabled = false;
             this.equip_cbx.IsEnabled = false;
             this.internet_cbx.IsEnabled = false;
+            cleaning_cbx.IsEnabled = false;
+            maintain_cbx.IsEnabled = false;
+            this.bed_tbx.Text=bed;
+            if (pool == "Co")
+                this.pool_chbx.IsChecked=true;
+            else
+                this.pool_chbx.IsChecked = false;
+            if (bath == "Co")
+                this.bathtub_chbx.IsChecked = true;
+            else
+                this.bathtub_chbx.IsChecked = false;
+            this.style_cbx.SelectedIndex=style;
+            this.equip_cbx.SelectedIndex=equip;
+            this.internet_cbx.SelectedIndex=internet;
+            this.cleaning_cbx.SelectedIndex=cleaning;
+            this.maintain_cbx.SelectedIndex=maintain;
+
         }
 
         private void Cancel_MouseEnter(object sender, MouseEventArgs e)

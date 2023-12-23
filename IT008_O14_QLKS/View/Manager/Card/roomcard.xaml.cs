@@ -151,8 +151,17 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Viewroom_form vr = new Viewroom_form(IDroom);
-            vr.ShowDialog();
+            if (status == "Rented")
+            {
+                Viewroom_form vr = new Viewroom_form(IDroom);
+                vr.ShowDialog();
+            }
+            else
+            {
+                ViewRoom_BEU vr=new ViewRoom_BEU(IDroom);
+                vr.ShowDialog();
+            }    
+
         }
 
         private void statusbd_MouseDown(object sender, MouseButtonEventArgs e)

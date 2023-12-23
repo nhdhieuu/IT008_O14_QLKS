@@ -1,0 +1,163 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.room.ViewRoom_BEU"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room"
+        mc:Ignorable="d"
+        Title="Viewroom_form" Height="604" Width="744" Topmost="True" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" MouseDown="Window_MouseDown" >
+
+    <Grid>
+        <Border x:Name="ViewRoomBD"  Background="#F1F0E7" CornerRadius="5,5,5,5"  BorderBrush="Black" BorderThickness="2,2,2,2" Margin="0,0,0,38">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition >
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="389">
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50">
+
+                        </RowDefinition>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="CloseBD" Margin="431,0,-88,6"  Cursor="Hand" CornerRadius="0,5,0,0" RenderTransformOrigin="-0.45,0.433" MouseDown="CloseBD_MouseDown" MouseEnter="CloseBD_MouseEnter" MouseLeave="CloseBD_MouseLeave">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock x:Name="CLoseTXT" Text="X" FontFamily="Sylfaen" FontSize="25" HorizontalAlignment="Left" Width="52" Margin="15,5,0,-5">
+
+                        </TextBlock>
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <GroupBox Header="facility"  Background="#FFF1F0E7" Margin="6,-10,26,0" FontFamily="Sylfaen" FontSize="21" BorderBrush="#FF1D19E3" Foreground="#FF1D19E3" BorderThickness="2,2,2,2" Height="180" VerticalAlignment="Top">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="51*"/>
+                                    <ColumnDefinition Width="41*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Margin="1,62,26,42" Content="pool" Height="38"/>
+                                <Label Margin="1,31,26,73" Content="bathtub" Height="38"/>
+                                <Label Margin="1,99,69,9" Content="style" Height="38"/>
+                                <Label Margin="1,-1,26,105" Content="bed" Height="38"/>
+                                <TextBox x:Name="bed_tbx" Margin="102,9,19,115" RenderTransformOrigin="-3.819,-3.929" FontSize="15" IsEnabled="False"/>
+                                <CheckBox x:Name="bathtub_chbx" Margin="155,44,74,72" Cursor="Hand" Grid.ColumnSpan="2" IsEnabled="False"/>
+                                <CheckBox x:Name="pool_chbx" Margin="155,74,65,41" Cursor="Hand" Grid.ColumnSpan="2" IsEnabled="False"/>
+                                <ComboBox x:Name="style_cbx" Style="{DynamicResource RoundComboBox}" Margin="59,103,19,14" FontSize="15" IsEnabled="False">
+                                    <ComboBoxItem Content="Style"/>
+                                </ComboBox>
+                                <ComboBox x:Name="equip_cbx" Style="{DynamicResource RoundComboBox}" Margin="6,7,7,106" FontSize="15" Grid.Column="1" IsEnabled="False">
+                                    <ComboBoxItem Content="Fridge"/>
+                                    <ComboBoxItem Content="Mini Bar"/>
+                                </ComboBox>
+                                <Label Margin="3,30,0,66" Content="internet" Grid.Column="1"/>
+                                <ComboBox x:Name="internet_cbx" Style="{DynamicResource RoundComboBox}" Margin="6,63,10,52" FontSize="15" Grid.Column="1" IsEnabled="False">
+                                    <ComboBoxItem Content="High" FontFamily="Sylfaen" FontSize="15"/>
+                                    <ComboBoxItem Content="Mid" FontFamily="Sylfaen" FontSize="15"/>
+                                    <ComboBoxItem Content="Low" FontFamily="Sylfaen" FontSize="15"/>
+                                </ComboBox>
+                                <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,95,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand"  Grid.Column="1" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" >
+                                    <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
+                                </Border>
+
+                                <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,99,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" Grid.Column="1" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave">
+                                    <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
+                                </Border>
+                                <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,95,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand"  Grid.Column="1" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave" >
+                                    <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen"/>
+                                </Border>
+                            </Grid>
+                        </GroupBox>
+                        <Label Margin="6,178,229,0" Content="cleaning" FontFamily="Sylfaen" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold" Height="59" VerticalAlignment="Top"/>
+                        <Label Margin="6,231,0,0" Content="maintain" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137"/>
+                        <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="228,186,28,0" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="38" VerticalAlignment="Top">
+
+                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                        </ComboBox>
+                        <Rectangle Margin="226,-161,251,172" Fill="#C6980A">
+                        </Rectangle>
+                        <ComboBox x:Name="maintain_cbx" Style="{DynamicResource RoundComboBox}" Margin="228,238,28,0" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="39" VerticalAlignment="Top">
+                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                        </ComboBox>
+                        <GroupBox Margin="2,277,26,0" BorderBrush="#FFC6980A" FontFamily="Sylfaen" BorderThickness="2,2,2,2" Header="price" Foreground="#FFC6980A" FontSize="30" Height="128" VerticalAlignment="Top">
+                            <Grid>
+                                <Label Margin="4,0,135,0" Content="Rent by hour:" FontFamily="Sylfaen" FontSize="23" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"></Label>
+                                <Label Margin="14,38,169,0" Content="Rent by day:" FontFamily="Sylfaen" FontSize="23" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"></Label>
+                                <Label x:Name="GiaTheoNgay" Margin="175,38,0,0" Content="900.000 VND" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A"  Height="63" VerticalAlignment="Top" HorizontalAlignment="Left" Width="188"></Label>
+                                <Label x:Name="GiaTheoGio" Margin="175,0,0,0" Content="200.000 VND" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A"  Height="63" VerticalAlignment="Top"></Label>
+
+                            </Grid>
+
+                        </GroupBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Content="room information" FontFamily="Sylfaen" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="39,-6,-39,0" Height="47" VerticalAlignment="Top"/>
+
+                </Grid>
+                <StackPanel Margin="0,59,0,23">
+                    <Border Margin="0,0,0,0" Height="111" CornerRadius="5,5,5,5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="296">
+                        <ContentControl x:Name="RoomCardCtrl" Height="111" Width="290" HorizontalAlignment="Left" Margin="3,0,0,0"/>
+                    </Border>
+                    <Border x:Name="type_background"  Margin="26,20,31,0" Background="#000" CornerRadius="5
+                                " Height="48" VerticalAlignment="Top">
+                        <Grid>
+                            <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" />
+                            <Label x:Name="type_lbl" Margin="11,-5,102,5" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
+                        </Grid>
+                    </Border>
+                    <Border x:Name="type_background2" Background="#000"  Margin="20,15,24,0"  CornerRadius="5,5,5,5" Height="72" Width="294">
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="TenKH_lbl" Margin="10,4,88,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
+                            <Label x:Name="denngay_lbl" Margin="0,32,9,-32" Content="20/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" />
+                            <Label x:Name="tungay_lbl" Margin="9,32,131,-32" Content="18/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="#FFFFFFFF" FontWeight="Bold" />
+                            <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="2|4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
+                        </Grid>
+                    </Border>
+                    <Border  Background="#D9D9D9" Margin="28,20,31,0" CornerRadius="5,5,5,5" Height="192">
+                        <Grid>
+                            <Border Margin="25,0,25,24" CornerRadius="5,5,5,5" Height="141" VerticalAlignment="Bottom">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/Resources/AnhPhongKS.jpg" Stretch="UniformToFill"/>
+                                </Border.Background>
+
+                            </Border>
+                            <Label Margin="167,-6,-46,164" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration"/>
+                            <Label Margin="267,84,-3,77" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
+                            <Label Margin="2,84,237,77" Content="&lt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
+                            <Grid Margin="53,175,74,4">
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Margin="97,0,68,4" Cursor="Hand" Fill="#FF8D8585" RenderTransformOrigin="0.5,0.5" Width="8" Height="8"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

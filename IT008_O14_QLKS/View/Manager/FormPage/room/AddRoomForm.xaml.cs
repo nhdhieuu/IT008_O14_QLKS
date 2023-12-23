@@ -84,20 +84,9 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             Accept_Butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFC6980A"));
         }
 
-        private void add_buttt_MouseEnter(object sender, MouseEventArgs e)
-        {
-            add_buttt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF057832"));
-        }
+        
 
-        private void add_buttt_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void add_buttt_MouseLeave(object sender, MouseEventArgs e)
-        {
-            add_buttt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
-        }
+       
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

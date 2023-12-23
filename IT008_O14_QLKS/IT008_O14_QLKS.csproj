@@ -164,6 +164,9 @@
     <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
       <DependentUpon>AddRoomForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\room\ViewRoom_BEU.xaml.cs">
+      <DependentUpon>ViewRoom_BEU.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
     </Compile>
@@ -329,6 +332,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\ViewRoom_BEU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

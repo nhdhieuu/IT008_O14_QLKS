@@ -83,16 +83,16 @@
                         <Label Margin="6,231,0,0" Content="maintain" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137"/>
                         <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="228,186,28,0" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="38" VerticalAlignment="Top" IsEnabled="False">
 
-                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                         <Rectangle Margin="226,-161,251,172" Fill="#C6980A">
                         </Rectangle>
                         <ComboBox x:Name="maintain_cbx" Style="{DynamicResource RoundComboBox}" Margin="228,238,28,0" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="39" VerticalAlignment="Top" IsEnabled="False">
-                            <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                         <GroupBox Margin="2,277,26,0" BorderBrush="#FFC6980A" FontFamily="Sylfaen" BorderThickness="2,2,2,2" Header="price" Foreground="#FFC6980A" FontSize="30" Height="128" VerticalAlignment="Top">
                             <Grid>

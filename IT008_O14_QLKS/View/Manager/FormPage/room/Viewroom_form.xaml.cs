@@ -33,9 +33,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         int internet;
         int cleaning;
         int maintain;
+        string TenPhong;
         public Viewroom_form(string IDroom)
         {
             InitializeComponent();
+            TenPhong= IDroom;
             string MaPhong = "M" + IDroom;
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
@@ -74,7 +76,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                     this.internet_cbx.SelectedIndex = 2;
                 }
                 internet = this.internet_cbx.SelectedIndex;
-                this.type_lbl.Content = reader.GetString(4);
+                this.type_lbl.Content = reader.GetString(15);
                 if (this.type_lbl.Content.ToString() == "Empty")
                 {
                     this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6BCB77"));
@@ -101,7 +103,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                     this.TenKH_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
                     this.type_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
                 }
-                if (this.type_lbl.Content.ToString() == "Unavailabl")
+                if (this.type_lbl.Content.ToString() == "Unavailable")
                 {
                     this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
                     this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
@@ -318,8 +320,29 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             internet=this.internet_cbx.SelectedIndex;
             cleaning=this.cleaning_cbx.SelectedIndex;
             maintain=this.maintain_cbx.SelectedIndex;
-
-
+            string InternetTemp = "";
+            if (internet == 0)
+            {
+                InternetTemp = "Cao";
+            }
+            if (internet == 1)
+            {
+                InternetTemp = "Trung Binh";
+            }
+            if (internet == 2)
+            {
+                InternetTemp = "Thap";
+            }
+            string EquipTemp = "";
+            if (equip == 1)
+                EquipTemp = "Minibar";
+            else
+                EquipTemp = "Fridge";
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "UPDATE PHONG SET SOGIUONG=" + bed + ", BONTAM='" + bath + "', HOBOI='" + pool + "', STYLE='" + this.style_cbx.SelectionBoxItem.ToString() + "', EQUIP='" + EquipTemp + "', INTERNET='" + InternetTemp + "', CLEANING='" + this.cleaning_cbx.SelectionBoxItem.ToString() + "', MAINTAIN='" + this.maintain_cbx.SelectionBoxItem.ToString() + "' WHERE TENPHONG='" + TenPhong + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            sqlcmd.ExecuteNonQuery();
         }
 
         private void Save_MouseEnter(object sender, MouseEventArgs e)

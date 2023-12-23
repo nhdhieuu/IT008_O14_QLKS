@@ -59,6 +59,14 @@ namespace IT008_O14_QLKS.Properties {
                 resourceCulture = value;
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string g {
+            get {
+                return ResourceManager.GetString("g", resourceCulture);
+            }
+        }
     }
 }

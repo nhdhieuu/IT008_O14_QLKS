@@ -25,6 +25,9 @@ using System.Runtime.Remoting.Contexts;
 using System.Runtime.Remoting;
 using IT008_O14_QLKS.Connection_db;
 using IT008_O14_QLKS.View.Manager.FormPage.receipt;
+using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
+using IT008_O14_QLKS.View.Manager;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 {
@@ -42,8 +45,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         int sservice = 0;
         public decimal tongtienphong;
         string khachhang;
-    
-        DB_connection connect =new DB_connection();
+
+        string type;
+        Connectiondatabase connect =new Connectiondatabase();
+
         public Room_card_client(string ID)
         {
             this.ID = ID;
@@ -126,8 +131,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         }
         TimeSpan giothue;
+
         private void load()
         {
+           
             string query = $"SELECT COUNT(*) FROM CTHD WHERE MAPHONG = '{ID}'";
 
             // Mở kết nối đến cơ sở dữ liệu
@@ -158,32 +165,38 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 {
                     khachhang = reader.GetString(1);
                     TimeSpan timeDifference = reader.GetDateTime(4)-myDateTime ;
+
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
                     if (timeDifference.Days<0)
                     {
                         if(paid==0)
                         { 
-                            typetxt.Text = "NOT PAID";
-                            typetxt.Foreground = new SolidColorBrush(Colors.Red);
-                            bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
-                            nbtxtleft.Visibility = Visibility.Collapsed;
-                            view.Text = "PAY";
-                            CANCEL.Visibility = Visibility.Collapsed;
-                            add.Visibility = Visibility.Collapsed;
+                            if(type!="book"&&type!="huy")
+                            {
+                                typetxt.Text = "NOT PAID";
+                                typetxt.Foreground = new SolidColorBrush(Colors.Red);
+                                bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
+                                nbtxtleft.Visibility = Visibility.Collapsed;
+                                view.Text = "PAY";
+                                CANCEL.Visibility = Visibility.Collapsed;
+                                add.Visibility = Visibility.Collapsed;
+                            }    
+                           
 
                         }
                         else
                         {
-
-                            typetxt.Text = "PAID";
-                            typetxt.Foreground = new SolidColorBrush(Colors.Green);
-                            bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
-                            nbtxtleft.Visibility = Visibility.Collapsed;
-                            view.Text = "VIEW";
-                            CANCEL.Visibility=Visibility.Collapsed;
-                            add.Visibility = Visibility.Collapsed;
-                            thuoctinh = "paid";
-
+                            if (type != "book" && type != "huy")
+                            {
+                                typetxt.Text = "PAID";
+                                typetxt.Foreground = new SolidColorBrush(Colors.Green);
+                                bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
+                                nbtxtleft.Visibility = Visibility.Collapsed;
+                                view.Text = "VIEW";
+                                CANCEL.Visibility = Visibility.Collapsed;
+                                add.Visibility = Visibility.Collapsed;
+                                thuoctinh = "paid";
+                            }
                         }
                         
                     }
@@ -202,26 +215,34 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             {
                                 if (paid == 0)
                                 {
-                                    typetxt.Text = "NOT PAID";
-                                    typetxt.Foreground = new SolidColorBrush(Colors.Red);
-                                    bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
-                                    nbtxtleft.Visibility = Visibility.Collapsed;
-                                    view.Text = "PAY";
-                                    CANCEL.Visibility = Visibility.Collapsed;
-                                    add.Visibility = Visibility.Collapsed;
+
+                                    if (type != "book" && type != "huy")
+                                    {
+                                        typetxt.Text = "NOT PAID";
+                                        typetxt.Foreground = new SolidColorBrush(Colors.Red);
+                                        bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
+                                        nbtxtleft.Visibility = Visibility.Collapsed;
+                                        view.Text = "PAY";
+                                        CANCEL.Visibility = Visibility.Collapsed;
+                                        add.Visibility = Visibility.Collapsed;
+                                    }
                                 }
                                 else
                                 {
 
-                                    typetxt.Text = "PAID";
-                                    typetxt.Foreground = new SolidColorBrush(Colors.Green);
-                                    bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
-                                    nbtxtleft.Visibility = Visibility.Collapsed;
-                                    view.Text = "VIEW";
-                                    CANCEL.Visibility = Visibility.Collapsed;
-                                    add.Visibility = Visibility.Collapsed;
-                                    thuoctinh = "paid";
 
+                                    if (type != "book" && type != "huy")
+                                    {
+
+                                        typetxt.Text = "PAID";
+                                        typetxt.Foreground = new SolidColorBrush(Colors.Green);
+                                        bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
+                                        nbtxtleft.Visibility = Visibility.Collapsed;
+                                        view.Text = "VIEW";
+                                        CANCEL.Visibility = Visibility.Collapsed;
+                                        add.Visibility = Visibility.Collapsed;
+                                        thuoctinh = "paid";
+                                    }
                                 }
 
                             }
@@ -242,12 +263,17 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 }
             }
             reader.Close();
-            
-           
+            if (type == "huy")
+                huy();
+            if (type == "book")
+                book();
+
+
         }
+        decimal tienphong = 0;
         private decimal tinhtienphong()
         {
-            decimal tienphong = 0;
+         
            
             tongtienphong += tongtien;
             SqlCommand sqlcmd = new SqlCommand();
@@ -438,18 +464,21 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if( typetxt.Text!="PAID" && typetxt.Text != "NOT PAID")
+            if (type != "book" && type != "huy")
             {
-                giahan a = new giahan(ID); 
-                a.ShowDialog();
-                load();
-            }
-            if (view.Text=="PAY")
-            {
-                Receipt_Add_Form a = new Receipt_Add_Form();
-                a.pay(khachhang);
-                a.ShowDialog();
+                if (typetxt.Text != "PAID" && typetxt.Text != "NOT PAID")
+                {
+                    giahan a = new giahan(ID);
+                    a.ShowDialog();
+                    load();
+                }
+                if (view.Text == "PAY")
+                {
+                    Receipt_Add_Form a = new Receipt_Add_Form();
+                    a.pay(khachhang);
+                    a.ShowDialog();
 
+                }
             }
         }
 
@@ -460,9 +489,41 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void CANCEL_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            cancel a = new cancel(ID);
-            a.ShowDialog();
-            load();
+            if(type=="book")
+            {
+                cancel a = new cancel(ID,"book");
+                a.ShowDialog();
+                load();
+                DependencyObject parent = VisualTreeHelper.GetParent(this);
+                while (!(parent is UserControl))
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
+
+                if (parent is ClientsRoom window)
+                {
+                    window.reset();
+                }
+            }
+            else
+            {
+                cancel a = new cancel(ID);
+                a.ShowDialog();
+                load();
+                DependencyObject parent = VisualTreeHelper.GetParent(this);
+                while (!(parent is UserControl) )
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
+
+                if (parent is ClientsRoom window)
+                {
+                    window.reset();
+                }
+
+            }
+
+           
         }
        public int chk = 0;
        
@@ -507,6 +568,154 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         private void view_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+        public void book()
+        {
+            type = "book";
+            main.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3E70F0"));
+            main.CornerRadius = new CornerRadius(10);
+            sv_grid.Visibility = Visibility.Collapsed;
+            bd.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+            bdtien1.Visibility=Visibility.Collapsed;
+            tong.Visibility=Visibility.Collapsed;
+            Bdcuoi.Visibility=Visibility.Collapsed;
+            int moneyAsInt = Convert.ToInt32(tienphong);
+
+            if (moneyAsInt > 0)
+                ftxt_Copy.Text = "ROOM PRICE = "+ moneyAsInt.ToString("#,###") + " VND";
+            else
+            {
+                ftxt_Copy.Text = "ROOM PRICE = " + "0 VND";
+
+            }
+            ftxt.Text = "reserving...";
+            ftxt.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy1.Foreground = new SolidColorBrush(Colors.White);
+            typetxt.Foreground = new SolidColorBrush(Colors.White);
+            bd_time.BorderBrush= new SolidColorBrush(Colors.White);
+            ftxt_Copy.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD24B"));
+            fromdate.Foreground = new SolidColorBrush(Colors.White);
+            todate.Foreground = new SolidColorBrush(Colors.White);
+            nbtxtleft.Foreground = new SolidColorBrush(Colors.White);
+            if (typetxt.Text == "hours left")
+            {
+                if (nbtxtleft.Text != "1")
+                    typetxt.Text = "hours";
+                else
+                {
+                    typetxt.Text = "hour";
+                }
+            }
+            
+            if (typetxt.Text == "days left")
+            {
+                if(nbtxtleft.Text!="1")
+                typetxt.Text = "days";
+                else
+                {
+                    typetxt.Text = "day";
+                }
+            }
+                
+        }
+        public void huy()
+        {
+            x.Visibility = Visibility.Visible;
+            type = "huy";
+            main.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
+            main.CornerRadius = new CornerRadius(10);
+           Bdcuoi.Visibility = Visibility.Collapsed;
+            sv_grid.Visibility = Visibility.Collapsed;
+            bd.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+            bdtien1.Visibility = Visibility.Collapsed;
+            tong.Visibility = Visibility.Collapsed;
+            Bdcuoi.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
+            int moneyAsInt = Convert.ToInt32(tienphong);
+
+            if (moneyAsInt > 0)
+                ftxt_Copy.Text = "ROOM PRICE = " + moneyAsInt.ToString("#,###") + " VND";
+            else
+            {
+                ftxt_Copy.Text = "ROOM PRICE = " + "0 VND";
+
+            }
+            ftxt.Text = "cancel";
+            ftxt.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy1.Foreground = new SolidColorBrush(Colors.White);
+            typetxt.Foreground = new SolidColorBrush(Colors.White);
+            bd_time.BorderBrush = new SolidColorBrush(Colors.White);
+            ftxt_Copy.Foreground = new SolidColorBrush(Colors.White);
+            fromdate.Foreground = new SolidColorBrush(Colors.White);
+            todate.Foreground = new SolidColorBrush(Colors.White);
+            nbtxtleft.Foreground = new SolidColorBrush(Colors.White);
+            totaltxt.Text = "CANCELLATION REASON";
+            totaltxt.Foreground = new SolidColorBrush(Colors.White);
+            CANCEL.Visibility = Visibility.Collapsed;
+            view.Text = "NEW";
+            nbtxtleft.Visibility = Visibility.Visible;
+            if(giothue.Days>0)
+            {
+                if(giothue.Days>1)
+                typetxt.Text = "days";
+                else
+                {
+                    typetxt.Text = "day";
+                }
+                nbtxtleft.Text = giothue.Days.ToString();
+            }
+            else
+            {
+                if (giothue.Hours > 1)
+                    typetxt.Text = "hours";
+                else
+                {
+                    typetxt.Text = "hour";
+                }
+                nbtxtleft.Text = giothue.Hours.ToString();
+            }
+           
+            
+
+        }
+
+        private void x_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(connect.strCon))
+            {
+                connection.Open();
+
+
+
+                string a = myDateTime.ToString();
+
+                string[] str = a.Split('/');
+                string trueday = str[1] + "-" + str[0] + "-" + str[2];
+
+
+               
+                string sqlQuery = $"delete from THUEPHONG WHERE MATHUEPHONG='{ID}'";
+              
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+
+                    command.ExecuteNonQuery();
+                }
+
+            }
+            DependencyObject parent = VisualTreeHelper.GetParent(this);
+            while (!(parent is UserControl) )
+            {
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            if (parent is ClientsRoom window)
+            {
+                window.reset();
+            }
         }
     }
 }

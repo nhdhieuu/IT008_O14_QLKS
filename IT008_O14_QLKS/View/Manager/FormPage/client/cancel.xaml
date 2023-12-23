@@ -30,7 +30,7 @@
 
             </Border>
 
-            <TextBlock Margin="-1,25,0,-123" FontFamily="Times New Roman" FontSize="60" FontWeight="Bold" Grid.Row="1" TextAlignment="Center"><Run Text="do you want to cancel"/><LineBreak/><Run Text=" this room?"/></TextBlock>
+            <TextBlock Margin="10,60,-11,-158" FontFamily="Times New Roman" FontSize="60" FontWeight="Bold" Grid.Row="1" TextAlignment="Center"><Run Text="do you want to cancel ?"/><LineBreak/><Run Text=" "/></TextBlock>
 
             <Border Style="{DynamicResource save_bd}" Margin="129,213,386,-212" Grid.Row="1" MouseDown="Border_MouseDown_2" Height="NaN">
                 <TextBlock Style="{DynamicResource tx1}" FontSize="25" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center">

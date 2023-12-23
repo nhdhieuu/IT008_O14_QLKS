@@ -131,7 +131,7 @@
                                     <Image Source="/Resources/a.png" Margin="10,4,13,6"/>
                                     <TextBlock  x:Name="text3" Text="receipt" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16
                                                " FontFamily="Sylfaen
-" Foreground="Black" Height="22" Width="48" Margin="42,0,0,0" RenderTransformOrigin="0.5,0.5">
+" Foreground="Black" Height="22" Width="48" Margin="48,0,0,0" RenderTransformOrigin="0.5,0.5">
                                         <TextBlock.RenderTransform>
                                             <TransformGroup>
                                                 <ScaleTransform/>

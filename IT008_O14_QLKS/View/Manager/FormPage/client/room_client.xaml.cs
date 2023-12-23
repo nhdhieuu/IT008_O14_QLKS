@@ -34,11 +34,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         DB_connection connect =new DB_connection();
        
 
-        string username;
+      
         
-        public room_client( string username)
+        public room_client( string ID)
 
         {
+            this.ID = ID;
             InitializeComponent();
            
             load();
@@ -46,7 +47,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
             
             
         }
-      
+     
+        
         public void load()
         {
             string a = myDateTime.ToString();
@@ -59,7 +61,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYKT AND KQUATHUE='Thanh Cong'";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYBD AND KQUATHUE='Thanh Cong'";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 

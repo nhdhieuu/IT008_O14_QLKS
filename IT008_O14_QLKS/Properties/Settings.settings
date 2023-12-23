@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="strcon" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=REDRUM\REDRUM;Initial Catalog=QLKS4;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=REDRUM\REDRUM;Initial Catalog=QLKS5;Integrated Security=True</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

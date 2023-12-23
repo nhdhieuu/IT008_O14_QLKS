@@ -25,7 +25,7 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=REDRUM\\REDRUM;Initial Catalog=QLKS4;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=REDRUM\\REDRUM;Initial Catalog=QLKS5;Integrated Security=True")]
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

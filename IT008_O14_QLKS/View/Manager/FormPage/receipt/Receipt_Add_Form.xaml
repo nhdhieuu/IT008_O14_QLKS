@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.receipt"
           mc:Ignorable="d" 
         Topmost="True" 
+   
+       
          Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
              d:DesignHeight="758" d:DesignWidth="820">

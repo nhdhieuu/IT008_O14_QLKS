@@ -3,6 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="strcon" Type="System.String" Scope="Application">
+<<<<<<< HEAD
 
       <Value Profile="(Default)">Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
 
@@ -17,6 +18,9 @@
     </Setting>
     <Setting Name="RememberMe" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+=======
+      <Value Profile="(Default)">Data Source=DESKTOP-MR3E6H4\SQLEXPRESS;Initial Catalog=QLKsss;Integrated Security=True</Value>
+>>>>>>> SuaChuaLoiLam2
     </Setting>
   </Settings>
 </SettingsFile>

@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -127,17 +128,17 @@
     <Compile Include="View\Manager\Card\roomcard2.xaml.cs">
       <DependentUpon>roomcard2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Card\roomCardbackground\Normal.xaml.cs">
-      <DependentUpon>Normal.xaml</DependentUpon>
+    <Compile Include="View\Manager\Card\roomCardbackground\DeluxeBG.xaml.cs">
+      <DependentUpon>DeluxeBG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Card\roomCardbackground\Normal_empty.xaml.cs">
-      <DependentUpon>Normal_empty.xaml</DependentUpon>
+    <Compile Include="View\Manager\Card\roomCardbackground\StandardBG.xaml.cs">
+      <DependentUpon>StandardBG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Card\roomCardbackground\VIP.xaml.cs">
-      <DependentUpon>VIP.xaml</DependentUpon>
+    <Compile Include="View\Manager\Card\roomCardbackground\SuperiorBG.xaml.cs">
+      <DependentUpon>SuperiorBG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml.cs">
-      <DependentUpon>Vip_empty.xaml</DependentUpon>
+    <Compile Include="View\Manager\Card\roomCardbackground\SuiteBG.xaml.cs">
+      <DependentUpon>SuiteBG.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
@@ -196,6 +197,9 @@
     </Compile>
     <Compile Include="View\Manager\FormPage\room\AddRoomForm.xaml.cs">
       <DependentUpon>AddRoomForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\ViewRoom_BEU.xaml.cs">
+      <DependentUpon>ViewRoom_BEU.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\Viewroom_form.xaml.cs">
       <DependentUpon>Viewroom_form.xaml</DependentUpon>
@@ -300,19 +304,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Card\roomCardbackground\Normal.xaml">
+    <Page Include="View\Manager\Card\roomCardbackground\DeluxeBG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Card\roomCardbackground\Normal_empty.xaml">
+    <Page Include="View\Manager\Card\roomCardbackground\StandardBG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Card\roomCardbackground\VIP.xaml">
+    <Page Include="View\Manager\Card\roomCardbackground\SuperiorBG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Card\roomCardbackground\Vip_empty.xaml">
+    <Page Include="View\Manager\Card\roomCardbackground\SuiteBG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -386,6 +390,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\AddRoomForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\ViewRoom_BEU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -635,6 +643,7 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />
     <Resource Include="Resources\0164959b12094c445ddc2c87bc0d1b62.jpg" />
@@ -646,6 +655,7 @@
     <Resource Include="Resources\ede59f46552ecfa8545a5d983bc15d48.jpg" />
     <Resource Include="Resources\ee77cea094378a30fe302d8a95e7b848.jpg" />
     <Resource Include="Resources\Diamond.jpg" />
+    <Resource Include="Resources\deluxee.jpg" />
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
     <Resource Include="Resources\icons8-client-50.png" />

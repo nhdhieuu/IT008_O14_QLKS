@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="74" d:DesignWidth="714">
     
-            <Border CornerRadius="10" Height="74">
+            <Border CornerRadius="10" Height="74" MouseDown="ReceiptCard_MouseDown" Cursor="Hand">
                                 <Border.Background>
                                     <ImageBrush ImageSource="/Resources/ReceiptCardBackground.png"></ImageBrush>
                                 </Border.Background>
@@ -36,17 +36,16 @@
                                             <RowDefinition></RowDefinition>
                                             <RowDefinition Height="46"></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <Grid>
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                                <Label Name="TotalMoneyBox" Content="2.000.000" FontFamily="Bahnschrift" FontSize="20" Foreground="#12CE69"  ></Label>
-                                                <Image Source="/Resources/RecieptCardMoney.png" VerticalAlignment="Center" Margin="0,5,0,0"></Image>
-                                            </StackPanel>
-
+                                        <Grid Margin="-16,9,16,37" Grid.RowSpan="2">
+                                        <Border Width="83" Height="29">
+                                            <TextBlock Name="TotalMoneyBox" Text="2.000.000 VND" TextAlignment="Right" FontFamily="Bahnschrift" FontSize="20"  Foreground="#12CE69" Margin="-25,0,-25,0"  ></TextBlock>
+                                        </Border>
+                                            
                                         </Grid>
                                         <Grid Grid.Row="1">
-                                            <Button Width="40" Height="40" Margin="50,0,0,0">
-                                                <Image Source="/Resources/view.png"></Image>
-                                            </Button>
+                                            <Border Width="40" Height="40" Margin="77,3,13,3">
+                                                <Image Source="/Resources/RecieptCardMoney.png" VerticalAlignment="Top" />
+                    </Border>
                                         </Grid>
 
                                     </Grid>

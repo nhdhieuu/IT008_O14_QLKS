@@ -24,6 +24,9 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Contexts;
 using System.Runtime.Remoting;
 using IT008_O14_QLKS.View.Manager.FormPage.receipt;
+using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
+using IT008_O14_QLKS.View.Manager;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 {
@@ -41,7 +44,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         int sservice = 0;
         public decimal tongtienphong;
         string khachhang;
-    
+        string type;
         Conectiondatabase connect =new Conectiondatabase();
         public Room_card_client(string ID)
         {
@@ -244,9 +247,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             
            
         }
+        decimal tienphong = 0;
         private decimal tinhtienphong()
         {
-            decimal tienphong = 0;
+         
            
             tongtienphong += tongtien;
             SqlCommand sqlcmd = new SqlCommand();
@@ -505,6 +509,108 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void view_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
+        }
+        public void book()
+        {
+            type = "book";
+            main.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3E70F0"));
+            main.CornerRadius = new CornerRadius(10);
+            sv_grid.Visibility = Visibility.Collapsed;
+            bd.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+            bdtien1.Visibility=Visibility.Collapsed;
+            tong.Visibility=Visibility.Collapsed;
+            Bdcuoi.Visibility=Visibility.Collapsed;
+            int moneyAsInt = Convert.ToInt32(tienphong);
+
+            if (moneyAsInt > 0)
+                ftxt_Copy.Text = "ROOM PRICE = "+ moneyAsInt.ToString("#,###") + " VND";
+            else
+            {
+                ftxt_Copy.Text = "ROOM PRICE = " + "0 VND";
+
+            }
+            ftxt.Text = "reserving...";
+            ftxt.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy1.Foreground = new SolidColorBrush(Colors.White);
+            typetxt.Foreground = new SolidColorBrush(Colors.White);
+            bd_time.BorderBrush= new SolidColorBrush(Colors.White);
+            ftxt_Copy.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD24B"));
+            fromdate.Foreground = new SolidColorBrush(Colors.White);
+            todate.Foreground = new SolidColorBrush(Colors.White);
+            nbtxtleft.Foreground = new SolidColorBrush(Colors.White);
+            if (typetxt.Text == "hours left")
+            {
+                if (nbtxtleft.Text != "1")
+                    typetxt.Text = "hours";
+                else
+                {
+                    typetxt.Text = "hour";
+                }
+            }
+            
+            if (typetxt.Text == "days left")
+            {
+                if(nbtxtleft.Text!="1")
+                typetxt.Text = "days";
+                else
+                {
+                    typetxt.Text = "day";
+                }
+            }
+                
+        }
+        public void huy()
+        {
+            type = "huy";
+            main.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
+          
+            sv_grid.Visibility = Visibility.Collapsed;
+            bd.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+            bdtien1.Visibility = Visibility.Collapsed;
+            tong.Visibility = Visibility.Collapsed;
+            Bdcuoi.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
+            int moneyAsInt = Convert.ToInt32(tienphong);
+
+            if (moneyAsInt > 0)
+                ftxt_Copy.Text = "ROOM PRICE = " + moneyAsInt.ToString("#,###") + " VND";
+            else
+            {
+                ftxt_Copy.Text = "ROOM PRICE = " + "0 VND";
+
+            }
+            ftxt.Text = "cancel";
+            ftxt.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy.Foreground = new SolidColorBrush(Colors.White);
+            fromdate_Copy1.Foreground = new SolidColorBrush(Colors.White);
+            typetxt.Foreground = new SolidColorBrush(Colors.White);
+            bd_time.BorderBrush = new SolidColorBrush(Colors.White);
+            ftxt_Copy.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD24B"));
+            fromdate.Foreground = new SolidColorBrush(Colors.White);
+            todate.Foreground = new SolidColorBrush(Colors.White);
+            nbtxtleft.Foreground = new SolidColorBrush(Colors.White);
+            if (typetxt.Text == "hours left")
+            {
+                if (nbtxtleft.Text != "1")
+                    typetxt.Text = "hours";
+                else
+                {
+                    typetxt.Text = "hour";
+                }
+            }
+
+            if (typetxt.Text == "days left")
+            {
+                if (nbtxtleft.Text != "1")
+                    typetxt.Text = "days";
+                else
+                {
+                    typetxt.Text = "day";
+                }
+            }
 
         }
     }

@@ -29,11 +29,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     {
         private DateTime myDateTime = DateTime.Now;
         string ID;
+        string username;
         Conectiondatabase connect =new Conectiondatabase();
-        public room_client( string ID)
+        public room_client( string username)
         {
             InitializeComponent();
-            this.ID= ID;
+           
             load();
 
             

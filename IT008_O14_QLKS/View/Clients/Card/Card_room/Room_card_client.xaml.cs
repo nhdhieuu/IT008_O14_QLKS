@@ -128,8 +128,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         }
         TimeSpan giothue;
+
         private void load()
         {
+           
             string query = $"SELECT COUNT(*) FROM CTHD WHERE MAPHONG = '{ID}'";
 
             // Mở kết nối đến cơ sở dữ liệu
@@ -160,32 +162,38 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 {
                     khachhang = reader.GetString(1);
                     TimeSpan timeDifference = reader.GetDateTime(4)-myDateTime ;
+
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
                     if (timeDifference.Days<0)
                     {
                         if(paid==0)
                         { 
-                            typetxt.Text = "NOT PAID";
-                            typetxt.Foreground = new SolidColorBrush(Colors.Red);
-                            bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
-                            nbtxtleft.Visibility = Visibility.Collapsed;
-                            view.Text = "PAY";
-                            CANCEL.Visibility = Visibility.Collapsed;
-                            add.Visibility = Visibility.Collapsed;
+                            if(type!="book"&&type!="huy")
+                            {
+                                typetxt.Text = "NOT PAID";
+                                typetxt.Foreground = new SolidColorBrush(Colors.Red);
+                                bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
+                                nbtxtleft.Visibility = Visibility.Collapsed;
+                                view.Text = "PAY";
+                                CANCEL.Visibility = Visibility.Collapsed;
+                                add.Visibility = Visibility.Collapsed;
+                            }    
+                           
 
                         }
                         else
                         {
-
-                            typetxt.Text = "PAID";
-                            typetxt.Foreground = new SolidColorBrush(Colors.Green);
-                            bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
-                            nbtxtleft.Visibility = Visibility.Collapsed;
-                            view.Text = "VIEW";
-                            CANCEL.Visibility=Visibility.Collapsed;
-                            add.Visibility = Visibility.Collapsed;
-                            thuoctinh = "paid";
-
+                            if (type != "book" && type != "huy")
+                            {
+                                typetxt.Text = "PAID";
+                                typetxt.Foreground = new SolidColorBrush(Colors.Green);
+                                bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
+                                nbtxtleft.Visibility = Visibility.Collapsed;
+                                view.Text = "VIEW";
+                                CANCEL.Visibility = Visibility.Collapsed;
+                                add.Visibility = Visibility.Collapsed;
+                                thuoctinh = "paid";
+                            }
                         }
                         
                     }
@@ -204,26 +212,34 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             {
                                 if (paid == 0)
                                 {
-                                    typetxt.Text = "NOT PAID";
-                                    typetxt.Foreground = new SolidColorBrush(Colors.Red);
-                                    bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
-                                    nbtxtleft.Visibility = Visibility.Collapsed;
-                                    view.Text = "PAY";
-                                    CANCEL.Visibility = Visibility.Collapsed;
-                                    add.Visibility = Visibility.Collapsed;
+
+                                    if (type != "book" && type != "huy")
+                                    {
+                                        typetxt.Text = "NOT PAID";
+                                        typetxt.Foreground = new SolidColorBrush(Colors.Red);
+                                        bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
+                                        nbtxtleft.Visibility = Visibility.Collapsed;
+                                        view.Text = "PAY";
+                                        CANCEL.Visibility = Visibility.Collapsed;
+                                        add.Visibility = Visibility.Collapsed;
+                                    }
                                 }
                                 else
                                 {
 
-                                    typetxt.Text = "PAID";
-                                    typetxt.Foreground = new SolidColorBrush(Colors.Green);
-                                    bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
-                                    nbtxtleft.Visibility = Visibility.Collapsed;
-                                    view.Text = "VIEW";
-                                    CANCEL.Visibility = Visibility.Collapsed;
-                                    add.Visibility = Visibility.Collapsed;
-                                    thuoctinh = "paid";
 
+                                    if (type != "book" && type != "huy")
+                                    {
+
+                                        typetxt.Text = "PAID";
+                                        typetxt.Foreground = new SolidColorBrush(Colors.Green);
+                                        bd_time.BorderBrush = new SolidColorBrush(Colors.Green);
+                                        nbtxtleft.Visibility = Visibility.Collapsed;
+                                        view.Text = "VIEW";
+                                        CANCEL.Visibility = Visibility.Collapsed;
+                                        add.Visibility = Visibility.Collapsed;
+                                        thuoctinh = "paid";
+                                    }
                                 }
 
                             }
@@ -244,8 +260,12 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 }
             }
             reader.Close();
-            
-           
+            if (type == "huy")
+                huy();
+            if (type == "book")
+                book();
+
+
         }
         decimal tienphong = 0;
         private decimal tinhtienphong()
@@ -441,18 +461,21 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if( typetxt.Text!="PAID" && typetxt.Text != "NOT PAID")
+            if (type != "book" && type != "huy")
             {
-                giahan a = new giahan(ID); 
-                a.ShowDialog();
-                load();
-            }
-            if (view.Text=="PAY")
-            {
-                Receipt_Add_Form a = new Receipt_Add_Form();
-                a.pay(khachhang);
-                a.ShowDialog();
+                if (typetxt.Text != "PAID" && typetxt.Text != "NOT PAID")
+                {
+                    giahan a = new giahan(ID);
+                    a.ShowDialog();
+                    load();
+                }
+                if (view.Text == "PAY")
+                {
+                    Receipt_Add_Form a = new Receipt_Add_Form();
+                    a.pay(khachhang);
+                    a.ShowDialog();
 
+                }
             }
         }
 
@@ -463,9 +486,41 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void CANCEL_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            cancel a = new cancel(ID);
-            a.ShowDialog();
-            load();
+            if(type=="book")
+            {
+                cancel a = new cancel(ID,"book");
+                a.ShowDialog();
+                load();
+                DependencyObject parent = VisualTreeHelper.GetParent(this);
+                while (!(parent is UserControl))
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
+
+                if (parent is ClientsRoom window)
+                {
+                    window.reset();
+                }
+            }
+            else
+            {
+                cancel a = new cancel(ID);
+                a.ShowDialog();
+                load();
+                DependencyObject parent = VisualTreeHelper.GetParent(this);
+                while (!(parent is UserControl) )
+                {
+                    parent = VisualTreeHelper.GetParent(parent);
+                }
+
+                if (parent is ClientsRoom window)
+                {
+                    window.reset();
+                }
+
+            }
+
+           
         }
        public int chk = 0;
        
@@ -564,9 +619,11 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         }
         public void huy()
         {
+            x.Visibility = Visibility.Visible;
             type = "huy";
             main.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
-          
+            main.CornerRadius = new CornerRadius(10);
+           Bdcuoi.Visibility = Visibility.Collapsed;
             sv_grid.Visibility = Visibility.Collapsed;
             bd.Visibility = Visibility.Collapsed;
             add.Visibility = Visibility.Collapsed;
@@ -588,30 +645,74 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             fromdate_Copy1.Foreground = new SolidColorBrush(Colors.White);
             typetxt.Foreground = new SolidColorBrush(Colors.White);
             bd_time.BorderBrush = new SolidColorBrush(Colors.White);
-            ftxt_Copy.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD24B"));
+            ftxt_Copy.Foreground = new SolidColorBrush(Colors.White);
             fromdate.Foreground = new SolidColorBrush(Colors.White);
             todate.Foreground = new SolidColorBrush(Colors.White);
             nbtxtleft.Foreground = new SolidColorBrush(Colors.White);
-            if (typetxt.Text == "hours left")
+            totaltxt.Text = "CANCELLATION REASON";
+            totaltxt.Foreground = new SolidColorBrush(Colors.White);
+            CANCEL.Visibility = Visibility.Collapsed;
+            view.Text = "NEW";
+            nbtxtleft.Visibility = Visibility.Visible;
+            if(giothue.Days>0)
             {
-                if (nbtxtleft.Text != "1")
+                if(giothue.Days>1)
+                typetxt.Text = "days";
+                else
+                {
+                    typetxt.Text = "day";
+                }
+                nbtxtleft.Text = giothue.Days.ToString();
+            }
+            else
+            {
+                if (giothue.Hours > 1)
                     typetxt.Text = "hours";
                 else
                 {
                     typetxt.Text = "hour";
                 }
+                nbtxtleft.Text = giothue.Hours.ToString();
             }
+           
+            
 
-            if (typetxt.Text == "days left")
+        }
+
+        private void x_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(connect.strCon))
             {
-                if (nbtxtleft.Text != "1")
-                    typetxt.Text = "days";
-                else
+                connection.Open();
+
+
+
+                string a = myDateTime.ToString();
+
+                string[] str = a.Split('/');
+                string trueday = str[1] + "-" + str[0] + "-" + str[2];
+
+
+               
+                string sqlQuery = $"delete from THUEPHONG WHERE MATHUEPHONG='{ID}'";
+              
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
-                    typetxt.Text = "day";
+
+                    command.ExecuteNonQuery();
                 }
+
+            }
+            DependencyObject parent = VisualTreeHelper.GetParent(this);
+            while (!(parent is UserControl) )
+            {
+                parent = VisualTreeHelper.GetParent(parent);
             }
 
+            if (parent is ClientsRoom window)
+            {
+                window.reset();
+            }
         }
     }
 }

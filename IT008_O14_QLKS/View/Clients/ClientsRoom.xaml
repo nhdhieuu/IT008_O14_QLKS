@@ -201,9 +201,9 @@
             </Setter>
         </Style>
     </UserControl.Resources>
- 
-    <Grid Background="#F1F0E7">
 
+    <Grid Background="#F1F0E7">
+ 
         <TextBlock Text="room" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" Margin="67,-4,628,546">
 
         </TextBlock>
@@ -217,9 +217,9 @@
 
         </Image>
         <Border Background="#CBA224" Margin="25,44,24,542"/>
-        <ScrollViewer Margin="20,121,20,10">
+        <ScrollViewer Margin="20,69,20,10">
             <StackPanel x:Name="stk">
-                
+
             </StackPanel>
         </ScrollViewer>
     </Grid>

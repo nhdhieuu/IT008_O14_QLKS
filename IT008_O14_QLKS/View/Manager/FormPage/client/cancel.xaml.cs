@@ -25,10 +25,18 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         private DateTime myDateTime = DateTime.Now;
         string ID;
         Conectiondatabase connect = new Conectiondatabase();
+        string type;
         public cancel(string ID)
         {
             InitializeComponent();
             this.ID = ID;
+        }
+        public cancel(string ID,string type)
+        {
+            InitializeComponent();
+            this.ID = ID;
+            this.type = type;
+            
         }
 
         private void Border_MouseDown_2(object sender, MouseButtonEventArgs e)
@@ -46,6 +54,10 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
                
                 string sqlQuery = $"UPDATE THUEPHONG SET NGAYKT = '{trueday}' WHERE MATHUEPHONG ='{ID}'";
+                if(type=="book")
+                {
+                    sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
+                }    
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

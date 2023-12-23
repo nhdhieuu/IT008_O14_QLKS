@@ -33,6 +33,8 @@ namespace IT008_O14_QLKS.View.Clients
             }
             reader.Close();
             loadhuy();
+            loadbook();
+            load();
            
         
 
@@ -76,7 +78,7 @@ namespace IT008_O14_QLKS.View.Clients
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' < NGAYBD AND KQUATHUE='Dang Thue'";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' <= NGAYKT AND KQUATHUE='Dang Thue'";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 
@@ -143,9 +145,10 @@ namespace IT008_O14_QLKS.View.Clients
         {
             reset();
         }
-        private void reset()
+        public void reset()
         {
             stk.Children.Clear();
+            loadhuy();
             loadbook();
             load();
    

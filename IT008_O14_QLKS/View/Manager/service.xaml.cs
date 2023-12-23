@@ -1,7 +1,11 @@
-﻿using IT008_O14_QLKS.View.Manager.Card;
+﻿using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.View.Manager.Card;
 using IT008_O14_QLKS.View.Manager.FormPage.service;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +26,40 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class service : UserControl
     {
+        DB_connection db=new DB_connection();
+
         public service()
         {
             InitializeComponent();
-            card_dichvu[] SC = new card_dichvu[23];
 
-            ProbBlemCard[] PC =new ProbBlemCard[10];
+            string ss = "select * from DICHVU";
+            
+            SqlDataAdapter da= new SqlDataAdapter(ss,db.sqlCon);
+            DataTable dataTable = new DataTable();
+            da.Fill(dataTable);
+            for(int i = 0;i<dataTable.Rows.Count;i++)
+            {
+                string name= dataTable.Rows[i]["TENDV"].ToString();
+                string id= dataTable.Rows[i]["MADV"].ToString();
+                string price = dataTable.Rows[i]["DONGIA"].ToString();
+                card_dichvu cd=new card_dichvu(id,name,price);
+                ds_dichvu.Children.Add(cd);
+            }    
+            
+            DataTable  dataTable1 = new DataTable();
+            ss = "select * from PROBLEM";
+            da = new SqlDataAdapter (ss,db.sqlCon);
+            da.Fill(dataTable1);
+            for(int i = 0; i<dataTable1.Rows.Count;i++)
+            {
+                string name = dataTable.Rows[i]["PRNAME"].ToString();
+                string id = dataTable.Rows[i]["MAPR"].ToString();
+                string price = dataTable.Rows[i]["PRICE"].ToString();
+                ProbBlemCard pc=new ProbBlemCard(id,name,price);
+                ds_problem.Children.Add(pc);
+            }    
 
-            SC[0] = new card_dichvu("DV01","Coca-cola","30000");
+          /*  SC[0] = new card_dichvu("DV01","Coca-cola","30000");
             SC[1] = new card_dichvu("DV02", "Pepsi", "30000");
             SC[2] = new card_dichvu("DV03", "Fanta", "30000");
             SC[3] = new card_dichvu("DV04", "7Up", "30000");
@@ -51,9 +81,9 @@ namespace IT008_O14_QLKS.View.Manager
             SC[19] = new card_dichvu("DV20", "Pudding", "100000");
             SC[20] = new card_dichvu("DV21", "Pho bo", "100000");
             SC[21] = new card_dichvu("DV22", "Don phong", "500000");
-            SC[22] = new card_dichvu("DV23", "Spa", "4000000");
+            SC[22] = new card_dichvu("DV23", "Spa", "4000000");*/
 
-            CC1.Content = SC[0].Content;
+          /*  CC1.Content = SC[0].Content;
             CC2.Content = SC[1].Content;
             CC3.Content = SC[2].Content;
             CC4.Content = SC[3].Content;
@@ -74,9 +104,9 @@ namespace IT008_O14_QLKS.View.Manager
             CC19.Content = SC[19].Content;
             CC20.Content = SC[20].Content;
             CC21.Content = SC[21].Content;
-            CC22.Content = SC[22].Content;
+            CC22.Content = SC[22].Content;*/
 
-            PC[0] = new ProbBlemCard("PR01", "repair", "200k");
+            /*PC[0] = new ProbBlemCard("PR01", "repair", "200k");
             PC[1] = new ProbBlemCard("PR02", "repair", "200k");
             PC[2] = new ProbBlemCard("PR03", "repair", "200k");
             PC[3] = new ProbBlemCard("PR04", "repair", "200k");
@@ -96,7 +126,7 @@ namespace IT008_O14_QLKS.View.Manager
             PC7.Content = PC[6].Content;
             PC8.Content = PC[7].Content;
             PC9.Content = PC[8].Content;
-            PC10.Content = PC[9].Content;
+            PC10.Content = PC[9].Content;*/
         }
 
         private void but_add_service_MouseDown(object sender, MouseButtonEventArgs e)

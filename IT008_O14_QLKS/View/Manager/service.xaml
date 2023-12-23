@@ -228,83 +228,17 @@
                 <!-- service list-->
                 <Border CornerRadius="10" BorderThickness="2" BorderBrush="#C6980A" Margin="20,10,0,345">
                     <ScrollViewer Margin="10,10,10,8">
-                        <StackPanel>
-                            <ContentControl x:Name="CC1" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC2" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC3" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC4" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC5" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC6" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC7" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC8" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC9" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC10" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC11" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC12" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC13" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC14" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC15" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC16" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC17" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC18" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC19" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC20" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC21" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC22" Height="42" Width="375">
-
-                            </ContentControl>
+                        <StackPanel x:Name="ds_dichvu" >
+                           
                         </StackPanel>
 
                     </ScrollViewer>
                 </Border>
                 <!-- add service button-->
-                <Border x:Name="but_add_service" Cursor="Hand" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="195,200,194,310" MouseDown="but_add_service_MouseDown">
+                <Border x:Name="but_add_service" Cursor="Hand" Height="25" Width="80"  CornerRadius="5" Background="#12CE69" Margin="205,208,0,303" MouseDown="but_add_service_MouseDown" HorizontalAlignment="Left">
                     <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
                            VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
                 </Border>
-
                 <!-- Problem-->
                 <Label Content="problem" FontSize="45" Foreground="#BF0B0B" 
     Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
@@ -328,37 +262,8 @@
                 <!-- problem list-->
                 <Border CornerRadius="10" BorderThickness="2" BorderBrush="#BF0B0B" Margin="20,286,0,55">
                     <ScrollViewer Margin="10,10,10,10">
-                        <StackPanel>
-                            <ContentControl x:Name="PC1" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC2" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC3" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC4" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC5" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC6" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC7" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC8" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC9" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="PC10" Height="42" Width="375">
-
-                            </ContentControl>
+                        <StackPanel x:Name="ds_problem">
+                           
                         </StackPanel>
 
                     </ScrollViewer>
@@ -373,28 +278,28 @@
                 <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1">
                     <Grid Background="Transparent">
                         <Image Source="/Resources/ReceiptSortBy.png"/>
-                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
-                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,50,30,73">
+                        <CheckBox x:Name="aval_filter" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border x:Name="aval_" Cursor="Hand" CornerRadius="10" Background="#12CE69" Opacity="0.8" Margin="30,50,30,73">
                             <Label Content="available" Foreground="#C6980A" FontSize="30" 
                                    HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
-                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                        <Border x:Name="unaval_" Cursor="Hand" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
                             <Label Content="unavailable" Foreground="#BF0B0B" FontSize="30" 
            HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
                     </Grid>
                 </Border>
-                    
-                    <!-- free/fee -->
+
+                <!-- free/fee -->
                 <Border CornerRadius="10" Margin="10,216,22,155" Grid.Column="1">
                     <Grid Background="Transparent">
                         <Image Source="/Resources/ReceiptFilter.png"/>
-                        <CheckBox Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
-                        <Border CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
+                        <CheckBox x:Name="fee_filter" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border x:Name="free_" Cursor="Hand" CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
                             <Label Content="free" Foreground="White" FontSize="30" 
                         HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
-                        <Border CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                        <Border x:Name="fee_" Cursor="Hand" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
                             <Label Content="fee" Foreground="#BF0B0B" FontSize="30" 
 HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>

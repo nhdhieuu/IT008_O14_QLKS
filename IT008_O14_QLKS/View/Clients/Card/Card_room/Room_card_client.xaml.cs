@@ -288,10 +288,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             {
                
                 if (giothue.Days >= 0)
-                    tienphong += (decimal)reader.GetSqlMoney(13) * giothue.Days;
+                    tienphong += (decimal)reader.GetSqlMoney(10) * giothue.Days;
                 else {
                     if (giothue.Hours >= 0)
-                        tienphong += (decimal)reader.GetSqlMoney(12) * giothue.Days;
+                        tienphong += (decimal)reader.GetSqlMoney(9) * giothue.Days;
                 }
                 
 

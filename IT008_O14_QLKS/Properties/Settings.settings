@@ -1,9 +1,13 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IT008_O14_QLKS.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="strcon" Type="System.String" Scope="Application">
+<<<<<<< HEAD
       <Value Profile="(Default)">Data Source=REDRUM\REDRUM;Initial Catalog=QLKS5;Integrated Security=True</Value>
+=======
+      <Value Profile="(Default)">Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+>>>>>>> 25a943dfd211cf9c7485994f768c6be23d75ad04
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -16,3 +20,4 @@
     </Setting>
   </Settings>
 </SettingsFile>
+

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.Connection_db;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 {
@@ -23,7 +24,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
     /// </summary>
     public partial class service_card : UserControl
     {
-        Conectiondatabase connect = new Conectiondatabase();
+        DB_connection connect = new DB_connection();
         public string ID;
         string ten;
         string dongia;

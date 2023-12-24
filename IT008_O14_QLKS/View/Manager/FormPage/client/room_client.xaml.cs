@@ -77,6 +77,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                     
                 
             }
+            reader.Close();
           
         }
         public void add(string ID)

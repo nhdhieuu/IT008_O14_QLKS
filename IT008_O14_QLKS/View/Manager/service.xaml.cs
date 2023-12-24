@@ -76,16 +76,7 @@ namespace IT008_O14_QLKS.View.Manager
             CC21.Content = SC[21].Content;
             CC22.Content = SC[22].Content;
 
-            PC[0] = new ProbBlemCard("PR01", "repair", "200k");
-            PC[1] = new ProbBlemCard("PR02", "repair", "200k");
-            PC[2] = new ProbBlemCard("PR03", "repair", "200k");
-            PC[3] = new ProbBlemCard("PR04", "repair", "200k");
-            PC[4] = new ProbBlemCard("PR05", "repair", "200k");
-            PC[5] = new ProbBlemCard("PR06", "repair", "200k");
-            PC[6] = new ProbBlemCard("PR07", "repair", "200k");
-            PC[7] = new ProbBlemCard("PR08", "repair", "200k");
-            PC[8] = new ProbBlemCard("PR09", "repair", "200k");
-            PC[9] = new ProbBlemCard("PR10", "repair", "200k");
+          
 
             PC1.Content = PC[0].Content;
             PC2.Content = PC[1].Content;

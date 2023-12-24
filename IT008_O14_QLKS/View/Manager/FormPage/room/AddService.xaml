@@ -190,12 +190,12 @@
         <Grid>
             <Border Background="#F1F0E7" CornerRadius="5" Margin="10,8,9,265">
                 <Grid>
-                    <Label Margin="16,-16,312,0" Content="service" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="47" VerticalAlignment="Top"/>
-                    <Label Margin="81,38,309,0" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
-                    <Label Margin="208,39,192,0" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
-                    <Label Margin="333,39,47,0" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
+                    <Label Margin="16,-18,256,0" Content="add service" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="47" VerticalAlignment="Top"/>
+                    <Label Margin="122,38,268,0" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
+                    <Label Margin="298,39,82,0" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
                     <Label Margin="16,12,339,0" Content="available" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
                     <Label x:Name="cancel" Margin="363,0,10,222" Content="cancel" FontFamily="Sylfaen" FontSize="25" Foreground="#FFED1B1B" FontWeight="Thin" Height="36" VerticalAlignment="Bottom" Cursor="Hand" MouseDown="cancel_MouseDown" MouseEnter="cancel_MouseEnter" MouseLeave="cancel_MouseLeave"/>
+                    <Rectangle x:Name="Post" Margin="234,45,211,180" Fill="#FFC6980A" />
 
 
 
@@ -228,10 +228,8 @@
 
                     <ScrollViewer x:Name="DV_TaiPhong_Scrl" Margin="21,78,21,0" Height="169" VerticalAlignment="Top">
                         <StackPanel x:Name="AvaiService">
-                            <ContentControl x:Name="CC1" Height="42" Width="375">
 
-                            </ContentControl>
-                            
+
                         </StackPanel>
 
                     </ScrollViewer>
@@ -245,36 +243,8 @@
                 <Grid Margin="0,0,-2,0">
                     <ScrollViewer x:Name="DV_Scrl" Margin="21,0,21,0" Height="144" VerticalAlignment="Center">
                         <StackPanel x:Name="AddedService">
-                            <ContentControl x:Name="C1" Height="42" Width="375">
 
-                            </ContentControl>
-                            <ContentControl x:Name="C2" Height="42" Width="375">
 
-                            </ContentControl>
-                            <ContentControl x:Name="C3" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C4" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C5" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C6" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C7" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C8" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C9" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="C10" Height="42" Width="375">
-
-                            </ContentControl>
                         </StackPanel>
 
                     </ScrollViewer>

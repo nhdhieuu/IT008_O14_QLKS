@@ -255,37 +255,9 @@
                             </Rectangle>
 
                             <ScrollViewer x:Name="DV_TaiPhong_Scrl" Margin="21,78,21,0" Height="87" VerticalAlignment="Top">
-                                <StackPanel>
-                                    <ContentControl x:Name="CC1" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC2" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC3" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC4" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC5" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC6" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC7" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC8" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC9" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC10" Height="42" Width="375">
-
-                                    </ContentControl>
+                                <StackPanel x:Name="ServicePannel">
+                                    
+                                    
                                 </StackPanel>
 
                             </ScrollViewer>
@@ -326,37 +298,9 @@
 
                             <ScrollViewer Margin="16,70,21,51" RenderTransformOrigin="0.5,0.5">
 
-                                <StackPanel>
-                                    <ContentControl x:Name="CCb1" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb2" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb3" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb4" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb5" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb6" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb7" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb8" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb9" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb10" Height="42" Width="375">
-
-                                    </ContentControl>
+                                <StackPanel x:Name="PRPanel">
+                                    
+                                    
                                 </StackPanel>
                             </ScrollViewer>
                             <Border x:Name="add_buttt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="16,168,0,9" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="add_buttt_MouseDown" MouseEnter="add_buttt_MouseEnter" MouseLeave="add_buttt_MouseLeave" >

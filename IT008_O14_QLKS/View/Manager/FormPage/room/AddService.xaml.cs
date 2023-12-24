@@ -24,10 +24,15 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
     public partial class AddService : Window
     {
         DB_connection connect = new DB_connection();
-        List<RoomService> added = new List<RoomService>();
-        public AddService()
+        public List<RoomService> added = new List<RoomService>();
+        Viewroom_form vr;
+        string matp;
+        public AddService(string matp,Viewroom_form vr)
         {
+
             InitializeComponent();
+            this.vr= vr;
+            this.matp=matp;
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.CommandText = "SELECT * FROM DICHVU";
@@ -35,32 +40,44 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             SqlDataReader reader = sqlcmd.ExecuteReader();
             while (reader.Read())
             {
-                RoomService RS = new RoomService(reader.GetInt16(3), reader.GetString(1), reader.GetDecimal(2),this);
-              
-                ContentControl CC = new ContentControl();
+                RoomService RS = new RoomService(1, reader.GetString(1), reader.GetDecimal(2),this);
+                
+               ContentControl CC = new ContentControl();
                 CC.Height = 42;
                 CC.Width = 375;
                 CC.Content = RS.Content;
                 AvaiService.Children.Add( CC );
             }
+            reader.Close();
         }
-        public void Them()
-        {
-            this.Close();
-        }
+
         private void accept_butt_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            //Đang chèn dữ liệu từ list service added vô sql bảng ctdv, sau đó load ra view room
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.Parameters.Add("@Date", SqlDbType.DateTime);
+            sqlcmd.Connection = connect.sqlCon;
+            sqlcmd.Parameters.Add("@Money", SqlDbType.Money);
+            for (int i=0;i<added.Count;i++)
+            {
+                
+                sqlcmd.Parameters["@Date"].Value = DateTime.Now;
+                sqlcmd.Parameters["@Money"].Value = added[i].Price;
+                sqlcmd.CommandText = $"INSERT INTO CHITIETDV (MATHUEPHONG, MADV, SOLUONG, THANHTIEN, NGAYDV) VALUES ('{matp}','{added[i].MADV}',{added[i].SL},@Money,@Date)";
+                sqlcmd.ExecuteNonQuery();
+            }
+            this.Close();
+            vr.LoadService();
         }
-
         private void accept_butt_MouseEnter(object sender, MouseEventArgs e)
         {
-
+            accept_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6C0A"));
         }
 
         private void accept_butt_MouseLeave(object sender, MouseEventArgs e)
         {
-
+            accept_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
         }
 
         private void cancel_MouseDown(object sender, MouseButtonEventArgs e)

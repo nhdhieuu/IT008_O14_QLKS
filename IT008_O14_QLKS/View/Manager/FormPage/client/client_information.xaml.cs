@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.client
 {
@@ -85,7 +87,20 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 }
             }
 
-          reader.Close();
+            reader.Close();
+            sqlcmd.CommandText =$"SELECT AVATAR FROM KHACHHANG WHERE USERNAME='{ID}'";
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                avtt.ImageSource = bitmap;
+            }
+            catch { }
             string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT AND KQUATHUE='Thanh Cong'";
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))

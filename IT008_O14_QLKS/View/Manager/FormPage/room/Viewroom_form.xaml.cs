@@ -16,6 +16,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.Connection_db;
+using System.Data.SqlTypes;
+using System.Windows.Forms;
+using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -34,6 +37,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         int cleaning;
         int maintain;
         string TenPhong;
+        string matp;
         public Viewroom_form(string IDroom)
         {
             InitializeComponent();
@@ -157,62 +161,51 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 this.GiaTheoNgay.Content = value4.ToString()+" VND";
 
             }    
-            
-
             this.RoomCardCtrl.Content = rc.Content;
-            ServiceCard [] SC=new ServiceCard[10];
-            
-            ProbBlemCard[] PC= new ProbBlemCard[10];
-            SC[0] = new ServiceCard("Maria Ozawa", "19/11/2023", "2M");
-            SC[1] = new ServiceCard("Takizawa ", "18/11/2023", "1M");
-            SC[2] = new ServiceCard("Jun Aizawa", "17/11/2023", "600k");
-            SC[3] = new ServiceCard("Megu Fujiura", "20/11/2023", "1.5M");
-            SC[4] = new ServiceCard("Sakurai", "19/11/2023", "550k");
-            SC[5] = new ServiceCard("Utsunomiya", "20/11/2023", "650k");
-            SC[6] = new ServiceCard("Momotani", "20/11/2023", "500k");
-            SC[7] = new ServiceCard("Saori Hara", "19/11/2023", "400k");
-            SC[8] = new ServiceCard("Leah Dizon", "18/11/2023", "900k");
-            SC[9] = new ServiceCard("Noyomi", "19/11/2023", "200k");
-
-
-            PC[0] = new ProbBlemCard("Maria Ozawa", "19/11/2023", "2M");
-            PC[1] = new ProbBlemCard("Takizawa ", "18/11/2023", "1M");
-            PC[2] = new ProbBlemCard("Jun Aizawa", "17/11/2023", "600k");
-            PC[3] = new ProbBlemCard("Megu Fujiura", "20/11/2023", "1.5M");
-            PC[4] = new ProbBlemCard("Sakurai", "19/11/2023", "550k");
-            PC[5] = new ProbBlemCard("Utsunomiya", "20/11/2023", "650k");
-            PC[6] = new ProbBlemCard("Momotani", "20/11/2023", "500k");
-            PC[7] = new ProbBlemCard("Saori Hara", "19/11/2023", "400k");
-            PC[8] = new ProbBlemCard("Leah Dizon", "18/11/2023", "900k");
-            PC[9] = new ProbBlemCard("Noyomi", "19/11/2023", "200k");
-
-            CC1.Content = SC[0].Content;
-            CC2.Content = SC[1].Content;
-            CC3.Content = SC[2].Content;
-            CC4.Content = SC[3].Content;
-            CC5.Content = SC[4].Content;
-            CC6.Content = SC[5].Content;
-            CC7.Content = SC[6].Content;
-            CC8.Content = SC[7].Content;
-            CC9.Content = SC[8].Content;
-            CC10.Content = SC[9].Content;
-            
-
-            CCb1.Content = PC[0].Content;
-            CCb2.Content = PC[1].Content;
-            CCb3.Content= PC[2].Content;
-            CCb4.Content = PC[3].Content;
-            CCb5.Content = PC[4].Content;
-            CCb6.Content = PC[5].Content;
-            CCb7.Content = PC[6].Content;
-            CCb8.Content   = PC[7].Content;
-            CCb9.Content = PC[8].Content;
-            CCb10.Content = PC[9].Content;  
-
-
-
+           
+            sqlcmd.CommandText = "SELECT MATHUEPHONG FROM THUEPHONG T INNER JOIN PHONG K ON T.MAPHONG=K.MAPHONG WHERE T.MAPHONG='" + MaPhong + "'";
+            matp=sqlcmd.ExecuteScalar().ToString();
+            LoadService();
+            LoadProb();
         }
-
+        public void LoadService()
+        {
+            ServicePannel.Children.Clear();
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.Connection = connect.sqlCon;
+            sqlcmd.CommandText = $"SELECT * FROM CHITIETDV WHERE MATHUEPHONG='{matp}'";
+            SqlDataReader reader2 = sqlcmd.ExecuteReader();
+            while (reader2.Read())
+            {
+                ServiceCard sc = new ServiceCard(reader2.GetString(1), reader2.GetDateTime(4), reader2.GetDecimal(3));
+                ContentControl cc = new ContentControl();
+                cc.Height = 42;
+                cc.Width = 375;
+                cc.Content = sc.Content;
+                ServicePannel.Children.Add(cc);
+            }
+            reader2.Close();
+        }
+        public void LoadProb()
+        {
+            PRPanel.Children.Clear();
+           SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.Connection = connect.sqlCon;
+            sqlcmd.CommandText = $"SELECT * FROM CHITIETPR WHERE MATHUEPHONG='{matp}'";
+            SqlDataReader reader3 = sqlcmd.ExecuteReader();
+            while (reader3.Read())
+            {
+               ProbBlemCard sc = new ProbBlemCard(reader3.GetString(1), reader3.GetDateTime(4), reader3.GetDecimal(3));
+                ContentControl cc = new ContentControl();
+                cc.Height = 42;
+                cc.Width = 375;
+                cc.Content = sc.Content;
+                PRPanel.Children.Add(cc);
+            }
+            reader3.Close();
+        }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -251,10 +244,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             add_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
         }
 
-        private void add_buttt_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+       
 
         private void add_buttt_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -396,8 +386,95 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
 
         private void add_butt_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            AddService AS= new AddService();
+            AddService AS= new AddService(matp,this);
             AS.ShowDialog();
+        }
+        private void add_buttt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AddProblem ap = new AddProblem(matp,this);
+            ap.ShowDialog();
+        }
+
+        private void add_buttt_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            add_buttt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
+
+        }
+
+        private void add_buttt_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            add_buttt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF057832"));
+
+        }
+
+        private void Save_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Save.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF08631D"));
+
+        }
+
+        private void Save_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Save.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF17D141"));
+
+        }
+
+        private void Change_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            Change.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6C0A"));
+
+        }
+
+        private void Change_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            Change.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+
+        }
+
+        private void Cancel_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Cancel.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF790B0B"));
+
+        }
+
+        private void Cancel_MouseLeave_1(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            Cancel.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDF0B0B"));
+
+        }
+
+        private void Border_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            CloseBD.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
+            CLoseTXT.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void Border_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            CloseBD.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF1F0E7"));
+            CLoseTXT.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
+
+        }
+
+        private void add_butt_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            add_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF057832"));
+
+        }
+
+        private void add_butt_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+            add_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
+
         }
     }
 }

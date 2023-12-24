@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -29,14 +31,18 @@ namespace IT008_O14_QLKS.View.Manager
         private bool isSortBy = false;
         private bool isAsc = true;
         private string sortby = "sohd";
+        private bool isFilter = false;
+
+        private string orderby = "asc";
+
+        private string filter;
+
 
         public receipt()
         {
             InitializeComponent();
             this.Loaded += receipt_Loaded;
-
-
-
+            
         }
 
         private void receipt_Loaded(object sender, RoutedEventArgs e)
@@ -48,7 +54,6 @@ namespace IT008_O14_QLKS.View.Manager
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-
                 ReceiptCard receiptCard = new ReceiptCard(sqlDataReader[0].ToString(), sqlDataReader[1],
                     sqlDataReader[2].ToString(), sqlDataReader[3].ToString());
                 ContentControl contentControl = new ContentControl();
@@ -102,32 +107,31 @@ namespace IT008_O14_QLKS.View.Manager
                 else
                 {
                     MessageBox.Show("Không tìm thấy hóa đơn");
-
                 }
 
                 sqlDataReader.Close();
             }
         }
 
-        private void Datepicker_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            DatePicker datePicker = new DatePicker();
-            datePicker.Width = 200;
-            datePicker.Height = 200;
-            datePicker.IsDropDownOpen = true;
-            datePicker.SelectedDateChanged += DatePicker_SelectionChanged;
-        }
-
-        private void DatePicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Lấy ngày được chọn
-            var datePicker = sender as DatePicker;
-            var date = datePicker.SelectedDate;
-
-            // Xử lý ngày được chọn
-            // ...
-            DatePickerLabel.Content = date.Value.ToString();
-        }
+        // private void Datepicker_OnMouseDown(object sender, MouseButtonEventArgs e)
+        // {
+        //     DatePicker datePicker = new DatePicker();
+        //     datePicker.Width = 200;
+        //     datePicker.Height = 200;
+        //     datePicker.IsDropDownOpen = true;
+        //     datePicker.SelectedDateChanged += DatePicker_SelectionChanged;
+        // }
+        //
+        // private void DatePicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        // {
+        //     // Lấy ngày được chọn
+        //     var datePicker = sender as DatePicker;
+        //     var date = datePicker.SelectedDate;
+        //
+        //     // Xử lý ngày được chọn
+        //     // ...
+        //     DatePickerLabel.Content = date.Value.ToString();
+        // }
 
         private void ReloadButton_Click(object sender, MouseButtonEventArgs e)
         {
@@ -139,7 +143,6 @@ namespace IT008_O14_QLKS.View.Manager
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-
                 ReceiptCard receiptCard = new ReceiptCard(sqlDataReader[0].ToString(), sqlDataReader[1],
                     sqlDataReader[2].ToString(), sqlDataReader[3].ToString());
                 ContentControl contentControl = new ContentControl();
@@ -155,49 +158,46 @@ namespace IT008_O14_QLKS.View.Manager
 
             sqlDataReader.Close();
         }
-        
-        
-        
-        
+
+
         private void SortByComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (SortByComboBox.SelectedIndex == 0 && isAsc)
             {
-                string sortby = "sohd";
-                string noidung = "asc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "sohd";
+               this.orderby = "asc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
             else if (SortByComboBox.SelectedIndex == 0 && !isAsc)
             {
-                string sortby = "sohd";
-                string noidung = "desc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "sohd";
+                this.orderby = "desc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
             else if (SortByComboBox.SelectedIndex == 1 && isAsc)
             {
-                string sortby = "ngaylap";
-                string noidung = "asc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "ngaylap";
+                this.orderby = "asc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
             else if (SortByComboBox.SelectedIndex == 1 && !isAsc)
             {
-                string sortby = "ngaylap";
-                string noidung = "desc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "ngaylap";
+                this.orderby = "desc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
             else if (SortByComboBox.SelectedIndex == 2 && isAsc)
             {
-                string sortby = "tongtien";
-                string noidung = "asc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "tongtien";
+                this.orderby = "asc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
             else if (SortByComboBox.SelectedIndex == 2 && !isAsc)
             {
-                string sortby = "tongtien";
-                string noidung = "desc";
-                DisplaySort(sortby, noidung);
+                this.sortby = "tongtien";
+                this.orderby = "desc";
+                DisplaySort(this.sortby, this.orderby,filter);
             }
-            
         }
 
 
@@ -211,7 +211,7 @@ namespace IT008_O14_QLKS.View.Manager
         {
             if (!isSortBy)
             {
-                AscBorder.Background= new SolidColorBrush(Colors.Red);
+                AscBorder.Background = new SolidColorBrush(Colors.Red);
                 AscTextBlock.Foreground = new SolidColorBrush(Colors.White);
 
                 DescBorder.Background = new SolidColorBrush(Colors.Transparent);
@@ -219,6 +219,8 @@ namespace IT008_O14_QLKS.View.Manager
                 CheckBoxImage.Visibility = Visibility.Visible;
                 SortByComboBox.SelectedIndex = 0;
                 SortByComboBox.IsEnabled = true;
+                AscBorder.IsEnabled = true;
+                DescBorder.IsEnabled = true;
                 isSortBy = true;
                 isAsc = true;
             }
@@ -230,24 +232,24 @@ namespace IT008_O14_QLKS.View.Manager
                 DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
                 SortByBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
                 CheckBoxImage.Visibility = Visibility.Hidden;
-
+                AscBorder.IsEnabled = false;
+                DescBorder.IsEnabled = false;
                 SortByComboBox.IsEnabled = false;
                 isSortBy = false;
             }
-            
         }
 
-        private void DisplaySort(string sortby, string noidung)
+        private void DisplaySort(string sortby, string noidung, string filter)
         {
             ReceiptCardPanel.Children.Clear();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = _db.sqlCon;
             sqlCommand.CommandType = System.Data.CommandType.Text;
-            sqlCommand.CommandText = $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon order by {sortby} {noidung}";
+            sqlCommand.CommandText =
+                $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon {filter} order by {sortby} {noidung}";
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-
                 ReceiptCard receiptCard = new ReceiptCard(sqlDataReader[0].ToString(), sqlDataReader[1],
                     sqlDataReader[2].ToString(), sqlDataReader[3].ToString());
                 ContentControl contentControl = new ContentControl();
@@ -266,14 +268,15 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void AscBorder_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            AscBorder.Background= new SolidColorBrush(Colors.Red);
+            AscBorder.Background = new SolidColorBrush(Colors.Red);
             AscTextBlock.Foreground = new SolidColorBrush(Colors.White);
 
             DescBorder.Background = new SolidColorBrush(Colors.Transparent);
             DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
             SortByComboBox.IsEnabled = true;
             isAsc = true;
-            DisplaySort(sortby, "asc");
+            orderby = "asc";
+            DisplaySort(sortby, orderby,filter);
         }
 
         private void DescBorder_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -284,8 +287,50 @@ namespace IT008_O14_QLKS.View.Manager
             AscTextBlock.Foreground = new SolidColorBrush(Colors.Red);
             SortByComboBox.IsEnabled = true;
             isAsc = false;
-            DisplaySort(sortby, "desc");
+            orderby = "desc";
+            DisplaySort(sortby, orderby,filter);
+        }
 
+
+        private void FilterSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            filter = $"where tongtien <= {FilterSlider.Value}";
+            FilterMoneyTextBox.Text = FilterSlider.Value.ToString() + " VND";
+            DisplaySort(sortby, orderby,filter);
+        }
+
+        private void FilterCheckBox_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (isFilter == false)
+            {
+                FilterCheckBoxImage.Visibility = Visibility.Visible;
+                FilterSlider.IsEnabled = true;
+                allRadioButton.IsEnabled = true;
+                CustomRadioButton.IsEnabled = true;
+                CustomRadioButton.IsChecked = true;
+                isFilter = true;
+            }
+            else
+            {
+                FilterCheckBoxImage.Visibility = Visibility.Hidden;
+                FilterSlider.IsEnabled = false;
+                allRadioButton.IsEnabled = false;
+                CustomRadioButton.IsEnabled = false;
+                isFilter = false;
+                filter = "";
+            }
+        }
+
+        private void AllRadioButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            FilterSlider.Value = FilterSlider.Maximum;
+            FilterMoneyTextBox.Text = FilterSlider.Value.ToString() + " VND";
+            FilterSlider.IsEnabled = false;
+        }
+
+        private void CustomRadioButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            FilterSlider.IsEnabled = true;
         }
     }
 }

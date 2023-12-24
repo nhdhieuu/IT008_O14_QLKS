@@ -393,5 +393,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
             Cancel.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDF0B0B"));
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            sttroompage a = new sttroompage(type_lbl.Content.ToString(),TenPhong);
+            a.ShowDialog();
+        }
     }
 }

@@ -368,7 +368,7 @@
                     <GroupBox Margin="-8,45,27,20" BorderBrush="#FFC6980A" FontFamily="Sylfaen" BorderThickness="2,2,2,2" Header="price" Foreground="#FFC6980A" FontSize="28" Grid.Row="3">
                         <Grid>
                             <Label Margin="10,0,229,68" Content="Rent by hour:" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
-                            <Label Margin="24,58,240,10" Content="Rent by day:" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
+                            <Label Margin="10,58,254,10" Content="Rent by day:" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
                             <Label x:Name="GiaTheoNgay" Margin="225,58,-17,10" Content="900.000 VND" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
                             <Label x:Name="GiaTheoGio" Margin="225,0,0,68" Content="200.000 VND" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
 
@@ -411,8 +411,8 @@
                         <Border x:Name="type_background"  Margin="28,8,24,0" Background="#000" CornerRadius="5
                                 " Height="48" Width="284">
                             <Grid>
-                                <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" />
-                                <Label x:Name="type_lbl" Margin="11,-5,102,5" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
+                                <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" MouseDown="Image_MouseDown" />
+                                <Label x:Name="type_lbl" Margin="11,-5,102,0" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
                             </Grid>
                         </Border>
                         <Border x:Name="type_background2" Background="#000"  Margin="28,15,24,0"  CornerRadius="5,5,5,5" Height="72" Width="283">

@@ -303,5 +303,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            sttroompage a = new sttroompage(type_lbl.Content.ToString(),TenPhong);
+            a.ShowDialog();
+        }
     }
 }

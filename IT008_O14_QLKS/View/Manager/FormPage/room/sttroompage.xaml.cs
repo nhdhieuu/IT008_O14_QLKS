@@ -24,9 +24,10 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
 
     {
         string cstt { get; set; }
-        
-        public sttroompage(string cstt)
+        string ID;
+        public sttroompage(string cstt,string ID)
         {
+            this.ID = ID;
 
             InitializeComponent();
            
@@ -43,7 +44,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "unavailable";
                 cstt_bd.Background = new SolidColorBrush(Colors.DarkRed);
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-              unavailble a = new unavailble();
+              unavailable_adj a=new unavailable_adj(ID);
                 stt2.Content = a.Content;
                 //adj_bd.Height = 0;
             }
@@ -52,22 +53,22 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "empty";
                 cstt_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-               adjust a = new adjust(this.cstt);
+               empty_adj a = new empty_adj(ID);
                 stt2.Content = a.Content;
                // adj_bd.Height = 0;
             }
-            else  if (cstt == "Booked")
+            else  if (cstt == "Booking")
             {
-                cstt_txt.Text = "booked";
+                cstt_txt.Text = "booking";
                 cstt_bd.Background = new SolidColorBrush(Colors.Blue);
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-                booked a = new booked();
+                empty_adj a = new empty_adj(ID);
                 stt2.Content = a.Content;
                 //adj_bd.Height = 0;
             }
             else
             {
-                adjust a = new adjust(this.cstt);
+                empty_adj a = new empty_adj(ID);
                 stt2.Content = a.Content;
 
             }

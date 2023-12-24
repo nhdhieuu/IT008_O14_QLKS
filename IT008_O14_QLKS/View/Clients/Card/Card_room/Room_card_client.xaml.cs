@@ -28,6 +28,7 @@ using IT008_O14_QLKS.View.Manager.FormPage.receipt;
 using Color = System.Windows.Media.Color;
 using ColorConverter = System.Windows.Media.ColorConverter;
 using IT008_O14_QLKS.View.Manager;
+using IT008_O14_QLKS.View.Manager.FormPage.room.booking_list;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 {
@@ -208,9 +209,9 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                             nbtxtleft.Text = timeDifference.Days.ToString();
                         }
-                        if (timeDifference.Days == 0)
+                        if (timeDifference.Days <= 0)
                         {
-                            if (timeDifference.Hours <0)
+                            if (timeDifference.Hours <=0)
 
                             {
                                 if (paid == 0)
@@ -464,7 +465,39 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (type != "book" && type != "huy")
+            if(type=="book2")
+            {
+                using (SqlConnection connection = new SqlConnection(connect.strCon))
+                {
+                    connection.Open();
+
+
+
+
+
+
+
+                    string sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'Thanh Cong' WHERE MATHUEPHONG ='{ID}'";
+
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+
+                        command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Accept Successfully!");
+                    DependencyObject parent = VisualTreeHelper.GetParent(this);
+                    while (!(parent is Window))
+                    {
+                        parent = VisualTreeHelper.GetParent(parent);
+                    }
+
+                    if (parent is booking_list window)
+                    {
+                        window.reset();
+                    }
+                }
+            }    
+            if (type != "book" && type != "huy" &&type !="book2")
             {
                 if (typetxt.Text != "PAID" && typetxt.Text != "NOT PAID")
                 {
@@ -489,39 +522,78 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void CANCEL_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(type=="book")
+           
+            if (type == "book2")
             {
-                cancel a = new cancel(ID,"book");
-                a.ShowDialog();
-                load();
+                using (SqlConnection connection = new SqlConnection(connect.strCon))
+                {
+                    connection.Open();
+
+
+
+
+
+
+
+                   string sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
+
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Cancel Successfully!");
                 DependencyObject parent = VisualTreeHelper.GetParent(this);
-                while (!(parent is UserControl))
+                while (!(parent is Window))
                 {
                     parent = VisualTreeHelper.GetParent(parent);
                 }
 
-                if (parent is ClientsRoom window)
+                if (parent is booking_list window)
                 {
                     window.reset();
                 }
             }
             else
             {
-                cancel a = new cancel(ID);
-                a.ShowDialog();
-                load();
-                DependencyObject parent = VisualTreeHelper.GetParent(this);
-                while (!(parent is UserControl) )
+                if (type == "book")
                 {
-                    parent = VisualTreeHelper.GetParent(parent);
-                }
+                    cancel a = new cancel(ID, "book");
+                    a.ShowDialog();
+                    load();
 
-                if (parent is ClientsRoom window)
+                    DependencyObject parent = VisualTreeHelper.GetParent(this);
+                    while (!(parent is UserControl))
+                    {
+                        parent = VisualTreeHelper.GetParent(parent);
+                    }
+
+                    if (parent is ClientsRoom window)
+                    {
+                        window.reset();
+                    }
+
+                }
+                else
                 {
-                    window.reset();
-                }
+                    cancel a = new cancel(ID);
+                    a.ShowDialog();
+                    load();
+                    DependencyObject parent = VisualTreeHelper.GetParent(this);
+                    while (!(parent is UserControl))
+                    {
+                        parent = VisualTreeHelper.GetParent(parent);
+                    }
 
+                    if (parent is ClientsRoom window)
+                    {
+                        window.reset();
+                    }
+
+                }
             }
+           
 
            
         }
@@ -619,6 +691,16 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 }
             }
                 
+        }
+        public void book2()
+        {
+            type = "book2";
+         
+            view.Text = "ACCEPT";
+           
+            ftxt.Text = $"reserving by {khachhang}";
+          
+
         }
         public void huy()
         {

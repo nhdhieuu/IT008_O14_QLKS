@@ -20,9 +20,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
     /// </summary>
     public partial class unavailable_adj : UserControl
     {
-        public unavailable_adj()
+        string ID;
+
+        public unavailable_adj(string iD)
         {
             InitializeComponent();
+            ID = iD;
         }
     }
 }

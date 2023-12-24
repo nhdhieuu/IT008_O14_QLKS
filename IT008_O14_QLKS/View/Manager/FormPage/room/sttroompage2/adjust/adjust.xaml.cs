@@ -21,7 +21,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
     public partial class adjust : UserControl
     {
         string ostt { get; set; }
-        public adjust( string ostt)
+        string ID;
+        public adjust( string ostt,string ID)
         {
           
             this.ostt = ostt;
@@ -45,15 +46,15 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
                if((cbb.SelectedItem as ComboBoxItem).Content.ToString()=="empty")
             {
                 cbb.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                empty_adj a = new empty_adj();
+                empty_adj a = new empty_adj(ID);
                 adj_cc.Content = a.Content;
             }
 
             if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "unavailable")
             {
                 cbb.Foreground = new SolidColorBrush(Colors.DarkRed);
-                unavailable_adj a = new unavailable_adj();
-                adj_cc.Content = a.Content;
+               
+                
             }
             if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "rented")
             {

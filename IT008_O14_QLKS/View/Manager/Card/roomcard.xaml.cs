@@ -16,6 +16,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room;
 using IT008_O14_QLKS.View.Manager.Card.roomCardbackground;
+
+using System.Data.SqlClient;
+using System.Data;
+using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.View.Clients.FormPage;
+using IT008_O14_QLKS.View.Manager.FormPage.room.booking_list;
+
 namespace IT008_O14_QLKS.View.Manager.Card
 {
     /// <summary>
@@ -31,7 +38,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
       public int time { get; set; }
         public string typetime { get; set; }
         public int numer_guest { get; set; }
-        
+        int so = 0;
 
 
         public roomcard(string IDroom, string typeroom, string status, string typetime, int number,  int time)
@@ -44,8 +51,39 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.time = time;
             InitializeComponent();
             input();
+            loadso();
         }
+        DateTime myDateTime = DateTime.Now;
+        DB_connection connect = new DB_connection();
+        private void loadso()
+        {
+             int soluong=0;
+            SqlCommand sqlcmd = new SqlCommand();
+            string a = myDateTime.ToString();
 
+            string[] str = a.Split('/');
+            string trueday = str[1] + "-" + str[0] + "-" + str[2];
+            sqlcmd.CommandType = CommandType.Text;
+            string tenphong = "M" + IDroom;
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE  MAPHONG = '{tenphong}' and '{trueday}' <NGAYKT AND KQUATHUE='Dang Thue'";
+            sqlcmd.Connection = connect.sqlCon;
+
+
+            using (SqlDataReader reader1 = sqlcmd.ExecuteReader())
+            {
+
+                while (reader1.Read())
+                {
+
+
+                    soluong++;
+                   
+
+
+                }
+            }
+            sott.Text = soluong.ToString();
+        }    
         private void Image_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -166,8 +204,13 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void statusbd_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            sttroompage a = new sttroompage(this.status);
+            booking_list a = new booking_list(IDroom);
             a.ShowDialog();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
     }

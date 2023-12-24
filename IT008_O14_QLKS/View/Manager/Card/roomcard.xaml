@@ -21,9 +21,19 @@
             <Image Source="/Resources/icons8-eye-24.png" KeyDown="Image_KeyDown" MouseDown="Image_MouseDown"/>
         </Border>
         <Border x:Name="statusbd" Grid.Row="1" Background="#FFC6980A" Margin="20,0,154,5" CornerRadius="5" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseDown="statusbd_MouseDown">
-            <Image Source="/Resources/icons8-setting-24 (1).png" Margin="2,2,3,3">
+            <Grid MouseDown="Grid_MouseDown">
+                <Image Source="/Resources/icons8-reserve-100.png" Margin="2,2,3,3">
 
-            </Image>
+                </Image>
+                <Border Background="White"  CornerRadius="2" Margin="26,2,4,12" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock x:Name="sott" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontWeight="Bold" Height="14">
+                        1
+                    </TextBlock>
+
+                </Border>
+            </Grid>
+
+
         </Border>
         <Border x:Name="Statusbd" Margin="10,7,5,29" CornerRadius="10,10,5,5">
             <Grid>
@@ -32,7 +42,7 @@
                 </ContentControl>
                 <Grid>
                     <TextBlock  x:Name="idroomtxt" Foreground="White" FontSize="46" FontFamily="Bahnschrift" Margin="10,0,56,31" />
-                
+
 
 
                     <TextBlock  Foreground="#FAB005" x:Name="loai" FontSize="20" FontFamily="Bahnschrift" Margin="13,44,109,8"/>

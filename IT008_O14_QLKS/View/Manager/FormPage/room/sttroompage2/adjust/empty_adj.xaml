@@ -4,24 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust"
-             mc:Ignorable="d" 
-             d:DesignHeight="406" d:DesignWidth="585">
-    <Grid>
-        <Grid Background="Transparent" Margin="0,-4,0,4">
-            <Border x:Name="main_bd" Background="#FFE9E8E2" CornerRadius="0,0,10,10"  Margin="4,0,0,324" BorderBrush="Black" BorderThickness="2,0,2,2">
+             mc:Ignorable="d" d:DesignWidth="585" Height="301">
+    <Grid Margin="0,0,0,10">
+        <Grid Background="Transparent" Margin="0,-4,0,143">
+
+            <Border x:Name="main_bd" Background="#FFE9E8E2" CornerRadius="0,0,10,10"  Margin="4,0,0,-150" BorderBrush="Black" BorderThickness="2,0,2,2">
                 <Grid>
-                    <Border Style="{DynamicResource save_bd}" Margin="195,21,252,21" >
+                    <Border Style="{DynamicResource save_bd}" Margin="195,230,252,32" >
                         <TextBlock Text="save" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>
 
-                    <Border Style="{DynamicResource x_bd}" Margin="339,21,200,21" >
+                    <Border Style="{DynamicResource x_bd}" Margin="339,230,200,32" >
                         <TextBlock Text="X" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>
+                    <Border Margin="23,34,23,97" BorderBrush="Red" BorderThickness="2" CornerRadius="10,10,10,10">
+                        <TextBlock Margin="4,41,5,0" FontSize="30" FontFamily="Times New Roman" TextAlignment="Center" Foreground="Red" ><Run Text="You will  cancel all your client booking "/><LineBreak/><Run Text="and set room status to unavailable "/><LineBreak/></TextBlock>
+                    </Border>
+
 
                 </Grid>
-              
+
             </Border>
         </Grid>
     </Grid>

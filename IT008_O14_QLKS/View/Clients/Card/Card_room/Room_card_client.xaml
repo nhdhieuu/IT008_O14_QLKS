@@ -255,8 +255,8 @@
                     <Border  x:Name="CANCEL" Style="{DynamicResource ResourceKey=x_bd}" Height="NaN" Width="NaN" Margin="543,119,17,3" MouseDown="CANCEL_MouseDown">
                         <TextBlock Text="CANCEL" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="TextBlock_MouseDown"/>
                     </Border>
-                    <Border x:Name="bd" Height="47" Background="#565656" Margin="14,11,16,0" CornerRadius="10,10,0,0" Grid.Row="1">
-                        <Grid x:Name="sv_grid">
+                    <Border x:Name="bd" Height="47" Background="#565656" Margin="14,9,16,3" CornerRadius="10,10,0,0" Grid.Row="1">
+                        <Grid x:Name="sv_grid" Margin="0,-1,0,1">
                             <Border x:Name="myBorder" Width="30"  Height="30" CornerRadius="5" Margin="619,9,12,8" MouseDown="myBorder_MouseDown" Cursor="Hand">
                                 <Border.RenderTransform>
                                     <RotateTransform CenterX="15" CenterY="15" />
@@ -269,7 +269,7 @@
                             <TextBlock  x:Name="money_txt" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" Foreground="#FF16C969" HorizontalAlignment="Left" Width="327" Margin="280,14,0,0" FontWeight="Bold" TextAlignment="Right" Text="2.000.000 VND" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
-                    <Border  x:Name="add" Style="{DynamicResource save_bd}" Width="NaN" Height="NaN" Margin="22,17,632,6" Grid.Row="1">
+                    <Border  x:Name="add" Style="{DynamicResource save_bd}" Width="NaN" Height="NaN" Margin="21,14,633,9" Grid.Row="1">
                         <TextBlock Text="+" Style="{DynamicResource tx1}" FontSize="35" HorizontalAlignment="Center" Height="39" Foreground="White">
 
                         </TextBlock>
@@ -283,7 +283,7 @@
         </Grid>
         <StackPanel Grid.Row="1">
             <Border x:Name="xoa" Height="294" Background="#D4D4D4" Width="689">
-                <Border Background="#313131" CornerRadius="0,0,10,10" Margin="14,0,16,0">
+                <Border Background="#313131" CornerRadius="0,0,10,10" Margin="14,-2,16,2">
                     <Grid>
                         <StackPanel Margin="0,0,3,0">
                             <Border x:Name="tren" CornerRadius="5,5,5,5" BorderBrush="#C6980A" BorderThickness="2" Margin="28,20,23,0" Height="248" Width="604">

@@ -25,15 +25,16 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     {
         private DateTime myDateTime = DateTime.Now;
         string ID;
-
+        DateTime ngaybd;
         DB_connection connect = new DB_connection();
 
         string type;
 
-        public cancel(string ID)
+        public cancel(string ID,DateTime a)
         {
             InitializeComponent();
             this.ID = ID;
+            ngaybd = a;
         }
         public cancel(string ID,string type)
         {
@@ -56,14 +57,24 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 string[] str = a.Split('/');
                 string trueday = str[1] + "-" + str[0] + "-" + str[2];
 
-               
+                
+             
                 string sqlQuery = $"UPDATE THUEPHONG SET NGAYKT = '{trueday}' WHERE MATHUEPHONG ='{ID}'";
-                if(type=="book")
+                if (ngaybd > myDateTime)
+                {
+
+                   sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE= 'That Bai' WHERE MATHUEPHONG ='{ID}'";
+                }
+                if (type=="book")
                 {
                     sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
-                }    
-
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                }
+                if (type == "book2")
+                {
+                    sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
+                }
+                 
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
 
                     command.ExecuteNonQuery();

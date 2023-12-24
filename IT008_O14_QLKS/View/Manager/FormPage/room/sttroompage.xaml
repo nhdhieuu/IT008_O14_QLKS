@@ -42,7 +42,7 @@
                     <TextBlock FontFamily="Times New Roman" FontSize="30" Margin="369,54,39,94" Foreground="#FFC9A01E" ><Run Language="vi-vn" Text="current status"/></TextBlock>
                     <Border x:Name="cstt_bd" CornerRadius="5" Background="Black" Margin="357,99,36,41"/>
                     <Border CornerRadius="0" Background="#C6980A" Margin="14,176,14,1" RenderTransformOrigin="0.5,0.5"/>
-                    <TextBlock x:Name="cstt_txt" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Margin="357,107,0,0" Foreground="#FFC9A01E" Width="186" TextAlignment="Center" ><Run Text="rent"/><Run Language="vi-vn" Text="ed"/></TextBlock>
+                    <TextBlock x:Name="cstt_txt" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Margin="357,107,0,0" Foreground="#FFC9A01E" Width="186" TextAlignment="Center" Text="renting" />
                 </Grid>
             </Grid>
 

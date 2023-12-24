@@ -56,9 +56,9 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 stt2.Content = a.Content;
                // adj_bd.Height = 0;
             }
-            else  if (cstt == "Booked")
+            else  if (cstt == "Booking")
             {
-                cstt_txt.Text = "booked";
+                cstt_txt.Text = "bookingh";
                 cstt_bd.Background = new SolidColorBrush(Colors.Blue);
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
                 booked a = new booked();

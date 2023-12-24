@@ -121,7 +121,7 @@
                     <Border x:Name="type_background"  Margin="26,20,31,0" Background="#000" CornerRadius="5
                                 " Height="48" VerticalAlignment="Top">
                         <Grid>
-                            <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" />
+                            <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" MouseDown="Image_MouseDown" />
                             <Label x:Name="type_lbl" Margin="11,-5,102,5" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
                         </Grid>
                     </Border>

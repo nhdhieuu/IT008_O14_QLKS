@@ -7,7 +7,7 @@
                           mc:Ignorable="d" WindowStyle="None" Topmost="True" Background="Transparent"
        WindowStartupLocation="CenterScreen" AllowsTransparency="True"
     Height="360" Width="330" ResizeMode="NoResize"  >
-    <Border CornerRadius="10" BorderThickness="2"  Background="#D9D9D9" MouseDown="Border_MouseDown">
+    <Border CornerRadius="10" BorderThickness="2" BorderBrush="Black"  Background="#E9E5D9" MouseDown="Border_MouseDown">
         <Grid Background="Transparent">
             <Border x:Name="close_b" CornerRadius="5" Margin="300,0,0,326"  MouseLeave="close_lb_MouseLeave" MouseDown="close_lb_MouseDown"  MouseEnter="close_lb_MouseEnter">
                 <Label Name="close_lb"  Cursor="Hand" Content="X"  Foreground="#740909"
@@ -17,29 +17,29 @@ FontSize="25"   VerticalContentAlignment="Top" HorizontalContentAlignment="Cente
           HorizontalContentAlignment="Center"/>
             <Grid Margin="0,95,0,0">
 
-                <Label Content="ID" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="36,5,209,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                <Label Content="ID" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="36,5,209,0" FontWeight="Bold" Foreground="#1D19E3"/>
                 <TextBox x:Name="serviceID"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16" Margin="117,12,0,0"
                         Width="173" TextAlignment="Right" Foreground="#FFC6980A" BorderThickness="0"/>
                 <Rectangle Margin="36,35,36,224" Fill="Black" />
 
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,55,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Name" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Name" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="serviceName" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,105,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Postion" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
-                        <TextBox x:Name="servicePostion" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
+                        <Label Content="Price" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
+                        <TextBox x:Name="servicePrice" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,155,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Phone" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
-                        <TextBox x:Name="servicePhone" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
+                        <Label Content="Amount" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
+                        <TextBox x:Name="serviceAmount" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>

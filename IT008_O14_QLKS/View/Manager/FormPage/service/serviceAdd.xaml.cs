@@ -41,7 +41,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
         }
         private void close_lb_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
+            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
             close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
 
@@ -58,7 +58,16 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
 
         private void add_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(serviceID.Text) || string.IsNullOrEmpty(serviceAmount.Text) || string.IsNullOrEmpty(serviceName.Text) || string.IsNullOrEmpty(servicePrice.Text))
+            {
+                MessageBox.Show("Please complete all the information", "Notice");
+            }
+            else
+            {
+                // add service to database
+                MessageBox.Show("New sservice has been added", "Notice");
+                this.Close();
+            }
         }
     }
 

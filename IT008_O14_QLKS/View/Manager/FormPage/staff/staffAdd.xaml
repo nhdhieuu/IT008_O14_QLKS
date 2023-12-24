@@ -7,9 +7,9 @@
                     mc:Ignorable="d" WindowStyle="None" Topmost="True" Background="Transparent"
         WindowStartupLocation="CenterScreen" AllowsTransparency="True"
      Height="500" Width="330" ResizeMode="NoResize"  >
-    <Border  BorderThickness="2" CornerRadius="10" Background="#D9D9D9" MouseDown="Border_MouseDown">
+    <Border  BorderThickness="2" BorderBrush="Black" CornerRadius="10" Background="#E9E5D9" MouseDown="Border_MouseDown">
         <Grid Background="Transparent">
-            <Border x:Name="close_b" CornerRadius="5" Margin="300,0,0,470"  MouseLeave="close_lb_MouseLeave" MouseDown="close_lb_MouseDown"  MouseEnter="close_lb_MouseEnter">
+            <Border x:Name="close_b" CornerRadius="10" Margin="300,0,0,470"  MouseLeave="close_lb_MouseLeave" MouseDown="close_lb_MouseDown"  MouseEnter="close_lb_MouseEnter">
                 <Label Name="close_lb" Cursor="Hand" Content="X"  Foreground="#740909"
  FontSize="25"   VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="0" Margin="0,-5,0,0" />
             </Border>
@@ -17,49 +17,49 @@
            HorizontalContentAlignment="Center"/>
             <Grid Margin="0,90,0,0">
 
-                <Label Content="ID" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="36,-4,209,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                <Label Content="ID" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="36,-4,209,0" FontWeight="Bold" Foreground="#1D19E3"/>
                 <TextBox x:Name="staffID"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16" Margin="116,3,0,0"
                          Width="173" TextAlignment="Right" Foreground="#FFC6980A" BorderThickness="0"/>
                 <Rectangle Margin="36,27,36,377" Fill="Black" />
 
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,46,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Name" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Name" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffName" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,96,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Postion" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Postion" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffPostion" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,146,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Phone" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Phone" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffPhone" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,196,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Gender" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Gender" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffGender" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,246,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="Birthday" VerticalAlignment="Top" Padding="3" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="Birthday" VerticalAlignment="Top" Padding="3" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffBirthday" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,296,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
                     <Grid Margin="52,0,0,0">
-                        <Label Content="CCCD" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#FF0F265D"/>
+                        <Label Content="CCCD" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="18" Margin="-50,-2,169,0" FontWeight="Bold" Foreground="#1D19E3"/>
                         <TextBox x:Name="staffCCCD" Text="" Background="Transparent" BorderThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A"/>
 
                     </Grid>

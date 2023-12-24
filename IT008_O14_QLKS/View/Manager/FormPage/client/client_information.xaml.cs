@@ -29,6 +29,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
      
         SqlConnection sqlCon = null;
         public string ID { get; set; }
+        DateTime now = DateTime.Now;
        
         public client_information(string ID)
         {
@@ -86,14 +87,20 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
             }
 
           reader.Close();
-            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT AND KQUATHUE='Thanh Cong'";
+           
+            string a = now.ToString();
+
+            string[] str = a.Split('/');
+            string trueday = str[1] + "-" + str[0] + "-" + str[2];
+
+            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND '{trueday}'< NGAYKT AND KQUATHUE='Thanh Cong'";
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
                nor.Text = ((int)command.ExecuteScalar()).ToString();
                 
             }
-             query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}'";
+             query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND KQUATHUE='Thanh Cong'";
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
@@ -104,21 +111,19 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
-                try
-                {
-                    decimal moneyFromDatabase = (decimal)command.ExecuteScalar();
-
-
-                    int moneyAsInt = Convert.ToInt32(moneyFromDatabase);
-
-
-                    monney.Text = moneyAsInt.ToString("#,###") + " VND";
-                }
-                catch(Exception ex)
-                {
-                    monney.Text = "0 VND";
-                }
                
+                    int moneyFromDatabase = (int)command.ExecuteScalar();
+
+
+
+                if (moneyFromDatabase > 0)
+                    monney.Text = moneyFromDatabase.ToString("#,###") + " VND";
+                else
+                    monney.Text = "0 VND";
+
+
+
+
 
             }
         }

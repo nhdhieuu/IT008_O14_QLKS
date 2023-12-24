@@ -47,7 +47,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
             
             
         }
-     
+     public void reset()
+        {
+            stk.Children.Clear();
+            load();
+        }
         
         public void load()
         {
@@ -61,7 +65,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYBD AND KQUATHUE='Thanh Cong'";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}'  AND KQUATHUE='Thanh Cong'";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 

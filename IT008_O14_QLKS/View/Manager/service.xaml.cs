@@ -42,6 +42,19 @@ namespace IT008_O14_QLKS.View.Manager
                 string name= dataTable.Rows[i]["TENDV"].ToString();
                 string id= dataTable.Rows[i]["MADV"].ToString();
                 string price = dataTable.Rows[i]["DONGIA"].ToString();
+                bool pp = double.TryParse(price, out double real_price);
+                if (pp)
+                {
+                    if (real_price == 0)
+                    {
+                        price = "free";
+                    }
+                    else
+                    {
+                        price = real_price.ToString();
+                    }
+
+                }
                 card_dichvu cd=new card_dichvu(id,name,price);
                 ds_dichvu.Children.Add(cd);
             }    
@@ -52,9 +65,22 @@ namespace IT008_O14_QLKS.View.Manager
             da.Fill(dataTable1);
             for(int i = 0; i<dataTable1.Rows.Count;i++)
             {
-                string name = dataTable.Rows[i]["PRNAME"].ToString();
-                string id = dataTable.Rows[i]["MAPR"].ToString();
-                string price = dataTable.Rows[i]["PRICE"].ToString();
+                string name = dataTable1.Rows[i]["PRNAME"].ToString();
+                string id = dataTable1.Rows[i]["MAPR"].ToString();
+                string price = dataTable1.Rows[i]["PRICE"].ToString();
+                bool pp = double.TryParse(price, out double real_price);
+                if (pp)
+                {
+                    if(real_price == 0)
+                    {
+                        price = "free";
+                    }
+                    else
+                    {
+                        price = real_price.ToString();
+                    }
+
+                }
                 ProbBlemCard pc=new ProbBlemCard(id,name,price);
                 ds_problem.Children.Add(pc);
             }    

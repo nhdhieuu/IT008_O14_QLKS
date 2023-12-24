@@ -140,6 +140,9 @@
     <Compile Include="View\Manager\Card\roomCardbackground\SuiteBG.xaml.cs">
       <DependentUpon>SuiteBG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\RoomService.xaml.cs">
+      <DependentUpon>RoomService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
     </Compile>
@@ -323,6 +326,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\roomCardbackground\SuiteBG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\RoomService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

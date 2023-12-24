@@ -1,6 +1,9 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.room;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +23,25 @@ namespace IT008_O14_QLKS.View.Manager.Card
     /// </summary>
     public partial class RoomService : UserControl
     {
-        public RoomService()
+        int SL;
+        string DV;
+        Decimal Price;
+        AddService AS;
+        public RoomService(int sL, string dV, Decimal price, AddService AS)
         {
             InitializeComponent();
+            SL = sL;
+            DV = dV;
+            Price  = Math.Truncate(price);
+            this.SoLuong.Text = SL.ToString();
+            this.Ten.Text = DV;
+            this.Gia.Text = Price.ToString() + " VND";
+            this.AS= AS;
+        }
+
+        private void Add_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AS.Them();
         }
     }
 }

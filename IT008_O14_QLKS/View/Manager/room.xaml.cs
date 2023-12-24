@@ -78,10 +78,7 @@ namespace IT008_O14_QLKS.View.Manager
                         {
                             stt = "Booking";
                         }
-                        if (reader2.GetString(5) == "Dang Thue" && reader2.GetDateTime(3) >= DateTime.Now)
-                        {
-                            stt = "Booking";
-                        }
+                        
                     }
                     
                 }

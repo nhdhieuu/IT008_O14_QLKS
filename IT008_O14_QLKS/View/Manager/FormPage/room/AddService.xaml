@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.room"
         mc:Ignorable="d"
-        Title="AddService" Height="530" Width="470" WindowStyle="None" AllowsTransparency="True"  Background="Transparent"  Topmost="True"  Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="AddService" Height="530" Width="470" WindowStyle="None" AllowsTransparency="True"  Background="Transparent"  Topmost="True"  Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
     <Window.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
@@ -186,14 +186,14 @@
         </Style>
     </Window.Resources>
 
-    <Border Background="White" CornerRadius="10,10,10,10" BorderBrush="Black" BorderThickness="2,2,2,2">
+    <Border Background="#F1F0E7" CornerRadius="10,10,10,10" BorderBrush="Black" BorderThickness="2,2,2,2">
         <Grid>
-            <Border Background="White" CornerRadius="5" Margin="10,8,9,265">
+            <Border Background="#F1F0E7" CornerRadius="5" Margin="10,8,9,265">
                 <Grid>
                     <Label Margin="16,-16,312,0" Content="service" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="47" VerticalAlignment="Top"/>
                     <Label Margin="81,38,309,0" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
                     <Label Margin="208,39,192,0" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
-                    <Label Margin="333,39,63,0" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
+                    <Label Margin="333,39,47,0" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
                     <Label Margin="16,12,339,0" Content="available" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
                     <Label x:Name="cancel" Margin="363,0,10,222" Content="cancel" FontFamily="Sylfaen" FontSize="25" Foreground="#FFED1B1B" FontWeight="Thin" Height="36" VerticalAlignment="Bottom" Cursor="Hand" MouseDown="cancel_MouseDown" MouseEnter="cancel_MouseEnter" MouseLeave="cancel_MouseLeave"/>
 
@@ -227,50 +227,24 @@
                     </Rectangle>
 
                     <ScrollViewer x:Name="DV_TaiPhong_Scrl" Margin="21,78,21,0" Height="169" VerticalAlignment="Top">
-                        <StackPanel>
+                        <StackPanel x:Name="AvaiService">
                             <ContentControl x:Name="CC1" Height="42" Width="375">
 
                             </ContentControl>
-                            <ContentControl x:Name="CC2" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC3" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC4" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC5" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC6" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC7" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC8" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC9" Height="42" Width="375">
-
-                            </ContentControl>
-                            <ContentControl x:Name="CC10" Height="42" Width="375">
-
-                            </ContentControl>
+                            
                         </StackPanel>
 
                     </ScrollViewer>
                     <Grid x:Name="DV_KhachDat"  Margin="0,187,0,0"/>
                 </Grid>
             </Border>
-            <Border x:Name="accept_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="38" Margin="0,482,0,0" VerticalAlignment="Top" Width="100" Background="#C6980A" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="accept_butt_MouseDown" MouseEnter="accept_butt_MouseEnter" MouseLeave="accept_butt_MouseLeave" >
+            <Border x:Name="accept_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="38" Margin="0,476,0,0" VerticalAlignment="Top" Width="100" Background="#C6980A" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="accept_butt_MouseDown" MouseEnter="accept_butt_MouseEnter" MouseLeave="accept_butt_MouseLeave" >
                 <Label Margin="8,-5,-17,-11" Content="Accept" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
             </Border>
             <Border Margin="10,270,10,64" BorderBrush="Black" BorderThickness="2,2,2,2" CornerRadius="5,5,5,5">
                 <Grid Margin="0,0,-2,0">
                     <ScrollViewer x:Name="DV_Scrl" Margin="21,0,21,0" Height="144" VerticalAlignment="Center">
-                        <StackPanel>
+                        <StackPanel x:Name="AddedService">
                             <ContentControl x:Name="C1" Height="42" Width="375">
 
                             </ContentControl>

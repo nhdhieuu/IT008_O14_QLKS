@@ -98,6 +98,15 @@
     <Compile Include="View\Clients\ClientsRoom.xaml.cs">
       <DependentUpon>ClientsRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients\FormPage\addRoom.xaml.cs">
+      <DependentUpon>addRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\FormPage\addRoom1.xaml.cs">
+      <DependentUpon>addRoom1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clients\FormPage\AddRoom2.xaml.cs">
+      <DependentUpon>AddRoom2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Clients\FormPage\ChangePass.xaml.cs">
       <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
@@ -264,6 +273,18 @@
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
+    <Page Include="View\Clients\FormPage\addRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\FormPage\addRoom1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Clients\FormPage\AddRoom2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Clients\FormPage\ChangePass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -674,6 +695,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Silver.jpg" />
+    <Resource Include="Resources\right-arrow.png" />
     <Content Include="Resources\sort_by.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

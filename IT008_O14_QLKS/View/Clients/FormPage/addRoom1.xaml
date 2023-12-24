@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Clients.FormPage.addRoom1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.FormPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="604" d:DesignWidth="857"
+     >
+
+    <Grid>
+        <Button Margin="176,185,175,185" Click="Button_Click">
+            CHuyen qua dat phong
+        </Button>
+    </Grid>
+</UserControl>

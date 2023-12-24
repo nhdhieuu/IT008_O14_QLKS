@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.Util;
 
 namespace IT008_O14_QLKS.View.Clients.FormPage
 {
@@ -40,7 +41,8 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             else
                 table = "QUANLI";
             sqlcmd.CommandText = "SELECT PASS FROM "+table+" WHERE USERNAME='" + username + "'";
-            currentpass = sqlcmd.ExecuteScalar().ToString();
+             currentpass = sqlcmd.ExecuteScalar().ToString();
+            
         }
 
         
@@ -130,7 +132,8 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         {
             if((string)this.correct.Content == "Correct" && (string)this.correct2.Content == "Correct")
             {
-                sqlcmd.CommandText = "UPDATE "+table+" SET PASS='" + this.pass3.Password + "' WHERE USERNAME='" + username + "'";
+                string hasspass3 = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass3.Password));
+                sqlcmd.CommandText = "UPDATE "+table+" SET PASS='" + hasspass3 + "' WHERE USERNAME='" + username + "'";
                 sqlcmd.ExecuteNonQuery();
                 this.Close();
             }    
@@ -156,7 +159,8 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         private void pass_PasswordChanged(object sender, RoutedEventArgs e)
         {
             this.correct.Visibility= Visibility.Visible;
-            if (this.pass.Password == currentpass)
+            string haspass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(this.pass.Password));
+            if (haspass == currentpass)
             {
                 this.correct.Content= "Correct";
                 this.correct.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF17BB32"));

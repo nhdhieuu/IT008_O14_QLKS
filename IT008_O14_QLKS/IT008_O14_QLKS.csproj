@@ -171,6 +171,12 @@
     <Compile Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml.cs">
       <DependentUpon>Receipt_Add_Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\room\AddProblem.xaml.cs">
+      <DependentUpon>AddProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
       <DependentUpon>sttroompage.xaml</DependentUpon>
     </Compile>
@@ -354,6 +360,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\AddProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\AddService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

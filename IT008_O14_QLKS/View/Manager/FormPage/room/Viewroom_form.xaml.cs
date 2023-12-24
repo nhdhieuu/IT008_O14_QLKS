@@ -393,5 +393,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
             Cancel.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDF0B0B"));
         }
+
+        private void add_butt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AddService AS= new AddService();
+            AS.ShowDialog();
+        }
     }
 }

@@ -293,7 +293,7 @@
 
 
 
-                            <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="21,180,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave">
+                            <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="21,180,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave" MouseDown="add_butt_MouseDown">
                                 <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
                             </Border>
                         </Grid>

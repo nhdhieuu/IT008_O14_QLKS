@@ -25,11 +25,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
         private string _datestring;
         private string _time;
         private string _totalMoney;
-        
+
         public ReceiptCard()
         {
             InitializeComponent();
         }
+
         public ReceiptCard(string receiptId, object date, string time, string totalMoney)
         {
             InitializeComponent();
@@ -43,10 +44,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Display()
         {
-            this.ReceiptIdBox.Content = "#"+_receiptId;
+            this.ReceiptIdBox.Content = "#" + _receiptId;
             this.DateBox.Content = _datestring;
-            this.TimeBox.Content      = _time;
-            this.TotalMoneyBox.Content = _totalMoney;
+            this.TimeBox.Content = _time;
+            this.TotalMoneyBox.Text = int.Parse(_totalMoney).ToString("N0") + " VND";
+        }
+
+        private void ReceiptCard_MouseDown(object sender, MouseButtonEventArgs e)
+        {
         }
     }
 }

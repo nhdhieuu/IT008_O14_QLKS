@@ -43,7 +43,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
 
         private void close_b_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
+            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
             close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
         }

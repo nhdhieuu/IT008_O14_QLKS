@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,8 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            serviceInfor si=new serviceInfor();
+            si.ShowDialog();
         }
     }
 }

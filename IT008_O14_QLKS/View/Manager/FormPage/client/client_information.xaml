@@ -29,7 +29,7 @@
             <Setter Property="CornerRadius" Value="5">
 
             </Setter>
-            <Setter Property="Margin" Value="0,15,0,0">
+            <Setter Property="Margin" Value="0,20,0,0">
 
             </Setter>
 
@@ -98,7 +98,7 @@
 
                 </Image>
                 <TextBlock Text="Profile" FontSize="35" FontFamily="Times New Roman" Margin="17,18,199,439" Foreground="White"/>
-                <StackPanel Margin="0,126,0,-6">
+                <StackPanel Margin="0,139,0,-6">
                     <Border Style="{DynamicResource bd}">
                         <Grid>
                             <TextBlock  Style="{DynamicResource thuoctinh}" Text="Name"  />
@@ -116,15 +116,6 @@
                             <TextBlock  Style="{DynamicResource thuoctinh}" Text="Username"/>
                             <TextBlock x:Name="usrname" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
                         </Grid>
-                    </Border>
-                    <Border Style="{DynamicResource bd}">
-
-
-                        <Grid>
-                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Password" />
-                            <TextBlock x:Name="pass" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
-                        </Grid>
-
                     </Border>
                     <Border Style="{DynamicResource bd}">
 

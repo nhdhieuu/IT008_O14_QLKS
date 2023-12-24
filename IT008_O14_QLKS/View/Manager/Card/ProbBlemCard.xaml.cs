@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
     public partial class ProbBlemCard : UserControl
     {
         public string name;
-        public string date;
+        public string id;
         public string price;
-        public ProbBlemCard(string name, string date, string price)
+        public ProbBlemCard(string id, string name, string price)
         {
             this.name = name;
-            this.date = date;
+            this.id = id;
             this.price = price;
             InitializeComponent();
             Inputt();
@@ -34,8 +35,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public void Inputt()
         {
             this.nametbx.Text = this.name;
-            this.datetbx.Text = this.date;
+            this.idtbx.Text = this.id;
             this.pricetbx.Text = this.price;
+        }
+        private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            problemInfor pi = new problemInfor();
+            pi.ShowDialog();
         }
     }
 }
+

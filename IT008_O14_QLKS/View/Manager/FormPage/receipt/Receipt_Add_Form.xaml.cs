@@ -207,21 +207,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
             SqlCommand sqlcmd = new SqlCommand();
 
             sqlcmd.CommandType = CommandType.Text;
-
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' AND '{trueday}' > NGAYBD AND '{trueday}' <NGAYKT AND KQUATHUE='Thanh Cong'";
-            sqlcmd.Connection = connect.sqlCon;
-            SqlDataReader reader = sqlcmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-
-
-                add(reader.GetString(0));
-
-
-            }
-            reader.Close();
             sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYKT AND KQUATHUE='Thanh Cong'";
+
+            sqlcmd.Connection = connect.sqlCon;
+            
+            
             using (SqlDataReader reader1 = sqlcmd.ExecuteReader())
             {
 

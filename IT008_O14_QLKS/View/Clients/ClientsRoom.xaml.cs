@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using IT008_O14_QLKS.View.Clients.Card.Card_room;
 using System.Windows;
 using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.View.Clients.FormPage;
 
 namespace IT008_O14_QLKS.View.Clients
 {
@@ -107,7 +108,7 @@ namespace IT008_O14_QLKS.View.Clients
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYKT AND KQUATHUE='Thanh Cong'";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYBD AND KQUATHUE='Thanh Cong'";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 
@@ -154,6 +155,12 @@ namespace IT008_O14_QLKS.View.Clients
             loadbook();
             load();
    
+        }
+
+        private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            addRoom a = new addRoom();
+            a.ShowDialog();
         }
     }
 

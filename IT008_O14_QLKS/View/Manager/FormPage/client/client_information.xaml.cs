@@ -67,7 +67,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                     id.Text = reader.GetString(0);
                     ten.Text = reader.GetString(1);
                     usrname.Text = reader.GetString(2);
-                    pass.Text = reader.GetString(3);
+                  
                     cccd.Text = reader.GetString(4);
                     phone.Text = reader.GetString(5);
                     DateTime birthdayValue = reader.GetDateTime(6);

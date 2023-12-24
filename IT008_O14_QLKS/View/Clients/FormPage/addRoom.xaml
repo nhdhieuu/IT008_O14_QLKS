@@ -1,0 +1,91 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Clients.FormPage.addRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.FormPage"
+        mc:Ignorable="d"
+        Title="addRoom" Height="699" Width="861" Topmost="True" 
+   
+       
+         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
+        >
+    <Grid>
+        <Border x:Name="main_bd" Background="#F1F0E7" CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_1"  BorderBrush="Black" BorderThickness="2,2,2,0" Margin="0,10,0,10">
+
+            <Grid>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border x:Name="delbtn_border" 
+                            Background="Transparent"
+                            CornerRadius="0,9.4,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="807,0,0,0" Cursor="Hand"
+                            >
+                    <TextBlock x:Name="delbtn_text" FontSize="25                                  "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                </Border>
+
+                <TextBlock x:Name="Tieude" Text="reserve" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" Margin="72,11,267,614" Grid.RowSpan="2">
+
+                </TextBlock>
+                <Image x:Name="img1" Source="/Resources/refresh.png" Margin="16,25,801,1" Cursor="Hand" MouseDown="Image_MouseDown">
+
+                </Image>
+                <Image x:Name="img2" Source="/Resources/right-arrow.png" Margin="16,25,801,1" Cursor="Hand" Visibility="Hidden" MouseDown="img2_MouseDown"/>
+                <Border x:Name="search" BorderBrush="Black" HorizontalAlignment="Center" Height="36" Margin="0,20,0,0" VerticalAlignment="Top" Width="242" CornerRadius="0,5,5,0" Background="#FFD9D9D9" Grid.RowSpan="2">
+                    <Grid  >
+
+                        <TextBox x:Name="search_txt" Background="{x:Null}" BorderBrush="{x:Null}" Margin="7,0,38,0" RenderTransformOrigin="0.5,0.5" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="20" TextChanged="search_txt_TextChanged">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="0.068"/>
+                                    <RotateTransform Angle="-0.05"/>
+                                    <TranslateTransform Y="0.11"/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+
+                        </TextBox>
+                        <Image Margin="212,9,8,8" Source="/Resources/search.png" Cursor="Hand" RenderTransformOrigin="-1.03,0.597" MouseDown="Image_MouseDown_1" />
+                    </Grid>
+                </Border>
+                <Border x:Name="search2" BorderBrush="Black" HorizontalAlignment="Left" Height="36" Margin="209,20,0,0" VerticalAlignment="Top" Width="99" CornerRadius="0,5,5,0" Background="White" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <TextBlock Text="search" Margin="2,0,0,0" RenderTransformOrigin="0.5,0.5" FontSize="19" FontFamily="Times New Roman" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+
+                    </TextBlock>
+                </Border>
+                <TextBlock x:Name="filter" Text="Filter" FontSize="32" FontFamily="Times New Roman" Foreground="#C6980A" Margin="575,22,120,603" Grid.RowSpan="2"/>
+
+            </Grid>
+
+        </Border>
+        <ContentControl x:Name="main_content" Margin="2,85,2,10" >
+
+        </ContentControl>
+    </Grid>
+</Window>

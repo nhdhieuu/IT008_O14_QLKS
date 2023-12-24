@@ -180,6 +180,9 @@
     <Compile Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml.cs">
       <DependentUpon>Receipt_Add_Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\FormPage\room\booking list\booking_list.xaml.cs">
+      <DependentUpon>booking_list.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
       <DependentUpon>sttroompage.xaml</DependentUpon>
     </Compile>
@@ -381,6 +384,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\booking list\booking_list.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -699,6 +706,7 @@
     <Resource Include="Resources\icons8-eye-90 %281%29.png" />
     <Resource Include="Resources\Gold.jpg" />
     <Resource Include="Resources\Platinum.jpg" />
+    <Resource Include="Resources\icons8-reserve-100.png" />
     <Content Include="Resources\print.png" />
     <Resource Include="Resources\ReceiptCardBackground.png" />
     <Resource Include="Resources\RecieptCardMoney.png" />

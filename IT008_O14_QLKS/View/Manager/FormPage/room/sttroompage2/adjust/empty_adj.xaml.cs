@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_O14_QLKS.View.Manager.FormPage.client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
     /// </summary>
     public partial class empty_adj : UserControl
     {
-        public empty_adj()
+        string ID;
+        public empty_adj(string iD)
         {
             InitializeComponent();
+            ID = iD;
+           
         }
+       
+         
     }
 }

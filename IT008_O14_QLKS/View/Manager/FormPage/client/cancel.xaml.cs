@@ -61,7 +61,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 if(type=="book")
                 {
                     sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
-                }    
+                }
+                if (type == "book2")
+                {
+                    sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE = 'That Bai' WHERE MATHUEPHONG ='{ID}'";
+                }
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

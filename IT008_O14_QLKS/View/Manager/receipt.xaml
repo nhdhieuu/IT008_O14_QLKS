@@ -18,7 +18,7 @@
         <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#FF686868" />
         <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
-    
+
         <LinearGradientBrush x:Key="ListBoxBackgroundBrush" StartPoint="0,0" EndPoint="1,0.001">
             <GradientBrush.GradientStops>
                 <GradientStopCollection>
@@ -46,7 +46,7 @@
                 </GradientStopCollection>
             </GradientBrush.GradientStops>
         </LinearGradientBrush>
-    
+
         <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
             <Setter Property="Visibility" Value="Hidden"/>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -84,7 +84,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    
+
         <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -98,7 +98,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    
+
         <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -122,7 +122,7 @@
                 <RepeatButton Grid.Row="3" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineDownCommand" Content="M 0 0 L 4 4 L 8 0 Z"/>
             </Grid>
         </ControlTemplate>
-    
+
         <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -162,7 +162,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-    
+
         <Style x:Key="FavsScrollViewer" TargetType="{x:Type ScrollViewer}">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Template">
@@ -246,11 +246,11 @@
                         <TextBlock Text="+" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="39" FontWeight="Bold" Foreground="White"/>
                     </Border>
                 </Grid>
-                    
-                    
 
-                
-                
+
+
+
+
 
 
                 <Grid Grid.Column="1" Margin="10,0,8,0" >
@@ -259,43 +259,57 @@
                         <RowDefinition Height="191*"></RowDefinition>
                         <RowDefinition Height="160*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Border >
+                    <Border Margin="0,17,0,10">
+                        <Border.Background >
+                            <ImageBrush ImageSource="/Resources/ReceiptDatePicker.png" ></ImageBrush>
+                        </Border.Background>
                         <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Image Grid.RowSpan="2" Source="/Resources/ReceiptDatePicker.png"></Image>
-                            <Label Name="DatePickerLabel" Grid.Row="1" Margin="7,0,0,11" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
-                            <Border x:Name="Datepicker" CornerRadius="5" Grid.RowSpan="2" Width="55" Height="55" Margin="0,27,25,27" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
+                            <Border  Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF" Margin="247,9,10,94">
+                                <Image Name="DatePickerCheckBox" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
+                            </Border>
+
+
+
+
+
+                            <Border Margin="13,44,80,10">
+
+                                <Label Name="DatePickerLabel" Grid.Row="1" Margin="0,21,0,0" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
+                            </Border>
+
+
+
+                            <Border x:Name="Datepicker" CornerRadius="5" Width="55" Height="55" Margin="0,37,31,31" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
                                 <Image Cursor="Hand" Source="/Resources/calendar.png" ></Image>
                             </Border>
                         </Grid>
+
+
                     </Border>
 
                     <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7">
                         <Border.Background>
                             <ImageBrush ImageSource="/Resources/ReceiptFilter.png" Stretch="UniformToFill"/>
                         </Border.Background>
-                        
-                         <Grid Margin="10,10,10,10">
+
+                        <Grid Margin="10,10,10,10">
                             <Border Name="FilterCheckBox" MouseDown="FilterCheckBox_Click" Margin="237,0,0,199" Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
                                 <Image Name="FilterCheckBoxImage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
                             </Border>
 
 
                             <Border Width="73" Height="49" Margin="8,-12,176,182">
-                                
+
                                 <Label  Foreground="White" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" >Filter</Label>
                             </Border>
-                            
+
                             <Border  x:Name="ScrollBarBorder" CornerRadius="8,8,8,8" Background="#12CE69 " Margin="8,31,8,10">
                                 <Slider Name="FilterSlider" Minimum="0" Maximum="20000000" TickFrequency="500000" IsSnapToTickEnabled = "True" IsEnabled="False" Margin="10,85,10,73"  ValueChanged="FilterSlider_OnValueChanged"></Slider>
-                             </Border>
+                            </Border>
                             <Border Width="66" Height="30" Margin="18,37,173,152">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="25"> Value</TextBlock>
                             </Border>
-                             
+
                             <Border CornerRadius="5" Height="32" Width="220" Background="White" Margin="18,153,19,34">
                                 <TextBlock Name="FilterMoneyTextBox" Text="0 VND" Foreground="#075129" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
                             </Border>
@@ -309,14 +323,14 @@
                                     <TextBlock Foreground="White" FontFamily="Bahnschrift" FontSize="14" > Custom</TextBlock>
                                 </RadioButton>
                             </Border>
-                             
+
 
                         </Grid>
 
 
 
                     </Border>
-                    
+
                     <Border Grid.Row="2" Margin="0,11,0,10">
                         <Border.Background>
                             <ImageBrush ImageSource="/Resources/ReceiptSortBy.png" ></ImageBrush>

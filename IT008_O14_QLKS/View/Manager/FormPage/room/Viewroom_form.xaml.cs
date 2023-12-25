@@ -178,7 +178,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             SqlDataReader reader2 = sqlcmd.ExecuteReader();
             while (reader2.Read())
             {
-                ServiceCard sc = new ServiceCard(reader2.GetString(1), reader2.GetDateTime(4), reader2.GetDecimal(3));
+                ServiceCard sc = new ServiceCard(reader2.GetString(1), reader2.GetDateTime(4), reader2.GetDecimal(3),reader2.GetInt32(2).ToString());
                 ContentControl cc = new ContentControl();
                 cc.Height = 42;
                 cc.Width = 375;

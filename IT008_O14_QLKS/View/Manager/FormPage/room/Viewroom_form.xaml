@@ -238,7 +238,7 @@
                                 </Rectangle.RenderTransform>
 
                             </Rectangle>
-                            <Rectangle Margin="167,45,293,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="168,45,291,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
                                 <Rectangle.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleX="-1"/>
@@ -250,7 +250,7 @@
 
                             </Rectangle>
 
-                            <Rectangle Margin="300,45,160,157" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="300,45,159,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
 
@@ -285,10 +285,10 @@
                                 </Rectangle.RenderTransform>
 
                             </Rectangle>
-                            <Rectangle Margin="169,40,290,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="167,40,292,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
-                            <Rectangle Margin="300,40,159,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="298,40,161,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
 

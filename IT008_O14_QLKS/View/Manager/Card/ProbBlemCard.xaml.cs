@@ -36,7 +36,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             sqlcmd.Connection = connect.sqlCon;
             this.name = sqlcmd.ExecuteScalar().ToString();
             this.date = date.ToString("dd/MM/yyyy");
-            this.price = price.ToString() + " VND"; ;
+            this.price = Math.Truncate(price).ToString() + " VND";
             InitializeComponent();
             Inputt();
         }

@@ -126,6 +126,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 CK.Visibility = Visibility.Visible;
                 rbutton.Visibility=Visibility.Collapsed;   
             }
+            if(type=="client")
+            {
+                rbutton.Visibility = Visibility.Collapsed;  
+            }    
             tinhtienphong();
 
 

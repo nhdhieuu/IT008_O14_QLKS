@@ -133,7 +133,7 @@ namespace IT008_O14_QLKS.View.Clients
             {
                 Height = 20
             };
-            Room_card_client b = new Room_card_client(ID);
+            Room_card_client b = new Room_card_client(ID,"client");
             if (str == "book")
                 b.book();
             if(str == "huy")

@@ -398,6 +398,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
             sttroompage a = new sttroompage(type_lbl.Content.ToString(),TenPhong);
             a.ShowDialog();
+            
         }
     }
 }

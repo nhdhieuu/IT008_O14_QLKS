@@ -187,14 +187,14 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid MouseDown="Grid_MouseDown" >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <!-- Phần trên -->
-        <Label Content="notice" FontSize="45" Foreground="#C6980A" Margin="55,0,607,536" Grid.RowSpan="2"
-               VerticalContentAlignment="Center" Padding="0,0,0,8"/>
+        <Label Content="notice" FontSize="45" Foreground="#C6980A" Margin="10,0,652,536" Grid.RowSpan="2"
+               VerticalContentAlignment="Center" Padding="0,0,0,8" FontFamily="Times New Roman"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="65*"/>
@@ -203,41 +203,63 @@
             </Grid.ColumnDefinitions>
 
             <!-- Phần chính -->
-            <Label Grid.Column="2" Content="New message" FontSize="35" Margin="10,-10,10,500" Padding="0"/>
+            <Label Grid.Column="1" Content="New message" FontSize="35" Margin="10,-45,10,535" Padding="0" FontFamily="Times New Roman"/>
             <!-- Bên Phải -->
-            <Border CornerRadius="5" Background="White" Grid.Column="2" Margin="10,36,10,10">
+            <Border CornerRadius="10,10,10,10" Background="White" Grid.Column="1" Margin="10,10,10,10">
                 <Grid>
                     <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
-                            Background="#D9D9D9" Margin="16,10,16,200">
-                        <TextBox x:Name="notice_context" Background="#D9D9D9" BorderThickness="0" Margin="1.2" TextWrapping="Wrap" AcceptsReturn="True" />
+                            Background="#D9D9D9" Margin="16,42,16,440">
+                        <TextBox x:Name="header_box" Background="#D9D9D9" BorderThickness="0" Margin="1,2,1,4" TextWrapping="Wrap" AcceptsReturn="True" />
                     </Border>
-                    <Label Content="to:" FontSize="35" Foreground="Black" Margin="16,270,237,150"
-                           Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
                     <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
-                            Background="White" Margin="16,325,16,53">
-                        <TextBox Background="white" BorderThickness="0" Margin="1.2"/>
+                            Background="#D9D9D9" Margin="16,106,16,278">
+                        <TextBox x:Name="noidung_box" Background="#D9D9D9" BorderThickness="0" Margin="1,9,1,1" TextWrapping="Wrap" AcceptsReturn="True" />
                     </Border>
-                    <Border Background="#C6980A"  Margin="258,295,16,170" >
-                        <Button Content="+" Foreground="White" Background="#C6980A" Margin="1.2"
-                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-8,0,0"
-                                />
+                    <Label Content="to:" FontSize="25" Foreground="Black" Margin="16,212,237,208"
+                           Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontFamily="Times New Roman"/>
+                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
+                            Background="White" Margin="17,282,15,121">
+                        <ScrollViewer Margin="9,9,9,9">
+                            <StackPanel x:Name="addstk" Width="278">
+
+                            </StackPanel>
+                        </ScrollViewer>
+                        
                     </Border>
-                    <Border Background="#C6980A" CornerRadius="5" Margin="100,445,100,10" >
-                        <Button Name="send_but" Content="send" Foreground="White" Background="#C6980A" Margin="1.2"
-                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" Click="send_but_Click" 
+                    <Grid Margin="10,0,0,208">
+
+
+                        <Button Content="+" Foreground="White" Background="#C6980A" Margin="237,247,16,34"
+                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-8,0,0"  Click="ShowPopup_Click" 
+                                >
+
+                        </Button>
+
+
+                    </Grid>
+
+
+                    <Border Background="#C6980A" CornerRadius="5" Margin="100,470,100,10" >
+                        <Button Name="send_but" Content="send" Foreground="White" Background="#C6980A"
+                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" Click="send_but_Click" FontFamily="Times New Roman" HorizontalAlignment="Left" Width="124" Margin="4,0,0,0" 
                                 />
                     </Border>
                 </Grid>
             </Border>
 
             <!-- Bên Trái -->
-            <ScrollViewer>
+            <ScrollViewer MouseDown="Grid_MouseDown" >
 
-                <StackPanel x:Name="Notice_list" Width="417">
-                    
+                <StackPanel MouseDown="Grid_MouseDown"  x:Name="stk" Width="417">
+
                 </StackPanel>
             </ScrollViewer>
-           
+            <Label Grid.Column="1" Content="header" FontSize="25" Margin="26,20,-6,482" Padding="0" FontFamily="Times New Roman"/>
+            <Label Grid.Column="1" Content="message" FontSize="25" Margin="26,86,-6,412" Padding="0" FontFamily="Times New Roman"/>
+            <Label Grid.Column="1" Content="start:" FontSize="25" Margin="26,410,-6,87" Padding="0" FontFamily="Times New Roman"/>
+            <DatePicker x:Name="dpk1" Margin="178,417,30,97" Grid.Column="1"/>
+            <Label Grid.Column="1" Content="end:" FontSize="25" Margin="26,443,-6,55" Padding="0" FontFamily="Times New Roman"/>
+            <DatePicker  x:Name="dpk2"  Margin="178,447,30,67" Grid.Column="1"/>
         </Grid>
     </Grid>
 </UserControl>

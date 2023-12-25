@@ -402,7 +402,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
             // Kiểm tra xem chuỗi có đúng định dạng không
             if (!inputStr.StartsWith("HD"))
             {
-                throw new ArgumentException("Invalid input format");
+                inputStr = "HD000";
             }
 
             // Lấy phần số trong chuỗi

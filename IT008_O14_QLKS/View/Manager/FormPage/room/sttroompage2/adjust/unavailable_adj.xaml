@@ -27,12 +27,12 @@
 
                     </Border>
                  
-                    <Border Style="{DynamicResource save_bd}" Margin="188,194,259,22" >
+                    <Border Style="{DynamicResource save_bd}" Margin="188,194,259,22" MouseDown="Border_MouseDown_1" >
                         <TextBlock Text="save" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>
 
-                    <Border Style="{DynamicResource x_bd}" Margin="346,192,193,24" >
+                    <Border Style="{DynamicResource x_bd}" Margin="346,193,193,23" MouseDown="Border_MouseDown" >
                         <TextBlock Text="X" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>

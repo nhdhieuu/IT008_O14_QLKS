@@ -19,14 +19,15 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
     /// </summary>
     public partial class addRoom : Window
     {
-        addRoom1 a;
-        AddRoom2 b;
+        public addRoom1 a;
+       
         public addRoom()
         {
             InitializeComponent();
-            b = new AddRoom2();
+            
             a = new addRoom1(this);
             main_content.Content = a;
+
         }
       
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,7 +69,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         {
 
         }
-        public void chuyenview()
+        public void chuyenview(string Roomname)
         {
             img1.Visibility = Visibility.Collapsed;
             img2.Visibility = Visibility.Visible;
@@ -76,8 +77,8 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             search2.Visibility = Visibility.Collapsed;
             filter.Visibility=Visibility.Collapsed;
             Tieude.Text = "room information";
-            AddRoom2 ar2 = new AddRoom2();
-            main_content.Content = b;
+            AddRoom2 ar2 = new AddRoom2(Roomname);
+            main_content.Content = ar2;
         }
 
         private void img2_MouseDown(object sender, MouseButtonEventArgs e)

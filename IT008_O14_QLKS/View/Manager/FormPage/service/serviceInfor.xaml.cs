@@ -1,5 +1,8 @@
-﻿using System;
+﻿using IT008_O14_QLKS.Connection_db;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,35 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
     /// </summary>
     public partial class serviceInfor : Window
     {
-        public serviceInfor()
+        DB_connection dB_Connection = new DB_connection();
+        SqlDataAdapter adapter;
+        DataTable dataTable = new DataTable();
+      
+        public serviceInfor(string id)
         {
             InitializeComponent();
+            String str = $"select * from DICHVU where MADV='{id}'";
+            adapter = new SqlDataAdapter(str, dB_Connection.sqlCon);
+            adapter.Fill(dataTable);
+            serviceID.Text = dataTable.Rows[0]["MADV"].ToString();
+            serviceName.Text = dataTable.Rows[0]["TENDV"].ToString();
+            string price = dataTable.Rows[0]["DONGIA"].ToString();
+            serviceAmount.Text = dataTable.Rows[0]["SOLUONG"].ToString();
+            bool pp = double.TryParse(price, out double real_price);
+            if (pp)
+            {
+                if (real_price == 0)
+                {
+                    price = "free";
+                }
+                else
+                {
+                    price = real_price.ToString();
+                }
+
+            }
+            servicePrice.Text = price;
+
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -68,21 +97,40 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
                 {
                     /* add database code here */
 
+                    try
+                    {
 
-                    MessageBox.Show("Saved", "Notice");
-                    serviceID.IsEnabled = false;
-                    serviceAmount.IsEnabled = false;
-                    serviceName.IsEnabled = false;
-                    servicePrice.IsEnabled = false;
-                    adjust_lb.Content = "adjust";
+
+
+
+                        string sql = $"UPDATE DICHVU SET TENDV='{serviceName.Text}',DONGIA='{servicePrice.Text}',SOLUONG='{serviceAmount.Text}'" +
+                        $"where MADV='{serviceID.Text}' ";
+                        SqlCommand sqlCommand = new SqlCommand();
+                        sqlCommand.CommandText = sql;
+                        sqlCommand.Connection = dB_Connection.sqlCon;
+                        sqlCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("Saved", "Notice");
+                        serviceID.IsEnabled = false;
+                        serviceAmount.IsEnabled = false;
+                        serviceName.IsEnabled = false;
+                        servicePrice.IsEnabled = false;
+                        adjust_lb.Content = "adjust";
+
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi.\nVui lòng kiểm tra lại thông tin.", "NOTICE");
+                    }
                 }
             }
             else if (adjust_lb.Content.ToString() == "adjust")
             {
                 serviceID.IsEnabled = true;
-                serviceAmount.IsEnabled=true;
-                serviceName.IsEnabled=true;
-                servicePrice.IsEnabled=true;
+                serviceAmount.IsEnabled = true;
+                serviceName.IsEnabled = true;
+                servicePrice.IsEnabled = true;
                 adjust_lb.Content = "save";
             }
         }
@@ -103,8 +151,21 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
             {
                 // code delete service from database
 
-                MessageBox.Show("Service has been deleted.", "Notice");
-                this.Close();
+                try
+                {
+                    string sql = $"DELETE FROM DICHVU WHERE MADV='{serviceID.Text}' ";
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandText = sql;
+                    sqlCommand.Connection = dB_Connection.sqlCon;
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Service has been deleted.", "Notice");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Can not delete this service.", "Error");
+                }
             }
 
         }

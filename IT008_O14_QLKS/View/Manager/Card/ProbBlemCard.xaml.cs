@@ -24,6 +24,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public string name;
         public string id;
         public string price;
+        public event EventHandler problemDialogClosed;
         public ProbBlemCard(string id, string name, string price)
         {
             this.name = name;
@@ -40,8 +41,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
         }
         private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            problemInfor pi = new problemInfor();
+            problemInfor pi = new problemInfor(this.id);
+            pi.Closed += Pi_Closed;
             pi.ShowDialog();
+        }
+
+        private void Pi_Closed(object sender, EventArgs e)
+        {
+            problemDialogClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using IT008_O14_QLKS.Connection_db;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
     /// </summary>
     public partial class serviceAdd : Window
     {
+        DB_connection dB_Connection=new DB_connection();
         public serviceAdd()
         {
             InitializeComponent();
@@ -65,8 +68,25 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
             else
             {
                 // add service to database
-                MessageBox.Show("New sservice has been added", "Notice");
-                this.Close();
+
+                try
+                {
+                    string sql = "INSERT INTO DICHVU VALUES" +
+                        $"('{serviceID.Text}','{serviceName.Text}','{servicePrice.Text}','{serviceAmount.Text}')";
+                    
+                    SqlCommand sqlCommand =new SqlCommand();
+                    sqlCommand.CommandText = sql;
+                    sqlCommand.Connection = dB_Connection.sqlCon;
+                    sqlCommand.ExecuteNonQuery();
+
+
+                    MessageBox.Show("New service has been added", "Notice");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Can not add service.","Notice");
+                }
             }
         }
     }

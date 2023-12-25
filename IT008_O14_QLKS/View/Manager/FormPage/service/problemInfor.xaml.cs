@@ -1,5 +1,8 @@
-﻿using System;
+﻿using IT008_O14_QLKS.Connection_db;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,32 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
     /// </summary>
     public partial class problemInfor : Window
     {
-        public problemInfor()
+        DB_connection dB_Connection= new DB_connection();
+        SqlDataAdapter adapter;
+        DataTable dataTable = new DataTable();
+        public problemInfor(string id)
         {
             InitializeComponent();
+            String str = $"select * from PROBLEM where MAPR='{id}'";
+            adapter = new SqlDataAdapter(str, dB_Connection.sqlCon);
+            adapter.Fill(dataTable);
+            problemID.Text = dataTable.Rows[0]["MAPR"].ToString();
+            problemName.Text = dataTable.Rows[0]["PRNAME"].ToString();
+            string price = dataTable.Rows[0]["PRICE"].ToString();
+            bool pp = double.TryParse(price, out double real_price);
+            if (pp)
+            {
+                if (real_price == 0)
+                {
+                    price = "free";
+                }
+                else
+                {
+                    price = real_price.ToString();
+                }
+
+            }
+            problemPrice.Text = price;
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -67,9 +93,22 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
                 else
                 {
                     /* add database code here */
+                    try
+                    {
+                        string sql = $"UPDATE PROBLEM SET PRNAME='{problemName.Text}',PRICE='{problemPrice.Text}'," +
+                           $"where MAPR='{problemID.Text}' ";
+                        SqlCommand sqlCommand = new SqlCommand();
+                        sqlCommand.CommandText = sql;
+                        sqlCommand.Connection = dB_Connection.sqlCon;
+                        sqlCommand.ExecuteNonQuery();
 
 
-                    MessageBox.Show("Saved", "Notice");
+                        MessageBox.Show("Saved", "Notice");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Lỗi xảy ra.", "Error");
+                    }
                     problemID.IsEnabled = false;
                     problemName.IsEnabled = false;
                     problemPrice.IsEnabled = false;
@@ -102,8 +141,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
             {
                 // code delete problem from database
 
-                MessageBox.Show("Problem has been deleted.", "Notice");
-                this.Close();
+                try
+                {
+                    string sql = $"DELETE FROM PROBLEM WHERE MAPR='{problemID.Text}' ";
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandText = sql;
+                    sqlCommand.Connection = dB_Connection.sqlCon;
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Problem has been deleted.", "Notice");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Can not delete this problem.", "Error");
+                }
+
+                
             }
             
         }

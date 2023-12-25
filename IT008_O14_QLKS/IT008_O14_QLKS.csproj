@@ -149,6 +149,12 @@
     <Compile Include="View\Manager\Card\roomCardbackground\SuiteBG.xaml.cs">
       <DependentUpon>SuiteBG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\RoomProblem.xaml.cs">
+      <DependentUpon>RoomProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\RoomService.xaml.cs">
+      <DependentUpon>RoomService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
     </Compile>
@@ -180,8 +186,16 @@
     <Compile Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml.cs">
       <DependentUpon>Receipt_Add_Form.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="View\Manager\FormPage\room\booking list\booking_list.xaml.cs">
       <DependentUpon>booking_list.xaml</DependentUpon>
+  </Compile>
+
+    <Compile Include="View\Manager\FormPage\room\AddProblem.xaml.cs">
+      <DependentUpon>AddProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FormPage\room\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\FormPage\room\sttroompage.xaml.cs">
       <DependentUpon>sttroompage.xaml</DependentUpon>
@@ -350,6 +364,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Card\RoomProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\RoomService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\ServiceCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -387,7 +409,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="View\Manager\FormPage\room\booking list\booking_list.xaml">
+    <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
+    <Page Include="View\Manager\FormPage\room\AddProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FormPage\room\AddService.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -685,6 +718,7 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\up-arrow.png" />
     <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />
@@ -698,6 +732,7 @@
     <Resource Include="Resources\ee77cea094378a30fe302d8a95e7b848.jpg" />
     <Resource Include="Resources\Diamond.jpg" />
     <Resource Include="Resources\deluxee.jpg" />
+    <Resource Include="Resources\down-arrow.png" />
     <Content Include="Resources\filter.png" />
     <Content Include="Resources\filter1.png" />
     <Resource Include="Resources\icons8-client-50.png" />

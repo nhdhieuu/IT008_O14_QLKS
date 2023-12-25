@@ -132,7 +132,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         }
         TimeSpan giothue;
-
+        DateTime ngaybd;
         private void load()
         {
            
@@ -165,6 +165,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 if (reader.Read()) // Kiểm tra xem có dữ liệu hay không
                 {
                     khachhang = reader.GetString(1);
+                    ngaybd = reader.GetDateTime(4);
                     TimeSpan timeDifference = reader.GetDateTime(4)-myDateTime ;
 
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
@@ -577,7 +578,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 }
                 else
                 {
-                    cancel a = new cancel(ID);
+                    cancel a = new cancel(ID,ngaybd);
                     a.ShowDialog();
                     load();
                     DependencyObject parent = VisualTreeHelper.GetParent(this);
@@ -586,7 +587,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                         parent = VisualTreeHelper.GetParent(parent);
                     }
 
-                    if (parent is ClientsRoom window)
+                    if (parent is room_client window)
                     {
                         window.reset();
                     }

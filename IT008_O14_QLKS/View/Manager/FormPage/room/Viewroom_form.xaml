@@ -238,7 +238,7 @@
                                 </Rectangle.RenderTransform>
 
                             </Rectangle>
-                            <Rectangle Margin="167,45,293,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="168,45,291,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
                                 <Rectangle.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleX="-1"/>
@@ -250,42 +250,14 @@
 
                             </Rectangle>
 
-                            <Rectangle Margin="300,45,160,157" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="300,45,159,154" Fill="#C6980A" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
 
                             <ScrollViewer x:Name="DV_TaiPhong_Scrl" Margin="21,78,21,0" Height="87" VerticalAlignment="Top">
-                                <StackPanel>
-                                    <ContentControl x:Name="CC1" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC2" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC3" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC4" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC5" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC6" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC7" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC8" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC9" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CC10" Height="42" Width="375">
-
-                                    </ContentControl>
+                                <StackPanel x:Name="ServicePannel">
+                                    
+                                    
                                 </StackPanel>
 
                             </ScrollViewer>
@@ -293,7 +265,7 @@
 
 
 
-                            <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="21,180,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave">
+                            <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="21,180,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave" MouseDown="add_butt_MouseDown">
                                 <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
                             </Border>
                         </Grid>
@@ -313,10 +285,10 @@
                                 </Rectangle.RenderTransform>
 
                             </Rectangle>
-                            <Rectangle Margin="169,40,290,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="167,40,292,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
-                            <Rectangle Margin="300,40,159,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="298,40,161,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
 
@@ -326,37 +298,9 @@
 
                             <ScrollViewer Margin="16,70,21,51" RenderTransformOrigin="0.5,0.5">
 
-                                <StackPanel>
-                                    <ContentControl x:Name="CCb1" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb2" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb3" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb4" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb5" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb6" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb7" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb8" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb9" Height="42" Width="375">
-
-                                    </ContentControl>
-                                    <ContentControl x:Name="CCb10" Height="42" Width="375">
-
-                                    </ContentControl>
+                                <StackPanel x:Name="PRPanel">
+                                    
+                                    
                                 </StackPanel>
                             </ScrollViewer>
                             <Border x:Name="add_buttt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="16,168,0,9" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="add_buttt_MouseDown" MouseEnter="add_buttt_MouseEnter" MouseLeave="add_buttt_MouseLeave" >

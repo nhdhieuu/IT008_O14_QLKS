@@ -42,6 +42,19 @@ namespace IT008_O14_QLKS.View.Manager
                 string name= dataTable.Rows[i]["TENDV"].ToString();
                 string id= dataTable.Rows[i]["MADV"].ToString();
                 string price = dataTable.Rows[i]["DONGIA"].ToString();
+                bool pp = double.TryParse(price, out double real_price);
+                if (pp)
+                {
+                    if (real_price == 0)
+                    {
+                        price = "free";
+                    }
+                    else
+                    {
+                        price = real_price.ToString();
+                    }
+
+                }
                 card_dichvu cd=new card_dichvu(id,name,price);
                 ds_dichvu.Children.Add(cd);
             }    
@@ -52,11 +65,24 @@ namespace IT008_O14_QLKS.View.Manager
             da.Fill(dataTable1);
             for(int i = 0; i<dataTable1.Rows.Count;i++)
             {
-                string name = dataTable.Rows[i]["PRNAME"].ToString();
-                string id = dataTable.Rows[i]["MAPR"].ToString();
-                string price = dataTable.Rows[i]["PRICE"].ToString();
-                ProbBlemCard pc=new ProbBlemCard(id,name,price);
-                ds_problem.Children.Add(pc);
+                string name = dataTable1.Rows[i]["PRNAME"].ToString();
+                string id = dataTable1.Rows[i]["MAPR"].ToString();
+                string price = dataTable1.Rows[i]["PRICE"].ToString();
+                bool pp = double.TryParse(price, out double real_price);
+                if (pp)
+                {
+                    if(real_price == 0)
+                    {
+                        price = "free";
+                    }
+                    else
+                    {
+                        price = real_price.ToString();
+                    }
+
+                }
+                //ProbBlemCard pc=new ProbBlemCard(id,name,price);
+              //  ds_problem.Children.Add(pc);
             }    
 
           /*  SC[0] = new card_dichvu("DV01","Coca-cola","30000");
@@ -106,6 +132,7 @@ namespace IT008_O14_QLKS.View.Manager
             CC21.Content = SC[21].Content;
             CC22.Content = SC[22].Content;*/
 
+
             /*PC[0] = new ProbBlemCard("PR01", "repair", "200k");
             PC[1] = new ProbBlemCard("PR02", "repair", "200k");
             PC[2] = new ProbBlemCard("PR03", "repair", "200k");
@@ -116,6 +143,7 @@ namespace IT008_O14_QLKS.View.Manager
             PC[7] = new ProbBlemCard("PR08", "repair", "200k");
             PC[8] = new ProbBlemCard("PR09", "repair", "200k");
             PC[9] = new ProbBlemCard("PR10", "repair", "200k");
+
 
             PC1.Content = PC[0].Content;
             PC2.Content = PC[1].Content;

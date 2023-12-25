@@ -294,7 +294,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void FilterSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            filter = $"where tongtien <= {FilterSlider.Value}";
+            filter = $"where tongtien >= {FilterSlider.Value}";
             FilterMoneyTextBox.Text = FilterSlider.Value.ToString() + " VND";
             DisplaySort(sortby, orderby,filter);
         }
@@ -323,7 +323,7 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void AllRadioButton_OnClick(object sender, RoutedEventArgs e)
         {
-            FilterSlider.Value = FilterSlider.Maximum;
+            FilterSlider.Value = FilterSlider.Minimum;
             FilterMoneyTextBox.Text = FilterSlider.Value.ToString() + " VND";
             FilterSlider.IsEnabled = false;
         }

@@ -93,10 +93,11 @@
                 <Border Background="White" Margin="18,115,19,383">
 
                 </Border>
-                <Ellipse Fill="Black" Margin="239,13,22,437" Height="50" Width="50" Stroke="#FFA49407" StrokeThickness="2"/>
-                <Image>
-
-                </Image>
+                <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="236,13,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" Stretch="Uniform" />
+                    </Ellipse.Fill>
+                </Ellipse>
                 <TextBlock Text="Profile" FontSize="35" FontFamily="Times New Roman" Margin="17,18,199,439" Foreground="White"/>
                 <StackPanel Margin="0,139,0,-6">
                     <Border Style="{DynamicResource bd}">

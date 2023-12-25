@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.client
 {
@@ -86,14 +88,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 }
             }
 
-          reader.Close();
-           
-            string a = now.ToString();
 
-            string[] str = a.Split('/');
-            string trueday = str[1] + "-" + str[0] + "-" + str[2];
+            reader.Close();
+            sqlcmd.CommandText =$"SELECT AVATAR FROM KHACHHANG WHERE USERNAME='{ID}'";
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
 
-            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND '{trueday}'< NGAYKT AND KQUATHUE='Thanh Cong'";
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                avtt.ImageSource = bitmap;
+            }
+            catch { }
+            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT AND KQUATHUE='Thanh Cong'";
+
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
@@ -111,15 +122,20 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
-               
+                monney.Text = "0 VND";
+                try
+                {
                     int moneyFromDatabase = (int)command.ExecuteScalar();
 
-
-
-                if (moneyFromDatabase > 0)
                     monney.Text = moneyFromDatabase.ToString("#,###") + " VND";
-                else
-                    monney.Text = "0 VND";
+
+
+                }
+                catch (Exception ex)
+                {
+                }
+            
+
 
 
 

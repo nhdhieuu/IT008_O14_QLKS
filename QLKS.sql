@@ -480,5 +480,8 @@ loc varchar(5)
 )
 ALTER TABLE CTNT
 ADD CONSTRAINT FK_CTNT_NOTICE FOREIGN KEY (MANOTICE) REFERENCES notice(MANOTICE)
+alter table CTNT
+add  MAKH varchar(5)
+
 alter table CTNT 
-add  MAKH char(5)
+alter column  classID varchar(10)

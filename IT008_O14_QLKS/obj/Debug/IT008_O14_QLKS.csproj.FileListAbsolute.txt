@@ -618,3 +618,11 @@ D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.pdb
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\notice\addnotice.g.cs
 D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\FormPage\notice\addnotice.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProblemCard.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\memo.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\Card\ProblemCard.baml
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\View\Manager\memo.baml
+D:\code\Dack\IT008_O14_QLKS\obj\Debug\View\Manager\Card\NoticeCard_2.g.cs
+D:\code\Dack\IT008_O14_QLKS\obj\Debug\View\Manager\Card\NoticeCard_2.baml
+D:\code\Dack\IT008_O14_QLKS\obj\Debug\View\Clients\Card\notice-card.g.cs
+D:\code\Dack\IT008_O14_QLKS\obj\Debug\View\Clients\Card\notice-card.baml

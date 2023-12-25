@@ -89,6 +89,9 @@
       <DependentUpon>service_card.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\HashPassword.cs" />
+    <Compile Include="View\Clients\Card\notice-card.xaml.cs">
+      <DependentUpon>notice-card.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Clients\ClientsHome.xaml.cs">
       <DependentUpon>ClientsHome.xaml</DependentUpon>
     </Compile>
@@ -122,11 +125,17 @@
     <Compile Include="View\Manager\Card\NoticeCard.xaml.cs">
       <DependentUpon>NoticeCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Card\NoticeCard_2.xaml.cs">
+      <DependentUpon>NoticeCard_2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Card\ProbBlemCard.xaml.cs">
       <DependentUpon>ProbBlemCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\Client\client_class_card.xaml.cs">
       <DependentUpon>client_class_card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Card\ProblemCard.xaml.cs">
+      <DependentUpon>ProblemCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
@@ -243,6 +252,9 @@
     <Compile Include="View\Manager\Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\memo.xaml.cs">
+      <DependentUpon>memo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\notice.xaml.cs">
       <DependentUpon>notice.xaml</DependentUpon>
     </Compile>
@@ -282,6 +294,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Clients\Card\notice-card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Clients\ClientsHome.xaml" />
     <Page Include="View\Clients\ClientsMain.xaml" />
     <Page Include="View\Clients\ClientsRoom.xaml" />
@@ -317,6 +333,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Card\NoticeCard_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Card\ProbBlemCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -324,6 +344,10 @@
     <Page Include="View\Manager\Card\Client\client_class_card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Card\ProblemCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\Card\ReceiptCard.xaml">
       <SubType>Designer</SubType>
@@ -392,7 +416,7 @@
     </Page>
     <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="View\Manager\FormPage\room\booking list\booking_list.xaml">
       <SubType>Designer</SubType>
@@ -473,6 +497,10 @@
     <Page Include="View\Manager\Manager_main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\memo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\notice.xaml">
       <SubType>Designer</SubType>
@@ -692,6 +720,7 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="View\Manager\reload1.png" />
     <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />

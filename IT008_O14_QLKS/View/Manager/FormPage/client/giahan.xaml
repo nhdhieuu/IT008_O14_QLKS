@@ -31,7 +31,7 @@
 
             </Border>
 
-            <TextBlock x:Name="txt"  Text="renew room time" Margin="28,24,-28,6" FontFamily="Times New Roman" FontSize="60" FontWeight="Bold" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txt"  Text="renew room time" Margin="28,39,0,0" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2"/>
             <xctk:DateTimePicker  x:Name="dtpk" Margin="292,109,65,-109" Grid.Row="1" AllowTextInput="False" TimePickerShowButtonSpinner="False" HorizontalContentAlignment="Stretch" TextAlignment="Left" FontSize="20" TimeFormat="Custom" TimeFormatString="MM/dd/yyyy HH:mm:ss" Kind="Local" BorderBrush="#FF0C0C0C" BorderThickness="2,2,0,2"  ></xctk:DateTimePicker>
             <TextBlock Text="Time" Margin="63,116,444,-116" Grid.Row="1" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold"/>
             <Border Style="{DynamicResource save_bd}" Margin="260,230,255,-229" Grid.Row="1" MouseDown="Border_MouseDown_2" Height="NaN">

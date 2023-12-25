@@ -24,10 +24,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
     public partial class giahan : Window
     {
         string ID;
+        DateTime ngaybd;
         DB_connection connect = new DB_connection();
-        public giahan(string iD)
+        public giahan(string iD,DateTime ngaybd)
         {
             InitializeComponent();
+            this.ngaybd=ngaybd;
             ID = iD;
         }
 
@@ -82,27 +84,37 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 {
                     txt.Text = "please pick a future time";
                     txt.Foreground = new SolidColorBrush(Colors.Red);
-                    txt.FontSize = 55;
+                    txt.FontSize = 40;
                 }
                 else
                 {
-                    using (SqlConnection connection = new SqlConnection(connect.strCon))
+                    if(ngaybd> dtpk.Value)
                     {
-                        connection.Open();
-
-
-                        // Chuyển đổi thành chuỗi theo định dạng tháng ngày năm giờ phút giây
-
-                        string sqlQuery = $"UPDATE THUEPHONG SET NGAYKT = '{trueday}' WHERE MATHUEPHONG ='{ID}'";
-
-                        using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                        {
-
-                            command.ExecuteNonQuery();
-                        }
+                        txt.Text = "please pick a day after start day";
+                        txt.Foreground = new SolidColorBrush(Colors.Red);
+                        txt.FontSize = 40;
                     }
+                    else
+                    {
+                        using (SqlConnection connection = new SqlConnection(connect.strCon))
+                        {
+                            connection.Open();
 
-                    this.Close();
+
+                            // Chuyển đổi thành chuỗi theo định dạng tháng ngày năm giờ phút giây
+
+                            string sqlQuery = $"UPDATE THUEPHONG SET NGAYKT = '{trueday}' WHERE MATHUEPHONG ='{ID}'";
+
+                            using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                            {
+
+                                command.ExecuteNonQuery();
+                            }
+                        }
+
+                        this.Close();
+                    }
+                   
                 }
 
 

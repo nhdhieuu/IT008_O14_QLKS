@@ -37,7 +37,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
     /// </summary>
     public partial class Room_card_client : UserControl
     {
-       
+        DateTime ngaybd;
         string ID;
         DateTime myDateTime = DateTime.Now;
         int paid = 0;
@@ -85,7 +85,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             }
             tinhtienphong();
 
-
+      
 
         }
         public Room_card_client(string ID,string type)
@@ -136,10 +136,10 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         }
         TimeSpan giothue;
-        DateTime ngaybd;
+
         private void load()
         {
-           
+
             string query = $"SELECT COUNT(*) FROM CTHD WHERE MAPHONG = '{ID}'";
 
             // Mở kết nối đến cơ sở dữ liệu
@@ -153,13 +153,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     // Thực hiện truy vấn và nhận kết quả COUNT
                     int count = (int)command.ExecuteScalar();
                     paid = count;
-                 
+
                 }
             }
-                SqlCommand sqlcmd = new SqlCommand();
+            SqlCommand sqlcmd = new SqlCommand();
 
             sqlcmd.CommandType = CommandType.Text;
-          
+
             sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MATHUEPHONG='{ID}'";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
@@ -169,15 +169,19 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 if (reader.Read()) // Kiểm tra xem có dữ liệu hay không
                 {
                     khachhang = reader.GetString(1);
-                    ngaybd = reader.GetDateTime(4);
-                    TimeSpan timeDifference = reader.GetDateTime(4)-myDateTime ;
+                    ngaybd = reader.GetDateTime(3);
+                    if (ngaybd > DateTime.Now)
+                    {
+                        add.Visibility = Visibility.Collapsed;
+                    }
+                    TimeSpan timeDifference = reader.GetDateTime(4) - myDateTime;
 
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
-                    if (timeDifference.Days<0)
+                    if (timeDifference.Days < 0)
                     {
-                        if(paid==0)
-                        { 
-                            if(type!="book"&&type!="huy")
+                        if (paid == 0)
+                        {
+                            if (type != "book" && type != "huy")
                             {
                                 typetxt.Text = "NOT PAID";
                                 typetxt.Foreground = new SolidColorBrush(Colors.Red);
@@ -186,8 +190,8 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                                 view.Text = "PAY";
                                 CANCEL.Visibility = Visibility.Collapsed;
                                 add.Visibility = Visibility.Collapsed;
-                            }    
-                           
+                            }
+
 
                         }
                         else
@@ -204,7 +208,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                                 thuoctinh = "paid";
                             }
                         }
-                        
+
                     }
                     else
                     {
@@ -216,7 +220,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                         }
                         if (timeDifference.Days <= 0)
                         {
-                            if (timeDifference.Hours <=0)
+                            if (timeDifference.Hours <= 0)
 
                             {
                                 if (paid == 0)
@@ -256,15 +260,15 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             {
                                 nbtxtleft.Text = timeDifference.Hours.ToString();
                             }
-                            
+
                         }
 
                     }
 
-                  
+
 
                     ftxt.Text = reader.GetString(2).Substring(1).ToUpper();
-                    fromdate.Text =  reader.GetDateTime(3).ToString("dd/MM/yyyy HH:mm:ss");
+                    fromdate.Text = reader.GetDateTime(3).ToString("dd/MM/yyyy HH:mm:ss");
                     todate.Text = reader.GetDateTime(4).ToString("dd/MM/yyyy HH:mm:ss");
                 }
             }
@@ -273,8 +277,20 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 huy();
             if (type == "book")
                 book();
+            //load rom
 
+            sqlcmd.CommandText = $"select * from PHONG where TENPHONG ='{ftxt.Text}'";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader2 = sqlcmd.ExecuteReader();
 
+            using (reader2)
+            {
+                if (reader2.Read()) // Kiểm tra xem có dữ liệu hay không
+                {
+                    roomcard2 rc = new roomcard2(reader2.GetString(1), reader2.GetString(2), reader2.GetInt32(11), "khong");
+                    card.Content=rc;    
+                }
+            }
         }
         decimal tienphong = 0;
         private decimal tinhtienphong()
@@ -506,7 +522,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             {
                 if (typetxt.Text != "PAID" && typetxt.Text != "NOT PAID")
                 {
-                    giahan a = new giahan(ID);
+                    giahan a = new giahan(ID,ngaybd);
                     a.ShowDialog();
                     load();
                 }
@@ -564,7 +580,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             {
                 if (type == "book")
                 {
-                    cancel a = new cancel(ID, "book");
+                    cancel a = new cancel(ID, "book",ngaybd);
                     a.ShowDialog();
                     load();
 

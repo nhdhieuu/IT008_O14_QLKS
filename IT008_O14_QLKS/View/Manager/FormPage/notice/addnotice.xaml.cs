@@ -19,6 +19,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.notice
     /// </summary>
     public partial class addnotice : Window
     {
+      
         StackPanel noticePanel;
         public addnotice(StackPanel a  ) 
         {
@@ -164,38 +165,13 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.notice
             }
             old = cus.Text;
         }
-        string a;
+        public string txt { get; set; }
 
         public string tra_ve()
         {
-           
-            if(cbb.SelectedIndex == 0)
-            {
-                a = "all client";
-
-            }
-            if (cbb.SelectedIndex == 1)
-            {
-                a = "all client in floor " +cus.Text;
-
-            }
-          
-            if (cbb.SelectedIndex == 2)
-            {
-                a = "all client  have " + cbb2.Text +" class";
-
-            }
-            if (cbb.SelectedIndex == 3)
-            {
-                a = "all client  have " + cbb2.Text + "  room";
-
-            }
-            if (cbb.SelectedIndex == 4)
-            {
-                a = "client has id: " + cus2.Text;
-
-            }
-            return a;
+         
+            
+            return txt;
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -213,13 +189,33 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.notice
                 }
                 else
                 {
-                    TextBlock a = new TextBlock
+                    if (cbb.SelectedIndex == 0)
                     {
+                        txt = "all client";
 
-                        Text = tra_ve(),
-                        FontSize=15
-                    };
-                    noticePanel.Children.Add(a);
+                    }
+                    if (cbb.SelectedIndex == 1)
+                    {
+                        txt = "all client in floor " + cus.Text;
+
+                    }
+
+                    if (cbb.SelectedIndex == 2)
+                    {
+                        txt = "all client  have " + cbb2.Text + " class";
+
+                    }
+                    if (cbb.SelectedIndex == 3)
+                    {
+                        txt = "all client  have " + cbb2.Text + "  room";
+
+                    }
+                    if (cbb.SelectedIndex == 4)
+                    {
+                        txt = "client has id: " + cus2.Text;
+
+                    }
+                    this.Close();
                 }
             }
           

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Clients.Card.notice_card"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.Card"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="380">
+    <Grid>
+        
+        <StackPanel>
+            
+            <Border x:Name="bd" Height="45" Background="White" CornerRadius="7">
+                <Grid>
+                    <TextBlock x:Name="myBorder" FontSize="19.7" Margin="307,9,5,10" TextAlignment="Center" MouseDown="TextBlock_MouseDown" Text="view" Cursor="Hand" Foreground="#FF838080"/>
+                    <TextBlock x:Name="myBorder_Copy" FontSize="19.7" Margin="10,10,73,9" MouseDown="TextBlock_MouseDown" Text="header" Cursor="Hand"/>
+                </Grid>
+
+            </Border>
+            <Border x:Name="xoa" Height="143" Background="White" CornerRadius="0,0,7,7">
+                <Border Background="#D9D9D9" Height="123" VerticalAlignment="Center" Width="345" CornerRadius="10,10,10,10" BorderThickness="2,2,2,2" BorderBrush="#FF767373">
+                    <ScrollViewer>
+                        <TextBlock x:Name="txt">
+                            
+                        </TextBlock>
+                    </ScrollViewer>
+                </Border>
+            </Border>
+          
+        </StackPanel>
+       
+    </Grid>
+</UserControl>

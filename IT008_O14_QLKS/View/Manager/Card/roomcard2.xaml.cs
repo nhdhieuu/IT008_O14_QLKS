@@ -29,6 +29,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             InitializeComponent();
             
         }
+      
         public roomcard2(string TenPhong, string Type, int SoNguoi, string Parents)
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
        
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (Parents != "RoomInfor")
+            if (Parents != "RoomInfor" && Parents!="Client")
             {
                 Viewroom_form vr = new Viewroom_form(TenPhong);
                 vr.ShowDialog();

@@ -4,13 +4,169 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.FormPage"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
-      d:DesignHeight="604" d:DesignWidth="857"
-     >
+      d:DesignHeight="604" d:DesignWidth="857">
 
     <Grid>
-        <Button Margin="176,185,175,185" Click="Button_Click">
-            CHuyen qua dat phong
-        </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="565*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="292*">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid Grid.Row="0">
+                <TextBlock  Text="from" FontSize="32" FontFamily="Times New Roman" Foreground="#C6980A" Margin="30,10,467,5"/>
+                <TextBlock  Text="to" FontSize="32" FontFamily="Times New Roman" Foreground="#C6980A" Margin="308,8,189,6"/>
+                <xctk:DateTimePicker  x:Name="from" Margin="101,0,274,46" AllowTextInput="False" TimePickerShowButtonSpinner="False" HorizontalContentAlignment="Stretch" TextAlignment="Left" FontSize="20" TimeFormat="Custom" TimeFormatString="MM/dd/yyyy HH:mm:ss" Kind="Local" BorderBrush="#FF0C0C0C" BorderThickness="2,2,0,2" ValueChanged="from_ValueChanged"  />
+                <xctk:DateTimePicker  x:Name="to" Margin="341,0,34,46" AllowTextInput="False" TimePickerShowButtonSpinner="False" HorizontalContentAlignment="Stretch" TextAlignment="Left" FontSize="20" TimeFormat="Custom" TimeFormatString="MM/dd/yyyy HH:mm:ss" Kind="Local" BorderBrush="#FF0C0C0C" BorderThickness="2,2,0,2" ValueChanged="to_ValueChanged"  />
+                <StackPanel Orientation="Horizontal" Height="40" Margin="238,52,193,0">
+                    <Border x:Name="Back_butt" Background="#FF827E7E" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2" Cursor="Hand" MouseDown="Back_butt_MouseDown" >
+                        <Image Source="/Resources/icons8-next-page-24.png" Margin="-1,3,14,3" RenderTransformOrigin="-0.508,0.45">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="42.336"/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Border>
+
+                    <Border Background="WhITE" Width="30" Height="30" HorizontalAlignment="Center" Margin="8,0,0,0" CornerRadius="2" BorderBrush="Black" BorderThickness="1,1,1,1">
+                        <TextBlock x:Name="Page_index_lbl" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen" FontSize="20"></TextBlock>
+                    </Border>
+                    <Border x:Name="Next_butt" Background="#FF827E7E" Width="30" Height="30" Margin="8,0,0,0" CornerRadius="2" Cursor="Hand" MouseDown="Next_butt_MouseDown" >
+                        <Image Source="/Resources/icons8-next-page-24.png" Margin="-35,2,48,4" RenderTransformOrigin="-0.508,0.45">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="42.336"/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Border>
+
+
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ContentControl x:Name="CC1" Margin="32,6,283,11" Width="250" Height="145">
+
+                </ContentControl>
+                <ContentControl x:Name="CC2" Margin="305,6,10,11" Width="250" Height="145">
+
+                </ContentControl>
+            </Grid>
+            <Grid Grid.Row="2">
+                <ContentControl x:Name="CC3" Margin="32,6,283,11" Width="250" Height="145">
+
+                </ContentControl>
+                <ContentControl x:Name="CC4" Margin="305,6,10,11" Width="250" Height="145">
+
+                </ContentControl>
+            </Grid>
+            <Grid Grid.Row="3">
+                <ContentControl x:Name="CC5" Margin="32,6,283,11" Width="250" Height="145">
+
+                </ContentControl>
+                <ContentControl x:Name="CC6" Margin="305,6,10,11" Width="250" Height="145">
+
+                </ContentControl>
+            </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.7*">
+
+                </RowDefinition>
+                <RowDefinition Height="3*">
+
+                </RowDefinition>
+
+                <RowDefinition Height="3*">
+
+                </RowDefinition>
+                <RowDefinition Height="3*">
+
+                </RowDefinition>
+                <RowDefinition Height="0.5*">
+
+                </RowDefinition>
+
+            </Grid.RowDefinitions>
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="474" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" Margin="11,95,0,0">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Resources/room1.jpg"/>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="243*"/>
+                        <ColumnDefinition Width="19*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="type" Margin="17,46,11,0" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Grid.ColumnSpan="2" Height="168" VerticalAlignment="Top"></Border>
+                    <Border x:Name="stauts" Margin="16,0,14,115" Background="#7F4E4B4B" CornerRadius="8,8,8,8" Grid.ColumnSpan="2" Height="123" VerticalAlignment="Bottom" />
+                    <Border x:Name="standard" Margin="25,87,114,0" Background="#B2FFFFFF" CornerRadius="5,5,5,5"  IsEnabled="False" Cursor="Hand" Height="46" VerticalAlignment="Top" MouseDown="standard_MouseDown" >
+                        <TextBlock x:Name="standardt" Text="Standard" Foreground="#7F797979" FontFamily="Bahnschrift" FontSize="20" Margin="12,13,9,6" FontWeight="Bold" >
+
+                        </TextBlock>
+                    </Border>
+                    <Border x:Name="Dlx" Margin="25,145,114,0" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False"  Cursor="Hand" Height="44" VerticalAlignment="Top" MouseDown="Dlx_MouseDown" >
+                        <TextBlock  x:Name="Dlxt" Text="Deluxe" Foreground="#7F797979" Margin="21,10,22,12" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold">
+
+                        </TextBlock>
+                    </Border>
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
+                    <Border x:Name="stage" Margin="13,0,0,15" Background="#7F4E4B4B" CornerRadius="8,8,8,8" HorizontalAlignment="Left" Width="235" Height="85" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="17,-3,0,0" />
+                    <Label x:Name="stg_t" Content="Sort by price" HorizontalAlignment="Left" Height="44" VerticalAlignment="Bottom" Width="160"  FontSize="24" FontFamily="Bahnschrift" Foreground="#7EFFFFFF" Background="{x:Null}" FontWeight="Bold" Margin="20,0,0,56" />
+
+                    <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#AFFFC000" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />
+                    <Border x:Name="bd_type" Margin="217,52,5,0" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" Cursor="Hand" Height="20" VerticalAlignment="Top" MouseDown="bd_type_MouseDown" >
+                        <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden">
+
+                        </Image>
+                    </Border>
+                    <Border x:Name="VIP" Margin="138,145,2,0" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False"  Cursor="Hand" Height="44" VerticalAlignment="Top" MouseDown="VIP_MouseDown" >
+                        <TextBlock x:Name="VIPt" Text="Suite" FontFamily="Bahnschrift" FontSize="20" Foreground="#7F797979" Margin="26,11,28,13" FontWeight="Bold"/>
+                    </Border>
+                    <Border  x:Name="sup" Margin="138,87,2,0" Background="#B2FFFFFF" CornerRadius="5,5,5,5" IsEnabled="False" Cursor="Hand" Height="46" VerticalAlignment="Top" MouseDown="sup_MouseDown" >
+                        <TextBlock x:Name="supt" Text="Superior" Margin="13,13,-13,-12" Foreground="#7F797979" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Cursor="ScrollE">
+
+                        </TextBlock>
+                    </Border>
+                    <Label x:Name="status_txt" Content="PRICE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Bottom" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#B2014E91" Background="{x:Null}" FontWeight="Bold" Margin="28,0,0,190" />
+                    <Border x:Name="bd_status" Margin="213,0,8,211" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White"  Cursor="Hand" Height="21" VerticalAlignment="Bottom" MouseDown="bd_status_MouseDown" >
+                        <Image x:Name="ck_status" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border x:Name="bd_stage" Margin="217,0,5,73" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" BorderBrush="White" Height="20" VerticalAlignment="Bottom" MouseDown="bd_stage_MouseDown" >
+                        <Image x:Name="ck_stage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
+                    </Border>
+                    <Border CornerRadius="5" Height="32" Background="White" Margin="41,0,22,135" VerticalAlignment="Bottom">
+                        <TextBlock Name="FilterMoneyTextBox" Text="0 VND" Foreground="#075129" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Slider Name="FilterSlider" Minimum="0" Maximum="20000000" TickFrequency="500000" IsSnapToTickEnabled = "True" IsEnabled="False" Margin="28,0,15,175"   Height="22" VerticalAlignment="Bottom" ValueChanged="FilterSlider_ValueChanged"/>
+                    <Border Name="AscBorder" CornerRadius="5" Margin="35,410,130,29" Background="#D9D9D9E5"  BorderBrush="#FF811B1B" BorderThickness="0.5" MouseDown="AscBorder_MouseDown">
+                        <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,-7" >
+                            <TextBlock Name="AscTextBlock" Text="ASC" HorizontalAlignment="Center" Foreground="#FF811B1B"></TextBlock>
+                        </Label>
+
+                    </Border>
+                    <Border Name="DescBorder" CornerRadius="5" Margin="135,410,30,29" Background="#D9D9D9E5"  BorderBrush="#FF111176" BorderThickness="0.5" MouseDown="DescBorder_MouseDown">
+                        <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20">
+                            <TextBlock Name="DescTextBlock" Text="DESC" HorizontalAlignment="Center" Height="21" Foreground="#FF111176"></TextBlock>
+                        </Label>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

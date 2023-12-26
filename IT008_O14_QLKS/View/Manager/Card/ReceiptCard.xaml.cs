@@ -64,19 +64,21 @@ namespace IT008_O14_QLKS.View.Manager.Card
             sqlCommand.CommandType = System.Data.CommandType.Text;
             sqlCommand.CommandText =
 
-                "select distinct chitietdv.madv,chitietdv.soluong" +
+                "select distinct tendv,chitietdv.soluong" +
                 " from hoadon" +
                 " inner join cthd" +
                 "    on hoadon.sohd = cthd.sohd" +
                 " left join chitietdv" +
                 "    on chitietdv.mathuephong = cthd.maphong" +
+                " inner join dichvu  " +
+                " on dichvu.madv = chitietdv.madv"+
             
                 $" where hoadon.sohd = '{_receiptId}'";
             sqlCommand.ExecuteNonQuery();
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
-                if (sqlDataReader[0] != null && sqlDataReader[1] != null )
+                if (sqlDataReader[0] != null && sqlDataReader[1] != null  )
                 {
                     _DichVu.Add(new DichVu(sqlDataReader[0].ToString(), sqlDataReader[1].ToString()));
                                     
@@ -92,12 +94,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
             sqlCommand.CommandType = System.Data.CommandType.Text;
             sqlCommand.CommandText =
 
-                "select distinct chitietpr.mapr,chitietpr.soluong" +
+                "select distinct prname, soluong" +
                 " from hoadon" +
                 " inner join cthd" +
                 "    on hoadon.sohd = cthd.sohd" +
                 " left join chitietpr" +
                 "    on chitietpr.mathuephong = cthd.maphong" +
+                " inner join problem " +
+                " on problem.mapr = chitietpr.mapr"+
             
                 $" where hoadon.sohd = '{_receiptId}'";
             sqlCommand.ExecuteNonQuery();
@@ -120,10 +124,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
             sqlCommand.CommandType = System.Data.CommandType.Text;
             sqlCommand.CommandText =
 
-                "select distinct maphong" +
+                "select distinct thuephong.maphong" +
                 " from hoadon" +
                 " inner join cthd" +
                 "    on hoadon.sohd = cthd.sohd" +
+                " inner join thuephong " +
+                " on cthd.maphong = thuephong.mathuephong"+
             
                 $" where hoadon.sohd = '{_receiptId}'";
             sqlCommand.ExecuteNonQuery();

@@ -132,19 +132,28 @@ namespace IT008_O14_QLKS.Models
             foreach (var detailroom  in _receiptCard._room.room)
             {
                 InsertItem(detailroom,"" , Offset);
-                Offset = Offset + smallinc;
+                Offset = Offset + mediuminc;
             }
 
             foreach (var dichVu in _receiptCard._DichVu)
             {
-                InsertItem(dichVu._ttdichvu[0] + " x " + dichVu._ttdichvu[1], "", Offset);
-                Offset = Offset + smallinc;
+                if (dichVu._ttdichvu[0] != "" && dichVu._ttdichvu[1] != "")
+                {
+                    InsertItem(dichVu._ttdichvu[0] + " x " + dichVu._ttdichvu[1], "", Offset);
+                    Offset = Offset + mediuminc;
+                }
+                
+                    
 
             }
             foreach (var problem in _receiptCard._Problem)
             {
-                InsertItem(problem._ttproblem[0] + " x " + problem._ttproblem[1], "", Offset);
-                Offset = Offset + smallinc;
+                if (problem._ttproblem[0] != "" && problem._ttproblem[1] != "")
+                {
+                    
+                    InsertItem(problem._ttproblem[0] + " x " + problem._ttproblem[1], "", Offset);
+                    Offset = Offset + mediuminc;
+                }
 
             }
             Offset = Offset + smallinc;

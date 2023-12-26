@@ -279,8 +279,55 @@
 
 
 
-                            <Border x:Name="Datepicker" CornerRadius="5" Width="55" Height="55" Margin="0,37,31,31" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
-                                <Image Cursor="Hand" Source="/Resources/calendar.png" ></Image>
+                            <Border x:Name="Datepicker" Cursor="Hand" CornerRadius="5" Width="55" Height="55" Margin="0,37,31,31" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" MouseDown="Datepicker_OnMouseDown">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.RowSpan="2"  Source="/Resources/calendar.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                    <!-- <DatePicker  x:Name="datePicker" Visibility="Collapsed" SelectedDateChanged="DatePicker_OnSelectedDateChanged"/> -->
+                                    <!-- <DatePicker  x:Name="datePicker" HorizontalAlignment="Left" VerticalAlignment="Top"> -->
+                                    <!--     <DatePicker.Resources> -->
+                                    <!--          -->
+                                    <!--         <Style TargetType="DatePickerTextBox"> -->
+                                    <!--             <Setter Property="IsReadOnly" Value="True"/> -->
+                                    <!--             <Setter Property="Text" Value=" "/> -->
+                                    <!--             <Setter Property="Focusable" Value="False"/> -->
+                                    <!--             <Setter Property="IsEnabled" Value="False" /> -->
+                                    <!--             <Setter Property="IsHitTestVisible" Value="False"/> -->
+                                    <!--         </Style> -->
+                                    <!--     </DatePicker.Resources> -->
+                                    <!-- </DatePicker> -->
+                                    <DatePicker Name="datePicker" Visibility="Collapsed">
+                                        <DatePicker.CalendarStyle>
+                                            <Style TargetType="Calendar">
+                                                <Setter Property="CalendarButtonStyle">
+                                                    <Setter.Value>
+                                                        <Style TargetType="Button">
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="Button">
+                                                                        <Grid>
+                                                                            <Image Source="/Resources/ReceiptDatePicker.png" 
+                                                                                Height="20"
+                                                                                Width="20" 
+                                                                                HorizontalAlignment="Left"/>
+                                                                            <ContentPresenter VerticalAlignment="Center"
+                                                                                HorizontalAlignment="Right"
+                                                                                Margin="20,0,0,0"/>
+                                                                        </Grid>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DatePicker.CalendarStyle>
+                                    </DatePicker>
+                                </Grid>
+                                
                             </Border>
                         </Grid>
 

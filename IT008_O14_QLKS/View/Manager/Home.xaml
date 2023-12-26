@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
     <Grid Height="590" Width="782" Background="White" Margin="9,0,9,0" VerticalAlignment="Top"  >
@@ -127,12 +128,52 @@
                 </Border>
             </Grid>
         </Border>
-        <Border x:Name="Diagram2" BorderBrush="#FF0AC6C6" BorderThickness="1" Margin="12,187,367,12" Background="#FF0AC6C6" CornerRadius="5,5,5,5" Grid.Row="1">
-            <Label Content="Diagram#2" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+        <Border x:Name="Diagram2" BorderBrush="#FF0AC6C6" BorderThickness="1" Margin="12,12,367,12" Background="#FF0AC6C6" CornerRadius="5,5,5,5" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"> </RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+               
+                <Label Content="Diagram#2" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
+                <lvc:CartesianChart x:Name="ChartImport" Grid.Row="1" LegendLocation="None" Margin="0 0 10 0">
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip Background="black" Foreground="#d5e2ff"/>
+                    </lvc:CartesianChart.DataTooltip>
+
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="Thg1,Thg2,Thg3,Thg4,Thg5,Thg11,Thg12,Thg1,Thg2,Thg3,Thg4,Thg5">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator Step="1" StrokeThickness="0"/>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis x:Name="AxisY_Right" Title="Số Lượng" ShowLabels="True" Foreground="Black" MinValue="0" MaxValue="15" >
+                            <lvc:Axis.Separator>
+                                <lvc:Separator/>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+
+                    <lvc:CartesianChart.Series>
+
+                        <lvc:ColumnSeries x:Name="QuantityValues_ColumnSeries" Title="Số lượng" Values="5,6,7,3,8,6,7,8,9,0,3,2" MaxColumnWidth="25">
+                            <lvc:ColumnSeries.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1">
+                                    <GradientStop Color="#2A64F7" Offset="0.4"/>
+                                    <GradientStop Color="#61D3FC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </lvc:ColumnSeries.Fill>
+                        </lvc:ColumnSeries>
+                    </lvc:CartesianChart.Series>
+                </lvc:CartesianChart>
+            </Grid>
         </Border>
-        <Border x:Name="Diagram1" BorderBrush="#FFC6980A" BorderThickness="1" Margin="10,18,367,337" Background="#FFC6980A" CornerRadius="5,5,5,5" Grid.Row="1">
-            <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" />
-        </Border>
+        <!-- <Border x:Name="Diagram1" BorderBrush="#FFC6980A" BorderThickness="1" Margin="10,18,367,337" Background="#FFC6980A" CornerRadius="5,5,5,5" Grid.Row="1"> -->
+        <!--     <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" /> -->
+        <!-- </Border> -->
         <Border BorderBrush="#FFC6980A" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="73" Margin="12,13,0,0" VerticalAlignment="Top" Width="403" CornerRadius="5,5,5,5" Background="#FFF3F3F3" Grid.RowSpan="2">
             <Grid Margin="0,-3,1,3">
                 <Label Content="Activity" HorizontalAlignment="Left" Height="47" Margin="12,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />

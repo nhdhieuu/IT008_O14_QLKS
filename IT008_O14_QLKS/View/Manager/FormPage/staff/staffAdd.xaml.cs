@@ -1,5 +1,7 @@
-﻿using System;
+﻿using IT008_O14_QLKS.Connection_db;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
     /// </summary>
     public partial class staffAdd : Window
     {
+        DB_connection dB_Connection = new DB_connection();
         public staffAdd()
         {
             InitializeComponent();
@@ -67,9 +70,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
             }
             else
             {
-                // add to database
-                MessageBox.Show("New staff has been added", "Notice");
-                this.Close();
+                try
+                {
+                    // add to database
+                    string sql = "INSERT INTO NHANVIEN VALUES " +
+                        $"('{staffID.Text}','{staffName.Text}','{staffCCCD}','{staffPhone.Text}','{staffBirthday.Text}','{staffGender.Text}','{staffPostion.Text}')";
+                    SqlCommand sqlCommand = new SqlCommand();
+                    sqlCommand.CommandText = sql;
+                    sqlCommand.Connection = dB_Connection.sqlCon;
+                    sqlCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("New staff has been added", "Notice");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Can not add new staff.", "Notice");
+                }
             }
         }
     }

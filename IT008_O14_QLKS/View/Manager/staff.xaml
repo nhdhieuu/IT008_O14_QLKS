@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Background="#F1F0E7"
-             FontFamily="Sylfaen" Loaded="UserControl_Loaded">
+             FontFamily="Sylfaen" >
 
     <!-- w s -->
     <UserControl.Resources>
@@ -287,23 +287,20 @@
         </Grid.RowDefinitions>
         <!-- Phần trên -->
         <Grid>
-            <Border Margin="30,20,712,0">
-                <Image Source="/Resources/reset.png"/>
-            </Border>
+            <Image Source="/Resources/reset.png" Margin="14,24,721,5"/>
             <Label Content="staff" FontSize="45" Foreground="#C6980A" 
-                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Center"
-                   Margin="85,0,592,0" Height="53"/>
-            <Label Content="schedule" FontSize="35" Foreground="Black" Margin="640,0,0,0" 
-                   Padding="0" VerticalContentAlignment="Bottom"/>
-            <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="250,20,262,0" >
+                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
+                   Margin="70,-3,622,0" Height="53"/>
+
+            <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="215,20,297,0" >
                 <Grid>
-                    <TextBox Background="#D9D9D9" Margin="15,0,30,0"
-                             BorderThickness="0" Padding="2"
+                    <TextBox x:Name="search_tb" Background="#D9D9D9" Margin="25,0,30,0"
+                             BorderThickness="0" Padding="2" KeyDown="search_tb_KeyDown"
                              VerticalContentAlignment="Center" FontSize="14"/>
                     <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
                 </Grid>
             </Border>
-            <Border CornerRadius="8,0,0,8" Background="White" Margin="195,20,517,0" >
+            <Border CornerRadius="8,0,0,8" Background="White" Margin="165,20,547,0" >
                 <Label Content="search" Foreground="Black" FontSize="18"
                        HorizontalContentAlignment="Center"/>
             </Border>
@@ -317,136 +314,78 @@
             <!-- Phần bên phải-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="63*"/>
-                    <RowDefinition Height="205*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="535*"/>
                 </Grid.RowDefinitions>
-                <Border CornerRadius="5" Margin="16,10,16,10">
-                    <Grid>
-                        <Image Source="/Resources/fall.jpg" Stretch="UniformToFill"/>
-                        <Label Name="datelb" Content="Date" FontSize="16" Margin="0,76,0,0" />
+
+                <!-- lọc vị trí-->
+                <Border CornerRadius="50"  Margin="0,-24,20,360" ClipToBounds="True" Grid.RowSpan="2" >
+                    <Grid ClipToBounds="True">
+                        <Image Source="/Resources/nenthuong.png" Stretch="UniformToFill"/>
+                        <Label Content="Filter" FontSize=" 32" Margin="10,10,109,138" />
+                        <CheckBox x:Name="postion_check"  Margin="191,29,10,153"  Checked="postion_check_Checked" Unchecked="postion_check_Unchecked"/>
+                        <!-- vị trí -->
+                        <Border CornerRadius="5" Background="#262A56" Margin="10,66,10,0" 
+                                BorderThickness="2" BorderBrush="White" Height="114" VerticalAlignment="Top">
+                            <Grid Margin="0,0,-2,-2">
+                                <Label Content="postion" Foreground="White" FontSize="25" Padding="0" Margin="15,5,72,65"/>
+
+                                <ComboBox x:Name="postion_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True"  FontSize="15" Margin="15,47,15,25" 
+                                          SelectionChanged="postion_combo_SelectionChanged" >
+                                    <ComboBoxItem   Content="Receptionist"/>
+                                    <ComboBoxItem Content="Service"/>
+                                    <ComboBoxItem Content="Hygiene"/>
+                                    <ComboBoxItem Content="Custom care"/>
+                                </ComboBox>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </Border>
-                <Border Grid.Row="1" CornerRadius="5" Background="Wheat" Margin="16,10,16,35"
-                        BorderThickness="2" BorderBrush="Azure">
+
+                <!-- sắp xếp theo-->
+                <Border  CornerRadius="5" Background="#D9D9D9" BorderThickness="2"
+          BorderBrush="Black" Margin="0,205,20,145" Grid.Row="1">
                     <Grid>
-                        <Border CornerRadius="5" Background="#262A56" Margin="20,55,20,198" 
-                                BorderThickness="2" BorderBrush="White">
-                            <Grid Margin="0,0,-2,-2">
-                                <Label Content="postion" Foreground="White" FontSize="20" Padding="0" Margin="10,10,77,60"/>
+                        <Label Content="sort by: " FontSize="32" FontWeight="Light" Margin="20,10,42,99"/>
+                        <CheckBox  x:Name="sort_checkbox" Cursor="Hand" Margin="191,31,18,120" Checked="sort_checkbox_Checked" Unchecked="sort_checkbox_Unchecked"/>
+                        <ComboBox x:Name="sort_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True" Margin="25,66,25,68" FontSize="15" SelectionChanged="sort_combo_SelectionChanged">
+                            <ComboBoxItem  Content="ID"/>
+                            <ComboBoxItem Content="Name"/>
+                            <ComboBoxItem Content="Postion"/>
+                            <ComboBoxItem Content="Birthday"/>
 
-                                <ComboBox Style="{DynamicResource RoundComboBox}"  FontSize="15" Margin="10,53,10,18">
-                                    <ComboBoxItem Content="Le Tan"/>
-                                    <ComboBoxItem Content="Phuc Vu"/>
-                                    <ComboBoxItem Content="Ve Sinh"/>
-                                    <ComboBoxItem Content="CSKH"/>
-
-                                </ComboBox>
-
-                            </Grid>
-
+                        </ComboBox>
+                        <!-- asc -->
+                        <Border x:Name="asc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="#12CE69" Margin="25,130,127,15" Cursor="Hand" MouseDown="asc_b_MouseDown">
+                            <Label Content="asc" Cursor="Hand" Foreground="#E50F0F" FontSize="25" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    Margin="0" />
                         </Border>
 
-
-                        <Border  CornerRadius="5" Background="#D9D9D9" BorderThickness="2"
-                                 BorderBrush="Blue" Margin="20,173,20,18">
-                            <Grid>
-                                <Label Content="sort by: " FontSize="32" FontWeight="Light" Margin="10,0,52,111"/>
-                                <CheckBox  x:Name="sort_checkbox" Cursor="Hand" Margin="147,20,10,131"/>
-                                <ComboBox Style="{DynamicResource RoundComboBox}" Margin="10,60,10,70" FontSize="15">
-                                    <ComboBoxItem Content="ID"/>
-                                    <ComboBoxItem Content="Name"/>
-                                    <ComboBoxItem Content="Postion"/>
-                                    <ComboBoxItem Content="Birthday"/>
-
-                                </ComboBox>
-                                <Border x:Name="asc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="20,120,95,18" Cursor="Hand" MouseDown="asc_b_MouseDown">
-                                    <Label Content="asc" Foreground="#E50F0F" FontSize="25" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                           Margin="0,-5,0,5"/>
-                                </Border>
-                                <Border x:Name="desc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="98,120,18,18" Cursor="Hand" MouseDown="desc_b_MouseDown">
-                                    <Label Content="desc" Foreground="#2E22B2" FontSize="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                                           Margin="0,-4,0,4"/>
-                                </Border>
-                            </Grid>
+                        <!-- desc -->
+                        <Border x:Name="desc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="138,130,25,15" Cursor="Hand" MouseDown="desc_b_MouseDown">
+                            <Label Content="desc" Cursor="Hand" Foreground="#2E22B2" FontSize="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    Margin="0,0,0,0"/>
                         </Border>
-
-
                     </Grid>
                 </Border>
             </Grid>
 
             <!-- Phần bên trái-->
             <Grid>
-                <!-- <Border CornerRadius="5" Background="#D9D9D9" Margin="25,31,30,395"
-                        BorderThickness="2" BorderBrush="#9F8E8E">
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="4*"/>
+                <!-- Danh sách staff-->
+                <ScrollViewer Margin="10,10,10,60">
+                    <StackPanel x:Name="ds_staff">
 
-                            <RowDefinition Height="6*"/>
-                        </Grid.RowDefinitions>
-                        <Label  Padding="0" Content="#NV01" Foreground="Goldenrod" Margin="360,0,0,0" 
-                VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift"/>
-                        <Label  Padding="0" Content="Trần Văn A" Foreground="Black" Margin="10,0,170,0" 
-    VerticalContentAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold"/>
-
-                        <Label Grid.Row="1" Padding="0" Content="Lễ tân" Foreground="Blue" Margin="10,0,245,0" 
-VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift"/>
-                        <Button Grid.Row="1" Margin="399,12,25,10" Opacity="100"
-                    Background="Transparent" BorderThickness="0">
-                            <Image Source="/Resources/eye.png" Width="44"
-                       Stretch="Uniform"/>
-                        </Button>
-                    </Grid>
-                </Border> -->
-
-                <ScrollViewer Margin="10,10,10,75">
-                    <StackPanel>
-                        <ContentControl x:Name="ST01" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST02" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST03" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST04" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST05" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST06" Height="110" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST07" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST08" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST09" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST10" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST11" Height="100" Width="465">
-
-                        </ContentControl>
-                        <ContentControl x:Name="ST12" Height="100" Width="465">
-
-                        </ContentControl>
                     </StackPanel>
                 </ScrollViewer>
 
-                <Border x:Name="add_border" CornerRadius="5" Background="#12CE69" Margin="218,486,218,10" Cursor="Hand" MouseDown="add_border_MouseDown"
+                <!-- nút thêm staff-->
+                <Border x:Name="add_border" CornerRadius="5" Background="#12CE69" Margin="240,496,218,10" Cursor="Hand" MouseDown="add_border_MouseDown"
                         MouseEnter="add_border_MouseEnter" MouseLeave="add_border_MouseLeave">
                     <Label x:Name="add_staff" Content="+" Foreground="White" BorderThickness="0"
-                            FontSize="25" FontWeight="Bold" Padding="0" Margin="0"
-                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" MouseDown="add_staff_MouseDown"
+                            FontSize="25" FontWeight="Bold" Padding="0"
+                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,-5,0,4" 
                             />
                 </Border>
             </Grid>

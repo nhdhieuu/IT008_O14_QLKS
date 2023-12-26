@@ -5,16 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card"
              mc:Ignorable="d" 
-            d:DesignHeight="100" d:DesignWidth="465">
+            Height="100" Width="480">
     <Grid>
-        <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E" Margin="5,5,5,5">
+        <Border Background="#D9D9D9" CornerRadius="10" BorderThickness="1.2" BorderBrush="#9F8E8E" Margin="5">
             <Grid>
 
-                <TextBlock x:Name="name_tbl"  Text="Trần Văn A" FontSize="30" Margin="14,14,123,43" FontFamily="Bahnschrift" FontWeight="Bold" />
-                <TextBlock x:Name="postion_tbl" FontSize="25" Margin="14,49,241,11" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF677DD8"><Run Text="receptionist"/><LineBreak/><Run Text="​"/><LineBreak/><Run Text="7 / 5.000"/><LineBreak/><Run Text="Kết quả dịch"/><LineBreak/><Run Text="Kết quả bản dịch"/><LineBreak/><Run Text="receptionist"/></TextBlock>
-                <TextBlock x:Name="manv_tbl" Text="#NV01" FontSize="30" Margin="350,11,0,47" FontFamily="Bahnschrift" Foreground="#FFA67919"/>
-                <Border x:Name="bd_view" Cursor="Hand" Margin="412,51,13,8" Background="#B2808080" CornerRadius="5" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
-                    <Image Source="/Resources/eye.png" Margin="5,4,5,4">
+                <TextBlock x:Name="name_tbl"  Text="Trần Văn A" FontSize="30" Margin="14,14,123,0" FontFamily="Bahnschrift" FontWeight="Bold" Height="35" VerticalAlignment="Top" />
+                <TextBlock x:Name="postion_tbl" FontSize="25" Margin="14,50,239,11" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF677DD8"><Run Text="receptionist"/><LineBreak/><Run Text="​"/><LineBreak/><Run Text="7 / 5.000"/><LineBreak/><Run Text="Kết quả dịch"/><LineBreak/><Run Text="Kết quả bản dịch"/><LineBreak/><Run Text="receptionist"/></TextBlock>
+                <TextBlock x:Name="manv_tbl" Text="#NV01" FontSize="30" Margin="350,11,0,47" FontFamily="Bahnschrift" Foreground="#C6980A"/>
+                <Border x:Name="bd_view" Cursor="Hand" Margin="404,50,36,12" Background="#F2F1EF"  CornerRadius="5" MouseDown="Border_MouseDown" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+                    <Image Source="/Resources/eye.png" Margin="5,4,5,4" Opacity="0.8">
 
                     </Image>
 

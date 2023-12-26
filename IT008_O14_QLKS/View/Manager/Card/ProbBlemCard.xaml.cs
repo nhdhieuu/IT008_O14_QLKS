@@ -28,7 +28,8 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public string name;
         public string date;
         public string price;
-        public ProbBlemCard(string name, DateTime date, Decimal price)
+        public event EventHandler problemDialogClosed;
+        public ProbBlemCard(string id, string name, string price)
         {
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
@@ -45,6 +46,17 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.nametbx.Text = this.name;
             this.datetbx.Text = this.date;
             this.pricetbx.Text = this.price;
+        }
+        private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            problemInfor pi = new problemInfor(this.id);
+            pi.Closed += Pi_Closed;
+            pi.ShowDialog();
+        }
+
+        private void Pi_Closed(object sender, EventArgs e)
+        {
+            problemDialogClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

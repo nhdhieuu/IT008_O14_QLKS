@@ -5,173 +5,328 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients"
              mc:Ignorable="d"
-             d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
-    <Grid>
-        <!-- silver class-->
-        <ContentControl x:Name="classs" Margin="10,10,346,464">
-            
-        </ContentControl>
-        
+         
+    d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
+    <UserControl.Resources>
+  
 
-        <!---  -->
+        <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
+        <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
+        <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="Gray" />
+        <SolidColorBrush x:Key="SelectedForegroundBrush" Color="White" />
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#FF686868" />
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
 
-        <Border Width="428" Height="129" Margin="10,146,346,315" Background="#EBEBE9" CornerRadius="10"
-            BorderThickness="2" BorderBrush="Gray">
+        <LinearGradientBrush x:Key="ListBoxBackgroundBrush" StartPoint="0,0" EndPoint="1,0.001">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.6" />
+                    <GradientStop Color="#DDDDDD" Offset="1.2"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="StandardBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#BBB" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="0.1"/>
+                    <GradientStop Color="#EEE" Offset="0.9"/>
+                    <GradientStop Color="#FFF" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="Visibility" Value="Hidden"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Name="Border" Margin="1" CornerRadius="2" Background="{StaticResource NormalBrush}" BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1">
+                            <Path HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{StaticResource GlyphBrush}" Data="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="Visibility" Value="Hidden"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="Black" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0"  Width="8" Margin="8,0,-2,0"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
             <Grid>
-                <Label Content="you are renting 5 rooms" Foreground="#423F3F" FontSize="30" Margin="18,8,31,65" FontFamily="Sylfaen " />
-                <Border CornerRadius="7" Margin="28,62,300,23" Background="#C6980A" Cursor="Hand">
-                    <Label x:Name="view_butt" Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"  Margin="19,0,1,0"/>
-                </Border>
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="0"/>
+                    <RowDefinition Height="0.00001*"/>
+                    <RowDefinition MaxHeight="0"/>
+                </Grid.RowDefinitions>
+                <Border Grid.RowSpan="3" CornerRadius="2" Background="Transparent" />
+                <RepeatButton Grid.Row="0" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineUpCommand" Content="M 0 4 L 8 4 L 4 0 Z" />
+                <Track Name="PART_Track" Grid.Row="1" IsDirectionReversed="true">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource ScrollBarThumb}" Margin="1,0,1,0" Background="{StaticResource HorizontalNormalBrush}" BorderBrush="{StaticResource HorizontalNormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton Grid.Row="3" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineDownCommand" Content="M 0 0 L 4 4 L 8 0 Z"/>
             </Grid>
-        </Border>
-        <!-- notice -->
-        <Border Width="428" Height="257" Margin="10,298,346,30" Background="#EBEBE9" CornerRadius="10"
-            BorderThickness="2" BorderBrush="Gray">
+        </ControlTemplate>
+        <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
             <Grid>
-                <Label Content="notification" Foreground="#423F3F" FontSize="20" Margin="18,10,261,208"/>
-                <ScrollViewer Margin="21,50,21,20">
-                    <StackPanel>
-                        <ContentControl x:Name="CC1" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC2" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC3" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC4" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC5" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC6" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC7" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC8" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC9" Height="42" Width="375">
-
-                        </ContentControl>
-                        <ContentControl x:Name="CC10" Height="42" Width="375">
-
-                        </ContentControl>
-                    </StackPanel>
-
-                </ScrollViewer>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="18"/>
+                    <ColumnDefinition Width="0.00001*"/>
+                    <ColumnDefinition MaxWidth="18"/>
+                </Grid.ColumnDefinitions>
+                <Border  Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
+                <RepeatButton Grid.Column="0"  Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineLeftCommand" Content="M 4 0 L 4 8 L 0 4 Z" />
+                <Track Name="PART_Track" Grid.Column="1" IsDirectionReversed="False">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageLeftCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0,1,0,1" Background="{StaticResource NormalBrush}" BorderBrush="{StaticResource NormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageRightCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton Grid.Column="3" Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineRightCommand" Content="M 0 0 L 4 4 L 0 8 Z"/>
             </Grid>
-        </Border>
+        </ControlTemplate>
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="18" />
+                    <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="18"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
-        <!-- góc phải trên -->
-        <Grid Margin="455,0,0,475">
-            <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,27,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
-                <Ellipse.Fill>
-                    <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" Stretch="Uniform" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <Label x:Name="UN2" Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="14,16,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" FontWeight="Bold"  />
-            <Rectangle HorizontalAlignment="Left" Height="2" Margin="14,54,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="237"/>
-            <Label x:Name="role" Content="Client" HorizontalAlignment="Left" Height="48" Margin="14,49,0,0" VerticalAlignment="Top" Width="150"  FontSize="20" FontFamily="Sylfaen " Foreground="#FFC6980A" Background="#00000000" FontWeight="Bold"  />
+        <Style x:Key="FavsScrollViewer" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ScrollContentPresenter Grid.Column="1"/>
+                            <ScrollBar Name="PART_VerticalScrollBar" Value="{TemplateBinding VerticalOffset}" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Value="{TemplateBinding HorizontalOffset}" Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
+        <Grid>
+            <!-- silver class-->
+            <ContentControl x:Name="classs" Margin="10,10,346,464">
+
+            </ContentControl>
+
+
+            <!---  -->
+
+            <Border Width="428" Height="129" Margin="10,146,346,315" Background="#EBEBE9" CornerRadius="10"
+            BorderThickness="2" BorderBrush="Gray">
+                <Grid>
+                    <Label x:Name="txt" Content="you are renting 5 rooms" Foreground="#423F3F" FontSize="30" Margin="18,8,31,65" FontFamily="Times New Roman" />
+                    <Border CornerRadius="7" Margin="28,64,300,21" Background="#C6980A" Cursor="Hand">
+                        <Label x:Name="view_butt" Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"  Margin="19,0,1,0"/>
+                    </Border>
+                </Grid>
+            </Border>
+            <!-- notice -->
+            <Border Width="428" Height="257" Margin="10,298,346,30" Background="#EBEBE9" CornerRadius="10"
+            BorderThickness="2" BorderBrush="Gray">
+                <Grid>
+                    <Label Content="notification" Foreground="#423F3F" FontSize="25" Margin="18,10,261,208" FontFamily="Times New Roman"/>
+                    <ScrollViewer Margin="17,52,14,18">
+                        <StackPanel x:Name="stk">
+
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- góc phải trên -->
+            <Grid Margin="455,0,0,475">
+                <Ellipse x:Name="avt_load" HorizontalAlignment="Left" Height="56" Margin="263,27,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="56" Cursor="Hand" StrokeThickness="2">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" Stretch="Uniform" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Label x:Name="UN2" Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="14,16,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" FontWeight="Bold"  />
+                <Rectangle HorizontalAlignment="Left" Height="2" Margin="14,54,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="237"/>
+                <Label x:Name="role" Content="Client" HorizontalAlignment="Left" Height="48" Margin="14,49,0,0" VerticalAlignment="Top" Width="150"  FontSize="20" FontFamily="Sylfaen " Foreground="#FFC6980A" Background="#00000000" FontWeight="Bold"  />
+
+            </Grid>
+            <!-- profile-->
+            <Border Margin="455,95,15,32" CornerRadius="10"  Background="#B6A982" >
+                <Grid  >
+                    <Label Content="Profile" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="183"  FontSize="30" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-3,0,0" />
+                    <Border Margin="10,44,10,10" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="10" >
+                        <Grid>
+                            <!-- avatar -->
+                            <Ellipse HorizontalAlignment="Left" Height="100" Stroke="#FFC6980A" VerticalAlignment="Top" Width="100" Margin="184,168,0,0">
+                                <Ellipse.Fill>
+                                    <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" Stretch="Uniform" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <!--name-->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
+                                <Grid Margin="52,0,0,0">
+                                    <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="name" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="10,0,0,0" Width="190" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" Height="29" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                                </Grid>
+                            </Border>
+                            <!--username-->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,70,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
+                                <Grid Margin="52,0,0,0">
+                                    <Label Content="username" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="username" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
+
+                                </Grid>
+                            </Border>
+                            <!-- phone-->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,127,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
+                                <Grid Margin="52,0,0,0">
+                                    <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="phone"  Text="0345664024" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="120" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
+
+                                </Grid>
+                            </Border>
+                            <!--gender -->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="18,184,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
+                                <Grid Margin="51,0,1,0">
+
+                                    <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="gender" Text="Nam" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="10,0,0,0" Width="76" IsEnabled="False" Height="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+
+                                </Grid>
+                            </Border>
+                            <!-- birthday-->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,242,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
+                                <Grid Margin="52,0,0,0">
+                                    <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="age" Text="18" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" Width="75" IsEnabled="False" VerticalContentAlignment="Center" Margin="10,0,0,0" HorizontalContentAlignment="Right"/>
+
+                                </Grid>
+                            </Border>
+                            <!-- cccd-->
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,300,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
+                                <Grid Margin="52,0,0,0">
+                                    <Label Content="cccd" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
+                                    <TextBox x:Name="cccd" Text="084204011380" Background="Transparent" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" HorizontalAlignment="Center" Width="120" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+
+                                </Grid>
+                            </Border>
+                            <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="198,264,0,0" FontWeight="Bold" />
+                            <Border x:Name="UpdateAVT" Margin="258,272,16,118" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5"  Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseDown="UpdateAVT_MouseDown" IsEnabled="False">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="-1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
+                                </Border.Background>
+                            </Border>
+                            <!-- change password-->
+                            <Border x:Name="ChangePassword" CornerRadius="7" Background="#FF4F63EB" Margin="160,356,18,20" MouseEnter="ChangePassword_MouseEnter" MouseLeave="ChangePassword_MouseLeave" MouseDown="ChangePassword_MouseDown">
+                                <Label Name="change_pass_lb" Content="change password" Foreground="white" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
+                            </Border>
+
+
+                            <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave"  >
+                                <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
+                            </Border>
+
+                            <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave" >
+                                <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
+                            </Border>
+                            <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="79,354,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"  >
+                                <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
         </Grid>
-        <!-- profile-->
-        <Border Margin="455,95,15,32" CornerRadius="10"  Background="#B6A982" >
-            <Grid  >
-                <Label Content="Profile" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="183"  FontSize="30" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-3,0,0" />
-                <Border Margin="10,44,10,10" BorderBrush="White" Background="#FFE9E5D9" OpacityMask="White" CornerRadius="10" >
-                    <Grid>
-                        <!-- avatar -->
-                        <Ellipse HorizontalAlignment="Left" Height="100" Stroke="#FFC6980A" VerticalAlignment="Top" Width="100" Margin="184,168,0,0">
-                            <Ellipse.Fill>
-                                <ImageBrush x:Name="avt" ImageSource="/Resources/user.png" Stretch="Uniform" />
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <!--name-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
-                            <Grid Margin="52,0,0,0">
-                                <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="name" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="10,0,0,0" Width="190" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" Height="29" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                            </Grid>
-                        </Border>
-                        <!--username-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,70,0,0" VerticalAlignment="Top" Width="258" CornerRadius="5,5,5,5">
-                            <Grid Margin="52,0,0,0">
-                                <Label Content="username" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="username" Background="Transparent" Text="ABC" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="28,0,0,0" Width="173" TextAlignment="Right" Foreground="#FFC6980A" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
 
-                            </Grid>
-                        </Border>
-                        <!-- phone-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,127,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
-                            <Grid Margin="52,0,0,0">
-                                <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="phone"  Text="0345664024" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="120" IsEnabled="False" VerticalContentAlignment="Center" Height="29" HorizontalContentAlignment="Right"/>
-
-                            </Grid>
-                        </Border>
-                        <!--gender -->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" Margin="18,184,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
-                            <Grid Margin="51,0,1,0">
-
-                                <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="gender" Text="Nam" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="10,0,0,0" Width="76" IsEnabled="False" Height="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-
-                            </Grid>
-                        </Border>
-                        <!-- birthday-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,242,0,0" VerticalAlignment="Top" Width="146" CornerRadius="5,5,5,5">
-                            <Grid Margin="52,0,0,0">
-                                <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="age" Text="18" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" Width="75" IsEnabled="False" VerticalContentAlignment="Center" Margin="10,0,0,0" HorizontalContentAlignment="Right"/>
-
-                            </Grid>
-                        </Border>
-                        <!-- cccd-->
-                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="18,300,0,0" VerticalAlignment="Top" Width="194" CornerRadius="5,5,5,5">
-                            <Grid Margin="52,0,0,0">
-                                <Label Content="cccd" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="cccd" Text="084204011380" Background="Transparent" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="29" HorizontalAlignment="Center" Width="120" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-
-                            </Grid>
-                        </Border>
-                        <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="198,264,0,0" FontWeight="Bold" />
-                        <Border x:Name="UpdateAVT" Margin="258,272,16,118" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5"  Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseDown="UpdateAVT_MouseDown" IsEnabled="False">
-                            <Border.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="-1"/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Border.RenderTransform>
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
-                            </Border.Background>
-                        </Border>
-                        <!-- change password-->
-                        <Border x:Name="ChangePassword" CornerRadius="7" Background="#FF4F63EB" Margin="160,356,18,20" MouseEnter="ChangePassword_MouseEnter" MouseLeave="ChangePassword_MouseLeave" MouseDown="ChangePassword_MouseDown">
-                            <Label Name="change_pass_lb" Content="change password" Foreground="white" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand"/>
-                        </Border>
-
-
-                        <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave"  >
-                            <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
-                        </Border>
-
-                        <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="22,354,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave" >
-                            <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
-                        </Border>
-                        <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="79,354,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"  >
-                            <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen"/>
-                        </Border>
-                    </Grid>
-                </Border>
-            </Grid>
-        </Border>
-    </Grid>
 </UserControl>

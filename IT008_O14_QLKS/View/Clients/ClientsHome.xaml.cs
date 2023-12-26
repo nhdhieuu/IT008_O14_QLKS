@@ -23,6 +23,8 @@ using IT008_O14_QLKS.View.Clients.FormPage;
 using Image = System.Windows.Controls.Image;
 using Microsoft.Win32;
 using IT008_O14_QLKS.View.Manager.Card.Client;
+using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.View.Clients.Card;
 
 namespace IT008_O14_QLKS.View.Clients
 {
@@ -30,14 +32,18 @@ namespace IT008_O14_QLKS.View.Clients
     {
         DB_connection connect = new DB_connection();
         SqlCommand sqlcmd = new SqlCommand();
+        public string MaKH;
         public string ten;
         public string tendn;
         public string sdt;
         public string cmnd;
         public string tuoi;
         public string gtinh;
+        public string Class;
         BitmapImage avttt;
          Image early = new Image();
+        DateTime myDateTime = DateTime.Now;
+        List<string>dsnotice = new List<string>();
         public ClientsHome()
         {
             InitializeComponent();
@@ -52,6 +58,8 @@ namespace IT008_O14_QLKS.View.Clients
             SqlDataReader reader = sqlcmd.ExecuteReader();
             while (reader.Read())
             {
+                this.Class = reader.GetString(9);
+                this.MaKH = reader.GetString(0);
                 this.name.Text = reader.GetString(1);
                 ten = this.name.Text;
                 this.username.Text = reader.GetString(2);
@@ -93,10 +101,71 @@ namespace IT008_O14_QLKS.View.Clients
             this.age.Text = (2023 - saleYear).ToString();
             tuoi = age.Text;
             background();
+            loadnotice();
+           
+        }
+        private void loadnotice()
+        {
+            //tim cac tang cua client
+            //truy van 
+            SqlCommand sqlcmd = new SqlCommand();
+
+            sqlcmd.CommandType = CommandType.Text;
+            string a = myDateTime.ToString();
+
+            string[] str = a.Split('/');
+            string trueday = str[1] + "-" + str[0] + "-" + str[2];
+            sqlcmd.CommandText = $"SELECT  distinct MANOTICE FROM CTNT WHERE MAKH = '{MaKH}' or MAKH='all' or ClassID='{Class}' or TANG in(Select  distinct SUBSTRING(TENPHONG , 2, 1)  from PHONG Where MAPHONG in(select MAPHONG from THUEPHONG where MAKH='{MaKH}' and '{trueday}'< NGAYKT and( KQUATHUE='Thanh Cong' or KQUATHUE='Dang Thue')))or LOAIPHONG in(Select  distinct LOAIPHONG from PHONG Where MAPHONG in(select MAPHONG from THUEPHONG where MAKH='{MaKH}' and '{trueday}'< NGAYKT and( KQUATHUE='Thanh Cong' or KQUATHUE='Dang Thue')))";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader = sqlcmd.ExecuteReader();
 
 
+          
+
+                while (reader.Read())
+                {
+
+                add(reader.GetString(0));
+               
+
+
+                }
+            reader.Close();
+            string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{MaKH}' AND '{trueday}'< NGAYKT AND KQUATHUE='Thanh Cong'";
+
+            using (SqlCommand command = new SqlCommand(query, connect.sqlCon))
+            {
+                txt.Content ="you are renting "+ ((int)command.ExecuteScalar()).ToString() +" rooms";
+
+            }
         }
 
+            
+        private void add(string manotice)
+        {
+
+            ContentControl a = new ContentControl
+            {
+
+                Width = 360,
+             
+            };
+            Border c = new Border
+            {
+                Height = 15
+            };
+            notice_card b = new notice_card(manotice);
+         
+            a.Content = b;
+
+
+            if(b.trave()!=0)
+            {
+                stk.Children.Add(a);
+                stk.Children.Add(c);
+            }    
+           
+        }    
         private void Save_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.Save.Visibility = Visibility.Hidden;

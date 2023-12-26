@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.client
 {
@@ -29,6 +31,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
      
         SqlConnection sqlCon = null;
         public string ID { get; set; }
+        DateTime now = DateTime.Now;
        
         public client_information(string ID)
         {
@@ -85,15 +88,30 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 }
             }
 
-          reader.Close();
+
+            reader.Close();
+            sqlcmd.CommandText =$"SELECT AVATAR FROM KHACHHANG WHERE USERNAME='{ID}'";
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                avtt.ImageSource = bitmap;
+            }
+            catch { }
             string query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND GETDATE() < NGAYKT AND KQUATHUE='Thanh Cong'";
+
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
                nor.Text = ((int)command.ExecuteScalar()).ToString();
                 
             }
-             query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}'";
+             query = $"SELECT COUNT(*) FROM THUEPHONG WHERE MAKH = '{ID}' AND KQUATHUE='Thanh Cong'";
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
@@ -104,21 +122,24 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
             using (SqlCommand command = new SqlCommand(query, sqlCon))
             {
+                monney.Text = "0 VND";
                 try
                 {
-                    decimal moneyFromDatabase = (decimal)command.ExecuteScalar();
+                    int moneyFromDatabase = (int)command.ExecuteScalar();
+
+                    monney.Text = moneyFromDatabase.ToString("#,###") + " VND";
 
 
-                    int moneyAsInt = Convert.ToInt32(moneyFromDatabase);
-
-
-                    monney.Text = moneyAsInt.ToString("#,###") + " VND";
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    monney.Text = "0 VND";
                 }
-               
+            
+
+
+
+
+
 
             }
         }

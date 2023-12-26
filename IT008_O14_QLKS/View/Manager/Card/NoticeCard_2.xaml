@@ -1,28 +1,13 @@
-﻿<UserControl x:Class="IT008_O14_QLKS.View.Clients.Card.Card_room.Room_card_client"
+﻿<UserControl x:Class="IT008_O14_QLKS.View.Manager.Card.NoticeCard_2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.Card.Card_room"
+             xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.Card"
              mc:Ignorable="d" 
-             d:DesignHeight="782" d:DesignWidth="693">
+             d:DesignHeight="450" d:DesignWidth="380">
     <UserControl.Resources>
-        <ControlTemplate x:Key="ScrollViewerControlTemplate" TargetType="{x:Type ScrollViewer}">
-            <Grid x:Name="Grid" Background="{TemplateBinding Background}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
-                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
-                <ScrollBar Style="{StaticResource ViewerScrollBar}" x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
-                <ScrollBar Style="{StaticResource ViewerScrollBar}" x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
-            </Grid>
-        </ControlTemplate>
+
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
         <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
@@ -145,7 +130,7 @@
                     <ColumnDefinition Width="0.00001*"/>
                     <ColumnDefinition MaxWidth="18"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
+                <Border  Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
                 <RepeatButton Grid.Column="0"  Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineLeftCommand" Content="M 4 0 L 4 8 L 0 4 Z" />
                 <Track Name="PART_Track" Grid.Column="1" IsDirectionReversed="False">
                     <Track.DecreaseRepeatButton>
@@ -202,112 +187,39 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-
-            <RowDefinition Height="228">
-
-            </RowDefinition>
-
-
-            <RowDefinition>
-
-            </RowDefinition>
-
-
-        </Grid.RowDefinitions>
-        <Grid>
-            <Border x:Name="main" Background="#D4D4D4" CornerRadius="10,10,0,0" Margin="2,0,2,-2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="85*"/>
-                        <RowDefinition Height="29*"/>
-                    </Grid.RowDefinitions>
-                    <Border x:Name="CK" Margin="652,15,16,134" Background="White" CornerRadius="2,2,2,2" MouseDown="CK_MouseDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Hidden">
-                        <Image x:Name="ck_type" Source="/Resources/icons8-check-30.png" Visibility="Hidden"/>
-                    </Border>
-                    <TextBlock  x:Name="ftxt" Margin="18,10,332,0" Style="{DynamicResource tx1}" FontSize="35" Text="" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <ContentControl x:Name="card" Height="111" Margin="16,55,373,4"   />
-                    <TextBlock x:Name="nbtxtleft" Text="2" Style="{DynamicResource tx1}" FontSize="47" Margin="320,60,291,0" Height="56" VerticalAlignment="Top" Foreground="#FF1D3586" TextAlignment="Center">
-
-                    </TextBlock>
-                    <Border x:Name="bd_time" BorderBrush="#FF1D3586"  BorderThickness="3,3.4,3,3" CornerRadius="10" Margin="323,55,155,54" >
-                        <TextBlock x:Name="typetxt" Text="hours left" Style="{DynamicResource tx1}" FontSize="30.1" Margin="70,12,4,0" Height="34" Foreground="#FF1D3586" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" VerticalAlignment="Top" TextAlignment="Center">
-                            <TextBlock.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform AngleY="0.337"/>
-                                    <RotateTransform/>
-                                    <TranslateTransform Y="-0.439"/>
-                                </TransformGroup>
-                            </TextBlock.RenderTransform>
-                        </TextBlock>
-                    </Border>
-                    <TextBlock x:Name="fromdate" Style="{DynamicResource tx1}" FontSize="18" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="333,121,156,0" VerticalAlignment="Top" TextAlignment="Right">
-
-                    </TextBlock>
-                    <TextBlock x:Name="x" FontSize="35" Margin="639,6,10,0" TextAlignment="Center" VerticalAlignment="Top" Height="38" FontWeight="Bold" FontFamily="Bahnschrift" Foreground="White" Visibility="Collapsed" MouseDown="x_MouseDown" Cursor="Hand">
-                        X
-                    </TextBlock>
-                    <TextBlock   x:Name="todate" Style="{DynamicResource ResourceKey=tx1}" FontSize="18" Text=" 4:00:53 21/11/2023 " FontWeight="Bold" Margin="332,147,157,0" VerticalAlignment="Top" TextAlignment="Right"/>
-                    <Border x:Name="rbutton"  Style="{DynamicResource save_bd }"  Height="NaN" Margin="543,57,16,65" MouseDown="Border_MouseDown">
-                        <TextBlock x:Name="view" Text="RENEW" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="view_MouseDown"/>
-                    </Border>
-                    <Border  x:Name="CANCEL" Style="{DynamicResource ResourceKey=x_bd}" Height="NaN" Width="NaN" Margin="543,119,17,3" MouseDown="CANCEL_MouseDown">
-                        <TextBlock Text="CANCEL" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Width="130" TextAlignment="Center" Foreground="White" MouseDown="TextBlock_MouseDown"/>
-                    </Border>
-                    <Border x:Name="bd" Height="47" Background="#565656" Margin="14,9,16,3" CornerRadius="10,10,0,0" Grid.Row="1">
-                        <Grid x:Name="sv_grid" Margin="0,-1,0,1">
-                            <Border x:Name="myBorder" Width="30"  Height="30" CornerRadius="5" Margin="619,9,12,8" MouseDown="myBorder_MouseDown" Cursor="Hand">
-                                <Border.RenderTransform>
-                                    <RotateTransform CenterX="15" CenterY="15" />
-                                </Border.RenderTransform>
-                                <TextBlock  Text="V" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="20" Foreground="White" Height="26" FontWeight="SemiBold" Margin="0,1,0,0"/>
-                            </Border>
-                            <TextBlock  x:Name="soservice" Text="1 SERVICE" Style="{DynamicResource tx1}" FontSize="20" Foreground="White" HorizontalAlignment="Left" Width="332" Margin="59,13,0,0" FontWeight="Bold" VerticalAlignment="Top">
-
-                            </TextBlock>
-                            <TextBlock  x:Name="money_txt" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" Foreground="#FF16C969" HorizontalAlignment="Left" Width="327" Margin="280,14,0,0" FontWeight="Bold" TextAlignment="Right" Text="2.000.000 VND" VerticalAlignment="Top"/>
-                        </Grid>
-                    </Border>
-                    <Border  x:Name="add" Style="{DynamicResource save_bd}" Width="NaN" Height="NaN" Margin="21,14,633,9" Grid.Row="1">
-                        <TextBlock Text="+" Style="{DynamicResource tx1}" FontSize="35" HorizontalAlignment="Center" Height="39" Foreground="White">
-
-                        </TextBlock>
-                    </Border>
-                    <TextBlock x:Name="fromdate_Copy" Style="{DynamicResource tx1}" FontSize="19" Text="from " FontWeight="Bold" Margin="326,121,299,0" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="fromdate_Copy1" Style="{DynamicResource tx1}" FontSize="19" Text="to" FontWeight="Bold" Margin="327,147,298,0" VerticalAlignment="Top"/>
-                    <TextBlock  x:Name="ftxt_Copy" Margin="66,0,123,0" Style="{DynamicResource tx1}" FontSize="25" Text="" FontWeight="Bold" Grid.Row="1"/>
-
-                </Grid>
-            </Border>
-        </Grid>
-        <StackPanel Grid.Row="1">
-            <Border x:Name="xoa" Height="294" Background="#D4D4D4" Width="689">
-                <Border Background="#313131" CornerRadius="0,0,10,10" Margin="14,-2,16,2">
-                    <Grid>
-                        <StackPanel Margin="0,0,3,0">
-                            <Border x:Name="tren" CornerRadius="5,5,5,5" BorderBrush="#C6980A" BorderThickness="2" Margin="28,20,23,0" Height="248" Width="604">
-                                <ScrollViewer x:Name="sc2_Copy" VerticalScrollBarVisibility="Auto" Margin="0,3,3,8">
-                                    <StackPanel x:Name="service1" />
-                                </ScrollViewer>
-                            </Border>
-
-
-                        </StackPanel>
-
-
-
-                    </Grid>
+        <Border Background="White" CornerRadius="10" Margin="0,0,10,0">
+            <Grid>
+                <Border Style="{DynamicResource x_bd}"  Height="NaN" Width="NaN" Margin="271,399,15,17" MouseDown="Border_MouseDown">
+                    <TextBlock FontFamily="Times New Roman" FontSize="20" Foreground="White" HorizontalAlignment="Center" Margin="0,4,0,-1" Text="del"/>
                 </Border>
-            </Border>
-            <Border x:Name="Bdcuoi" Height="158" Background="#D4D4D4" CornerRadius="0,0,10,10" Width="689" >
-                <Grid>
-                    <TextBlock x:Name="totaltxt"  Style="{DynamicResource tx1}" Text="TOTAL PRICE "  FontSize="30" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="16,10,16,0" VerticalAlignment="Top"/>
-                    <Border x:Name="bdtien1" BorderBrush="#FFC6980A" CornerRadius="6" BorderThickness="3,3,3,3" Margin="16,51,16,20"/>
-                    <TextBlock x:Name="tong" Style="{DynamicResource tx1}" Text="200.000*2 (room) +23.000.000 (service) = 23.200.000 (VND)"  FontSize="24.8" FontWeight="Bold" Foreground="#C6980A" Width="661" Margin="22,73,10,0" VerticalAlignment="Top"/>
-                </Grid>
+                <Label x:Name="hdtxt" Content="header" FontSize="22" Margin="20,24,21,398" Padding="0" FontFamily="Times New Roman" Foreground="#C6980A"/>
+                <Border CornerRadius="10" Background="#D9D9D9" BorderBrush="Black" BorderThickness="2" Margin="14,53,15,207" RenderTransformOrigin="0.5,0.5">
 
-            </Border>
-        </StackPanel>
+
+                </Border>
+                <ScrollViewer  x:Name="scr" Margin="20,56,21,213"   >
+                    <TextBlock x:Name="ndtxt" Margin="8,8,8,8"  FontFamily="Times New Roman" FontSize="20" Width="311" Height="384">
+
+                    </TextBlock>
+                </ScrollViewer>
+                <Label Content="start: " FontSize="25" Margin="20,372,238,50" Padding="0" FontFamily="Times New Roman" Foreground="#FF797875"/>
+                <Label Content="end:" FontSize="25" Margin="20,405,104,17" Padding="0" FontFamily="Times New Roman" Foreground="#FF797875"/>
+                <Label Content="to " FontSize="25" Margin="20,243,238,179" Padding="0" FontFamily="Times New Roman" Foreground="#FFC9980A"/>
+                <Border CornerRadius="10" Background="White" BorderBrush="Black" BorderThickness="2" Margin="16,275,13,87" RenderTransformOrigin="0.5,0.5">
+
+                    <ScrollViewer Margin="8,0,8,2" RenderTransformOrigin="0.5,0.5"  >
+
+                        <TextBlock x:Name="totxt" Margin="8,8,8,8"  IsEnabled="False" FontFamily="Times New Roman" FontSize="20" Width="312">
+
+                        </TextBlock>
+                    </ScrollViewer>
+
+
+                </Border>
+                <Label x:Name="start" Content="start: " FontSize="25" Margin="99,372,159,50" Padding="0" FontFamily="Times New Roman" Foreground="#FF797875"/>
+                <Label  x:Name="end"  Content="start: " FontSize="25" Margin="99,405,159,17" Padding="0" FontFamily="Times New Roman" Foreground="#FF797875"/>
+            </Grid>
+        </Border>
+
     </Grid>
 </UserControl>

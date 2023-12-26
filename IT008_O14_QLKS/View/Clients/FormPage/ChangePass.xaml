@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients.FormPage"
         mc:Ignorable="d"
-        Title="ChangePass" Height="340" Width="296" Background="Transparent" WindowStyle="None" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+        Title="ChangePass" Height="340" Width="296" Background="Transparent" AllowsTransparency="True" 
+ WindowStyle="None" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
     <Border CornerRadius="8" Background="#F1F0E7" BorderBrush="Black" BorderThickness="2" Margin="2,4,4,0">
         <Grid Margin="-2,-2,-3,-2">
             <Label x:Name="Cancel" Content="Cancel" FontFamily="Sylfaen" FontSize="20"  Width="70" Height="35" VerticalAlignment="Top" Margin="219,0,7,0" Foreground="#FFC60303" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"/>

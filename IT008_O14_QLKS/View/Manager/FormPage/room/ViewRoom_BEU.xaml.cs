@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Clients.FormPage;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -143,6 +144,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             Decimal value4 = Math.Truncate((Decimal)sqlcmd.ExecuteScalar());
             this.GiaTheoNgay.Content = value4.ToString() + " VND";
             this.RoomCardCtrl.Content = rc.Content;
+        }
+        private void load()
+        {
+        
+         
         }
 
         private void Change_MouseDown(object sender, MouseButtonEventArgs e)

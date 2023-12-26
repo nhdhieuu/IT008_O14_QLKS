@@ -10,42 +10,48 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ContentControl Height="111" Width="290" Margin="37,23,530,470">
+        <ContentControl x:Name="roomcard" Height="111" Width="290" Margin="37,23,530,470">
 
         </ContentControl>
         <Border CornerRadius="10" Background="#FFD8D8D8" Margin="358,23,28,278">
 
         </Border>
-        <TextBlock x:Name="fromdate" Style="{DynamicResource tx1}" FontSize="27" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="268,370,187,0" VerticalAlignment="Top" TextAlignment="Right">
-
-        </TextBlock>
-        <TextBlock  Foreground="#FF12CE69" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="35" Margin="374,534,203,20" Background="Transparent" Text="2*1,000,000 VND"/>
-        <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="374,500,359,53" Background="Transparent" Text="PRICE:"/>
+        
         <GroupBox Margin="29,360,522,22" Header="facility" Foreground="#1D19E3" BorderBrush="#FF1D19E3" BorderThickness="1,1,1,1" AutomationProperties.IsColumnHeader="True" FontFamily="Bahnschrift" FontSize="25"/>
         <Border CornerRadius="10" Margin="358,336,28,122" BorderBrush="#FFB2B2B1" BorderThickness="2,2,2,2"/>
         <Border CornerRadius="7,7,7,7" Background="#FFD8D8D8" Margin="29,152,522,249"/>
-        <Border Style="{DynamicResource save_bd}"  Margin="688,533,39,33" >
-
-            <TextBlock FontFamily="Times New Roman"  FontSize="29.5" Foreground="White" TextAlignment="Center">
-                reserve
-            </TextBlock>
-        </Border>
-        <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="376,35,310,519" Background="Transparent" Text="illustration" RenderTransformOrigin="0.548,-0.588"/>
+        
+        <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="376,33,310,521" Background="Transparent" Text="illustration" RenderTransformOrigin="0.548,-0.588"/>
         <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="47,157,639,397" Background="Transparent" Text="price list" RenderTransformOrigin="0.548,-0.588"/>
         <Border Background="#FFD8D8D8" Margin="37,202,530,272" BorderBrush="White" BorderThickness="2,2,2,2"/>
         <Border Background="#FFD8D8D8" Margin="37,267,530,272" BorderBrush="White" BorderThickness="2,2,2,2"/>
         <Border Margin="140,202,530,272" BorderBrush="White" BorderThickness="2,2,2,2"/>
         <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="62,217,623,337" Background="Transparent" Text="hour" RenderTransformOrigin="0.548,-0.588"/>
         <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="62,277,625,277" Background="Transparent" Text="day" RenderTransformOrigin="0.548,-0.588"/>
-        <TextBlock x:Name="fromdate_Copy" Style="{DynamicResource tx1}" FontSize="27" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="366,432,187,0" VerticalAlignment="Top" TextAlignment="Right"/>
-        <TextBlock x:Name="fromdate_Copy1" Style="{DynamicResource tx1}" FontSize="27" Text="from: " FontWeight="Bold" Margin="358,368,413,0" VerticalAlignment="Top" TextAlignment="Right"/>
-        <TextBlock x:Name="fromdate_Copy2" Style="{DynamicResource tx1}" FontSize="26.8" Text="to: " FontWeight="Bold" Margin="358,432,447,0" VerticalAlignment="Top" TextAlignment="Right"/>
-        <Border CornerRadius="10" Margin="686,348,48,136" BorderBrush="#FF0051FC" BorderThickness="2,2,2,2"/>
-        <TextBlock x:Name="fromdate_Copy3" Style="{DynamicResource tx1}" FontSize="65" Text=" 2 " FontWeight="Bold" Margin="711,357,86,0" VerticalAlignment="Top" TextAlignment="Right" Foreground="#FF0051FC"/>
-        <Border CornerRadius="10" Margin="358,493,28,22" BorderBrush="#FF12CE69" BorderThickness="2,2,2,2"/>
-        <TextBlock x:Name="fromdate_Copy4" Style="{DynamicResource tx1}" FontSize="35" Text=" hours " FontWeight="Bold" Margin="691,426,62,0" VerticalAlignment="Top" TextAlignment="Right" Foreground="#FF0051FC"/>
-        <TextBlock x:Name="fromdate_Copy5" Style="{DynamicResource tx1}" FontSize="22" Text="bed: " FontWeight="Bold" Margin="47,411,724,0" VerticalAlignment="Top" Foreground="#FF58585B"/>
-        <TextBlock x:Name="fromdate_Copy6" Style="{DynamicResource tx1}" FontSize="22" Text="bathtub:" FontWeight="Bold" Margin="46,469,714,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
+        <TextBlock x:Name="to_date_txbl" Style="{DynamicResource tx1}" FontSize="27" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="443,432,181,0" VerticalAlignment="Top" TextAlignment="Right"/>
+        <TextBlock x:Name="from_date_txbl" Style="{DynamicResource tx1}" FontSize="27" Text=" 2:00:53 21/11/2023 " FontWeight="Bold" Margin="444,370,181,0" VerticalAlignment="Top" TextAlignment="Right">
+
+        </TextBlock>
+        <TextBlock  Style="{DynamicResource tx1}" FontSize="27" Text="from: " FontWeight="Bold" Margin="358,369,413,0" VerticalAlignment="Top" TextAlignment="Right"/>
+        <TextBlock  Style="{DynamicResource tx1}" FontSize="26.8" Text="to: " FontWeight="Bold" Margin="358,432,447,0" VerticalAlignment="Top" TextAlignment="Right"/>
+        <Border CornerRadius="10" Margin="694,348,40,136" BorderBrush="#FF0051FC" BorderThickness="2,2,2,2"/>
+        <TextBlock x:Name="time_txbl" Style="{DynamicResource tx1}" FontSize="65" Text="30 " FontWeight="Bold" Margin="715,357,55,0" VerticalAlignment="Top" TextAlignment="Right" Foreground="#FF0051FC" HorizontalAlignment="Left"/>
+        <Border CornerRadius="10" Margin="358,493,28,22" BorderBrush="#FF12CE69" BorderThickness="2,2,2,2">
+            <Grid>
+                <TextBlock x:Name="Price_txbl"  Foreground="#FF12CE69" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="35" Margin="18,38,181,-9" Background="Transparent" Text="2*1,000,000 VND"/>
+                <TextBlock  Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29.5" Margin="18,6,334,32" Background="Transparent" Text="PRICE:"/>
+                <Border x:Name="reserve" Style="{DynamicResource save_bd}"  Margin="319,37,18,10" Cursor="Hand" MouseDown="reserve_MouseDown" MouseEnter="reserve_MouseEnter" MouseLeave="reserve_MouseLeave" >
+
+                    <TextBlock FontFamily="Times New Roman"  FontSize="29.5" Foreground="White" TextAlignment="Center">
+                reserve
+                    </TextBlock>
+                </Border>
+            </Grid>
+        </Border>
+        
+        <TextBlock x:Name="type_time_txbl" Style="{DynamicResource tx1}" FontSize="35" Text=" hours " FontWeight="Bold" Margin="701,424,52,0" VerticalAlignment="Top" TextAlignment="Right" Foreground="#FF0051FC"/>
+        <TextBlock x:Name="bed"  Style="{DynamicResource tx1}" FontSize="22" Text="bed: " FontWeight="Bold" Margin="47,411,710,0" VerticalAlignment="Top" Foreground="#FF58585B"/>
+        <TextBlock x:Name="bathtub"  Style="{DynamicResource tx1}" FontSize="22" Text="bathtub:" FontWeight="Bold" Margin="46,469,705,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,8 +61,8 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="fromdate_Copy7" Style="{DynamicResource tx1}" FontSize="22" Text="pool:" FontWeight="Bold" Margin="46,521,726,0" VerticalAlignment="Top" Foreground="#FF58585B"/>
-        <TextBlock x:Name="fromdate_Copy9" Style="{DynamicResource tx1}" FontSize="22" Text="internet: high" FontWeight="Bold" Margin="157,523,549,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
+        <TextBlock x:Name="pool" Style="{DynamicResource tx1}" FontSize="22" Text="pool:" FontWeight="Bold" Margin="46,521,710,0" VerticalAlignment="Top" Foreground="#FF58585B"/>
+        <TextBlock x:Name="internet" Style="{DynamicResource tx1}" FontSize="22" Text="internet: " FontWeight="Bold" Margin="161,523,528,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -66,7 +72,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="fromdate_Copy10" Style="{DynamicResource tx1}" FontSize="22" Text="style:" FontWeight="Bold" Margin="158,468,593,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
+        <TextBlock x:Name="style"  Style="{DynamicResource tx1}" FontSize="22" Text="style:" FontWeight="Bold" Margin="160,468,531,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="#FF58585B">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -76,5 +82,15 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
+        <TextBlock x:Name="PriceHour" Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29" Margin="149,218,521,336" Background="Transparent" Text="200000 VND" RenderTransformOrigin="0.548,-0.588"/>
+        <TextBlock x:Name="PriceDay" Foreground="#C6980A" FontWeight="Bold"  FontFamily="Times New Roman" FontSize="29" Margin="149,279,521,275" Background="Transparent" Text="3000000 VND" RenderTransformOrigin="0.548,-0.588"/>
+        <Border Margin="394,0,55,306" CornerRadius="5,5,5,5" Height="224" VerticalAlignment="Bottom">
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/AnhPhongKS.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+
+        </Border>
+        <TextBlock x:Name="equip"  Style="{DynamicResource tx1}" FontSize="22" Text="equip:" FontWeight="Bold" Margin="162,410,530,0" VerticalAlignment="Top" Foreground="#FF58585B"/>
+
     </Grid>
 </UserControl>

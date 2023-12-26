@@ -1,0 +1,70 @@
+﻿<Window x:Class="IT008_O14_QLKS.View.Manager.FormPage.notice.addnotice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.notice"
+        mc:Ignorable="d"
+          Topmost="True" 
+   
+       
+         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="addnotice" Height="350" Width="300">
+    <Grid>
+
+
+        <Border x:Name="main_bd" Background="#D9D9D9" CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_1"  BorderBrush="Black" BorderThickness="2,2,2,2">
+            <Grid Margin="0,0,-2,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>   
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="65" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border x:Name="delbtn_border" 
+                            Background="Transparent"
+                            CornerRadius="0,9.4,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="251,0,2,19" Cursor="Hand"
+                            >
+                    <TextBlock x:Name="delbtn_text" FontSize="25                                  "  VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+                                   Foreground="#740909" Cursor="Hand"/>
+
+                </Border>
+                <TextBlock Text="to " FontFamily="Times New Roman" FontSize="35" Margin="20,33,56,260" Foreground="#FF3B3B3B" Grid.RowSpan="2"/>
+                <ComboBox x:Name="cbb" Margin="21,23,21,206" Grid.Row="1" Style="{DynamicResource RoundComboBox}" FontSize="20" FontFamily="Times New Roman" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBoxItem Content="all client" FontSize="20 " FontFamily="Times New Roman">
+                        
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="filter by floor" FontSize="20" FontFamily="Times New Roman" >
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="filter by class" FontSize="20" FontFamily="Times New Roman" >
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="filter by room type" FontSize="20"  FontFamily="Times New Roman" >
+
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="client ID" FontSize="20"  FontFamily="Times New Roman" >
+
+                    </ComboBoxItem>
+
+                </ComboBox>
+                <TextBox x:Name="cus" Margin="21,141,21,88" Grid.Row="1"  FontSize="20"  FontFamily="Times New Roman" TextChanged="cus_TextChanged">
+                    
+                </TextBox>
+                <TextBox x:Name="cus2" Margin="21,141,21,88" Grid.Row="1"  FontSize="20"  FontFamily="Times New Roman" TextChanged="cus2_TextChanged">
+                    
+                </TextBox>
+                <TextBlock Text="custom " FontFamily="Times New Roman" FontSize="35" Margin="20,82,56,147" Foreground="#FF3B3B3B" Grid.Row="1"/>
+                <ComboBox x:Name="cbb2" Margin="20,141,21,88" Grid.Row="1" Style="{DynamicResource ResourceKey=RoundComboBox}" FontSize="20" FontFamily="Times New Roman"/>
+                <Border Style="{DynamicResource view_bd}" Margin="83,223,85,17" Grid.Row="1">
+                    <TextBlock FontFamily="Times New Roman" FontSize="30" TextAlignment="Center" Foreground="White" Text="add" MouseDown="TextBlock_MouseDown"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

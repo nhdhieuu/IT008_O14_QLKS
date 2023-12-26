@@ -10,12 +10,12 @@
 
             <Border x:Name="main_bd" Background="#FFE9E8E2" CornerRadius="0,0,10,10"  Margin="4,0,0,-150" BorderBrush="Black" BorderThickness="2,0,2,2">
                 <Grid>
-                    <Border Style="{DynamicResource save_bd}" Margin="195,230,252,32" >
+                    <Border Style="{DynamicResource save_bd}" Margin="195,230,252,32" MouseDown="Border_MouseDown_1" >
                         <TextBlock Text="save" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>
 
-                    <Border Style="{DynamicResource x_bd}" Margin="339,230,200,32" >
+                    <Border Style="{DynamicResource x_bd}" Margin="339,230,200,32" MouseDown="Border_MouseDown" >
                         <TextBlock Text="X" Foreground="White" FontSize="25                                                                " FontFamily="Bahnschrift" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Border>

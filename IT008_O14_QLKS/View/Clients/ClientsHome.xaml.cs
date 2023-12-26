@@ -159,9 +159,12 @@ namespace IT008_O14_QLKS.View.Clients
             a.Content = b;
 
 
-
-             stk.Children.Add(a);
-            stk.Children.Add(c);
+            if(b.trave()!=0)
+            {
+                stk.Children.Add(a);
+                stk.Children.Add(c);
+            }    
+           
         }    
         private void Save_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {

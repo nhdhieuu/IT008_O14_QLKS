@@ -801,12 +801,19 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                
                 string sqlQuery = $"delete from THUEPHONG WHERE MATHUEPHONG='{ID}'";
-              
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+              try
+                {
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch
                 {
 
-                    command.ExecuteNonQuery();
                 }
+             
 
             }
             DependencyObject parent = VisualTreeHelper.GetParent(this);

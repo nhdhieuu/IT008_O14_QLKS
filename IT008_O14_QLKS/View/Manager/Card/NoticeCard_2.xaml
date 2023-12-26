@@ -198,7 +198,7 @@
 
                 </Border>
                 <ScrollViewer  x:Name="scr" Margin="20,56,21,213"   >
-                    <TextBlock x:Name="ndtxt" Margin="8,8,8,8"  FontFamily="Times New Roman" FontSize="20" Width="311" Height="168">
+                    <TextBlock x:Name="ndtxt" Margin="8,8,8,8"  FontFamily="Times New Roman" FontSize="20" Width="311" Height="384">
 
                     </TextBlock>
                 </ScrollViewer>

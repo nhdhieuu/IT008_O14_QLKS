@@ -27,7 +27,9 @@ namespace IT008_O14_QLKS.View.Clients.Card
     /// </summary>
     public partial class notice_card : UserControl
     {
+        int truee=0;
         string mant;
+        DateTime myDateTime = DateTime.Now;
         DB_connection connect = new DB_connection();
         public notice_card(string mant)
         {
@@ -40,10 +42,14 @@ namespace IT008_O14_QLKS.View.Clients.Card
         
         private void load()
         {
+            string a = myDateTime.ToString();
+
+            string[] str = a.Split('/');
+            string trueday = str[1] + "-" + str[0] + "-" + str[2];
             SqlCommand sqlcmd = new SqlCommand();
 
             sqlcmd.CommandType = CommandType.Text;
-            sqlcmd.CommandText = $"SELECT * from notice where MANOTICE='{mant}'";
+            sqlcmd.CommandText = $"SELECT * from notice where MANOTICE='{mant}' and '{trueday}'>=NGAYBD and '{trueday}'<=NGAYKT";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 
@@ -52,12 +58,17 @@ namespace IT008_O14_QLKS.View.Clients.Card
 
             while (reader.Read())
             {
-
+                truee = 1;
                 myBorder_Copy.Text = reader.GetString(1);
                 txt.Text = reader.GetString(2);
 
 
             }
+            
+        }
+        public int trave()
+        {
+            return truee;
         }
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {

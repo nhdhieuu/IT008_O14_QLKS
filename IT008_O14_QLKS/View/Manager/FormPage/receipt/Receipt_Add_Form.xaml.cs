@@ -207,7 +207,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
             SqlCommand sqlcmd = new SqlCommand();
 
             sqlcmd.CommandType = CommandType.Text;
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' > NGAYKT AND KQUATHUE='Thanh Cong'";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and '{trueday}' >= NGAYKT AND KQUATHUE='Thanh Cong'";
 
             sqlcmd.Connection = connect.sqlCon;
             
@@ -402,7 +402,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.receipt
             // Kiểm tra xem chuỗi có đúng định dạng không
             if (!inputStr.StartsWith("HD"))
             {
-                throw new ArgumentException("Invalid input format");
+                inputStr = "HD000";
             }
 
             // Lấy phần số trong chuỗi

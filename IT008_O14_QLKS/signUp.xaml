@@ -50,7 +50,7 @@
                         </Ellipse>
                     </Border>
                     <Border Background="Transparent" Margin="33,366,28,108" BorderBrush="#FF0500FF" BorderThickness="2" CornerRadius="7">
-                        
+
                     </Border>
                     <Border Background="#FFF1F0E7" Height="50" Margin="56,341,377,314" BorderBrush="#FF897C57" BorderThickness="0" CornerRadius="7"/>
                     <TextBlock Text="SIGN UP" VerticalAlignment="Top" FontSize="50" FontFamily=".VnTime" Margin="40,0,0,0" Foreground="#740909" Height="51" FontWeight="Bold" />
@@ -58,10 +58,10 @@
                     <TextBlock Text="SIGN UP" VerticalAlignment="Top" FontSize="50" FontFamily=".VnTime" Margin="38,0,2,0" Foreground="#FFC6980A" Height="51" FontWeight="Bold" />
                     <TextBlock  Text="name" FontSize="24" FontFamily="Sylfaen" Margin="40,0,394,618" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
                     <Border x:Name="bdname" Background="White" Margin="38,92,339,566" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                        <TextBox x:Name="name" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+                        <TextBox x:Name="name" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" Margin="4,0,4,0" BorderBrush="{x:Null}"/>
                     </Border>
                     <Border x:Name="bduser" Background="white" Margin="37,188,340,470" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                        <TextBox x:Name="user"  Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+                        <TextBox x:Name="user"  Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" BorderBrush="{x:Null}" Margin="4,0,4,0"/>
                     </Border>
                     <TextBlock Text="username" FontSize="24" FontFamily="Sylfaen" Margin="40,0,357,522" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
                     <TextBlock Text="password" FontSize="24" FontFamily="Sylfaen" Margin="40,0,357,425" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
@@ -73,7 +73,7 @@
                                 <ColumnDefinition Width="223*"/>
                                 <ColumnDefinition Width="41*"/>
                             </Grid.ColumnDefinitions>
-                            <PasswordBox x:Name="pass"  Margin="0,0,38,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="42" VerticalAlignment="Center" Foreground="#FF403F3F" PasswordChanged="pass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Cursor="IBeam" />
+                            <PasswordBox x:Name="pass"  Margin="5,0,38,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="42" VerticalAlignment="Center" Foreground="#FF403F3F" PasswordChanged="pass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Cursor="IBeam" />
                             <TextBox x:Name="unpass" Visibility="Hidden" Foreground="#FF403F3F"  Margin="0,0,38,0"  Grid.ColumnSpan="2" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" TextChanged="unpass_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}"/>
 
                             <Image x:Name="view"  Grid.Column="1" Source="/Resources/view.png" Margin="6" Cursor="Hand" MouseDown="Image_MouseDown_1" >
@@ -88,7 +88,7 @@
 
                     </Border>
                     <Border x:Name="bdphone" Background="white" Margin="56,425,339,234" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                        <TextBox x:Name="phone" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="phone_TextChanged"/>
+                        <TextBox x:Name="phone" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="phone_TextChanged" BorderBrush="{x:Null}" Margin="4,0,4,0"/>
                     </Border>
                     <Border x:Name="brdpass" Background="white" Margin="350,285,28,374" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
                         <Grid>
@@ -99,7 +99,7 @@
 
 
                             </Grid.ColumnDefinitions>
-                            <PasswordBox x:Name="rpass" Margin="0,0,5,0" VerticalContentAlignment="Center" Height="42" VerticalAlignment="Center" PasswordChanged="rpass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="Sylfaen" Cursor="IBeam" />
+                            <PasswordBox x:Name="rpass" Margin="4,0,5,0" VerticalContentAlignment="Center" Height="42" VerticalAlignment="Center" PasswordChanged="rpass_PasswordChanged" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontFamily="Sylfaen" Cursor="IBeam" />
                             <TextBox FontWeight="Normal" Foreground="#FF403F3F" x:Name="runpass" Margin="0,0,5,0" VerticalContentAlignment="Center"  FontSize="20" FontFamily="Sylfaen" Visibility="Hidden" TextChanged="runpass_TextChanged_1" BorderBrush="{x:Null}" Background="{x:Null}"/>
 
                             <Image x:Name="rview" Source="/Resources/view.png" Margin="230,6,6,6" Cursor="Hand" MouseDown="Image_MouseDown_2" Grid.ColumnSpan="2" />
@@ -120,10 +120,10 @@
                     </Border>
                     <TextBlock Text="birthday" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,192" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
                     <Border x:Name="bdcccd" Background="white" Margin="360,425,43,234" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                        <TextBox x:Name="cccd" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam"/>
+                        <TextBox x:Name="cccd" Background="Transparent" FontFamily="Sylfaen" FontSize="20" VerticalContentAlignment="Center" Cursor="IBeam" BorderBrush="{x:Null}" HorizontalAlignment="Center" Width="230"/>
 
                     </Border>
-                    
+
                     <TextBlock Text="cccd" FontSize="24" FontFamily="Sylfaen" Margin="360,0,38,285" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
                     <TextBlock Text="personal information" FontSize="24" FontFamily="Sylfaen" Margin="56,0,341,327" VerticalAlignment="Bottom" Foreground="#FF0500FF" />
                     <Border  x:Name="lgborder" Background="#FFC6980A" Margin="200,627,200,30"  CornerRadius="7" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >

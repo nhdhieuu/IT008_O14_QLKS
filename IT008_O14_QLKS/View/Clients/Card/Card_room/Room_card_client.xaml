@@ -276,7 +276,7 @@
                     </Border>
                     <TextBlock x:Name="fromdate_Copy" Style="{DynamicResource tx1}" FontSize="19" Text="from " FontWeight="Bold" Margin="326,121,299,0" VerticalAlignment="Top"/>
                     <TextBlock x:Name="fromdate_Copy1" Style="{DynamicResource tx1}" FontSize="19" Text="to" FontWeight="Bold" Margin="327,147,298,0" VerticalAlignment="Top"/>
-                    <TextBlock  x:Name="ftxt_Copy" Margin="18,0,123,0" Style="{DynamicResource tx1}" FontSize="25" Text="" FontWeight="Bold" Grid.Row="1"/>
+                    <TextBlock  x:Name="ftxt_Copy" Margin="66,0,123,0" Style="{DynamicResource tx1}" FontSize="25" Text="" FontWeight="Bold" Grid.Row="1"/>
 
                 </Grid>
             </Border>

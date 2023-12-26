@@ -389,6 +389,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
             sttroompage a = new sttroompage(type_lbl.Content.ToString(), TenPhong);
             a.ShowDialog();
+
         } 
 
         private void add_butt_MouseDown(object sender, MouseButtonEventArgs e)
@@ -481,6 +482,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         {
 
             add_butt.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF27CF69"));
+
 
 
         }

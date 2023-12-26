@@ -459,3 +459,29 @@ SET NGAYDV='12/23/2023'
 
 UPDATE CHITIETPR
 SET NGAYPR='12/23/2023' 
+create table notice 
+(
+MANOTICE varchar(5) primary key,
+header nvarchar(255),
+noidung nvarchar(255),
+ngaybd datetime,
+ngaykt datetime,
+
+
+	
+)
+create table CTNT
+(
+MANOTICE varchar(5),
+TANG int,
+LOAIPHONG  varchar(10),
+ClassID int,
+loc varchar(5)
+)
+ALTER TABLE CTNT
+ADD CONSTRAINT FK_CTNT_NOTICE FOREIGN KEY (MANOTICE) REFERENCES notice(MANOTICE)
+alter table CTNT
+add  MAKH varchar(5)
+
+alter table CTNT 
+alter column  classID varchar(10)

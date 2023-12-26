@@ -159,7 +159,7 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            addRoom a = new addRoom();
+            addRoom a = new addRoom(ID);
             a.ShowDialog();
         }
     }

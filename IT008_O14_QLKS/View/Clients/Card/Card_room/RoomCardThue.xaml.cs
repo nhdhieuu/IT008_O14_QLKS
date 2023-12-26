@@ -44,14 +44,14 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             
             TimeSpan diff = (DateTime)ar.to.Value - (DateTime)ar.from.Value;
             int distance = diff.Days;
-            if(distance < 0)
+            if(distance < 1)
             {
                 PriceTong = (Math.Truncate(PriceGio) * diff.Hours);
                 this.tonggia.Text = PriceTong.ToString()+" VND";
             }
             else
             {
-                PriceTong = (Math.Truncate(PriceNgay) * distance);
+                PriceTong = (Math.Truncate(PriceNgay) * diff.Days);
                 this.tonggia.Text = PriceTong.ToString() + " VND";
 
             }
@@ -82,7 +82,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ar.ar.chuyenview(IDRoom);
+            ar.ar.chuyenview(IDRoom, PriceTong, ar.MAKH, ar);
         }
     }
 }

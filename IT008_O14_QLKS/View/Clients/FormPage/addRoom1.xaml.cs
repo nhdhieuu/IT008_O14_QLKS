@@ -33,17 +33,18 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         DB_connection connect = new DB_connection();
         List<RoomCardThue> listRoom = new List<RoomCardThue>();
         int page = 1;
+        public string MAKH;
         public addRoom1()
         {
             InitializeComponent();
         }
-        public addRoom1( addRoom a)
+        public addRoom1( addRoom a, string MAKH)
         {
             InitializeComponent();
             Page_index_lbl.Text = "1";
             this.ar = a;
 
-           
+           this.MAKH= MAKH;
         }
         public void Load()
         {

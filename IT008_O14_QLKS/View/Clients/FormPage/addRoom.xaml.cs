@@ -20,13 +20,14 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
     public partial class addRoom : Window
     {
         public addRoom1 a;
-       
-        public addRoom()
+        public string MAKH;
+        public addRoom(string ID)
         {
             InitializeComponent();
-            
-            a = new addRoom1(this);
+            this.MAKH = ID;
+            a = new addRoom1(this,MAKH);
             main_content.Content = a;
+            
 
         }
       
@@ -69,7 +70,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         {
 
         }
-        public void chuyenview(string Roomname)
+        public void chuyenview(string Roomname,Decimal PriceTong, string MAKH,addRoom1 ar)
         {
             img1.Visibility = Visibility.Collapsed;
             img2.Visibility = Visibility.Visible;
@@ -77,7 +78,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             search2.Visibility = Visibility.Collapsed;
             filter.Visibility=Visibility.Collapsed;
             Tieude.Text = "room information";
-            AddRoom2 ar2 = new AddRoom2(Roomname);
+            AddRoom2 ar2 = new AddRoom2(Roomname, PriceTong, MAKH,ar);
             main_content.Content = ar2;
         }
 

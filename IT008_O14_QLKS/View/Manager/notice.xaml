@@ -4,11 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
-                          mc:Ignorable="d" 
-             d:DesignHeight="590" d:DesignWidth="782" Background="#F1F0E7"
+           xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="590" d:DesignWidth="782" Background="Transparent"
              FontFamily="Sylfaen" >
     <!-- w s -->
     <UserControl.Resources>
+        <ContextMenu x:Key="contextMenu">
+
+            <MenuItem Header="Delete"
+                      Click="Delete_OnClick"
+                      CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Parent}"/>
+        </ContextMenu>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
         <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
@@ -131,7 +138,7 @@
                     <ColumnDefinition Width="0.00001*"/>
                     <ColumnDefinition MaxWidth="18"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
+                <Border  Grid.ColumnSpan="3" CornerRadius="2" Background="#F0F0F0"/>
                 <RepeatButton Grid.Column="0"  Style="{StaticResource ScrollBarLineButton}" Width="18" Command="ScrollBar.LineLeftCommand" Content="M 4 0 L 4 8 L 0 4 Z" />
                 <Track Name="PART_Track" Grid.Column="1" IsDirectionReversed="False">
                     <Track.DecreaseRepeatButton>
@@ -187,57 +194,86 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
-        <!-- Phần trên -->
-        <Label Content="notice" FontSize="45" Foreground="#C6980A" Margin="55,0,607,536" Grid.RowSpan="2"
-               VerticalContentAlignment="Center" Padding="0,0,0,8"/>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="65*"/>
+    <Grid MouseDown="Grid_MouseDown" >
+        <Border CornerRadius="5" Background="#F1F0E7">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <!-- Phần trên -->
+                <Label Content="notice" FontSize="45" Foreground="#C6980A" Margin="32,5,630,531" Grid.RowSpan="2"
+               VerticalContentAlignment="Center" Padding="0,0,0,8" FontFamily="Times New Roman"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*"/>
 
-                <ColumnDefinition Width="350"/>
-            </Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Phần chính -->
-            <Label Grid.Column="2" Content="New message" FontSize="35" Margin="10,-10,10,500" Padding="0"/>
-            <!-- Bên Phải -->
-            <Border CornerRadius="5" Background="White" Grid.Column="2" Margin="10,36,10,10">
-                <Grid>
-                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
-                            Background="#D9D9D9" Margin="16,10,16,200">
-                        <TextBox x:Name="notice_context" Background="#D9D9D9" BorderThickness="0" Margin="1.2" TextWrapping="Wrap" AcceptsReturn="True" />
-                    </Border>
-                    <Label Content="to:" FontSize="35" Foreground="Black" Margin="16,270,237,150"
-                           Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-                    <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
-                            Background="White" Margin="16,325,16,53">
-                        <TextBox Background="white" BorderThickness="0" Margin="1.2"/>
-                    </Border>
-                    <Border Background="#C6980A"  Margin="258,295,16,170" >
-                        <Button Content="+" Foreground="White" Background="#C6980A" Margin="1.2"
-                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-8,0,0"
+                    <!-- Phần chính -->
+                    <Label Grid.Column="1" Content="new notice" FontSize="35" Margin="24,-36,-4,526" Padding="0" FontFamily="Times New Roman"/>
+                    <!-- Bên Phải -->
+                    <Border  BorderBrush="#C6980A" BorderThickness="2" CornerRadius="10,10,10,10" Background="White" Grid.Column="1" Margin="10,10,10,10">
+                        <Grid>
+                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
+                            Background="#D9D9D9" Margin="16,42,16,440">
+                                <TextBox x:Name="header_box" Background="#D9D9D9" BorderThickness="0" Margin="1,3,1,3" TextWrapping="Wrap"  MaxLength="30"  FontSize="20" FontFamily="Times New Roman" />
+                            </Border>
+                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
+                            Background="#D9D9D9" Margin="16,106,16,278">
+                                <ScrollViewer Margin="9,0,0,0">
+                                    <TextBox x:Name="noidung_box" Background="#D9D9D9" BorderThickness="0"  TextWrapping="Wrap" AcceptsReturn="True" Width="276" Height="117" FontFamily="Times New Roman" FontSize="20" />
+                                </ScrollViewer>
+                              
+                            </Border>
+                            <Label Content="to:" FontSize="25" Foreground="Black" Margin="16,212,237,208"
+                           Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontFamily="Times New Roman"/>
+                            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black"
+                            Background="White" Margin="17,282,15,121">
+                                <ScrollViewer Margin="9,2,3,3">
+                                    <StackPanel x:Name="addstk" Width="281">
+
+                                    </StackPanel>
+                                </ScrollViewer>
+
+                            </Border>
+                            <Grid Margin="10,0,0,208">
+
+
+                                <Button Content="+" Foreground="White" Background="#C6980A" Margin="237,247,16,34"
+                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-8,0,0"  Click="ShowPopup_Click" 
+                                >
+
+                                </Button>
+
+
+                            </Grid>
+
+
+                            <Border Background="#C6980A" CornerRadius="5" Margin="100,470,100,10" >
+                                <Button Name="send_but" Content="send" Foreground="White" Background="#C6980A"
+                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" Click="send_but_Click" FontFamily="Times New Roman" HorizontalAlignment="Center" Width="120" Margin="0,2,0,0" 
                                 />
+                            </Border>
+                        </Grid>
                     </Border>
-                    <Border Background="#C6980A" CornerRadius="5" Margin="100,445,100,10" >
-                        <Button Name="send_but" Content="send" Foreground="White" Background="#C6980A" Margin="1.2"
-                                Cursor="Hand" BorderThickness="0" FontSize="25" Padding="0,-5,0,0" Click="send_but_Click" 
-                                />
-                    </Border>
+               
+                    <ScrollViewer MouseDown="Grid_MouseDown" Margin="24,10,10,17" >
+
+                        <StackPanel MouseDown="Grid_MouseDown"  x:Name="stk" Width="398">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Label Grid.Column="1" Content="header" FontSize="25" Margin="26,20,-6,482" Padding="0" FontFamily="Times New Roman"/>
+                    <Label Grid.Column="1" Content="message" FontSize="25" Margin="26,86,-6,412" Padding="0" FontFamily="Times New Roman"/>
+                    <Label Grid.Column="1" Content="start:" FontSize="25" Margin="26,410,-6,87" Padding="0" FontFamily="Times New Roman"/>
+                    <xctk:DateTimePicker x:Name="dpk1" Margin="178,417,30,97" Grid.Column="1"/>
+                    <Label Grid.Column="1" Content="end:" FontSize="25" Margin="26,443,-6,55" Padding="0" FontFamily="Times New Roman"/>
+                    <xctk:DateTimePicker  x:Name="dpk2"  Margin="178,447,30,67" Grid.Column="1"/>
                 </Grid>
-            </Border>
+            </Grid>
+        </Border>
 
-            <!-- Bên Trái -->
-            <ScrollViewer>
-
-                <StackPanel x:Name="Notice_list" Width="417">
-                    
-                </StackPanel>
-            </ScrollViewer>
-           
-        </Grid>
     </Grid>
 </UserControl>

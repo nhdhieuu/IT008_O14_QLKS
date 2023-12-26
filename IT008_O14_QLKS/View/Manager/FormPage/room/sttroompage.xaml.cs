@@ -44,7 +44,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "unavailable";
                 cstt_bd.Background = new SolidColorBrush(Colors.DarkRed);
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-              unavailable_adj a=new unavailable_adj(ID);
+              unavailable_adj a=new unavailable_adj(ID,this);
                 stt2.Content = a.Content;
                 //adj_bd.Height = 0;
             }
@@ -53,7 +53,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "empty";
                 cstt_bd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00652E"));
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-               empty_adj a = new empty_adj(ID);
+               empty_adj a = new empty_adj(ID, this);
                 stt2.Content = a.Content;
                // adj_bd.Height = 0;
             }
@@ -62,13 +62,13 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 cstt_txt.Text = "booking";
                 cstt_bd.Background = new SolidColorBrush(Colors.Blue);
                 cstt_txt.Foreground = new SolidColorBrush(Colors.White);
-                empty_adj a = new empty_adj(ID);
+                empty_adj a = new empty_adj(ID,this);
                 stt2.Content = a.Content;
                 //adj_bd.Height = 0;
             }
             else
             {
-                empty_adj a = new empty_adj(ID);
+                empty_adj a = new empty_adj(ID,this);
                 stt2.Content = a.Content;
 
             }

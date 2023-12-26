@@ -54,7 +54,7 @@ namespace IT008_O14_QLKS.View.Clients
 
             sqlcmd.CommandType = CommandType.Text;
 
-            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and ((KQUATHUE='That Bai')or('{trueday}'>NGAYKT and KQUATHUE!='Thanh Cong'))";
+            sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE MAKH = '{ID}' and ((KQUATHUE='That Bai')or('{trueday}'>NGAYKT and KQUATHUE='Dang Thue'))";
             sqlcmd.Connection = connect.sqlCon;
             SqlDataReader reader = sqlcmd.ExecuteReader();
 
@@ -133,7 +133,7 @@ namespace IT008_O14_QLKS.View.Clients
             {
                 Height = 20
             };
-            Room_card_client b = new Room_card_client(ID);
+            Room_card_client b = new Room_card_client(ID,"client");
             if (str == "book")
                 b.book();
             if(str == "huy")

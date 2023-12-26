@@ -45,9 +45,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust
           
                if((cbb.SelectedItem as ComboBoxItem).Content.ToString()=="empty")
             {
-                cbb.Foreground = new SolidColorBrush(Colors.DarkGreen);
-                empty_adj a = new empty_adj(ID);
-                adj_cc.Content = a.Content;
+               
             }
 
             if ((cbb.SelectedItem as ComboBoxItem).Content.ToString() == "unavailable")

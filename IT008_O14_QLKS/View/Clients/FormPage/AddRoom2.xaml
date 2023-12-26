@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ContentControl Height="111" Width="290" Margin="37,23,530,470">
+        <ContentControl x:Name="roomcard" Height="111" Width="290" Margin="37,23,530,470">
 
         </ContentControl>
         <Border CornerRadius="10" Background="#FFD8D8D8" Margin="358,23,28,278">

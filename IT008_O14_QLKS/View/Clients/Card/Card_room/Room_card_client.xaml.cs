@@ -216,7 +216,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                         {
                             typetxt.Text = "days left";
 
-                            nbtxtleft.Text = timeDifference.Days.ToString();
+                            nbtxtleft.Text = giothue.Days.ToString();
                         }
                         if (timeDifference.Days <= 0)
                         {
@@ -258,7 +258,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             }
                             else
                             {
-                                nbtxtleft.Text = timeDifference.Hours.ToString();
+                                nbtxtleft.Text = giothue.Hours.ToString();
                             }
 
                         }

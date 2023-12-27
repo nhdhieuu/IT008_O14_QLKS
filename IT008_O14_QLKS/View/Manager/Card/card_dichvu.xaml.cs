@@ -24,6 +24,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public string name;
         public string ID;
         public string price;
+        public event EventHandler cardDialogClosed;
         public card_dichvu(string id, string name, string price)
         {
             this.name = name;
@@ -37,8 +38,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void detail_but_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            serviceInfor si=new serviceInfor();
+            serviceInfor si=new serviceInfor(this.ID);
+            si.Closed += Si_Closed;
             si.ShowDialog();
+        }
+
+        private void Si_Closed(object sender, EventArgs e)
+        {
+            cardDialogClosed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

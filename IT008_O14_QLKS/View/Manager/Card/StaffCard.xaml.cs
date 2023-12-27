@@ -29,7 +29,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         string Vitri { get; set; }  
         string MaNV { get;set; }
 
-        public StaffCard(String name,String vitri,string manv)
+        public StaffCard(string manv, string name,string vitri)
         {
             this.TenNV = name;
             this.Vitri = vitri;
@@ -42,7 +42,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            staffInfor SI = new staffInfor();
+            staffInfor SI = new staffInfor(MaNV);
             SI.ShowDialog();
             
         }
@@ -54,7 +54,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2808080"));
+            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F2F1EF"));
         }
 
       

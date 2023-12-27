@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
                          d:DesignHeight="590" d:DesignWidth="782" 
-             FontFamily="Sylfaen">
+             FontFamily="Sylfaen" >
     <!-- w s -->
     <UserControl.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
@@ -204,10 +204,10 @@
                 <Grid Margin="190,0,312,0">
                     <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="65,20,0,0" >
                         <Grid>
-                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
-                             BorderThickness="0" 
+                            <TextBox x:Name="search_card" Background="#D9D9D9" Margin="15,0,30,0"
+                             BorderThickness="0" KeyDown="search_card_KeyDown"
                              VerticalContentAlignment="Center" FontSize="14"/>
-                            <Image Source="/Resources/search_icon.png" Margin="185,0,0,0"/>
+                            <Image  Source="/Resources/search_icon.png" Margin="185,0,0,0"/>
                         </Grid>
                     </Border>
                     <Border CornerRadius="8,0,0,8" Background="White" Margin="0,20,210,0" >
@@ -216,7 +216,7 @@
                     </Border>
                 </Grid>
                 <!-- filter -->
-                <Label Content="filter" FontSize="30" Margin="555,8,112,0"/>
+                <Label Content="filter" FontSize="30" Margin="490,15,177,-7"/>
             </Grid>
             <!--Phần dưới -->
             <Grid Grid.Row="1">
@@ -247,7 +247,7 @@
                 <Grid Margin="190,238,0,262" >
                     <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="60,0,0,0" >
                         <Grid>
-                            <TextBox Background="#D9D9D9" Margin="15,0,30,0"
+                            <TextBox x:Name="search_problem" KeyDown="search_problem_KeyDown" Background="#D9D9D9" Margin="15,0,30,0"
               BorderThickness="0" 
               VerticalContentAlignment="Center" FontSize="14"/>
                             <Image Source="/Resources/search_icon.png" Margin="189,0,0,0"/>
@@ -269,7 +269,7 @@
                     </ScrollViewer>
                 </Border>
                 <!-- add problem button-->
-                <Border x:Name="but_add_problem" Height="25" Width="80" Cursor="Hand" CornerRadius="5" Background="#12CE69" Margin="195,495,194,10" MouseDown="but_add_problem_MouseDown" >
+                <Border x:Name="but_add_problem" Height="25" Width="80" Cursor="Hand" CornerRadius="5" Background="#12CE69" Margin="195,495,194,10" MouseDown="but_add_problem_MouseDown"  >
                     <Label Content="add" Foreground="White" HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center" FontSize="20" Padding="0"/>
                 </Border>
@@ -278,12 +278,12 @@
                 <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1">
                     <Grid Background="Transparent">
                         <Image Source="/Resources/ReceiptSortBy.png"/>
-                        <CheckBox x:Name="aval_filter" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
-                        <Border x:Name="aval_" Cursor="Hand" CornerRadius="10" Background="#12CE69" Opacity="0.8" Margin="30,50,30,73">
-                            <Label Content="available" Foreground="#C6980A" FontSize="30" 
+                        <CheckBox x:Name="aval_filter" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120" Checked="aval_filter_Checked" Unchecked="aval_filter_Unchecked"/>
+                        <Border x:Name="aval_" Cursor="Hand" MouseDown="aval__MouseDown" CornerRadius="10" Background="#12CE69" Opacity="0.8" Margin="30,50,30,73">
+                            <Label Content="available" Foreground="#BF0B0B" FontSize="30" 
                                    HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
-                        <Border x:Name="unaval_" Cursor="Hand" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                        <Border x:Name="unaval_" Cursor="Hand" MouseDown="unaval__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
                             <Label Content="unavailable" Foreground="#BF0B0B" FontSize="30" 
            HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
@@ -294,12 +294,12 @@
                 <Border CornerRadius="10" Margin="10,216,22,155" Grid.Column="1">
                     <Grid Background="Transparent">
                         <Image Source="/Resources/ReceiptFilter.png"/>
-                        <CheckBox x:Name="fee_filter" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
-                        <Border x:Name="free_" Cursor="Hand" CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
-                            <Label Content="free" Foreground="White" FontSize="30" 
+                        <CheckBox x:Name="fee_filter" Checked="fee_filter_Checked" Unchecked="fee_filter_Unchecked" Background="White" Opacity="1" BorderThickness="0" Margin="231,30,36,120"/>
+                        <Border x:Name="free_" Cursor="Hand" MouseDown="free__MouseDown" CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,50,30,73">
+                            <Label Content="free" Foreground="#BF0B0B" FontSize="30" 
                         HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
-                        <Border x:Name="fee_" Cursor="Hand" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
+                        <Border x:Name="fee_" Cursor="Hand" MouseDown="fee__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,102,30,20">
                             <Label Content="fee" Foreground="#BF0B0B" FontSize="30" 
 HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>

@@ -745,7 +745,9 @@
     <Resource Include="Resources\icons8-next-page-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\nenthuong.png" />
+    <Resource Include="Resources\nenthuong.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\xamvip.jpg" />

@@ -128,7 +128,7 @@
                 </Border>
             </Grid>
         </Border>
-        <Border x:Name="Diagram2" BorderBrush="#FF0AC6C6" BorderThickness="1" Margin="12,12,367,12" Background="#FF0AC6C6" CornerRadius="5,5,5,5" Grid.Row="1">
+        <Border x:Name="Diagram2"  Margin="12,12,367,12" CornerRadius="5,5,5,5" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"> </RowDefinition>
@@ -142,7 +142,7 @@
                     </lvc:CartesianChart.DataTooltip>
 
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="Thg1,Thg2,Thg3,Thg4,Thg5,Thg11,Thg12,Thg1,Thg2,Thg3,Thg4,Thg5">
+                        <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="Thg1,Thg2,Thg3,Thg4,Thg5,Thg6,Thg7,Thg8,Thg9,Thg10,Thg11,Thg12">
                             <lvc:Axis.Separator>
                                 <lvc:Separator Step="1" StrokeThickness="0"/>
                             </lvc:Axis.Separator>

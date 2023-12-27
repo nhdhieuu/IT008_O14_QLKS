@@ -90,8 +90,8 @@ namespace IT008_O14_QLKS.Models
             float layoutHeight = 0f;
             float centerX = (pageSize.Width) / 2;
             float centerY = (pageSize.Height) / 2;
-            x = centerX;
-            y = centerY;
+            x = centerX - 150;
+            y = centerY - 250;
             float Offset = 0;
             int smallinc = 15, mediuminc = 20, largeinc = 25;
 

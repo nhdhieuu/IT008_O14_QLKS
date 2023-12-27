@@ -147,8 +147,8 @@
     <Compile Include="View\Manager\Card\Client\client_class_card.xaml.cs">
       <DependentUpon>client_class_card.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Card\ProblemCard.xaml.cs">
-      <DependentUpon>ProblemCard.xaml</DependentUpon>
+    <Compile Include="View\Manager\Card\ProblemCard2.xaml.cs">
+      <DependentUpon>ProblemCard2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Card\ReceiptCard.xaml.cs">
       <DependentUpon>ReceiptCard.xaml</DependentUpon>
@@ -374,9 +374,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manager\Card\ProblemCard.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\Manager\Card\ProblemCard2.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Card\ReceiptCard.xaml">
       <SubType>Designer</SubType>
@@ -451,14 +451,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
-
-
     <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-
     <Page Include="View\Manager\FormPage\room\booking list\booking_list.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -475,7 +471,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -752,7 +747,9 @@
     <Resource Include="Resources\icons8-next-page-24.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\nenthuong.png" />
+    <Resource Include="Resources\nenthuong.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\xamvip.jpg" />
@@ -770,11 +767,8 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="Resources\up-arrow.png" />
-
     <Resource Include="View\Manager\reload1.png" />
-
     <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />

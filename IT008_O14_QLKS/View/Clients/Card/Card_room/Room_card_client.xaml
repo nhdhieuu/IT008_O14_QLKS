@@ -269,7 +269,7 @@
                             <TextBlock  x:Name="money_txt" Style="{DynamicResource ResourceKey=tx1}" FontSize="20" Foreground="#FF16C969" HorizontalAlignment="Left" Width="327" Margin="280,14,0,0" FontWeight="Bold" TextAlignment="Right" Text="2.000.000 VND" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
-                    <Border  x:Name="add" Style="{DynamicResource save_bd}" Width="NaN" Height="NaN" Margin="21,14,633,9" Grid.Row="1">
+                    <Border  x:Name="add" Style="{DynamicResource save_bd}" Width="NaN" Height="NaN" Margin="21,14,633,9" Grid.Row="1" MouseDown="add_MouseDown">
                         <TextBlock Text="+" Style="{DynamicResource tx1}" FontSize="35" HorizontalAlignment="Center" Height="39" Foreground="White">
 
                         </TextBlock>

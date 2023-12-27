@@ -29,6 +29,9 @@ using Color = System.Windows.Media.Color;
 using ColorConverter = System.Windows.Media.ColorConverter;
 using IT008_O14_QLKS.View.Manager;
 using IT008_O14_QLKS.View.Manager.FormPage.room.booking_list;
+using IT008_O14_QLKS.View.Clients.FormPage;
+using IT008_O14_QLKS.View.Manager.FormPage.room;
+using System.Xaml.Schema;
 
 namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 {
@@ -136,7 +139,34 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
         }
         TimeSpan giothue;
+        public void reset()
+        {
+            
+            load();
+            loadservice();
+            loadpr();
+            if (sservice > 1)
+                soservice.Text = sservice.ToString() + " SERVICES";
+            else
+                soservice.Text = sservice.ToString() + " SERVICE";
+            if (problem > 1)
+            {
+                soservice.Text += " + " + problem.ToString() + " PROBLEMS";
+            }
+            else
+                soservice.Text += " + " + problem.ToString() + " PROBLEM";
 
+            int moneyAsInt = Convert.ToInt32(tongtien);
+
+            if (moneyAsInt > 0)
+                money_txt.Text = moneyAsInt.ToString("#,###") + " VND";
+            else
+            {
+                money_txt.Text = "0 VND";
+
+            }
+            tinhtienphong();
+        }
         private void load()
         {
 
@@ -176,6 +206,11 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     }
                     TimeSpan timeDifference = reader.GetDateTime(4) - myDateTime;
 
+                    TimeSpan timeDifference2 = reader.GetDateTime(4) - reader.GetDateTime(3);
+                    if (timeDifference2 < timeDifference)
+                        timeDifference = timeDifference2;
+
+
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
                     if (timeDifference.Days < 0)
                     {
@@ -214,9 +249,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     {
                         if (timeDifference.Days > 0)
                         {
-                            typetxt.Text = "days left";
 
+                            typetxt.Text = "days left";
                             nbtxtleft.Text = timeDifference.Days.ToString();
+                            if (timeDifference.Days > 0)
+                                nbtxtleft.Text = (timeDifference.Days+1).ToString();
+
+
                         }
                         if (timeDifference.Days <= 0)
                         {
@@ -309,11 +348,18 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             while (reader.Read())
             {
                
-                if (giothue.Days >= 0)
+                if (giothue.Days > 0)
+                {
                     tienphong += (decimal)reader.GetSqlMoney(10) * giothue.Days;
+                    if (giothue.Hours >= 0)
+                    {
+                        tienphong += (decimal)reader.GetSqlMoney(10);
+                    }    
+                }    
+                   
                 else {
                     if (giothue.Hours >= 0)
-                        tienphong += (decimal)reader.GetSqlMoney(9) * giothue.Days;
+                        tienphong += (decimal)reader.GetSqlMoney(9) * giothue.Hours;
                 }
                 
 
@@ -385,7 +431,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         }
         private void loadservice()
         {
-           
+            sservice = 0;
             service1.Children.Clear();
           SqlCommand sqlcmd = new SqlCommand();
          
@@ -413,8 +459,8 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         int problem = 0;
         private void loadpr()
         {
+            problem = 0;
 
-           
             SqlCommand sqlcmd = new SqlCommand();
 
 
@@ -826,6 +872,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             {
                 window.reset();
             }
+        }
+
+        private void add_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+          
+            add_SV_PR a = new add_SV_PR(ref ID,this);
+            a.ShowDialog();
         }
     }
 }

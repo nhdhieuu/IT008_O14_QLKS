@@ -113,6 +113,9 @@
     <Compile Include="View\Clients\FormPage\AddRoom2.xaml.cs">
       <DependentUpon>AddRoom2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Clients\FormPage\add_SV_PR.xaml.cs">
+      <DependentUpon>add_SV_PR.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Clients\FormPage\ChangePass.xaml.cs">
       <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
@@ -332,6 +335,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Clients\FormPage\add_SV_PR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Clients\FormPage\ChangePass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -442,13 +449,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
 
-
-
     <Page Include="View\Manager\FormPage\receipt\Receipt_Add_Form.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-
     <Page Include="View\Manager\FormPage\room\booking list\booking_list.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -465,7 +469,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="View\Manager\FormPage\room\sttroompage2\adjust\adjust.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -760,11 +763,8 @@
     <Resource Include="Resources\icons8-check-30.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="Resources\up-arrow.png" />
-
     <Resource Include="View\Manager\reload1.png" />
-
     <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />

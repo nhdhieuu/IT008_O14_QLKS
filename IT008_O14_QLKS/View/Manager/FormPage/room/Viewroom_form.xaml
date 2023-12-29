@@ -364,10 +364,10 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label x:Name="TenKH_lbl" Margin="10,4,88,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
+                                <Label x:Name="TenKH_lbl" Margin="10,4,67,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
                                 <Label x:Name="denngay_lbl" Margin="0,32,9,-32" Content="20/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" />
                                 <Label x:Name="tungay_lbl" Margin="9,32,131,-32" Content="18/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="#FFFFFFFF" FontWeight="Bold" />
-                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="2|4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
+                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
                             </Grid>
                         </Border>
                         <Border  Background="#D9D9D9" Margin="28,20,24,5" CornerRadius="5,5,5,5">

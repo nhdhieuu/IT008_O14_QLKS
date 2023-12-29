@@ -87,7 +87,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 {
                     this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
                     this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
-                    this.da_o_lbl.Content = "2 days";
+                    this.da_o_lbl.Visibility = Visibility.Hidden;
                 }
                 
                 if (this.type_lbl.Content.ToString() == "Unavailable")

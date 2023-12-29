@@ -685,6 +685,11 @@ namespace IT008_O14_QLKS.View.Manager
             Load();
             this.Search_tbx.Text = string.Empty;
         }
+
+        private void Load_butt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Load();
+        }
     }
     
 }

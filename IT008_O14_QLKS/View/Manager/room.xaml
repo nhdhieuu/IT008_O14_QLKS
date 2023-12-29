@@ -114,7 +114,7 @@
             </Border>
             <Label Content="room" HorizontalAlignment="Left" Height="80" Margin="44,3,0,0" VerticalAlignment="Top" Width="101" FontFamily="Sylfaen " FontSize="40" Foreground="#FFC6980A"/>
             <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="817,279,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="22" Margin="10,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand"/>
+            <Image x:Name="Load_butt" HorizontalAlignment="Left" Height="22" Margin="10,30,0,0" VerticalAlignment="Top" Width="25" Source="/Resources/refresh.png" RenderTransformOrigin="0.76,0.645" Cursor="Hand" MouseDown="Load_butt_MouseDown"/>
             <StackPanel Margin="13,113,547,45">
                 <ContentControl x:Name="cc11" Height="140">
 

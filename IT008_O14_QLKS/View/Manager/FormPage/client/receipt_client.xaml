@@ -6,7 +6,15 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Blue">
-            
+    <Grid>
+        <Grid >
+            <ScrollViewer  >
+                <StackPanel Name="ReceiptCardPanel">
+
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
     </Grid>
 </UserControl>

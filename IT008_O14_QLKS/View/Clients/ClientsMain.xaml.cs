@@ -142,7 +142,7 @@ namespace IT008_O14_QLKS.View.Clients
 
         private void border3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DataContext = new receipt();
+            DataContext = new receipt(this.username);
             text3.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border3.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             main = 3;

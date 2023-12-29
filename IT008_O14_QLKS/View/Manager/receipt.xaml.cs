@@ -32,15 +32,21 @@ namespace IT008_O14_QLKS.View.Manager
         private bool isAsc = true;
         private string sortby = "sohd";
         private bool isFilter = false;
-
+        private string username;
         private string orderby = "asc";
-
+        private string join = "";
+        
         private string filter;
 
 
-        public receipt()
+        public receipt(string username)
         {
             InitializeComponent();
+            this.username = username;
+            if(this.username != "")
+            {
+                join = $"join khachhang on hoadon.makh = khachhang.makh where username = '{this.username}'";
+            }
             this.Loaded += receipt_Loaded;
             
         }
@@ -50,7 +56,7 @@ namespace IT008_O14_QLKS.View.Manager
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = _db.sqlCon;
             sqlCommand.CommandType = System.Data.CommandType.Text;
-            sqlCommand.CommandText = "select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon";
+            sqlCommand.CommandText = $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon {join}";
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
@@ -79,12 +85,12 @@ namespace IT008_O14_QLKS.View.Manager
             else
             {
                 ReceiptCardPanel.Children.Clear();
-                ;
+                
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = _db.sqlCon;
                 sqlCommand.CommandType = System.Data.CommandType.Text;
                 sqlCommand.CommandText =
-                    "select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon where sohd = '" + SearchBox.Text +
+                    "select sohd,NgayLap,CAST(ngaylap AS time),tongtien {join} from hoadon where sohd = '" + SearchBox.Text +
                     "'";
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 if (sqlDataReader.HasRows)
@@ -246,7 +252,7 @@ namespace IT008_O14_QLKS.View.Manager
             sqlCommand.Connection = _db.sqlCon;
             sqlCommand.CommandType = System.Data.CommandType.Text;
             sqlCommand.CommandText =
-                $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon {filter} order by {sortby} {noidung}";
+                $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon {join} {filter} order by {sortby} {noidung}";
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
@@ -294,7 +300,14 @@ namespace IT008_O14_QLKS.View.Manager
 
         private void FilterSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            filter = $"where tongtien >= {FilterSlider.Value}";
+            if(username != "")
+            {
+                filter = $"and tongtien >= {FilterSlider.Value}";
+            }
+            else
+            {
+                filter = $"where tongtien >= {FilterSlider.Value}";
+            }
             FilterMoneyTextBox.Text = FilterSlider.Value.ToString() + " VND";
             DisplaySort(sortby, orderby,filter);
         }
@@ -331,6 +344,21 @@ namespace IT008_O14_QLKS.View.Manager
         private void CustomRadioButton_OnClick(object sender, RoutedEventArgs e)
         {
             FilterSlider.IsEnabled = true;
+        }
+
+        private void Datepicker_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            datePicker.Visibility = Visibility.Visible;
+            datePicker.IsDropDownOpen = true;
+
+        }
+
+
+        private void DatePicker_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DatePickerLabel.Content= datePicker.SelectedDate.Value.ToString("dd/MM/yyyy");
+            datePicker.Visibility = Visibility.Hidden;
+            datePicker.IsDropDownOpen = false;
         }
     }
 }

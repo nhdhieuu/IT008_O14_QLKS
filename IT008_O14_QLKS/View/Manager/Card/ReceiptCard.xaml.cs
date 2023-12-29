@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.Connection_db;
+using IT008_O14_QLKS.Models;
 
 namespace IT008_O14_QLKS.View.Manager.Card
 {
@@ -20,11 +23,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
     /// </summary>
     public partial class ReceiptCard : UserControl
     {
-        private string _receiptId;
-        private DateTime _date;
-        private string _datestring;
-        private string _time;
-        private string _totalMoney;
+        public string _receiptId;
+        public DateTime _date;
+        public string _datestring;
+        public string _time;
+        public string _totalMoney;
+        public List<DichVu> _DichVu = new List<DichVu>();
+        public Room _room = new Room();
+        public List<Problem> _Problem = new List<Problem>();
 
         public ReceiptCard()
         {
@@ -50,8 +56,106 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.TotalMoneyBox.Text = int.Parse(_totalMoney).ToString("N0") + " VND";
         }
 
+        private void getReceiptDichVu()
+        {
+            DB_connection db = new DB_connection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = db.sqlCon;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText =
+
+                "select distinct tendv,chitietdv.soluong" +
+                " from hoadon" +
+                " inner join cthd" +
+                "    on hoadon.sohd = cthd.sohd" +
+                " left join chitietdv" +
+                "    on chitietdv.mathuephong = cthd.maphong" +
+                " inner join dichvu  " +
+                " on dichvu.madv = chitietdv.madv"+
+            
+                $" where hoadon.sohd = '{_receiptId}'";
+            sqlCommand.ExecuteNonQuery();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                if (sqlDataReader[0] != null && sqlDataReader[1] != null  )
+                {
+                    _DichVu.Add(new DichVu(sqlDataReader[0].ToString(), sqlDataReader[1].ToString()));
+                                    
+                }
+            }
+            sqlDataReader.Close();
+        }
+        private void getReceiptProblem()
+        {
+            DB_connection db = new DB_connection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = db.sqlCon;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText =
+
+                "select distinct prname, soluong" +
+                " from hoadon" +
+                " inner join cthd" +
+                "    on hoadon.sohd = cthd.sohd" +
+                " left join chitietpr" +
+                "    on chitietpr.mathuephong = cthd.maphong" +
+                " inner join problem " +
+                " on problem.mapr = chitietpr.mapr"+
+            
+                $" where hoadon.sohd = '{_receiptId}'";
+            sqlCommand.ExecuteNonQuery();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                if (sqlDataReader[0] != null && sqlDataReader[1] != null )
+                {
+                    _DichVu.Add(new DichVu(sqlDataReader[0].ToString(), sqlDataReader[1].ToString()));
+                                    
+                }
+            }
+            sqlDataReader.Close();
+        }
+        private void getReceiptRoomName()
+        {
+            DB_connection db = new DB_connection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = db.sqlCon;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText =
+
+                "select distinct thuephong.maphong" +
+                " from hoadon" +
+                " inner join cthd" +
+                "    on hoadon.sohd = cthd.sohd" +
+                " inner join thuephong " +
+                " on cthd.maphong = thuephong.mathuephong"+
+            
+                $" where hoadon.sohd = '{_receiptId}'";
+            sqlCommand.ExecuteNonQuery();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                
+                    _room = new Room(sqlDataReader[0].ToString());
+                    
+            }
+            sqlDataReader.Close();
+        }
+        private void getReceiptInfo()
+        {
+            getReceiptRoomName();
+            getReceiptDichVu();
+            getReceiptProblem();
+            
+            
+        }
+
         private void ReceiptCard_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            getReceiptInfo();
+            PrintReceipt printReceipt = new PrintReceipt(this);
+            printReceipt.Print();
         }
     }
 }

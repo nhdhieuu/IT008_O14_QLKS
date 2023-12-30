@@ -159,6 +159,23 @@ namespace IT008_O14_QLKS.View.Clients
             this.Close();
         }
 
+        private void txt_logout_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Loginn form = new Loginn();
+            form.Show();
+            this.Close();
+        }
 
+        private void txt_logout_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txt_logout.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+        private void txt_logout_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            txt_logout.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+
+        }
     }
 }

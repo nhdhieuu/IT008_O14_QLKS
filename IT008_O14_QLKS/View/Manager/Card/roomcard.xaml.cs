@@ -65,6 +65,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             string trueday = str[1] + "-" + str[0] + "-" + str[2];
             sqlcmd.CommandType = CommandType.Text;
             string tenphong = "M" + IDroom;
+           
             sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE  MAPHONG = '{tenphong}' and '{trueday}' <NGAYKT AND KQUATHUE='Dang Thue'";
             sqlcmd.Connection = connect.sqlCon;
 
@@ -122,13 +123,14 @@ namespace IT008_O14_QLKS.View.Manager.Card
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
             string tenphong = "M" + IDroom;
-            sqlcmd.CommandText = $"SELECT NGAYBD FROM THUEPHONG WHERE  MAPHONG = '{tenphong}'";
+            sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlcmd.CommandText = $"SELECT NGAYBD FROM THUEPHONG WHERE  MAPHONG = '{tenphong}' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
             sqlcmd.Connection = connect.sqlCon;
             DateTime d = (DateTime)sqlcmd.ExecuteScalar();
             TimeSpan diff = DateTime.Now - d;
             int span = diff.Days;
             if (span >= 1)
-            {
+            { 
                 this.typetime = "day";
                 this.time = diff.Days;
             }

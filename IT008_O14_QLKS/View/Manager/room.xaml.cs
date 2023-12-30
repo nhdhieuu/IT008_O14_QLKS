@@ -82,7 +82,7 @@ namespace IT008_O14_QLKS.View.Manager
                     }
                     
                 }
-                reader2.Close();
+                reader2.Close(); 
                 listCard[o].status= stt;
                 listCard[o].input();
                 cmd.CommandText="UPDATE PHONG SET TRANGTHAIHT='"+ listCard[o].status+"' WHERE TENPHONG='"+ listCard[o].IDroom+"'";

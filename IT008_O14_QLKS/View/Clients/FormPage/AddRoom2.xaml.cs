@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
+using System.IO;
 
 namespace IT008_O14_QLKS.View.Clients.FormPage
 {
@@ -72,7 +73,20 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             }
             reader.Close();
 
+            sqlcmd.CommandText = "SELECT ILLUS FROM PHONG WHERE TENPHONG='" + RoomName + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
 
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                Illus.ImageSource = bitmap;
+            }
+            catch { }
 
             sqlcmd.CommandText = $"SELECT TOP 1 MATHUEPHONG FROM THUEPHONG ORDER BY MATHUEPHONG DESC";
             SqlDataReader reader1 = sqlcmd.ExecuteReader();
@@ -91,10 +105,10 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
 
 
             this.MaKH = MAKH;
-            string from= ar.from.Value.ToString();
-            string to= ar.to.Value.ToString();
-            this.from_date_txbl.Text = from.Substring(0, from.Length - 3); 
-            this.to_date_txbl.Text = to.Substring(0, to.Length - 3);
+            string from= ((DateTime)ar.from.Value).ToString("dd/MM/yyyy HH:mm:ss");
+            string to= ((DateTime)ar.to.Value).ToString("dd/MM/yyyy HH:mm:ss");
+            this.from_date_txbl.Text = from; 
+            this.to_date_txbl.Text = to;
 
             TimeSpan diff = (DateTime)ar.to.Value - (DateTime)ar.from.Value;
             int distance = diff.Days;
@@ -137,9 +151,9 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             SqlCommand sqlcmd = new SqlCommand();
             sqlcmd.CommandType = CommandType.Text;
             //Còn mỗi câu truy vấn là xong hjhj
-            sqlcmd.Parameters.Add("@from", SqlDbType.DateTime).Value = DateTime.ParseExact(this.from_date_txbl.Text, "dd/MM/yyyy H:mm:ss",
+            sqlcmd.Parameters.Add("@from", SqlDbType.DateTime).Value = DateTime.ParseExact(this.from_date_txbl.Text, "dd/MM/yyyy HH:mm:ss",
                               CultureInfo.InvariantCulture);
-            sqlcmd.Parameters.Add("@to", SqlDbType.DateTime).Value = DateTime.ParseExact(this.to_date_txbl.Text, "dd/MM/yyyy H:mm:ss",
+            sqlcmd.Parameters.Add("@to", SqlDbType.DateTime).Value = DateTime.ParseExact(this.to_date_txbl.Text, "dd/MM/yyyy HH:mm:ss",
                               CultureInfo.InvariantCulture);
             sqlcmd.CommandText = $"INSERT INTO THUEPHONG (MATHUEPHONG,MAKH, MAPHONG, NGAYBD, NGAYKT, KQUATHUE) VALUES ('{MATP}','{MaKH}','{MP}',@from,@to,'{KQUA}')";
             sqlcmd.Connection = connect.sqlCon;

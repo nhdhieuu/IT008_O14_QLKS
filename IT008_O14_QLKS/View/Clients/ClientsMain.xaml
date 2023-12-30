@@ -84,6 +84,10 @@
                             <TextBlock Text="GINKGO" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" FontFamily="Sylfaen" Height="36" Width="106" Margin="21,0,0,0"/>
                             <Image Grid.Column="1" Source="/Resources/ginkgo.png" Margin="0,47,13,47"/>
                         </Grid>
+                        <Grid Grid.Row="8">
+                            <TextBlock  x:Name="txt_logout" Text="Log out" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Sylfaen" FontSize="19" Foreground="#FFC6980A"  Cursor="Hand" TextDecorations="Underline" Width="64" Margin="0,58,0,0" MouseDown="txt_logout_MouseDown" MouseEnter="txt_logout_MouseEnter" MouseLeave="txt_logout_MouseLeave"/>
+
+                        </Grid>
                         <Grid Grid.Row="1">
                             <Border  x:Name="border1"  CornerRadius="4" Width="148" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="#FFF1F0E7" MouseDown="border1_MouseDown" MouseEnter="border1_MouseEnter" MouseLeave="border1_MouseLeave" Cursor="Hand" Margin="0,0,0,7">
                                 <Grid>
@@ -143,12 +147,12 @@
 
                                     </TextBlock>
                                 </Grid>
-                                
+
                             </Border>
 
                         </Grid>
-                        
-                       
+
+
 
 
 

@@ -19,6 +19,8 @@ using IT008_O14_QLKS.Connection_db;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
 using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
+using Microsoft.Win32;
+using System.IO;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -137,19 +139,35 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                     this.equip_cbx.SelectedIndex = 0;
                 equip = this.equip_cbx.SelectedIndex;
                 cleaning = this.cleaning_cbx.SelectedIndex;
-                maintain = this.maintain_cbx.SelectedIndex;
+                maintain = this.maintain_cbx.SelectedIndex; 
             }
             reader.Close();
+            //Load illus
+            sqlcmd.CommandText = "SELECT ILLUS FROM PHONG WHERE TENPHONG='" + IDroom + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                Ilus.ImageSource = bitmap;
+            }
+            catch { }
 
             sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
                 this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");
-                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value2 = sqlcmd.ExecuteScalar();
                 DateTime date2 = (DateTime)value2;
                 this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");
@@ -271,16 +289,30 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 maintain = this.maintain_cbx.SelectedIndex;
             }
             reader.Close();
+            sqlcmd.CommandText = "SELECT ILLUS FROM PHONG WHERE TENPHONG='" + IDroom + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
 
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                Ilus.ImageSource = bitmap;
+            }
+            catch { }
             sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
                 this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");
-                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value2 = sqlcmd.ExecuteScalar();
                 DateTime date2 = (DateTime)value2;
                 this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");
@@ -402,6 +434,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = true;
             cleaning_cbx.IsEnabled = true;
             maintain_cbx.IsEnabled = true;
+            Load_Ilus.IsEnabled= true;
         }
 
         private void Change_MouseEnter(object sender, MouseEventArgs e)
@@ -427,6 +460,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = false;
             cleaning_cbx.IsEnabled = false;
             maintain_cbx.IsEnabled = false;
+            Load_Ilus.IsEnabled = false;                                    
             bed = this.bed_tbx.Text;
             if (this.pool_chbx.IsChecked == true)
                 pool = "Co";
@@ -460,8 +494,19 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             else
                 EquipTemp = "Fridge";
             SqlCommand sqlcmd = new SqlCommand();
+            BitmapSource bitmap = Ilus.ImageSource as BitmapSource;
+            byte[] imageData;
+            using (MemoryStream memory = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
+                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                enc.Save(memory);
+
+                imageData = memory.ToArray();
+            }
+            sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
             sqlcmd.CommandType = CommandType.Text;
-            sqlcmd.CommandText = "UPDATE PHONG SET SOGIUONG=" + bed + ", BONTAM='" + bath + "', HOBOI='" + pool + "', STYLE='" + this.style_cbx.SelectionBoxItem.ToString() + "', EQUIP='" + EquipTemp + "', INTERNET='" + InternetTemp + "', CLEANING='" + this.cleaning_cbx.SelectionBoxItem.ToString() + "', MAINTAIN='" + this.maintain_cbx.SelectionBoxItem.ToString() + "' WHERE TENPHONG='" + TenPhong + "'";
+            sqlcmd.CommandText = "UPDATE PHONG SET SOGIUONG=" + bed + ", BONTAM='" + bath + "', HOBOI='" + pool + "', STYLE='" + this.style_cbx.SelectionBoxItem.ToString() + "', EQUIP='" + EquipTemp + "', INTERNET='" + InternetTemp + "', CLEANING='" + this.cleaning_cbx.SelectionBoxItem.ToString() + "', MAINTAIN='" + this.maintain_cbx.SelectionBoxItem.ToString() + "', ILLUS=@image WHERE TENPHONG='" + TenPhong + "'";
             sqlcmd.Connection = connect.sqlCon;
             sqlcmd.ExecuteNonQuery();
         }
@@ -489,6 +534,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = false;
             cleaning_cbx.IsEnabled = false;
             maintain_cbx.IsEnabled = false;
+            Load_Ilus.IsEnabled = false;
             this.bed_tbx.Text = bed;
             if (pool == "Co")
                 this.pool_chbx.IsChecked = true;
@@ -616,6 +662,30 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
 
 
 
+        }
+        Image early = new Image();
+        private void Load_Ilus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Ilus.ImageSource = early.Source;
+            Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
+            ofd.Title = "Select Image to set avatar";
+            ofd.Filter = "Image Files(*.BMP;*.JPG;*.PNG)|*.bmp;*.jpg;*.png|JPG Files|*.jpg|PNG Files|*.png|JPEG Files|*.jpeg";
+            ofd.ShowDialog();
+            Ilus.ImageSource = early.Source;
+
+            if (ofd.FileName != "")
+            {
+                string tb_uri;
+                tb_uri = ofd.FileName;
+                Uri image_Path = new Uri(tb_uri);
+                Ilus.ImageSource = new BitmapImage(image_Path);
+                Ilus.Stretch = System.Windows.Media.Stretch.UniformToFill;
+                early.Source = Ilus.ImageSource;
+
+            }
+            else
+            {
+            }
         }
     }
 }

@@ -299,6 +299,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             if (from.Value < DateTime.Now)
             {
                 MessageBox.Show("The selected day must be in the future!");
+                return;
             }
             else
             {
@@ -313,15 +314,18 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             if (to.Value < DateTime.Now)
             {
                 MessageBox.Show("The selected day must be in the future!");
+                return;
             }
             else
             {
                 if (to.Value <= from.Value)
                 {
                     MessageBox.Show("The end date must be greater than the start date!");
+                    return;
                 }
                 else
-                    Load();
+                    if (from.Value != null )
+                        Load();
 
             }
         }

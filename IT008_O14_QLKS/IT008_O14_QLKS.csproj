@@ -779,7 +779,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\up-arrow.png" />
-    <Resource Include="View\Manager\reload1.png" />
     <Resource Include="Resources\superior.jpg" />
     <Resource Include="Resources\AnhPhongKS.jpg" />
     <Resource Include="Resources\21081c7921bec879da839aa4df4d2994.jpg" />

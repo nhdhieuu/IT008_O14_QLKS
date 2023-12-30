@@ -17,9 +17,7 @@
             <RowDefinition Height="511*"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="1" Margin="0,0,355,0" CornerRadius="5,5,5,5" Grid.RowSpan="2">
-            <Border.Background>
-                <ImageBrush ImageSource="/Resources/home_2.png"/>
-            </Border.Background>
+            
         </Border>
         <Border BorderBrush="White" BorderThickness="1" Margin="451,7,20,25" CornerRadius="5,5,5,5" Background="#FFB6A982" Grid.Row="1">
             <Grid Margin="0,4,0,-1">
@@ -135,7 +133,11 @@
                     <RowDefinition Height="50"> </RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <DatePicker x:Name="DatePicker_StartDate" Margin="10 10 0 0" FontSize="12"
+               <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnStatistical" Margin="10 9 0 0"  HorizontalAlignment="Left" FontSize="12" Height="21" Content="Thống kê" Click="BtnStatistical_OnClick">
+                    </Button>
+                    <!-- <TextBlock Margin="15 12 -5 0" Text="Từ ngày:" FontSize="12"/> -->
+                    <DatePicker x:Name="DatePicker_StartDate" Margin="10 10 0 0" FontSize="12"
                                 Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
                                 materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
                                 materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
@@ -143,29 +145,52 @@
                                 Foreground="Black"
                                 BorderThickness="0.5"
                                 Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
-                    <DatePicker.CalendarStyle>
-                        <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
-                            <Style.Resources>
-                                <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
-                            </Style.Resources>
-                        </Style>
-                    </DatePicker.CalendarStyle>
-                </DatePicker>
+                        <DatePicker.CalendarStyle>
+                            <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
+                                </Style.Resources>
+                            </Style>
+                        </DatePicker.CalendarStyle>
+                    </DatePicker>
+                    <!-- <TextBlock  Margin="15 12 -5 0" Text="Đến ngày:" FontSize="12"/> -->
+                    <DatePicker x:Name="DatePicker_EndDate" Margin="10 10 0 0" FontSize="12"
+                                Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
+                                materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
+                                materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
+                                materialDesign:TextFieldAssist.UnderlineBrush="#879FFF"
+                                Foreground="Black"
+                                BorderThickness="0.5"
+                                Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
+                        <DatePicker.CalendarStyle>
+                            <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
+                                </Style.Resources>
+                            </Style>
+                        </DatePicker.CalendarStyle>
+                    </DatePicker>
+                    
+                </StackPanel>
+                
+                
+                
+                
                 <lvc:CartesianChart x:Name="ChartImport" Grid.Row="1" LegendLocation="None" Margin="0 0 10 0">
                     <lvc:CartesianChart.DataTooltip>
                         <lvc:DefaultTooltip Background="black" Foreground="#d5e2ff"/>
                     </lvc:CartesianChart.DataTooltip>
 
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="Thg1,Thg2,Thg3,Thg4,Thg5,Thg6,Thg7,Thg8,Thg9,Thg10,Thg11,Thg12">
+                        <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="">
                             <lvc:Axis.Separator>
-                                <lvc:Separator Step="1" StrokeThickness="0"/>
+                                <lvc:Separator Step="2" StrokeThickness="0"/>
                             </lvc:Axis.Separator>
                         </lvc:Axis>
                     </lvc:CartesianChart.AxisX>
 
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis x:Name="AxisY_Right" Title="Số Lượng" ShowLabels="True" Foreground="Black" MinValue="0" MaxValue="15" >
+                        <lvc:Axis x:Name="AxisY_Right" Title="Total Money" ShowLabels="True" Foreground="Black" MinValue="0" MaxValue="15" >
                             <lvc:Axis.Separator>
                                 <lvc:Separator/>
                             </lvc:Axis.Separator>
@@ -174,11 +199,11 @@
 
                     <lvc:CartesianChart.Series>
 
-                        <lvc:ColumnSeries x:Name="QuantityValues_ColumnSeries" Title="Số lượng" Values="5,6,7,3,8,6,7,8,9,0,3,2" MaxColumnWidth="25">
+                        <lvc:ColumnSeries x:Name="QuantityValues_ColumnSeries" Title="Total Money" Values="" MaxColumnWidth="25">
                             <lvc:ColumnSeries.Fill>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="1">
-                                    <GradientStop Color="#2A64F7" Offset="0.4"/>
-                                    <GradientStop Color="#61D3FC" Offset="1"/>
+                                    <GradientStop Color="#FFD994" Offset="0.4"/>
+                                    <GradientStop Color="#FC8896" Offset="1"/>
                                 </LinearGradientBrush>
                             </lvc:ColumnSeries.Fill>
                         </lvc:ColumnSeries>

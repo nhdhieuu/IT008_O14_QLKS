@@ -346,19 +346,19 @@ namespace IT008_O14_QLKS.View.Manager
             FilterSlider.IsEnabled = true;
         }
 
-        private void Datepicker_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            datePicker.Visibility = Visibility.Visible;
-            datePicker.IsDropDownOpen = true;
-
-        }
-
-
-        private void DatePicker_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DatePickerLabel.Content= datePicker.SelectedDate.Value.ToString("dd/MM/yyyy");
-            datePicker.Visibility = Visibility.Hidden;
-            datePicker.IsDropDownOpen = false;
-        }
+        // private void Datepicker_OnMouseDown(object sender, MouseButtonEventArgs e)
+        // {
+        //     datePicker.Visibility = Visibility.Visible;
+        //     datePicker.IsDropDownOpen = true;
+        //
+        // }
+        //
+        //
+        // private void DatePicker_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        // {
+        //     DatePickerLabel.Content= datePicker.SelectedDate.Value.ToString("dd/MM/yyyy");
+        //     datePicker.Visibility = Visibility.Hidden;
+        //     datePicker.IsDropDownOpen = false;
+        // }
     }
 }

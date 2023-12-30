@@ -8,6 +8,13 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Styles/MaterialDesignStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries> 
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Border Background="#F1F0E7" CornerRadius="10" Height="590" Width="782">
     <Grid  >
         <Grid.ColumnDefinitions>

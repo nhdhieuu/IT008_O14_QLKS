@@ -28,7 +28,7 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class home : UserControl
     {
-      
+        private int TotalMoney = 0;
         DB_connection connect = new DB_connection();
         SqlCommand sqlcmd = new SqlCommand();
         public string ten;
@@ -304,8 +304,14 @@ namespace IT008_O14_QLKS.View.Manager
                     AxisY_Right.MaxValue = tongtien[i];
                 }
             }
-           
-            
+
+            foreach (var tienphong in tongtien)
+            {
+                
+                this.TotalMoney += tienphong;
+                
+            }
+            TotalIncome.Text = this.TotalMoney.ToString("N0") + " VND";
             QuantityValues_ColumnSeries.Values = tongtien;
             AxisX_Bottom.Labels = maphong;
             sqlDataReader.Close();

@@ -8,7 +8,8 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Width="782" Height="590">
-    <Grid Height="590" Width="782" Background="White" Margin="9,0,9,0" VerticalAlignment="Top"  >
+    <Border Background="#F1F0E7" CornerRadius="10" Height="590" Width="782">
+    <Grid  >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -134,42 +135,42 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnStatistical" Margin="10 9 0 0"  HorizontalAlignment="Left" FontSize="12" Height="21" Content="Thống kê" Click="BtnStatistical_OnClick">
-                    </Button>
-                    <!-- <TextBlock Margin="15 12 -5 0" Text="Từ ngày:" FontSize="12"/> -->
-                    <DatePicker x:Name="DatePicker_StartDate" Margin="10 10 0 0" FontSize="12"
-                                Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
-                                materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
-                                materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
-                                materialDesign:TextFieldAssist.UnderlineBrush="#879FFF"
-                                Foreground="Black"
-                                BorderThickness="0.5"
-                                Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
-                        <DatePicker.CalendarStyle>
-                            <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
-                                <Style.Resources>
-                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
-                                </Style.Resources>
-                            </Style>
-                        </DatePicker.CalendarStyle>
-                    </DatePicker>
-                    <!-- <TextBlock  Margin="15 12 -5 0" Text="Đến ngày:" FontSize="12"/> -->
-                    <DatePicker x:Name="DatePicker_EndDate" Margin="10 10 0 0" FontSize="12"
-                                Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
-                                materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
-                                materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
-                                materialDesign:TextFieldAssist.UnderlineBrush="#879FFF"
-                                Foreground="Black"
-                                BorderThickness="0.5"
-                                Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
-                        <DatePicker.CalendarStyle>
-                            <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
-                                <Style.Resources>
-                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
-                                </Style.Resources>
-                            </Style>
-                        </DatePicker.CalendarStyle>
-                    </DatePicker>
+                    <TextBlock  FontSize="20" VerticalAlignment="Center">Total Income: </TextBlock>
+                    <TextBlock x:Name="TotalIncome" VerticalAlignment="Center" Text="0" Foreground="#FFC6980A" FontWeight="Bold" FontSize="20" Margin="5 0 0 0"></TextBlock>
+                    <!-- ~1~ <TextBlock Margin="15 12 -5 0" Text="Từ ngày:" FontSize="12"/> @1@ -->
+                    <!-- <DatePicker x:Name="DatePicker_StartDate" Margin="10 10 0 0" FontSize="12" -->
+                    <!--             Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left" -->
+                    <!--             materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2" -->
+                    <!--             materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1" -->
+                    <!--             materialDesign:TextFieldAssist.UnderlineBrush="#879FFF" -->
+                    <!--             Foreground="Black" -->
+                    <!--             BorderThickness="0.5" -->
+                    <!--             Style="{StaticResource MaterialDesignOutlinedDatePicker}" > -->
+                    <!--     <DatePicker.CalendarStyle> -->
+                    <!--         <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}"> -->
+                    <!--             <Style.Resources> -->
+                    <!--                 <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" /> -->
+                    <!--             </Style.Resources> -->
+                    <!--         </Style> -->
+                    <!--     </DatePicker.CalendarStyle> -->
+                    <!-- </DatePicker> -->
+                    <!-- ~1~ <TextBlock  Margin="15 12 -5 0" Text="Đến ngày:" FontSize="12"/> @1@ -->
+                    <!-- <DatePicker x:Name="DatePicker_EndDate" Margin="10 10 0 0" FontSize="12" -->
+                    <!--             Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left" -->
+                    <!--             materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2" -->
+                    <!--             materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1" -->
+                    <!--             materialDesign:TextFieldAssist.UnderlineBrush="#879FFF" -->
+                    <!--             Foreground="Black" -->
+                    <!--             BorderThickness="0.5" -->
+                    <!--             Style="{StaticResource MaterialDesignOutlinedDatePicker}" > -->
+                    <!--     <DatePicker.CalendarStyle> -->
+                    <!--         <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}"> -->
+                    <!--             <Style.Resources> -->
+                    <!--                 <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" /> -->
+                    <!--             </Style.Resources> -->
+                    <!--         </Style> -->
+                    <!--     </DatePicker.CalendarStyle> -->
+                    <!-- </DatePicker> -->
                     
                 </StackPanel>
                 
@@ -184,7 +185,7 @@
                     <lvc:CartesianChart.AxisX>
                         <lvc:Axis x:Name="AxisX_Bottom" ShowLabels="True" Foreground="Black" Labels="">
                             <lvc:Axis.Separator>
-                                <lvc:Separator Step="2" StrokeThickness="0"/>
+                                <lvc:Separator Step="1" StrokeThickness="0"/>
                             </lvc:Axis.Separator>
                         </lvc:Axis>
                     </lvc:CartesianChart.AxisX>
@@ -216,10 +217,75 @@
         <!-- </Border> -->
         <Border BorderBrush="#FFC6980A" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="73" Margin="12,13,0,0" VerticalAlignment="Top" Width="403" CornerRadius="5,5,5,5" Background="#FFF3F3F3" Grid.RowSpan="2">
             <Grid Margin="0,-3,1,3">
-                <Label Content="Activity" HorizontalAlignment="Left" Height="47" Margin="12,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
-                <Label Content="October 21th, 2023" HorizontalAlignment="Left" Height="29" Margin="12,38,0,0" VerticalAlignment="Top" Width="199"  FontSize="18" FontFamily="Bahnschrift" Foreground="#FFCDA529" Background="#00000000" FontWeight="Bold" />
-                <Border Margin="342,17,17,13" Background="#FFC6980A" CornerRadius="5,5,5,5" >
-                    <Image Source="/Resources/icons8-calender-32 1.jpg" Margin="7,6,6,7"/>
+               <Grid.ColumnDefinitions>
+                   <ColumnDefinition></ColumnDefinition>
+                   <ColumnDefinition></ColumnDefinition>
+               </Grid.ColumnDefinitions>
+                <Border>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Activity" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                        <Button Grid.Row="1" x:Name="btnStatistical" Background="#FFB6A982" Margin="10 9 0 0"  HorizontalAlignment="Left" FontSize="12" Height="21" BorderThickness="0"  Click="BtnStatistical_OnClick">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"> Statistic</TextBlock>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="From:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                            <DatePicker Grid.Column="1" x:Name="DatePicker_StartDate" Margin="-5 10 0 0" FontSize="12"
+                                        Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
+                                        materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
+                                        materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
+                                        materialDesign:TextFieldAssist.UnderlineBrush="#879FFF"
+                                        Foreground="Black"
+                                        BorderThickness="0.5"
+                                        Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
+                                <DatePicker.CalendarStyle>
+                                    <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
+                                        </Style.Resources>
+                                    </Style>
+                                </DatePicker.CalendarStyle>
+                            </DatePicker>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="To:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                            <DatePicker Grid.Column="1" x:Name="DatePicker_EndDate" Margin="-5 10 0 0" FontSize="12"
+                                        Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
+                                        materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
+                                        materialDesign:DatePickerAssist.OutlinedBorderInactiveThickness="1"
+                                        materialDesign:TextFieldAssist.UnderlineBrush="#879FFF"
+                                        Foreground="Black"
+                                        BorderThickness="0.5"
+                                        Style="{StaticResource MaterialDesignOutlinedDatePicker}" >
+                                <DatePicker.CalendarStyle>
+                                    <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#879FFF" />
+                                        </Style.Resources>
+                                    </Style>
+                                </DatePicker.CalendarStyle>
+                            </DatePicker>
+                        </Grid>
+                    </Grid>
                 </Border>
             </Grid>
         </Border>
@@ -233,4 +299,5 @@
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="451,41,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="237"/>
 
     </Grid>
+    </Border>
 </UserControl>

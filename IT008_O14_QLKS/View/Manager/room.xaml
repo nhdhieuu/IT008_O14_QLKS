@@ -95,7 +95,7 @@
                 <Grid  Margin="4,0,7,0">
                     
                     <Image x:Name="Search" Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" MouseDown="Search_MouseDown" />
-                    <TextBox x:Name="Search_tbx" Margin="0,0,31,0" FontFamily="Sylfaen " FontSize="22" Background="{x:Null}">
+                    <TextBox x:Name="Search_tbx" Margin="0,0,31,0" FontFamily="Sylfaen " FontSize="22" Background="{x:Null}" BorderBrush="{x:Null}">
 
                     </TextBox>
                 </Grid>

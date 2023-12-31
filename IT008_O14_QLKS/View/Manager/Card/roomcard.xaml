@@ -17,7 +17,7 @@
 
 
         </Border>
-        <Border x:Name="viewbd" VerticalAlignment="Top" Grid.Row="1" Margin="159,0,15,0" Background="#FF00A9FF"   CornerRadius="5" Height="30" MouseDown="Border_MouseDown" MouseEnter="viewbd_MouseEnter" MouseLeave="viewbd_MouseLeave" Cursor="Hand"  >
+        <Border x:Name="viewbd" VerticalAlignment="Top" Grid.Row="1" Margin="159,0,15,0" Background="#FFC6980A"   CornerRadius="5" Height="30" MouseDown="Border_MouseDown" MouseEnter="viewbd_MouseEnter" MouseLeave="viewbd_MouseLeave" Cursor="Hand"  >
             <Image Source="/Resources/icons8-eye-24.png" KeyDown="Image_KeyDown" MouseDown="Image_MouseDown"/>
         </Border>
         <Border x:Name="statusbd" Grid.Row="1" Background="#FFC6980A" Margin="20,0,154,5" CornerRadius="5" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseDown="statusbd_MouseDown">

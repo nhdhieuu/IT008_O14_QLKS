@@ -292,7 +292,7 @@
                    Padding="0,5,0,0"  VerticalAlignment="Center"
                    Margin="70,0,612,0" Height="53"/>
 
-            <Border CornerRadius="8,8,8,8" Background="#D9D9D9" Margin="191,20,297,0" >
+            <Border CornerRadius="8,8,8,8" Background="#D9D9D9" Margin="175,16,297,4" >
                 <Grid>
                     <TextBox x:Name="search_tb" Background="#D9D9D9" Margin="10,0,30,0"
                              BorderThickness="0" Padding="2" KeyDown="search_tb_KeyDown"

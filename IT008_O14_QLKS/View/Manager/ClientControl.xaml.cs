@@ -80,7 +80,7 @@ namespace IT008_O14_QLKS.View.Manager
                 type.IsEnabled = true;
                 cbb_clls.IsEnabled = true;
                 ck_type.Visibility = System.Windows.Visibility.Visible;
-               filter.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFB07D1D"));
+             
                 type_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFB730"));
                 cbb_clls.SelectedIndex = 0;
                 cbb_clls.Foreground = new SolidColorBrush((Colors.Gray));
@@ -96,7 +96,7 @@ namespace IT008_O14_QLKS.View.Manager
                 cbb_clls.IsEnabled = false;
                 ck_type.Visibility = System.Windows.Visibility.Hidden;
                 type.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
-                filter.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4B3306"));
+            
                 type_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4B3306"));
                 cbb_clls.Text = "";
 

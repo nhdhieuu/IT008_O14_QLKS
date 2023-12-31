@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Clients.FormPage;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -49,6 +50,29 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             }
             reader.Close();
         }
+        add_SV_PR goc;
+        public AddProblem(string matp,add_SV_PR goc)
+        {
+            InitializeComponent();
+            this.goc = goc;
+            this.matp = matp;
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "SELECT * FROM PROBLEM";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                RoomProblem RS = new RoomProblem(1, reader.GetString(1), reader.GetDecimal(2), this);
+
+                ContentControl CC = new ContentControl();
+                CC.Height = 42;
+                CC.Width = 375;
+                CC.Content = RS.Content;
+                AvaiService.Children.Add(CC);
+            }
+            reader.Close();
+        }
 
         private void accept_butt_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -65,8 +89,14 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 sqlcmd.CommandText = $"INSERT INTO CHITIETPR (MATHUEPHONG, MAPR, SOLUONG, THANHTIEN, NGAYPR) VALUES ('{matp}','{added[i].MAPR}',{added[i].SL},@Money,@Date)";
                 sqlcmd.ExecuteNonQuery();
             }
+            if (vr != null)
+                vr.LoadProb();
+            else
+            {
+                goc.Visibility = Visibility.Visible;
+            }    
             this.Close();
-            vr.LoadProb();
+          
         }
 
         private void accept_butt_MouseEnter(object sender, MouseEventArgs e)

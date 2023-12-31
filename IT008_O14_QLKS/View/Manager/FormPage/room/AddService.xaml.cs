@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.View.Clients.FormPage;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -27,6 +28,29 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
         public List<RoomService> added = new List<RoomService>();
         Viewroom_form vr;
         string matp;
+        add_SV_PR goc;
+        public AddService(string matp,add_SV_PR goc)
+        {
+
+            InitializeComponent();
+            this.goc = goc;
+            this.matp = matp;
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "SELECT * FROM DICHVU";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                RoomService RS = new RoomService(1, reader.GetString(1), reader.GetDecimal(2), this);
+                ContentControl CC = new ContentControl();
+                CC.Height = 42;
+                CC.Width = 375;
+                CC.Content = RS.Content;
+                AvaiService.Children.Add(CC);
+            }
+            reader.Close();
+        }
         public AddService(string matp,Viewroom_form vr)
         {
 
@@ -67,8 +91,14 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 sqlcmd.CommandText = $"INSERT INTO CHITIETDV (MATHUEPHONG, MADV, SOLUONG, THANHTIEN, NGAYDV) VALUES ('{matp}','{added[i].MADV}',{added[i].SL},@Money,@Date)";
                 sqlcmd.ExecuteNonQuery();
             }
+            if (vr != null)
+                vr.LoadService();
+            else
+            {
+                goc.Visibility = Visibility.Visible;
+            }
             this.Close();
-            vr.LoadService();
+           
         }
         private void accept_butt_MouseEnter(object sender, MouseEventArgs e)
         {

@@ -9,36 +9,36 @@
     <UserControl.Resources>
         <Style x:Key="bd" TargetType="Border">
             <Setter Property="Background" Value="Transparent">
-                
+
             </Setter>
             <Setter Property="Height" Value="36
                     
                     
                     ">
-                
+
             </Setter>
             <Setter Property="Width" Value="95">
 
             </Setter>
             <Setter Property="CornerRadius"  Value="5">
-                
+
             </Setter>
             <Setter Property="BorderThickness" Value="1.5">
-                
+
             </Setter>
             <Setter Property="BorderBrush" Value="Black">
 
             </Setter>
             <Setter Property="Cursor" Value="Hand">
-                
+
             </Setter>
         </Style>
         <Style x:Key="txtofbd" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Bahnschrift">
-                
+
             </Setter>
             <Setter Property="FontSize" Value="25">
-                
+
             </Setter>
         </Style>
     </UserControl.Resources>
@@ -49,11 +49,9 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <Border BorderBrush="White" HorizontalAlignment="Left" Height="244" Margin="496,22,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/ede59f46552ecfa8545a5d983bc15d48.jpg"/>
-                </Border.Background>
-                <Grid>
+            <Border BorderBrush="Transparent" HorizontalAlignment="Left" Height="244" Margin="496,22,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
+
+                <Grid Height="240" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -69,8 +67,7 @@
                         </ComboBox>
 
                     </Border>
-                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Sylfaen" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
-                    <Label x:Name="filter" Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="16,1,0,0" />
+                    <Label x:Name="filter" Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="17,2,0,0" />
 
                     <Label x:Name="type_txt" Content="HIGHER CLASS" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="178"  FontSize="24" FontFamily="Bahnschrift" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="29,59,0,0" />
                     <Border x:Name="bd_type" Margin="213,67,28,152" Background="#E5FFFFFF" CornerRadius="1,1,1,1" RenderTransformOrigin="0.5,0.5" MouseDown="Border_MouseDown_2" BorderThickness="2,2,2,2" BorderBrush="White" Cursor="Hand" >
@@ -128,11 +125,10 @@
                 </ScrollViewer>
 
             </Grid>
-            <Border BorderBrush="White" HorizontalAlignment="Left" Height="278" Margin="496,279,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/0164959b12094c445ddc2c87bc0d1b62.jpg" Stretch="UniformToFill"/>
-                </Border.Background>
-                <Grid Margin="0,0,0,34">
+            <Border HorizontalAlignment="Left" Height="278" Margin="496,279,0,0" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" BorderThickness="2,2,2,2">
+
+                <Grid Margin="0,-19,0,53">
+                    <Label Content="Sort" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="#FF4B3306" Background="{x:Null}" FontWeight="Bold" Margin="17,-25,0,0" />
                     <Border x:Name="type1" Margin="18,24,10,0" CornerRadius="8,8,8,8" Background="#7F4E4B4B">
                         <ComboBox x:Name="cbb_clls1"  Style="{DynamicResource RoundComboBox}"   FontFamily="Bahnschrift" FontSize="20" Margin="15,76,15,0" Height="42" VerticalAlignment="Top" IsEnabled="False" SelectionChanged="cbb_clls1_SelectionChanged">
                             <ComboBoxItem Content="A-Z" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />

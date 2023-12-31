@@ -258,10 +258,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                         if (giodung.Days > 0)
                         {
 
+
                             typetxt.Text = "days left";
                             nbtxtleft.Text = giodung.Days.ToString();
                             if (giodung.Hours > 0)
                                 nbtxtleft.Text = (giodung.Days+1).ToString();
+
+
 
 
                         }
@@ -305,9 +308,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             }
                             else
                             {
+
                                 nbtxtleft.Text = giodung.Hours.ToString();
                                 if (giodung.Minutes > 0)
                                     nbtxtleft.Text = (giodung.Hours + 1).ToString();
+
+                               
+
                             }
 
                         }

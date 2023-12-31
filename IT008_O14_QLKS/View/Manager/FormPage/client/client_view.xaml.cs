@@ -42,7 +42,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
         }
          public void doi_view2()
         {
-            receipt_client mainview = new receipt_client();
+            receipt_client mainview = new receipt_client(id);
             content.Content = mainview;
             bd1.Background = new SolidColorBrush(Colors.Transparent);
             bd2.Background = new SolidColorBrush(Colors.Transparent);
@@ -94,7 +94,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
 
         private void Border_MouseDown_4(object sender, MouseButtonEventArgs e)
         {
-            receipt_client mainview = new receipt_client();
+            receipt_client mainview = new receipt_client(id);
             content.Content = mainview;
             bd1.Background = new SolidColorBrush(Colors.Transparent);
             bd2.Background = new SolidColorBrush(Colors.Transparent);

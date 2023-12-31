@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
-        Background="Transparent"  Topmost="True" Title="GINKGO hotel" Icon="/Resources/icons8-ginkgo-64.png" 
+        Background="Transparent"   Title="GINKGO hotel" Icon="/Resources/icons8-ginkgo-64.png" 
         >
 
     <Grid>

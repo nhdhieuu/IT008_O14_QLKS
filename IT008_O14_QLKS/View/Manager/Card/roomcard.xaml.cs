@@ -46,10 +46,10 @@ namespace IT008_O14_QLKS.View.Manager.Card
             this.IDroom = IDroom;
             this.typeroom = typeroom;
             this.status = status;
-            this.typetime = typetime;
+           
             this.numer_guest = number;
-            this.time = time;
             InitializeComponent();
+            
             input();
             loadso();
         }
@@ -65,6 +65,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             string trueday = str[1] + "-" + str[0] + "-" + str[2];
             sqlcmd.CommandType = CommandType.Text;
             string tenphong = "M" + IDroom;
+           
             sqlcmd.CommandText = $"SELECT * FROM THUEPHONG WHERE  MAPHONG = '{tenphong}' and '{trueday}' <NGAYKT AND KQUATHUE='Dang Thue'";
             sqlcmd.Connection = connect.sqlCon;
 
@@ -81,8 +82,10 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
 
                 }
+                reader1.Close();
             }
             sott.Text = soluong.ToString();
+            
         }    
         private void Image_KeyDown(object sender, KeyEventArgs e)
         {
@@ -115,12 +118,36 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
             statusbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFC6980A"));
         }
+        public void GetDay()
+        {
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            string tenphong = "M" + IDroom;
+            sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlcmd.CommandText = $"SELECT NGAYBD FROM THUEPHONG WHERE  MAPHONG = '{tenphong}' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
+            sqlcmd.Connection = connect.sqlCon;
+            DateTime d = (DateTime)sqlcmd.ExecuteScalar();
+            TimeSpan diff = DateTime.Now - d;
+            int span = diff.Days;
+            if (span >= 1)
+            { 
+                this.typetime = "day";
+                this.time = diff.Days;
+            }
+            else
+            {
+                this.typetime = "hour";
+                this.time = diff.Hours;
+            }
+        }
         public void input (  )
         {
             idroomtxt.Text = this.IDroom;
             loai.Text = this.typeroom;
             statustxt.Text = this.status;
             number_guesttxt.Text = this.numer_guest.ToString();
+            if (this.status == "Rented")
+                GetDay();
             if (this.typeroom=="Standard")
             {
                 loai.Foreground = new SolidColorBrush(Colors.White);
@@ -145,22 +172,26 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
             }    
                 else {
+                if(this.status=="Rented")
+                {
+                    if (this.typetime == "day")
+                    {
+                        if (this.time > 1)
+                            numbertxt.Text = time.ToString() + " days";
+                        else
+                            numbertxt.Text = time.ToString() + " day";
+                    }
+                    if (this.typetime == "hour")
+                    {
+                        if (this.time > 1)
+                            numbertxt.Text = time.ToString() + " hours";
+                        else
+                            numbertxt.Text = time.ToString() + " hour";
+                    }
+                }    
 
                
-                        if (this.typetime == "day")
-                        {
-                            if (this.time > 1)
-                                numbertxt.Text = time.ToString() + " days";
-                            else
-                                numbertxt.Text = time.ToString() + " day";
-                        }
-                        if (this.typetime == "hour")
-                        {
-                            if (this.time > 1)
-                                numbertxt.Text = time.ToString() + " hours";
-                            else
-                                numbertxt.Text = time.ToString() + " hour";
-                        }
+                       
                       
                     }
             //chon nen
@@ -191,7 +222,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         {
             if (status == "Rented")
             {
-                Viewroom_form vr = new Viewroom_form(IDroom);
+                Viewroom_form vr = new Viewroom_form(IDroom, numbertxt.Text);
                 vr.ShowDialog();
             }
             else

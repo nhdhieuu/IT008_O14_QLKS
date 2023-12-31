@@ -259,33 +259,7 @@
                         <RowDefinition Height="191*"></RowDefinition>
                         <RowDefinition Height="160*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Border Margin="0,17,0,10">
-                        <Border.Background >
-                            <ImageBrush ImageSource="/Resources/ReceiptDatePicker.png" ></ImageBrush>
-                        </Border.Background>
-                        <Grid>
-                            <Border  Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF" Margin="247,9,10,94">
-                                <Image Name="DatePickerCheckBox" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
-                            </Border>
-
-
-
-
-
-                            <Border Margin="13,44,80,10">
-
-                                <Label Name="DatePickerLabel" Grid.Row="1" Margin="0,21,0,0" Foreground="#FFF" VerticalContentAlignment="Bottom" Content="October 22, 2023"  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="277"  FontSize="18" FontFamily="Sylfaen "   FontWeight="Bold" ></Label>
-                            </Border>
-
-
-
-                            <Border x:Name="Datepicker" CornerRadius="5" Width="55" Height="55" Margin="0,37,31,31" HorizontalAlignment="Right" Background="#ffffff" Opacity="0.5" >
-                                <Image Cursor="Hand" Source="/Resources/calendar.png" ></Image>
-                            </Border>
-                        </Grid>
-
-
-                    </Border>
+                    
 
                     <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7">
                         <Border.Background>

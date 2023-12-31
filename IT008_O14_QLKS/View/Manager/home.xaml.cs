@@ -18,6 +18,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IT008_O14_QLKS.View.Manager.Card;
+using LiveCharts;
 
 namespace IT008_O14_QLKS.View.Manager
 {
@@ -26,7 +28,7 @@ namespace IT008_O14_QLKS.View.Manager
     /// </summary>
     public partial class home : UserControl
     {
-      
+        private int TotalMoney = 0;
         DB_connection connect = new DB_connection();
         SqlCommand sqlcmd = new SqlCommand();
         public string ten;
@@ -251,5 +253,69 @@ namespace IT008_O14_QLKS.View.Manager
             {
             }
         }
+
+        private void BtnStatistical_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {   
+                if(DatePicker_StartDate.SelectedDate.Value == null || DatePicker_EndDate.SelectedDate.Value == null)
+                {
+                    throw new Exception("Vui lòng chọn ngày để thống kê phân tích");
+                }
+                DateTime start = DatePicker_StartDate.SelectedDate.Value;
+                DateTime end = DatePicker_EndDate.SelectedDate.Value;
+                string startstring = start.ToString("MM/dd/yyyy");
+                string endstring = end.ToString("MM/dd/yyyy");
+                Console.WriteLine(startstring);
+                Console.WriteLine(endstring);
+                LoadChart(startstring,endstring);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vui lòng chọn ngày để thống kê phân tích");
+                
+            }
+            
+        }
+
+        public void LoadChart(string starttime, string endtime)
+        {
+            List<string> maphong = new List<string>();
+            ChartValues<int> tongtien = new ChartValues<int>();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = connect.sqlCon;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText = $"select sohd,tongtien " +
+                                     $" from hoadon" +
+                                     $" where ngaylap >= '{starttime}'" +
+                                     $" and ngaylap <= '{endtime}'";
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                maphong.Add(sqlDataReader[0].ToString());
+                tongtien.Add(int.Parse(sqlDataReader[1].ToString()));
+            }
+            AxisY_Right.MaxValue = 0;
+
+            for(int i=0;i<tongtien.Count;i++) 
+            {
+                if (tongtien[i]>AxisY_Right.MaxValue)
+                {
+                    AxisY_Right.MaxValue = tongtien[i];
+                }
+            }
+
+            foreach (var tienphong in tongtien)
+            {
+                
+                this.TotalMoney += tienphong;
+                
+            }
+            TotalIncome.Text = this.TotalMoney.ToString("N0") + " VND";
+            QuantityValues_ColumnSeries.Values = tongtien;
+            AxisX_Bottom.Labels = maphong;
+            sqlDataReader.Close();
+        }
+        
     }
 }

@@ -19,6 +19,8 @@ using IT008_O14_QLKS.Connection_db;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
 using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
+using Microsoft.Win32;
+using System.IO;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -137,19 +139,180 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                     this.equip_cbx.SelectedIndex = 0;
                 equip = this.equip_cbx.SelectedIndex;
                 cleaning = this.cleaning_cbx.SelectedIndex;
-                maintain = this.maintain_cbx.SelectedIndex;
+                maintain = this.maintain_cbx.SelectedIndex; 
             }
             reader.Close();
+            //Load illus
+            sqlcmd.CommandText = "SELECT ILLUS FROM PHONG WHERE TENPHONG='" + IDroom + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                Ilus.ImageSource = bitmap;
+            }
+            catch { }
 
             sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
                 this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");
-                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
+                object value2 = sqlcmd.ExecuteScalar();
+                DateTime date2 = (DateTime)value2;
+                this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");
+                sqlcmd.CommandText = "SELECT GIATHEOGIO FROM PHONG WHERE MAPHONG='" + MaPhong + "'";
+                Decimal value3 = Math.Truncate((Decimal)sqlcmd.ExecuteScalar());
+                this.GiaTheoGio.Content = value3.ToString() + " VND";
+                sqlcmd.CommandText = "SELECT GIATHEONGAY FROM PHONG WHERE MAPHONG='" + MaPhong + "'";
+                Decimal value4 = Math.Truncate((Decimal)sqlcmd.ExecuteScalar());
+                this.GiaTheoNgay.Content = value4.ToString() + " VND";
+
+            }
+            this.RoomCardCtrl.Content = rc.Content;
+
+            sqlcmd.CommandText = "SELECT MATHUEPHONG FROM THUEPHONG T INNER JOIN PHONG K ON T.MAPHONG=K.MAPHONG WHERE T.MAPHONG='" + MaPhong + "'";
+            matp = sqlcmd.ExecuteScalar().ToString();
+            LoadService();
+            LoadProb();
+        }
+        public Viewroom_form(string IDroom, string day)
+        {
+            InitializeComponent();
+            TenPhong = IDroom;
+            string MaPhong = "M" + IDroom;
+            this.da_o_lbl.Content = day;
+            SqlCommand sqlcmd = new SqlCommand();
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "SELECT * FROM PHONG WHERE TENPHONG='" + IDroom + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+            roomcard2 rc = new roomcard2();
+            while (reader.Read())
+            {
+                rc = new roomcard2(reader.GetString(1), reader.GetString(2), reader.GetInt32(11), "RoomInfor");
+                int sogiuong = reader.GetInt16(3);
+                this.bed_tbx.Text = sogiuong.ToString();
+                bed = bed_tbx.Text;
+                if (reader.GetString(5) == "Co")
+                {
+                    this.bathtub_chbx.IsChecked = true;
+                    bath = "Co";
+                }
+
+                if (reader.GetString(8) == "Co")
+                {
+                    this.pool_chbx.IsChecked = true;
+                    pool = "Co";
+                }
+                this.style_cbx.SelectedIndex = 0;
+                if (reader.GetString(7) == "Cao")
+                {
+                    this.internet_cbx.SelectedIndex = 0;
+                }
+                if (reader.GetString(7) == "Trung Binh")
+                {
+                    this.internet_cbx.SelectedIndex = 1;
+                }
+                if (reader.GetString(7) == "Thap")
+                {
+                    this.internet_cbx.SelectedIndex = 2;
+                }
+                internet = this.internet_cbx.SelectedIndex;
+                this.type_lbl.Content = reader.GetString(15);
+                if (this.type_lbl.Content.ToString() == "Empty")
+                {
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6BCB77"));
+                    this.type_background2.Visibility = Visibility.Collapsed;
+                    this.DV_KhachDat.Visibility = Visibility.Hidden;
+                    this.problem.Visibility = Visibility.Hidden;
+                    this.DV_TaiPhong_Scrl.Height = 250;
+
+
+                }
+                if (this.type_lbl.Content.ToString() == "Booking")
+                {
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
+                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF"));
+                    this.da_o_lbl.Content = "2 days";
+                    this.DV_KhachDat.Visibility = Visibility.Hidden;
+                    this.problem.Visibility = Visibility.Hidden;
+                    this.DV_TaiPhong_Scrl.Height = 250;
+                }
+                if (this.type_lbl.Content.ToString() == "Rented")
+                {
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
+                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));
+                    this.TenKH_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+                    this.type_lbl.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+                }
+                if (this.type_lbl.Content.ToString() == "Unavailable")
+                {
+                    this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
+                    this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
+                    this.TenKH_lbl.Content = "cleaning";
+                    this.denngay_lbl.Visibility = Visibility.Hidden;
+                    this.da_o_lbl.Visibility = Visibility.Hidden;
+                    this.tungay_lbl.Content = "Mo ta bla bla";
+                    this.DV_KhachDat.Visibility = Visibility.Hidden;
+                    this.problem.Visibility = Visibility.Hidden;
+                    this.DV_TaiPhong_Scrl.Height = 250;
+                }
+                if (reader.GetString(12) == "Daily")
+                    this.cleaning_cbx.SelectedIndex = 0;
+                if (reader.GetString(12) == "Weekly")
+                    this.cleaning_cbx.SelectedIndex = 1;
+                if (reader.GetString(12) == "Monthly")
+                    this.cleaning_cbx.SelectedIndex = 2;
+                if (reader.GetString(13) == "Daily")
+                    this.maintain_cbx.SelectedIndex = 0;
+                if (reader.GetString(13) == "Weekly")
+                    this.maintain_cbx.SelectedIndex = 1;
+                if (reader.GetString(13) == "Monthly")
+                    this.maintain_cbx.SelectedIndex = 2;
+                if (reader.GetString(14) == "Minibar")
+                    this.equip_cbx.SelectedIndex = 1;
+                if (reader.GetString(14) == "Fridge")
+                    this.equip_cbx.SelectedIndex = 0;
+                equip = this.equip_cbx.SelectedIndex;
+                cleaning = this.cleaning_cbx.SelectedIndex;
+                maintain = this.maintain_cbx.SelectedIndex;
+            }
+            reader.Close();
+            sqlcmd.CommandText = "SELECT ILLUS FROM PHONG WHERE TENPHONG='" + IDroom + "'";
+            sqlcmd.Connection = connect.sqlCon;
+            try
+            {
+                byte[] imageData = (byte[])sqlcmd.ExecuteScalar();
+                MemoryStream memStream = new MemoryStream(imageData);
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = memStream;
+                bitmap.EndInit();
+                Ilus.ImageSource = bitmap;
+            }
+            catch { }
+            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
+            this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
+            if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
+            {
+                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
+                object value = sqlcmd.ExecuteScalar();
+                DateTime date = (DateTime)value;
+                this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");
+                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value2 = sqlcmd.ExecuteScalar();
                 DateTime date2 = (DateTime)value2;
                 this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");
@@ -197,12 +360,21 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             SqlDataReader reader3 = sqlcmd.ExecuteReader();
             while (reader3.Read())
             {
+
             //    ProbBlemCard sc = new ProbBlemCard(reader3.GetString(1), reader3.GetDateTime(4), reader3.GetDecimal(3));
                 //ContentControl cc = new ContentControl();
               //  cc.Height = 42;
               //  cc.Width = 375;
             //    cc.Content = sc.Content;
              //   PRPanel.Children.Add(cc);
+
+                ProblemCard2 sc = new ProblemCard2(reader3.GetString(1), reader3.GetDateTime(4), reader3.GetDecimal(3));
+                ContentControl cc = new ContentControl();
+                cc.Height = 42;
+                cc.Width = 375;
+                cc.Content = sc.Content;
+                PRPanel.Children.Add(cc);
+
             }
             reader3.Close();
         }
@@ -271,6 +443,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = true;
             cleaning_cbx.IsEnabled = true;
             maintain_cbx.IsEnabled = true;
+            Load_Ilus.IsEnabled= true;
         }
 
         private void Change_MouseEnter(object sender, MouseEventArgs e)
@@ -296,6 +469,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = false;
             cleaning_cbx.IsEnabled = false;
             maintain_cbx.IsEnabled = false;
+            Load_Ilus.IsEnabled = false;                                    
             bed = this.bed_tbx.Text;
             if (this.pool_chbx.IsChecked == true)
                 pool = "Co";
@@ -329,8 +503,19 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             else
                 EquipTemp = "Fridge";
             SqlCommand sqlcmd = new SqlCommand();
+            BitmapSource bitmap = Ilus.ImageSource as BitmapSource;
+            byte[] imageData;
+            using (MemoryStream memory = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
+                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                enc.Save(memory);
+
+                imageData = memory.ToArray();
+            }
+            sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
             sqlcmd.CommandType = CommandType.Text;
-            sqlcmd.CommandText = "UPDATE PHONG SET SOGIUONG=" + bed + ", BONTAM='" + bath + "', HOBOI='" + pool + "', STYLE='" + this.style_cbx.SelectionBoxItem.ToString() + "', EQUIP='" + EquipTemp + "', INTERNET='" + InternetTemp + "', CLEANING='" + this.cleaning_cbx.SelectionBoxItem.ToString() + "', MAINTAIN='" + this.maintain_cbx.SelectionBoxItem.ToString() + "' WHERE TENPHONG='" + TenPhong + "'";
+            sqlcmd.CommandText = "UPDATE PHONG SET SOGIUONG=" + bed + ", BONTAM='" + bath + "', HOBOI='" + pool + "', STYLE='" + this.style_cbx.SelectionBoxItem.ToString() + "', EQUIP='" + EquipTemp + "', INTERNET='" + InternetTemp + "', CLEANING='" + this.cleaning_cbx.SelectionBoxItem.ToString() + "', MAINTAIN='" + this.maintain_cbx.SelectionBoxItem.ToString() + "', ILLUS=@image WHERE TENPHONG='" + TenPhong + "'";
             sqlcmd.Connection = connect.sqlCon;
             sqlcmd.ExecuteNonQuery();
         }
@@ -358,6 +543,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             this.internet_cbx.IsEnabled = false;
             cleaning_cbx.IsEnabled = false;
             maintain_cbx.IsEnabled = false;
+            Load_Ilus.IsEnabled = false;
             this.bed_tbx.Text = bed;
             if (pool == "Co")
                 this.pool_chbx.IsChecked = true;
@@ -485,6 +671,30 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
 
 
 
+        }
+        Image early = new Image();
+        private void Load_Ilus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Ilus.ImageSource = early.Source;
+            Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
+            ofd.Title = "Select Image to set avatar";
+            ofd.Filter = "Image Files(*.BMP;*.JPG;*.PNG)|*.bmp;*.jpg;*.png|JPG Files|*.jpg|PNG Files|*.png|JPEG Files|*.jpeg";
+            ofd.ShowDialog();
+            Ilus.ImageSource = early.Source;
+
+            if (ofd.FileName != "")
+            {
+                string tb_uri;
+                tb_uri = ofd.FileName;
+                Uri image_Path = new Uri(tb_uri);
+                Ilus.ImageSource = new BitmapImage(image_Path);
+                Ilus.Stretch = System.Windows.Media.Stretch.UniformToFill;
+                early.Source = Ilus.ImageSource;
+
+            }
+            else
+            {
+            }
         }
     }
 }

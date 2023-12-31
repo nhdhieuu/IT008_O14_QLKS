@@ -256,8 +256,8 @@
 
                             <ScrollViewer x:Name="DV_TaiPhong_Scrl" Margin="21,78,21,0" Height="87" VerticalAlignment="Top">
                                 <StackPanel x:Name="ServicePannel">
-                                    
-                                    
+
+
                                 </StackPanel>
 
                             </ScrollViewer>
@@ -299,8 +299,8 @@
                             <ScrollViewer Margin="16,70,21,51" RenderTransformOrigin="0.5,0.5">
 
                                 <StackPanel x:Name="PRPanel">
-                                    
-                                    
+
+
                                 </StackPanel>
                             </ScrollViewer>
                             <Border x:Name="add_buttt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="16,168,0,9" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="add_buttt_MouseDown" MouseEnter="add_buttt_MouseEnter" MouseLeave="add_buttt_MouseLeave" >
@@ -317,7 +317,7 @@
                             <Label x:Name="GiaTheoGio" Margin="225,0,0,68" Content="200.000 VND" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
 
                         </Grid>
-                        
+
                     </GroupBox>
                     <Grid Grid.Row="2">
                         <Label Margin="-4,-168,353,168" Content="cleaning" FontFamily="Sylfaen" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold"/>
@@ -364,29 +364,26 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label x:Name="TenKH_lbl" Margin="10,4,88,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
+                                <Label x:Name="TenKH_lbl" Margin="10,4,67,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
                                 <Label x:Name="denngay_lbl" Margin="0,32,9,-32" Content="20/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" />
                                 <Label x:Name="tungay_lbl" Margin="9,32,131,-32" Content="18/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="#FFFFFFFF" FontWeight="Bold" />
-                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="2|4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
+                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
                             </Grid>
                         </Border>
                         <Border  Background="#D9D9D9" Margin="28,20,24,5" CornerRadius="5,5,5,5">
                             <Grid>
-                                <Border Margin="25,0,25,24" CornerRadius="5,5,5,5" Height="141" VerticalAlignment="Bottom">
+                                <Border Margin="17,31,15,0" CornerRadius="5,5,5,5" Height="152" VerticalAlignment="Top">
                                     <Border.Background>
-                                        <ImageBrush ImageSource="/Resources/AnhPhongKS.jpg" Stretch="UniformToFill"/>
+                                        <ImageBrush  x:Name="Ilus" ImageSource="/Resources/AnhPhongKS.jpg" Stretch="UniformToFill"/>
                                     </Border.Background>
 
                                 </Border>
                                 <Label Margin="167,-6,-46,164" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration"/>
-                                <Label Margin="260,84,4,77" Content="&gt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
-                                <Label Margin="2,84,237,77" Content="&lt;" Foreground="White" FontSize="15" FontWeight="Bold" Cursor="Hand" />
-                                <Grid Margin="53,175,74,4">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Ellipse Margin="97,0,68,4" Cursor="Hand" Fill="#FF8D8585" RenderTransformOrigin="0.5,0.5" Width="8" Height="8"/>
-                                    </StackPanel>
-
-                                </Grid>
+                                <Border x:Name="Load_Ilus" Margin="24,6,236,168" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5" Cursor="Hand" MouseDown="Load_Ilus_MouseDown" IsEnabled="False">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
+                                    </Border.Background>
+                                </Border>
                             </Grid>
                         </Border>
 

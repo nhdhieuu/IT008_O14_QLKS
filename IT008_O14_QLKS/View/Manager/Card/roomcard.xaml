@@ -36,23 +36,26 @@
 
         </Border>
         <Border x:Name="Statusbd" Margin="10,7,5,29" CornerRadius="10,10,5,5">
-            <Grid>
-                <ContentControl x:Name="background">
+            <Grid Margin="2,2,2,0">
+                <Border x:Name="background" CornerRadius="7,7,5,5" Margin="1,1,1,0">
+                    <Border.Background>
+                        <SolidColorBrush Color="White" Opacity="0.95"/>
+                    </Border.Background>
 
-                </ContentControl>
+                </Border>
                 <Grid>
-                    <TextBlock  x:Name="idroomtxt" Foreground="White" FontSize="46" FontFamily="Bahnschrift" Margin="10,0,56,31" />
+                    <TextBlock  x:Name="idroomtxt" Foreground="Black" FontSize="46" FontFamily="Bahnschrift" Margin="10,0,56,26" />
 
 
 
-                    <TextBlock  Foreground="#FAB005" x:Name="loai" FontSize="20" FontFamily="Bahnschrift" Margin="13,44,109,8"/>
-                    <TextBlock x:Name="number_guesttxt" Foreground="White"  FontSize="17" FontFamily="Bahnschrift" Margin="175,5,19,47"/>
+                    <TextBlock  Foreground="#FF5E4009" x:Name="loai" FontSize="20" FontFamily="Bahnschrift" Margin="13,44,109,2"/>
+                    <TextBlock x:Name="number_guesttxt" Foreground="Black"  FontSize="17" FontFamily="Bahnschrift" Margin="173,5,21,47"/>
                     <TextBlock x:Name="statustxt" Foreground="#FAB005" Text=" " FontSize="15" FontFamily="Bahnschrift" Margin="13,0,84,-22" VerticalAlignment="Bottom"/>
-                    <Image Source="/Resources/icons8-human-30.png" Margin="185,8,6,50"/>
+                    <Image Source="/Resources/icons8-account-48.png" Margin="183,7,3,47"/>
                     <TextBlock x:Name="numbertxt" Foreground="#FAB005" FontSize="15" FontFamily="Bahnschrift" Margin="0,75,15,-23" HorizontalAlignment="Right"/>
                     <Border x:Name="timetype" CornerRadius="2" Margin="186,79,7,-20" Visibility="Hidden" >
                         <Border.Background>
-                            <ImageBrush ImageSource="/Resources/icons8-calender-32 (1).png"/>
+                            <ImageBrush ImageSource="/Resources/icons8-account-96.png"/>
                         </Border.Background>
 
                     </Border>

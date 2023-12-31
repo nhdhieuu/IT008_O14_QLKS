@@ -399,7 +399,7 @@ namespace IT008_O14_QLKS.View.Manager
             if(status_s==0)
             {
                 ck_status.Visibility = Visibility.Visible;
-                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF048AFF"));
+                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFC513"));
                 bd_status.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF22DC63"));
                 stauts.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4E4B4B"));
                 status_s = 1;
@@ -418,7 +418,7 @@ namespace IT008_O14_QLKS.View.Manager
                 stauts.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
                 status_s = 0;
                 ck_status.Visibility = Visibility.Hidden;
-                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2014E91"));
+                status_txt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AFFFC000"));
                 bd_status.BorderBrush = new SolidColorBrush(Colors.White);
                 rent_bd.IsEnabled = false;
                 booked_bd.IsEnabled = false;

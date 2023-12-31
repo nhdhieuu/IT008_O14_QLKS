@@ -29,7 +29,7 @@
         </Border>
         <Border BorderBrush="White" BorderThickness="1" Margin="451,7,20,25" CornerRadius="5,5,5,5" Background="#FFB6A982" Grid.Row="1">
             <Grid Margin="0,4,0,-1">
-                <Label Content="Profile" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="30" FontFamily="Sylfaen " Foreground="White" Background="#00000000" Margin="9,-3,0,0" />
+                <Label Content="Profile" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="150"  FontSize="30" FontFamily="Times New Roman " Foreground="White" Background="#00000000" Margin="9,-3,0,0" />
                 <Border Margin="10,294,10,10" Background="#FFE9E5D9" BorderBrush="Black" CornerRadius="5,5,5,5" >
                     <Grid>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,25,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
@@ -37,20 +37,20 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Label Content="position" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " Margin="-50,-3,0,0" FontSize="16" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="position" Text="Manager" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="179" Height="30" VerticalContentAlignment="Center" Margin="19,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
+                                <Label Content="position" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Times New Roman " Margin="-50,-3,0,0" FontSize="16" Foreground="#FF0F265D"/>
+                                <TextBox x:Name="position" Text="Manager" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontWeight="Bold" FontSize="16" Width="179" Height="30" VerticalContentAlignment="Center" Margin="19,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
 
                             </Grid>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,68,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
-                                <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-48,-2,0,0" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="id" Text="QL01" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="179" Height="30" VerticalContentAlignment="Center" Margin="20,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
+                                <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="16" Margin="-48,-2,0,0" Foreground="#FF0F265D"/>
+                                <TextBox x:Name="id" Text="QL01" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontWeight="Bold" FontSize="16" Width="179" Height="30" VerticalContentAlignment="Center" Margin="20,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
                             </Grid>
                         </Border>
                         <Border  x:Name="Change_pass2" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="142,116,0,0" VerticalAlignment="Top" Width="133" CornerRadius="5,5,5,5" Background="#FF4F63EB" Cursor="Hand" MouseEnter="Change_pass2_MouseEnter" MouseLeave="Change_pass2_MouseLeave" MouseDown="Change_pass2_MouseDown">
 
-                            <Label Content="change password" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Sylfaen " Width="124" Foreground="#FFEFEFEF" FontSize="16" Height="31" Margin="0,2,0,0"/>
+                            <Label Content="change password" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Times New Roman " Width="124" Foreground="#FFEFEFEF" FontSize="16" Height="31" Margin="0,2,0,0"/>
 
                         </Border>
                         <Border  Visibility="Hidden" x:Name="Save" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="14,115,0,0" VerticalAlignment="Top" Width="52" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave">
@@ -65,7 +65,7 @@
                             </Image>
                         </Border>
                         <Border  Visibility="Hidden" x:Name="Stop" BorderThickness="1" HorizontalAlignment="Left" Height="39" Margin="71,115,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFC90303" Cursor="Hand" MouseEnter="Change_pass_Copy_MouseEnter" MouseLeave="Change_pass_Copy_MouseLeave" MouseDown="Stop_MouseDown">
-                            <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen">
+                            <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Times New Roman">
 
                             </TextBlock>
                         </Border>
@@ -81,13 +81,13 @@
 
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,16,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
-                                <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
+                                <Label Content="name" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="16" Margin="-49,-3,0,0" VerticalContentAlignment="Center" Foreground="#FF0F265D"/>
                                 <TextBox x:Name="name" Text="Nguyen Van A" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="20,0,0,0" Width="180" TextAlignment="Right" Foreground="#FFC6980A" Height="29" VerticalContentAlignment="Center" IsEnabled="False"/>
                             </Grid>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="29" Margin="0,59,0,0" VerticalAlignment="Top" Width="259" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
-                                <Label Content="username" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
+                                <Label Content="username" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="16" Margin="-50,-2,169,0" Foreground="#FF0F265D"/>
                                 <TextBox x:Name="username" Text="NDhunq" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="16" Margin="20,0,0,0" Width="181" TextAlignment="Right" Foreground="#FFC6980A" Height="31" VerticalContentAlignment="Center" IsEnabled="False"/>
 
                             </Grid>
@@ -98,26 +98,26 @@
                                     <RowDefinition/>
                                     <RowDefinition Height="0*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="gender" Text="Nam" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Margin="19,0,0,0" Width="65" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" IsEnabled="False"/>
+                                <Label Content="gender" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="16" Margin="-49,-3,0,0" Width="61" Height="36" Grid.RowSpan="2" Foreground="#FF0F265D"/>
+                                <TextBox x:Name="gender" Text="Nam" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontWeight="Bold" FontSize="16" Margin="19,0,0,0" Width="65" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" IsEnabled="False"/>
 
                             </Grid>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="15,145,0,0" VerticalAlignment="Top" Width="141" CornerRadius="5,5,5,5">
                             <Grid Margin="55,0,0,0">
-                                <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="age" Text="25" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Height="28" Width="64" VerticalContentAlignment="Center" Margin="16,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
+                                <Label Content="age" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontSize="16" Margin="-49,0,0,0" Height="36" Foreground="#FF0F265D"/>
+                                <TextBox x:Name="age" Text="25" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontWeight="Bold" FontSize="16" Height="28" Width="64" VerticalContentAlignment="Center" Margin="16,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
 
                             </Grid>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="29" Margin="16,186,0,0" VerticalAlignment="Top" Width="167" CornerRadius="5,5,5,5">
                             <Grid Margin="52,0,0,0">
-                                <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Sylfaen " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
-                                <TextBox x:Name="phone" Text="0345664024" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Sylfaen " FontWeight="Bold" FontSize="16" Width="92" Height="30" VerticalContentAlignment="Center" Margin="18,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
+                                <Label Content="phone" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="16" Margin="-49,-4,0,0" Foreground="#FF0F265D"/>
+                                <TextBox x:Name="phone" Text="0345664024" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Times New Roman " FontWeight="Bold" FontSize="16" Width="92" Height="30" VerticalContentAlignment="Center" Margin="18,0,0,0" HorizontalContentAlignment="Right" IsEnabled="False"/>
 
                             </Grid>
                         </Border>
-                        <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Sylfaen " Foreground="#FF0F265D" Background="#00000000" Margin="198,202,0,0" FontWeight="Bold" />
+                        <Label Content="avatar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="64"  FontSize="18" FontFamily="Times New Roman " Foreground="#FF0F265D" Background="#00000000" Margin="198,202,0,0" FontWeight="Bold" />
                         <Border x:Name="UpdateAVT" Margin="259,211,10,14" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5"  Cursor="Hand" RenderTransformOrigin="0.5,0.5"  IsEnabled="False" MouseDown="UpdateAVT_MouseDown">
                             <Border.RenderTransform>
                                 <TransformGroup>
@@ -220,7 +220,7 @@
             </Grid>
         </Border>
         <!-- <Border x:Name="Diagram1" BorderBrush="#FFC6980A" BorderThickness="1" Margin="10,18,367,337" Background="#FFC6980A" CornerRadius="5,5,5,5" Grid.Row="1"> -->
-        <!--     <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="White" Background="#00000000" /> -->
+        <!--     <Label Content="Diagram#1" HorizontalAlignment="Left" Height="36" Margin="14,1,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Times New Roman " Foreground="White" Background="#00000000" /> -->
         <!-- </Border> -->
         <Border BorderBrush="#FFC6980A" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Height="73" Margin="12,13,0,0" VerticalAlignment="Top" Width="403" CornerRadius="5,5,5,5" Background="#FFF3F3F3" Grid.RowSpan="2">
             <Grid Margin="0,-3,1,3">
@@ -234,7 +234,7 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Label Content="Activity" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                        <Label Content="Activity" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Times New Roman " Foreground="Black" Background="#00000000" />
                         <Button Grid.Row="1" x:Name="btnStatistical" Background="#FFB6A982" Margin="10 9 0 0"  HorizontalAlignment="Left" FontSize="12" Height="21" BorderThickness="0"  Click="BtnStatistical_OnClick">
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"> Statistic</TextBlock>
                         </Button>
@@ -251,7 +251,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label Content="From:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                            <Label Content="From:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Times New Roman " Foreground="Black" Background="#00000000" />
                             <DatePicker Grid.Column="1" x:Name="DatePicker_StartDate" Margin="-5 10 0 0" FontSize="12"
                                         Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
                                         materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
@@ -274,7 +274,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label Content="To:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
+                            <Label Content="To:" HorizontalAlignment="Left" Height="47"  VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Times New Roman " Foreground="Black" Background="#00000000" />
                             <DatePicker Grid.Column="1" x:Name="DatePicker_EndDate" Margin="-5 10 0 0" FontSize="12"
                                         Width="100" Height="20" Padding="1 0 5 0" HorizontalAlignment="Left"
                                         materialDesign:DatePickerAssist.OutlinedBorderActiveThickness="2"
@@ -301,8 +301,8 @@
                 <ImageBrush x:Name="avtt" ImageSource="/Resources/user.png" />
             </Ellipse.Fill>
         </Ellipse>
-        <Label x:Name="UN2" Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="448,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Sylfaen " Foreground="Black" Background="#00000000" />
-        <Label Content="Manager" HorizontalAlignment="Left" Height="46" Margin="449,40,0,0" VerticalAlignment="Top" Width="150" FontFamily="Sylfaen " Foreground="#FFBE9410" Background="#00000000" FontSize="18" Grid.RowSpan="2" RenderTransformOrigin="0.389,0.447" />
+        <Label x:Name="UN2" Content="NDHunq" HorizontalAlignment="Left" Height="48" Margin="448,2,0,0" VerticalAlignment="Top" Width="150"  FontSize="26" FontFamily="Times New Roman " Foreground="Black" Background="#00000000" />
+        <Label Content="Manager" HorizontalAlignment="Left" Height="46" Margin="449,40,0,0" VerticalAlignment="Top" Width="150" FontFamily="Times New Roman " Foreground="#FFBE9410" Background="#00000000" FontSize="18" Grid.RowSpan="2" RenderTransformOrigin="0.389,0.447" />
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="451,41,0,0" Stroke="#FFC6980A" VerticalAlignment="Top" Width="237"/>
 
     </Grid>

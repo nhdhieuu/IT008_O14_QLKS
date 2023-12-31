@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager"
              mc:Ignorable="d" 
              d:DesignHeight="590" d:DesignWidth="782" Background="#F1F0E7"
-             FontFamily="Sylfaen" >
+             FontFamily="Times New Roman" >
 
     <!-- w s -->
     <UserControl.Resources>
@@ -288,21 +288,17 @@
         <!-- Phần trên -->
         <Grid>
             <Image Source="/Resources/reset.png" Margin="14,24,721,5"/>
-            <Label Content="staff" FontSize="45" Foreground="#C6980A" 
-                   Padding="0,5,0,0" VerticalContentAlignment="Bottom" VerticalAlignment="Top"
-                   Margin="70,-3,622,0" Height="53"/>
+            <TextBlock Text="staff" FontSize="45" Foreground="#C6980A" 
+                   Padding="0,5,0,0"  VerticalAlignment="Center"
+                   Margin="70,0,612,0" Height="53"/>
 
-            <Border CornerRadius="0,8,8,0" Background="#D9D9D9" Margin="215,20,297,0" >
+            <Border CornerRadius="8,8,8,8" Background="#D9D9D9" Margin="191,20,297,0" >
                 <Grid>
-                    <TextBox x:Name="search_tb" Background="#D9D9D9" Margin="25,0,30,0"
+                    <TextBox x:Name="search_tb" Background="#D9D9D9" Margin="10,0,30,0"
                              BorderThickness="0" Padding="2" KeyDown="search_tb_KeyDown"
                              VerticalContentAlignment="Center" FontSize="14"/>
-                    <Image Source="/Resources/search_icon.png" Margin="240,0,0,0"/>
+                    <Image Source="/Resources/search_icon.png" HorizontalAlignment="Right" Width="30"/>
                 </Grid>
-            </Border>
-            <Border CornerRadius="8,0,0,8" Background="White" Margin="165,20,547,0" >
-                <Label Content="search" Foreground="Black" FontSize="18"
-                       HorizontalContentAlignment="Center"/>
             </Border>
         </Grid>
         <!--Phần dưới (lớn)-->
@@ -319,9 +315,8 @@
                 </Grid.RowDefinitions>
 
                 <!-- lọc vị trí-->
-                <Border CornerRadius="50"  Margin="0,-24,20,360" ClipToBounds="True" Grid.RowSpan="2" >
+                <Border CornerRadius="5"  Margin="0,-24,20,360" ClipToBounds="True" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="2,2,2,2" >
                     <Grid ClipToBounds="True">
-                        <Image Source="/Resources/nenthuong.png" Stretch="UniformToFill"/>
                         <Label Content="Filter" FontSize=" 32" Margin="10,10,109,138" />
                         <CheckBox x:Name="postion_check"  Margin="191,29,10,153"  Checked="postion_check_Checked" Unchecked="postion_check_Unchecked"/>
                         <!-- vị trí -->
@@ -343,12 +338,12 @@
                 </Border>
 
                 <!-- sắp xếp theo-->
-                <Border  CornerRadius="5" Background="#D9D9D9" BorderThickness="2"
+                <Border  CornerRadius="5" Background="#FFF1F0E7" BorderThickness="2"
           BorderBrush="Black" Margin="0,205,20,145" Grid.Row="1">
                     <Grid>
-                        <Label Content="sort by: " FontSize="32" FontWeight="Light" Margin="20,10,42,99"/>
+                        <Label Content="Sort by: " FontSize="32" FontWeight="Light" Margin="20,10,42,99"/>
                         <CheckBox  x:Name="sort_checkbox" Cursor="Hand" Margin="191,31,18,120" Checked="sort_checkbox_Checked" Unchecked="sort_checkbox_Unchecked"/>
-                        <ComboBox x:Name="sort_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True" Margin="25,66,25,68" FontSize="15" SelectionChanged="sort_combo_SelectionChanged">
+                        <ComboBox x:Name="sort_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True" Margin="25,68,25,72" FontSize="15" SelectionChanged="sort_combo_SelectionChanged">
                             <ComboBoxItem  Content="ID"/>
                             <ComboBoxItem Content="Name"/>
                             <ComboBoxItem Content="Postion"/>
@@ -357,13 +352,13 @@
                         </ComboBox>
                         <!-- asc -->
                         <Border x:Name="asc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="#12CE69" Margin="25,130,127,15" Cursor="Hand" MouseDown="asc_b_MouseDown">
-                            <Label Content="asc" Cursor="Hand" Foreground="#E50F0F" FontSize="25" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                            <Label Content="asc" Cursor="Hand" Foreground="Black" FontSize="25" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                     Margin="0" />
                         </Border>
 
                         <!-- desc -->
                         <Border x:Name="desc_b" CornerRadius="5" BorderThickness="1" BorderBrush="Black" Background="Transparent" Margin="138,130,25,15" Cursor="Hand" MouseDown="desc_b_MouseDown">
-                            <Label Content="desc" Cursor="Hand" Foreground="#2E22B2" FontSize="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                            <Label Content="desc" Cursor="Hand" Foreground="Black" FontSize="23" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                     Margin="0,0,0,0"/>
                         </Border>
                     </Grid>
@@ -384,8 +379,8 @@
                 <Border x:Name="add_border" CornerRadius="5" Background="#12CE69" Margin="240,496,218,10" Cursor="Hand" MouseDown="add_border_MouseDown"
                         MouseEnter="add_border_MouseEnter" MouseLeave="add_border_MouseLeave">
                     <Label x:Name="add_staff" Content="+" Foreground="White" BorderThickness="0"
-                            FontSize="25" FontWeight="Bold" Padding="0"
-                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,-5,0,4" 
+                            FontSize="33" FontWeight="Bold" Padding="0"
+                            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,-2,0,1" FontFamily="Bahnschrift" 
                             />
                 </Border>
             </Grid>

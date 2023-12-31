@@ -210,20 +210,16 @@
                         </Grid.ColumnDefinitions>
                         <Image Source="/Resources/reset.png" Margin="14,23,0,14" MouseDown="ReloadButton_Click"/>
 
-                        <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Sylfaen" Foreground="#C6980A" 
+                        <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0"/>
-                        <Border Grid.Column="2" Background="#D9D9D9" CornerRadius="12" Margin="0,17,0,4">
+                        <Border Grid.Column="2" Background="#D9D9D9" CornerRadius="8" Margin="0,14,0,7">
                             <Grid >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="79"></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="256"></ColumnDefinition>
                                     <ColumnDefinition Width="26"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Border CornerRadius="12,0,0,12" Background="Azure">
-                                    <Label Content="Search" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" HorizontalAlignment="Center"></Label>
-                                </Border>
-                                <TextBox Name="SearchBox"  Grid.Column="1" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Sylfaen" BorderThickness="0" ></TextBox>
-                                <Border Grid.Column="2" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
+                                <TextBox Name="SearchBox" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman" BorderThickness="0" Margin="10,0,0,0" Height="41" />
+                                <Border Grid.Column="1" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
 
                                     <Image  Source="/Resources/search.png" ></Image>
                                 </Border>
@@ -243,7 +239,7 @@
 
                     </Grid>
                     <Border Style="{DynamicResource save_bd}" CornerRadius="5" Grid.Row="1" MouseDown="Border_MouseDown" Margin="178,470,179,20">
-                        <TextBlock Text="+" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="39" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Text="+" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="39" FontWeight="Bold" Foreground="White" Margin="0,-11,0,0"/>
                     </Border>
                 </Grid>
 
@@ -259,22 +255,19 @@
                         <RowDefinition Height="191*"></RowDefinition>
                         <RowDefinition Height="160*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    
 
-                    <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7">
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/ReceiptFilter.png" Stretch="UniformToFill"/>
-                        </Border.Background>
+
+                    <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7" Background="#FFF1F0E7" BorderBrush="Black" BorderThickness="2,2,2,2">
 
                         <Grid Margin="10,10,10,10">
-                            <Border Name="FilterCheckBox" MouseDown="FilterCheckBox_Click" Margin="237,0,0,199" Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
+                            <Border Name="FilterCheckBox" MouseDown="FilterCheckBox_Click" Margin="225,0,9,198" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
                                 <Image Name="FilterCheckBoxImage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
                             </Border>
 
 
                             <Border Width="73" Height="49" Margin="8,-12,176,182">
 
-                                <Label  Foreground="White" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" >Filter</Label>
+                                <Label  Foreground="Black" FontFamily="Times New Roman" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" >Filter</Label>
                             </Border>
 
                             <Border  x:Name="ScrollBarBorder" CornerRadius="8,8,8,8" Background="#12CE69 " Margin="8,31,8,10">
@@ -284,15 +277,15 @@
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="25"> Value</TextBlock>
                             </Border>
 
-                            <Border CornerRadius="5" Height="32" Width="220" Background="White" Margin="18,153,19,34">
+                            <Border CornerRadius="5" Width="220" Background="White" Margin="17,153,16,29">
                                 <TextBlock Name="FilterMoneyTextBox" Text="0 VND" Foreground="#075129" FontFamily="Bahnschrift" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
                             </Border>
-                            <Border Width="100" Height="31" BorderThickness="2" CornerRadius="5" BorderBrush="White" Margin="18,77,139,111">
+                            <Border Width="100" BorderThickness="2" CornerRadius="5" BorderBrush="White" Margin="18,77,135,109">
                                 <RadioButton Name="allRadioButton" GroupName="filter" IsEnabled="False" VerticalAlignment="Center" Margin="2,0,0,0" Click="AllRadioButton_OnClick">
                                     <TextBlock Foreground="White" FontFamily="Bahnschrift" FontSize="14"> All</TextBlock>
                                 </RadioButton>
                             </Border>
-                            <Border Width="100" Height="31" BorderThickness="2" CornerRadius="5" BorderBrush="White" Margin="138,77,19,111">
+                            <Border Width="100" BorderThickness="2" CornerRadius="5" BorderBrush="White" Margin="138,77,15,109">
                                 <RadioButton Name="CustomRadioButton" IsEnabled="False" GroupName="filter"  VerticalAlignment="Center" Margin="2,0,0,0" Click="CustomRadioButton_OnClick">
                                     <TextBlock Foreground="White" FontFamily="Bahnschrift" FontSize="14" > Custom</TextBlock>
                                 </RadioButton>
@@ -305,18 +298,14 @@
 
                     </Border>
 
-                    <Border Grid.Row="2" Margin="0,11,0,10">
-                        <Border.Background>
-                            <ImageBrush ImageSource="/Resources/ReceiptSortBy.png" ></ImageBrush>
-
-                        </Border.Background>
+                    <Border Grid.Row="2" Margin="0,11,0,10" Background="#FFE9E8DF" BorderBrush="Black" BorderThickness="2,2,2,2" CornerRadius="8,8,8,8">
                         <Grid Margin="10,10,10,10">
-                            <Border MouseDown="SortByCheckBox_Click" Margin="237,0,0,139" Width="20" Height="20" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
+                            <Border MouseDown="SortByCheckBox_Click" Margin="225,0,9,138" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
                                 <Image Name="CheckBoxImage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>
                             </Border>
-                            <Label Margin="5,-8,100,132" Foreground="White" FontFamily="Bahnschrift" FontSize="25" >Sort By</Label>
+                            <Label Margin="5,-8,100,124" Foreground="Black" FontFamily="Times New Roman" FontSize="25" >Sort By</Label>
 
-                            <Border  x:Name="SortByBorder" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Margin="8,31,8,10">
+                            <Border  x:Name="SortByBorder" CornerRadius="8,8,8,8" Background="Transparent" Margin="8,31,8,10">
                                 <ComboBox x:Name="SortByComboBox"  Style="{DynamicResource RoundComboBox}"   FontFamily="Bahnschrift" FontSize="20" IsEnabled="False" Margin="24,13,24,0" Height="37" VerticalAlignment="Top"  SelectionChanged="SortByComboBox_OnSelectionChanged">
                                     <ComboBoxItem Content="ID" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
                                     <ComboBoxItem Content="Date" Foreground="Black" FontFamily="Bahnschrift" FontSize="20" />
@@ -324,15 +313,15 @@
                                 </ComboBox>
 
                             </Border>
-                            <Border Name="AscBorder" CornerRadius="5" Margin="35,95,130,34" Background="#D9D9D9E5" MouseDown="AscBorder_OnMouseDown" BorderBrush="#FF811B1B" BorderThickness="0.5">
+                            <Border Name="AscBorder" CornerRadius="5" Margin="35,95,130,32" Background="#D9D9D9E5" MouseDown="AscBorder_OnMouseDown" BorderBrush="#FF811B1B" BorderThickness="0.5">
                                 <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,-7" >
                                     <TextBlock Name="AscTextBlock" Text="ASC" HorizontalAlignment="Center" Foreground="#FF811B1B"></TextBlock>
                                 </Label>
 
                             </Border>
-                            <Border Name="DescBorder" CornerRadius="5" Margin="135,95,30,34" Background="#D9D9D9E5" MouseDown="DescBorder_OnMouseDown" BorderBrush="#FF111176" BorderThickness="0.5">
+                            <Border Name="DescBorder" CornerRadius="5" Margin="135,95,30,32" Background="#D9D9D9E5" MouseDown="DescBorder_OnMouseDown" BorderBrush="#FF111176" BorderThickness="0.5">
                                 <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20">
-                                    <TextBlock Name="DescTextBlock" Text="DESC" HorizontalAlignment="Center" Height="21" Foreground="#FF111176"></TextBlock>
+                                    <TextBlock Name="DescTextBlock" Text="DESC" HorizontalAlignment="Center" Height="30" Foreground="#FF111176"></TextBlock>
                                 </Label>
                             </Border>
 

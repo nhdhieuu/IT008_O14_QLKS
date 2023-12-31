@@ -7,13 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="73" d:DesignWidth="220">
     <Grid >
-        <Border CornerRadius="10,10,5,5">
-            <Border.Background>
-                <ImageBrush ImageSource="/Resources/deluxee.jpg" Stretch="UniformToFill" TileMode="None"/>
-            </Border.Background>
-
-
-        </Border>
+        <Border CornerRadius="10,10,5,5" Background="#BCA37F"/>
 
     </Grid>
 </UserControl>

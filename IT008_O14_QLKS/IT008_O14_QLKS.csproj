@@ -811,6 +811,8 @@
     <Resource Include="Resources\Gold.jpg" />
     <Resource Include="Resources\Platinum.jpg" />
     <Resource Include="Resources\icons8-reserve-100.png" />
+    <Resource Include="Resources\icons8-account-96.png" />
+    <Resource Include="Resources\icons8-account-48.png" />
     <Content Include="Resources\print.png" />
     <Resource Include="Resources\ReceiptCardBackground.png" />
     <Resource Include="Resources\RecieptCardMoney.png" />

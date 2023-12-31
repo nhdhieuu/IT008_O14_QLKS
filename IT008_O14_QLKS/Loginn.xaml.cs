@@ -167,7 +167,7 @@ namespace IT008_O14_QLKS
 
         private void lgborder_MouseEnter(object sender, MouseEventArgs e)
         {
-            lgborder.Background = new SolidColorBrush(Colors.Black);
+            lgborder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6D0D"));
         }
 
         private void lgborder_MouseLeave_1(object sender, MouseEventArgs e)
@@ -177,7 +177,7 @@ namespace IT008_O14_QLKS
 
         private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
         {
-            fgpw.Foreground = new SolidColorBrush(Colors.Black);
+            fgpw.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6D0D"));
         }
 
         private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
@@ -187,7 +187,7 @@ namespace IT008_O14_QLKS
 
         private void TextBlock_MouseEnter_1(object sender, MouseEventArgs e)
         {
-            su.Foreground = new SolidColorBrush(Colors.Black);
+            su.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6D0D"));
         }
 
         private void TextBlock_MouseLeave_1(object sender, MouseEventArgs e)

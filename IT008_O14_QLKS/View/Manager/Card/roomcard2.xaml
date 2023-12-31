@@ -10,22 +10,22 @@
         <Grid >
 
 
-            <ContentControl x:Name="background" >
+            <Border x:Name="background" CornerRadius="10,10,10,10" Background="White" BorderBrush="#FF7D7070" BorderThickness="2,2,2,2" >
 
-            </ContentControl>
+            </Border>
 
 
             <TextBlock x:Name="TenPhongTblx" Text="P101" FontFamily="Bahnschrift" FontSize="90
-                       " Margin="4,6,66,14" FontWeight="Bold" Foreground="White">
+                       " Margin="5,6,65,14" FontWeight="Bold" Foreground="Black">
 
             </TextBlock>
             <TextBlock x:Name="TypeTblx" Text="VIP" FontFamily="Bahnschrift" FontSize="40" Margin="209,16,6,52" FontWeight="Bold" Foreground="#FFC6980A">
 
             </TextBlock>
-            <TextBlock x:Name="SoNguoiTblx" Text="1" FontFamily="Bahnschrift" FontSize="25" Margin="212,63,64,24" FontWeight="Bold" Foreground="White">
+            <TextBlock x:Name="SoNguoiTblx" Text="1" FontFamily="Bahnschrift" FontSize="25" Margin="213,63,63,24" FontWeight="Bold" Foreground="Black">
 
             </TextBlock>
-            <Image Source="/Resources/icons8-human-30.png" Margin="224,54,43,11">
+            <Image Source="/Resources/icons8-account-48.png" Margin="224,54,43,11">
 
             </Image>
         </Grid>

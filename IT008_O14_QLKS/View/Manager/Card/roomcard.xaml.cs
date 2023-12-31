@@ -150,25 +150,25 @@ namespace IT008_O14_QLKS.View.Manager.Card
                 GetDay();
             if (this.typeroom=="Standard")
             {
-                loai.Foreground = new SolidColorBrush(Colors.White);
+                
             }
             if (this.status == "Booking")
             {
-                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4D96FF")) ;
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0766AD")) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
+                
             }
             else if (this.status == "Empty")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6BCB77"));
-               idroomtxt.Foreground = new SolidColorBrush(Colors.White);
+               
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
             }
             else if (this.status == "Unavailabl")
             {
                 mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
-                idroomtxt.Foreground = new SolidColorBrush(Colors.White);
+                
 
             }    
                 else {
@@ -196,26 +196,6 @@ namespace IT008_O14_QLKS.View.Manager.Card
                     }
             //chon nen
 
-            if (this.typeroom == "Standard" )
-            {
-                    StandardBG bg= new StandardBG();
-                    background.Content = bg;
-            }
-            if (this.typeroom == "Superior")
-            {
-                SuperiorBG bg = new SuperiorBG();
-                background.Content = bg;
-            }
-            if (this.typeroom == "Deluxe")
-            {
-                DeluxeBG bg = new DeluxeBG();
-                background.Content = bg;
-            }
-            if (this.typeroom == "Suite")
-            {
-                SuiteBG bg = new SuiteBG();
-                background.Content = bg;
-            }
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)

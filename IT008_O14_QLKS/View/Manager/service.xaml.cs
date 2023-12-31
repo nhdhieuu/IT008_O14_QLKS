@@ -745,5 +745,10 @@ namespace IT008_O14_QLKS.View.Manager
                 }
             }
         }
+
+        private void search_problem_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

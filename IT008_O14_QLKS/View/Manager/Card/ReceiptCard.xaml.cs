@@ -28,6 +28,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public string _datestring;
         public string _time;
         public string _totalMoney;
+        public string sdt;
         public List<DichVu> _DichVu = new List<DichVu>();
         public Room _room = new Room();
         public List<Problem> _Problem = new List<Problem>();
@@ -142,8 +143,33 @@ namespace IT008_O14_QLKS.View.Manager.Card
             }
             sqlDataReader.Close();
         }
+        private void getReceiptPhone()
+        {
+            DB_connection db = new DB_connection();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = db.sqlCon;
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+            sqlCommand.CommandText =
+
+                "select distinct khachhang.sdt" +
+                " from hoadon" +
+                " inner join khachhang " +
+                " on hoadon.makh = khachhang.makh"+
+            
+                $" where hoadon.sohd = '{_receiptId}'";
+            sqlCommand.ExecuteNonQuery();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                
+                    sdt = sqlDataReader[0].ToString();
+                    
+            }
+            sqlDataReader.Close();
+        }
         private void getReceiptInfo()
         {
+            getReceiptPhone();
             getReceiptRoomName();
             getReceiptDichVu();
             getReceiptProblem();

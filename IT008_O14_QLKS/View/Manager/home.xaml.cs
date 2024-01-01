@@ -266,8 +266,6 @@ namespace IT008_O14_QLKS.View.Manager
                 DateTime end = DatePicker_EndDate.SelectedDate.Value;
                 string startstring = start.ToString("MM/dd/yyyy");
                 string endstring = end.ToString("MM/dd/yyyy");
-                Console.WriteLine(startstring);
-                Console.WriteLine(endstring);
                 LoadChart(startstring,endstring);
             }
             catch (Exception exception)
@@ -315,6 +313,7 @@ namespace IT008_O14_QLKS.View.Manager
             QuantityValues_ColumnSeries.Values = tongtien;
             AxisX_Bottom.Labels = maphong;
             sqlDataReader.Close();
+            TotalMoney = 0;
         }
         
     }

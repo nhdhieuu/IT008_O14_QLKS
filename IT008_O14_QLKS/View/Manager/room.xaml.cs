@@ -296,6 +296,8 @@ namespace IT008_O14_QLKS.View.Manager
                 dlx1 = 0;
                 std = 0;
                 sup1 = 0;
+                this.Page_index_lbl.Text = "1";
+                this.Search_tbx.Text = string.Empty;
                 Load();
 
             }
@@ -390,6 +392,7 @@ namespace IT008_O14_QLKS.View.Manager
             }
             this.Page_index_lbl.Text = "1";
             this.Search_tbx.Text = string.Empty;
+
             Load();
         }
 
@@ -441,6 +444,8 @@ namespace IT008_O14_QLKS.View.Manager
                 booked_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C0000FF"));
                 empty_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00652E"));
                 unavai_t.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F8B0000"));
+                this.Page_index_lbl.Text = "1";
+                this.Search_tbx.Text = string.Empty;
                 Load();
             }
         }
@@ -557,6 +562,7 @@ namespace IT008_O14_QLKS.View.Manager
                 up.IsEnabled = false;
                 down.IsEnabled = false;
             }
+            this.Page_index_lbl.Text = "1";
             this.Search_tbx.Text = string.Empty;
             Load();
         }

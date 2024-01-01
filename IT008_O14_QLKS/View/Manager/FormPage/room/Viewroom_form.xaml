@@ -415,14 +415,14 @@
                                     <ComboBoxItem Content="Mid" FontFamily="Times New Roman" FontSize="15"/>
                                     <ComboBoxItem Content="Low" FontFamily="Times New Roman" FontSize="15"/>
                                 </ComboBox>
-                                <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,95,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" Grid.Column="1" >
+                                <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="7,101,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" Grid.Column="1" >
                                     <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
                                 </Border>
 
-                                <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,99,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave" Grid.Column="1">
+                                <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="7,101,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave" Grid.Column="1">
                                     <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
                                 </Border>
-                                <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,95,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave_1" Grid.Column="1" >
+                                <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,101,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave_1" Grid.Column="1" >
                                     <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Times New Roman"/>
                                 </Border>
                             </Grid>

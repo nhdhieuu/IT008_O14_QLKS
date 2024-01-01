@@ -4,7 +4,7 @@
 </p>
 
  <h2 align="center"> Ginko Hotel Management </h2>
- <img src="" width="250"  />
+ <img src="https://github.com/nhdhieuu/IT008_O14_QLKS/blob/main/IT008_O14_QLKS/Resources/ginko_200x200.png" width="250"  />
 
 <h3>Contributors</h3>
 
@@ -22,16 +22,18 @@ Nguyễn Tấn Toàn
 This is video demo [Youtube]()
 
 <h3>Description</h3>
-- Ginko Hotel is an effective hotel management application for hospitality businesses.
 
-- Log in as a manager, you can easily monitor room availability, make reservations, cancel bookings, view booking history and revenue. You can also manage staff, schedule shifts and track work performance.
+Ginko Hotel is an effective hotel management application for hospitality businesses.
 
-- Log in as a guest, you can easily search for available rooms, compare prices and make bookings. Ginko Hotel allows you to schedule and manage your reservations, as well as rate and write reviews for the hotel.
+Log in as a manager, you can easily monitor room availability, make reservations, cancel bookings, view booking history and revenue. You can also manage staff, schedule shifts and track work performance.
 
-- With a user-friendly and intuitive interface, Ginko Hotel helps you manage your hotel efficiently and professionally. Download Ginko Hotel now to enhance customer experience and boost your revenue!
+Log in as a guest, you can easily search for available rooms, compare prices and make bookings. Ginko Hotel allows you to schedule and manage your reservations, as well as rate and write reviews for the hotel.
+
+With a user-friendly and intuitive interface, Ginko Hotel helps you manage your hotel efficiently and professionally. Download Ginko Hotel now to enhance customer experience and boost your revenue!
 
 
 <h3>How to use</h3>
+
 - Bước 1: Tải "GinkoHotelInstaller.exe" ở mục releases của repository này
 - Bước 2: Chạy file installer vừa tải
 - Bước 3: Cài xong sẽ thấy shortcut "Ginko Hotel" ở desktop, mở lên và chạy thôi!

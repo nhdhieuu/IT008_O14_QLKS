@@ -7,17 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="145" d:DesignWidth="250">
     <Grid >
-        <Border Cursor="Hand" Background="#F1F0E7" CornerRadius="10" BorderBrush="#FF030101" BorderThickness="2,2,2,2" MouseDown="Border_MouseDown">
+        <Border Cursor="Hand" Background="White" CornerRadius="10" BorderBrush="#FF030101" BorderThickness="2,2,2,2" MouseDown="Border_MouseDown">
 
             <Grid>
                 <Border Margin="0,0,0,36"  CornerRadius="10,10,5,5">
                     <Grid>
                         <ContentControl x:Name="background"/>
                         <Grid Margin="0,0,0,41">
-                            <TextBlock  x:Name="idroomtxt" Foreground="White" FontSize="70" FontFamily="Bahnschrift" Margin="10,0,60,-4" Text="P101" />
+                            <TextBlock  x:Name="idroomtxt" Foreground="Black" FontSize="70" FontFamily="Bahnschrift" Margin="10,0,60,-4" Text="P101" />
                             <TextBlock x:Name="loai"   Foreground="#FAB005" Text="Standard" FontSize="25" FontFamily="Bahnschrift" Margin="15,70,107,-41"/>
-                            <TextBlock x:Name="number_guesttxt" Text="2" Foreground="White"  FontSize="25" FontFamily="Bahnschrift" Margin="191,15,38,20"/>
-                            <Image Source="/Resources/icons8-human-30.png" Margin="195,16,7,26"/>
+                            <TextBlock x:Name="number_guesttxt" Text="2" Foreground="Black"  FontSize="25" FontFamily="Bahnschrift" Margin="191,15,38,20"/>
+                            <Image Source="/Resources/icons8-account-48.png" Margin="197,16,7,22"/>
                         </Grid>
                     </Grid>
                 </Border>

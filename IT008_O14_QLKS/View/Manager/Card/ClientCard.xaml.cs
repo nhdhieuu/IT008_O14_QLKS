@@ -23,7 +23,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
     /// <summary>
     /// Interaction logic for ClientCard.xaml
     /// </summary>
-    public partial class ClientCard : UserControl
+    public partial class ClientCard: UserControl
     {
         public string name { get; set; }
         public string usrname
@@ -74,49 +74,31 @@ namespace IT008_O14_QLKS.View.Manager.Card
                 truepath += parts[i] + "/";
             }
 
-       
-          
-       
-      
-            string imagePath = System.IO.Path.Combine(truepath,"Resources", cls + ".jpg");
 
-            // Tạo một đối tượng BitmapImage
-            BitmapImage bitmap = new BitmapImage();
+         
 
-                // Thiết lập đường dẫn nguồn cho BitmapImage
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-                bitmap.EndInit();
 
-                // Tạo một ImageBrush và thiết lập hình ảnh làm nền
-                ImageBrush imageBrush = new ImageBrush(bitmap);
-
-                // Thiết lập nền của phần tử (vd: Grid, Border, etc.)
-                imageBrush.Stretch = Stretch.Fill;
-                bg.Background = imageBrush;
-               
         }
         private void yeuto()
         {
             if(cls=="Gold")
             {
-                idtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF6C5300"));
 
-                usrtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF6C5300"));
-
+                idtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFBEAD0C"));
             }
             if (cls == "Platinum")
             {
 
-      
+                idtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0D7654"));
 
                 cls = "Plat";
+                
             }
             if (cls == "Diamond")
             {
-                tentxt.Foreground = new SolidColorBrush(Colors.White);
-                usrtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFAAB2D5"));
-                idtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFAAB2D5"));
+               
+                idtxt.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF460C84"));
+               
                 cls = "Dia";
 
             }

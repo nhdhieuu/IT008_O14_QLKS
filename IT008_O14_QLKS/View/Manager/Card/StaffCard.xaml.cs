@@ -46,15 +46,16 @@ namespace IT008_O14_QLKS.View.Manager.Card
             SI.ShowDialog();
             
         }
-
+       
         private void Border_MouseEnter(object sender, MouseEventArgs e)
         {
-            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#B2A0A0A0"));
+            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F9F9393"));
         }
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-            bd_view.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F2F1EF"));
+
+            bd_view.Background = null;
         }
 
       

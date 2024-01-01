@@ -97,6 +97,10 @@
     <Compile Include="Models\PrintReceipt.cs" />
     <Compile Include="Models\Problem.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Send Email\Email.cs" />
+    <Compile Include="Send Email\sendemail.xaml.cs">
+      <DependentUpon>sendemail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="signUp.xaml.cs">
       <DependentUpon>signUp.xaml</DependentUpon>
     </Compile>
@@ -314,6 +318,10 @@
       <DependentUpon>staff.xaml</DependentUpon>
     </Compile>
     <Page Include="Loginn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Send Email\sendemail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -811,6 +819,9 @@
     <Resource Include="Resources\Gold.jpg" />
     <Resource Include="Resources\Platinum.jpg" />
     <Resource Include="Resources\icons8-reserve-100.png" />
+    <Resource Include="Resources\icons8-account-96.png" />
+    <Resource Include="Resources\icons8-account-48.png" />
+    <Resource Include="Resources\icons8-trash-can-90.png" />
     <Content Include="Resources\print.png" />
     <Resource Include="Resources\ReceiptCardBackground.png" />
     <Resource Include="Resources\RecieptCardMoney.png" />

@@ -188,7 +188,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Border x:Name="ViewRoomBD"  Background="#F1F0E7" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown" BorderBrush="Black" BorderThickness="2,2,2,2">
+        <Border x:Name="ViewRoomBD"  Background="#F1F0E7" CornerRadius="5,5,5,5" MouseDown="Border_MouseDown" BorderBrush="#FF262020" BorderThickness="2,2,2,2">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition >
@@ -203,27 +203,28 @@
                         <RowDefinition Height="50">
 
                         </RowDefinition>
-                        <RowDefinition Height="385*">
+                        <RowDefinition Height="300*">
 
                         </RowDefinition>
-                        <RowDefinition Height="60*">
+                        <RowDefinition Height="94*"/>
+                        <RowDefinition Height="61*">
 
                         </RowDefinition>
-                        <RowDefinition Height="234*">
+                        <RowDefinition Height="240*">
 
                         </RowDefinition>
                     </Grid.RowDefinitions>
                     <Border x:Name="CloseBD" Margin="434,0,0,6" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" CornerRadius="0,5,0,0">
-                        <TextBlock x:Name="CLoseTXT" Text="X" FontFamily="Sylfaen" FontSize="25" HorizontalAlignment="Left" Width="52" Margin="13,6,0,-6">
+                        <TextBlock x:Name="CLoseTXT" Text="X" FontFamily="Times New Roman" FontSize="25" HorizontalAlignment="Left" Width="52" Margin="13,6,0,-6">
 
                         </TextBlock>
                     </Border>
-                    <Border Background="White" CornerRadius="5" Margin="-8,48,27,172" Grid.RowSpan="2">
+                    <Border Background="White" CornerRadius="5" Margin="-8,48,27,78" Grid.RowSpan="2" BorderBrush="#FF7D7070" BorderThickness="2,2,2,2">
                         <Grid>
-                            <Label Margin="16,-2,312,0" Content="service" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"/>
-                            <Label Margin="106,38,294,0" Content="name" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
-                            <Label Margin="209,39,191,0" Content="date" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
-                            <Label Margin="343,39,57,0" Content="price" FontFamily="Sylfaen" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
+                            <Label Margin="16,-2,312,0" Content="service" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"/>
+                            <Label Margin="106,38,294,0" Content="name" FontFamily="Times New Roman" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
+                            <Label Margin="209,39,191,0" Content="date" FontFamily="Times New Roman" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="45" VerticalAlignment="Top"/>
+                            <Label Margin="343,39,57,0" Content="price" FontFamily="Times New Roman" FontSize="21" Foreground="#C6980A" FontWeight="Thin" Height="48" VerticalAlignment="Top"/>
 
 
 
@@ -266,18 +267,18 @@
 
 
                             <Border x:Name="add_butt" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="21,180,0,0" VerticalAlignment="Top" Width="67" Background="#FF27CF69" CornerRadius="5,5,5,5" Cursor="Hand" MouseEnter="add_butt_MouseEnter" MouseLeave="add_butt_MouseLeave" MouseDown="add_butt_MouseDown">
-                                <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Sylfaen" FontSize="25" Foreground="White" FontWeight="Thin"/>
+                                <Label Margin="8,-8,-17,-8" Content="add" FontFamily="Times New Roman" FontSize="25" Foreground="White" FontWeight="Thin"/>
                             </Border>
                         </Grid>
                     </Border>
-                    <Border x:Name="problem" Grid.Row="1" Background="White" CornerRadius="5" Margin="-8,289,27,191" Grid.RowSpan="3">
+                    <Border x:Name="problem" Grid.Row="1" Background="White" CornerRadius="5" Margin="-8,289,27,191" Grid.RowSpan="4" BorderBrush="#FF7D7070" BorderThickness="2,2,2,2">
                         <Grid>
-                            <Label Margin="16,-10,297,159" Content="problem" FontFamily="Sylfaen" FontSize="32" Foreground="#C60A0A" FontWeight="Bold"/>
+                            <Label Margin="16,-6,297,155" Content="problem" FontFamily="Times New Roman" FontSize="32" Foreground="#C60A0A" FontWeight="Bold"/>
 
-                            <Rectangle Margin="10,34,30,178" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="10,34,30,175" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
                                 <Rectangle.RenderTransform>
                                     <TransformGroup>
-                                        <ScaleTransform ScaleY="-1"/>
+                                        <ScaleTransform ScaleY="1"/>
                                         <SkewTransform/>
                                         <RotateTransform/>
                                         <TranslateTransform/>
@@ -285,10 +286,10 @@
                                 </Rectangle.RenderTransform>
 
                             </Rectangle>
-                            <Rectangle Margin="167,40,292,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="167,40,289,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
-                            <Rectangle Margin="298,40,161,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle Margin="298,40,158,150" Fill="#BF0B0B" RenderTransformOrigin="0.5,0.5">
 
                             </Rectangle>
 
@@ -309,31 +310,31 @@
                         </Grid>
 
                     </Border>
-                    <GroupBox Margin="-8,45,27,20" BorderBrush="#FFC6980A" FontFamily="Sylfaen" BorderThickness="2,2,2,2" Header="price" Foreground="#FFC6980A" FontSize="28" Grid.Row="3">
+                    <GroupBox Margin="-8,45,27,20" BorderBrush="#FFC6980A" FontFamily="Times New Roman" BorderThickness="2,2,2,2" Header="price" Foreground="#FFC6980A" FontSize="40" Grid.Row="4">
                         <Grid>
-                            <Label Margin="10,0,229,68" Content="Rent by hour:" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
-                            <Label Margin="10,58,254,10" Content="Rent by day:" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
-                            <Label x:Name="GiaTheoNgay" Margin="225,58,-17,10" Content="900.000 VND" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
-                            <Label x:Name="GiaTheoGio" Margin="225,0,0,68" Content="200.000 VND" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
+                            <Label Margin="10,0,229,68" Content="Rent by hour:" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
+                            <Label Margin="10,58,254,10" Content="Rent by day:" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
+                            <Label x:Name="GiaTheoNgay" Margin="225,58,-17,10" Content="900.000 VND" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
+                            <Label x:Name="GiaTheoGio" Margin="225,0,0,68" Content="200.000 VND" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="63"></Label>
 
                         </Grid>
 
                     </GroupBox>
-                    <Grid Grid.Row="2">
-                        <Label Margin="-4,-168,353,168" Content="cleaning" FontFamily="Sylfaen" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold"/>
-                        <Label Margin="237,-166,109,166" Content="maintain" FontFamily="Sylfaen" FontSize="32" Foreground="#C6980A" FontWeight="Bold"/>
-                        <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="126,-154,268,182" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
+                    <Grid Grid.Row="2" Margin="0,94,0,0" Grid.RowSpan="2">
+                        <Label Margin="-4,-168,353,168" Content="cleaning" FontFamily="Times New Roman" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold"/>
+                        <Label Margin="237,-166,109,166" Content="maintain" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold"/>
+                        <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="126,-154,268,182" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
 
-                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Daily" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                         <Rectangle Margin="226,-161,251,172" Fill="#C6980A">
                         </Rectangle>
-                        <ComboBox x:Name="maintain_cbx" Style="{DynamicResource RoundComboBox}" Margin="372,-154,25,182" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
-                            <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
-                            <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                        <ComboBox x:Name="maintain_cbx" Style="{DynamicResource RoundComboBox}" Margin="372,-154,25,182" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold" IsEnabled="False">
+                            <ComboBoxItem Content="Daily" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Weekly" FontFamily="Times New Roman" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
+                            <ComboBoxItem Content="Monthly" FontFamily="Times New Roman" Foreground="#FF232222" FontSize="16" FontWeight="Bold"/>
                         </ComboBox>
                     </Grid>
 
@@ -356,7 +357,7 @@
                                 " Height="48" Width="284">
                             <Grid>
                                 <Image Margin="248,8,12,8" Source="/Resources/icons8-setting-24 (1).png" Cursor="Hand" MouseDown="Image_MouseDown" />
-                                <Label x:Name="type_lbl" Margin="11,-5,102,0" Content="renting" FontFamily="Sylfaen" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
+                                <Label x:Name="type_lbl" Margin="11,-3,102,-2" Content="renting" FontFamily="Times New Roman" FontSize="31" Foreground="#F1F0E7" FontWeight="Bold" />
                             </Grid>
                         </Border>
                         <Border x:Name="type_background2" Background="#000"  Margin="28,15,24,0"  CornerRadius="5,5,5,5" Height="72" Width="283">
@@ -365,9 +366,9 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Label x:Name="TenKH_lbl" Margin="10,4,67,30" Content="Trần Văn A" FontFamily="Times New Roman" FontSize="18" Foreground="#FFF1F0E7" FontWeight="Bold" />
-                                <Label x:Name="denngay_lbl" Margin="0,32,9,-32" Content="20/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" />
-                                <Label x:Name="tungay_lbl" Margin="9,32,131,-32" Content="18/11/2023" FontFamily="Sylfaen" FontSize="18" Foreground="#FFFFFFFF" FontWeight="Bold" />
-                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="4 days" FontFamily="Sylfaen" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
+                                <Label x:Name="denngay_lbl" Margin="0,32,9,-32" Content="20/11/2023" FontFamily="Times New Roman" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" />
+                                <Label x:Name="tungay_lbl" Margin="9,32,131,-32" Content="18/11/2023" FontFamily="Times New Roman" FontSize="18" Foreground="#FFFFFFFF" FontWeight="Bold" />
+                                <Label x:Name="da_o_lbl" Margin="193,1,9,-1" Content="4 days" FontFamily="Times New Roman" FontSize="19" Foreground="#FFF1F0E7" FontWeight="Bold" HorizontalContentAlignment="Right" />
                             </Grid>
                         </Border>
                         <Border  Background="#D9D9D9" Margin="28,20,24,5" CornerRadius="5,5,5,5">
@@ -378,7 +379,7 @@
                                     </Border.Background>
 
                                 </Border>
-                                <Label Margin="167,-6,-46,164" FontFamily="Sylfaen" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration"/>
+                                <Label Margin="167,-6,-46,164" FontFamily="Times New Roman" FontSize="22" Foreground="#FFC6980A" FontWeight="Bold" Content="illustration"/>
                                 <Border x:Name="Load_Ilus" Margin="24,6,236,168" CornerRadius="3" BorderBrush="Black" BorderThickness="1.5" Cursor="Hand" MouseDown="Load_Ilus_MouseDown" IsEnabled="False">
                                     <Border.Background>
                                         <ImageBrush ImageSource="/Resources/icons8-upload-64.png"/>
@@ -388,7 +389,7 @@
                         </Border>
 
 
-                        <GroupBox Header="facility"  Background="#FFF1F0E7" Margin="24,2,24,24" FontFamily="Sylfaen" FontSize="21" BorderBrush="#FF1D19E3" Foreground="#FF1D19E3" BorderThickness="2,2,2,2">
+                        <GroupBox Header="facility"  Background="#FFF1F0E7" Margin="24,2,24,24" FontFamily="Times New Roman" FontSize="21" BorderBrush="#FF1D19E3" Foreground="#FF1D19E3" BorderThickness="2,2,2,2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="51*"/>
@@ -408,11 +409,11 @@
                                     <ComboBoxItem Content="Fridge"/>
                                     <ComboBoxItem Content="Mini Bar"/>
                                 </ComboBox>
-                                <Label Margin="3,30,0,66" Content="internet" Grid.Column="1"/>
+                                <Label Margin="3,33,0,63" Content="internet" Grid.Column="1"/>
                                 <ComboBox x:Name="internet_cbx" Style="{DynamicResource RoundComboBox}" Margin="6,63,17,52" FontSize="15" Grid.Column="1" IsEnabled="False">
-                                    <ComboBoxItem Content="High" FontFamily="Sylfaen" FontSize="15"/>
-                                    <ComboBoxItem Content="Mid" FontFamily="Sylfaen" FontSize="15"/>
-                                    <ComboBoxItem Content="Low" FontFamily="Sylfaen" FontSize="15"/>
+                                    <ComboBoxItem Content="High" FontFamily="Times New Roman" FontSize="15"/>
+                                    <ComboBoxItem Content="Mid" FontFamily="Times New Roman" FontSize="15"/>
+                                    <ComboBoxItem Content="Low" FontFamily="Times New Roman" FontSize="15"/>
                                 </ComboBox>
                                 <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,95,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" Grid.Column="1" >
                                     <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
@@ -422,7 +423,7 @@
                                     <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
                                 </Border>
                                 <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,95,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave_1" Grid.Column="1" >
-                                    <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Sylfaen"/>
+                                    <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Times New Roman"/>
                                 </Border>
                             </Grid>
                         </GroupBox>
@@ -430,7 +431,7 @@
                     <Border Grid.Row="1" Margin="23,7,27,8" Height="111" CornerRadius="5,5,5,5">
                         <ContentControl x:Name="RoomCardCtrl" Height="111" Width="290"/>
                     </Border>
-                    <Label Grid.Row="0" Content="room information" FontFamily="Sylfaen" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="19,-6,-19,6"/>
+                    <Label Grid.Row="0" Content="room information" FontFamily="Times New Roman" FontSize="35" Foreground="#FFC6980A" FontWeight="Thin" Margin="19,-6,-19,6"/>
 
                 </Grid>
             </Grid>

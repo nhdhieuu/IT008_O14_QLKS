@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.receipt"
           mc:Ignorable="d" 
-        Topmost="True" 
+        
    
        
          Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"

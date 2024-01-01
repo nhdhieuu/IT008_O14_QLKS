@@ -9,13 +9,13 @@
  WindowStyle="None" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
     <Border CornerRadius="8" Background="#F1F0E7" BorderBrush="Black" BorderThickness="2" Margin="2,4,4,0">
         <Grid Margin="-2,-2,-3,-2">
-            <Label x:Name="Cancel" Content="Cancel" FontFamily="Sylfaen" FontSize="20"  Width="70" Height="35" VerticalAlignment="Top" Margin="219,0,7,0" Foreground="#FFC60303" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"/>
+            <Label x:Name="Cancel" Content="Cancel" FontFamily="Times New Roman" FontSize="20"  Width="70" Height="35" VerticalAlignment="Top" Margin="219,0,7,0" Foreground="#FFC60303" Cursor="Hand" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave"/>
 
             <TextBlock Text="Change Password" FontFamily="Times New Roman" FontSize="23" Margin="18,5,111,301" Foreground="#FFC9A01E" />
             <Border BorderBrush="Black" CornerRadius="5" BorderThickness="1" HorizontalAlignment="Center" Height="70" Margin="0,52,0,0" VerticalAlignment="Top" Width="264">
                 <Grid>
-                    <Label  Content="Current Password" Foreground="Black"  FontFamily="Sylfaen" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,128,0"   />
-                    <Label x:Name="correct"  Content="Incorrect" Foreground="#FFEB1818"  FontFamily="Sylfaen" FontSize="19" Height="35" VerticalAlignment="Top" Margin="174,-2,3,0"   Visibility="Hidden" />
+                    <Label  Content="Current Password" Foreground="Black"  FontFamily="Times New Roman" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,128,0"   />
+                    <Label x:Name="correct"  Content="Incorrect" Foreground="#FFEB1818"  FontFamily="Times New Roman" FontSize="19" Height="35" VerticalAlignment="Top" Margin="174,-2,3,0"   Visibility="Hidden" />
 
                     <Border x:Name="pssbox" Background="Transparent" Margin="16,29,10,10" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
                         <Grid>
@@ -27,10 +27,10 @@
 
                                 </ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" PasswordChanged="pass_PasswordChanged" >
+                            <PasswordBox x:Name="pass" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" PasswordChanged="pass_PasswordChanged" Grid.ColumnSpan="2" Margin="5,0,37,0" BorderThickness="0,0,0,0" >
 
                             </PasswordBox >
-                            <TextBox x:Name="unpass" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass_TextChanged" />
+                            <TextBox x:Name="unpass" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass_TextChanged" />
                             <Image x:Name="eyeopen" Source="/Resources/view.png"  Cursor="Hand" Margin="1,0,-2,0" Grid.Column="1" MouseDown="eyeopen_MouseDown"/>
                             <Image x:Name="eyedown" Grid.Column="1" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown_MouseDown" Margin="3,0,0,0" />
                             <PasswordBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="276,37,0,0" VerticalAlignment="Top" Width="120"/>
@@ -46,9 +46,9 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
-                        <Label  Content="New Password" Foreground="Black"  FontFamily="Sylfaen" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,109,0"  />
+                        <Label  Content="New Password" Foreground="Black"  FontFamily="Times New Roman" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,109,0"  />
                         <Border x:Name="pssbox2" Background="Transparent" Margin="16,29,10,10" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                            <Grid>
+                            <Grid Margin="6,0,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="164*">
 
@@ -57,10 +57,8 @@
 
                                     </ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <PasswordBox x:Name="pass2" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" >
-
-                                </PasswordBox >
-                                <TextBox x:Name="unpass2" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass2_TextChanged" />
+                                <PasswordBox x:Name="pass2" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="196" BorderThickness="0,0,0,0" />
+                                <TextBox x:Name="unpass2" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass2_TextChanged" />
                                 <Image x:Name="eyeopen2" Source="/Resources/view.png"  Cursor="Hand" Margin="1,0,-2,0" Grid.Column="1" MouseDown="eyeopen2_MouseDown"/>
                                 <Image x:Name="eyedown2" Grid.Column="1" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown2_MouseDown" Margin="4,0,1,0" />
                                 <PasswordBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="276,37,0,0" VerticalAlignment="Top" Width="120"/>
@@ -69,11 +67,11 @@
                         </Border>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <Label  Content="Confirm New Password" Foreground="Black"  FontFamily="Sylfaen" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,93,0"   />
-                        <Label x:Name="correct2"  Content="Incorrect" Foreground="#FFEB1818"  FontFamily="Sylfaen" FontSize="19" Height="35" VerticalAlignment="Top" Margin="174,-4,0,0"   Visibility="Hidden" />
+                        <Label  Content="Confirm New Password" Foreground="Black"  FontFamily="Times New Roman" FontSize="15" Height="35" VerticalAlignment="Top" Margin="9,0,93,0"   />
+                        <Label x:Name="correct2"  Content="Incorrect" Foreground="#FFEB1818"  FontFamily="Times New Roman" FontSize="19" Height="35" VerticalAlignment="Top" Margin="174,-4,0,0"   Visibility="Hidden" />
 
                         <Border x:Name="pssbox3" Background="Transparent" Margin="16,29,10,10" BorderBrush="Black" BorderThickness="1.5" CornerRadius="7">
-                            <Grid>
+                            <Grid Margin="6,0,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="164*">
 
@@ -82,10 +80,8 @@
 
                                     </ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <PasswordBox x:Name="pass3" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" PasswordChanged="pass3_PasswordChanged" >
-
-                                </PasswordBox >
-                                <TextBox x:Name="unpass3" Background="Transparent" FontFamily="Sylfaen" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass3_TextChanged"/>
+                                <PasswordBox x:Name="pass3" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center"  Cursor="IBeam" Height="28" VerticalAlignment="Center" PasswordChanged="pass3_PasswordChanged" Margin="0,0,1,0" BorderThickness="0,0,0,0" />
+                                <TextBox x:Name="unpass3" Background="Transparent" FontFamily="Times New Roman" FontSize="17" VerticalContentAlignment="Center" Visibility="Hidden" TextChanged="unpass3_TextChanged"/>
                                 <Image x:Name="eyeopen3" Source="/Resources/view.png"  Cursor="Hand" Margin="1,0,-2,0" Grid.Column="1" MouseDown="eyeopen3_MouseDown"/>
                                 <Image x:Name="eyedown3" Grid.Column="1" Source="/Resources/eye.png" Visibility="Hidden" MouseDown="eyedown3_MouseDown" Margin="0,0,-3,0" />
                                 <PasswordBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="276,37,0,0" VerticalAlignment="Top" Width="120"/>
@@ -97,7 +93,7 @@
                 </Grid>
             </Border>
             <Border x:Name="Save" BorderBrush="Black" BorderThickness="1" Background="#FFC6980A" HorizontalAlignment="Center" Height="28" Margin="0,295,0,0" VerticalAlignment="Top" Width="116" CornerRadius="5,5,5,5" Cursor="Hand" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave">
-                <Label Content="Save Change" Foreground="White"  FontFamily="Sylfaen" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="48" Margin="14,-12,0,0"/>
+                <Label Content="Save Change" Foreground="White"  FontFamily="Times New Roman" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="48" Margin="14,-12,0,0"/>
             </Border>
 
         </Grid>

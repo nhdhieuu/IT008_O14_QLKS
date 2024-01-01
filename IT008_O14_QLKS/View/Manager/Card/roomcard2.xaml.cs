@@ -33,26 +33,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public roomcard2(string TenPhong, string Type, int SoNguoi, string Parents)
         {
             InitializeComponent();
-            if (Type == "Standard")
-            {
-                StandardBG a = new StandardBG();
-                background.Content = a.Content;
-            }
-            if (Type == "Superior")
-            {
-                SuperiorBG a = new SuperiorBG();
-                background.Content = a.Content;
-            }
-            if (Type == "Deluxe")
-            {
-                DeluxeBG a = new DeluxeBG();
-                background.Content = a.Content;
-            }
-            if (Type == "Suite")
-            {
-                SuiteBG a = new SuiteBG();
-                background.Content = a.Content;
-            }
+            
 
             this.TenPhongTblx.Text = TenPhong;
             this.TenPhong = TenPhong;

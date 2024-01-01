@@ -113,7 +113,7 @@ namespace IT008_O14_QLKS.Models
 
 
             Offset = Offset + mediuminc;
-            DrawAtStart("Phone: 0123456789", Offset);
+            DrawAtStart($"Phone: {_receiptCard.sdt}", Offset);
 
 
             Offset = Offset + mediuminc;
@@ -125,7 +125,7 @@ namespace IT008_O14_QLKS.Models
 
             Offset = Offset + largeinc;
 
-            InsertHeaderStyleItem("Name. ", "Price. ", Offset);
+            InsertHeaderStyleItem("Name. ", "", Offset);
 
             Offset = Offset + largeinc;
 

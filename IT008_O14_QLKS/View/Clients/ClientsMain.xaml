@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="645px" Width="974px" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None" AllowsTransparency="True"
- Title="ClientsMain" Icon="/Resources/icons8-ginkgo-64.png">
+ Title="ClientsMain" Icon="/Resources/icons8-ginkgo-64.png" Background="{x:Null}">
     <Grid>
         <Border Background="White" CornerRadius="5" MouseDown="Border_MouseDown_1">
             <Grid>

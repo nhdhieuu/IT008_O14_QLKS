@@ -299,10 +299,12 @@ namespace IT008_O14_QLKS.View.Manager
             {
                 if (tongtien[i]>AxisY_Right.MaxValue)
                 {
-                    AxisY_Right.MaxValue = tongtien[i];
+                    int roundedValue = (int)Math.Ceiling(tongtien[i] / 1000000.0) * 1000000;
+                    Console.WriteLine(roundedValue);
+                    AxisY_Right.MaxValue = roundedValue;
                 }
             }
-
+            
             foreach (var tienphong in tongtien)
             {
                 
@@ -312,6 +314,15 @@ namespace IT008_O14_QLKS.View.Manager
             TotalIncome.Text = this.TotalMoney.ToString("N0") + " VND";
             QuantityValues_ColumnSeries.Values = tongtien;
             AxisX_Bottom.Labels = maphong;
+            if(maphong.Count>9)
+            {
+                AxisX_Bottom.Separator.Step = 2;
+            }
+            else
+            {
+                AxisX_Bottom.Separator.Step = 1;
+            }
+                
             sqlDataReader.Close();
             TotalMoney = 0;
         }

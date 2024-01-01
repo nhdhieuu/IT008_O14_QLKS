@@ -125,7 +125,7 @@ namespace IT008_O14_QLKS.Models
 
             Offset = Offset + largeinc;
 
-            InsertHeaderStyleItem("Name. ", "Price. ", Offset);
+            InsertHeaderStyleItem("Name. ", "", Offset);
 
             Offset = Offset + largeinc;
 

@@ -60,11 +60,13 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             if (this.Type == "Standard")
             {
                 StandardBG bg = new StandardBG();
+                this.loai.Foreground= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF9B9B9B"));
                 background.Content = bg;
             }
             if (this.Type == "Superior")
             {
                 SuperiorBG bg = new SuperiorBG();
+                this.loai.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF9B9B9B"));
                 background.Content = bg;
             }
             if (this.Type == "Deluxe")

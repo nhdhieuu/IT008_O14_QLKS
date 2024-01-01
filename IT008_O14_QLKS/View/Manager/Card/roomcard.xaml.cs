@@ -154,7 +154,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
             }
             if (this.status == "Booking")
             {
-                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0766AD")) ;
+                mainbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF1387DF")) ;
                 statustxt.Foreground = new SolidColorBrush(Colors.White);
                 
             }

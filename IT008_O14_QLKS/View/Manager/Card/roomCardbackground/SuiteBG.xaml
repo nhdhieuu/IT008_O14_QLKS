@@ -8,7 +8,7 @@
              d:DesignHeight="73" d:DesignWidth="220">
 
     <Grid >
-        <Border CornerRadius="10,10,5,5" Background="#BCA37F"/>
+        <Border CornerRadius="10,10,5,5" Background="#FFF3F4E5"/>
 
     </Grid>
 </UserControl>

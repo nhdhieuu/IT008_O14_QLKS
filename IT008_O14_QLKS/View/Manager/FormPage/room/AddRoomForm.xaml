@@ -206,9 +206,9 @@
                             <Label Margin="75,116,140,0" Content="cleaning" FontFamily="Sylfaen" FontSize="26" Foreground="#FF12CE69" FontWeight="Bold" Height="45" VerticalAlignment="Top"/>
                             <ComboBox x:Name="Cleaning" Style="{DynamicResource RoundComboBox}" Margin="204,0,24,44" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="31" VerticalAlignment="Bottom">
 
-                                <ComboBoxItem Content="daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                                <ComboBoxItem Content="weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
-                                <ComboBoxItem Content="monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                                <ComboBoxItem Content="Daily" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                                <ComboBoxItem Content="Weekly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
+                                <ComboBoxItem Content="Monthly" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>
                             </ComboBox>
                         </Grid>
                     </Grid>

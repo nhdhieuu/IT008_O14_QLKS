@@ -238,7 +238,7 @@
                         </ScrollViewer>
 
                     </Grid>
-                    <Border Style="{DynamicResource save_bd}" CornerRadius="5" Grid.Row="1" MouseDown="Border_MouseDown" Margin="178,470,179,20">
+                    <Border Name="NewReceiptButton" Style="{DynamicResource save_bd}" CornerRadius="5" Grid.Row="1" MouseDown="Border_MouseDown" Margin="178,470,179,20">
                         <TextBlock Text="+" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="39" FontWeight="Bold" Foreground="White" Margin="0,-11,0,0"/>
                     </Border>
                 </Grid>

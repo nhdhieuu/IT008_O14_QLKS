@@ -1,6 +1,6 @@
 
-create database QLKSS
-use QLKSS
+create database QLKS
+use QLKS
 
 CREATE TABLE QUANLI
 (

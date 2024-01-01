@@ -1,10 +1,10 @@
 ![UIT](https://img.shields.io/badge/from-UIT%20VNUHCM-blue?style=for-the-badge&link=https%3A%2F%2Fwww.uit.edu.vn%2F)
 <p align="center">
-  <img src="" alt="Alt text">
+  <img src="https://www.uit.edu.vn/sites/vi/files/banner_uit.png" alt="Alt text">
 </p>
 
  <h2 align="center"> Ginko Hotel Management </h2>
- <img src="https://github.com/NDHunq/IT008/blob/main/Project/Instagram/Instagram/Resources/icons8-setting-96.png?raw=true" width="250"  />
+ <img src="" width="250"  />
 
 <h3>Contributors</h3>
 

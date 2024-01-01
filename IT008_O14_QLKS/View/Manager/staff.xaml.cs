@@ -99,7 +99,7 @@ namespace IT008_O14_QLKS.View.Manager
                 asc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 desc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
                 isAsc = true;
-                if(sort_checkbox.IsChecked==true)
+                if (sort_checkbox.IsChecked == true)
                     sort_checkbox_Checked(sender, e);
             }
         }
@@ -111,13 +111,14 @@ namespace IT008_O14_QLKS.View.Manager
                 desc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 asc_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D9D9D9"));
                 isAsc = false;
-                if(sort_checkbox.IsChecked == true)
+                if (sort_checkbox.IsChecked == true)
                     sort_checkbox_Checked(sender, e);
             }
         }
         // chọn vị trí
         private void postion_check_Checked(object sender, RoutedEventArgs e)
         {
+            postion_combo.IsEnabled = true;
             string sql = $"select * from NHANVIEN  ";
             string bophan = "";
             if (postion_combo.Text == "Receptionist")
@@ -202,6 +203,7 @@ namespace IT008_O14_QLKS.View.Manager
         // bỏ chọn vị trí
         private void postion_check_Unchecked(object sender, RoutedEventArgs e)
         {
+            postion_combo.IsEnabled = false;
             string sql = $"select * from NHANVIEN";
             if (sort_checkbox.IsChecked == true)
             {
@@ -248,6 +250,7 @@ namespace IT008_O14_QLKS.View.Manager
         // chọn sắp xếp
         private void sort_checkbox_Checked(object sender, RoutedEventArgs e)
         {
+            sort_combo.IsEnabled = true;
             if (postion_check.IsChecked == true)
             {
                 string sql = $"select * from NHANVIEN  ";
@@ -344,6 +347,7 @@ namespace IT008_O14_QLKS.View.Manager
         // bỏ chọn sắp xếp
         private void sort_checkbox_Unchecked(object sender, RoutedEventArgs e)
         {
+            sort_combo.IsEnabled = false;
             if (postion_check.IsChecked == true)
             {
                 string sql = $"select * from NHANVIEN  ";
@@ -584,17 +588,17 @@ namespace IT008_O14_QLKS.View.Manager
         // tìm kiếm 
         private void search_tb_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
-                string wd= search_tb.Text;
-                if(wd==null||wd==""||wd==" " )
+                string wd = search_tb.Text;
+                if (wd == null || wd == "" || wd == " ")
                 {
                     sort_checkbox_Checked(sender, e);
                 }
                 else
                 {
                     string sql = $"select * from NHANVIEN WHERE (MANV='{wd}' or TENNV like '%{wd}%') ";
-                    if(postion_check.IsChecked == true)
+                    if (postion_check.IsChecked == true)
                     {
                         if (postion_combo.SelectedItem != null)
                         {
@@ -610,7 +614,7 @@ namespace IT008_O14_QLKS.View.Manager
                             sql += $" and BOPHAN='{bophan}'";
                         }
                     }
-                    if(sort_checkbox.IsChecked == true)
+                    if (sort_checkbox.IsChecked == true)
                     {
                         string sortby = "";
                         if (((ComboBoxItem)sort_combo.SelectedItem).Content.ToString() == "Postion")
@@ -648,6 +652,36 @@ namespace IT008_O14_QLKS.View.Manager
                     }
                 }
             }
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            sort_checkbox_Unchecked(sender, e);
+            sort_checkbox.IsChecked = false;
+            postion_check_Unchecked(sender, e);
+            postion_check.IsChecked = false;
+            /*ds_staff.Children.Clear();
+            DataTable dataTable = new DataTable();
+            string str = "select * from NHANVIEN";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(str, dB_Connection.sqlCon);
+            sqlDataAdapter.Fill(dataTable);
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                string manv = dataTable.Rows[i]["MANV"].ToString();
+                string name = dataTable.Rows[i]["TENNV"].ToString();
+                string vitri = dataTable.Rows[i]["BOPHAN"].ToString();
+                if (vitri == "Le Tan")
+                    vitri = "Receptionist";
+                else if (vitri == "Phuc Vu")
+                    vitri = "Service";
+                else if (vitri == "Ve Sinh")
+                    vitri = "Hygiene";
+                else if (vitri == "CSKH")
+                    vitri = "Custom care";
+                StaffCard staffCard = new StaffCard(manv, name, vitri);
+                ds_staff.Children.Add(staffCard);
+
+            }*/
         }
     }
 }

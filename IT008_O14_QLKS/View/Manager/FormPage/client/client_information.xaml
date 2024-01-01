@@ -151,7 +151,7 @@
 
                         <Grid>
                             <TextBlock  Style="{DynamicResource thuoctinh}" Text="Email" Margin="7,4,0,3"/>
-                            <TextBlock x:Name="Email" Style="{DynamicResource thongtin}" Text="Email" TextAlignment="Right"/>
+                            <TextBlock x:Name="Email" Style="{DynamicResource thongtin}" FontSize="14" Text="Email" TextAlignment="Right"/>
                         </Grid>
 
                     </Border>

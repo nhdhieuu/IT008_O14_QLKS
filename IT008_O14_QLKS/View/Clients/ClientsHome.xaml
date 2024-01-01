@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Clients"
              mc:Ignorable="d"
          
-    d:DesignHeight="590" d:DesignWidth="784" Background="white" FontFamily="Bahnschrift">
+    d:DesignHeight="590" d:DesignWidth="784" Background="Transparent" FontFamily="Bahnschrift">
     <UserControl.Resources>
-  
+
 
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
@@ -188,7 +188,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-
+    <Border CornerRadius="10" Background="#FFF1F0E7" >
         <Grid>
             <!-- silver class-->
             <ContentControl x:Name="classs" Margin="10,10,346,464">
@@ -328,5 +328,8 @@
                 </Grid>
             </Border>
         </Grid>
+
+    </Border>
+
 
 </UserControl>

@@ -67,20 +67,20 @@
                                     <ComboBoxItem Content="Mid" FontFamily="Times New Roman" FontSize="15"/>
                                     <ComboBoxItem Content="Low" FontFamily="Times New Roman" FontSize="15"/>
                                 </ComboBox>
-                                <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,95,0,0" VerticalAlignment="Top" Width="48" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand"  Grid.Column="1" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" >
+                                <Border x:Name="Save" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,105,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FF08631D" Cursor="Hand"  Grid.Column="1" MouseDown="Save_MouseDown" MouseEnter="Save_MouseEnter" MouseLeave="Save_MouseLeave" >
                                     <Image Source="/Resources/icons8-save-50.png" Margin="12,5,13,4"/>
                                 </Border>
 
-                                <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,99,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" Grid.Column="1" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave">
+                                <Border x:Name="Change" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="6,105,0,0" VerticalAlignment="Top" Width="47" CornerRadius="5,5,5,5" Background="#FFC6980A"  Cursor="Hand" Grid.Column="1" MouseDown="Change_MouseDown" MouseEnter="Change_MouseEnter" MouseLeave="Change_MouseLeave">
                                     <Image Source="/Resources/icons8-update-64.png" Margin="12,5,13,4"/>
                                 </Border>
-                                <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,95,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand"  Grid.Column="1" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave" >
+                                <Border x:Name="Cancel" Visibility="Hidden"  BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="63,105,0,0" VerticalAlignment="Top" Width="40" CornerRadius="5,5,5,5" Background="#FFDF0B0B" Cursor="Hand"  Grid.Column="1" MouseDown="Cancel_MouseDown" MouseEnter="Cancel_MouseEnter" MouseLeave="Cancel_MouseLeave" >
                                     <TextBlock Text="X" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="23" Foreground="White" FontFamily="Times New Roman"/>
                                 </Border>
                             </Grid>
                         </GroupBox>
                         <Label Margin="6,178,229,0" Content="cleaning" FontFamily="Times New Roman" FontSize="32" Foreground="#FF12CE69" FontWeight="Bold" Height="59" VerticalAlignment="Top"/>
-                        <Label Margin="6,231,0,0" Content="maintain" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137"/>
+                        <Label Margin="6,235,0,0" Content="maintenance" FontFamily="Times New Roman" FontSize="32" Foreground="#C6980A" FontWeight="Bold" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="188"/>
                         <ComboBox x:Name="cleaning_cbx" Style="{DynamicResource RoundComboBox}" Margin="228,186,28,0" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold" Height="38" VerticalAlignment="Top" IsEnabled="False">
 
                             <ComboBoxItem Content="Daily" FontFamily="Times New Roman" Foreground="#FF252424" FontSize="16" FontWeight="Bold"/>

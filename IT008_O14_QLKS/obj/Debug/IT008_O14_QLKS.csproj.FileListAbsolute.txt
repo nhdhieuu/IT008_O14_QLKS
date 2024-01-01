@@ -37,6 +37,7 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.Ass
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.SuggestedBindingRedirects.cache
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Styles\MaterialDesignStyle.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.g.cs
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Send Email\sendemail.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\Card\Card_room\problemcard.g.cs
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\Card\Card_room\RoomCardThue.g.cs
@@ -113,6 +114,7 @@ D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupComp
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS_MarkupCompile.lref
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\App.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Loginn.baml
+D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\Send Email\sendemail.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\signUp.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\Card\Card_room\problemcard.baml
 D:\SCHOOL\LTTQ\IT008_O14_QLKS\IT008_O14_QLKS\obj\Debug\View\Clients\Card\Card_room\RoomCardThue.baml

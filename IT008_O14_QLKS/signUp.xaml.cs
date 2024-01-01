@@ -21,6 +21,8 @@ using System.Windows.Shapes;
 using System.Xml.Linq;
 using System.IO;
 using IT008_O14_QLKS.Util;
+using System.Text.RegularExpressions;
+
 
 namespace IT008_O14_QLKS
 {
@@ -130,44 +132,97 @@ namespace IT008_O14_QLKS
             {
                 bdDate.BorderBrush = System.Windows.Media.Brushes.Black;
             }
+            bool truee = false;
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
 
+            // Kiểm tra chuỗi email với biểu thức chính quy
+            truee = Regex.IsMatch(email.Text, pattern);
+            if (email.Text == ""||true==false)
+            {
+                bdemail.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                bdemail.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+           
 
-            if (name.Text==""||user.Text==""||unpass.Text==""||runpass.Text==""||phone.Text==""||cccd.Text==""|| selectedDate==null || gender==false)
+            if (name.Text==""||user.Text==""||unpass.Text==""||runpass.Text==""||phone.Text==""||cccd.Text==""|| selectedDate==null || gender==false||email.Text=="")
             {
                 MessageBox.Show("Please complete all information");
             } 
             else
             {
-                sqlcmd.CommandText = "SELECT COUNT(*) FROM KHACHHANG";
-                int CountKH=(int)sqlcmd.ExecuteScalar();
-                string MAKH="KH0"+(CountKH+1).ToString();
-                //lưu date
-                sqlcmd.Parameters.Add("@date", SqlDbType.DateTime).Value=this.dpk.SelectedDate;
-                //lưu avt
-                BitmapSource bitmap = avt.ImageSource as BitmapSource;
-                byte[] imageData;
-                using (MemoryStream memory = new MemoryStream())
+                if(truee==false)
                 {
-                    BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
-                    enc.Frames.Add(BitmapFrame.Create(bitmap));
-                    enc.Save(memory);
-
-                    imageData = memory.ToArray();
+                    MessageBox.Show("invalid email address");
                 }
-                sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
-                // var hashbytes = HashPassword.CalculateSHA256(rpass.Password);
-                // string hashpass = "";
-                // foreach (byte item in hashbytes)
-                // {
-                //     hashpass += item;
-                // }
-                string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
-                
-                
-                sqlcmd.CommandText = "INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS,ClassID) VALUES ('"+MAKH+"','"+this.name.Text+"','"+this.user.Text+"','"+hashpass+"','"+this.cccd.Text+"','"+this.phone.Text+"',@date,'"+GT+"',@image,'Silver',1)";
-                sqlcmd.ExecuteNonQuery();
-                MessageBox.Show("Sucessfully");
-                this.Close();
+                else
+                {
+                    int count = 0;
+                    try {
+                      
+
+                        using (SqlConnection connection = new SqlConnection(connect.strCon))
+                        {
+                            connection.Open();
+
+                            string usernameToSearch = user.Text;
+                            string query = $"SELECT COUNT(*) FROM KHACHHANG WHERE USERNAME = '{usernameToSearch}'";
+
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                // Sử dụng ExecuteScalar để lấy giá trị trả về từ hàm COUNT
+                                count = (int)command.ExecuteScalar();
+
+                            }
+                        }
+                        if(count>0)
+                        {
+                            MessageBox.Show("invalid username");
+                        }
+                        else
+                        {
+                            sqlcmd.CommandText = "SELECT COUNT(*) FROM KHACHHANG";
+                            int CountKH = (int)sqlcmd.ExecuteScalar();
+                            string MAKH = "KH0" + (CountKH + 1).ToString();
+                            //lưu date
+                            sqlcmd.Parameters.Add("@date", SqlDbType.DateTime).Value = this.dpk.SelectedDate;
+                            //lưu avt
+                            BitmapSource bitmap = avt.ImageSource as BitmapSource;
+                            byte[] imageData;
+                            using (MemoryStream memory = new MemoryStream())
+                            {
+                                BitmapEncoder enc = new BmpBitmapEncoder(); // hoặc JpegEncoder
+                                enc.Frames.Add(BitmapFrame.Create(bitmap));
+                                enc.Save(memory);
+
+                                imageData = memory.ToArray();
+                            }
+                            sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
+                            // var hashbytes = HashPassword.CalculateSHA256(rpass.Password);
+                            // string hashpass = "";
+                            // foreach (byte item in hashbytes)
+                            // {
+                            //     hashpass += item;
+                            // }
+                            string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
+
+
+                            sqlcmd.CommandText = "INSERT INTO KHACHHANG (MAKH,TENKH,USERNAME,PASS,CCCD,SDT,NGAYSINH,GIOITINH,AVATAR,CLASS,ClassID,EMAIL) VALUES ('" + MAKH + "','" + this.name.Text + "','" + this.user.Text + "','" + hashpass + "','" + this.cccd.Text + "','" + this.phone.Text + "',@date,'" + GT + "',@image,'Silver',1,'" + this.email.Text + "')";
+                            sqlcmd.ExecuteNonQuery();
+                            MessageBox.Show("Sucessfully");
+                            this.Close();
+                        }
+                        
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Sign up failed");
+                    }
+                    
+                }
+               
             }    
             
 

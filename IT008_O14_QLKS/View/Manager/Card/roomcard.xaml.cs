@@ -100,12 +100,12 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void viewbd_MouseEnter(object sender, MouseEventArgs e)
         {
-            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0077E0"));
+            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF725805"));
         }
 
         private void viewbd_MouseLeave(object sender, MouseEventArgs e)
         {
-            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00A9FF"));
+            viewbd.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFC6980A"));
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

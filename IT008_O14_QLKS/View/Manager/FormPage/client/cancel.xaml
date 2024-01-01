@@ -9,9 +9,9 @@
             Background="Transparent" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
       >
-    <Border BorderBrush="Black" BorderThickness="2" Background="#FFEFEEE5" CornerRadius="10" Margin="0,0,204,111" MouseDown="Border_MouseDown_1">
+    <Border BorderBrush="Black" BorderThickness="2" Background="#FFEFEEE5" CornerRadius="10" Margin="0,0,409,220" MouseDown="Border_MouseDown_1">
 
-        <Grid Margin="0,0,-2,-2">
+        <Grid Margin="0,0,-2,0" Height="239" VerticalAlignment="Top">
 
 
             <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
 
             <Border x:Name="delbtn_border" 
                             Background="Transparent"
-                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="596,0,0,2" Cursor="Hand" HorizontalAlignment="Left" Width="49"
+                            CornerRadius="0,5,0,0" MouseDown="Border_MouseDown" MouseEnter="delbtn_border_MouseEnter" MouseLeave="delbtn_border_MouseLeave" Margin="389,0,0,2" Cursor="Hand" HorizontalAlignment="Left" Width="49"
                             >
                 <TextBlock x:Name="delbtn_text" FontSize="25 
                                 "  VerticalAlignment="Center" 
@@ -30,15 +30,15 @@
 
             </Border>
 
-            <TextBlock Margin="0,25,-1,-123" FontFamily="Times New Roman" FontSize="60" FontWeight="Bold" Grid.Row="1" TextAlignment="Center"><Run Text="do you want to cancel ?"/><LineBreak/><Run Text=" "/></TextBlock>
+            <TextBlock Margin="18,16,20,-102" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" Grid.Row="1" TextAlignment="Center"><Run Text="do you want to cancel ?"/><LineBreak/><Run Text=" "/></TextBlock>
 
-            <Border Style="{DynamicResource save_bd}" Margin="129,213,386,-212" Grid.Row="1" MouseDown="Border_MouseDown_2" Height="NaN">
+            <Border Style="{DynamicResource save_bd}" Margin="63,105,247,-103" Grid.Row="1" MouseDown="Border_MouseDown_2" Height="NaN">
                 <TextBlock Style="{DynamicResource tx1}" FontSize="25" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center">
                     YES
                 </TextBlock>
 
             </Border>
-            <Border Style="{DynamicResource x_bd}" Margin="378,212,137,-211" Grid.Row="1" MouseDown="Border_MouseDown" Height="NaN" Width="NaN">
+            <Border Style="{DynamicResource x_bd}" Margin="244,105,66,-104" Grid.Row="1" MouseDown="Border_MouseDown" Height="NaN" Width="NaN">
                 <TextBlock Style="{DynamicResource tx1}" FontSize="25" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center">
                    NO
                 </TextBlock>

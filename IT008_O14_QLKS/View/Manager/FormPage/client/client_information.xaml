@@ -29,7 +29,7 @@
             <Setter Property="CornerRadius" Value="5">
 
             </Setter>
-            <Setter Property="Margin" Value="0,20,0,0">
+            <Setter Property="Margin" Value="0,16,0,0">
 
             </Setter>
 
@@ -99,7 +99,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Text="Profile" FontSize="35" FontFamily="Times New Roman" Margin="17,18,199,439" Foreground="White"/>
-                <StackPanel Margin="0,139,0,-6">
+                <StackPanel Margin="0,122,0,-6">
                     <Border Style="{DynamicResource bd}">
                         <Grid>
                             <TextBlock  Style="{DynamicResource thuoctinh}" Text="Name"  />
@@ -144,6 +144,14 @@
                         <Grid>
                             <TextBlock  Style="{DynamicResource thuoctinh}" Text="Phone" Margin="7,4,0,3"/>
                             <TextBlock x:Name="phone" Style="{DynamicResource thongtin}" Text="Name" TextAlignment="Right"/>
+                        </Grid>
+
+                    </Border>
+                    <Border Style="{DynamicResource bd}">
+
+                        <Grid>
+                            <TextBlock  Style="{DynamicResource thuoctinh}" Text="Email" Margin="7,4,0,3"/>
+                            <TextBlock x:Name="Email" Style="{DynamicResource thongtin}" Text="Email" TextAlignment="Right"/>
                         </Grid>
 
                     </Border>

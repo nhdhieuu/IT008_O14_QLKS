@@ -17,6 +17,8 @@ using IT008_O14_QLKS.Connection_db;
 using System.Data.SqlClient;
 using System.Data;
 using IT008_O14_QLKS.Util;
+using IT008_O14_QLKS.Send_Email;
+using System.Net.Mail;
 
 namespace IT008_O14_QLKS
 {
@@ -317,7 +319,13 @@ namespace IT008_O14_QLKS
             pass.Password = Properties.Settings.Default.PassWord;
             
         }
-        
+
+        private void fgpw_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            sendemail a = new sendemail();
+            a.ShowDialog();
+
+        }
     }
     }
 

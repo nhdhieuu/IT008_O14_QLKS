@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +86,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                     {
                         gender.Text = "Female";
                     }
+                    Email.Text=reader.GetString(11); 
                 }
             }
 

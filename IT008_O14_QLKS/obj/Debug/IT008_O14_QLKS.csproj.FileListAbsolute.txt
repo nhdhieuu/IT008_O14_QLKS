@@ -190,3 +190,5 @@ D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.GenerateResource.cac
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CoreCompileInputs.cache
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.csproj.CopyComplete
 D:\code\Dack\IT008_O14_QLKS\obj\Debug\IT008_O14_QLKS.exe
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\Send Email\sendemail.g.cs
+D:\code\DACK\IT008_O14_QLKS\obj\Debug\Send Email\sendemail.baml

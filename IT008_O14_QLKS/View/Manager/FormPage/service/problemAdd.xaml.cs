@@ -1,5 +1,8 @@
-﻿using System;
+﻿using IT008_O14_QLKS.Connection_db;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,33 +22,50 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
     /// </summary>
     public partial class problemAdd : Window
     {
+        DB_connection dB_Connection = new DB_connection();
+        SqlDataAdapter adapter;
+        DataTable dataTable = new DataTable();
         public problemAdd()
         {
             InitializeComponent();
+            try
+            {
+                String str = $"select top(1) MAPR from PROBLEM  order by MAPR DESC";
+                adapter = new SqlDataAdapter(str, dB_Connection.sqlCon);
+                adapter.Fill(dataTable);
+                string idLon = dataTable.Rows[0]["MAPR"].ToString();
+                idLon = idLon.Substring(2);
+                int soht = int.Parse(idLon);
+                soht++;
+                string sommoi = "PR" + soht.ToString();
+                problemID.Text = sommoi;
+            }
+            catch { }
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-        private void close_lb_MouseDown(object sender, MouseButtonEventArgs e)
+        private void close_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
-        private void close_lb_MouseEnter(object sender, MouseEventArgs e)
+        private void close_border_MouseEnter(object sender, MouseEventArgs e)
         {
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
 
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF1F0E7"));
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
         }
-        private void close_lb_MouseLeave(object sender, MouseEventArgs e)
+
+        private void close_border_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
-
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
         }
+
         private void add_border_MouseEnter(object sender, MouseEventArgs e)
         {
             add_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#000000"));

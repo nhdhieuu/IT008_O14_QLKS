@@ -9,16 +9,22 @@
      Height="500" Width="330" ResizeMode="NoResize"  >
     <Border  BorderThickness="2" BorderBrush="Black" CornerRadius="10" Background="#E9E5D9" MouseDown="Border_MouseDown">
         <Grid Background="Transparent">
-            <Border x:Name="close_b" CornerRadius="10" Margin="300,0,0,470"  MouseLeave="close_lb_MouseLeave" MouseDown="close_lb_MouseDown"  MouseEnter="close_lb_MouseEnter">
-                <Label Name="close_lb" Cursor="Hand" Content="X"  Foreground="#740909"
- FontSize="25"   VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="0" Margin="0,-5,0,0" />
+            <Border x:Name="close_border"  
+        Background="Transparent" MouseDown="close_border_MouseDown" MouseEnter="close_border_MouseEnter" MouseLeave="close_border_MouseLeave"
+        CornerRadius="0,5,0,0" Margin="298,0,0,468" Cursor="Hand"
+        >
+                <TextBlock x:Name="close_text" FontSize="25 
+            "  VerticalAlignment="Center" 
+               HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+               Foreground="#740909"/>
+
             </Border>
             <TextBlock Text="Add Staff" FontSize="35" FontFamily="Times New Roman" Margin="0,35,0,415"
            HorizontalAlignment="Center" Width="137"/>
             <Grid Margin="0,90,0,0">
 
                 <Label Content="ID" VerticalAlignment="Top" FontFamily="Times New Roman " FontSize="18" Margin="36,-4,209,0" FontWeight="Bold" Foreground="#1D19E3"/>
-                <TextBox x:Name="staffID"  Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16" Margin="116,3,0,0"
+                <TextBox x:Name="staffID" IsEnabled="False" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="16" Margin="116,3,0,0"
                          Width="173" TextAlignment="Right" Foreground="#FFC6980A" BorderThickness="0"/>
                 <Rectangle Margin="36,27,36,377" Fill="Black" />
 

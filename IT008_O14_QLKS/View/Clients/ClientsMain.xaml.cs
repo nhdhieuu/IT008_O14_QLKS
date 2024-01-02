@@ -18,7 +18,7 @@ namespace IT008_O14_QLKS.View.Clients
             this.username = username;
             InitializeComponent();
             main = 1;
-            DataContext = new ClientsHome(username);
+            DataContext = new ClientsHome(username,this);
         }
         int main = 1;
         
@@ -72,7 +72,7 @@ namespace IT008_O14_QLKS.View.Clients
         private void border1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             main = 1;
-            DataContext = new ClientsHome(username);
+            DataContext = new ClientsHome(username, this);
             text2.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
             border2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
             border2_MouseLeave(sender, e);
@@ -80,7 +80,25 @@ namespace IT008_O14_QLKS.View.Clients
 
 
         }
+        public void doiview()
+        {
 
+            DataContext = new ClientsRoom(this.username);
+            text1.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#C6980A"));
+            border1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F1F0E7"));
+            main = 2;
+            if (main != 2)
+            {
+                text2.Foreground = new SolidColorBrush(Colors.Black);
+                border2.Background = new SolidColorBrush(Colors.Transparent);
+            }
+            if (main != 1)
+            {
+                text1.Foreground = new SolidColorBrush(Colors.Black);
+                border1.Background = new SolidColorBrush(Colors.Transparent);
+            }
+
+        }
         private void border2_MouseEnter(object sender, MouseEventArgs e)
         {
             
@@ -150,7 +168,7 @@ namespace IT008_O14_QLKS.View.Clients
             border2_MouseLeave(sender, e);
         }
 
-        
+   
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {

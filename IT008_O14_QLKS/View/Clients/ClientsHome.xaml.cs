@@ -48,10 +48,10 @@ namespace IT008_O14_QLKS.View.Clients
         {
             InitializeComponent();
         }
-        public ClientsHome(string username)
+        public ClientsHome(string username,ClientsMain cm)
         {
             InitializeComponent();
-            
+            this.cm = cm;
             sqlcmd.CommandType = CommandType.Text;
             sqlcmd.Connection = connect.sqlCon;
             sqlcmd.CommandText = "SELECT * FROM KHACHHANG WHERE USERNAME='" + username + "'";
@@ -165,7 +165,9 @@ namespace IT008_O14_QLKS.View.Clients
                 stk.Children.Add(c);
             }    
            
-        }    
+        }
+        ClientsMain cm;
+     
         private void Save_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             this.Save.Visibility = Visibility.Hidden;
@@ -322,6 +324,11 @@ namespace IT008_O14_QLKS.View.Clients
         {
             ChangePass cp=new ChangePass(tendn,"Client");
             cp.ShowDialog();
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.cm.doiview();
         }
     }
 }

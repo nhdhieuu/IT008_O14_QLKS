@@ -10,7 +10,7 @@
         <Grid >
 
 
-            <Border x:Name="background" CornerRadius="10,10,10,10" Background="White" BorderBrush="#FF7D7070" BorderThickness="2,2,2,2" >
+            <Border x:Name="background" CornerRadius="10,10,10,10" Background="#E5FFFFFF" BorderBrush="#FF7D7070" BorderThickness="2,2,2,2" >
 
             </Border>
 

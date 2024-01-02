@@ -314,13 +314,13 @@
                                 </ComboBox>
 
                             </Border>
-                            <Border Name="AscBorder" CornerRadius="5" Margin="35,95,130,32" Background="#D9D9D9E5" MouseDown="AscBorder_OnMouseDown" BorderBrush="#FF811B1B" BorderThickness="0.5">
+                            <Border Name="AscBorder" CornerRadius="5" Margin="35,95,130,28" Background="#D9D9D9E5" MouseDown="AscBorder_OnMouseDown" BorderBrush="#FF811B1B" BorderThickness="0.5">
                                 <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,-7" >
                                     <TextBlock Name="AscTextBlock" Text="ASC" HorizontalAlignment="Center" Foreground="#FF811B1B"></TextBlock>
                                 </Label>
 
                             </Border>
-                            <Border Name="DescBorder" CornerRadius="5" Margin="135,95,30,32" Background="#D9D9D9E5" MouseDown="DescBorder_OnMouseDown" BorderBrush="#FF111176" BorderThickness="0.5">
+                            <Border Name="DescBorder" CornerRadius="5" Margin="135,95,30,28" Background="#D9D9D9E5" MouseDown="DescBorder_OnMouseDown" BorderBrush="#FF111176" BorderThickness="0.5">
                                 <Label HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="20">
                                     <TextBlock Name="DescTextBlock" Text="DESC" HorizontalAlignment="Center" Height="30" Foreground="#FF111176"></TextBlock>
                                 </Label>

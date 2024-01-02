@@ -88,12 +88,12 @@
 
                 </Grid>
             </Border>
-            <Border x:Name="add" BorderBrush="White" HorizontalAlignment="Left" Height="42" Margin="207,539,0,0" VerticalAlignment="Top" Width="93" CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
-                <Label Content="+" Margin="25,-16,6,-10" FontSize="39" FontWeight="Bold" Foreground="White"/>
+            <Border x:Name="add"  HorizontalAlignment="Left" Height="39" Width="93" BorderBrush="White" BorderThickness="1" Margin="207,541,0,0" VerticalAlignment="Top"  CornerRadius="5,5,5,5" Background="#FF66B96A" Cursor="Hand" MouseDown="Border_MouseDown_1" MouseEnter="Border_MouseEnter_1" MouseLeave="Border_MouseLeave_1">
+                <Label Content="+" Margin="27,-17,4,-9" FontSize="39" FontWeight="Bold" Foreground="White"/>
             </Border>
             <Border  HorizontalAlignment="Left" Height="36" Margin="145,23,0,0" VerticalAlignment="Top" Width="338" CornerRadius="5,5,5,5" Background="#D7D7D7">
                 <Grid  Margin="4,0,7,0">
-                    
+
                     <Image x:Name="Search" Margin="296,6,0,6" Source="/Resources/search.png" Cursor="Hand" MouseDown="Search_MouseDown" />
                     <TextBox x:Name="Search_tbx" Margin="0,0,31,0" FontFamily="Sylfaen " FontSize="22" Background="{x:Null}" BorderBrush="{x:Null}">
 

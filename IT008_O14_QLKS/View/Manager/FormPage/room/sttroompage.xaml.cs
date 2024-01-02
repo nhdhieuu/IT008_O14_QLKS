@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 using IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2;
 using IT008_O14_QLKS.View.Manager.FormPage.room.sttroompage2.adjust;
 using IT008_O14_QLKS.View.Manager.Card;
+using IT008_O14_QLKS.Connection_db;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -25,6 +28,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
     {
         string cstt { get; set; }
         string ID;
+        DB_connection connect = new DB_connection();
         public sttroompage(string cstt,string ID)
         {
             this.ID = ID;
@@ -33,10 +37,27 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
            
                         this.cstt=cstt;
              Load();
-            roomcard2 a = new roomcard2();
-            room.Content = a.Content;
-            
+            SqlCommand sqlcmd = new SqlCommand();
+
+            sqlcmd.CommandType = CommandType.Text;
+
+
+            sqlcmd.CommandText = $"select * from PHONG where TENPHONG ='{ID}'";
+            sqlcmd.Connection = connect.sqlCon;
+            SqlDataReader reader2 = sqlcmd.ExecuteReader();
+
+            using (reader2)
+            {
+                if (reader2.Read()) // Kiểm tra xem có dữ liệu hay không
+                {
+                    roomcard2 rc = new roomcard2(reader2.GetString(1), reader2.GetString(2), reader2.GetInt32(11), "RoomInfor");
+                    room.Content = rc;
+                }
+            }
         }
+     
+            
+        
         private void Load()
         {
             if(cstt=="Unavailable")

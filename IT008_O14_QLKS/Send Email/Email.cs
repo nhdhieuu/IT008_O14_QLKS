@@ -54,7 +54,7 @@ namespace IT008_O14_QLKS.Send_Email
          try
             {
                 MailAddress to = new MailAddress(toemail);
-                MailAddress from = new MailAddress("instatest2132004@gmail.com");
+                MailAddress from = new MailAddress("ginkohotel@gmail.com");
 
                 MailMessage email = new MailMessage(from, to);
                 email.Subject = "Changing GINKGO account password";
@@ -65,7 +65,7 @@ namespace IT008_O14_QLKS.Send_Email
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587; // Sử dụng cổng 587 cho TLS
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("instatest2132004@gmail.com", "rifm dlmg rvcg burm");
+                smtp.Credentials = new NetworkCredential("ginkohotel@gmail.com", "buvp zhce avyp rphz");
 
                 smtp.EnableSsl = true; // Bật SSL
 

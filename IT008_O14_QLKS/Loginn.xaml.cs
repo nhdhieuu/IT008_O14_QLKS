@@ -388,6 +388,12 @@ namespace IT008_O14_QLKS
             a.ShowDialog();
 
         }
+
+        private void fgpw_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            sendemail a = new sendemail();
+            a.ShowDialog();
+        }
     }
     }
 

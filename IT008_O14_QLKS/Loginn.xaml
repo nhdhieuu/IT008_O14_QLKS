@@ -109,7 +109,7 @@
 <!-- -->
 <!--                                 <TextBlock x:Name="warning"  Text="Incorrect login infor"  FontSize="26" FontFamily="Sylfaen" Margin="48,2,185,-8" Foreground="#FFF11A1A" Visibility="Hidden" /> -->
 <!-- ======= -->
-                                <TextBlock x:Name="fgpw"  Text="Forgot password"  FontSize="24" FontFamily="Sylfaen" Margin="316,7,36,-5" Foreground="#FF897C54" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Cursor="Hand"/>
+                                <TextBlock x:Name="fgpw"  Text="Forgot password"  FontSize="24" FontFamily="Sylfaen" Margin="316,7,36,-5" Foreground="#FF897C54" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" Cursor="Hand" MouseDown="fgpw_MouseDown_1"/>
                                 <TextBlock x:Name="warning"  Text="Incorrect login infor"  FontSize="26" FontFamily="Sylfaen"  Margin="48,2,185,-8" Foreground="#FFF11A1A" Visibility="Hidden" />
                                 <StackPanel x:Name="RememberMeStackPanel" Orientation="Horizontal"  Margin="48,2,185,-8" Visibility="Visible">
                                     <CheckBox x:Name="RememberMeCheckBox"  VerticalAlignment="Center"  ></CheckBox>

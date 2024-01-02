@@ -105,7 +105,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             }
             sqlcmd.Parameters.Add("@image", SqlDbType.VarBinary).Value = imageData;
 
-            sqlcmd.CommandText = "INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,STYLE,INTERNET,HOBOI,GIATHEOGIO,GIATHEONGAY,NGUOI,CLEANING, MAINTAIN,EQUIP, ILLUS) VALUES ('M" + this.number.Content + "','" + this.number.Content + "','" + this.type_cbb.SelectionBoxItem.ToString() + "'," + this.SoGiuong.Text + ",'" + "Empty" + "','" + Bontam + "','" + this.Style.SelectionBoxItem.ToString() + "','" + InternetTemp + "','" + Hoboi + "',@GiaGio,@GiaNgay," + this.people.Content + ",'" + this.Cleaning.SelectionBoxItem.ToString() + "','" + this.Maintain.SelectionBoxItem.ToString() + "','" + EquipTemp + "',@image);";
+            sqlcmd.CommandText = "INSERT INTO PHONG (MAPHONG,TENPHONG,LOAIPHONG,SOGIUONG,TRANGTHAI,BONTAM,STYLE,INTERNET,HOBOI,GIATHEOGIO,GIATHEONGAY,NGUOI,CLEANING, MAINTAIN,EQUIP, ILLUS) VALUES ('M" + this.number.Content + "','" + this.number.Content + "','" + this.type_cbb.SelectionBoxItem.ToString() + "'," + this.SoGiuong.Text + ",'" + "Available" + "','" + Bontam + "','" + this.Style.SelectionBoxItem.ToString() + "','" + InternetTemp + "','" + Hoboi + "',@GiaGio,@GiaNgay," + this.people.Content + ",'" + this.Cleaning.SelectionBoxItem.ToString() + "','" + this.Maintain.SelectionBoxItem.ToString() + "','" + EquipTemp + "',@image);";
             if (count == 1)
                 MessageBox.Show("This room already exists!");
             else

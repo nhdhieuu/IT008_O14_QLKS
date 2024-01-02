@@ -65,7 +65,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.client
                 string sqlQuery = $"UPDATE THUEPHONG SET NGAYKT = '{trueday}' WHERE MATHUEPHONG ='{ID}'";
               if (ngaybd > myDateTime)
                {
-                    MessageBox.Show(ngaybd.ToString()+myDateTime);
+                  
                   sqlQuery = $"UPDATE THUEPHONG SET KQUATHUE= 'That Bai' WHERE MATHUEPHONG ='{ID}'";
               }
                 if (type=="book")

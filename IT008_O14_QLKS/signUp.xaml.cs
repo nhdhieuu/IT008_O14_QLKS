@@ -230,7 +230,7 @@ namespace IT008_O14_QLKS
 
         private void lgborder_MouseEnter(object sender, MouseEventArgs e)
         {
-            lgborder.Background = new SolidColorBrush(Colors.Black);
+            lgborder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8C6D0D"));
         }
 
         private void lgborder_MouseLeave_1(object sender, MouseEventArgs e)

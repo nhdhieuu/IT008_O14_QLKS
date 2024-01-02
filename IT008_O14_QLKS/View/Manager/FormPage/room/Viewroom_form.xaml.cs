@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using Microsoft.Win32;
 using System.IO;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace IT008_O14_QLKS.View.Manager.FormPage.room
 {
@@ -157,13 +158,15 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 Ilus.ImageSource = bitmap;
             }
             catch { }
+
             sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
             sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-               
+           
                 sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
+              
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
                 this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");

@@ -5,10 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IT008_O14_QLKS.View.Manager.FormPage.client"
              mc:Ignorable="d" 
-        Topmost="True" 
-         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
-         WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
-             d:DesignHeight="698" d:DesignWidth="785">
+     
+         Icon="/Resources/icons8-ginkgo-64 (1).png" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent" Height="1214" Width="803">
     <Window.Resources>
         <Style x:Key="BD" TargetType="Border">
             <Setter Property="Height" Value="41" >

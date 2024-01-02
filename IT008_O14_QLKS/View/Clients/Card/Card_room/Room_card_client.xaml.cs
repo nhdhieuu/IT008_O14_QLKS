@@ -43,6 +43,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
     /// </summary>
     public partial class Room_card_client : UserControl
     {
+        TimeSpan giotinhtien;
         DateTime ngaybd;
         string ID;
         DateTime myDateTime = DateTime.Now;
@@ -61,7 +62,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             this.ID = ID;
             InitializeComponent();
             xoa.Visibility = Visibility.Collapsed;
-            card.Content = new roomcard2();
+       
         
             bd.CornerRadius = new CornerRadius(10, 10, 10, 10);
           
@@ -100,7 +101,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             this.ID = ID;
             InitializeComponent();
             xoa.Visibility = Visibility.Collapsed;
-            card.Content = new roomcard2();
+          
 
             bd.CornerRadius = new CornerRadius(10, 10, 10, 10);
 
@@ -153,7 +154,9 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         TimeSpan giothue;
         public void reset()
         {
-            
+            tienphong = 0;
+            tongtienphong = 0;
+            tongtien = 0;
             load();
             loadservice();
             loadpr();
@@ -178,6 +181,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
             }
             tinhtienphong();
+         
         }
         private void load()
         {
@@ -223,7 +227,8 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                     giothue = reader.GetDateTime(4) - reader.GetDateTime(3);
                     TimeSpan giodung = timeDifference;
-                    if(giothue<timeDifference)
+                    giotinhtien= reader.GetDateTime(4) - reader.GetDateTime(3);
+                    if (giothue<timeDifference)
                     {
                         giodung = giothue;
                     }    
@@ -268,8 +273,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                             typetxt.Text = "days left";
                             nbtxtleft.Text = giodung.Days.ToString();
-                            if (giodung.Hours > 0)
-                                nbtxtleft.Text = (giodung.Days+1).ToString();
+                      
 
 
 
@@ -317,8 +321,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                             {
 
                                 nbtxtleft.Text = giodung.Hours.ToString();
-                                if (giodung.Minutes > 0)
-                                    nbtxtleft.Text = (giodung.Hours + 1).ToString();
+                              
 
                                
 
@@ -358,7 +361,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         decimal tienphong = 0;
         private decimal tinhtienphong()
         {
-         
+
            
             tongtienphong += tongtien;
             SqlCommand sqlcmd = new SqlCommand();
@@ -371,23 +374,23 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
          
             while (reader.Read())
             {
+                tienphong = 0;
                
-                if (giothue.Days > 0)
+                if (giotinhtien.Days > 0)
                 {
-                    tienphong += (decimal)reader.GetSqlMoney(10) * giothue.Days;
-                    if (giothue.Hours > 0)
-                    {
-                        tienphong += (decimal)reader.GetSqlMoney(10);
-                    }    
+
+                    tienphong += giotinhtien.Days * (decimal)reader.GetSqlMoney(10);
+
+
                 }    
                    
                 else {
-                    if (giothue.Hours >= 0)
-                        tienphong += (decimal)reader.GetSqlMoney(9) * giothue.Hours;
-                    if(giothue.Minutes > 0)
+                    if (giotinhtien.Hours > 0)
+                        tienphong += (decimal)reader.GetSqlMoney(9) * giotinhtien.Hours;
+                   else
                     {
                         tienphong += (decimal)reader.GetSqlMoney(9);
-                    }    
+                    }
                 }
                 
 
@@ -591,6 +594,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                         window.reset();
                     }
                 }
+              
             }    
             if (type != "book" && type != "huy" &&type !="book2")
             {
@@ -608,6 +612,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                 }
             }
+            this.reset();
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -693,8 +698,9 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
            
         }
        public int chk = 0;
-       
-        
+
+        public object Messagebox { get; private set; }
+
         private void CK_MouseDown(object sender, MouseButtonEventArgs e)
         {
            
@@ -741,6 +747,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             type = "book";
             main.Background= new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3E70F0"));
             main.CornerRadius = new CornerRadius(10);
+            rbutton.Visibility = Visibility.Collapsed;
             sv_grid.Visibility = Visibility.Collapsed;
             bd.Visibility = Visibility.Collapsed;
             add.Visibility = Visibility.Collapsed;
@@ -775,8 +782,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     typetxt.Text = "day";
                 }
                 nbtxtleft.Text = giothue.Days.ToString();
-                if (giothue.Hours > 0)
-                    nbtxtleft.Text = (giothue.Days + 1).ToString();
+                
             }
             else
             {
@@ -787,15 +793,16 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     typetxt.Text = "hour";
                 }
                 nbtxtleft.Text = giothue.Hours.ToString();
-                if (giothue.Minutes > 0)
-                    nbtxtleft.Text = (giothue.Hours + 1).ToString();
+                
             }
 
         }
         public void book2()
         {
             type = "book2";
-         
+          if(ftxt.Text!="cancel")
+                rbutton.Visibility = Visibility.Visible;
+            
             view.Text = "ACCEPT";
            
             ftxt.Text = $"reserving by {khachhang}";
@@ -806,6 +813,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
         {
             x.Visibility = Visibility.Visible;
             type = "huy";
+            rbutton.Visibility = Visibility.Collapsed;
             main.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BF0B0B"));
             main.CornerRadius = new CornerRadius(10);
            Bdcuoi.Visibility = Visibility.Collapsed;
@@ -848,8 +856,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     typetxt.Text = "day";
                 }
                 nbtxtleft.Text = giothue.Days.ToString();
-                if(giothue.Hours>0)
-                    nbtxtleft.Text = (giothue.Days+1).ToString();
+              
             }
             else
             {
@@ -860,8 +867,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                     typetxt.Text = "hour";
                 }
                 nbtxtleft.Text = giothue.Hours.ToString();
-                if (giothue.Minutes > 0)
-                    nbtxtleft.Text = (giothue.Hours + 1).ToString();
+              
             }
            
             

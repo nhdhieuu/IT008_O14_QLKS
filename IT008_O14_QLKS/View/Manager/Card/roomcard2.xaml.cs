@@ -33,7 +33,7 @@ namespace IT008_O14_QLKS.View.Manager.Card
         public roomcard2()
         {
             InitializeComponent();
-            
+         
         }
       
         public roomcard2(string TenPhong, string Type, int SoNguoi, string Parents)

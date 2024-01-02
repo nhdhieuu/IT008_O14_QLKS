@@ -46,8 +46,10 @@ namespace IT008_O14_QLKS.View.Manager
             if(this.username != "")
             {
                 join = $"join khachhang on hoadon.makh = khachhang.makh where username = '{this.username}'";
+                this.NewReceiptButton.Visibility = Visibility.Hidden;
             }
             this.Loaded += receipt_Loaded;
+            
             
         }
 

@@ -202,8 +202,8 @@
             BorderThickness="2" BorderBrush="Gray">
                 <Grid>
                     <Label x:Name="txt" Content="you are renting 5 rooms" Foreground="#423F3F" FontSize="30" Margin="18,8,31,65" FontFamily="Times New Roman" />
-                    <Border CornerRadius="7" Margin="28,64,300,21" Background="#C6980A" Cursor="Hand">
-                        <Label x:Name="view_butt" Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"  Margin="19,0,1,0"/>
+                    <Border Style="{DynamicResource view_bd}" CornerRadius="7" Margin="28,65,264,22" Background="#C6980A" Cursor="Hand" MouseDown="Border_MouseDown">
+                        <Label x:Name="view_butt" Content="view" Foreground="White" FontSize="25" Background="Transparent" BorderThickness="0"  Margin="0,0,1,0" HorizontalContentAlignment="Center"/>
                     </Border>
                 </Grid>
             </Border>

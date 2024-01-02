@@ -41,8 +41,8 @@
 
                 </Image>
                 <Image x:Name="img2" Source="/Resources/right-arrow.png" Margin="16,25,801,1" Cursor="Hand" Visibility="Hidden" MouseDown="img2_MouseDown"/>
-                <Border x:Name="search" BorderBrush="Black" HorizontalAlignment="Center" Height="36" Margin="0,20,0,0" VerticalAlignment="Top" Width="242" CornerRadius="0,5,5,0" Background="#FFD9D9D9" Grid.RowSpan="2">
-                    <Grid  >
+                <Border x:Name="search" BorderBrush="Black" HorizontalAlignment="Center" Height="36" Margin="0,20,0,0" VerticalAlignment="Top" Width="242" CornerRadius="0,5,5,0" Background="#FFD9D9D9" Grid.RowSpan="2" Visibility="Hidden">
+                    <Grid Visibility="Hidden"  >
 
                         <TextBox x:Name="search_txt" Background="{x:Null}" BorderBrush="{x:Null}" Margin="7,0,38,0" RenderTransformOrigin="0.5,0.5" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift" FontSize="20" TextChanged="search_txt_TextChanged">
                             <TextBox.RenderTransform>
@@ -57,7 +57,7 @@
                         </TextBox>
                     </Grid>
                 </Border>
-                <Border x:Name="search2" BorderBrush="Black" HorizontalAlignment="Left" Height="36" Margin="209,20,0,0" VerticalAlignment="Top" Width="99" CornerRadius="0,5,5,0" Background="White" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+                <Border x:Name="search2" BorderBrush="Black" HorizontalAlignment="Left" Height="36" Margin="209,20,0,0" VerticalAlignment="Top" Width="99" CornerRadius="0,5,5,0" Background="White" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Visibility="Hidden">
                     <Border.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1"/>
@@ -78,7 +78,7 @@
 
                     </TextBlock>
                 </Border>
-                <TextBlock x:Name="filter" Text="Filter" FontSize="32" FontFamily="Times New Roman" Foreground="#C6980A" Margin="603,22,92,603" Grid.RowSpan="2"/>
+                <TextBlock x:Name="filter" Text="Filter" FontSize="32" FontFamily="Times New Roman" Foreground="#C6980A" Margin="564,18,131,607" Grid.RowSpan="2"/>
 
             </Grid>
 

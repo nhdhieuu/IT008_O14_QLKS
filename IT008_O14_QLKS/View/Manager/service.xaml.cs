@@ -29,8 +29,8 @@ namespace IT008_O14_QLKS.View.Manager
     public partial class service : UserControl
     {
         DB_connection db = new DB_connection();
-        private bool isAV = true;
-        private bool isFree = true;
+        private int isAV=0;
+        private int isFree=0 ;
         public service()
         {
             InitializeComponent();
@@ -254,10 +254,11 @@ namespace IT008_O14_QLKS.View.Manager
                         string ss;
                         if (aval_filter.IsChecked == true)
                         {
-                            if (isAV)
+                            if (isAV==1)
                                 ss = $"select * from DICHVU where (MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%') and SOLUONG>0 order by MADV";
-                            else
+                            else if (isAV==-1)
                                 ss = $"select * from DICHVU where (MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%') and SOLUONG=0 order by MADV";
+                            else ss = $"select * from DICHVU where MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%' order by MADV";
                         }
                         else
                             ss = $"select * from DICHVU where MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%' order by MADV";
@@ -296,10 +297,11 @@ namespace IT008_O14_QLKS.View.Manager
                         string ss;
                         if (aval_filter.IsChecked == true)
                         {
-                            if (isAV)
+                            if (isAV==1)
                                 ss = $"select * from DICHVU where (MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%') and  SOLUONG>0 order by MADV";
-                            else
+                            else if(isAV==-1)
                                 ss = $"select * from DICHVU where (MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%') and SOLUONG=0 order by MADV";
+                            else ss = $"select * from DICHVU where MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%' order by MADV";
                         }
                         else
                             ss = $"select * from DICHVU where MADV='{search_card.Text}' or TENDV LIKE '%{search_card.Text}%' order by MADV";
@@ -346,10 +348,11 @@ namespace IT008_O14_QLKS.View.Manager
                         string ss;
                         if(fee_filter.IsChecked==true)
                         {
-                            if(isFree)
+                            if(isFree==1)
                                  ss= $"select * from PROBLEM where (MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%')and PRICE>0 order by MAPR";
-                            else
+                            else if(isFree==-1)
                                 ss = $"select * from PROBLEM where (MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%') and PRICE=0 order by MAPR";
+                            else ss = $"select * from PROBLEM where MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%' order by MAPR";
                         }   
                         else
                             ss = $"select * from PROBLEM where MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%' order by MAPR";
@@ -388,10 +391,11 @@ namespace IT008_O14_QLKS.View.Manager
                         string ss;
                         if (fee_filter.IsChecked == true)
                         {
-                            if (isFree)
+                            if (isFree==1)
                                 ss = $"select * from PROBLEM where (MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%')and PRICE>0 order by MAPR";
-                            else
+                            else if(isFree==-1)
                                 ss = $"select * from PROBLEM where (MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%') and PRICE=0 order by MAPR";
+                            else ss = $"select * from PROBLEM where MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%' order by MAPR";
                         }
                         else
                             ss = $"select * from PROBLEM where MAPR='{search_problem.Text}' or PRNAME like '%{search_problem.Text}%' order by MAPR";
@@ -428,13 +432,19 @@ namespace IT008_O14_QLKS.View.Manager
         {
             try
             {
-                ds_dichvu.Children.Clear();
+
                 string ss;
-                if (isAV)
+                
+                if (isAV==0)
+                {
+                    return;
+                }
+                else if(isAV==1)
                 {
                     ss = "select * from DICHVU where SOLUONG>0 order by MADV";
                 }
                 else ss = "select * from DICHVU where SOLUONG=0 order by MADV";
+                ds_dichvu.Children.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(ss, db.sqlCon);
                 DataTable dataTable = new DataTable();
                 da.Fill(dataTable);
@@ -467,6 +477,9 @@ namespace IT008_O14_QLKS.View.Manager
         {
             try
             {
+                aval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                unaval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                isAV = 0;
                 ds_dichvu.Children.Clear();
                 string ss = "select * from DICHVU order by MADV";
                 SqlDataAdapter da = new SqlDataAdapter(ss, db.sqlCon);
@@ -499,9 +512,10 @@ namespace IT008_O14_QLKS.View.Manager
         // chọn available service
         private void aval__MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!isAV)
+            if (aval_filter.IsChecked == false) { return; }
+            if (isAV!=1)
             {
-                isAV = true;
+                isAV = 1;
                 aval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 unaval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
                 if (aval_filter.IsChecked == true)
@@ -542,9 +556,10 @@ namespace IT008_O14_QLKS.View.Manager
         // chọn unavailable servcie
         private void unaval__MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (isAV)
+            if(aval_filter.IsChecked==false) { return; }
+            if (isAV!=-1)
             {
-                isAV = false;
+                isAV = -1;
                 unaval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 aval_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
                 if (aval_filter.IsChecked == true)
@@ -587,16 +602,19 @@ namespace IT008_O14_QLKS.View.Manager
         {
             try
             {
-                ds_problem.Children.Clear();
+                
                 DataTable dataTable1 = new DataTable();
                 string ss;
-                SolidColorBrush backgroundBrush = free_.Background as SolidColorBrush;
-                Color cl1 = (Color)ColorConverter.ConvertFromString("#12CE69");
-                if (backgroundBrush.ToString().Equals(cl1.ToString()))
+                
+                if (isFree==0)
                 {
-                    ss = "select * from PROBLEM where PRICE=0 order by MAPR";
+                    return;
                 }
+                else if (isFree==1)
+                    ss = "select * from PROBLEM where PRICE=0 order by MAPR";
+
                 else ss = "select * from PROBLEM where PRICE>0 order by MAPR";
+                ds_problem.Children.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(ss, db.sqlCon);
                 da.Fill(dataTable1);
                 for (int i = 0; i < dataTable1.Rows.Count; i++)
@@ -628,6 +646,9 @@ namespace IT008_O14_QLKS.View.Manager
         {
             try
             {
+                free_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                fee_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
+                isFree = 0;
                 ds_problem.Children.Clear();
                 DataTable dataTable1 = new DataTable();
                 string ss = "select * from PROBLEM order by MAPR";
@@ -660,10 +681,10 @@ namespace IT008_O14_QLKS.View.Manager
         // chọn problem miễn phí
         private void free__MouseDown(object sender, MouseButtonEventArgs e)
         {
-            SolidColorBrush backgroundBrush = free_.Background as SolidColorBrush;
-            Color cl1 = (Color)ColorConverter.ConvertFromString("#12CE69");
-            if (!backgroundBrush.ToString().Equals(cl1.ToString()))
+           if(fee_filter.IsChecked==false) { return; }
+            if (isFree!=1)
             {
+                isFree = 1;
                 free_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 fee_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
                 if (fee_filter.IsChecked == true)
@@ -704,10 +725,10 @@ namespace IT008_O14_QLKS.View.Manager
         // chọn problem có phí
         private void fee__MouseDown(object sender, MouseButtonEventArgs e)
         {
-            SolidColorBrush backgroundBrush = fee_.Background as SolidColorBrush;
-            Color cl1 = (Color)ColorConverter.ConvertFromString("#12CE69");
-            if (!backgroundBrush.ToString().Equals(cl1.ToString()))
+            if (fee_filter.IsChecked == false) { return; }
+            if (isFree!=-1)
             {
+                isFree = -1;
                 fee_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#12CE69"));
                 free_.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
                 if (fee_filter.IsChecked == true)

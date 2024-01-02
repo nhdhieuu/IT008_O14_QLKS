@@ -287,7 +287,7 @@
         </Grid.RowDefinitions>
         <!-- Phần trên -->
         <Grid>
-            <Image Source="/Resources/reset.png" Margin="14,24,721,5"/>
+            <Image Source="/Resources/reset.png" MouseDown="Image_MouseDown" Cursor="Hand" Margin="14,24,721,5"/>
             <TextBlock Text="staff" FontSize="45" Foreground="#C6980A" 
                    Padding="0,5,0,0"  VerticalAlignment="Center"
                    Margin="70,0,612,0" Height="53"/>
@@ -325,7 +325,7 @@
                             <Grid Margin="0,0,-2,-2">
                                 <Label Content="postion" Foreground="White" FontSize="25" Padding="0" Margin="15,5,72,65"/>
 
-                                <ComboBox x:Name="postion_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True"  FontSize="15" Margin="15,47,15,25" 
+                                <ComboBox IsEnabled="False" x:Name="postion_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True"  FontSize="15" Margin="15,47,15,25" 
                                           SelectionChanged="postion_combo_SelectionChanged" >
                                     <ComboBoxItem   Content="Receptionist"/>
                                     <ComboBoxItem Content="Service"/>
@@ -343,7 +343,7 @@
                     <Grid>
                         <Label Content="Sort by: " FontSize="32" FontWeight="Light" Margin="20,10,42,99"/>
                         <CheckBox  x:Name="sort_checkbox" Cursor="Hand" Margin="191,31,18,120" Checked="sort_checkbox_Checked" Unchecked="sort_checkbox_Unchecked"/>
-                        <ComboBox x:Name="sort_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True" Margin="25,68,25,72" FontSize="15" SelectionChanged="sort_combo_SelectionChanged">
+                        <ComboBox IsEnabled="False" x:Name="sort_combo" Style="{DynamicResource RoundComboBox}" IsReadOnly="True" Margin="25,68,25,72" FontSize="15" SelectionChanged="sort_combo_SelectionChanged">
                             <ComboBoxItem  Content="ID"/>
                             <ComboBoxItem Content="Name"/>
                             <ComboBoxItem Content="Postion"/>

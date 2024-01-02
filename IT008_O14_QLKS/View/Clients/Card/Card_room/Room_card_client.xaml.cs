@@ -136,8 +136,15 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
             }
             if(type=="client")
             {
-                rbutton.Visibility = Visibility.Collapsed;  
+                if (typetxt.Text!="PAID"&& typetxt.Text != "NOT PAID" && ftxt.Text!="cancel"&&ftxt.Text != "reserving...")
+                {
+
+                }    
+                    else {
+                            rbutton.Visibility = Visibility.Collapsed;
+                        }
             }    
+
             tinhtienphong();
             tinhgio();
 

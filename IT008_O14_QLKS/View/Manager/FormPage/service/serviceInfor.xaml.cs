@@ -57,23 +57,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-        private void close_lb_MouseDown(object sender, MouseButtonEventArgs e)
+        private void close_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
-        private void close_lb_MouseEnter(object sender, MouseEventArgs e)
+        private void close_border_MouseEnter(object sender, MouseEventArgs e)
         {
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
 
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF1F0E7"));
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
         }
-        private void close_lb_MouseLeave(object sender, MouseEventArgs e)
+
+        private void close_border_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
-
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
         }
         private void adjust_border_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -127,7 +127,7 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.service
             }
             else if (adjust_lb.Content.ToString() == "adjust")
             {
-                serviceID.IsEnabled = true;
+                
                 serviceAmount.IsEnabled = true;
                 serviceName.IsEnabled = true;
                 servicePrice.IsEnabled = true;

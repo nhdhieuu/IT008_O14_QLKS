@@ -219,11 +219,11 @@ namespace IT008_O14_QLKS.View.Manager
         {
             if (!isSortBy)
             {
-                AscBorder.Background = new SolidColorBrush(Colors.Red);
-                AscTextBlock.Foreground = new SolidColorBrush(Colors.White);
+                //AscBorder.Background = new SolidColorBrush(Colors.Red);
+                //AscTextBlock.Foreground = new SolidColorBrush(Colors.White);
 
-                DescBorder.Background = new SolidColorBrush(Colors.Transparent);
-                DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
+                //DescBorder.Background = new SolidColorBrush(Colors.Transparent);
+                //DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
                 CheckBoxImage.Visibility = Visibility.Visible;
                 SortByComboBox.SelectedIndex = 0;
                 SortByComboBox.IsEnabled = true;
@@ -234,11 +234,11 @@ namespace IT008_O14_QLKS.View.Manager
             }
             else
             {
-                AscBorder.BorderBrush = new SolidColorBrush(Colors.LightBlue);
-                AscTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
-                DescBorder.BorderBrush = new SolidColorBrush(Colors.LightBlue);
-                DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
-                SortByBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
+                //AscBorder.BorderBrush = new SolidColorBrush(Colors.LightBlue);
+                //AscTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
+                //DescBorder.BorderBrush = new SolidColorBrush(Colors.LightBlue);
+                //DescTextBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
+                //SortByBorder.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F4E4B4B"));
                 CheckBoxImage.Visibility = Visibility.Hidden;
                 AscBorder.IsEnabled = false;
                 DescBorder.IsEnabled = false;

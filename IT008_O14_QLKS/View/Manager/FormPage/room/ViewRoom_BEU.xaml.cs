@@ -97,10 +97,8 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 {
                     this.type_background.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
                     this.type_background2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DA5C53"));
-                    this.TenKH_lbl.Content = "cleaning";
-                    this.denngay_lbl.Visibility = Visibility.Hidden;
-                    this.da_o_lbl.Visibility = Visibility.Hidden;
-                    this.tungay_lbl.Content = "Mo ta bla bla";
+                    this.type_background2.Visibility = Visibility.Collapsed;
+                    this.Height = this.Height - 70;
                 }
                 if (reader.GetString(12) == "Daily")
                     this.cleaning_cbx.SelectedIndex = 0;

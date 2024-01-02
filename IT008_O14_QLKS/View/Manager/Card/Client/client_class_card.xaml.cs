@@ -71,31 +71,40 @@ namespace IT008_O14_QLKS.View.Manager.Card.Client
                 clss.Foreground = new SolidColorBrush(Colors.Black);
 
             }
-            string truepath = "";
-            string currentFolderPath = AppDomain.CurrentDomain.BaseDirectory.ToString();
 
-            string[] parts = currentFolderPath.Split('\\');
-            for (int i = 0; i < parts.Length; i++)
+            try
             {
-                if (parts[i] != "Debug" && parts[i] != "bin")
-                    truepath += parts[i] + "/";
+                string truepath = "";
+                string currentFolderPath = AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+                string[] parts = currentFolderPath.Split('\\');
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    if (parts[i] != "Debug" && parts[i] != "bin")
+                        truepath += parts[i] + "/";
+                }
+                string imagePath = System.IO.Path.Combine(truepath, "Resources", bg + ".jpg");
+
+                // Tạo một đối tượng BitmapImage
+                BitmapImage bitmap = new BitmapImage();
+
+                // Thiết lập đường dẫn nguồn cho BitmapImage
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                bitmap.EndInit();
+
+                // Tạo một ImageBrush và thiết lập hình ảnh làm nền
+                ImageBrush imageBrush = new ImageBrush(bitmap);
+
+                // Thiết lập nền của phần tử (vd: Grid, Border, etc.)
+                imageBrush.Stretch = Stretch.Fill;
+                back.Background = imageBrush;
             }
-            string imagePath = System.IO.Path.Combine(truepath, "Resources", bg + ".jpg");
-
-            // Tạo một đối tượng BitmapImage
-            BitmapImage bitmap = new BitmapImage();
-
-            // Thiết lập đường dẫn nguồn cho BitmapImage
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-            bitmap.EndInit();
-
-            // Tạo một ImageBrush và thiết lập hình ảnh làm nền
-            ImageBrush imageBrush = new ImageBrush(bitmap);
-
-            // Thiết lập nền của phần tử (vd: Grid, Border, etc.)
-            imageBrush.Stretch = Stretch.Fill;
-            back.Background = imageBrush;
+            catch (Exception e)
+            {
+                // MessageBox.Show(e.Message);
+            }
+            
 
         }
 

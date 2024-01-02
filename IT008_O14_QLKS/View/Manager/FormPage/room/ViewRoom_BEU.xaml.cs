@@ -138,16 +138,16 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 Ilus.ImageSource = bitmap;
             }
             catch { }
-
-            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
+            sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Dang Thue' AND NGAYBD<=@now AND NGAYKT>=@now";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Dang Thue' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
                 this.tungay_lbl.Content = date.ToString("dd/MM/yyyy");
-                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "'";
+                sqlcmd.CommandText = "SELECT NGAYKT FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Dang Thue' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value2 = sqlcmd.ExecuteScalar();
                 DateTime date2 = (DateTime)value2;
                 this.denngay_lbl.Content = date2.ToString("dd/MM/yyyy");

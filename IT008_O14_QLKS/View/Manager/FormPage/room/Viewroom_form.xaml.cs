@@ -157,12 +157,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 Ilus.ImageSource = bitmap;
             }
             catch { }
-
-            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
+            sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+               
                 sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;
@@ -303,11 +303,12 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
                 Ilus.ImageSource = bitmap;
             }
             catch { }
-            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "'";
+            sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+            sqlcmd.CommandText = "SELECT TENKH FROM THUEPHONG T INNER JOIN KHACHHANG K ON T.MAKH=K.MAKH WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
             this.TenKH_lbl.Content = sqlcmd.ExecuteScalar();
             if ((string)type_lbl.Content == "Rented" || (string)type_lbl.Content == "Booking")
             {
-                sqlcmd.Parameters.Add("@now", SqlDbType.DateTime).Value = DateTime.Now;
+                
                 sqlcmd.CommandText = "SELECT NGAYBD FROM THUEPHONG WHERE MAPHONG='" + MaPhong + "' AND KQUATHUE='Thanh Cong' AND NGAYBD<=@now AND NGAYKT>=@now";
                 object value = sqlcmd.ExecuteScalar();
                 DateTime date = (DateTime)value;

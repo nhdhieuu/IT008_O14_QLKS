@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <Border Background="#F1F0E7" CornerRadius="10" Margin="0,-2,0,47" >
+        <Border Background="#F1F0E7" CornerRadius="10" Margin="0,-2,0,47" BorderBrush="Black" BorderThickness="2,2,2,2" >
             <Grid Margin="0,-10,0,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -125,7 +125,7 @@
 
                     <TextBlock Text="cccd" FontSize="24" FontFamily="Times New Roman" Margin="360,0,38,299" VerticalAlignment="Bottom" Foreground="#FF897C54"/>
                     <TextBlock Text="personal information" FontSize="24" FontFamily="Times New Roman" Margin="56,0,341,0" VerticalAlignment="Center" Foreground="#FF0500FF" />
-                    <Border  x:Name="lgborder" Background="#FFC6980A" Margin="200,648,200,10"  CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
+                    <Border  x:Name="lgborder" Background="#FFC6980A" Margin="200,648,200,6"  CornerRadius="10,10,10,10" MouseDown="Border_MouseDown_3" MouseEnter="lgborder_MouseEnter" MouseLeave="lgborder_MouseLeave_1" Cursor="Hand" >
                         <TextBlock Text="Sign up" FontWeight="Bold" FontSize="30" FontFamily="Bahnschrift" HorizontalAlignment="Center" Foreground="White" Margin="0,6,0,-6">
 
                         </TextBlock>

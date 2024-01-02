@@ -270,12 +270,12 @@
                 <Border CornerRadius="10" Margin="16,16,16,355" Grid.Column="1" BorderBrush="Black" BorderThickness="2,2,2,2">
                     <Grid Background="Transparent">
                         <CheckBox x:Name="aval_filter" Background="White" Opacity="1" BorderThickness="0" Margin="228,19,36,128" Checked="aval_filter_Checked" Unchecked="aval_filter_Unchecked"/>
-                        <Border x:Name="aval_" Cursor="Hand" MouseDown="aval__MouseDown" CornerRadius="10" Background="#12CE69" Opacity="0.8" Margin="30,42,30,81">
-                            <Label Content="available" Foreground="#BF0B0B" FontSize="30" 
+                        <Border x:Name="aval_" Cursor="Hand" MouseDown="aval__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,42,30,81">
+                            <Label Content="available" Foreground="Black" FontSize="30" 
                                    HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
                         <Border x:Name="unaval_" Cursor="Hand" MouseDown="unaval__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,94,30,28">
-                            <Label Content="unavailable" Foreground="#BF0B0B" FontSize="30" 
+                            <Label Content="unavailable" Foreground="Black" FontSize="30" 
            HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
                     </Grid>
@@ -285,12 +285,12 @@
                 <Border CornerRadius="10" Margin="10,216,22,155" Grid.Column="1" BorderBrush="Black" BorderThickness="2,2,2,2">
                     <Grid Background="Transparent">
                         <CheckBox x:Name="fee_filter" Checked="fee_filter_Checked" Unchecked="fee_filter_Unchecked" Background="White" Opacity="1" BorderThickness="0" Margin="231,22,36,128"/>
-                        <Border x:Name="free_" Cursor="Hand" MouseDown="free__MouseDown" CornerRadius="10" Background="#12CE69" Opacity="1" Margin="30,42,30,81">
-                            <Label Content="free" Foreground="#BF0B0B" FontSize="30" 
+                        <Border x:Name="free_" Cursor="Hand" MouseDown="free__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,42,30,81">
+                            <Label Content="free" Foreground="Black" FontSize="30" 
                         HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
                         <Border x:Name="fee_" Cursor="Hand" MouseDown="fee__MouseDown" CornerRadius="10" Background="White" Opacity="0.8" Margin="30,94,30,28">
-                            <Label Content="fee" Foreground="#BF0B0B" FontSize="30" 
+                            <Label Content="fee" Foreground="Black" FontSize="30" 
 HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,10,0"/>
                         </Border>
                     </Grid>

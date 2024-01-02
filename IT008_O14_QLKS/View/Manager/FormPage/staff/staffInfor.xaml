@@ -8,9 +8,15 @@
          Height="500" Width="330" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" >
     <Border CornerRadius="10" Background="#E9E5D9" BorderBrush="Black"  BorderThickness="2" MouseDown="Border_MouseDown">
         <Grid Background="Transparent">
-            <Border x:Name="close_b" CornerRadius="10" Margin="298,0,0,468" MouseDown="close_b_MouseDown" MouseEnter="close_b_MouseEnter" MouseLeave="close_b_MouseLeave" >
-                <Label Name="close_lb" Cursor="Hand" Content="X"  Foreground="#740909"
-FontSize="25"   VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="0,-7,0,-5" />
+            <Border x:Name="close_border"  
+Background="Transparent" MouseDown="close_border_MouseDown" MouseEnter="close_border_MouseEnter" MouseLeave="close_border_MouseLeave"
+CornerRadius="0,5,0,0" Margin="298,0,0,468" Cursor="Hand"
+>
+                <TextBlock x:Name="close_text" FontSize="25 
+    "  VerticalAlignment="Center" 
+       HorizontalAlignment="Center" FontFamily="Sylfaen" Text="X"
+       Foreground="#740909"/>
+
             </Border>
             <Label Content="Staff Information" FontSize="35" FontFamily="Times New Roman" Margin="0,35,0,415"
                HorizontalContentAlignment="Center"/>

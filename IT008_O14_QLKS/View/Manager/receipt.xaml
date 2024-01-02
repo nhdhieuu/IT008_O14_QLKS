@@ -257,7 +257,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <Border Grid.Row="1" Margin="0,0,0,0" CornerRadius="7" Background="#FFF1F0E7" BorderBrush="Black" BorderThickness="2,2,2,2">
+                    <Border Margin="0,75,0,76" CornerRadius="7" Background="#FFF1F0E7" BorderBrush="Black" BorderThickness="2,2,2,2" Grid.RowSpan="2">
 
                         <Grid Margin="10,10,10,10">
                             <Border Name="FilterCheckBox" MouseDown="FilterCheckBox_Click" Margin="225,0,9,198" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
@@ -298,7 +298,7 @@
 
                     </Border>
 
-                    <Border Grid.Row="2" Margin="0,11,0,10" Background="#FFE9E8DF" BorderBrush="Black" BorderThickness="2,2,2,2" CornerRadius="8,8,8,8">
+                    <Border Grid.Row="1" Margin="0,208,0,53" Background="#FFE9E8DF" BorderBrush="Black" BorderThickness="2,2,2,2" CornerRadius="8,8,8,8" Grid.RowSpan="2">
                         <Grid Margin="10,10,10,10">
                             <Border MouseDown="SortByCheckBox_Click" Margin="225,0,9,138" BorderBrush="Black" BorderThickness="1"  Cursor="Hand" Background="#E5FFFFFF">
                                 <Image Name="CheckBoxImage" Source="/Resources/icons8-check-30.png" Visibility="Hidden"></Image>

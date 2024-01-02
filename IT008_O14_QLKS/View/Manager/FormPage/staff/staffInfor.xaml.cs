@@ -53,22 +53,23 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.staff
                 DragMove();
         }
 
-        private void close_b_MouseDown(object sender, MouseButtonEventArgs e)
+        private void close_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
 
-        private void close_b_MouseEnter(object sender, MouseEventArgs e)
+        private void close_border_MouseEnter(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF1F0E7"));
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
+
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
         }
 
-        private void close_b_MouseLeave(object sender, MouseEventArgs e)
+        private void close_border_MouseLeave(object sender, MouseEventArgs e)
         {
-            close_b.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
+            close_border.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E9E5D9"));
 
-            close_lb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
+            close_text.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#740909"));
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

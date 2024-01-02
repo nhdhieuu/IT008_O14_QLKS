@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="74" d:DesignWidth="714">
     
-            <Border CornerRadius="10" Height="74" MouseDown="ReceiptCard_MouseDown" Cursor="Hand">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="/Resources/ReceiptCardBackground.png"></ImageBrush>
-                                </Border.Background>
+            <Border CornerRadius="10" Height="74" MouseDown="ReceiptCard_MouseDown" Cursor="Hand" Background="Black">
+                                <!-- <Border.Background> -->
+                                <!--     <ImageBrush ImageSource="/Resources/ReceiptCardBackground.png"></ImageBrush> -->
+                                <!-- </Border.Background> -->
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>

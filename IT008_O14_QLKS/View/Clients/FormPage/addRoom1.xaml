@@ -103,7 +103,7 @@
 
         </Grid>
         <Grid Grid.Column="1">
-            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="474" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5" Margin="11,95,0,0">
+            <Border BorderBrush="White" BorderThickness="2,1.3,2,2" HorizontalAlignment="Left" Height="474" VerticalAlignment="Top" Width="266" CornerRadius="5,5,5,5">
                 <Border.Background>
                     <SolidColorBrush Color="#FFAFAA99" Opacity="0.95"/>
                 </Border.Background>
@@ -112,7 +112,7 @@
                         <ColumnDefinition Width="243*"/>
                         <ColumnDefinition Width="19*"/>
                     </Grid.ColumnDefinitions>
-                    <Border x:Name="type" Margin="17,46,11,0" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Grid.ColumnSpan="2" Height="168" VerticalAlignment="Top"></Border>
+                    <Border x:Name="type" Margin="17,37,11,0" CornerRadius="8,8,8,8" Background="#7F4E4B4B" Grid.ColumnSpan="2" Height="168" VerticalAlignment="Top"></Border>
                     <Border x:Name="stauts" Margin="16,0,14,115" Background="#7F4E4B4B" CornerRadius="8,8,8,8" Grid.ColumnSpan="2" Height="123" VerticalAlignment="Bottom" />
                     <Border x:Name="standard" Margin="25,87,114,0" Background="#B2FFFFFF" CornerRadius="5,5,5,5"  IsEnabled="False" Cursor="Hand" Height="46" VerticalAlignment="Top" MouseDown="standard_MouseDown" >
                         <TextBlock x:Name="standardt" Text="Standard" Foreground="#7F797979" FontFamily="Bahnschrift" FontSize="20" Margin="12,13,9,6" FontWeight="Bold" >
@@ -124,9 +124,7 @@
 
                         </TextBlock>
                     </Border>
-                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="#7F000000" Background="{x:Null}" FontWeight="Bold" Margin="16,0,0,0" />
                     <Border x:Name="stage" Margin="13,0,0,15" Background="#7F4E4B4B" CornerRadius="8,8,8,8" HorizontalAlignment="Left" Width="235" Height="85" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
-                    <Label Content="Filter" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="84"  FontSize="28" FontFamily="Times New Roman" Foreground="White" Background="{x:Null}" FontWeight="Bold" Margin="17,-3,0,0" />
                     <Label x:Name="stg_t" Content="Sort by price" HorizontalAlignment="Left" Height="44" VerticalAlignment="Bottom" Width="160"  FontSize="24" FontFamily="Bahnschrift" Foreground="#7EFFFFFF" Background="{x:Null}" FontWeight="Bold" Margin="20,0,0,56" />
 
                     <Label x:Name="type_txt" Content="TYPE" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="96"  FontSize="24" FontFamily="Bahnschrift" Foreground="#AFFFC000" Background="{x:Null}" FontWeight="Bold" Margin="20,46,0,0" />

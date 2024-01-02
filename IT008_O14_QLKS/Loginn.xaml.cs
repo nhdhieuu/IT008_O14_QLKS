@@ -123,7 +123,7 @@ namespace IT008_O14_QLKS
                     role = "KH";
             }
             if(role=="")
-                this.warning.Visibility= Visibility.Visible;
+                pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
             else
             {
                 if(role == "QL")
@@ -151,8 +151,8 @@ namespace IT008_O14_QLKS
                     }
                     else
                     {
-                        this.warning.Visibility = Visibility.Visible;
-                        RememberMeStackPanel.Visibility = Visibility.Hidden;
+                        pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
+
                     }
                 }
                 if (role == "KH")
@@ -180,8 +180,8 @@ namespace IT008_O14_QLKS
                     }
                     else
                     {
-                        RememberMeStackPanel.Visibility = Visibility.Hidden;
-                        this.warning.Visibility = Visibility.Visible;
+                        pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
+
                     }
                 }
             }
@@ -302,7 +302,8 @@ namespace IT008_O14_QLKS
                         role = "KH";
                 }
                 if (role == "")
-                    this.warning.Visibility = Visibility.Visible;
+                    pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
+
                 else
                 {
                     if (role == "QL")
@@ -332,8 +333,8 @@ namespace IT008_O14_QLKS
                         }
                         else
                         {
-                            RememberMeStackPanel.Visibility = Visibility.Hidden;
-                            this.warning.Visibility = Visibility.Visible;  
+                            pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
+
                             
                         }
                     }
@@ -363,8 +364,8 @@ namespace IT008_O14_QLKS
                         }
                         else
                         {
-                            RememberMeStackPanel.Visibility = Visibility.Hidden;
-                            this.warning.Visibility = Visibility.Visible;
+                            pssbox.BorderBrush = new SolidColorBrush(Colors.Red);
+
                         }
                     }
                 }

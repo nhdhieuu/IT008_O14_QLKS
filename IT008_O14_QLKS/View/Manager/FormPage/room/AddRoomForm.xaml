@@ -63,6 +63,12 @@
                                     <ComboBoxItem Content="4" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
+                                    <ComboBoxItem Content="5" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="6" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
                                 </ComboBox>
                             </Grid>
                             <Grid Grid.Row="1">
@@ -86,6 +92,18 @@
                                     <ComboBoxItem Content="06" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
+                                    <ComboBoxItem Content="07" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="08" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="09" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="10" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
                                 </ComboBox>
                             </Grid>
                             <Grid Grid.Row="2">
@@ -98,6 +116,15 @@
 
                                     </ComboBoxItem>
                                     <ComboBoxItem Content="3" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="4" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="5" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
+
+                                    </ComboBoxItem>
+                                    <ComboBoxItem Content="6" FontFamily="Sylfaen" Foreground="#FF252424" FontSize="22">
 
                                     </ComboBoxItem>
 
@@ -186,9 +213,9 @@
                                     <CheckBox x:Name="BathTub" Margin="181,41,48,75" Cursor="Hand"/>
                                     <CheckBox x:Name="Pool" Margin="181,70,39,45" Cursor="Hand"/>
                                     <ComboBox x:Name="Style" Style="{DynamicResource RoundComboBox}" Margin="79,98,202,15" FontSize="15">
-                                        <ComboBoxItem Content="modern"/>
-                                        <ComboBoxItem Content="old"/>
-                                        <ComboBoxItem Content="Style"/>
+                                        <ComboBoxItem Content="Modern"/>
+                                        <ComboBoxItem Content="Old"/>
+                                        <ComboBoxItem Content="Luxury"/>
                                     </ComboBox>
                                     <ComboBox x:Name="Equip" Style="{DynamicResource RoundComboBox}" Margin="226,7,13,104" FontSize="15">
                                         <ComboBoxItem Content="Fridge"/>
@@ -227,10 +254,10 @@
                                 <Grid>
                                     <Label Margin="10,13,129,0" Content="Rent by hour:" FontFamily="Sylfaen" FontSize="23" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"></Label>
                                     <Label Margin="22,65,161,0" Content="Rent by day:" FontFamily="Sylfaen" FontSize="23" Foreground="#C6980A" FontWeight="Bold" Height="63" VerticalAlignment="Top"></Label>
-                                    <TextBox x:Name="GiaTheoGio" Margin="0,16,85,80" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A" Background="Transparent" Text="300.000 " HorizontalAlignment="Right" Width="135" HorizontalContentAlignment="Right">
+                                    <TextBox x:Name="GiaTheoGio" Margin="0,16,85,80" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A" Background="Transparent" Text="300000 " HorizontalAlignment="Right" Width="135" HorizontalContentAlignment="Right">
 
                                     </TextBox>
-                                    <TextBox x:Name="GiaTheoNgay" Margin="0,69,85,27" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A" Background="Transparent" Text="300.000 " HorizontalAlignment="Right" Width="135" HorizontalContentAlignment="Right">
+                                    <TextBox x:Name="GiaTheoNgay" Margin="0,69,85,27" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A" Background="Transparent" Text="300000" HorizontalAlignment="Right" Width="135" HorizontalContentAlignment="Right">
 
                                     </TextBox>
                                     <Label Margin="316,12,20,0" Content="VND" FontFamily="Sylfaen" FontSize="25" Foreground="#C6980A"  Height="50" VerticalAlignment="Top">

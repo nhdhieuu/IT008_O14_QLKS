@@ -212,14 +212,14 @@
 
                         <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0"/>
-                        <Border Grid.Column="2" Background="#D9D9D9" CornerRadius="8" Margin="0,14,0,7">
-                            <Grid >
+                        <Border x:Name="SearchBoxBorder" Grid.Column="2" Background="#D9D9D9" CornerRadius="8" Margin="0,22,0,11">
+                            <Grid x:Name="SearchBoxGrid">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="256"></ColumnDefinition>
                                     <ColumnDefinition Width="26"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Name="SearchBox" Background="Transparent" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman" BorderThickness="0" Margin="10,0,0,0" Height="41" />
-                                <Border Grid.Column="1" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
+                                <TextBox  Name="SearchBox" Background="Transparent" VerticalAlignment="Center" FontSize="20" FontFamily="Times New Roman" BorderThickness="0" Margin="10,0,0,0" Height="29" />
+                                <Border x:Name="SearchBorder" Grid.Column="1" Margin="0,7,6,6" Cursor="Hand" MouseDown="Search_MouseDown">
 
                                     <Image  Source="/Resources/search.png" ></Image>
                                 </Border>

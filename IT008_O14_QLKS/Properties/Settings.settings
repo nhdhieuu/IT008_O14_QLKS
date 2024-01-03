@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="strcon" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Security Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-MR3E6H4\SQLEXPRESS;Initial Catalog=QLKS2;Integrated Security=True</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

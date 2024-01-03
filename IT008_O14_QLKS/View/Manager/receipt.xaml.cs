@@ -47,6 +47,11 @@ namespace IT008_O14_QLKS.View.Manager
             {
                 join = $"join khachhang on hoadon.makh = khachhang.makh where username = '{this.username}'";
                 this.NewReceiptButton.Visibility = Visibility.Hidden;
+                SearchBox.Visibility = Visibility.Hidden;
+                SearchBorder.Visibility= Visibility.Hidden;
+                SearchBoxBorder.Visibility= Visibility.Hidden;
+
+
             }
             this.Loaded += receipt_Loaded;
             
@@ -92,8 +97,7 @@ namespace IT008_O14_QLKS.View.Manager
                 sqlCommand.Connection = _db.sqlCon;
                 sqlCommand.CommandType = System.Data.CommandType.Text;
                 sqlCommand.CommandText =
-                    "select sohd,NgayLap,CAST(ngaylap AS time),tongtien {join} from hoadon where sohd = '" + SearchBox.Text +
-                    "'";
+                    $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien {join} from hoadon where sohd = '{SearchBox.Text}'";
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 if (sqlDataReader.HasRows)
                 {

@@ -369,5 +369,11 @@ namespace IT008_O14_QLKS.View.Manager.FormPage.room
             {
             }
         }
+        public void Client()
+        {
+            Adjust.Visibility= Visibility.Hidden;
+            Change.Visibility= Visibility.Hidden;
+            Load_Ilus.Visibility= Visibility.Hidden;
+        }
     }
 }

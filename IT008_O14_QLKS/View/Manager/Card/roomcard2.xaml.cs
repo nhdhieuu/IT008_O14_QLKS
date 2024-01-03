@@ -63,18 +63,33 @@ namespace IT008_O14_QLKS.View.Manager.Card
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (Parents != "RoomInfor" && Parents!="Client")
+            if (Parents != "RoomInfor" && Parents!="Client" )
             {
                 if(status=="Rented")
                 {
                     Viewroom_form vr = new Viewroom_form(TenPhong);
+                    if (Parents == "khong")
+                    {
+
+                        vr.Client();
+
+                    }
                     vr.ShowDialog();
+                   
                 }    
                 else
                 {
                     ViewRoom_BEU vr = new ViewRoom_BEU(TenPhong);
+                    if (Parents == "khong")
+                    {
+
+                        vr.Client();
+
+                    }
                     vr.ShowDialog();
+                    
                 }    
+                   
                
             }
         }

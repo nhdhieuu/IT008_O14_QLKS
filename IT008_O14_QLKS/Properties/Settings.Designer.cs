@@ -25,9 +25,8 @@ namespace IT008_O14_QLKS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=tcp:it008qlks2.database.windows.net,1433;Initial Catalog=qlks;Persist Secu" +
-            "rity Info=False;User ID=nhdhieuu;Password=Duyhieu@123;MultipleActiveResultSets=F" +
-            "alse;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MR3E6H4\\SQLEXPRESS;Initial Catalog=QLKS2;Integrated Security=" +
+            "True")]
         public string strcon {
             get {
                 return ((string)(this["strcon"]));

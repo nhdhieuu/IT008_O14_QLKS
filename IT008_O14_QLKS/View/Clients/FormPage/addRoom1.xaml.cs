@@ -298,7 +298,9 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
         {
             if (from.Value < DateTime.Now)
             {
+                
                 MessageBox.Show("The selected day must be in the future!");
+                from.Value=null;
                 return;
             }
             else
@@ -314,6 +316,7 @@ namespace IT008_O14_QLKS.View.Clients.FormPage
             if (to.Value < DateTime.Now)
             {
                 MessageBox.Show("The selected day must be in the future!");
+                to.Value= null;
                 return;
             }
             else

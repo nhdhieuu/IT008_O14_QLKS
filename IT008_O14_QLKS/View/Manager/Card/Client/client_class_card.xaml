@@ -41,7 +41,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="txt" FontSize="48"  Text="Silver" FontFamily="Times New Roman" Margin="23,6,124,50"/>
-                <TextBlock  x:Name="clss" FontSize="32"  Text="class" FontFamily="Bahnschrift" Margin="62,56,240,0">
+                <TextBlock  x:Name="clss" FontSize="32"  Text="class" FontFamily="Bahnschrift" Margin="23,56,272,0">
 
                 </TextBlock>
             </Grid>

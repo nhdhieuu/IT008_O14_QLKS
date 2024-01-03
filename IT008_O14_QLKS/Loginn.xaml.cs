@@ -105,6 +105,8 @@ namespace IT008_O14_QLKS
         //Dang nhap
         private void Border_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
+            try
+            {
             string hashpass = HashPassword.HashToHexString(HashPassword.CalculateSHA256(pass.Password));
             
             string role="";
@@ -185,6 +187,12 @@ namespace IT008_O14_QLKS
                     }
                 }
             }
+            }
+            catch (Exception exception)
+            {
+                // MessageBox.Show(exception.Message);
+            }
+            
         }
 
         private void Border_MouseEnter(object sender, MouseEventArgs e)

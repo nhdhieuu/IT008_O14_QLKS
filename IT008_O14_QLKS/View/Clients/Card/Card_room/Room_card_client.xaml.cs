@@ -243,6 +243,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                                 bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
                                 nbtxtleft.Visibility = Visibility.Collapsed;
                                 view.Text = "PAY";
+                                rbutton.Visibility = Visibility.Collapsed;
                                 CANCEL.Visibility = Visibility.Collapsed;
                                 add.Visibility = Visibility.Collapsed;
                             }
@@ -294,6 +295,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                                         bd_time.BorderBrush = new SolidColorBrush(Colors.Red);
                                         nbtxtleft.Visibility = Visibility.Collapsed;
                                         view.Text = "PAY";
+                                        rbutton.Visibility = Visibility.Collapsed;
                                         CANCEL.Visibility = Visibility.Collapsed;
                                         add.Visibility = Visibility.Collapsed;
                                     }
@@ -591,7 +593,7 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
 
                     if (parent is booking_list window)
                     {
-                        window.reset();
+                     
                     }
                 }
               
@@ -606,9 +608,8 @@ namespace IT008_O14_QLKS.View.Clients.Card.Card_room
                 }
                 if (view.Text == "PAY")
                 {
-                    Receipt_Add_Form a = new Receipt_Add_Form();
-                    a.pay(khachhang);
-                    a.ShowDialog();
+               
+
 
                 }
             }

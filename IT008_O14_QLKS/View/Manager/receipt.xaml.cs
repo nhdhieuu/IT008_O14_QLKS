@@ -147,7 +147,7 @@ namespace IT008_O14_QLKS.View.Manager
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = _db.sqlCon;
             sqlCommand.CommandType = System.Data.CommandType.Text;
-            sqlCommand.CommandText = "select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon";
+            sqlCommand.CommandText = $"select sohd,NgayLap,CAST(ngaylap AS time),tongtien from hoadon {join} ";
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {

@@ -208,7 +208,7 @@
                             <ColumnDefinition Width="165"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Source="/Resources/reset.png" Margin="14,23,0,14" MouseDown="ReloadButton_Click"/>
+                        <Image Cursor="Hand" Source="/Resources/reset.png" Margin="14,23,0,14" MouseDown="ReloadButton_Click"/>
 
                         <TextBlock Grid.Column="1"  Text="receipt" FontSize="40" FontFamily="Times New Roman" Foreground="#C6980A" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,0,0,0"/>
